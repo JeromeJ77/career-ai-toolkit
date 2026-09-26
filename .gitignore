@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.log
+
+# Never place personal pilot workspaces in this repository
+.local-workspaces/
+pilot-workspace/
