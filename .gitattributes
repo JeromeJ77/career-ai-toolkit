@@ -1,0 +1,14 @@
+# Normalize text files to LF in the repository
+* text=auto eol=lf
+
+# Windows command files require CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files must not be modified
+*.zip binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
