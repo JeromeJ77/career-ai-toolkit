@@ -18,7 +18,9 @@ Determine whether the standalone coach and local workspace are useful, understan
 4. Optionally generate or refresh a CV from the professional profile if the
    participant needs one, noting that v0.2 has no dedicated CV-generation
    skill yet.
-5. Prepare a real opportunity independently from the CV step.
+5. Give the coach the available sources for a real opportunity and let it
+   create the numbered directory and canonical Markdown independently from the
+   CV step.
 6. Review and validate strategic messages and positioning.
 7. Run one or more simulation/debrief/improvement loops for one or more
    interview rounds.
@@ -59,6 +61,9 @@ flowchart TD
 ## What to observe
 
 - Setup friction and documentation gaps.
+- Clarity and reliability of coach-managed opportunity and interview creation.
+- Fidelity of `opportunity.md` to the supplied sources and preservation of
+  original documents.
 - Redundant or intrusive questions.
 - Quality and adjustability of strategic messages.
 - Whether the candidate can review and validate positioning before simulation.

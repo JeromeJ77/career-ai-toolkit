@@ -1,0 +1,67 @@
+# Opportunity structure guidelines
+
+Use this structure for new opportunities. Preserve existing user content and do not rename an existing opportunity or interview directory without explicit agreement.
+
+## Create an opportunity
+
+The coach creates the opportunity directory; the candidate supplies the available source documents or context.
+
+1. Inspect the existing directories under `opportunities/`.
+2. Find the highest leading numeric identifier and allocate the next one. Use at least three digits: `001`, `002`, `003`. Never fill a gap or renumber an existing opportunity.
+3. Build a lowercase ASCII kebab-case slug from the organization and role, for example `001-acme-principal-architect`. Remove diacritics, replace punctuation and whitespace with single hyphens, and avoid adding facts that are not known.
+4. Create the opportunity directory.
+5. Create `opportunity.md` from `../assets/opportunity.template.md` and `current-status.md` from `../assets/opportunity-current-status.template.md`.
+6. If original files are available and authorized for retention, place an unchanged copy under `sources/` when the tool can do so safely. Do not rename, move, rewrite or delete the supplied original without the candidate's agreement.
+7. Convert the useful source content into `opportunity.md`. Preserve the source language unless the candidate requests a translation. Record source paths or provenance and distinguish missing or uncertain information from source facts.
+8. Update the opportunity status and the root status with the new scope and next action.
+
+`opportunity.md` is the canonical textual representation used by the coach. It contains source information, not fit analysis, positioning or invented interpretation. When analysis starts, create `analysis.md` from `../assets/opportunity-analysis.template.md` and keep derived reasoning there.
+
+If organization or role information is insufficient for a stable slug, ask only for the missing identifier before creating the directory. Numeric prefixes make otherwise identical organization-role slugs unambiguous.
+
+When a new source is added later, preserve it like the earlier originals and update `opportunity.md` from the combined evidence. Flag contradictions or superseded information explicitly instead of silently choosing one version.
+
+## Create an interview round
+
+Create `interviews/` when the first round becomes known. Do not create placeholder rounds.
+
+1. Inspect existing round directories under `interviews/`.
+2. Allocate the next unused sequence using at least two digits: `01`, `02`, `03`. Never renumber an existing round.
+3. Use a concise lowercase ASCII type slug, such as `screening`, `recruiter`, `hiring-manager`, `technical`, `system-design`, `leadership`, `hr`, `executive` or `other`. Prefer the most precise type supported by known facts.
+4. Create `interviews/<sequence>-<type>/interview.md` from `../assets/interview.template.md`.
+5. Record the sequence, type, known logistics and uncertainties in `interview.md`; the directory name is not the sole source of meaning.
+6. Update the opportunity status so its current interview and next action point to the new round when appropriate.
+
+If the round type is not yet clear enough for a stable directory name, ask for clarification before creating it. Use `other` only when the type is genuinely unspecified, not as a temporary placeholder.
+
+## Add artifacts progressively
+
+Create only artifacts that the workflow has reached:
+
+```text
+opportunities/
+`-- 001-organization-role/
+    |-- current-status.md
+    |-- opportunity.md
+    |-- analysis.md                      # when opportunity analysis starts
+    |-- sources/                         # only when originals are retained
+    `-- interviews/                      # from the first known round
+        `-- 01-screening/
+            |-- interview.md
+            |-- preparation.md           # when preparation starts
+            |-- simulations/             # from the first simulation
+            |   `-- 01/
+            |       |-- transcript.md    # when technically available
+            |       `-- debrief.md
+            `-- actual/                  # when the real interview is documented
+                |-- notes.md             # when notes are available
+                |-- transcript.md        # optional and only when legitimate
+                `-- review.md
+```
+
+- Generate `preparation.md` from `interview-preparation-sheet.template.md`.
+- Number simulations independently within a round using at least two digits and `max + 1`. Never overwrite or renumber a prior simulation.
+- Keep `transcript.md` factual. Put interpretation and coaching feedback in `debrief.md`.
+- A round has at most one `actual/` directory. A transcript is optional; candidate notes are sufficient for `review.md`.
+- Generate `actual/review.md` from `interview-feedback.template.md` when reviewing the real interview.
+- Reference created artifacts from the opportunity status instead of copying their full contents into it.

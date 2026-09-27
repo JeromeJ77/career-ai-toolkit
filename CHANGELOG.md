@@ -8,11 +8,16 @@
 - Made the workspace the durable reference between focused coaching sessions,
   replacing the previous recommendation to keep one conversation per
   opportunity.
+- Made the coach responsible for creating and progressively maintaining
+  opportunity, interview, simulation and actual-interview artifacts.
 
 ### Added
 
 - Added a minimal root `current-status.md`, an opportunity status template and
   explicit coach responsibilities for reading and maintaining both levels.
+- Added canonical `opportunity.md`, separate `analysis.md` and round-level
+  `interview.md` templates, stable three-digit opportunity numbering, two-digit
+  interview numbering and source-preservation rules.
 
 ## [0.2.0]
 

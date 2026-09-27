@@ -4,6 +4,8 @@
 flowchart TD
     sources["Original authorized sources"]
     profile["Professional profile<br/><i>personal source of truth</i>"]
+    opportunityOriginals["Opportunity original sources<br/><i>unchanged</i>"]
+    opportunitySource["opportunity.md<br/><i>canonical textual representation</i>"]
     workspaceStatus["Workspace status<br/><i>session routing</i>"]
     opportunityStatus["Opportunity status<br/><i>current working state</i>"]
     opportunity["Opportunity analysis and coaching"]
@@ -13,8 +15,10 @@ flowchart TD
     proposal["Validated professional-profile<br/>update proposal"]
 
     sources --> profile
+    opportunityOriginals --> opportunitySource
     workspaceStatus -.-> opportunityStatus
     profile --> opportunity
+    opportunitySource --> opportunity
     opportunityStatus <--> opportunity
     profile --> derived
     opportunity --> derived
@@ -57,12 +61,15 @@ sequenceDiagram
         Assistant->>Profile: Reuse validated profile facts
         Assistant->>Workspace: Write derived CV Markdown
     end
-    Candidate->>Opportunity: Add job description and context
+    Candidate->>Assistant: Provide job description and context
+    Assistant->>Opportunity: Create numbered directory, canonical Markdown and status
     Candidate->>Assistant: Prepare opportunity
     Assistant->>Opportunity: Write role analysis and proposed positioning
     Candidate->>Assistant: Review strategic messages and positioning
     Assistant->>Opportunity: Update validated opportunity preparation
     loop For each interview round
+        Candidate->>Assistant: Provide known round details
+        Assistant->>Opportunity: Create next numbered interview and metadata
         Candidate->>Assistant: Prepare the round
         Candidate->>Assistant: Run one or more simulations or targeted drills
         Assistant->>Opportunity: Write feedback and next steps

@@ -1,6 +1,25 @@
 # Workspace mode
 
-Extract the built workspace ZIP outside the toolkit repository and open its root in a file-aware AI tool. Read `README.fr.md`, configure the profile language, add authorized sources, initialize the professional profile, then create one folder per opportunity. Keep the workspace private.
+Extract the built workspace ZIP outside the toolkit repository and open its root in a file-aware AI tool. Read `README.fr.md`, configure the profile language, add authorized sources and initialize the professional profile. For a new application, give the available job documents or context to the coach; the coach creates the opportunity structure. Keep the workspace private.
+
+## Coach-managed opportunities
+
+New opportunity directories use a stable identifier with at least three digits
+and an ASCII kebab-case organization-role slug, such as
+`001-acme-principal-architect`. The coach allocates `max + 1`; it never fills a
+gap, reuses an identifier or silently renames an existing directory.
+
+The coach creates `opportunity.md` as the canonical textual representation of
+the supplied job information and `current-status.md` as its working state.
+Authorized originals may be retained unchanged under `sources/`. Source facts,
+uncertainties and derived analysis remain distinguishable. When opportunity
+analysis starts, the coach creates a separate `analysis.md`.
+
+When an interview becomes known, the coach creates
+`interviews/01-screening/interview.md`, using the next two-digit sequence and a
+descriptive type. Preparation, simulation and actual-interview directories and
+files are added only when the workflow reaches them. Existing rounds and
+simulations are never renumbered or overwritten.
 
 ## Durable continuity
 

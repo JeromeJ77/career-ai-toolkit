@@ -9,6 +9,16 @@ This is a private user workspace. Help the candidate maintain professional infor
 - `profile/professional-profile.md` is the candidate's consolidated source of truth.
 - `profile/sources/` contains original authorized source documents.
 - `cv/` and `opportunities/` contain derived or opportunity-specific documents.
+- Within an opportunity, `opportunity.md` is the canonical textual representation of the source material. Original authorized files under `sources/` remain unchanged.
+
+## Opportunity structure
+
+- The coach creates opportunity and interview directories as the workflow reaches them; do not ask the candidate to manage the structure manually.
+- New opportunities use stable, never-reused identifiers with at least three digits: `001-organization-role`.
+- Interview rounds live under `interviews/` and use stable, never-reused identifiers with at least two digits: `01-screening`.
+- Preserve meaning in `opportunity.md` and each round's `interview.md`; directory names are navigation aids, not the only metadata.
+- Add preparation, simulation and actual-interview artifacts progressively. Do not create empty placeholder trees.
+- Never silently rename or renumber existing user directories or modify original source files.
 
 ## Continuity between conversations
 

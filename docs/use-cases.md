@@ -30,7 +30,8 @@ flowchart TD
     collect["Add authorized career sources"]
     profile["Initialize or update professional profile"]
     cv["Generate or refresh CV<br/>any time after profile setup<br/><i>(planned dedicated skill)</i>"]
-    opportunity["Create opportunity"]
+    opportunity["Provide opportunity sources"]
+    createOpportunity["Create numbered opportunity<br/>and canonical Markdown"]
     analyze["Analyze role and positioning"]
     validatePositioning["Review and validate<br/>strategic messages"]
     interview["Manage one or more interview rounds"]
@@ -53,7 +54,8 @@ flowchart TD
     collect --> profile
     profile -.-> cv
     profile --> opportunity
-    opportunity --> analyze
+    opportunity --> createOpportunity
+    createOpportunity --> analyze
     analyze --> validatePositioning
     validatePositioning --> interview
     interview --> simulate
@@ -78,15 +80,17 @@ flowchart TD
     classDef actor fill:#f5f5f5,stroke:#404040,stroke-width:2px,color:#171717;
 
     class setup,collect,opportunity,realInterview,feedback,legendUser userTask;
-    class analyze,prep,cv,legendCoach coachTask;
+    class createOpportunity,analyze,prep,cv,legendCoach coachTask;
     class profile,validatePositioning,interview,simulate,debrief,improvePrep,postReview,nextRound,update,legendJoint jointTask;
     class candidate,maintainer,improve actor;
 ```
 
-An opportunity is created inside the candidate workspace, usually as one folder
-under `opportunities/`. It can include several interview rounds. A single round
-can also need several simulation, debrief and improvement loops before the
-candidate feels ready.
+The candidate supplies available job documents or context. The coach creates a
+stable numbered directory under `opportunities/`, preserves authorized
+originals, produces the canonical `opportunity.md`, and initializes its status.
+It later creates numbered interview rounds and their artifacts progressively.
+A single round can need several simulation, debrief and improvement loops
+before the candidate feels ready.
 
 The coach can analyze the role and propose positioning, but the strategic
 messages only become reusable preparation material after candidate review and
@@ -113,7 +117,8 @@ conversation can continue without relying on previous conversation history.
 | Create private workspace | Supported through the built ZIP | Extracted local workspace with root `current-status.md` |
 | Initialize professional profile | Supported through coach instructions and templates | `profile/professional-profile.md` |
 | Generate CV | Planned; independent from opportunity work and available after profile setup | `cv/*.md`, later HTML/PDF |
-| Create and prepare an opportunity | Supported by the interview coach | Opportunity folder with `current-status.md`, job description, analysis and one preparation sheet per interview round |
+| Create and prepare an opportunity | Supported by the interview coach | Numbered opportunity with `opportunity.md`, `current-status.md`, optional original sources and separate `analysis.md` |
+| Create an interview round | Supported by the interview coach | `interviews/NN-type/interview.md` and progressive round artifacts |
 | Simulate and debrief interviews | Supported by the interview coach | One or more simulation/debrief loops per interview round |
 | Review a real interview | Supported by the interview coach | Post-interview learnings and next-round actions |
 | Update professional profile | Supported as a reviewed proposal | Candidate-approved profile changes |
@@ -133,8 +138,8 @@ flowchart TD
     reviewProfile{Candidate approves profile?}
     refineProfile["Refine profile from source evidence"]
     generateCv["Optionally generate or refresh CV<br/>(independent planned skill)"]
-    newOpp["Create opportunity"]
-    addJob["Add job description and useful context"]
+    newOpp["Provide opportunity documents<br/>and useful context"]
+    addJob["Coach creates numbered directory,<br/>canonical Markdown and status"]
     analyze["Analyze fit, risks and strategic messages"]
     validatePositioning["Review and validate positioning"]
     interview["Prepare a specific interview round"]
@@ -179,8 +184,8 @@ flowchart TD
     classDef jointTask fill:#16a34a,stroke:#14532d,stroke-width:3px,color:#ffffff;
     classDef decision fill:#f5f5f5,stroke:#404040,stroke-width:2px,color:#171717;
 
-    class start,standalone,workspace,configure,sources,newOpp,addJob,realInterview,feedback,finish userTask;
-    class refineProfile,generateCv,analyze,prepare coachTask;
+    class start,standalone,workspace,configure,sources,newOpp,realInterview,feedback,finish userTask;
+    class addJob,refineProfile,generateCv,analyze,prepare coachTask;
     class initProfile,validatePositioning,interview,simulate,debrief,improvePrep,postReview,updateProfile jointTask;
     class choose,reviewProfile,durable,retrySame,nextInterview,nextOpp decision;
 ```

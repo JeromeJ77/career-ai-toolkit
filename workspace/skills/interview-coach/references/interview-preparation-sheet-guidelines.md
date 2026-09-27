@@ -3,6 +3,9 @@
 Generate one progressive document per interview round, not separate short and
 long versions. If an opportunity has several rounds, keep each round's sheet
 as a distinct document unless the candidate explicitly asks to replace it.
+Write the document as `preparation.md` inside the current numbered interview
+directory. Read that round's `interview.md` and the opportunity's canonical
+source, analysis and status before generating it.
 
 ## First page
 

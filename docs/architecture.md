@@ -46,19 +46,26 @@ flowchart TD
     profile["profile/professional-profile.md<br/><i>candidate-owned source of truth</i>"]
     workspaceStatus["current-status.md<br/><i>latest scope and resumption point</i>"]
     cv["cv/<br/>derived CVs<br/><i>(dedicated skill planned)</i>"]
-    opportunityStatus["opportunities/{company-role}/current-status.md<br/><i>opportunity working state</i>"]
-    opportunity["Opportunity artifacts<br/><i>analysis, prep, simulation, debrief</i>"]
+    opportunitySource["opportunities/{NNN-org-role}/opportunity.md<br/><i>canonical textual representation</i>"]
+    opportunityOriginals["opportunities/{NNN-org-role}/sources/<br/><i>unchanged originals</i>"]
+    opportunityWork["analysis.md<br/><i>derived fit and positioning</i>"]
+    opportunityStatus["opportunities/{NNN-org-role}/current-status.md<br/><i>opportunity working state</i>"]
+    interview["interviews/{NN-type}/<br/><i>metadata and progressive artifacts</i>"]
     updates["Reviewed profile update proposals"]
     feedback["feedback/<br/><i>pilot observations, sanitized before sharing</i>"]
 
     sources ==> profile
     profile ==> cv
-    profile ==> opportunity
+    opportunityOriginals ==> opportunitySource
+    profile ==> opportunityWork
+    opportunitySource ==> opportunityWork
     workspaceStatus -.-> opportunityStatus
-    opportunityStatus <--> opportunity
-    opportunity --> updates
+    opportunityStatus <--> opportunityWork
+    opportunityWork ==> interview
+    opportunityStatus <--> interview
+    interview --> updates
     updates --> profile
-    opportunity -.-> feedback
+    interview -.-> feedback
 ```
 
 The professional profile is the stable base. Derived documents may be edited
@@ -68,6 +75,10 @@ the professional profile before regenerated output depends on them.
 Status files are compact working-memory snapshots, not historical logs or new
 sources of candidate facts. Detailed evidence and history remain in the
 profile, authorized sources and dedicated opportunity artifacts.
+
+The coach creates opportunity and interview directories progressively. Stable
+numeric prefixes preserve creation order; Markdown identity files preserve the
+business meaning independently from directory names.
 
 ## Related documentation
 

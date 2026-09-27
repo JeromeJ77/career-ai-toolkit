@@ -8,7 +8,7 @@ if "%VERSION%"=="" (
   exit /b 1
 )
 
-for %%F in ("standalone\interview-coach-standalone.md" "docs\pilot-feedback.template.md" "workspace\README.fr.md" "workspace\AGENTS.md" "workspace\profile\professional-profile.md" "workspace\skills\interview-coach\SKILL.md") do (
+for %%F in ("standalone\interview-coach-standalone.md" "docs\pilot-feedback.template.md" "workspace\README.fr.md" "workspace\AGENTS.md" "workspace\current-status.md" "workspace\profile\professional-profile.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md") do (
   if not exist %%F (
     echo ERROR: Required file missing: %%~F
     exit /b 1

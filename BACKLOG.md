@@ -50,6 +50,9 @@ license: MIT
 - Improve post-interview reviews and next-round preparation.
 - Evaluate whether cover-letter work becomes a separate skill.
 - Add reusable behavioral test scenarios and expected outcomes.
+- Support retrospective import of historical opportunities and interviews while
+  preserving the distinction between sourced facts, reconstructed information
+  and uncertain chronology.
 
 ## Professional profile
 
@@ -117,4 +120,3 @@ license: MIT
 - Portfolio and LinkedIn assistance.
 - Certification planning and skills-gap analysis.
 - Optional privacy-conscious integrations with external job-search tools.
-

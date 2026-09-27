@@ -40,7 +40,7 @@ Le build crée localement dans `dist/` :
 5. Renseigner `config/workspace.yaml`.
 6. Déposer les documents autorisés dans `profile/sources/`.
 7. Demander au coach de constituer la première version de `profile/professional-profile.md`.
-8. Tester une opportunité réelle dans `opportunities/`.
+8. Fournir au coach les sources d'une opportunité réelle et vérifier qu'il crée lui-même sa structure numérotée dans `opportunities/`.
 9. Changer de conversation entre deux sessions de coaching et vérifier que le coach reprend uniquement à partir du workspace et des fichiers `current-status.md`.
 10. Compléter `feedback/pilot-feedback.md` si vous acceptez de partager un retour anonymisé.
 

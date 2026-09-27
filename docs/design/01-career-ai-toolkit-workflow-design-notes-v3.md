@@ -171,7 +171,7 @@ Ce diagramme est une base de discussion, pas le modèle définitif.
 
 Chaque opportunité doit pouvoir conserver plusieurs entretiens / rounds dans leur ordre réel.
 
-Une convention de répertoire du type :
+Les entretiens sont regroupés sous `interviews/` et utilisent une convention de répertoire du type :
 
 ```text
 01-screening
@@ -440,10 +440,12 @@ Le workspace global peut découvrir les opportunités et lire leur status lorsqu
 Les répertoires d’opportunité devraient utiliser un préfixe séquentiel stable, par exemple :
 
 ```text
-01-company-role-a
-02-company-role-b
-03-company-role-c
+001-company-role-a
+002-company-role-b
+003-company-role-c
 ```
+
+La convention retenue utilise au moins trois chiffres pour couvrir un historique de carrière long. Le coach attribue toujours `max + 1`, sans combler les trous ni renuméroter les opportunités existantes.
 
 Cette convention facilite :
 
@@ -458,6 +460,8 @@ De la même façon, les entretiens d’une opportunité peuvent rester ordonnés
 02-manager
 03-technical
 ```
+
+Deux chiffres suffisent pour les entretiens d’une même opportunité. Les numéros restent stables et les informations métier importantes existent également dans `opportunity.md` et `interview.md`.
 
 ## 5.6 Indépendance des opportunités
 
@@ -627,16 +631,21 @@ Ces fichiers :
 
 Lors de l’import ou de la mise à jour d’une opportunité, leur contenu utile devrait être converti en une représentation Markdown exploitable par les skills.
 
-Exemple conceptuel :
+Structure retenue :
 
 ```text
-opportunity/
-    sources/
-        original-job-description.pdf
+001-organization-role/
+    current-status.md
     opportunity.md
+    analysis.md                        # à partir de l'analyse de l'opportunité
+    sources/                         # seulement si des originaux sont conservés
+        original-job-description.pdf
+    interviews/                      # à partir du premier entretien connu
+        01-screening/
+            interview.md
 ```
 
-Le nom exact et la localisation sont à adapter.
+Le coach crée cette structure progressivement. Il ne demande pas au candidat de créer les répertoires et ne génère pas à l’avance des préparations, simulations ou comptes rendus vides.
 
 ## 9.3 Source originale versus représentation de travail
 
@@ -1024,16 +1033,22 @@ Le toolkit doit permettre au candidat de construire progressivement un **dossier
 Chaque opportunité doit conserver sa propre histoire :
 
 ```text
-Opportunity
-    -> interview 01
-        -> simulations 01..n
-        -> real interview
-        -> review
-    -> interview 02
-        -> simulations 01..n
-        -> real interview
-        -> review
-    -> ...
+001-organization-role/
+    -> opportunity.md
+    -> current-status.md
+    -> analysis.md
+    -> interviews/
+        -> 01-screening/
+            -> interview.md
+            -> simulations/01..n
+            -> actual/
+                -> review.md
+        -> 02-technical/
+            -> interview.md
+            -> simulations/01..n
+            -> actual/
+                -> review.md
+        -> ...
 ```
 
 Le coach doit pouvoir revenir sur une opportunité des jours plus tard, comprendre immédiatement où elle en est, puis poursuivre le travail sans dépendre d’une session antérieure.
