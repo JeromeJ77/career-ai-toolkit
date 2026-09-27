@@ -1,4 +1,4 @@
-# v0.2 developer test plan
+# v0.3 developer test plan
 
 ## Build
 
@@ -17,6 +17,8 @@
 
 - Search the repository for real names, employer-specific content, personal email addresses and phone numbers.
 - Confirm all example data is explicitly fictional.
+- Confirm the fictional end-to-end example follows the canonical v0.3
+  opportunity, interview, simulation and actual-interview structure.
 - Confirm `dist/` and `build/` are ignored.
 
 ## Standalone coach

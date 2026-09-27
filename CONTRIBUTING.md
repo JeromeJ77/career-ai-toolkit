@@ -1,6 +1,6 @@
 # Contributing
 
-Version 0.2 is a pilot. Keep contributions small, testable, and aligned with validated user needs.
+Version 0.3 is a pilot. Keep contributions small, testable, and aligned with validated user needs.
 
 1. Read `AGENTS.md`, `BACKLOG.md`, and `docs/test-plan.md`.
 2. Never use real candidate data in examples or tests.

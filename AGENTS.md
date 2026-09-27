@@ -10,7 +10,7 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - Treat `workspace/` as a distributable generic workspace template, not as a personal workspace.
 - Treat `examples/` as synthetic data only.
 - Keep French-first pilot usability while maintaining simple English technical paths and metadata.
-- Refer to `BACKLOG.md` before adding out-of-scope v0.2 features.
+- Refer to `BACKLOG.md` before adding out-of-scope v0.3 features.
 - Update `CHANGELOG.md` for user-visible changes.
 - Run the checks in `docs/test-plan.md` before preparing a release.
 

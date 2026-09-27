@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Experimental v0.2 toolkit for AI-assisted career management, job applications and interview preparation.
+> Experimental v0.3 toolkit for AI-assisted career management, job applications and interview preparation.
 
 **French-first pilot:** the most complete getting-started guide is [README.fr.md](README.fr.md).
 
@@ -27,7 +27,7 @@ The command creates versioned release artifacts under the untracked `dist/` dire
 
 ## Project status
 
-Version 0.2 is a pilot. The current priority is validating the coaching workflow with real users before adding a CV generator, installers, automatic updates, or a full document-rendering pipeline.
+Version 0.3 is a pilot. The current priority is validating the redesigned coaching workflow with real users before adding a CV generator, installers, automatic updates, or a full document-rendering pipeline.
 
 ## Documentation
 

@@ -1,7 +1,7 @@
 # Use Cases
 
 Career AI Toolkit is organized around a candidate who wants to keep ownership
-of career information while using AI for structured preparation. Version 0.2
+of career information while using AI for structured preparation. Version 0.3
 focuses on the interview coach and local workspace pilot; CV generation is a
 planned skill and is represented here as part of the intended workflow.
 
@@ -112,7 +112,7 @@ conversation can continue without relying on previous conversation history.
 
 ## Use Case Notes
 
-| Use case | Current v0.2 support | Main output |
+| Use case | Current v0.3 support | Main output |
 | --- | --- | --- |
 | Create private workspace | Supported through the built ZIP | Extracted local workspace with root `current-status.md` |
 | Initialize professional profile | Supported through coach instructions and templates | `profile/professional-profile.md` |

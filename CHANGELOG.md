@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-09-27
+
 ### Changed
 
 - Included Markdown-based AI skill sources in GitHub language statistics.
@@ -15,6 +17,8 @@
   migrations and reasoning metadata until after the real end-to-end test.
 - Expanded the pilot protocol and feedback form around coach-managed structure,
   cross-conversation resume behavior and evidence-based debriefing.
+- Migrated the fully fictional example to the canonical v0.3 opportunity,
+  interview, simulation and actual-interview structure.
 
 ### Added
 

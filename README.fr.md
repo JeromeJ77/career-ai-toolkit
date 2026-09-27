@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Toolkit expérimental v0.2 pour structurer son dossier professionnel, ses candidatures et sa préparation aux entretiens avec l'IA.
+> Toolkit expérimental v0.3 pour structurer son dossier professionnel, ses candidatures et sa préparation aux entretiens avec l'IA.
 
 ## Objectif
 
@@ -25,9 +25,9 @@ build.bat
 
 Le build crée localement dans `dist/` :
 
-- `interview-coach-standalone-v0.2.0.md` ;
-- `interview-coach-pilot-feedback-v0.2.0.md` ;
-- `career-ai-workspace-v0.2.0.zip`.
+- `interview-coach-standalone-v0.3.0.md` ;
+- `interview-coach-pilot-feedback-v0.3.0.md` ;
+- `career-ai-workspace-v0.3.0.zip`.
 
 `dist/` n'est pas versionné. Les fichiers peuvent être ajoutés manuellement aux assets d'une release GitHub.
 
@@ -46,7 +46,7 @@ Le build crée localement dans `dist/` :
 
 ## Périmètre actuel du projet
 
-La v0.2 privilégie le coach d'entretien, le dossier professionnel et la validation du workflow. Le générateur de CV, l'installation automatisée, les mises à jour non destructives et le rendu PDF portable figurent dans [BACKLOG.md](BACKLOG.md).
+La v0.3 privilégie le coach d'entretien, le dossier professionnel et la validation du workflow redesigné. Le générateur de CV, l'installation automatisée, les mises à jour non destructives et le rendu PDF portable figurent dans [BACKLOG.md](BACKLOG.md).
 
 ## Organisation du workspace
 

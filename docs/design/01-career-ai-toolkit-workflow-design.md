@@ -2,7 +2,7 @@
 
 ## Statut
 
-Ce document est la référence de conception du workspace et du coach d'entretien pour le pilote v0.2.
+Ce document est la référence de conception du workspace et du coach d'entretien pour le pilote v0.3.
 
 Les instructions, modèles et documentations du repository doivent rester cohérents avec cette référence. Lorsqu'un test réel révèle un écart utile, la décision retenue doit être reportée ici avant ou avec sa mise en œuvre.
 

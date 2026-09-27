@@ -48,7 +48,7 @@ type: software
 authors:
   - family-names: Jurbert
     given-names: Jérôme
-version: 0.2.0
+version: 0.3.0
 date-released: 2026-09-27
 license: MIT
 ````
