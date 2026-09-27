@@ -57,3 +57,8 @@ and makes the next action explicit before ending a productive session.
 During a simulation, status maintenance must not interrupt the role-play. The
 assistant checkpoints beforehand when needed, captures the resulting artifacts
 afterward, and then updates the opportunity status.
+
+A simulation debrief may happen immediately or in a later conversation. In
+both cases it reads the selected simulation's persistent artifacts, records its
+evidence and limitations in `debrief.md`, and must not depend on hidden chat
+history. Candidate notes can support a debrief when no transcript exists.

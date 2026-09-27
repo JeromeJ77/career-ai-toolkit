@@ -62,6 +62,7 @@ opportunities/
 - Generate `preparation.md` from `interview-preparation-sheet.template.md`.
 - Number simulations independently within a round using at least two digits and `max + 1`. Never overwrite or renumber a prior simulation.
 - Keep `transcript.md` factual. Put interpretation and coaching feedback in `debrief.md`.
+- Generate a simulation's `debrief.md` from `../assets/simulation-debrief.template.md`.
 - A round has at most one `actual/` directory. A transcript is optional; candidate notes are sufficient for `review.md`.
 - Generate `actual/review.md` from `interview-feedback.template.md` when reviewing the real interview.
 - Reference created artifacts from the opportunity status instead of copying their full contents into it.

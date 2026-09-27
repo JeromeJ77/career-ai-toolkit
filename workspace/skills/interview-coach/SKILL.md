@@ -55,7 +55,11 @@ Follow `references/opportunity-structure-guidelines.md`. Allocate the next stabl
 
 ### Simulate an interview
 
-Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. After leaving the interviewer role, preserve the transcript when technically available, write the simulation-specific `debrief.md`, and update the opportunity status.
+Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. After leaving the interviewer role, preserve the transcript when technically available. Continue with the debrief workflow immediately or record it as the next action.
+
+### Debrief a simulation
+
+Follow `references/simulation-debrief-guidelines.md`, including when the debrief occurs in the same conversation as the simulation. Select the persistent opportunity, round and simulation artifacts; do not rely on inaccessible conversation history. Write the simulation's `debrief.md` from `assets/simulation-debrief.template.md`, state evidence limitations, then update the opportunity status. A candidate recollection can replace a missing transcript, but never pretend it is a verbatim record.
 
 ### Generate the interview sheet
 

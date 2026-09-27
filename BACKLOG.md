@@ -12,6 +12,16 @@ This backlog preserves ideas discussed during the design of Career AI Toolkit. I
 - Compare French and English coaching workflows.
 - Record friction, redundant questions, misunderstandings and missing guidance.
 
+## Immediately after the end-to-end test
+
+- Define a deterministic workspace manifest that distinguishes toolkit version,
+  workspace schema version and last applied migration.
+- Design non-destructive, sequential and resumable workspace migrations.
+- Implement one testable migration before distributing automatic workspace
+  updates or widening the beta.
+- Decide how provider-agnostic reasoning recommendations should be represented
+  in skills based on observed pilot needs.
+
 ## Standalone interview coach in English
 
 - Create and maintain an English standalone version after the French
@@ -93,7 +103,8 @@ license: MIT
 
 - Evaluate a Python CLI and pipx distribution.
 - Add workspace health checks only if needed.
-- Design non-destructive toolkit updates and compatibility metadata.
+- Design non-destructive toolkit updates using the post-test manifest and
+  migration decisions.
 - Reconsider a managed `_core/` directory if repeated updates justify it.
 - Preserve personal data during every update or migration.
 

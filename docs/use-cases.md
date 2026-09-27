@@ -119,7 +119,7 @@ conversation can continue without relying on previous conversation history.
 | Generate CV | Planned; independent from opportunity work and available after profile setup | `cv/*.md`, later HTML/PDF |
 | Create and prepare an opportunity | Supported by the interview coach | Numbered opportunity with `opportunity.md`, `current-status.md`, optional original sources and separate `analysis.md` |
 | Create an interview round | Supported by the interview coach | `interviews/NN-type/interview.md` and progressive round artifacts |
-| Simulate and debrief interviews | Supported by the interview coach | One or more simulation/debrief loops per interview round |
+| Simulate and debrief interviews | Supported by the interview coach, including debrief in a later conversation | One persistent transcript/debrief pair per simulation when a transcript is available; evidence-limited debrief otherwise |
 | Review a real interview | Supported by the interview coach | Post-interview learnings and next-round actions |
 | Update professional profile | Supported as a reviewed proposal | Candidate-approved profile changes |
 | Share pilot feedback | Supported through feedback template | Sanitized product feedback |
@@ -194,3 +194,7 @@ The loop matters: interview preparation should improve the opportunity files
 first. Real-interview review can then feed the next round for the same
 opportunity, and durable learnings should update the professional profile only
 when the candidate validates that they are reusable beyond one application.
+
+A simulation debrief is independently restartable: a new conversation can
+select the saved simulation, read its persistent evidence and write or refine
+its `debrief.md` without access to the role-play conversation.

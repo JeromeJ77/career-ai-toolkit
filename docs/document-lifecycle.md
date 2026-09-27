@@ -72,7 +72,11 @@ sequenceDiagram
         Assistant->>Opportunity: Create next numbered interview and metadata
         Candidate->>Assistant: Prepare the round
         Candidate->>Assistant: Run one or more simulations or targeted drills
-        Assistant->>Opportunity: Write feedback and next steps
+        Assistant->>Opportunity: Persist reliable transcript when available
+        opt Same or later conversation
+            Candidate->>Assistant: Debrief the selected simulation
+            Assistant->>Opportunity: Read persistent evidence and write debrief
+        end
         Candidate->>Assistant: Improve answers and preparation as needed
         Assistant->>Opportunity: Update preparation material
         Candidate->>Assistant: Generate final preparation sheet for this round

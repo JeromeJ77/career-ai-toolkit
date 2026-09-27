@@ -100,13 +100,15 @@ career-ai-workspace/
 |       |   |-- opportunity.template.md
 |       |   |-- opportunity-analysis.template.md
 |       |   |-- opportunity-current-status.template.md
+|       |   |-- simulation-debrief.template.md
 |       |   `-- professional-profile.template.md
 |       `-- references/
 |           |-- interview-preparation-sheet-guidelines.md
 |           |-- interview-simulation-guidelines.md
 |           |-- opportunity-structure-guidelines.md
 |           |-- professional-profile-guidelines.md
-|           `-- profile-update-guidelines.md
+|           |-- profile-update-guidelines.md
+|           `-- simulation-debrief-guidelines.md
 |-- archives/
 |   `-- README.md
 `-- feedback/
@@ -163,6 +165,7 @@ business meaning independently from directory names.
 
 ## Related documentation
 
+- [Workflow design reference](design/01-career-ai-toolkit-workflow-design.md)
 - [Use cases](use-cases.md)
 - [Document lifecycle](document-lifecycle.md)
 - [Workspace mode](workspace-mode.md)

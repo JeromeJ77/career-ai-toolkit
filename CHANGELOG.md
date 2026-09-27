@@ -10,6 +10,11 @@
   opportunity.
 - Made the coach responsible for creating and progressively maintaining
   opportunity, interview, simulation and actual-interview artifacts.
+- Replaced the iterative workflow design notes with a canonical design
+  reference and definitive Mermaid domain model; deferred compatibility,
+  migrations and reasoning metadata until after the real end-to-end test.
+- Expanded the pilot protocol and feedback form around coach-managed structure,
+  cross-conversation resume behavior and evidence-based debriefing.
 
 ### Added
 
@@ -20,6 +25,8 @@
   interview numbering and source-preservation rules.
 - Documented the complete workspace tree, distinguishing distributed template
   files from artifacts created progressively by the coach.
+- Added an independent simulation-debrief workflow and template that work from
+  persistent evidence in a later conversation and disclose missing evidence.
 
 ## [0.2.0]
 

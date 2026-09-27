@@ -63,6 +63,14 @@
 - For the same opportunity, run at least two simulation/debrief/improvement
   loops; confirm `simulations/01/` and `simulations/02/` remain distinct, then
   prepare a follow-up interview round.
+- End one conversation after persisting a simulation transcript. In a new
+  conversation, request its debrief and confirm the coach selects the correct
+  opportunity, round and simulation using only workspace artifacts.
+- Repeat an independent debrief without a transcript using candidate notes;
+  confirm `debrief.md` identifies its sources and limitations and does not
+  invent exact wording or chronology.
+- Confirm each simulation debrief separates observations from interpretation,
+  limits priorities to one through three, and updates the opportunity status.
 - Confirm an actual-interview review works from candidate notes without
   requiring a transcript.
 - Start a new conversation for a later coaching session and confirm work can be

@@ -26,11 +26,22 @@
 - Les messages stratégiques proposés étaient-ils utiles et ajustables ?
 - Le coach vous a-t-il aidé à trouver vos propres exemples ?
 
+## Organisation et reprise du workspace
+
+- Le coach a-t-il créé l'opportunité et les rounds sans manipulation manuelle inutile ?
+- L'arborescence et les noms de fichiers étaient-ils compréhensibles ?
+- Certains fichiers semblaient-ils inutiles, manquants ou créés trop tôt ?
+- Avez-vous pu reprendre dans une nouvelle conversation sans réexpliquer le contexte ?
+- Le point de reprise proposé depuis les fichiers `current-status.md` était-il correct ?
+
 ## Simulation et débriefing
 
 - La simulation semblait-elle réaliste ?
 - Les relances étaient-elles adaptées ?
 - Le débriefing était-il concret et priorisé ?
+- Avez-vous testé un debrief dans une nouvelle conversation ?
+- Les sources utilisées et les limites liées à une transcription ou à des notes manquantes étaient-elles claires ?
+- Le debrief a-t-il inventé ou supposé des éléments absents des fichiers persistants ?
 - Le ton était-il bienveillant mais suffisamment exigeant ?
 
 ## Fiche de préparation

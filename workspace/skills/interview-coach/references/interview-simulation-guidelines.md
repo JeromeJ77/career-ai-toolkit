@@ -9,7 +9,7 @@
 - Cover the role requirements and validated strategic messages.
 - End with candidate questions and answer cautiously when company facts are unknown.
 - Exit the interviewer role clearly.
-- Debrief with precise strengths, one to three priorities, answers to revisit, visible or missing strategic messages, candidate-question quality and one recommended next step.
 - After the role-play, write `transcript.md` when a reliable transcript is
-  technically available and write the simulation-specific `debrief.md`. Keep
-  event and interpretation separate, then update the opportunity status.
+  technically available. Keep it factual and do not mix coaching into it.
+- Continue with `simulation-debrief-guidelines.md` immediately or update the
+  opportunity status so the independent debrief is the explicit next action.
