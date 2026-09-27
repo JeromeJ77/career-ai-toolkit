@@ -5,7 +5,7 @@ flowchart TD
     sources["Original authorized sources"]
     profile["Professional profile<br/><i>personal source of truth</i>"]
     opportunity["Opportunity analysis and coaching"]
-    derived["Derived Markdown documents<br/>CV, cover letter, prep sheet"]
+    derived["Derived Markdown documents<br/>CV, cover letter, prep sheets"]
     render["HTML/PDF rendering<br/>when supported"]
     learnings["Post-interview learnings"]
     proposal["Validated professional-profile<br/>update proposal"]
@@ -23,6 +23,10 @@ flowchart TD
 Modify Markdown sources before regenerating derived output. Never add a new
 fact only to a CV, cover letter or interview sheet.
 
+An opportunity may contain several interview preparation sheets, typically one
+per interview round. Keep older sheets when they capture useful context for a
+specific round instead of overwriting them blindly.
+
 ## Candidate Workflow
 
 ```mermaid
@@ -39,18 +43,24 @@ sequenceDiagram
     Assistant->>Workspace: Read sources
     Assistant->>Profile: Draft structured profile
     Candidate->>Profile: Review and correct facts
-    Candidate->>Assistant: Ask for CV generation or refresh
-    Assistant->>Profile: Reuse validated profile facts
-    Assistant->>Workspace: Write derived CV Markdown
+    opt Any time after profile validation
+        Candidate->>Assistant: Ask for CV generation or refresh
+        Assistant->>Profile: Reuse validated profile facts
+        Assistant->>Workspace: Write derived CV Markdown
+    end
     Candidate->>Opportunity: Add job description and context
     Candidate->>Assistant: Prepare opportunity
-    Assistant->>Opportunity: Write analysis and preparation sheet
+    Assistant->>Opportunity: Write role analysis and proposed positioning
+    Candidate->>Assistant: Review strategic messages and positioning
+    Assistant->>Opportunity: Update validated opportunity preparation
     loop For each interview round
         Candidate->>Assistant: Prepare the round
         Candidate->>Assistant: Run one or more simulations or targeted drills
         Assistant->>Opportunity: Write feedback and next steps
         Candidate->>Assistant: Improve answers and preparation as needed
         Assistant->>Opportunity: Update preparation material
+        Candidate->>Assistant: Generate final preparation sheet for this round
+        Assistant->>Opportunity: Write one preparation sheet for this interview round
         Candidate->>Assistant: Debrief the real interview
         Assistant->>Opportunity: Capture learnings and next-round actions
     end

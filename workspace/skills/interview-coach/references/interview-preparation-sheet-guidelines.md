@@ -1,6 +1,8 @@
 # Interview preparation sheet guidelines
 
-Generate one progressive document, not separate short and long versions.
+Generate one progressive document per interview round, not separate short and
+long versions. If an opportunity has several rounds, keep each round's sheet
+as a distinct document unless the candidate explicitly asks to replace it.
 
 ## First page
 

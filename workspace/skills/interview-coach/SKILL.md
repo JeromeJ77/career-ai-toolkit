@@ -35,7 +35,12 @@ Follow `references/interview-simulation-guidelines.md`. Ask one question at a ti
 
 ### Generate the interview sheet
 
-Follow `references/interview-preparation-sheet-guidelines.md` and the asset template. The first page is autonomous and includes note space; subsequent pages add detail. Introduce no new facts.
+Follow `references/interview-preparation-sheet-guidelines.md` and the asset
+template after positioning, strategic messages and preparation material have
+been reviewed. Generate one sheet per interview round when the opportunity has
+several rounds; do not overwrite a prior round's useful sheet without explicit
+candidate agreement. The first page is autonomous and includes note space;
+subsequent pages add detail. Introduce no new facts.
 
 ### Reflect after the real interview
 

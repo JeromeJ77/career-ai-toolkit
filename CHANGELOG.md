@@ -6,6 +6,10 @@
 
 - Expanded documentation with Mermaid diagrams for architecture, document
   lifecycle, use cases, pilot workflow and per-opportunity conversation scope.
+- Clarified the opportunity workflow: CV generation is independent from
+  opportunity work, strategic positioning is reviewed before simulations, real
+  interviews are debriefed, and preparation sheets are kept per interview
+  round.
 - Refined minor wording and agreement details in the fictional Principal
   Architect example.
 
