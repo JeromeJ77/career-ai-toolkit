@@ -10,6 +10,16 @@ This is a private user workspace. Help the candidate maintain professional infor
 - `profile/sources/` contains original authorized source documents.
 - `cv/` and `opportunities/` contain derived or opportunity-specific documents.
 
+## Continuity between conversations
+
+- The workspace is the durable reference between conversations; conversation history is temporary session context.
+- Treat a conversation as a focused work session, not as the permanent container for an opportunity.
+- Read the root `current-status.md` before selecting or resuming a scope.
+- For opportunity work, read that opportunity's `current-status.md` before its other relevant files.
+- Keep the root status minimal and use each opportunity status for its own detailed working state.
+- Update the relevant status when the scope, workflow phase, important validated decisions, useful artifacts or next action changes.
+- Keep status files compact and action-oriented. Store detailed history in dedicated documents.
+
 ## Mandatory safety
 
 - Never invent or exaggerate a candidate fact.

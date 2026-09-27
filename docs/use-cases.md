@@ -92,26 +92,28 @@ The coach can analyze the role and propose positioning, but the strategic
 messages only become reusable preparation material after candidate review and
 validation.
 
-## Conversation Scope
+## Work Session Continuity
 
-Use one assistant conversation per opportunity whenever possible. This keeps
-the job description, positioning, interview rounds, simulations, debriefs and
-follow-up work in the same context without mixing them with another
-application.
+Use each assistant conversation as a focused, temporary work session. A session
+can initialize the profile, analyze an opportunity, prepare one interview,
+conduct a simulation or debrief an interview. It does not need to contain the
+whole lifecycle of an opportunity.
 
-If the same opportunity has several interview rounds, keep using the same
-conversation while the context is still manageable. Start a new conversation
-only when the thread becomes too long, and then point the assistant back to the
-opportunity folder and the latest preparation or feedback files.
+The workspace carries durable context between sessions. Its root
+`current-status.md` records only the latest scope and resumption point. Each
+opportunity's `current-status.md` records its own current phase, validated
+decisions, relevant artifacts and next action. The coach reads these files when
+a session starts and updates them at meaningful checkpoints, so a new
+conversation can continue without relying on previous conversation history.
 
 ## Use Case Notes
 
 | Use case | Current v0.2 support | Main output |
 | --- | --- | --- |
-| Create private workspace | Supported through the built ZIP | Extracted local workspace |
+| Create private workspace | Supported through the built ZIP | Extracted local workspace with root `current-status.md` |
 | Initialize professional profile | Supported through coach instructions and templates | `profile/professional-profile.md` |
 | Generate CV | Planned; independent from opportunity work and available after profile setup | `cv/*.md`, later HTML/PDF |
-| Create and prepare an opportunity | Supported by the interview coach | Opportunity folder with job description, analysis and one preparation sheet per interview round |
+| Create and prepare an opportunity | Supported by the interview coach | Opportunity folder with `current-status.md`, job description, analysis and one preparation sheet per interview round |
 | Simulate and debrief interviews | Supported by the interview coach | One or more simulation/debrief loops per interview round |
 | Review a real interview | Supported by the interview coach | Post-interview learnings and next-round actions |
 | Update professional profile | Supported as a reviewed proposal | Candidate-approved profile changes |

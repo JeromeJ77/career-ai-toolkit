@@ -38,10 +38,17 @@
 - Set the profile language in `config/workspace.yaml`.
 - Add sample authorized sources and initialize the profile.
 - Confirm profile changes are proposed before application.
+- Confirm the root `current-status.md` is read and remains a minimal routing
+  snapshot rather than an opportunity index.
 - Create one real opportunity and complete preparation, sheet generation,
   simulation and post-interview reflection.
+- Confirm the opportunity receives a `current-status.md` and that it is updated
+  after phase changes, important validations and new relevant artifacts.
 - For the same opportunity, run at least two simulation/debrief/improvement
   loops and prepare a follow-up interview round.
+- Start a new conversation for a later coaching session and confirm work can be
+  resumed from the workspace without prior conversation history.
+- Confirm status updates do not interrupt the interview simulation itself.
 - Confirm first-page sheet density and note area remain usable.
 - Confirm durable learnings are separated from opportunity-specific content.
 

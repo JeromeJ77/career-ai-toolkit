@@ -4,6 +4,8 @@
 flowchart TD
     sources["Original authorized sources"]
     profile["Professional profile<br/><i>personal source of truth</i>"]
+    workspaceStatus["Workspace status<br/><i>session routing</i>"]
+    opportunityStatus["Opportunity status<br/><i>current working state</i>"]
     opportunity["Opportunity analysis and coaching"]
     derived["Derived Markdown documents<br/>CV, cover letter, prep sheets"]
     render["HTML/PDF rendering<br/>when supported"]
@@ -11,7 +13,9 @@ flowchart TD
     proposal["Validated professional-profile<br/>update proposal"]
 
     sources --> profile
+    workspaceStatus -.-> opportunityStatus
     profile --> opportunity
+    opportunityStatus <--> opportunity
     profile --> derived
     opportunity --> derived
     derived --> render
@@ -26,6 +30,11 @@ fact only to a CV, cover letter or interview sheet.
 An opportunity may contain several interview preparation sheets, typically one
 per interview round. Keep older sheets when they capture useful context for a
 specific round instead of overwriting them blindly.
+
+Each conversation is a focused work session. At meaningful checkpoints, update
+the root status for session routing and the selected opportunity status for
+domain state. Keep detailed history in the existing profile and opportunity
+documents so status files remain compact and replaceable.
 
 ## Candidate Workflow
 

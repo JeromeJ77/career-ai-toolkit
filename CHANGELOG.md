@@ -5,6 +5,14 @@
 ### Changed
 
 - Included Markdown-based AI skill sources in GitHub language statistics.
+- Made the workspace the durable reference between focused coaching sessions,
+  replacing the previous recommendation to keep one conversation per
+  opportunity.
+
+### Added
+
+- Added a minimal root `current-status.md`, an opportunity status template and
+  explicit coach responsibilities for reading and maintaining both levels.
 
 ## [0.2.0]
 

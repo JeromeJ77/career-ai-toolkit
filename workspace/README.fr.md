@@ -13,10 +13,11 @@ Cet espace privé permet de constituer un dossier professionnel, préparer des o
 4. Ouvrez ce répertoire racine dans VS Code, Claude Code ou un autre agent local.
 5. Demandez : « Constitue une première version de mon dossier professionnel à partir des sources disponibles. Propose-la avant toute modification. »
 6. Relisez et validez `profile/professional-profile.md`.
-7. Pour une candidature, créez un dossier sous `opportunities/` ou demandez au coach de le faire.
+7. Pour une candidature, créez un dossier sous `opportunities/` ou demandez au coach de le faire. Le coach y initialise un `current-status.md`.
 8. Conservez les documents propres à l'offre dans ce dossier.
-9. Utilisez si possible une conversation d'assistant par opportunité, y compris pour les différents entretiens, simulations, débriefs et améliorations de préparation.
-10. Après l'entretien, faites un retour d'expérience et validez les enrichissements durables du profil.
+9. Utilisez chaque conversation comme une session de coaching ciblée et relativement courte. Le workspace et ses fichiers `current-status.md` portent la continuité entre les conversations.
+10. Au début d'une nouvelle session, indiquez son objectif. Pour reprendre, vous pouvez simplement demander : « Où en étions-nous ? » ; le coach relit alors l'état persistant du workspace.
+11. Après l'entretien, faites un retour d'expérience et validez les enrichissements durables du profil.
 
 ## Confidentialité
 
