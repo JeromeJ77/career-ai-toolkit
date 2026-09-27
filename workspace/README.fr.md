@@ -15,7 +15,8 @@ Cet espace privé permet de constituer un dossier professionnel, préparer des o
 6. Relisez et validez `profile/professional-profile.md`.
 7. Pour une candidature, créez un dossier sous `opportunities/` ou demandez au coach de le faire.
 8. Conservez les documents propres à l'offre dans ce dossier.
-9. Après l'entretien, faites un retour d'expérience et validez les enrichissements durables du profil.
+9. Utilisez si possible une conversation d'assistant par opportunité, y compris pour les différents entretiens, simulations, débriefs et améliorations de préparation.
+10. Après l'entretien, faites un retour d'expérience et validez les enrichissements durables du profil.
 
 ## Confidentialité
 

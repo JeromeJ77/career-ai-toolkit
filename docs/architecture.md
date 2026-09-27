@@ -9,3 +9,61 @@ Career AI Toolkit separates generic, publishable assets from private user data.
 - `dist/`: local, untracked build output.
 
 A user's extracted workspace must live outside this repository. The candidate's source of truth is `profile/professional-profile.md`; CVs and opportunity documents are derived views.
+
+## Repository boundaries
+
+```mermaid
+flowchart LR
+    repo["Toolkit repository<br/>public or shareable"]
+    dist["dist/<br/>local release artifacts"]
+    workspaceZip["career-ai-workspace ZIP"]
+    standalone["standalone coach Markdown"]
+    userWorkspace["User workspace<br/>private, outside this repository"]
+    aiTool["File-aware AI tool<br/>VS Code, Claude Code, etc."]
+
+    repo --> standalone
+    repo --> workspaceZip
+    repo --> dist
+    workspaceZip --> userWorkspace
+    aiTool <--> userWorkspace
+
+    classDef privateNode fill:#fff1f2,stroke:#be123c,color:#3f0a16;
+    classDef publicNode fill:#eef2ff,stroke:#4f46e5,color:#1e1b4b;
+    class userWorkspace privateNode;
+    class repo,dist,workspaceZip,standalone,aiTool publicNode;
+```
+
+The toolkit repository contains only reusable instructions, templates,
+documentation and fictional examples. Real resumes, notes, job descriptions,
+interview feedback and generated candidate documents belong only in the
+private user workspace.
+
+## Workspace document model
+
+```mermaid
+flowchart TD
+    sources["Authorized source documents<br/>CVs, certifications, notes, assessments"]
+    profile["profile/professional-profile.md<br/><i>candidate-owned source of truth</i>"]
+    cv["cv/<br/>derived CVs<br/><i>(dedicated skill planned)</i>"]
+    opportunity["opportunities/{company-role}/<br/><i>analysis, prep, simulation, debrief</i>"]
+    updates["Reviewed profile update proposals"]
+    feedback["feedback/<br/><i>pilot observations, sanitized before sharing</i>"]
+
+    sources ==> profile
+    profile ==> cv
+    profile ==> opportunity
+    opportunity --> updates
+    updates --> profile
+    opportunity -.-> feedback
+```
+
+The professional profile is the stable base. Derived documents may be edited
+for clarity and format, but new facts should be added to source documents or
+the professional profile before regenerated output depends on them.
+
+## Related documentation
+
+- [Use cases](use-cases.md)
+- [Document lifecycle](document-lifecycle.md)
+- [Workspace mode](workspace-mode.md)
+- [Professional profile](professional-profile.md)

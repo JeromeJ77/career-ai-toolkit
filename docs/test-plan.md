@@ -38,7 +38,10 @@
 - Set the profile language in `config/workspace.yaml`.
 - Add sample authorized sources and initialize the profile.
 - Confirm profile changes are proposed before application.
-- Create one real opportunity and complete preparation, simulation, sheet generation and post-interview reflection.
+- Create one real opportunity and complete preparation, sheet generation,
+  simulation and post-interview reflection.
+- For the same opportunity, run at least two simulation/debrief/improvement
+  loops and prepare a follow-up interview round.
 - Confirm first-page sheet density and note area remain usable.
 - Confirm durable learnings are separated from opportunity-specific content.
 

@@ -47,6 +47,13 @@ Le build crée localement dans `dist/` :
 
 La v0.1 privilégie le coach d'entretien, le dossier professionnel et la validation du workflow. Le générateur de CV, l'installation automatisée, les mises à jour non destructives et le rendu PDF portable figurent dans [BACKLOG.md](BACKLOG.md).
 
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Cas d'utilisation et parcours beta-testeur](docs/use-cases.md)
+- [Cycle de vie des documents](docs/document-lifecycle.md)
+- [Protocole de test pilote](docs/pilot-testing.md)
+
 ## Auteur
 
 Créé et maintenu par Jérôme Jurbert.

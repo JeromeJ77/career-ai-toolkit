@@ -29,6 +29,13 @@ The command creates versioned release artifacts under the untracked `dist/` dire
 
 Version 0.1 is a pilot. The current priority is validating the coaching workflow with real users before adding a CV generator, installers, automatic updates, or a full document-rendering pipeline.
 
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Use cases and beta-tester journey](docs/use-cases.md)
+- [Document lifecycle](docs/document-lifecycle.md)
+- [Pilot testing](docs/pilot-testing.md)
+
 ## Author
 
 Created and maintained by Jérôme Jurbert.
