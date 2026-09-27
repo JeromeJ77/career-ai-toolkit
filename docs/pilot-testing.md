@@ -1,4 +1,4 @@
-# v0.1 pilot protocol
+# v0.2 pilot protocol
 
 ## Goal
 
@@ -16,7 +16,7 @@ Determine whether the standalone coach and local workspace are useful, understan
 2. Provide only documents the participant is authorized to use.
 3. Initialize or provide a professional profile.
 4. Optionally generate or refresh a CV from the professional profile if the
-   participant needs one, noting that v0.1 has no dedicated CV-generation
+   participant needs one, noting that v0.2 has no dedicated CV-generation
    skill yet.
 5. Prepare a real opportunity independently from the CV step.
 6. Review and validate strategic messages and positioning.

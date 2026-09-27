@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.2.0]
+
 ### Changed
 
 - Expanded documentation with Mermaid diagrams for architecture, document

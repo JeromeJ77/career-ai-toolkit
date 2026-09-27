@@ -2,7 +2,7 @@
 
 This backlog preserves ideas discussed during the design of Career AI Toolkit. Items are not commitments; priorities will be driven by pilot feedback.
 
-## v0.1 pilot validation
+## Pilot validation
 
 - Validate the standalone coach with real users.
 - Validate the workspace with at least one complete real opportunity.
@@ -26,7 +26,7 @@ standalone/
 
 ## Option supplémentaire : CITATION.cff
 
-Pas indispensable pour la v0.1, mais pertinent si le projet devient public et réutilisé.
+Pas indispensable pour la version actuelle, mais pertinent si le projet devient public et réutilisé.
 
 Un fichier CITATION.cff à la racine permet d’indiquer de façon structurée comment créditer le projet. GitHub décrit ce format comme un fichier texte lisible par les humains et les machines afin que les utilisateurs sachent comment citer un logiciel.
 
@@ -38,8 +38,8 @@ type: software
 authors:
   - family-names: Jurbert
     given-names: Jérôme
-version: 0.1.0
-date-released: 2026-09-26
+version: 0.2.0
+date-released: 2026-09-27
 license: MIT
 ````
 
@@ -117,5 +117,4 @@ license: MIT
 - Portfolio and LinkedIn assistance.
 - Certification planning and skills-gap analysis.
 - Optional privacy-conscious integrations with external job-search tools.
-
 

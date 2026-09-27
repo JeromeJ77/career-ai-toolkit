@@ -21,4 +21,4 @@ Keep it autonomous and readable after rendering:
 
 Add alignment analysis, messages and evidence, career-story bank, motivations, honest gaps, sensitive answers, questions by interviewer type, research items and simulation learnings.
 
-Use bullets and short cues. Do not introduce information that was not provided and validated. Insert `<!-- PAGE BREAK -->` markers where useful. Markdown is the source; PDF rendering is optional in v0.1.
+Use bullets and short cues. Do not introduce information that was not provided and validated. Insert `<!-- PAGE BREAK -->` markers where useful. Markdown is the source; PDF rendering is optional in v0.2.

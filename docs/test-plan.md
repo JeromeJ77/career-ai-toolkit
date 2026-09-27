@@ -1,4 +1,4 @@
-# v0.1 developer test plan
+# v0.2 developer test plan
 
 ## Build
 

@@ -68,6 +68,6 @@ sequenceDiagram
     Candidate->>Profile: Accept, edit or reject updates
 ```
 
-Version 0.1 does not include a dedicated CV-generation skill yet. CV files are
+Version 0.2 does not include a dedicated CV-generation skill yet. CV files are
 still treated as derived documents, and any new durable fact should be added to
 the professional profile before it becomes part of a CV.
