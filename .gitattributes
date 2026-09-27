@@ -12,3 +12,7 @@
 *.jpg binary
 *.jpeg binary
 *.gif binary
+
+# Count AI skill sources in GitHub language statistics
+workspace/skills/**/*.md linguist-detectable
+standalone/*.md linguist-detectable

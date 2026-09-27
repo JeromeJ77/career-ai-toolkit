@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Included Markdown-based AI skill sources in GitHub language statistics.
+
 ## [0.2.0]
 
 ### Changed
