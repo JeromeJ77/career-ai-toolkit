@@ -2,10 +2,10 @@
 
 Fournissez au coach les documents ou informations disponibles et demandez-lui d'ajouter l'opportunité. Le coach crée et maintient l'arborescence ; vous n'avez pas à gérer manuellement les répertoires et fichiers.
 
-Les opportunités reçoivent un numéro stable d'au moins trois chiffres dans leur ordre de création, par exemple `001-organisation-poste`, `002-autre-organisation-poste`. Un numéro n'est jamais réutilisé et les répertoires existants ne sont pas renumérotés.
+Les opportunités reçoivent un numéro stable d'au moins trois chiffres dans leur ordre de création, par exemple `001-organization-role`, `002-other-organization-role`. Un numéro n'est jamais réutilisé et les répertoires existants ne sont pas renumérotés.
 
 ```text
-001-organisation-poste/
+001-organization-role/
 |-- current-status.md
 |-- opportunity.md
 |-- analysis.md                      # lorsque l'analyse commence

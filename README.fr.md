@@ -48,6 +48,27 @@ Le build crée localement dans `dist/` :
 
 La v0.2 privilégie le coach d'entretien, le dossier professionnel et la validation du workflow. Le générateur de CV, l'installation automatisée, les mises à jour non destructives et le rendu PDF portable figurent dans [BACKLOG.md](BACKLOG.md).
 
+## Organisation du workspace
+
+```text
+career-ai-workspace/
+|-- current-status.md                # dernier scope et point de reprise
+|-- config/                          # préférences du workspace
+|-- profile/                         # profil professionnel et sources
+|-- cv/                              # CV dérivés
+|-- opportunities/                   # opportunités créées par le coach
+|   `-- 001-organization-role/
+|       |-- opportunity.md           # représentation canonique de l'offre
+|       |-- analysis.md              # analyse et positionnement
+|       |-- current-status.md        # état courant de l'opportunité
+|       `-- interviews/              # rounds, simulations et entretien réel
+|-- skills/                          # workflows et modèles réutilisables
+|-- archives/
+`-- feedback/
+```
+
+L'[architecture détaillée](docs/architecture.md#workspace-tree) distingue les fichiers livrés dans le ZIP de ceux que le coach crée progressivement.
+
 ## Documentation
 
 - [Architecture](docs/architecture.md)

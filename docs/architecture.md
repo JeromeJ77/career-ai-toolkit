@@ -38,6 +38,87 @@ documentation and fictional examples. Real resumes, notes, job descriptions,
 interview feedback and generated candidate documents belong only in the
 private user workspace.
 
+## Workspace tree
+
+The distributed ZIP contains the reusable workspace skeleton. Entries marked
+as coach-created below appear progressively in a private user workspace; they
+are not pre-populated in the toolkit artifact.
+
+```text
+career-ai-workspace/
+|-- AGENTS.md
+|-- CLAUDE.md
+|-- README.md
+|-- README.fr.md
+|-- current-status.md
+|-- config/
+|   |-- README.md
+|   `-- workspace.yaml
+|-- profile/
+|   |-- README.md
+|   |-- professional-profile.md
+|   `-- sources/
+|       |-- README.md
+|       |-- external-references.md
+|       |-- certifications/
+|       |-- coaching-notes/
+|       |-- evaluations/
+|       |-- historical-resumes/
+|       |-- portfolios/
+|       |-- recommendations/
+|       `-- skills-assessments/
+|-- cv/
+|   `-- README.md
+|-- opportunities/
+|   |-- README.md
+|   `-- 001-organization-role/             # coach-created
+|       |-- current-status.md
+|       |-- opportunity.md
+|       |-- analysis.md                    # when analysis starts
+|       |-- sources/                       # when originals are retained
+|       `-- interviews/                    # from the first known round
+|           `-- 01-screening/
+|               |-- interview.md
+|               |-- preparation.md         # when generated
+|               |-- simulations/           # from the first simulation
+|               |   `-- 01/
+|               |       |-- transcript.md  # when available
+|               |       `-- debrief.md
+|               `-- actual/                # when the real interview is documented
+|                   |-- notes.md            # when available
+|                   |-- transcript.md       # optional
+|                   `-- review.md
+|-- skills/
+|   |-- README.md
+|   `-- interview-coach/
+|       |-- SKILL.md
+|       |-- assets/
+|       |   |-- cover-letter.template.md
+|       |   |-- interview.template.md
+|       |   |-- interview-feedback.template.md
+|       |   |-- interview-preparation-sheet.template.md
+|       |   |-- opportunity.template.md
+|       |   |-- opportunity-analysis.template.md
+|       |   |-- opportunity-current-status.template.md
+|       |   `-- professional-profile.template.md
+|       `-- references/
+|           |-- interview-preparation-sheet-guidelines.md
+|           |-- interview-simulation-guidelines.md
+|           |-- opportunity-structure-guidelines.md
+|           |-- professional-profile-guidelines.md
+|           `-- profile-update-guidelines.md
+|-- archives/
+|   `-- README.md
+`-- feedback/
+    |-- README.md
+    `-- pilot-feedback.md
+```
+
+Only `current-status.md`, `opportunity.md` and, once analysis starts,
+`analysis.md` are opportunity-level working files. Each interview owns its
+metadata, preparation, simulations and actual-interview artifacts. Optional or
+phase-specific directories are created only when needed.
+
 ## Workspace document model
 
 ```mermaid

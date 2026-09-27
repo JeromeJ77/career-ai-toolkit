@@ -18,6 +18,8 @@
 - Added canonical `opportunity.md`, separate `analysis.md` and round-level
   `interview.md` templates, stable three-digit opportunity numbering, two-digit
   interview numbering and source-preservation rules.
+- Documented the complete workspace tree, distinguishing distributed template
+  files from artifacts created progressively by the coach.
 
 ## [0.2.0]
 
