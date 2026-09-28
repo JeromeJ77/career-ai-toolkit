@@ -2,6 +2,11 @@
 
 This backlog preserves ideas discussed during the design of Career AI Toolkit. Items are not commitments; priorities will be driven by pilot feedback.
 
+## Priority ideas to review
+
+- Make the project's core coaching principle explicit throughout the documentation (already reflected in GitHub About): help candidates think, practice, grow, and take ownership of their professional story instead of merely generating guidance or interview answers.
+- Review the available simulation depths (short, medium, deep) and document how users can end a simulation early with a clear keyword, debrief it, and start another one in both standalone and workspace modes.
+
 ## Pilot validation
 
 - Validate the standalone coach with real users.
