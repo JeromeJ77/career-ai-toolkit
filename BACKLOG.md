@@ -4,6 +4,160 @@ This backlog preserves ideas discussed during the design of Career AI Toolkit. I
 
 Work that is committed or being prepared is tracked in [GitHub Issues](https://github.com/JeromeJ77/career-ai-toolkit/issues), prioritized on the project board and grouped by milestone. This file keeps the ideas that are not yet engaged; when an item is groomed, move it to an issue and remove it here.
 
+## New ideas (grooming necessary)
+
+### Installation, confidentialité et premier lancement
+
+- Préciser dans la documentation et à la première session de coaching qu'il faut
+  bien configurer son outil, surtout sur un compte personnel, pour assurer la
+  confidentialité des échanges et ne pas entraîner les modèles avec les
+  informations personnelles du dossier professionnel, des sources et des
+  séances.
+- Documenter le fait que la navigation web est désactivée par défaut dans le
+  workspace. Confirmer l'intention de conception, a priori le huis clos et la
+  traçabilité des sources d'information, puis la mettre noir sur blanc avant de
+  décider s'il faut changer ce comportement.
+
+### Phase initiale après installation
+
+- Créer un vrai use case incontournable après la première installation :
+  constituer une première version exploitable du dossier professionnel
+  (`professional profile`) avant de traiter une opportunité.
+- Prévoir un entretien initial avec le coach, si possible en vocal, car c'est
+  plus rapide et cela sert déjà de premier entraînement à un entretien. Le coach
+  doit avoir une liste de sujets précis à aborder, dont certains facultatifs :
+  historique, compétences, envies, besoins, contraintes, valeurs, priorités,
+  préférences et autres informations utiles.
+- Ne pas faire de debrief à ce stade, surtout en mode vocal. Le but est de
+  récolter le plus d'informations fiables possible pour constituer la v1 du
+  dossier professionnel.
+- Traiter cette phase comme un use case à part entière avant d'accepter de
+  travailler sur une offre. Sinon les résultats du coaching et de l'analyse des
+  offres d'emploi seraient biaisés, peu adaptés, voire médiocres, et l'outil
+  pourrait être perçu comme contreproductif avant même d'avoir travaillé avec
+  des données de qualité.
+- Poser les questions une par une, attendre la réponse, et indiquer où on en
+  est, par exemple `3/10`.
+- Évaluer la possibilité de demander des références publiques LinkedIn, GitHub,
+  CV ou PDF, puis de laisser le coach récupérer et extraire les informations.
+  Ce point entre en tension avec la navigation web désactivée par défaut :
+  clarifier le design attendu, par exemple option de configuration du workspace
+  à `false` par défaut, activation explicite ou autre flux d'import maîtrisé.
+- Vérifier si l'utilisateur peut donner un PDF et si le coach peut le classer
+  automatiquement dans le bon répertoire de sources. Un premier test avec
+  Claude dans VS Code laisse penser que ce n'est pas possible : confirmer le
+  comportement avec d'autres outils, notamment ChatGPT Desktop, et prévoir un
+  flux alternatif si nécessaire.
+- Demander à l'utilisateur de mettre tous les documents utiles dans
+  `profile/sources/`, puis faire systématiquement une conversion en Markdown
+  quand c'est pertinent.
+- Vérifier que toutes les informations utiles sont bien extraites des sources
+  pendant leur conversion en Markdown, puis les faire valider par l'utilisateur
+  avant de les intégrer au dossier professionnel.
+- Résultat attendu : le coach commence par cette étape obligée, puis ne propose
+  ni n'accepte de traiter une première opportunité que lorsqu'il dispose de
+  suffisamment de matière validée.
+
+### Versionnage et statut du dossier professionnel
+
+- Évaluer s'il faut versionner le dossier professionnel comme un livrable, par
+  exemple en `0.1` pendant l'initialisation puis en `1.0` lorsque le coach estime
+  avoir suffisamment d'informations pour traiter la première opportunité.
+- Définir un statut du dossier professionnel, à confirmer, par exemple
+  `empty`/`initial`, `draft`, `ready`. Ne pas retenir un état final comme
+  `complete` : le dossier continue d'évoluer au fil du parcours professionnel.
+  `ready` indiquerait seulement qu'il contient assez de matière validée pour
+  traiter des opportunités dans de bonnes conditions.
+- Ajouter un score de complétion en pourcentage pour rendre la maturité du
+  dossier visible et plus explicite.
+- Le coach devrait refuser gentiment de continuer vers le traitement d'une
+  opportunité tant que cette étape essentielle n'est pas complétée. Si
+  l'utilisateur insiste, le coach peut continuer, mais doit garder le statut du
+  dossier explicite et prévenir que la qualité sera dégradée. Tant que le
+  dossier n'est pas `ready`, rappeler cette mise en garde au début de chaque
+  nouvelle session de travail.
+
+### Arborescence, updates et cycle de vie du workspace
+
+- Séparer plus clairement les données utilisateur des skills du toolkit.
+- Tout ce qui serait sous une future zone `data/` ne devrait contenir que des
+  données utilisateur et des `README.md` locaux. Cette zone pourrait regrouper
+  `archives/`, `config/`, `cv/`, `opportunities/` et `profile/` ; confirmer si
+  `feedback/` doit également en faire partie.
+- Initialiser les fichiers obligatoires à partir de modèles conservés sous
+  `skills/assets/`, par exemple `professional-profile.md`,
+  `external-references.md` et `workspace.yaml`.
+- Ajouter au build une vérification explicite de cette séparation entre moteur
+  générique et données utilisateur.
+- Cette séparation doit permettre une mise à jour simple du toolkit en copiant
+  le contenu du nouveau ZIP dans le workspace, tout en préservant les données
+  personnelles et les artefacts de l'utilisateur.
+- Avant cette opération, demander dans la documentation d'installation de
+  vérifier `git status` afin de tracer la mise à jour et de permettre un
+  rollback facile. Ce point dépend du workflow Git décrit ci-dessous.
+- À la session suivante, détecter et signaler que la mise à jour a eu lieu. Si
+  Git est disponible, proposer après validation de l'utilisateur un commit
+  dédié, par exemple `chore: update Career AI Toolkit from v0.4.0 to v0.5.0`,
+  avant toute nouvelle séance de coaching.
+- Définir un mécanisme déterministe permettant de comparer la version du moteur
+  avec l'état des données et d'identifier les migrations nécessaires. Articuler
+  ce mécanisme avec le futur manifest et la stratégie de migration déjà présents
+  dans le backlog.
+
+### Sessions de coaching et changements de périmètre
+
+- Encourager des conversations ciblées sur un périmètre de travail cohérent afin
+  de limiter le bruit dans le contexte et de faciliter la reprise ultérieure.
+- Lorsque l'utilisateur passe manifestement à un autre périmètre, le coach doit
+  proposer, voire recommander explicitement, de démarrer une nouvelle
+  conversation. Exemples : passer d'une opportunité à une autre, ou quitter le
+  travail sur une opportunité pour une tâche transverse comme le CV.
+- Avant le changement de conversation, enregistrer sur disque les artefacts et
+  états courants du périmètre quitté, rendre sa prochaine action explicite et,
+  si Git est disponible, proposer le checkpoint ou commit correspondant avec
+  validation de l'utilisateur.
+- Donner à l'utilisateur une consigne de reprise concise pour la nouvelle
+  conversation et vérifier que le workspace contient tout le contexte durable
+  nécessaire. Ne pas imposer ce changement pour une demande courte qui reste
+  directement liée au périmètre courant.
+
+### Git et historique local
+
+- Encourager à versionner localement le workspace et proposer l'initialisation
+  Git quand c'est pertinent.
+- Si Git est présent, intégrer Git au workflow nominal ; sinon, ignorer les
+  comportements spécifiques à Git.
+- Si l'utilisateur quitte explicitement une conversation ou une session de
+  coaching avec une expression comme « au revoir », proposer un commit Git avec
+  validation de l'utilisateur et un message qui résume la session. Confirmer
+  les expressions de fin de session reconnues et les documenter dans le
+  glossaire.
+- Si une nouvelle conversation démarre avec un `git status` non clean, inviter
+  l'utilisateur à fermer proprement la session précédente. Si la session a été
+  perdue, aider à créer le checkpoint manquant avant de continuer. Ce mécanisme
+  doit assurer la traçabilité des modifications du dossier et de la progression
+  des sessions de coaching ; il pourra également faciliter les tests du toolkit.
+
+### Feedback d'entretiens réels et anonymisation
+
+- Anonymiser les résultats suite à un debrief d'entretien réel avant tout
+  partage ou réutilisation hors du workspace privé.
+- Définir où et comment stocker, organiser et valider les feedbacks
+  anonymisés afin qu'ils puissent être utilisés par le coach.
+- Évaluer si l'équipe pilote peut contribuer des feedbacks anonymisés par pull
+  request sur le projet GitHub, et définir comment vérifier automatiquement
+  l'anonymisation avant d'accepter ces contributions.
+
+### Explorations ultérieures
+
+- Évaluer si un RAG serait utile, notamment dans le cadre de feedbacks
+  d'entretiens réels anonymisés.
+- Identifier d'autres parallèles pertinents entre un coach dans la vraie vie et
+  le coach du toolkit, afin d'affiner le modèle comportemental et le workflow
+  utilisateur.
+- Envisager un skill dédié pour préparer un entretien technique, par exemple
+  avec un entraînement rapide en questions/réponses ou QCM.
+
 ## Pilot validation
 
 - Validate the standalone coach with real users.
