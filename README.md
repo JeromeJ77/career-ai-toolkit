@@ -31,6 +31,8 @@ Version 0.3 is a pilot. The current priority is validating the redesigned coachi
 
 ## Documentation
 
+- [French/English business glossary](docs/glossary.md)
+- [Design decision log](docs/design/decision-log.md)
 - [Architecture](docs/architecture.md)
 - [Use cases and beta-tester journey](docs/use-cases.md)
 - [Document lifecycle](docs/document-lifecycle.md)

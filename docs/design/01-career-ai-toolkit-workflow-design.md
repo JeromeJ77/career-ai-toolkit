@@ -415,3 +415,10 @@ L'import rétroactif d'opportunités et d'entretiens reste au backlog. Il devra 
 Le coach doit pouvoir revenir sur une opportunité plusieurs jours plus tard, comprendre immédiatement son état et poursuivre le travail dans une nouvelle conversation sans dépendre d'un historique de chat.
 
 Le candidat doit conserver le contrôle d'un dossier professionnel portable, auditable et durable, utilisable pour plusieurs opportunités simultanées.
+
+---
+
+# Documents connexes
+
+- [Journal des décisions de conception](decision-log.md)
+- [Glossaire métier](../glossary.md)

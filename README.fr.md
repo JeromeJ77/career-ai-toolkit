@@ -71,7 +71,9 @@ L'[architecture détaillée](docs/architecture.md#workspace-tree) distingue les 
 
 ## Documentation
 
+- [Glossaire métier français / anglais](docs/glossary.md)
 - [Référence de conception du workflow](docs/design/01-career-ai-toolkit-workflow-design.md)
+- [Journal des décisions de conception](docs/design/decision-log.md)
 - [Architecture](docs/architecture.md)
 - [Cas d'utilisation et parcours beta-testeur](docs/use-cases.md)
 - [Cycle de vie des documents](docs/document-lifecycle.md)

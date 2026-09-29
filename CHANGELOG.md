@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Added
+
+- Added a French/English business glossary covering the current domain model
+  and clearly separating provisional terms that still require grooming.
+- Added a design decision log to preserve the rationale and open questions
+  behind structural and behavioral choices.
+
 ## [0.3.0] - 2026-09-27
 
 ### Changed

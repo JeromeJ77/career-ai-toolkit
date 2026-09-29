@@ -165,7 +165,9 @@ business meaning independently from directory names.
 
 ## Related documentation
 
+- [French/English business glossary](glossary.md)
 - [Workflow design reference](design/01-career-ai-toolkit-workflow-design.md)
+- [Design decision log](design/decision-log.md)
 - [Use cases](use-cases.md)
 - [Document lifecycle](document-lifecycle.md)
 - [Workspace mode](workspace-mode.md)
