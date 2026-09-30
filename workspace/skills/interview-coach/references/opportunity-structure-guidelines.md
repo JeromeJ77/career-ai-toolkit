@@ -6,7 +6,7 @@ Use this structure for new opportunities. Preserve existing user content and do 
 
 The coach creates the opportunity directory; the candidate supplies the available source documents or context.
 
-1. Inspect the existing directories under `opportunities/`.
+1. Inspect the existing directories under `data/opportunities/`.
 2. Find the highest leading numeric identifier and allocate the next one. Use at least three digits: `001`, `002`, `003`. Never fill a gap or renumber an existing opportunity.
 3. Build a lowercase ASCII kebab-case slug from the organization and role, for example `001-acme-principal-architect`. Remove diacritics, replace punctuation and whitespace with single hyphens, and avoid adding facts that are not known.
 4. Create the opportunity directory.
@@ -39,7 +39,7 @@ If the round type is not yet clear enough for a stable directory name, ask for c
 Create only artifacts that the workflow has reached:
 
 ```text
-opportunities/
+data/opportunities/
 `-- 001-organization-role/
     |-- current-status.md
     |-- opportunity.md

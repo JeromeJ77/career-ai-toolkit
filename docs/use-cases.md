@@ -88,7 +88,7 @@ flowchart TD
 ```
 
 The candidate supplies available job documents or context. The coach creates a
-stable numbered directory under `opportunities/`, preserves authorized
+stable numbered directory under `data/opportunities/`, preserves authorized
 originals, produces the canonical `opportunity.md`, and initializes its status.
 It later creates numbered interview rounds and their artifacts progressively.
 A single round can need several simulation, debrief and improvement loops
@@ -116,11 +116,11 @@ conversation can continue without relying on previous conversation history.
 
 | Use case | Current v0.3 support | Main output |
 | --- | --- | --- |
-| Create private workspace | Supported through the built ZIP | Extracted local workspace with root `current-status.md` |
-| Initialize professional profile | Supported through coach instructions and templates | `profile/professional-profile.md` |
-| Generate CV | Planned; independent from opportunity work and available after profile setup | `cv/*.md`, later HTML/PDF |
+| Create private workspace | Supported through the built ZIP | Extracted local workspace with `data/current-status.md` created on first use |
+| Initialize professional profile | Supported through coach instructions and templates | `data/profile/professional-profile.md` |
+| Generate CV | Planned; independent from opportunity work and available after profile setup | `data/cv/*.md`, later HTML/PDF |
 | Create and prepare an opportunity | Supported by the interview coach | Numbered opportunity with `opportunity.md`, `current-status.md`, optional original sources and separate `analysis.md` |
-| Create an interview round | Supported by the interview coach | `interviews/NN-type/interview.md` and progressive round artifacts |
+| Create an interview round | Supported by the interview coach | `data/interviews/NN-type/interview.md` and progressive round artifacts |
 | Simulate and debrief interviews | Supported by the interview coach, including debrief in a later conversation | One persistent transcript/debrief pair per simulation when a transcript is available; evidence-limited debrief otherwise |
 | Review a real interview | Supported by the interview coach | Post-interview learnings and next-round actions |
 | Update professional profile | Supported as a reviewed proposal | Candidate-approved profile changes |

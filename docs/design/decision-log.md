@@ -77,7 +77,7 @@ workflow.
 
 ### Contexte
 
-`config/workspace.yaml` définit actuellement
+`data/config/workspace.yaml` définit actuellement
 `privacy.allow_external_web_search: false`. Des références externes peuvent
 néanmoins être utiles pour initialiser ou enrichir le dossier professionnel.
 
@@ -103,38 +103,70 @@ l'offre : il fournit le lien et le coach récupère les informations pertinentes
   sans laisser croire qu'une ressource inaccessible a été consultée.
 - L'import web automatique du dossier professionnel reste hors de la v0.4.0.
 
-## D-004 — Séparer le moteur des données sous un futur répertoire `data/`
+## D-004 — Séparer le moteur des données sous `data/`
 
-- **Statut** : 🔵 Envisagée
-- **Date** : 2026-09-29
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-09-29, précisée le 2026-09-30
 
 ### Contexte
 
-La structure actuelle mélange, à la racine du workspace, les composants
+La structure précédente mélangeait, à la racine du workspace, les composants
 génériques distribués par le toolkit et les emplacements qui reçoivent les
-données privées. Copier une nouvelle version du toolkit pourrait donc entrer en
+données privées. Copier une nouvelle version du toolkit pouvait donc entrer en
 conflit avec des fichiers utilisateur.
 
-### Orientation et intention
+### Décision et intention
 
-Regrouper les données utilisateur sous `data/` et conserver le moteur,
-notamment `skills/`, en dehors. Dans le ZIP distribué, les répertoires de données
-ne contiendraient que leurs `README.md`. Les fichiers de travail obligatoires
-seraient initialisés à partir des modèles du moteur lors de la première
-utilisation.
+Regrouper toutes les données utilisateur sous `data/` et conserver le moteur
+(`skills/`, instructions, README) en dehors. Le périmètre de `data/` comprend :
+`config/`, `profile/` (dossier professionnel et sources), `cv/`,
+`opportunities/`, `archives/`, `feedback/` et `current-status.md`.
 
-Cette séparation doit permettre une mise à jour initialement simple par copie
-du nouveau toolkit, sans écraser le dossier professionnel, les opportunités ni
-les autres artefacts privés.
+Dans le ZIP distribué, `data/` ne contient que des `README.md` : aucun fichier de
+travail initialisé. Les fichiers obligatoires (`config/workspace.yaml`,
+`profile/professional-profile.md`, `profile/sources/external-references.md`,
+`current-status.md`) sont créés lors de la première utilisation à partir des
+modèles conservés sous `skills/init-workspace/assets/`. Le modèle du
+questionnaire de retour pilote y vit aussi, en source unique ; le fichier
+`data/feedback/pilot-feedback.md` n'est créé qu'à la demande de l'utilisateur.
 
-### Points à confirmer
+Les modèles vivent sous `skills/init-workspace/assets/` (et non sous un
+`skills/assets/` partagé, comme envisagé au départ) : l'initialisation est un
+workflow à part entière, propriétaire de ses modèles, et le futur entretien
+d'initialisation pourra s'y rattacher. Les modèles de livrables (opportunité,
+entretien, débrief, etc.) restent sous `skills/interview-coach/assets/`.
 
-- Valider le périmètre exact de `data/`, notamment pour `config/` et `feedback/`.
+Le « premier lancement » n'est pas détecté par un marqueur : le coach crée
+chaque fichier obligatoire absent, sans jamais écraser un fichier existant.
+Une initialisation partielle est ainsi réparée à la session suivante. Une clé
+absente de `workspace.yaml` (par exemple ajoutée au modèle par une mise à jour)
+est ajoutée au fichier avec sa valeur par défaut, à sa place dans la structure
+du modèle, puis signalée à l'utilisateur ; les clés, valeurs et commentaires
+existants ne sont jamais modifiés. Une clé existante dont la valeur est invalide (ou un
+fichier mal formé) n'est jamais réécrite : le coach utilise le défaut du modèle
+pour la session, signale la clé, la valeur rencontrée et le défaut utilisé, et
+laisse l'utilisateur corriger. Constaté lors d'un test de déploiement : appliquer seulement le
+défaut en mémoire laissait le fichier opaque pour l'utilisateur. Question
+ouverte : proposer l'ajout et demander confirmation plutôt que l'écrire
+directement.
+
+`build.bat` vérifie la séparation : il échoue si `data/` contient autre chose que
+des `README.md` ou si le moteur contient un fichier de travail initialisé.
+
+### Conséquences
+
+- Une mise à jour peut copier le ZIP entier par-dessus un workspace existant
+  sans écraser de donnée utilisateur (procédure détaillée : issue #7).
+- Le doublon entre `workspace/feedback/pilot-feedback.md` et
+  `docs/pilot-feedback.template.md` disparaît.
+- Tous les chemins du workspace, des instructions et de la documentation
+  utilisent le préfixe `data/`.
+
+### Points restant ouverts
+
 - Définir le manifest, les versions de schéma et les migrations nécessaires.
-- Vérifier par le build qu'aucune donnée personnelle ou fichier initialisé ne se
-  retrouve dans la partie générique à remplacer.
 - Tester réellement la mise à jour et le rollback avant de la présenter comme
-  une garantie utilisateur.
+  une garantie utilisateur (issue #7).
 
 ## D-005 — Séparer sources, représentation canonique et analyse
 
@@ -322,6 +354,83 @@ nouvelle session.
 - Règle d'incrément des versions `0.x` : à chaque session qui modifie le dossier
   ou seulement à un jalon validé.
 - Le score de complétion en pourcentage est différé à la v0.5.0.
+
+## D-011 — Transcrire chaque source du dossier en Markdown
+
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-09-30
+
+### Contexte
+
+Lors d'un test de déploiement avec un collègue, le coach qui transcrivait chaque
+source en Markdown à côté de l'original donnait de bons résultats : les sessions
+suivantes n'avaient plus à rouvrir les PDF ou DOCX, et les informations étaient
+plus faciles à retrouver.
+
+### Décision et intention
+
+Étendre aux sources du dossier professionnel le principe de D-005 : l'original
+reste intact, sa représentation textuelle (`<même-nom>.md`, même répertoire) est
+fidèle, sans résumé ni interprétation, avec un en-tête de provenance et des
+passages illisibles signalés. Le coach s'appuie ensuite sur cette transcription.
+
+La transcription est faite directement, sans confirmation préalable. La mise à
+jour du dossier professionnel reste contrôlée (confirmé le 2026-09-30) : le coach
+propose les apports de la nouvelle source et ne les applique qu'après validation
+explicite, pour que l'utilisateur garde la maîtrise de son dossier.
+
+Une source très volumineuse fait exception à la transcription directe (confirmé
+le 2026-09-30) : le coach indique sa taille et demande confirmation avant de
+transcrire, en proposant de ne transcrire que les parties utiles.
+
+### Conséquences
+
+- Plus de fichiers dans `data/profile/sources/`, à côté des originaux.
+- La qualité de la transcription dépend de la capacité de lecture de l'agent ;
+  ses limites sont déclarées dans l'en-tête.
+
+### Points restant ouverts
+
+- Conduite à tenir quand l'original est modifié après sa transcription
+  (actuellement : signaler et proposer une nouvelle transcription datée).
+- Seuil à partir duquel une source est « très volumineuse » : laissé à
+  l'appréciation du coach (par exemple plusieurs dizaines de pages) ; à chiffrer
+  si les tests pilotes montrent un besoin.
+- Sources sensibles : faut-il aussi une confirmation avant transcription ?
+
+## D-012 — Définir une règle de langue pour les documents de `docs/`
+
+- **Statut** : 🔵 Envisagée
+- **Date** : 2026-09-30
+
+### Contexte
+
+`docs/` mélange les langues. Le glossaire, le journal des décisions et la
+référence de conception sont en français ; l'architecture, les cas d'usage, le
+mode workspace, la confidentialité, le plan de test et `CONTRIBUTING.md` sont en
+anglais. `docs/test-log.md` a été rédigé en français car c'est un fichier de
+travail. Il se lit avec `docs/test-plan.md`, qui est resté en anglais : le
+couple plan / journal n'est donc pas dans la même langue.
+
+### Orientation et intention
+
+Passer `docs/test-plan.md` en français, sans changement de contenu, dans un
+commit isolé. Profiter de ce changement pour fixer une règle écrite dans
+`AGENTS.md` plutôt que décider fichier par fichier, par exemple : documents de
+travail en français, documents de référence publics en anglais.
+
+### Points à discuter
+
+- Quels documents sont des « documents de travail » et lesquels sont des
+  références publiques ?
+- Faut-il maintenir des versions anglaises si le projet s'ouvre à des
+  contributeurs non francophones ?
+- Les références croisées depuis `AGENTS.md` et `CONTRIBUTING.md` (en anglais)
+  vers des documents en français sont-elles acceptables ?
+- Risque de traduction : préserver la précision des scénarios de test, par
+  exemple les mots-clés d'arrêt des simulations.
+
+Non urgent : à traiter après la livraison de l'issue #5.
 
 ## Évolution du journal
 

@@ -6,11 +6,17 @@ This is a private user workspace. Help the candidate maintain professional infor
 
 You are a coach, not an answer generator: help the candidate reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
 
+## Engine and user data
+
+- The engine (`skills/`, `AGENTS.md`, `CLAUDE.md`, READMEs) is generic and replaceable. All user data lives under `data/` and is never overwritten by the engine.
+- Before reading user data, follow `skills/init-workspace/SKILL.md`: create any missing mandatory file under `data/` from its template, without overwriting an existing file.
+- At session start, add any key missing from `data/config/workspace.yaml` with its template default value, without altering existing keys, and tell the candidate which keys were added. If an existing key has an invalid value or the file is malformed, do not rewrite it: use the template default for the session, tell the candidate which key, value and default are involved, and let them correct the file.
+
 ## Source of truth
 
-- `profile/professional-profile.md` is the candidate's consolidated source of truth.
-- `profile/sources/` contains original authorized source documents.
-- `cv/` and `opportunities/` contain derived or opportunity-specific documents.
+- `data/profile/professional-profile.md` is the candidate's consolidated source of truth.
+- `data/profile/sources/` contains original authorized source documents.
+- `data/cv/` and `data/opportunities/` contain derived or opportunity-specific documents.
 - Within an opportunity, `opportunity.md` is the canonical textual representation of the source material. Original authorized files under `sources/` remain unchanged.
 
 ## Opportunity structure
@@ -26,7 +32,7 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 - The workspace is the durable reference between conversations; conversation history is temporary session context.
 - Treat a conversation as a focused work session, not as the permanent container for an opportunity.
-- Read the root `current-status.md` before selecting or resuming a scope.
+- Read `data/current-status.md` before selecting or resuming a scope.
 - For opportunity work, read that opportunity's `current-status.md` before its other relevant files.
 - Keep the root status minimal and use each opportunity status for its own detailed working state.
 - Update the relevant status when the scope, workflow phase, important validated decisions, useful artifacts or next action changes.
@@ -35,7 +41,7 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 ## Mandatory safety
 
 - Never invent or exaggerate a candidate fact.
-- Never modify `profile/professional-profile.md` silently.
+- Never modify `data/profile/professional-profile.md` silently.
 - Present proposed additions, corrections, replacements and removals; obtain explicit validation before applying them.
 - Keep opportunity-specific reasoning in the opportunity folder unless the candidate validates it as durable.
 - Do not expose private data or upload it elsewhere without explicit instruction.
@@ -43,11 +49,11 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 ## Language
 
-Use the profile language configured in `config/workspace.yaml` for the professional profile. Deliverable languages may differ. Keep the profile manually readable by the candidate.
+Use the profile language configured in `data/config/workspace.yaml` for the professional profile. Deliverable languages may differ. Keep the profile manually readable by the candidate.
 
 ## Skills
 
-Read the relevant `SKILL.md` under `skills/` before running a specialized workflow.
+Read the relevant `SKILL.md` under `skills/` before running a specialized workflow. Run `init-workspace` first when a session starts.
 
 ## Document generation
 

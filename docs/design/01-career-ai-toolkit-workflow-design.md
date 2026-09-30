@@ -29,7 +29,7 @@ Toute étape importante doit pouvoir être reconstruite à partir des fichiers d
 
 ## 1.2 Contrôle du candidat
 
-`profile/professional-profile.md` est la source de vérité consolidée du profil professionnel.
+`data/profile/professional-profile.md` est la source de vérité consolidée du profil professionnel.
 
 - Le candidat valide les faits durables et réutilisables.
 - Le coach ne modifie jamais silencieusement le profil.
@@ -57,9 +57,9 @@ Le coach ne crée pas à l'avance une arborescence vide et ne demande pas au can
 | Entité | Représentation canonique | Responsabilité |
 |---|---|---|
 | Workspace | répertoire racine | Contient le profil, les opportunités, les skills et l'état de reprise global |
-| ProfessionalProfile | `profile/professional-profile.md` | Faits et apprentissages durables validés par le candidat |
-| WorkspaceStatus | `current-status.md` | Dernier scope, dernière tâche et point de reprise global |
-| Opportunity | `opportunities/NNN-organization-role/` | Domaine autonome d'une candidature |
+| ProfessionalProfile | `data/profile/professional-profile.md` | Faits et apprentissages durables validés par le candidat |
+| WorkspaceStatus | `data/current-status.md` | Dernier scope, dernière tâche et point de reprise global |
+| Opportunity | `data/opportunities/NNN-organization-role/` | Domaine autonome d'une candidature |
 | OpportunitySource | `opportunity.md` | Représentation textuelle canonique de l'offre et du contexte fourni |
 | OpportunityAnalysis | `analysis.md` | Adéquation, écarts, hypothèses, positionnement et messages stratégiques |
 | OpportunityStatus | `current-status.md` dans l'opportunité | Mémoire de travail compacte de l'opportunité |
@@ -166,7 +166,7 @@ Une transcription peut manquer. Un debrief ou une review reste possible à parti
 # 3. Arborescence canonique d'une opportunité
 
 ```text
-opportunities/
+data/opportunities/
 `-- 001-organization-role/
     |-- current-status.md
     |-- opportunity.md
@@ -261,7 +261,7 @@ Si le scope est explicite, le coach le sélectionne directement. S'il est ambigu
 
 ## 5.2 Status global
 
-Le `current-status.md` racine reste minimal :
+Le `data/current-status.md` reste minimal :
 
 - dernier scope ;
 - dernière tâche ;

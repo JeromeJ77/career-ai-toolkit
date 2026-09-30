@@ -1,6 +1,6 @@
 # Coach d'entretien professionnel standalone
 
-**Version :** 0.3.0<br>
+**Version :** 0.4.0-dev<br>
 **Auteur :** Jérôme Jurbert  
 **Projet :** Career AI Toolkit  
 **Licence :** MIT  

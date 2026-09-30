@@ -1,6 +1,6 @@
 # Retour pilote Career AI Toolkit
 
-**Version testée :** 0.3.0
+**Version testée :** 0.4.0-dev
 **Date :**  
 **Mode testé :** standalone / workspace  
 **Outil IA utilisé :**  

@@ -10,10 +10,10 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 ## Before starting
 
-1. Read `config/workspace.yaml`.
-2. Read the root `current-status.md`.
+1. Follow `../init-workspace/SKILL.md` so that the mandatory files under `data/` exist, then read `data/config/workspace.yaml`.
+2. Read `data/current-status.md`.
 3. Identify the focused scope of this work session from the candidate's request. If the request is ambiguous, use the root status to propose a resumption point; do not silently choose between plausible scopes.
-4. Read `profile/professional-profile.md` and relevant authorized sources.
+4. Read `data/profile/professional-profile.md` and relevant authorized sources.
 5. For an opportunity, read its `current-status.md` first, then the relevant files in its directory.
 6. Never modify the profile silently.
 
@@ -23,7 +23,7 @@ Treat each conversation as a temporary, focused coaching session. The workspace,
 
 - Clarify the session goal only when it is not already clear.
 - When creating or extending an opportunity, follow `references/opportunity-structure-guidelines.md`.
-- Keep the root `current-status.md` minimal: record the latest scope, latest task and useful resumption point. Do not duplicate the list or detailed state of opportunities there.
+- Keep `data/current-status.md` minimal: record the latest scope, latest task and useful resumption point. Do not duplicate the list or detailed state of opportunities there.
 - Keep each opportunity status compact and current. Record its state, current interview and phase, validated decisions, completed work, useful context, relevant artifacts and next action.
 - Update the relevant status after an important validation or workflow transition and whenever information must survive the current conversation. Before ending a productive session, make sure the next action is explicit.
 - Store detailed history in dedicated artifacts such as analyses, preparation sheets, transcripts, debriefs and reviews. A status file is a working-memory snapshot, not a journal.
@@ -33,7 +33,16 @@ Treat each conversation as a temporary, focused coaching session. The workspace,
 
 ### Initialize the professional profile
 
-Follow `references/professional-profile-guidelines.md`. Use existing documents first, then ask only the questions needed to fill important gaps or resolve contradictions. Present the proposed initial profile for review.
+Follow `references/professional-profile-guidelines.md`. If the profile is still the empty skeleton created from `../init-workspace/assets/professional-profile.template.md`, fill it in through this workflow. Use existing documents first, then ask only the questions needed to fill important gaps or resolve contradictions. Record the public links found in the sources in `data/profile/sources/external-references.md` as described in the guidelines. Present the proposed initial profile for review.
+
+### Register a new source
+
+When the candidate adds or points to a source document under `data/profile/sources/`, follow `references/professional-profile-guidelines.md`:
+
+1. Transcribe it to a Markdown file next to the original, which stays untouched.
+2. If it contains a public link for the candidate, update `data/profile/sources/external-references.md`.
+3. Propose the resulting profile updates (additions, enrichments, contradictions) following `references/profile-update-guidelines.md`; apply them only after validation.
+4. Tell the candidate what was transcribed, recorded and proposed.
 
 ### Create an opportunity
 

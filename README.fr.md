@@ -27,9 +27,11 @@ build.bat
 
 Le build crée localement dans `dist/` :
 
-- `interview-coach-standalone-v0.3.0.md` ;
-- `interview-coach-pilot-feedback-v0.3.0.md` ;
-- `career-ai-workspace-v0.3.0.zip`.
+- `interview-coach-standalone-v<version>.md` ;
+- `interview-coach-pilot-feedback-v<version>.md` ;
+- `career-ai-workspace-v<version>.zip`.
+
+`<version>` est le contenu du fichier `VERSION` (par exemple `0.4.0-dev` pendant le développement).
 
 `dist/` n'est pas versionné. Les fichiers peuvent être ajoutés manuellement aux assets d'une release GitHub.
 
@@ -39,12 +41,12 @@ Le build crée localement dans `dist/` :
 2. Copier le ZIP sur la machine personnelle utilisée pour la recherche d'emploi.
 3. Extraire le ZIP hors du dépôt Git du toolkit.
 4. Ouvrir le répertoire extrait dans l'outil IA local choisi.
-5. Renseigner `config/workspace.yaml`.
-6. Déposer les documents autorisés dans `profile/sources/`.
-7. Demander au coach de constituer la première version de `profile/professional-profile.md`.
-8. Fournir au coach les sources d'une opportunité réelle et vérifier qu'il crée lui-même sa structure numérotée dans `opportunities/`.
+5. Vérifier qu'au premier lancement le coach crée les fichiers obligatoires manquants sous `data/` sans rien écraser, puis renseigner `data/config/workspace.yaml`.
+6. Déposer les documents autorisés dans `data/profile/sources/`.
+7. Demander au coach de constituer la première version de `data/profile/professional-profile.md`.
+8. Fournir au coach les sources d'une opportunité réelle et vérifier qu'il crée lui-même sa structure numérotée dans `data/opportunities/`.
 9. Changer de conversation entre deux sessions de coaching et vérifier que le coach reprend uniquement à partir du workspace et des fichiers `current-status.md`.
-10. Compléter `feedback/pilot-feedback.md` si vous acceptez de partager un retour anonymisé.
+10. Demander au coach de créer `data/feedback/pilot-feedback.md`, puis le compléter si vous acceptez de partager un retour anonymisé.
 
 ## Périmètre actuel du projet
 
@@ -54,19 +56,20 @@ La v0.3 privilégie le coach d'entretien, le dossier professionnel et la validat
 
 ```text
 career-ai-workspace/
-|-- current-status.md                # dernier scope et point de reprise
-|-- config/                          # préférences du workspace
-|-- profile/                         # profil professionnel et sources
-|-- cv/                              # CV dérivés
-|-- opportunities/                   # opportunités créées par le coach
-|   `-- 001-organization-role/
-|       |-- opportunity.md           # représentation canonique de l'offre
-|       |-- analysis.md              # analyse et positionnement
-|       |-- current-status.md        # état courant de l'opportunité
-|       `-- interviews/              # rounds, simulations et entretien réel
-|-- skills/                          # workflows et modèles réutilisables
-|-- archives/
-`-- feedback/
+|-- skills/                          # moteur : workflows et modèles réutilisables
+`-- data/                            # données utilisateur (que des README dans le ZIP)
+    |-- current-status.md            # dernier scope et point de reprise
+    |-- config/                      # préférences du workspace
+    |-- profile/                     # profil professionnel et sources
+    |-- cv/                          # CV dérivés
+    |-- opportunities/               # opportunités créées par le coach
+    |   `-- 001-organization-role/
+    |       |-- opportunity.md       # représentation canonique de l'offre
+    |       |-- analysis.md          # analyse et positionnement
+    |       |-- current-status.md    # état courant de l'opportunité
+    |       `-- interviews/          # rounds, simulations et entretien réel
+    |-- archives/
+    `-- feedback/                    # retour pilote facultatif
 ```
 
 L'[architecture détaillée](docs/architecture.md#workspace-tree) distingue les fichiers livrés dans le ZIP de ceux que le coach crée progressivement.

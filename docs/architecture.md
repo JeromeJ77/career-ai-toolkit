@@ -8,7 +8,7 @@ Career AI Toolkit separates generic, publishable assets from private user data.
 - `docs/`: product and pilot documentation.
 - `dist/`: local, untracked build output.
 
-A user's extracted workspace must live outside this repository. The candidate's source of truth is `profile/professional-profile.md`; CVs and opportunity documents are derived views. The workspace and its status files provide durable continuity between temporary coaching conversations.
+A user's extracted workspace must live outside this repository. The candidate's source of truth is `data/profile/professional-profile.md`; CVs and opportunity documents are derived views. The workspace and its status files provide durable continuity between temporary coaching conversations.
 
 ## Repository boundaries
 
@@ -40,7 +40,7 @@ private user workspace.
 
 ## Workspace tree
 
-The distributed ZIP contains the reusable workspace skeleton. Entries marked
+The distributed ZIP contains the engine and, under `data/`, only `README.md` files. Mandatory working files are created from `skills/init-workspace/assets/` on first use and never overwritten. Entries marked
 as coach-created below appear progressively in a private user workspace; they
 are not pre-populated in the toolkit artifact.
 
@@ -50,46 +50,16 @@ career-ai-workspace/
 |-- CLAUDE.md
 |-- README.md
 |-- README.fr.md
-|-- current-status.md
-|-- config/
+|-- skills/                                # engine: replaceable
 |   |-- README.md
-|   `-- workspace.yaml
-|-- profile/
-|   |-- README.md
-|   |-- professional-profile.md
-|   `-- sources/
-|       |-- README.md
-|       |-- external-references.md
-|       |-- certifications/
-|       |-- coaching-notes/
-|       |-- evaluations/
-|       |-- historical-resumes/
-|       |-- portfolios/
-|       |-- recommendations/
-|       `-- skills-assessments/
-|-- cv/
-|   `-- README.md
-|-- opportunities/
-|   |-- README.md
-|   `-- 001-organization-role/             # coach-created
-|       |-- current-status.md
-|       |-- opportunity.md
-|       |-- analysis.md                    # when analysis starts
-|       |-- sources/                       # when originals are retained
-|       `-- interviews/                    # from the first known round
-|           `-- 01-screening/
-|               |-- interview.md
-|               |-- preparation.md         # when generated
-|               |-- simulations/           # from the first simulation
-|               |   `-- 01/
-|               |       |-- transcript.md  # when available
-|               |       `-- debrief.md
-|               `-- actual/                # when the real interview is documented
-|                   |-- notes.md            # when available
-|                   |-- transcript.md       # optional
-|                   `-- review.md
-|-- skills/
-|   |-- README.md
+|   |-- init-workspace/
+|   |   |-- SKILL.md
+|   |   `-- assets/
+|   |       |-- current-status.template.md
+|   |       |-- external-references.template.md
+|   |       |-- pilot-feedback.template.md
+|   |       |-- professional-profile.template.md
+|   |       `-- workspace.template.yaml
 |   `-- interview-coach/
 |       |-- SKILL.md
 |       |-- assets/
@@ -100,8 +70,7 @@ career-ai-workspace/
 |       |   |-- opportunity.template.md
 |       |   |-- opportunity-analysis.template.md
 |       |   |-- opportunity-current-status.template.md
-|       |   |-- simulation-debrief.template.md
-|       |   `-- professional-profile.template.md
+|       |   `-- simulation-debrief.template.md
 |       `-- references/
 |           |-- interview-preparation-sheet-guidelines.md
 |           |-- interview-simulation-guidelines.md
@@ -109,11 +78,51 @@ career-ai-workspace/
 |           |-- professional-profile-guidelines.md
 |           |-- profile-update-guidelines.md
 |           `-- simulation-debrief-guidelines.md
-|-- archives/
-|   `-- README.md
-`-- feedback/
+`-- data/                                  # user data: only README.md in the ZIP
     |-- README.md
-    `-- pilot-feedback.md
+    |-- current-status.md                  # coach-created on first use
+    |-- config/
+    |   |-- README.md
+    |   `-- workspace.yaml                 # coach-created on first use
+    |-- profile/
+    |   |-- README.md
+    |   |-- professional-profile.md        # coach-created on first use
+    |   `-- sources/
+    |       |-- README.md
+    |       |-- external-references.md     # coach-created on first use
+    |       |-- certifications/
+    |       |-- coaching-notes/
+    |       |-- evaluations/
+    |       |-- historical-resumes/
+    |       |-- portfolios/
+    |       |-- recommendations/
+    |       `-- skills-assessments/
+    |-- cv/
+    |   `-- README.md
+    |-- opportunities/
+    |   |-- README.md
+    |   `-- 001-organization-role/         # coach-created
+    |       |-- current-status.md
+    |       |-- opportunity.md
+    |       |-- analysis.md                # when analysis starts
+    |       |-- sources/                   # when originals are retained
+    |       `-- interviews/                # from the first known round
+    |           `-- 01-screening/
+    |               |-- interview.md
+    |               |-- preparation.md     # when generated
+    |               |-- simulations/       # from the first simulation
+    |               |   `-- 01/
+    |               |       |-- transcript.md  # when available
+    |               |       `-- debrief.md
+    |               `-- actual/            # when the real interview is documented
+    |                   |-- notes.md       # when available
+    |                   |-- transcript.md  # optional
+    |                   `-- review.md
+    |-- archives/
+    |   `-- README.md
+    `-- feedback/
+        |-- README.md
+        `-- pilot-feedback.md              # optional, created on request
 ```
 
 Only `current-status.md`, `opportunity.md` and, once analysis starts,
@@ -126,16 +135,16 @@ phase-specific directories are created only when needed.
 ```mermaid
 flowchart TD
     sources["Authorized source documents<br/>CVs, certifications, notes, assessments"]
-    profile["profile/professional-profile.md<br/><i>candidate-owned source of truth</i>"]
-    workspaceStatus["current-status.md<br/><i>latest scope and resumption point</i>"]
-    cv["cv/<br/>derived CVs<br/><i>(dedicated skill planned)</i>"]
-    opportunitySource["opportunities/{NNN-org-role}/opportunity.md<br/><i>canonical textual representation</i>"]
-    opportunityOriginals["opportunities/{NNN-org-role}/sources/<br/><i>unchanged originals</i>"]
+    profile["data/profile/professional-profile.md<br/><i>candidate-owned source of truth</i>"]
+    workspaceStatus["data/current-status.md<br/><i>latest scope and resumption point</i>"]
+    cv["data/cv/<br/>derived CVs<br/><i>(dedicated skill planned)</i>"]
+    opportunitySource["data/opportunities/{NNN-org-role}/opportunity.md<br/><i>canonical textual representation</i>"]
+    opportunityOriginals["data/opportunities/{NNN-org-role}/sources/<br/><i>unchanged originals</i>"]
     opportunityWork["analysis.md<br/><i>derived fit and positioning</i>"]
-    opportunityStatus["opportunities/{NNN-org-role}/current-status.md<br/><i>opportunity working state</i>"]
+    opportunityStatus["data/opportunities/{NNN-org-role}/current-status.md<br/><i>opportunity working state</i>"]
     interview["interviews/{NN-type}/<br/><i>metadata and progressive artifacts</i>"]
     updates["Reviewed profile update proposals"]
-    feedback["feedback/<br/><i>pilot observations, sanitized before sharing</i>"]
+    feedback["data/feedback/<br/><i>pilot observations, sanitized before sharing</i>"]
 
     sources ==> profile
     profile ==> cv

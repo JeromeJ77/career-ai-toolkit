@@ -1,10 +1,15 @@
-# v0.3 developer test plan
+# Developer test plan
+
+This plan lists what to test. [`test-log.md`](test-log.md) records what has actually been tested, by whom and with what result.
 
 ## Build
 
 - Run `build.bat` from a clean checkout on Windows.
 - Confirm `dist/` is created.
-- Confirm the version matches `VERSION`.
+- Confirm the version matches `VERSION`, that it is not an already released
+  version, and that it carries the `-dev` suffix until the release is prepared.
+- Confirm the version shown in the standalone header and in the pilot feedback
+  template matches `VERSION`.
 - Confirm the standalone and pilot-feedback filenames are versioned.
 - Confirm the ZIP contains one top-level `career-ai-workspace/` directory.
 - Confirm `examples/`, repository docs and real or synthetic demo data are not in the workspace ZIP.
@@ -12,6 +17,20 @@
 - Confirm the opportunity structure reference and its Markdown templates are
   included in the workspace ZIP and treated as mandatory build sources.
 - Confirm repeated builds replace previous local artifacts.
+- Confirm the ZIP tree matches `docs/architecture.md#workspace-tree`: the engine
+  is at the root and `data/` contains only `README.md` files.
+- Confirm the five templates exist under `skills/init-workspace/assets/` and
+  that the ZIP contains no `data/config/workspace.yaml`,
+  `data/current-status.md`, `data/profile/professional-profile.md`,
+  `data/profile/sources/external-references.md` or
+  `data/feedback/pilot-feedback.md`.
+- Confirm the build fails when a non-`README.md` file is added under
+  `workspace/data/`, and when an initialized working file is added to the engine.
+- Confirm the build still performs no installation, network access or inclusion
+  of the fictional example.
+- Search the repository for obsolete root paths (`profile/`, `opportunities/`,
+  `config/`, `feedback/`, `cv/`, `archives/`, root `current-status.md`) and
+  confirm none remains outside `data/`.
 
 ## Repository privacy
 
@@ -49,10 +68,47 @@
 - Extract the ZIP outside the repository.
 - Open it as a new VS Code/Claude Code project.
 - Confirm root instructions are discovered and readable.
-- Set the profile language in `config/workspace.yaml`.
+- On the first session in the extracted workspace, confirm the coach creates
+  the four missing mandatory files under `data/` from the templates and says so.
+- Confirm a second session creates nothing and overwrites nothing, that a file
+  deleted by the user is recreated alone, and that an existing file with custom
+  content is left untouched.
+- Confirm the created profile is an empty skeleton and that the coach does not
+  fill it in without the profile workflow and the candidate's validation.
+- Remove a key from `data/config/workspace.yaml` and confirm the coach appends
+  it with its template default value at its template position, tells the
+  candidate which key and value were added, and leaves existing keys, values
+  and comments unchanged. Confirm a second session adds and reports nothing.
+- Give a key an invalid value (for example a non-boolean for
+  `allow_external_web_search`) and confirm the coach does not rewrite the file,
+  uses the default for the session, tells the candidate the key, the value found
+  and the default used, and leaves the correction to them.
+- Confirm `data/feedback/pilot-feedback.md` is created only on request.
+- Set the profile language in `data/config/workspace.yaml`.
 - Add sample authorized sources and initialize the profile.
 - Confirm profile changes are proposed before application.
-- Confirm the root `current-status.md` is read and remains a minimal routing
+- Add a synthetic PDF CV to `data/profile/sources/historical-resumes/` and
+  confirm the coach creates a faithful Markdown transcription with the same
+  name in the same directory, with a header (original name, date, limitations),
+  leaves the original unchanged, marks unreadable passages instead of guessing,
+  creates no transcription for a source that already is Markdown, and does not
+  overwrite an existing transcription.
+- Add a very long synthetic source and confirm the coach states its size and
+  asks for confirmation (offering to transcribe only the relevant parts) before
+  transcribing, while a normal-sized source is transcribed without asking.
+- Confirm the coach then proposes profile updates from the new source and
+  applies none before validation.
+- Add a synthetic LinkedIn PDF export containing a public profile URL to
+  `data/profile/sources/historical-resumes/` and confirm the coach records the
+  URL and the source file in `external-references.md`, tells the candidate, does
+  not set a verification date, does not claim to have opened the link and does
+  not duplicate the entry on a second pass.
+- Delete `data/profile/professional-profile.md` but keep the sources and
+  `data/current-status.md`. Confirm the coach flags the inconsistency, suggests
+  a possible file loss, and does not recreate or rewrite the profile until the
+  candidate decides; then ask for a full re-import and confirm the sources are
+  transcribed again and the profile is rebuilt through the validated workflow.
+- Confirm `data/current-status.md` is read and remains a minimal routing
   snapshot rather than an opportunity index.
 - Give the coach source material for two opportunities without creating their
   directories manually.

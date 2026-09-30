@@ -29,7 +29,7 @@ The workspace is the durable reference between conversations. Conversation
 history is useful only as temporary context for a focused work session and must
 not be required to resume later.
 
-The root `current-status.md` only routes the next session: it records the latest
+`data/current-status.md` only routes the next session: it records the latest
 scope, latest task and a short resumption point. It does not duplicate the list
 or detailed state of opportunities.
 

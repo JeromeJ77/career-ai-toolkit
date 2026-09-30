@@ -8,9 +8,37 @@
   and clearly separating provisional terms that still require grooming.
 - Added a design decision log to preserve the rationale and open questions
   behind structural and behavioral choices.
+- Added the `init-workspace` skill: on first use the coach creates each missing
+  mandatory file (`workspace.yaml`, `professional-profile.md`,
+  `external-references.md`, `current-status.md`) under `data/` from templates in
+  `skills/init-workspace/assets/`, without ever overwriting an existing file.
+  Keys missing from an existing `workspace.yaml` are appended with their
+  template defaults and reported; invalid values are never rewritten, only
+  reported to the candidate.
+- The interview coach now transcribes each profile source added under
+  `data/profile/sources/` to a Markdown file next to the untouched original
+  (asking first for very large sources), and records public links found in
+  sources (for example a LinkedIn PDF export) in `external-references.md`. The
+  professional profile is still updated only after the candidate validates the
+  proposed changes.
+- Added `docs/test-log.md`, a French working log of the tests actually
+  performed (first and last test dates, targeted non-regression tracking), and
+  the process rules for it in `AGENTS.md`.
 
 ### Changed
 
+- Separated the replaceable engine from user data: the private folders and the
+  former root `current-status.md` moved under `data/`, which contains only
+  `README.md` files in the ZIP. `pilot-feedback.md` is created on request from a
+  single template (`docs/pilot-feedback.template.md` removed). `build.bat` now
+  fails if `data/` holds anything but `README.md` files, if the workspace root
+  holds unexpected entries, or if the engine holds initialized working files.
+  Upgrading from v0.3 requires moving existing folders under `data/`.
+- `VERSION` is now `0.4.0-dev`; the `-dev` suffix stays until the release is
+  prepared. The standalone header and the pilot feedback template follow it.
+- Extended `docs/test-plan.md` for the new structure, first-use initialization,
+  configuration keys, source transcription and profile inconsistencies, and
+  linked it to the test log.
 - Unified and documented the simulation depths (Court/short, Standard,
   Approfondi/deep) with approximate durations and question counts, added stop
   keywords (« stop », « arrête la simulation », « arrêtons l'interview »,

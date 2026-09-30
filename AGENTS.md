@@ -10,8 +10,42 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - Treat `workspace/` as a distributable generic workspace template, not as a personal workspace.
 - Treat `examples/` as synthetic data only.
 - Keep French-first pilot usability while maintaining simple English technical paths and metadata.
+- Never stage changes (`git add`, `git rm`, `git mv`, `git stash`, or any command that modifies the index) and never commit unless the user explicitly asks. Leave every modification in the working tree so that the user can review it and stage it themselves. When a file must be moved or removed, use plain file operations rather than Git commands.
 - Update `CHANGELOG.md` for user-visible changes.
-- Run the checks in `docs/test-plan.md` before preparing a release.
+- Run the checks in `docs/test-plan.md` before preparing a release, and record the tests actually performed and their outcome in `docs/test-log.md`.
+
+## Test coverage and versioning
+
+- Before starting an issue, compare `docs/test-log.md` with `docs/test-plan.md`:
+  identify plan items that are not covered, not tested or to be revalidated, and
+  report the gaps to the user. Do not decide silently to ignore them.
+- Start every issue by updating `docs/test-plan.md` and `docs/test-log.md` with
+  the scenarios the change must satisfy (nominal flow, edge cases, limit cases,
+  non-regression), recorded as « Non testé » and reviewed with the user before
+  development, in the manner of acceptance-test-driven development.
+- During development, revisit these scenarios to catch forgotten cases and add
+  the ones discovered.
+- Record in `docs/test-log.md` only tests actually performed. Never mark a
+  behavior as validated by inference; a later change to the coach's behavior
+  makes the affected tests « À revalider ». The log is written in French.
+- When a change may have impacted a scenario already marked « Validé », set it
+  back to « À revalider » in `docs/test-log.md` with the remark
+  « Non-régression : impacté par #N » and a short reason. This targeted
+  non-regression check is replayed before the release, not necessarily before
+  each commit. Keep the first and last test dates of each zone up to date.
+- Before a commit, list the zones of `docs/test-log.md` that are not « Validé »
+  (« À revalider », « Non testé », « Problème constaté ») as an informational
+  reminder. It does not block the commit.
+- When asked to prepare a release, re-check the whole coverage in
+  `docs/test-log.md` against `docs/test-plan.md` first. Warn explicitly about
+  every zone that is not « Validé » and list them, then let the user decide
+  whether to replay them or to release anyway. Never mark them validated
+  yourself.
+- `VERSION` holds the release in progress, with the `-dev` suffix (for example
+  `0.4.0-dev`) from the first development work of a release. It must never stay
+  on an already released version. Remove the suffix only when preparing the
+  release. Keep the version in the standalone header and in the pilot feedback
+  template equal to `VERSION`.
 
 ## Project knowledge maintenance
 
@@ -69,7 +103,7 @@ plain documentation.
 - Source standalone instructions: `standalone/interview-coach-standalone.md`
 - Source workspace template: `workspace/`
 - Build outputs: `dist/` (never commit)
-- User feedback template: `docs/pilot-feedback.template.md`
+- User feedback template: `workspace/skills/init-workspace/assets/pilot-feedback.template.md`
 
 ## Build behavior
 
