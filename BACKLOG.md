@@ -2,7 +2,13 @@
 
 This backlog preserves ideas discussed during the design of Career AI Toolkit. Items are not commitments; priorities will be driven by pilot feedback.
 
-Work that is committed or being prepared is tracked in [GitHub Issues](https://github.com/JeromeJ77/career-ai-toolkit/issues), prioritized on the project board and grouped by milestone. This file keeps the ideas that are not yet engaged; when an item is groomed, move it to an issue and remove it here.
+Work that is committed or being prepared is tracked in [GitHub Issues](https://github.com/JeromeJ77/career-ai-toolkit/issues), prioritized on the project board and grouped by milestone. This file keeps the ideas that are not yet engaged.
+
+Follow the staged workflow in [CONTRIBUTING.md](CONTRIBUTING.md): first normalize,
+review and commit new ideas here without grooming them; then analyze and select
+the release scope and commit the confirmed candidate-issue table; finally review
+and create each issue before removing only its covered backlog content in a
+third cleanup commit.
 
 ## New ideas (grooming necessary)
 

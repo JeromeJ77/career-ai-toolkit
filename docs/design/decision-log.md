@@ -195,6 +195,52 @@ qui reste portée par le workspace.
 - Définir la consigne de reprise transmise à la nouvelle conversation.
 - Éviter de multiplier inutilement les conversations pour des tâches brèves.
 
+## D-008 — Séparer la capture des idées de leur grooming
+
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-09-30
+
+### Contexte
+
+Les nouvelles idées peuvent arriver sous une forme libre, textuelle ou visuelle.
+Leur reformulation, leur analyse et leur transformation immédiate en issues dans
+une même passe risqueraient de perdre une nuance, d'effacer une piste différée
+ou de rendre difficile la comparaison avec l'intention initiale.
+
+### Décision et intention
+
+Le cycle distingue trois points de contrôle Git :
+
+1. un commit de capture conserve dans le backlog une version française
+   structurée, fidèle et relue de toutes les nouvelles idées avant grooming ;
+2. un commit de planification conserve la table synthétique validée des issues
+   candidates, leur périmètre, leur priorité, leur taille et leurs dépendances ;
+3. un commit séparé nettoie le backlog après la création validée des issues
+   GitHub correspondantes.
+
+Entre le premier et le deuxième checkpoint, l'ensemble du backlog et les issues
+existantes sont analysés pour détecter les recouvrements, contradictions,
+questions de faisabilité et dépendances. Le périmètre de release est décidé avec
+l'auteur et seuls les éléments retenus sont découpés en issues candidates. Entre
+le deuxième et le troisième checkpoint, chaque issue est revue et approuvée
+individuellement avant sa création.
+
+### Conséquences
+
+- Une idée claire passe malgré tout par le backlog afin de préserver un point de
+  comparaison commun et auditable.
+- Le premier commit conserve l'intention proposée ; il ne signifie pas que
+  l'idée est priorisée ou acceptée pour une release.
+- Le deuxième commit conserve le découpage et l'ordre de mise en œuvre validés,
+  même après la suppression de la table temporaire du backlog.
+- Les images ou scans servent de sources d'entrée, mais le checkpoint versionné
+  est leur transcription textuelle validée. Aucun contenu personnel ou
+  confidentiel ne doit être ajouté au dépôt.
+- Les idées différées ou non résolues restent dans le backlog après création des
+  issues sélectionnées.
+- La création des issues GitHub se déroule entre les deuxième et troisième
+  commits et nécessite une validation explicite, issue par issue.
+
 ## Évolution du journal
 
 - Ajouter une entrée lorsqu'un choix structurel ou comportemental nécessite de

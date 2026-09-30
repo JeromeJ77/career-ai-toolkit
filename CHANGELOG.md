@@ -9,6 +9,12 @@
 - Added a design decision log to preserve the rationale and open questions
   behind structural and behavioral choices.
 
+### Changed
+
+- Formalized a three-checkpoint idea intake and grooming workflow that preserves
+  reviewed raw ideas and the confirmed candidate-issue plan before creating
+  GitHub issues and cleaning the backlog.
+
 ## [0.3.0] - 2026-09-27
 
 ### Changed

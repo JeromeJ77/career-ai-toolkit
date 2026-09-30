@@ -23,10 +23,27 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   implementation in `docs/design/decision-log.md`. Include their status,
   intention, consequences and open questions when relevant; do not add trivial
   implementation details.
-- Check `BACKLOG.md` before adding out-of-scope features. Add newly identified,
-  uncommitted ideas when they need later grooming, and keep them distinct from
-  work already tracked in GitHub Issues. When an idea is groomed into an issue,
-  remove it from the backlog as described in `CONTRIBUTING.md`.
+- Follow the complete idea intake and grooming workflow in `CONTRIBUTING.md`.
+  Capture every new idea in `BACKLOG.md` before grooming or issue creation,
+  including ideas supplied as text, images or scans. Normalize them in French,
+  preserve the author's meaning and information, and flag unreadable or
+  ambiguous input instead of guessing.
+- Keep idea capture, candidate-issue planning and backlog cleanup as three
+  distinct traceable commits. Do not begin grooming until the user has reviewed
+  the normalized ideas and the capture commit exists in Git history. If the
+  agent has not been asked to commit, stop after review and ask the user to
+  create or authorize that checkpoint.
+- During grooming, check the complete backlog, existing GitHub Issues, the
+  glossary, the decision log and relevant canonical documentation for overlap,
+  contradictions, feasibility questions and dependencies. The user owns release
+  scope; challenge it constructively but do not silently decide it.
+- Split only the confirmed release scope into candidate issues. Review each
+  concise candidate-issue table with the user and commit the confirmed table as
+  a second checkpoint before drafting full issues. Review each issue's full
+  title and body with the user and obtain explicit approval before creating it
+  in GitHub. After successful issue creation, remove only the covered ideas from
+  the backlog and commit that cleanup as the third checkpoint. Leave deferred
+  or unresolved ideas in the backlog.
 - Keep the glossary, decision log, backlog and affected canonical documentation
   synchronized in the same change when a term, decision or scope change is
   established. When it is still being discussed, preserve the uncertainty or
