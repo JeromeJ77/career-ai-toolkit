@@ -45,6 +45,24 @@ third cleanup commit.
   request sur le projet GitHub, et définir comment vérifier automatiquement
   l'anonymisation avant d'accepter ces contributions.
 
+### Synthèse temporaire : issue candidate des données fictives et de la démo
+
+Table de travail issue du grooming, à supprimer lors du nettoyage du backlog.
+Périmètre confirmé : une seule issue dans le milestone v0.4.0, à traiter juste
+avant la prochaine issue (#6), puis à enrichir de façon incrémentale à chaque
+issue suivante plutôt qu'en un gros chantier final. Différé : le mode voix,
+qui anticipe des issues non encore développées. La priorité et la taille sont
+indicatives ; l'auteur les positionne sur le board.
+
+| Ordre | Titre provisoire | Objectif | Éléments couverts | Priorité | Taille | Dépendances |
+| --- | --- | --- | --- | --- | --- | --- |
+| J1 | Préparer des données fictives et un script pour démontrer et tester le toolkit | Fournir un profil fictif réaliste (par défaut un développeur, profil le plus courant dans l'équipe), ses sources à déposer (CV, profil LinkedIn, certification en PDF, éventuellement un DOCX) et des opportunités fictives, utilisables pour dérouler le plan de test complet et pour une démo d'environ 30 minutes. Fournir un script de démo (prompts, mots-clés, fichiers par étape) complété au fil des issues suivantes (#6, #9, #10, #11). Aucune donnée réelle, exclusion du build | Données fictives, sources de démonstration, script de démo | P1 | M | Aucune (enrichie par #6, #9, #10, #11) |
+
+Questions laissées ouvertes pour le traitement de l'issue : remplacer l'exemple
+fictif actuel (`examples/fictitious-principal-architect`) par un exemple plus
+simple de développeur, ou l'étoffer (penchant de l'auteur : le remplacer) ;
+emplacement du script de démo et lien éventuel avec un quick start.
+
 ### Préparer des données fictives pour une démo réelle du toolkit
 
 - Préparer, dans le projet, de vraies données fictives permettant de faire une
@@ -87,7 +105,8 @@ third cleanup commit.
 - Le script de démo pourrait aussi servir de base à un quick start pour les
   utilisateurs, ou à une version plus légère tirée d'un plan de test de démo. À
   voir si ce contenu relève de la documentation du projet.
-- Décider si cet élément entre dans la v0.4.0 ou plus tard.
+- Décision de l'auteur : cet élément entre dans la v0.4.0, en une seule issue
+  enrichie de façon incrémentale (voir la synthèse temporaire ci-dessus).
 
 ### Explorations ultérieures
 
