@@ -45,68 +45,12 @@ third cleanup commit.
   request sur le projet GitHub, et définir comment vérifier automatiquement
   l'anonymisation avant d'accepter ces contributions.
 
-### Synthèse temporaire : issue candidate des données fictives et de la démo
+### Mode voix pour l'entretien d'initialisation et la démo
 
-Table de travail issue du grooming, à supprimer lors du nettoyage du backlog.
-Périmètre confirmé : une seule issue dans le milestone v0.4.0, à traiter juste
-avant la prochaine issue (#6), puis à enrichir de façon incrémentale à chaque
-issue suivante plutôt qu'en un gros chantier final. Différé : le mode voix,
-qui anticipe des issues non encore développées. La priorité et la taille sont
-indicatives ; l'auteur les positionne sur le board.
-
-| Ordre | Titre provisoire | Objectif | Éléments couverts | Priorité | Taille | Dépendances |
-| --- | --- | --- | --- | --- | --- | --- |
-| J1 | Préparer des données fictives et un script pour démontrer et tester le toolkit | Fournir un profil fictif réaliste (par défaut un développeur, profil le plus courant dans l'équipe), ses sources à déposer (CV, profil LinkedIn, certification en PDF, éventuellement un DOCX) et des opportunités fictives, utilisables pour dérouler le plan de test complet et pour une démo d'environ 30 minutes. Fournir un script de démo (prompts, mots-clés, fichiers par étape) complété au fil des issues suivantes (#6, #9, #10, #11). Aucune donnée réelle, exclusion du build | Données fictives, sources de démonstration, script de démo | P1 | M | Aucune (enrichie par #6, #9, #10, #11) |
-
-Questions laissées ouvertes pour le traitement de l'issue : remplacer l'exemple
-fictif actuel (`examples/fictitious-principal-architect`) par un exemple plus
-simple de développeur, ou l'étoffer (penchant de l'auteur : le remplacer) ;
-emplacement du script de démo et lien éventuel avec un quick start.
-
-### Préparer des données fictives pour une démo réelle du toolkit
-
-- Préparer, dans le projet, de vraies données fictives permettant de faire une
-  démo concrète du toolkit. L'objectif principal est de montrer comment il
-  fonctionne afin d'embarquer plus facilement de nouveaux utilisateurs,
-  notamment pour lancer le pilote. Jusqu'ici, la présentation du toolkit est
-  restée plutôt théorique, même si elle s'appuyait sur le dépôt.
-- Ces données alimenteraient l'exemple fictif actuel : soit en le remplaçant,
-  soit en l'étoffant, pour qu'il soit directement exploitable en démo. Elles
-  serviraient aussi aux tests, à la place des données personnelles du
-  développeur. Elles devraient permettre de dérouler le plan de test complet,
-  sans nécessairement tout démontrer.
-- Ne probablement pas les utiliser dans le build : elles ne doivent pas se
-  retrouver dans l'artefact distribué.
-- Fournir des fichiers fictifs à déposer dans les sources pendant la démo, pour
-  montrer leur transcription puis leur insertion dans le dossier professionnel :
-  par exemple un CV au format PDF, un profil LinkedIn au format PDF, un fichier
-  de certification au format PDF, peut-être un fichier DOCX avec d'autres
-  informations.
-- Prévoir, dans le cadre de cet élément, un petit script de démo qui simplifie
-  son déroulement. Il noterait, pour chaque étape, les prompts à copier-coller,
-  les mots-clés à dire dans une conversation et les fichiers fictifs à utiliser.
-- Étapes cibles envisagées, à organiser en une démo d'environ 30 minutes suivie
-  d'environ 30 minutes de questions-réponses. Lister tout ce qui peut être
-  démontré assez vite :
-  - initialisation du dossier : confirmation de la configuration, copie des
-    sources, transcription des sources ;
-  - démarrage et complétion du dossier professionnel par un premier entretien,
-    si possible avec un mode voix, même non interactif (anticipe des issues non
-    encore développées) ;
-  - rappel au début de chaque nouvelle session, tant que le dossier n'est pas
-    prêt, pour avertir que les résultats peuvent ne pas être optimaux ; montrer
-    aussi le cas où l'on tente d'ajouter une opportunité trop tôt ;
-  - ajout d'une opportunité, préparation de l'entretien, simulation de
-    l'entretien, puis débrief ;
-  - ajout d'une deuxième opportunité en parallèle, avec changement de session
-    pour la traiter, afin de montrer comment les sessions s'enchaînent en
-    retrouvant l'état du workspace (point important) ;
-  - fonctionnement avec Git (prochaine issue à traiter, issue #6).
-- Le script de démo pourrait aussi servir de base à un quick start pour les
-  utilisateurs, ou à une version plus légère tirée d'un plan de test de démo. À
-  voir si ce contenu relève de la documentation du projet.
-- Décision de l'auteur : cet élément entre dans la v0.4.0, en une seule issue
-  enrichie de façon incrémentale (voir la synthèse temporaire ci-dessus).
+- Évaluer un mode voix, même non interactif, pour conduire le premier
+  entretien de complétion du dossier professionnel et le montrer en démo.
+- Différé : il anticipe des issues non encore développées (issue #10 pour
+  l'entretien d'initialisation, issue #12 pour les données fictives et la démo).
 
 ### Explorations ultérieures
 
