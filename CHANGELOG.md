@@ -11,6 +11,11 @@
 
 ### Changed
 
+- Unified and documented the simulation depths (Court/short, Standard,
+  Approfondi/deep) with approximate durations and question counts, added stop
+  keywords (« stop », « arrête la simulation », « arrêtons l'interview »,
+  « end the simulation ») with confirmation for unclear intent, and described the immediate debrief
+  and follow-up simulation path in standalone and workspace modes.
 - Made the coaching principle explicit in the READMEs, standalone coach,
   workspace instructions, interview-coach skill and design documentation:
   the toolkit is a coach, not an answer generator.

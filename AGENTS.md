@@ -49,6 +49,21 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   established. When it is still being discussed, preserve the uncertainty or
   propose the documentation update instead of silently deciding it.
 
+## Instructions as AI source code
+
+The standalone instructions, `workspace/AGENTS.md`, `workspace/CLAUDE.md`, the
+skills under `workspace/skills/` (`SKILL.md`, references and templates) define
+how the coach behaves. Treat them as the toolkit's "AI source code", not as
+plain documentation.
+
+- A change to the coach's behavior is a functional change: use `feat`, `fix`
+  or `refactor` in the commit type, with a scope such as `coach`, `standalone`
+  or `skill`. Reserve `docs` for documentation that does not alter how the
+  coach behaves (README, glossary, decision log, test plan, backlog).
+- Keep the standalone instructions and the workspace skills consistent for
+  every shared behavior, and update `docs/test-plan.md` and `CHANGELOG.md` in
+  the same change.
+
 ## Sources and derived artifacts
 
 - Source standalone instructions: `standalone/interview-coach-standalone.md`

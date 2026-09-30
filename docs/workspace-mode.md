@@ -60,6 +60,18 @@ During a simulation, status maintenance must not interrupt the role-play. The
 assistant checkpoints beforehand when needed, captures the resulting artifacts
 afterward, and then updates the opportunity status.
 
+Simulations have three depths: Court (short, about 10-15 minutes and 4-6
+questions), Standard (about 25-30 minutes and 8-10 questions, the default) and
+Approfondi (deep, about 45-60 minutes and 12-15 questions). Writing « stop »,
+« arrête la simulation », « arrêtons l'interview » or « end the simulation »
+ends a simulation at any time; unclear intent triggers a confirmation, and
+pausing is not supported yet. The coach announces the
+stop, may offer to collect the candidate's questions, saves the transcript or a
+`current-status.md` checkpoint, and debriefs what was played, immediately or
+later, recording the early stop and its limits in `debrief.md`. A new simulation
+after the debrief uses the next `simulations/NN/` directory and asks for the
+depth again.
+
 A simulation debrief may happen immediately or in a later conversation. In
 both cases it reads the selected simulation's persistent artifacts, records its
 evidence and limitations in `debrief.md`, and must not depend on hidden chat

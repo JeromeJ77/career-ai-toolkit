@@ -241,6 +241,49 @@ individuellement avant sa création.
 - La création des issues GitHub se déroule entre les deuxième et troisième
   commits et nécessite une validation explicite, issue par issue.
 
+## D-009 — Trois profondeurs de simulation et arrêt anticipé par mot-clé
+
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-09-30
+
+### Contexte
+
+Le standalone parlait de format « court, standard ou approfondi » alors que le
+backlog évoquait « short, medium, deep », sans durée, nombre de questions ni
+moyen documenté d'interrompre une simulation.
+
+### Décision et intention
+
+Trois profondeurs françaises, avec équivalent anglais : Court (short),
+Standard (standard, par défaut) et Approfondi (deep), décrites par une durée et
+un nombre de questions indicatifs. Les mots-clés « stop », « arrête la
+simulation », « arrêtons l'interview » et « end the simulation » arrêtent la
+simulation ; le coach débriefe alors uniquement ce qui a été joué et propose une
+nouvelle simulation.
+
+Pour limiter les faux déclenchements, un mot-clé compte comme message à part ou
+lorsqu'il nomme la simulation ou l'interview. Si l'intention d'arrêter est claire
+sans mot-clé, ou si le message est ambigu, le coach demande confirmation. Les
+formulations évoquant une pause sont exclues et réservées à l'issue n° 3 ; le
+coach indique que la pause n'est pas encore prise en charge.
+
+### Conséquences
+
+- Les durées et nombres de questions sont des ordres de grandeur, à ajuster
+  après les retours du pilote.
+- Un débrief après arrêt n'évalue pas ce qui n'a pas été joué et n'interprète
+  pas la raison de l'arrêt.
+
+### Points à confirmer
+
+- Durées et nombres de questions : ordres de grandeur validés par l'auteur, à
+  ajuster après le pilote.
+- Lors de l'issue n° 3, choisir des formulations de pause distinctes des
+  mots-clés d'arrêt.
+- Après un arrêt, le coach propose de façon facultative de recueillir les
+  questions du candidat pour le débrief ; il écrit le transcript s'il est
+  disponible, sinon un checkpoint dans `current-status.md`.
+
 ## Évolution du journal
 
 - Ajouter une entrée lorsqu'un choix structurel ou comportemental nécessite de

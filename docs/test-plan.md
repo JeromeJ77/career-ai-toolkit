@@ -31,6 +31,16 @@
 - Confirm simulation asks one question at a time.
 - Confirm coaching does not interrupt a realistic simulation.
 - Confirm the first debrief is succinct and evidence-based.
+- Confirm the coach offers the Court, Standard and Approfondi depths with
+  approximate duration and question count, and mentions the stop keywords.
+- Confirm each stop keyword ends a simulation, that a « stop » inside an answer
+  does not, that an unclear phrasing such as « je veux arrêter là » triggers a
+  confirmation, and that a pause request is answered by saying pausing is not
+  supported.
+- Write « stop » mid-simulation; confirm the coach states it is stopping at the
+  candidate's request, leaves the role, optionally offers to collect the
+  candidate's questions, debriefs only what was played, does not assess unplayed
+  parts, then asks the depth again for a new simulation.
 - Confirm no facts are invented.
 - Confirm file persistence and PDF limitations are stated honestly.
 
@@ -77,6 +87,10 @@
   requiring a transcript.
 - Start a new conversation for a later coaching session and confirm work can be
   resumed from the workspace without prior conversation history.
+- Stop a simulation early with « stop »; confirm the transcript covers only what
+  was played (or `current-status.md` holds a checkpoint when none exists),
+  `debrief.md` records the early stop, and a following simulation
+  uses the next `simulations/NN/` directory without altering the first.
 - Confirm status updates do not interrupt the interview simulation itself.
 - Confirm first-page sheet density and note area remain usable.
 - Confirm durable learnings are separated from opportunity-specific content.
