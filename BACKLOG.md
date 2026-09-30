@@ -12,6 +12,29 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+### Synthèse temporaire : issues candidates du milestone v0.4.0
+
+Table de travail issue du grooming, à supprimer lors du nettoyage du backlog.
+Périmètre confirmé : installation et confidentialité, phase initiale, statut et
+version du dossier professionnel, arborescence et mise à jour, Git local et
+changement de périmètre. Différés : score de complétion (v0.5.0), feedbacks
+d'entretiens réels anonymisés, explorations ultérieures, import web automatique
+des références publiques. La pause et reprise de simulation reste l'issue n° 3
+(v0.5.0). Les priorités et tailles sont indicatives ; l'auteur les positionne
+sur le board.
+
+| Ordre | Titre provisoire | Objectif | Éléments couverts | Priorité | Taille | Dépendances |
+| --- | --- | --- | --- | --- | --- | --- |
+| I1 | Séparer le moteur des données sous `data/` | Regrouper les données utilisateur sous `data/` (uniquement des `README.md` dans le ZIP), initialiser les fichiers obligatoires depuis `skills/assets/` et vérifier cette séparation au build | Arborescence, modèles, vérification du build ; D-004 | P1 | L | Aucune |
+| I6 | Intégrer Git local au workflow du coach | Proposer l'initialisation Git, intégrer les commits de session avec validation, traiter un `git status` non clean au démarrage, documenter les expressions de fin de session | Git et historique local | P1 | M | Aucune |
+| I2 | Mettre à jour le toolkit en remplaçant les fichiers du ZIP | Procédure d'installation et de mise à jour (`git status` préalable, remplacement du moteur), marqueur de version du moteur recopié dans les données, liste des fichiers du moteur vérifiée au build, détection à la session suivante avec vérification des fichiers et commit dédié après validation | Mise à jour, rollback, détection, mécanisme déterministe minimal | P1 | L | I1, I6 |
+| I3 | Documenter la confidentialité, le premier lancement et la navigation web | Documenter et rappeler au premier lancement la configuration de confidentialité ; adopter D-003 : navigation web désactivée par défaut, option permanente à `true`, exception ponctuelle sur demande explicite (référence du dossier professionnel ou extraction d'une offre à partir de son lien) | Installation, confidentialité et premier lancement ; D-003 | P1 | M | I1 |
+| I4 | Suivre le statut et la version du dossier professionnel | Définir `empty`/`initial`, `draft` et `ready`, versionner `0.x` puis `1.0` au passage à `ready` décidé avec le candidat, refuser gentiment de traiter une opportunité tant que le dossier n'est pas `ready`, rappeler la mise en garde à chaque session | Versionnage et statut (hors score de complétion) ; D-010 | P1 | M | I1 |
+| I5 | Conduire l'entretien d'initialisation du dossier professionnel | Use case obligatoire avant la première opportunité : questions une par une avec progression, sources dans `profile/sources/` converties en Markdown, extraction validée, aucun debrief ; tester le dépôt de PDF et prévoir un flux alternatif | Phase initiale après installation (sans import web automatique) | P1 | L | I1, I3, I4 |
+| I7 | Recommander une nouvelle conversation lors d'un changement de périmètre | Détecter un changement manifeste de périmètre, enregistrer l'état et la prochaine action, proposer un checkpoint Git et une consigne de reprise concise ; déscopable si nécessaire | Sessions de coaching et changements de périmètre ; D-007 | P1 | M | I6 |
+
+Ordre de mise en œuvre : I1, I6, I2, I3, I4, I5, I7.
+
 ### Installation, confidentialité et premier lancement
 
 - Préciser dans la documentation et à la première session de coaching qu'il faut

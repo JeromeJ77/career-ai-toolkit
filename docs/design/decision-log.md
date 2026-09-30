@@ -72,8 +72,8 @@ workflow.
 
 ## D-003 — Désactiver la navigation web par défaut
 
-- **Statut** : 🟡 Comportement actuel, intention à confirmer
-- **Date** : 2026-09-29
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-09-29, confirmée le 2026-09-30
 
 ### Contexte
 
@@ -81,20 +81,27 @@ workflow.
 `privacy.allow_external_web_search: false`. Des références externes peuvent
 néanmoins être utiles pour initialiser ou enrichir le dossier professionnel.
 
-### Décision et intention présumée
+### Décision et intention
 
-Le coach ne consulte pas le web par défaut. L'intention à confirmer est de
-préserver un travail en huis clos, de limiter les informations manipulées et de
-garantir la traçabilité des sources effectivement utilisées. Un accès externe
-devrait être explicite, ciblé et autorisé par l'utilisateur.
+Le coach ne consulte pas le web par défaut. L'intention est de préserver un
+travail en huis clos, de limiter les informations manipulées et de garantir la
+traçabilité des sources effectivement utilisées.
+
+L'utilisateur peut activer la navigation de façon permanente en passant le
+paramètre à `true`. Lorsqu'elle est désactivée, le coach peut faire une
+exception ponctuelle uniquement si l'utilisateur la demande explicitement, par
+exemple pour compléter une référence utile au dossier professionnel, ou pour
+extraire directement les informations d'une offre d'emploi à partir de son lien
+afin de gérer une opportunité. Cela évite à l'utilisateur de copier-coller
+l'offre : il fournit le lien et le coach récupère les informations pertinentes.
 
 ### Points à confirmer
 
 - Vérifier si cette préférence est seulement une instruction comportementale ou
   si les outils pilotes permettent aussi de la faire respecter techniquement.
-- Définir le consentement attendu pour une consultation ponctuelle.
 - Définir comment importer LinkedIn, GitHub ou d'autres références publiques
   sans laisser croire qu'une ressource inaccessible a été consultée.
+- L'import web automatique du dossier professionnel reste hors de la v0.4.0.
 
 ## D-004 — Séparer le moteur des données sous un futur répertoire `data/`
 
@@ -283,6 +290,38 @@ coach indique que la pause n'est pas encore prise en charge.
 - Après un arrêt, le coach propose de façon facultative de recueillir les
   questions du candidat pour le débrief ; il écrit le transcript s'il est
   disponible, sinon un checkpoint dans `current-status.md`.
+
+## D-010 — Statut et version du dossier professionnel décidés avec le candidat
+
+- **Statut** : 🔵 Envisagée
+- **Date** : 2026-09-30
+
+### Contexte
+
+Traiter une opportunité avec un dossier professionnel trop pauvre dégrade les
+analyses et le coaching, et peut faire percevoir l'outil comme
+contreproductif avant même d'avoir travaillé avec des données de qualité.
+
+### Orientation et intention
+
+Le dossier porte un statut (`empty` ou `initial`, `draft`, `ready`, valeurs à
+confirmer) et une version : `0.1`, `0.2`, `0.3`… au fil des sessions de
+construction, puis `1.0` au passage à `ready`. Ce passage est une décision prise
+d'un commun accord : le coach estime que les informations sont suffisantes et le
+propose, sauf si le candidat a d'autres informations à ajouter, et le candidat
+valide. `ready` marque un seuil opérationnel, non un état final.
+
+Tant que le dossier n'est pas `ready`, le coach refuse gentiment de traiter une
+opportunité. Si le candidat insiste, il continue en gardant le statut explicite
+et en prévenant que la qualité sera dégradée, avec un rappel au début de chaque
+nouvelle session.
+
+### Points à confirmer
+
+- Valeurs exactes du statut.
+- Règle d'incrément des versions `0.x` : à chaque session qui modifie le dossier
+  ou seulement à un jalon validé.
+- Le score de complétion en pourcentage est différé à la v0.5.0.
 
 ## Évolution du journal
 
