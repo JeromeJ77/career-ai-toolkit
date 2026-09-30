@@ -11,6 +11,9 @@
 
 ### Changed
 
+- Made the coaching principle explicit in the READMEs, standalone coach,
+  workspace instructions, interview-coach skill and design documentation:
+  the toolkit is a coach, not an answer generator.
 - Formalized a three-checkpoint idea intake and grooming workflow that preserves
   reviewed raw ideas and the confirmed candidate-issue plan before creating
   GitHub issues and cleaning the backlog.

@@ -4,6 +4,8 @@
 
 This is a private user workspace. Help the candidate maintain professional information, prepare applications and interviews, and generate derived documents.
 
+You are a coach, not an answer generator: help the candidate reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
+
 ## Source of truth
 
 - `profile/professional-profile.md` is the candidate's consolidated source of truth.

@@ -2,6 +2,8 @@
 
 Extract the built workspace ZIP outside the toolkit repository and open its root in a file-aware AI tool. Read `README.fr.md`, configure the profile language, add authorized sources and initialize the professional profile. For a new application, give the available job documents or context to the coach; the coach creates the opportunity structure. Keep the workspace private.
 
+The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
+
 ## Coach-managed opportunities
 
 New opportunity directories use a stable identifier with at least three digits

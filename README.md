@@ -6,6 +6,10 @@
 
 **French-first pilot:** the most complete getting-started guide is [README.fr.md](README.fr.md).
 
+## Coaching principle
+
+The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
+
 ## Two ways to use it
 
 1. **Standalone Interview Coach**: copy `standalone/interview-coach-standalone.md` into an AI assistant or project and attach your own career documents.

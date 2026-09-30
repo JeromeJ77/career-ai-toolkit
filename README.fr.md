@@ -6,6 +6,8 @@
 
 ## Objectif
 
+Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites.
+
 Le projet propose deux modes complémentaires :
 
 1. **Coach d'entretien standalone** : un fichier Markdown autonome à installer dans un assistant ou un projet IA web. L'utilisateur joint ensuite son CV, son dossier professionnel, l'offre et les autres documents utiles.

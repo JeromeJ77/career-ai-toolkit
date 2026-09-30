@@ -5,6 +5,8 @@ of career information while using AI for structured preparation. Version 0.3
 focuses on the interview coach and local workspace pilot; CV generation is a
 planned skill and is represented here as part of the intended workflow.
 
+The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
+
 ## Actors
 
 - **Candidate**: owns the workspace, reviews every durable fact and decides
