@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh issue list *)",
+      "Bash(gh issue view *)",
+      "Bash(gh auth status)"
+    ],
+    "ask": [
+      "Bash(gh issue create *)"
+    ],
+    "deny": [
+      "Bash(gh api *)",
+      "Bash(gh repo *)",
+      "Bash(gh pr *)",
+      "Bash(gh release *)",
+      "Bash(gh workflow *)",
+      "Bash(gh secret *)",
+      "Bash(gh auth token*)",
+      "Bash(gh issue delete *)",
+      "Bash(gh issue transfer *)"
+    ]
+  }
+}
