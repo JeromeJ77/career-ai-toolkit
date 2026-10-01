@@ -45,6 +45,48 @@ third cleanup commit.
   request sur le projet GitHub, et définir comment vérifier automatiquement
   l'anonymisation avant d'accepter ces contributions.
 
+### Feedback pilote construit au fil de l'eau par le coach
+
+- Aujourd'hui `data/feedback/pilot-feedback.md` est créé à la demande et rempli
+  en une fois ; l'idée est de le construire progressivement, au fil des
+  conversations, pendant la phase pilote.
+- Deux déclencheurs à prévoir :
+  - **Détection discrète par le coach** : quand il constate une difficulté
+    d'usage manifeste (allers-retours répétés, problème de copie ou de fichier,
+    instruction mal comprise), il en prend note dans une section « au fil de
+    l'eau » du fichier de feedback, sans interrompre ni commenter auprès de la
+    personne.
+  - **Mot-clé ou expression de la personne** (par exemple « note pour le
+    pilote : … »), qui consigne la remarque à sa demande.
+- Chaque note porte la date et le contexte (étape, opportunité, fichier
+  concerné) pour qu'à la fin du pilote le coach puisse mettre ces notes au
+  propre dans le modèle de feedback et en faire un retour structuré.
+- À raffiner : forme exacte du mot-clé, critères de détection, place de la
+  section dans le template actuel, et comment le signaler dans le scénario
+  maître du kit de test (étape F1).
+
+### Reprendre l'historique d'opportunités déjà vécues
+
+- Au démarrage du pilote, des candidats auront déjà des candidatures en cours
+  ou terminées, avec des entretiens passés sans le coach. Les scénarios actuels
+  supposent toujours une opportunité nouvelle (offre → préparation →
+  simulations → entretien réel).
+- Permettre, à l'initialisation du workspace comme à tout moment, de déclarer
+  une opportunité **a posteriori** : « j'ai déjà eu deux offres », « j'ai passé
+  deux entretiens chez X, pas retenue », « processus clôturé sans suite ».
+- Le coach crée alors la structure canonique (`00N-…`, `opportunity.md`,
+  `current-status.md`, `sources/` si des documents existent) et consigne
+  l'historique connu : rounds d'entretien déjà passés avec leurs métadonnées,
+  issue (refus, abandon, sans suite, en attente), ressenti et enseignements de
+  la candidate, sans inventer de transcript ni de simulation.
+- Les rounds passés pourraient être enregistrés directement en `actual/` à
+  partir des souvenirs de la candidate (cf. workflow « Reflect after the real
+  interview » sans transcript), pour alimenter les enseignements durables et la
+  préparation des opportunités suivantes.
+- À raffiner : statut « clôturée » dans le modèle de `current-status.md`,
+  arborescence pour les opportunités terminées (archives ?), et ajout d'une
+  étape correspondante dans le scénario maître du kit de test.
+
 ### Mode voix pour l'entretien d'initialisation et la démo
 
 - Évaluer un mode voix, même non interactif, pour conduire le premier
