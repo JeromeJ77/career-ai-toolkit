@@ -1,0 +1,69 @@
+AGENTS.md
+  s_4bca1fb3cbe0cb::t_ff4f01be248d5a 26-31,116
+CONTRIBUTING.md
+  s_4bca1fb3cbe0cb::t_6cc0b55aed9fe5 7,122-128
+build.bat
+  s_4bca1fb3cbe0cb::t_72ea6aaaa75cc3 18-25,72-95
+docs/architecture.md
+  s_4bca1fb3cbe0cb::t_fd2a1cfa4e4465 7-12
+docs/design/decision-log.md
+  s_4bca1fb3cbe0cb::t_11be97fc03a4a4 435-488
+docs/glossary.md
+  s_4bca1fb3cbe0cb::t_cd52ca7dda7fcc 63-66
+docs/test-log.md
+  s_4bca1fb3cbe0cb::t_866f651ea7364a 47-68,71-94
+examples/README.md
+  s_4bca1fb3cbe0cb::t_9f90f4bdc08c31 1-11
+test-kit/README.md
+  s_4bca1fb3cbe0cb::t_c4ecc0bc2b4248 1-33
+test-kit/sources/opportunity/001-lumen-pay-offre-developpeuse-backend-senior.md
+  s_4bca1fb3cbe0cb::t_f32ff327f76e91 1-62
+test-kit/sources/opportunity/002-northwind-ledger-notes-appel-recruteuse.txt
+  s_4bca1fb3cbe0cb::t_3ea65b567d3fed 1-26
+test-kit/sources/opportunity/002-northwind-ledger-senior-software-engineer.md
+  s_4bca1fb3cbe0cb::t_a3a87777e43fdf 1,3,5,7,9,11,13,15-59
+test-kit/sources/profile/certification-cloud-platform-associate.md
+  s_4bca1fb3cbe0cb::t_cf7c108e5a6ee0 1,3,5,7,9-41
+test-kit/sources/profile/cv-nadia-berkani.md
+  s_4bca1fb3cbe0cb::t_228a165df42cba 1-73
+test-kit/sources/profile/linkedin-nadia-berkani.md
+  s_4bca1fb3cbe0cb::t_f36fa23d4303a8 1-86
+test-kit/sources/profile/notes-complementaires-carriere.md
+  s_4bca1fb3cbe0cb::t_5a4059692aa598 1-42
+test-kit/tools/README.md
+  s_4bca1fb3cbe0cb::t_77dfc5b47bfdf7 1-40
+test-kit/tools/demo-script-header.md
+  s_4bca1fb3cbe0cb::t_bc066e9d8535f6 1,3
+test-kit/tools/generate_sources.py
+  s_4bca1fb3cbe0cb::t_afae69438f1a1c 1-288
+test-kit/tools/make_demo_script.ps1
+  s_4bca1fb3cbe0cb::t_84645c86422f00 1-63
+CHANGELOG.md
+  s_4bca1fb3cbe0cb::t_a21c86a0db4800 27-43,47-51
+docs/test-plan.md
+  s_4bca1fb3cbe0cb::t_c2e92fb4a045ce 127-134,162-217
+standalone/interview-coach-standalone.md
+  s_4bca1fb3cbe0cb::t_e60b51ada1878b 130-131
+test-kit/scenario.md
+  s_4bca1fb3cbe0cb::t_ce41ca7d2d5eeb 1-307
+workspace/skills/interview-coach/SKILL.md
+  s_4bca1fb3cbe0cb::t_74305697e5972c 79-85
+workspace/skills/interview-coach/references/interview-preparation-sheet-guidelines.md
+  s_4bca1fb3cbe0cb::t_223887552446a8 10-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1120062a27349722107ffb44b8876d90fe0caa3d",
+  "prompts": {},
+  "sessions": {
+    "s_4bca1fb3cbe0cb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce8092c1-ed8a-4496-b9b0-92a73a82b8e5",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
