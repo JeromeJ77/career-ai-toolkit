@@ -52,6 +52,35 @@ third cleanup commit.
 - Différé : il anticipe des issues non encore développées (issue #10 pour
   l'entretien d'initialisation, issue #12 pour les données fictives et la démo).
 
+### Tests automatiques du coach par sous-agent
+
+- Après le build (avec lui ou indépendamment), dérouler automatiquement un
+  ensemble de tests : décompresser le ZIP du workspace dans un répertoire
+  temporaire ignoré par Git localement, y copier les sources de référence du
+  kit de test (`test-kit/`), puis lancer un sous-agent dont ce répertoire est le
+  contexte.
+- Le sous-agent déclenche des conversations avec le coach pour reprendre toutes
+  les étapes et conversations possibles, dont l'initialisation du dossier
+  professionnel, en suivant le scénario maître du kit de test.
+- Le déroulé n'est pas déterministe : il reste a priori hors du build.
+- À la demande seulement, un script copie la partie `data/` du workspace
+  temporaire obtenu dans `examples/`, ce qui donne un exemple illustratif que
+  l'on peut commiter sans le changer à chaque exécution.
+- Dépend du kit de test et du scénario maître de l'issue #12.
+
+### Génération des sources fictives dans le build
+
+- Pour l'instant, les PDF et DOCX fictifs du kit de test sont produits par un
+  script à part et commités, pour ne pas ajouter de dépendance au build.
+- Évaluer plus tard l'intégration de cette génération au build.
+
+### Déplacer `build.bat` dans un sous-répertoire
+
+- Se demander s'il ne serait pas plus propre de placer `build.bat` dans un
+  sous-répertoire plutôt qu'à la racine du dépôt.
+- Point d'attention : `build/` est aujourd'hui ignoré par Git comme répertoire
+  d'artefacts ; le nom du sous-répertoire est à choisir en conséquence.
+
 ### Explorations ultérieures
 
 - Évaluer si un RAG serait utile, notamment dans le cadre de feedbacks
