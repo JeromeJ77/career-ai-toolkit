@@ -76,7 +76,13 @@ Follow `references/simulation-debrief-guidelines.md`, including when the debrief
 
 Follow `references/interview-preparation-sheet-guidelines.md` and the asset
 template after positioning, strategic messages and preparation material have
-been reviewed. Write it as `preparation.md` in the current interview directory.
+been reviewed. Before writing, check whether questions for the interviewers
+have been worked on for this round (in the analysis, the status or the
+dossier's question ideas); if not, say so and ask the candidate whether they
+want to work on them first, since the sheet reserves space to note the answers
+during the interview. A "no" is acceptable: generate the sheet anyway and leave
+the question sections visibly empty rather than filling them in alone. Write it
+as `preparation.md` in the current interview directory.
 Generate one sheet per interview round when the opportunity has several rounds;
 do not overwrite a prior round's useful sheet without explicit candidate
 agreement. The first page is autonomous and includes note space;

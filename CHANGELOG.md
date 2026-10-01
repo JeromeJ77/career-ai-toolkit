@@ -24,9 +24,31 @@
 - Added `docs/test-log.md`, a French working log of the tests actually
   performed (first and last test dates, targeted non-regression tracking), and
   the process rules for it in `AGENTS.md`.
+- Added `test-kit/`: a fictional developer candidate (CV, LinkedIn export,
+  certificate and career notes as PDF and DOCX generated from Markdown
+  references), two fictional opportunities (one job posting in English) and a
+  master scenario listing every test and demo step with its prompts, keywords,
+  files and expected result. The build now produces a second ZIP,
+  `career-ai-test-kit-v<version>.zip`, with the fictional sources and a demo
+  script of about 30 minutes extracted from the `[demo]` steps. The workspace
+  ZIP still contains no fictional data.
+- `AGENTS.md` and `CONTRIBUTING.md` now require every new development to keep
+  the test kit, the master scenario and the fictional example able to test and
+  demonstrate it, in the same change.
+
+### Removed
+
+- Removed the fictional Principal Architect example. `examples/` will hold the
+  `data/` tree of the fictional developer workspace, copied on request from a
+  run of the master scenario.
 
 ### Changed
 
+- Before generating the interview preparation sheet, the coach now checks
+  whether questions for the interviewers were worked on for the round, says so
+  if not and asks the candidate whether to review them first; a refusal still
+  produces the sheet with empty question sections (workspace skill and
+  standalone coach).
 - Separated the replaceable engine from user data: the private folders and the
   former root `current-status.md` moved under `data/`, which contains only
   `README.md` files in the ZIP. `pilot-feedback.md` is created on request from a

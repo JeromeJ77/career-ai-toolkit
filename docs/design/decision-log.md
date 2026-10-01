@@ -432,6 +432,60 @@ travail en français, documents de référence publics en anglais.
 
 Non urgent : à traiter après la livraison de l'issue #5.
 
+## D-013 — Un kit de test fictif et un scénario maître commun aux tests et à la démo
+
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-01
+- **Issue** : #12
+
+### Contexte
+
+Les tests du coach se faisaient sur les données personnelles du développeur, et
+la démo du toolkit restait théorique. L'exemple fictif d'architecte principal
+était peu représentatif de l'équipe et antérieur à la séparation moteur /
+données (#5). Il fallait un matériel fictif unique qui serve à tester, à
+démontrer, et plus tard à automatiser.
+
+### Décision et intention
+
+- Un répertoire `test-kit/` regroupe les sources fictives (références Markdown
+  et leurs PDF, DOCX, TXT générés) d'une développeuse fictive et de deux
+  opportunités, un **scénario maître** `scenario.md` et les outils de
+  génération. Le scénario est la liste ordonnée des étapes à jouer avec le
+  coach, chacune avec fichiers, prompt, mots-clés, résultat attendu et item du
+  plan de test. Les étapes retenues pour la démo portent le tag `[demo]`, celles
+  qui attendent une issue le tag `[todo #N]`.
+- Le build produit un **ZIP du kit** séparé du ZIP du workspace, contenant les
+  sources fictives et le **script de démo** filtré sur les étapes `[demo]`. Le
+  ZIP du workspace ne contient jamais de donnée fictive.
+- Les PDF et DOCX sont générés par un script de développement (Python,
+  `test-kit/tools/`) et commités : le build n'acquiert aucune dépendance.
+- `examples/` devient l'arborescence `data/` d'un workspace fictif, copiée **à
+  la demande** depuis un déroulé du scénario, car le résultat n'est pas
+  déterministe. L'ancien exemple est supprimé plutôt qu'adapté.
+- Règle de projet (`AGENTS.md`, `CONTRIBUTING.md`) : tout nouveau développement
+  vérifie et complète le kit et le scénario dans le même changement, et signale
+  explicitement une fonction non démontrable.
+- Langue : données fictives et documents de travail du kit en français (langue
+  du pilote), une offre en anglais pour tester une source étrangère ; chemins,
+  noms de fichiers et tags en anglais.
+
+### Conséquences
+
+- Les scénarios de `docs/test-plan.md` peuvent être rejoués sans donnée
+  personnelle et consignés dans `docs/test-log.md`.
+- Chaque issue suivante (#6, #9, #10, #11) enrichit le kit au lieu d'un gros
+  chantier de démo final.
+- Le format du scénario est pensé pour être exécuté plus tard par un sous-agent
+  (idée au backlog), sans que cela soit engagé.
+
+### Questions ouvertes
+
+- Nom du répertoire (`test-kit/`) retenu provisoirement ; il couvre le test et
+  la démo.
+- Génération des PDF et DOCX dans le build : différée au backlog.
+- Déplacement de `build.bat` dans un sous-répertoire : au backlog.
+
 ## Évolution du journal
 
 - Ajouter une entrée lorsqu'un choix structurel ou comportemental nécessite de

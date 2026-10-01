@@ -60,6 +60,10 @@ interfaces, instructions et échanges du pilote sont d'abord rédigés en franç
 | Skill de l'agent | Agent skill | Ensemble réutilisable d'instructions, de références et de modèles qui décrit un rôle et les workflows que l'agent doit suivre. Dans les chemins techniques, le terme court `skill` est conservé. |
 | Modèle | Template | Structure de document générique utilisée par le coach pour créer un nouvel artefact cohérent sans préremplir de données personnelles. |
 | Retour produit anonymisé | Sanitized product feedback | Retour sur l'expérience d'utilisation dont ont été retirées les données personnelles, les réponses d'entretien et les informations permettant d'identifier une organisation ou un tiers. |
+| Kit de test | Test kit | Matériel fictif du dépôt (`test-kit/`) qui permet de tester et de démontrer le toolkit sans donnée personnelle : sources fictives d'un candidat et d'opportunités, scénario maître et outils de génération. Le build le distribue dans un ZIP distinct du workspace. |
+| Scénario maître | Master scenario | Liste ordonnée des étapes à jouer avec le coach sur les données du kit de test (`test-kit/scenario.md`). Chaque étape indique les fichiers à déposer, le prompt, les mots-clés, le résultat attendu et l'item du plan de test couvert. Les tags `[demo]` et `[todo #N]` marquent respectivement les étapes retenues pour la démo et celles qui attendent une issue. |
+| Script de démo | Demo script | Extrait du scénario maître limité aux étapes `[demo]`, généré par le build dans le ZIP du kit de test. Il vise une démo d'environ 30 minutes. |
+| Exemple fictif | Fictional example | Arborescence `data/` d'un workspace fictif publiée sous `examples/` à titre illustratif. Elle est copiée à la demande depuis un déroulé du scénario maître, puis relue et commitée ; elle n'est pas régénérée à chaque build. |
 
 ## Vocabulaire en cours de grooming
 

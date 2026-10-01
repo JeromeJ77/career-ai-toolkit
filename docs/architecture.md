@@ -4,7 +4,12 @@ Career AI Toolkit separates generic, publishable assets from private user data.
 
 - `standalone/`: portable assistant instructions.
 - `workspace/`: generic workspace template distributed as a ZIP.
-- `examples/`: synthetic end-to-end demonstration.
+- `test-kit/`: fictional sources (Markdown references and their generated PDF,
+  DOCX and TXT), the master scenario and the tools that produce them. Packaged
+  by the build as a separate demo and manual-test ZIP, never in the workspace
+  ZIP.
+- `examples/`: illustrative `data/` tree of a fictional workspace, copied on
+  request from a test run of the master scenario.
 - `docs/`: product and pilot documentation.
 - `dist/`: local, untracked build output.
 

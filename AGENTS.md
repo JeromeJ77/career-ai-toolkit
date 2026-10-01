@@ -23,6 +23,12 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   the scenarios the change must satisfy (nominal flow, edge cases, limit cases,
   non-regression), recorded as « Non testé » and reviewed with the user before
   development, in the manner of acceptance-test-driven development.
+- At the same time, check that the test kit (`test-kit/`: fictional sources and
+  master scenario `scenario.md`) and the fictional example under `examples/`
+  make the new behavior testable and demonstrable. Complete the fictional
+  sources and add or adjust the scenario steps in the same change, tagging the
+  steps kept for the demo with `[demo]`. If a feature cannot be demonstrated
+  with the kit, report the gap explicitly to the user instead of ignoring it.
 - During development, revisit these scenarios to catch forgotten cases and add
   the ones discovered.
 - Record in `docs/test-log.md` only tests actually performed. Never mark a
@@ -107,4 +113,4 @@ plain documentation.
 
 ## Build behavior
 
-`build.bat` must only package source content. It must never install files, modify personal folders, access the network, or include the fictional example inside the workspace artifact.
+`build.bat` must only package source content. It must never install files, modify personal folders, access the network, or include the fictional example or the test kit inside the workspace artifact. It packages the test kit as a separate ZIP (fictional sources already generated and committed, plus the demo script extracted from the master scenario) and never calls the source generation script under `test-kit/tools/`.

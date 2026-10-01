@@ -124,6 +124,14 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   their sequence and metadata.
 - Confirm preparation, simulation and `actual/` artifacts are created only when
   their workflow phase is reached; no empty placeholder tree is generated.
+- Confirm the coach reviews the candidate's questions for the interviewers
+  before the sheet: reuses the ideas already in the dossier without asking for
+  them again, gives an opinion on each, proposes rephrasings and one or two
+  questions specific to the opportunity, separates this round's questions from
+  later rounds', and consigns only what the candidate validated. Confirm that a
+  sheet requested without this step makes the coach say so and ask whether to
+  do it first, and that a refusal still produces the sheet with the question
+  sections left empty and no invented question.
 - Complete preparation, sheet generation, simulation and post-interview
   reflection for one opportunity.
 - Confirm the opportunity receives a `current-status.md` and that it is updated
@@ -150,6 +158,62 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm status updates do not interrupt the interview simulation itself.
 - Confirm first-page sheet density and note area remain usable.
 - Confirm durable learnings are separated from opportunity-specific content.
+
+## Test kit, demo script and fictional example (#12)
+
+Nominal flow:
+
+- Confirm `test-kit/sources/profile/` holds a realistic, explicitly fictional
+  developer profile (CV, LinkedIn profile, certification, additional
+  information) whose Markdown sources are consistent with each other.
+- Confirm `test-kit/sources/opportunity/` holds at least two fictional
+  opportunities, the second one usable to show parallel handling with a session
+  change.
+- Run the generation script and confirm it produces the PDF and DOCX files from
+  the Markdown sources; confirm the committed files match a fresh generation.
+- Confirm each step of `test-kit/scenario.md` states the files to inject and
+  their destination under `data/`, the prompt, the keywords, the expected result
+  and the related test-plan item.
+- Run `build.bat` and confirm it produces the demo and manual-test kit ZIP with
+  the fictional sources and a demo script holding only the `[demo]` steps.
+- Confirm the `[demo]` steps fit in about 30 minutes.
+- Play the master scenario end to end in a fresh extracted workspace with the
+  fictional sources only, and confirm each step behaves as written.
+- Confirm `examples/fictitious-developer/data/` mirrors the workspace `data/`
+  tree, contains no engine file, and comes from that run.
+
+Edge cases:
+
+- Confirm steps depending on undelivered issues (#6, #9, #10, #11) are tagged
+  `[todo #N]` and flagged as such in the generated demo script.
+- Confirm the coach transcribes the fictional PDF, DOCX and TXT sources as
+  described in the transcription scenarios above.
+- Confirm `build.bat` never calls the generation script and requires no new
+  dependency (no Python, no library, no network).
+
+Limit cases:
+
+- Confirm the build fails clearly when `test-kit/scenario.md` or a required
+  kit source is missing.
+- Confirm the workspace ZIP still embeds no fictional data, test-kit content or
+  example.
+- Search `test-kit/` and `examples/` for real names, employers, emails and
+  phone numbers.
+- Confirm `examples/fictitious-principal-architect/` is gone and no document
+  still refers to it.
+
+Rule and documentation:
+
+- Confirm `AGENTS.md` requires every new development to check and complete the
+  test kit, the fictional example and the master scenario in the same change,
+  recalls it at issue start, and requires reporting a non-demonstrable feature.
+- Confirm `CONTRIBUTING.md` (and any issue template or PR checklist) repeats the
+  rule consistently.
+
+Non-regression:
+
+- Replay « Build » and « Repository privacy » after the example is replaced and
+  the kit ZIP is added.
 
 ## Regression
 

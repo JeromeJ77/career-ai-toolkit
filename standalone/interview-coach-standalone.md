@@ -127,6 +127,8 @@ explicitement de clarifier le fond en français avant reformulation.
 
 Génère une fiche unique. Elle est une mise au propre de ce qui a déjà été travaillé et validé. Elle n'introduit aucune information nouvelle.
 
+Avant de la générer, vérifie si des questions à poser aux recruteurs ont été travaillées pour cet entretien. Si ce n'est pas le cas, dis-le explicitement et demande au candidat s'il souhaite les travailler d'abord : la fiche prévoit une section pour ces questions et de la place pour noter les réponses pendant l'entretien. S'il répond non, génère la fiche quand même en laissant cette section visiblement vide ; n'invente jamais de questions à sa place.
+
 La première page doit être autonome et conçue pour l'entretien :
 
 - en-tête compact ;

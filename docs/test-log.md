@@ -44,7 +44,53 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | Workspace | Arrêt anticipé d'une simulation et simulation suivante | ⬜ Non testé | — | — |  |
 | Regression | Scénarios essentiels standalone et workspace après changement du coach | ⬜ Non testé | — | — | À rejouer après les modifications de #5. |
 
+### Scénarios à satisfaire pour l'issue #12 (kit de test, script de démo, exemple fictif)
+
+Définis le 2026-10-01 et adaptés au périmètre révisé de l'issue ; à relire avec l'utilisateur avant développement. Aucun n'a été testé.
+
+| Section du plan | Scénario | Statut | Premier test | Dernier test | Remarques |
+| --- | --- | --- | --- | --- | --- |
+| Kit de test | Sources Markdown du profil de développeur fictif, réalistes et cohérentes (`sources/profile/`) | ⬜ Non testé | — | — | Nominal. |
+| Kit de test | Au moins deux opportunités fictives (`sources/opportunity/`) | ⬜ Non testé | — | — | Nominal. |
+| Kit de test | Génération des PDF et DOCX par le script à part ; fichiers commités conformes | ✅ Validé | 2026-10-01 | 2026-10-01 | Six fichiers générés ; rendu des PDF (titres, puces, tableau) et styles du DOCX vérifiés. |
+| Scénario maître | Fichiers, destination, prompt, mots-clés, résultat attendu et item du plan pour chaque étape | ⬜ Non testé | — | — | Nominal. |
+| Build | ZIP du kit de démo et de test avec sources et script de démo limité aux étapes `[demo]` | ✅ Validé | 2026-10-01 | 2026-10-01 | `career-ai-test-kit-v0.4.0-dev.zip` : README, scénario, script de démo (16 étapes après ajout de D4), 7 sources sans les `.md`. |
+| Script de démo | Étapes `[demo]` tenant en environ 30 minutes | ⬜ Non testé | — | — | Nominal. |
+| Scénario maître | Déroulé complet dans un workspace neuf, sources fictives uniquement | ⬜ Non testé | — | — | Nominal ; couvre aussi les zones Workspace non testées ci-dessus. |
+| Exemple fictif | `examples/fictitious-developer/data/` issu du déroulé, arborescence `data/` seule | ⬜ Non testé | — | — | Nominal. |
+| Scénario maître | Étapes dépendant de #6, #9, #10, #11 taguées `[todo #N]` | ⬜ Non testé | — | — | Cas limite. |
+| Kit de test | Transcription des PDF, DOCX et TXT fictifs par le coach | ⬜ Non testé | — | — | Cas limite. |
+| Build | Script de génération jamais appelé, aucune nouvelle dépendance | ✅ Validé | 2026-10-01 | 2026-10-01 | `build.bat` n'appelle que PowerShell ; le script Python n'y figure pas. |
+| Build | Échec clair si `scenario.md` ou une source requise du kit manque | ⚠️ À revalider | 2026-10-01 | 2026-10-01 | `scenario.md` retiré : échec clair. Source PDF retirée : non testé, fichier verrouillé par OneDrive pendant l'essai (même boucle de vérification). |
+| Build | ZIP du workspace sans donnée fictive, kit de test ni exemple | ✅ Validé | 2026-10-01 | 2026-10-01 | Aucune entrée du ZIP ne correspond à `test-kit`, `example`, `berkani` ou `lumen`. |
+| Confidentialité | Aucune donnée réelle dans `test-kit/` et `examples/` ; plus de référence à l'ancien exemple | ✅ Validé | 2026-10-01 | 2026-10-01 | Adresses en `.example`, téléphone `06 00 00 00 01`, URL LinkedIn `-example`. Les slugs `001-acme-principal-architect` des guidelines sont des exemples de nommage, pas des renvois. |
+| Règle de projet | `AGENTS.md` et `CONTRIBUTING.md` cohérents sur la règle kit de test et démo | ⬜ Non testé | — | — | Documentation. |
+
 ## Sessions
+
+### 2026-10-01 — Kit de test, génération des sources et build (issue #12)
+
+- **Testeur** : agent de développement, sur le poste du développeur du toolkit.
+- **Version** : `0.4.0-dev`.
+- **Données** : kit de test fictif uniquement (`test-kit/`).
+
+Résultats :
+
+- ✅ Génération des PDF et DOCX : six fichiers produits par `generate_sources.py` ; rendu des PDF du CV et du certificat vérifié (titres, puces, tableau, filets), styles du DOCX vérifiés.
+- ✅ Build : deux ZIP produits ; le ZIP du kit contient README, scénario, script de démo et les sept sources (PDF, DOCX, TXT) sans les références Markdown.
+- ✅ ZIP du workspace : aucune entrée liée au kit, à l'exemple ou à la candidate fictive.
+- 🐞→✅ Script de démo : première version laissait passer le corps d'une étape non `[demo]` quand elle était la seule de sa phase ; corrigé, toutes les étapes `[demo]` conservées (16 après la relecture du scénario), phase F absente.
+- 🐞→✅ `make_demo_script.ps1` : échec de parsing sous Windows PowerShell 5.1 à cause d'un caractère non ASCII ; script passé en ASCII pur, en-tête déplacé dans `demo-script-header.md`.
+- ✅ Échec clair du build quand `scenario.md` manque.
+- ⬜ Échec quand une source PDF manque : non testé, fichier verrouillé par OneDrive.
+- ✅ Aucune donnée réelle dans `test-kit/` (recherche d'adresses, téléphones, URL).
+- ⬜ Déroulé du scénario avec le coach dans un workspace extrait : non fait ; à jouer par le développeur, avec consignation étape par étape.
+
+Suites à donner :
+
+- Jouer le scénario maître (étapes A1 à F1) dans un workspace extrait et consigner les résultats, notamment le « point à confirmer » de D1 (déplacement ou copie de l'original).
+- Produire `examples/fictitious-developer/data/` à partir de ce déroulé (étape F2).
+- Rejouer l'échec du build avec une source PDF manquante.
 
 ### 2026-09-30 — Rejeu après consolidation des règles (issue #5)
 

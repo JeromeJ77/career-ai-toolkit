@@ -4,7 +4,7 @@ Version 0.3 is a pilot. Keep contributions small, testable, and aligned with val
 
 1. Read `AGENTS.md`, `BACKLOG.md`, and `docs/test-plan.md`.
 2. Never use real candidate data in examples or tests.
-3. Use the fictional Principal Architect scenario for demonstrations.
+3. Use the fictional developer scenario of `test-kit/` for tests and demonstrations.
 4. Update documentation and `CHANGELOG.md` when behavior changes.
 5. Do not add installation, update, or CV-generation complexity without a validated pilot need.
 
@@ -119,9 +119,13 @@ between the second and third repository checkpoints.
 
 1. **Ready**: keep only 3 to 5 items in *Ready*. Work on the top item by priority.
 2. **In progress**: work on a branch and open a pull request that references the
-   issue with `Fixes #<number>`.
-3. **In review**: check the change against `docs/test-plan.md`, update
-   documentation and `CHANGELOG.md`, then merge.
+   issue with `Fixes #<number>`. Start by recording the scenarios in
+   `docs/test-plan.md` and `docs/test-log.md` and by checking that the test kit
+   can test and demonstrate the change (see `AGENTS.md`).
+3. **In review**: check the change against `docs/test-plan.md`, confirm the
+   test kit and master scenario (`test-kit/`) cover the new behavior and that
+   the change can be demonstrated with them, update documentation and
+   `CHANGELOG.md`, then merge.
 4. **Done**: the issue closes with the pull request.
 
 Board columns: Backlog, Ready, In progress, In review, Done.
