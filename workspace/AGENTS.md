@@ -9,7 +9,7 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 ## Engine and user data
 
 - The engine (`skills/`, `AGENTS.md`, `CLAUDE.md`, READMEs) is generic and replaceable. All user data lives under `data/` and is never overwritten by the engine.
-- Before reading user data, follow `skills/init-workspace/SKILL.md`: create any missing mandatory file under `data/` from its template, without overwriting an existing file.
+- Before reading user data, follow `skills/init-workspace/SKILL.md`: create any missing mandatory file under `data/` from its template, without overwriting an existing file. If other user data shows that a missing file already held content, do not recreate it: report a possible loss and ask the candidate how to proceed.
 - At session start, add any key missing from `data/config/workspace.yaml` with its template default value, without altering existing keys, and tell the candidate which keys were added. If an existing key has an invalid value or the file is malformed, do not rewrite it: use the template default for the session, tell the candidate which key, value and default are involved, and let them correct the file.
 
 ## Source of truth
@@ -32,7 +32,7 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 - The workspace is the durable reference between conversations; conversation history is temporary session context.
 - Treat a conversation as a focused work session, not as the permanent container for an opportunity.
-- Read `data/current-status.md` before selecting or resuming a scope.
+- Read `data/current-status.md` before selecting or resuming a scope, and read the professional profile so you know its actual state; correct a status that contradicts the files.
 - For opportunity work, read that opportunity's `current-status.md` before its other relevant files.
 - Keep the root status minimal and use each opportunity status for its own detailed working state.
 - Update the relevant status when the scope, workflow phase, important validated decisions, useful artifacts or next action changes.

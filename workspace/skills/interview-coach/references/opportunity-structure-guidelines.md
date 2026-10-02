@@ -9,17 +9,19 @@ The coach creates the opportunity directory; the candidate supplies the availabl
 1. Inspect the existing directories under `data/opportunities/`.
 2. Find the highest leading numeric identifier and allocate the next one. Use at least three digits: `001`, `002`, `003`. Never fill a gap or renumber an existing opportunity.
 3. Build a lowercase ASCII kebab-case slug from the organization and role, for example `001-acme-principal-architect`. Remove diacritics, replace punctuation and whitespace with single hyphens, and avoid adding facts that are not known.
-4. Create the opportunity directory.
+4. Create the opportunity directory and its `sources/` directory.
 5. Create `opportunity.md` from `../assets/opportunity.template.md` and `current-status.md` from `../assets/opportunity-current-status.template.md`.
-6. If original files are available and authorized for retention, place an unchanged copy under `sources/` when the tool can do so safely. Do not rename, move, rewrite or delete the supplied original without the candidate's agreement.
-7. Convert the useful source content into `opportunity.md`. Preserve the source language unless the candidate requests a translation. Record source paths or provenance and distinguish missing or uncertain information from source facts.
-8. Update the opportunity status and the root status with the new scope and next action.
+6. If the documents are not provided yet, tell the candidate the three ways to provide them: copy the files into `sources/` and say so; attach them to the conversation; or paste the text into the conversation.
+7. If original files are available and authorized for retention, place an unchanged copy under `sources/` when the tool can do so safely. Do not rename, move, rewrite or delete the supplied original without the candidate's agreement. When the candidate pastes text, save it unchanged as a Markdown file under `sources/` with a short header stating that it was pasted in the conversation and when.
+8. Transcribe each original that is not already Markdown or plain text to `<same-name>.md` next to it, following the source transcription rules of `professional-profile-guidelines.md` (faithful transcription, header, no overwrite, confirmation for very voluminous sources).
+9. Convert the useful source content into `opportunity.md`. Preserve the source language unless the candidate requests a translation. Record source paths or provenance and distinguish missing or uncertain information from source facts.
+10. Update the opportunity status and the root status with the new scope and next action.
 
 `opportunity.md` is the canonical textual representation used by the coach. It contains source information, not fit analysis, positioning or invented interpretation. When analysis starts, create `analysis.md` from `../assets/opportunity-analysis.template.md` and keep derived reasoning there.
 
 If organization or role information is insufficient for a stable slug, ask only for the missing identifier before creating the directory. Numeric prefixes make otherwise identical organization-role slugs unambiguous.
 
-When a new source is added later, preserve it like the earlier originals and update `opportunity.md` from the combined evidence. Flag contradictions or superseded information explicitly instead of silently choosing one version.
+When a new source is added later, preserve and transcribe it like the earlier originals and update `opportunity.md` from the combined evidence. Flag contradictions or superseded information explicitly instead of silently choosing one version.
 
 ## Create an interview round
 
@@ -44,7 +46,9 @@ data/opportunities/
     |-- current-status.md
     |-- opportunity.md
     |-- analysis.md                      # when opportunity analysis starts
-    |-- sources/                         # only when originals are retained
+    |-- sources/                         # created with the opportunity
+    |   |-- job-posting.pdf              # unchanged original
+    |   `-- job-posting.md               # transcription
     `-- interviews/                      # from the first known round
         `-- 01-screening/
             |-- interview.md
@@ -65,4 +69,5 @@ data/opportunities/
 - Generate a simulation's `debrief.md` from `../assets/simulation-debrief.template.md`.
 - A round has at most one `actual/` directory. A transcript is optional; candidate notes are sufficient for `review.md`.
 - Generate `actual/review.md` from `interview-feedback.template.md` when reviewing the real interview.
-- Reference created artifacts from the opportunity status instead of copying their full contents into it.
+- Keep each round's `interview.md` current: update its status and « Artefacts du round » section when preparation starts, after each simulation and debrief, and when the actual interview is documented.
+- Reference created artifacts from the opportunity status instead of copying their full contents into it. For a round's detail, point to its `interview.md`.

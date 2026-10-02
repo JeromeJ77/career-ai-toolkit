@@ -12,7 +12,7 @@ The profile is candidate-owned and written in the configured primary language.
 
 ## Source transcription
 
-Each source document the candidate adds under `data/profile/sources/` (PDF, DOCX, image, export, etc.) gets a Markdown transcription next to it, so that later sessions rely on the `.md` file instead of reopening the original.
+Each source document the candidate adds under `data/profile/sources/` (PDF, DOCX, image, export, etc.) gets a Markdown transcription next to it, so that later sessions rely on the `.md` file instead of reopening the original. The same rules apply to the originals kept in an opportunity's `sources/` directory (see `opportunity-structure-guidelines.md`).
 
 - Create `<same-name>.md` in the same directory as the original (`resume-2024.pdf` gives `resume-2024.md`). Skip it when the source already is Markdown or plain text.
 - Never modify, move, rename or delete the original. The transcription is derived; the original remains the evidence.

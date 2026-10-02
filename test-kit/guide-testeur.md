@@ -5,7 +5,7 @@ Ce guide aide à dérouler `scenario.md` et à garder une trace exploitable des 
 ## Avant de commencer
 
 - Extraire le ZIP du workspace **hors du dépôt**, l'ouvrir comme projet dans VS Code avec Claude Code (ou l'outil IA équivalent).
-- Les fichiers à déposer viennent du ZIP du kit (`sources/profile/`, `sources/opportunity/`). Le scénario indique pour chaque étape où les copier.
+- Les fichiers à déposer viennent du ZIP du kit (`sources/profile/`, `sources/opportunities/`). Le scénario indique pour chaque étape où les copier.
 - Préparer un fichier de notes **en dehors du workspace et du dépôt** (par exemple à côté du workspace extrait).
 - Les données sont fictives : aucune précaution de confidentialité particulière n'est nécessaire pour les notes ou pour un assistant de prise de notes externe. N'y mélangez jamais de vraies données.
 

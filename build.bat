@@ -16,7 +16,7 @@ for %%F in ("standalone\interview-coach-standalone.md" "workspace\README.fr.md" 
 )
 
 rem Test kit: the generated sources are committed, the build only packages them.
-for %%F in ("test-kit\README.md" "test-kit\scenario.md" "test-kit\guide-testeur.md" "test-kit\tools\make_demo_script.ps1" "test-kit\tools\demo-script-header.md" "test-kit\sources\profile\cv-nadia-berkani.pdf" "test-kit\sources\profile\linkedin-nadia-berkani.pdf" "test-kit\sources\profile\certification-cloud-platform-associate.pdf" "test-kit\sources\profile\notes-complementaires-carriere.docx" "test-kit\sources\opportunity\001-lumen-pay-offre-developpeuse-backend-senior.pdf" "test-kit\sources\opportunity\002-northwind-ledger-senior-software-engineer.pdf" "test-kit\sources\opportunity\002-northwind-ledger-notes-appel-recruteuse.txt") do (
+for %%F in ("test-kit\README.md" "test-kit\scenario.md" "test-kit\guide-testeur.md" "test-kit\tools\make_demo_script.ps1" "test-kit\tools\demo-script-header.md" "test-kit\sources\profile\cv-nadia-berkani.pdf" "test-kit\sources\profile\linkedin-nadia-berkani.pdf" "test-kit\sources\profile\certification-cloud-platform-associate.pdf" "test-kit\sources\profile\notes-complementaires-carriere.docx" "test-kit\sources\profile\livret-formation-architecture-systemes-distribues.pdf" "test-kit\sources\opportunities\001-lumen-pay-offre-developpeuse-backend-senior.pdf" "test-kit\sources\opportunities\002-northwind-ledger-senior-software-engineer.pdf" "test-kit\sources\opportunities\002-northwind-ledger-notes-appel-recruteuse.txt") do (
   if not exist %%F (
     echo ERROR: Required test kit file missing: %%~F
     exit /b 1
@@ -80,7 +80,7 @@ if errorlevel 1 (
   echo ERROR: Could not copy test kit sources.
   exit /b 1
 )
-del /q "build\career-ai-test-kit\sources\*.md" "build\career-ai-test-kit\sources\profile\*.md" "build\career-ai-test-kit\sources\opportunity\*.md" 2>nul
+del /q "build\career-ai-test-kit\sources\*.md" "build\career-ai-test-kit\sources\profile\*.md" "build\career-ai-test-kit\sources\opportunities\*.md" 2>nul
 
 powershell -NoProfile -ExecutionPolicy Bypass -File "test-kit\tools\make_demo_script.ps1" -Source "test-kit\scenario.md" -Target "build\career-ai-test-kit\demo-script.md" -Version "%VERSION%"
 if errorlevel 1 (

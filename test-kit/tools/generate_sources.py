@@ -48,8 +48,9 @@ MANIFEST: dict[str, str] = {
     "profile/linkedin-nadia-berkani.md": "pdf",
     "profile/certification-cloud-platform-associate.md": "pdf",
     "profile/notes-complementaires-carriere.md": "docx",
-    "opportunity/001-lumen-pay-offre-developpeuse-backend-senior.md": "pdf",
-    "opportunity/002-northwind-ledger-senior-software-engineer.md": "pdf",
+    "profile/livret-formation-architecture-systemes-distribues.md": "pdf",
+    "opportunities/001-lumen-pay-offre-developpeuse-backend-senior.md": "pdf",
+    "opportunities/002-northwind-ledger-senior-software-engineer.md": "pdf",
 }
 
 

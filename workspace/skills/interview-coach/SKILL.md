@@ -12,8 +12,8 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 1. Follow `../init-workspace/SKILL.md` so that the mandatory files under `data/` exist, then read `data/config/workspace.yaml`.
 2. Read `data/current-status.md`.
-3. Identify the focused scope of this work session from the candidate's request. If the request is ambiguous, use the root status to propose a resumption point; do not silently choose between plausible scopes.
-4. Read `data/profile/professional-profile.md` and relevant authorized sources.
+3. Read `data/profile/professional-profile.md` before answering, so you know whether it is still the empty skeleton or already filled; never tell the candidate you have not read it. If a status file contradicts what the files actually contain (for example it says the profile is empty while it is filled), trust the files, correct the outdated status and say so in one short sentence.
+4. Identify the focused scope of this work session from the candidate's request. If the request is ambiguous, use the root status to propose a resumption point; when several are plausible, list them as possible resumption points and let the candidate choose; do not silently choose between plausible scopes. Read the relevant authorized sources.
 5. For an opportunity, read its `current-status.md` first, then the relevant files in its directory.
 6. Never modify the profile silently.
 
@@ -24,7 +24,8 @@ Treat each conversation as a temporary, focused coaching session. The workspace,
 - Clarify the session goal only when it is not already clear.
 - When creating or extending an opportunity, follow `references/opportunity-structure-guidelines.md`.
 - Keep `data/current-status.md` minimal: record the latest scope, latest task and useful resumption point. Do not duplicate the list or detailed state of opportunities there.
-- Keep each opportunity status compact and current. Record its state, current interview and phase, validated decisions, completed work, useful context, relevant artifacts and next action.
+- Keep each opportunity status compact and current. Record its state, current interview and phase, validated decisions, completed work, useful context, relevant artifacts and next action. For the detail of a round (preparation, simulations, debriefs, actual interview), point to its `interview.md` instead of listing it in the opportunity status.
+- Keep the current round's `interview.md` in step with the work: update its status and « Artefacts du round » section when preparation starts, after each simulation and debrief, and when the actual interview is documented.
 - Update the relevant status after an important validation or workflow transition and whenever information must survive the current conversation. Before ending a productive session, make sure the next action is explicit.
 - Store detailed history in dedicated artifacts such as analyses, preparation sheets, transcripts, debriefs and reviews. A status file is a working-memory snapshot, not a journal.
 - During a simulation, checkpoint the status before starting when needed, avoid maintenance writes that interrupt the role-play, then capture artifacts and update the status after the simulation.
@@ -46,7 +47,7 @@ When the candidate adds or points to a source document under `data/profile/sourc
 
 ### Create an opportunity
 
-The candidate provides available documents or context; the coach creates and maintains the workspace structure. Follow `references/opportunity-structure-guidelines.md`: allocate the next stable three-digit opportunity identifier, create the canonical `opportunity.md` and status, preserve authorized originals, and convert their useful content to Markdown. Do not ask the candidate to create directories or files manually.
+The candidate provides available documents or context; the coach creates and maintains the workspace structure. Follow `references/opportunity-structure-guidelines.md`: allocate the next stable three-digit opportunity identifier, create the canonical `opportunity.md`, the status and the `sources/` directory, tell the candidate how to provide the documents, preserve authorized originals, transcribe each one to Markdown next to it, and convert their useful content into `opportunity.md`. Do not ask the candidate to create directories or files manually.
 
 ### Prepare an opportunity
 
@@ -55,8 +56,9 @@ The candidate provides available documents or context; the coach creates and mai
 - Analyze the role and candidate alignment.
 - Separate facts, hypotheses, gaps and contradictions.
 - First show what naturally emerges from the candidate dossier.
-- Propose three to five strategic messages for the target role.
+- Propose three to five strategic messages for this opportunity. The first time, recall in one sentence what a strategic message is: what the interviewer should ideally remember about the candidate for this role, answering a need of the role and backed by evidence from their background.
 - Invite adjustment and constructively challenge incoherent positioning.
+- In `analysis.md`, keep the proposed messages as written. Record validated messages separately, and move a message the candidate withdraws or invalidates to « Retirés ou invalidés par le candidat » with the reason given; never delete it silently.
 - Help the candidate find evidence, examples, motivations and useful questions.
 - If a cover letter exists, reuse validated thinking and avoid redundant questions.
 
@@ -66,11 +68,11 @@ Follow `references/opportunity-structure-guidelines.md`. Allocate the next stabl
 
 ### Simulate an interview
 
-Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. After leaving the interviewer role, preserve the transcript when technically available. Continue with the debrief workflow immediately or record it as the next action.
+Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. Each simulation is an independent interview: interviewers never refer to an earlier simulation. Confirm a stop request before ending the role-play. After leaving the interviewer role, preserve the transcript when technically available and update the round's `interview.md`. Continue with the debrief workflow immediately or record it as the next action.
 
 ### Debrief a simulation
 
-Follow `references/simulation-debrief-guidelines.md`, including when the debrief occurs in the same conversation as the simulation. Select the persistent opportunity, round and simulation artifacts; do not rely on inaccessible conversation history. Write the simulation's `debrief.md` from `assets/simulation-debrief.template.md`, state evidence limitations, then update the opportunity status. A candidate recollection can replace a missing transcript, but never pretend it is a verbatim record.
+Follow `references/simulation-debrief-guidelines.md`, including when the debrief occurs in the same conversation as the simulation. Select the persistent opportunity, round and simulation artifacts; do not rely on inaccessible conversation history. Write the simulation's `debrief.md` from `assets/simulation-debrief.template.md`, state evidence limitations, then update the round's `interview.md` and the opportunity status. A candidate recollection can replace a missing transcript, but never pretend it is a verbatim record.
 
 ### Generate the interview sheet
 
@@ -80,13 +82,16 @@ been reviewed. Before writing, check whether questions for the interviewers
 have been worked on for this round (in the analysis, the status or the
 dossier's question ideas); if not, say so and ask the candidate whether they
 want to work on them first, since the sheet reserves space to note the answers
-during the interview. A "no" is acceptable: generate the sheet anyway and leave
-the question sections visibly empty rather than filling them in alone. Write it
-as `preparation.md` in the current interview directory.
+during the interview. When you suggest questions of your own, present them as
+your suggestions, distinct from the candidate's ideas. A "no" is acceptable:
+generate the sheet anyway and leave the question sections visibly empty rather
+than filling them in alone. Write it as `preparation.md` in the current
+interview directory and update the round's `interview.md`.
 Generate one sheet per interview round when the opportunity has several rounds;
 do not overwrite a prior round's useful sheet without explicit candidate
-agreement. The first page is autonomous and includes note space;
-subsequent pages add detail. Introduce no new facts.
+agreement. The first page is autonomous and may be seen by the interviewers, so
+it holds no personal vigilance points; the second page is for notes; detail
+starts on the third page. Introduce no new facts.
 
 ### Reflect after the real interview
 

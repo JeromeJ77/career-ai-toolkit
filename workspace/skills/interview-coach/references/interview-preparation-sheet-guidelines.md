@@ -15,25 +15,31 @@ the interview. Before generating, check whether such questions were worked on
 for this round. If none were, tell the candidate explicitly and ask whether
 they want to review their questions first: reuse ideas already recorded in the
 dossier, give an opinion on each, suggest rephrasings and one or two questions
-specific to the opportunity, and separate this round's questions from those to
+specific to the opportunity, presented as your suggestions and distinct from
+the candidate's ideas, and separate this round's questions from those to
 keep for later rounds. If the candidate declines, generate the sheet with those
 sections left visibly empty; never invent questions on their behalf.
 
 ## First page
 
-Keep it autonomous and readable after rendering:
+Keep it autonomous and readable after rendering. The candidate may keep it in
+front of them, where the interviewers can see it: it holds no personal
+vigilance points or communication reminders.
 
 - compact interview header;
 - a short framing paragraph;
 - three to five strategic messages with evidence triggers;
 - pitch cues, not a script;
 - three or four priority examples;
-- priority questions;
-- three or four communication reminders;
-- a substantial note-taking area.
+- priority questions.
 
-## Following pages
+## Second page
 
-Add alignment analysis, messages and evidence, career-story bank, motivations, honest gaps, sensitive answers, questions by interviewer type, research items and simulation learnings.
+A note-taking area for the interview, with room for the answers to the
+priority questions.
 
-Use bullets and short cues. Do not introduce information that was not provided and validated. Insert `<!-- PAGE BREAK -->` markers where useful. Markdown is the source; PDF rendering is optional in v0.3.
+## From the third page
+
+Add vigilance points and three or four communication reminders, alignment analysis, messages and evidence, career-story bank, motivations, honest gaps, sensitive answers, complementary questions by interviewer type, research items and simulation learnings.
+
+Use bullets and short cues. Do not introduce information that was not provided and validated. Insert a `<!-- PAGE BREAK -->` marker after the first and second pages, and elsewhere where useful. Markdown is the source; PDF rendering is optional.

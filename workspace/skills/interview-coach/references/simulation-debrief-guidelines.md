@@ -30,6 +30,6 @@ A simulation debrief is an autonomous workflow. It may run immediately after the
 
 1. Write or update the selected simulation's `debrief.md` from `../assets/simulation-debrief.template.md`.
 2. List the persistent sources used and any evidence limitations in the document.
-3. Make one next action explicit, such as revisiting an answer, improving preparation or running another simulation. When another simulation is chosen, it starts a new numbered simulation and asks for the depth again.
-4. Update the opportunity status with the completed debrief, relevant artifacts, current focus and next action.
+3. Make one next action explicit, such as revisiting an answer, improving preparation or running another simulation. When another simulation is chosen, it starts a new numbered simulation, asks for the depth again and whether to replay the same case or another one.
+4. Update the round's `interview.md` to list the debrief, then the opportunity status with the current focus and next action, pointing to `interview.md` for the round's detail.
 5. Propose preparation or professional-profile changes separately. Do not silently merge simulation feedback into either document.

@@ -171,7 +171,7 @@ data/opportunities/
     |-- current-status.md
     |-- opportunity.md
     |-- analysis.md                      # lorsque l'analyse commence
-    |-- sources/                         # si des originaux sont conservés
+    |-- sources/                         # originaux et leurs transcriptions
     `-- interviews/                      # à partir du premier round connu
         `-- 01-screening/
             |-- interview.md

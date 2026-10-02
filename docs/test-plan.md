@@ -52,11 +52,19 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm the first debrief is succinct and evidence-based.
 - Confirm the coach offers the Court, Standard and Approfondi depths with
   approximate duration and question count, and mentions the stop keywords.
-- Confirm each stop keyword ends a simulation, that a « stop » inside an answer
-  does not, that an unclear phrasing such as « je veux arrêter là » triggers a
-  confirmation, and that a pause request is answered by saying pausing is not
-  supported.
-- Write « stop » mid-simulation; confirm the coach states it is stopping at the
+- Confirm each stop keyword triggers a confirmation recalling that the stop is
+  final, that the simulation resumes if the candidate does not confirm, that a
+  « stop » inside an answer triggers nothing, that an unclear phrasing such as
+  « je veux arrêter là » triggers the same confirmation, and that a pause
+  request is answered by saying pausing is not supported.
+- Confirm a second simulation is independent from the first (no « rebonjour »,
+  no reference to the earlier session) and that the coach asks whether to
+  replay the same case or play another one.
+- Confirm the coach recalls what a strategic message is the first time, and
+  keeps a withdrawn message apart with its reason instead of deleting it.
+- Confirm questions the coach suggests for the interviewers are presented as
+  its suggestions, distinct from the candidate's ideas.
+- Write « stop » mid-simulation and confirm; check the coach states it is stopping at the
   candidate's request, leaves the role, optionally offers to collect the
   candidate's questions, debriefs only what was played, does not assess unplayed
   parts, then asks the depth again for a new simulation.
@@ -106,17 +114,25 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Delete `data/profile/professional-profile.md` but keep the sources and
   `data/current-status.md`. Confirm the coach flags the inconsistency, suggests
   a possible file loss, and does not recreate or rewrite the profile until the
-  candidate decides; then ask for a full re-import and confirm the sources are
-  transcribed again and the profile is rebuilt through the validated workflow.
+  candidate decides (no empty skeleton is created from the template); then ask
+  for a full re-import and confirm the sources are transcribed again and the
+  profile is rebuilt through the validated workflow.
+- At the start of a session, confirm the coach has read the professional
+  profile (it never says it does not know whether the profile is filled) and
+  corrects a status that says the profile is empty while it is filled.
 - Confirm `data/current-status.md` is read and remains a minimal routing
   snapshot rather than an opportunity index.
 - Give the coach source material for two opportunities without creating their
   directories manually.
 - Confirm it creates stable `001-...` and `002-...` directories, then uses
   `max + 1` without filling gaps or renumbering existing opportunities.
-- Confirm each opportunity has a canonical `opportunity.md` and
-  `current-status.md`, and that retained original files under `sources/` remain
-  unchanged.
+- Confirm each opportunity has a canonical `opportunity.md`,
+  `current-status.md` and a `sources/` directory created with it, that the coach
+  states the three ways to provide a document (copy into `sources/`, attach to
+  the conversation, paste the text), that retained original files under
+  `sources/` remain unchanged, and that each PDF or DOCX original gets a
+  Markdown transcription next to it while pasted text is saved as a Markdown
+  file.
 - Confirm derived analysis is separate from the canonical source
   representation and uncertain information is explicit.
 - Create a first and second interview round and confirm
@@ -136,6 +152,10 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   reflection for one opportunity.
 - Confirm the opportunity receives a `current-status.md` and that it is updated
   after phase changes, important validations and new relevant artifacts.
+- Confirm the round's `interview.md` is updated when preparation starts, after
+  each simulation and debrief and when the actual interview is documented, and
+  that the opportunity status points to it instead of listing the round's
+  detail.
 - For the same opportunity, run at least two simulation/debrief/improvement
   loops; confirm `simulations/01/` and `simulations/02/` remain distinct, then
   prepare a follow-up interview round.
@@ -156,7 +176,10 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   `debrief.md` records the early stop, and a following simulation
   uses the next `simulations/NN/` directory without altering the first.
 - Confirm status updates do not interrupt the interview simulation itself.
-- Confirm first-page sheet density and note area remain usable.
+- Confirm first-page sheet density remains usable, that the first page holds no
+  vigilance points or communication reminders, that the second page is the note
+  area and that detail starts on the third page with the vigilance points and
+  communication reminders.
 - Confirm durable learnings are separated from opportunity-specific content.
 
 ## Test kit, demo script and fictional example (#12)
@@ -166,7 +189,7 @@ Nominal flow:
 - Confirm `test-kit/sources/profile/` holds a realistic, explicitly fictional
   developer profile (CV, LinkedIn profile, certification, additional
   information) whose Markdown sources are consistent with each other.
-- Confirm `test-kit/sources/opportunity/` holds at least two fictional
+- Confirm `test-kit/sources/opportunities/` holds at least two fictional
   opportunities, the second one usable to show parallel handling with a session
   change.
 - Run the generation script and confirm it produces the PDF and DOCX files from
@@ -176,7 +199,12 @@ Nominal flow:
   and the related test-plan item.
 - Run `build.bat` and confirm it produces the demo and manual-test kit ZIP with
   the fictional sources and a demo script holding only the `[demo]` steps.
-- Confirm the `[demo]` steps fit in about 30 minutes.
+- Confirm the `[demo]` steps fit in about 30 minutes during a timed dry run
+  played from the demo script alone.
+- Confirm each step of `test-kit/scenario.md` with a prompt states whether it
+  runs in a new conversation or continues the previous step's conversation.
+- Confirm the kit holds a very long synthetic profile source generated from a
+  Markdown reference, usable for the large-source scenario.
 - Play the master scenario end to end in a fresh extracted workspace with the
   fictional sources only, and confirm each step behaves as written.
 - Confirm `examples/fictitious-developer/data/` mirrors the workspace `data/`

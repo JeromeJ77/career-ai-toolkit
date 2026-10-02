@@ -55,6 +55,34 @@
 
 ### Changed
 
+- Fixed a regression found in the first full scenario run: when a mandatory
+  file is missing but other user data shows it already held content (for
+  example a deleted professional profile while the status says it was filled),
+  the coach no longer recreates it from its template; it reports a possible
+  loss and asks whether to rebuild, restore or check a synchronization.
+- At session start the coach reads the professional profile, so it knows
+  whether it is filled, and corrects a status that contradicts the files.
+- The coach creates `sources/` with each opportunity, states the three ways to
+  provide a document (copy, attachment, pasted text) and transcribes PDF or DOCX
+  originals to Markdown next to them, as for profile sources.
+- Strategic messages: the coach recalls what a strategic message is, labels
+  them as proposed for this opportunity, and keeps withdrawn or invalidated
+  messages with their reason in `analysis.md` instead of deleting them.
+- Simulations: a stop keyword now asks for confirmation, since stopping is
+  final; each simulation is independent from the previous ones; before a new
+  simulation the coach asks whether to replay the same case or another one.
+- The round's `interview.md` is kept up to date during preparation,
+  simulations and debriefs; the opportunity status points to it for the
+  round's detail.
+- Questions for the interviewers suggested by the coach are presented as its
+  suggestions. The preparation sheet's first page no longer holds vigilance
+  points or communication reminders (it may be seen by the interviewers); the
+  second page is for notes and detail starts on the third page (workspace
+  skills and standalone coach).
+- Test kit: renamed `sources/opportunity/` to `sources/opportunities/`, added a
+  49-page fictional training booklet for the large-source step, and gave every
+  scenario step a **Conversation** field (new conversation or continuation).
+  Scenario prompts and expectations were aligned with the first full run.
 - Before generating the interview preparation sheet, the coach now checks
   whether questions for the interviewers were worked on for the round, says so
   if not and asks the candidate whether to review them first; a refusal still

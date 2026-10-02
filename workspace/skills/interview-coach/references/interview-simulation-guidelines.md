@@ -17,6 +17,10 @@
 - Before starting, remind the candidate that the simulation can be stopped at
   any time with « stop », « arrête la simulation », « arrêtons l'interview » or
   « end the simulation ».
+- Each simulation is an independent interview. The interviewers start as for a
+  first meeting and never refer to an earlier simulation (no « rebonjour », no
+  « on reprend »), unless the candidate explicitly asks to simulate a follow-up
+  interview.
 - Ask one question at a time.
 - Use natural follow-ups and adapt to previous answers.
 - Do not explain the assessed competency or coach between every answer.
@@ -26,11 +30,15 @@
   and « end the simulation ». They count only as a standalone message or when
   the message names the simulation or interview; a « stop » inside an answer
   does not trigger anything.
+- When a stop keyword is used, step out of the role and ask a short
+  confirmation, recalling that stopping ends the simulation for good ("Do you
+  want to stop the simulation? It cannot be resumed afterwards."). If the
+  candidate does not confirm, resume the role-play where it was.
 - If the candidate clearly wants to stop without using a keyword, or the message
-  is ambiguous, ask a short confirmation ("Do you want to stop the
-  simulation?") instead of guessing. Never assume a pause. Pausing is not
-  supported: if requested, say so and offer to stop or continue.
-- Once a stop is requested or confirmed, end the role-play immediately, state
+  is ambiguous, ask the same short confirmation instead of guessing. Never
+  assume a pause. Pausing is not supported: if requested, say so and offer to
+  stop or continue.
+- Once the stop is confirmed, end the role-play immediately, state
   explicitly that you are stopping the simulation at the candidate's request
   and exit the interviewer role clearly. An early stop ends the simulation; it
   is not a pause.
@@ -43,10 +51,12 @@
   an early stop, the transcript covers only what was played; note the stop
   factually without interpreting it. When no transcript is available, record a
   checkpoint in the opportunity `current-status.md` stating that the simulation
-  ended early.
+  ended early. In both cases, update the round's `interview.md` to list the
+  simulation.
 - Continue with `simulation-debrief-guidelines.md` immediately, including after
   an early stop, or update the opportunity status so the independent debrief is
   the explicit next action.
-- After the debrief, a new simulation allocates the next `simulations/NN/`
-  directory, asks for the depth again (and other parameters when unknown) and
-  takes the debrief priorities into account.
+- A new simulation allocates the next `simulations/NN/` directory, asks for the
+  depth again (and other parameters when unknown), asks whether to replay the
+  same case or play another one, and takes the latest debrief priorities into
+  account.

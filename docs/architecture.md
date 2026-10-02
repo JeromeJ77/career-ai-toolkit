@@ -110,7 +110,7 @@ career-ai-workspace/
     |       |-- current-status.md
     |       |-- opportunity.md
     |       |-- analysis.md                # when analysis starts
-    |       |-- sources/                   # when originals are retained
+    |       |-- sources/                   # originals and their transcriptions
     |       `-- interviews/                # from the first known round
     |           `-- 01-screening/
     |               |-- interview.md
