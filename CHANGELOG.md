@@ -38,6 +38,11 @@
 - Added `test-kit/guide-testeur.md`, shipped in the test kit ZIP: how to run the
   scenario, record results per step (including voice notes with a scribe
   assistant and a ready-to-paste prompt) and prepare the test log and report.
+- Added `examples/fictitious-developer/data/`, the `data/` tree produced by the
+  first complete run of the master scenario (2026-10-02) on the fictional
+  developer: professional profile with transcribed sources, two opportunities
+  with rounds, simulations, debriefs, preparation sheet and real-interview
+  review. Reviewed before commit; never included in the workspace ZIP.
 - `AGENTS.md` and `CONTRIBUTING.md` now require every new development to keep
   the test kit, the master scenario and the fictional example able to test and
   demonstrate it, in the same change.

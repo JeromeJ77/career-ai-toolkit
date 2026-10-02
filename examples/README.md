@@ -8,4 +8,6 @@ Résultat d'un déroulé du scénario maître du kit de test (`test-kit/scenario
 
 Il est produit **à la demande** par copie depuis un workspace de test (étape F2 du scénario), relu, puis commité. Il n'est pas régénéré à chaque build et peut être légèrement en retard sur le comportement courant du coach ; le kit de test et le scénario maître font foi.
 
+La copie actuelle vient du premier déroulé complet du 2026-10-02 (voir `docs/test-history/`). Elle a été relue avant commit : chemins locaux et traces du scénario de test retirés, adresse à la candidate unifiée (vouvoiement, féminin), erreurs de dictée corrigées dans le transcript de la simulation 01, `interview.md` du round technique remis à jour. Deux limites assumées : la simulation 02 a été arrêtée après la première question (le fichier illustre l'arrêt anticipé, pas une simulation complète) et les PDF d'offre n'ont pas de transcription `.md` à côté de l'original (le contenu est repris dans `opportunity.md`).
+
 Ce répertoire n'est jamais inclus dans le ZIP du workspace distribué.

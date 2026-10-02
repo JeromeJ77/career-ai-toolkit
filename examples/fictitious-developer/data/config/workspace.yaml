@@ -1,0 +1,17 @@
+workspace_version: "0.1"
+
+language:
+  profile: "fr-FR"
+  coaching: "fr-FR"
+  deliverables:
+    - "fr-FR"
+    - "en-GB"
+
+privacy:
+  require_confirmation_before_profile_update: true
+  allow_external_web_search: false
+
+documents:
+  markdown: true
+  html: experimental
+  pdf: experimental
