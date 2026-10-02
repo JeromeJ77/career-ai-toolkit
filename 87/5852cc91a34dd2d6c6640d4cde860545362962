@@ -1,0 +1,65 @@
+build.bat
+  s_4bca1fb3cbe0cb::t_7d906d9921763e 19,83
+docs/test-plan.md
+  s_4bca1fb3cbe0cb::t_d0e60a9e367bed 55-67,117-122,129-135,155-158,179-182,192,202-207
+test-kit/guide-testeur.md
+  s_4bca1fb3cbe0cb::t_ca77405b31eaba 8
+test-kit/scenario.md
+  s_4bca1fb3cbe0cb::t_f8d3810adcd37c 10,13,38,46-47,53-55,61-63,69-71,77-78,91,97-98,105,107,124-125,131-134,139-142,150,152-153,162-167,173-175,181-188,194,197-198,204,206,212-218,223-225,230,241,246,248-249,254,256,261,272,280-281,284-285,287,294-295,301-303,316,349
+test-kit/sources/profile/livret-formation-architecture-systemes-distribues.md
+  s_4bca1fb3cbe0cb::t_33b8c8e335ff1a 1-1441
+CHANGELOG.md
+  s_4bca1fb3cbe0cb::t_4514eafd1eeafe 58-85
+docs/architecture.md
+  s_4bca1fb3cbe0cb::t_2d378a5e7efbad 113
+docs/design/01-career-ai-toolkit-workflow-design.md
+  s_4bca1fb3cbe0cb::t_31a600a18fbf97 174
+docs/test-log.md
+  s_4bca1fb3cbe0cb::t_8ae723230adb02 26-27,30-31,42-46,56-58,60-61,64
+examples/README.md
+  s_4bca1fb3cbe0cb::t_4377d726fb4c33 11
+standalone/interview-coach-standalone.md
+  s_4bca1fb3cbe0cb::t_c437bba132cdff 78,80,102-103,118,122,132,134,141-143,145
+test-kit/README.md
+  s_4bca1fb3cbe0cb::t_f32a4471ca7dbd 11-12
+test-kit/tools/generate_sources.py
+  s_4bca1fb3cbe0cb::t_57684356e15241 51-53
+workspace/AGENTS.md
+  s_4bca1fb3cbe0cb::t_d30524eada54a1 12,35
+workspace/data/opportunities/README.md
+  s_4bca1fb3cbe0cb::t_6cdd6b4733a5ae 12,27,31
+workspace/skills/init-workspace/SKILL.md
+  s_4bca1fb3cbe0cb::t_50cf379fe9daa8 25-29,35-36
+workspace/skills/interview-coach/SKILL.md
+  s_4bca1fb3cbe0cb::t_a668f28b20b7a7 15-16,27-28,50,59,61,71,75,85-89,92-94
+workspace/skills/interview-coach/assets/interview-preparation-sheet.template.md
+  s_4bca1fb3cbe0cb::t_84ad3cf1abcdee 35,37-39,55-58
+workspace/skills/interview-coach/assets/opportunity-analysis.template.md
+  s_4bca1fb3cbe0cb::t_d990f647581d7a 15-17,21-24
+workspace/skills/interview-coach/references/interview-preparation-sheet-guidelines.md
+  s_4bca1fb3cbe0cb::t_7e19d5c4054d38 18-19,25-27,34,36,38-39,41-45
+workspace/skills/interview-coach/references/interview-simulation-guidelines.md
+  s_4bca1fb3cbe0cb::t_1bcbb2bbc6f6ad 20-23,33-36,38-41,54-55,59-62
+workspace/skills/interview-coach/references/opportunity-structure-guidelines.md
+  s_4bca1fb3cbe0cb::t_6c2c3f7643a368 12,14-18,24,49-51,72-73
+workspace/skills/interview-coach/references/professional-profile-guidelines.md
+  s_4bca1fb3cbe0cb::t_b84294495ca4a0 15
+workspace/skills/interview-coach/references/simulation-debrief-guidelines.md
+  s_4bca1fb3cbe0cb::t_b63486d5f95e45 33-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "875852cc91a34dd2d6c6640d4cde860545362962",
+  "prompts": {},
+  "sessions": {
+    "s_4bca1fb3cbe0cb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce8092c1-ed8a-4496-b9b0-92a73a82b8e5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
