@@ -64,6 +64,9 @@ third cleanup commit.
 - À raffiner : forme exacte du mot-clé, critères de détection, place de la
   section dans le template actuel, et comment le signaler dans le scénario
   maître du kit de test (étape F1).
+- Cas relevé au premier déroulé complet (2026-10-02, étape D7) : quand la
+  candidate arrête une simulation et donne la raison de l'arrêt, la consigner
+  discrètement dans ces notes plutôt que de la commenter.
 
 ### Reprendre l'historique d'opportunités déjà vécues
 
@@ -122,6 +125,57 @@ third cleanup commit.
   sous-répertoire plutôt qu'à la racine du dépôt.
 - Point d'attention : `build/` est aujourd'hui ignoré par Git comme répertoire
   d'artefacts ; le nom du sous-répertoire est à choisir en conséquence.
+
+### Alerte sur les changements de configuration sensibles
+
+- Relevé au premier déroulé complet (2026-10-02, étape C7) : le coach a vu
+  `allow_external_web_search` passer à `true` (défaut `false`), l'a jugé valide
+  et n'y a pas touché.
+- Avertir explicitement d'un passage à `true` et demander confirmation.
+- Mémoriser dans `data/current-status.md` les valeurs des clés critiques de la
+  session précédente, pour pouvoir signaler leurs changements.
+
+### Tutoiement ou vouvoiement constant et paramétrable
+
+- Relevé au premier déroulé complet (2026-10-02) : le coach est passé du
+  vouvoiement au tutoiement en cours de session (de D8 à D12), puis est revenu
+  au vouvoiement (E1).
+- Garder une forme d'adresse constante, avec une option dans
+  `data/config/workspace.yaml`, vouvoiement par défaut.
+
+### Ton et emojis paramétrables
+
+- Rendre le ton et l'usage des emojis paramétrables dans
+  `data/config/workspace.yaml`, sobre et sans emoji par défaut.
+
+### Démarrage lent d'une nouvelle conversation
+
+- Relevé au premier déroulé complet (2026-10-02, étape D12) : le démarrage d'une
+  nouvelle conversation dépasse une minute (lecture d'`AGENTS.md`, du skill
+  d'initialisation, du statut).
+- Risque : que la candidate réutilise une conversation existante plutôt que
+  d'en ouvrir une nouvelle par séance de travail. Deux impacts négatifs :
+  1. un contexte très long, donc des réponses moins pertinentes ;
+  2. un conflit avec l'objectif de fermer régulièrement les conversations et de
+     faire un commit Git, pour une meilleure traçabilité.
+- Point à surveiller.
+
+### Traçabilité des informations du profil données en conversation
+
+- Constat : toute source fournie en fichier (PDF, DOCX…) est conservée dans
+  `sources/` avec sa transcription `.md`, pour le dossier professionnel comme
+  pour une opportunité. Pour une opportunité, le texte collé dans la
+  conversation est aussi enregistré en `.md` dans `sources/`. Rien d'équivalent
+  n'est prévu pour le dossier professionnel : une information donnée
+  directement dans un échange n'est pas conservée comme source.
+- Proposition : enregistrer ces informations dans un répertoire dédié, par
+  exemple `data/profile/sources/conversations/`, un fichier `.md` par échange,
+  nommé avec la date et le contexte en quelques mots, suffixé `-2`, `-3`, `-4`
+  s'il y a eu plusieurs échanges sur le même sujet le même jour.
+- Objectif : pouvoir reconstituer autant que possible le dossier
+  professionnel à partir de toutes les sources et de leurs transcriptions, en
+  cas de doute, de perte du fichier ou pour corroborer des faits.
+- Point jugé important pour la traçabilité.
 
 ### Explorations ultérieures
 
