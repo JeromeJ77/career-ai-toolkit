@@ -34,6 +34,11 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - Record in `docs/test-log.md` only tests actually performed. Never mark a
   behavior as validated by inference; a later change to the coach's behavior
   makes the affected tests « À revalider ». The log is written in French.
+  `docs/test-log.md` holds the coverage summary; each test session is a dated
+  file under `docs/test-history/` (`YYYY-MM-DD-short-subject.md`, with `-2`,
+  `-3` for a repeat of the same session on the same day) linked from the log's
+  « Sessions » index. The file itself states the date, and times only when
+  they were actually recorded.
 - When a change may have impacted a scenario already marked « Validé », set it
   back to « À revalider » in `docs/test-log.md` with the remark
   « Non-régression : impacté par #N » and a short reason. This targeted

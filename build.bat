@@ -16,7 +16,7 @@ for %%F in ("standalone\interview-coach-standalone.md" "workspace\README.fr.md" 
 )
 
 rem Test kit: the generated sources are committed, the build only packages them.
-for %%F in ("test-kit\README.md" "test-kit\scenario.md" "test-kit\tools\make_demo_script.ps1" "test-kit\tools\demo-script-header.md" "test-kit\sources\profile\cv-nadia-berkani.pdf" "test-kit\sources\profile\linkedin-nadia-berkani.pdf" "test-kit\sources\profile\certification-cloud-platform-associate.pdf" "test-kit\sources\profile\notes-complementaires-carriere.docx" "test-kit\sources\opportunity\001-lumen-pay-offre-developpeuse-backend-senior.pdf" "test-kit\sources\opportunity\002-northwind-ledger-senior-software-engineer.pdf" "test-kit\sources\opportunity\002-northwind-ledger-notes-appel-recruteuse.txt") do (
+for %%F in ("test-kit\README.md" "test-kit\scenario.md" "test-kit\guide-testeur.md" "test-kit\tools\make_demo_script.ps1" "test-kit\tools\demo-script-header.md" "test-kit\sources\profile\cv-nadia-berkani.pdf" "test-kit\sources\profile\linkedin-nadia-berkani.pdf" "test-kit\sources\profile\certification-cloud-platform-associate.pdf" "test-kit\sources\profile\notes-complementaires-carriere.docx" "test-kit\sources\opportunity\001-lumen-pay-offre-developpeuse-backend-senior.pdf" "test-kit\sources\opportunity\002-northwind-ledger-senior-software-engineer.pdf" "test-kit\sources\opportunity\002-northwind-ledger-notes-appel-recruteuse.txt") do (
   if not exist %%F (
     echo ERROR: Required test kit file missing: %%~F
     exit /b 1
@@ -74,6 +74,7 @@ rem from the master scenario. Never part of the workspace ZIP.
 mkdir build\career-ai-test-kit
 copy /Y "test-kit\README.md" "build\career-ai-test-kit\README.md" >nul
 copy /Y "test-kit\scenario.md" "build\career-ai-test-kit\scenario.md" >nul
+copy /Y "test-kit\guide-testeur.md" "build\career-ai-test-kit\guide-testeur.md" >nul
 xcopy "test-kit\sources\*" "build\career-ai-test-kit\sources\" /E /I /Q /Y >nul
 if errorlevel 1 (
   echo ERROR: Could not copy test kit sources.

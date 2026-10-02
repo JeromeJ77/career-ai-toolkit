@@ -9,7 +9,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - Jouer le scénario dans un workspace **extrait du ZIP, hors du dépôt**, jamais dans `workspace/` ni dans un workspace personnel.
 - Les fichiers à déposer viennent du ZIP du kit (`sources/profile/`, `sources/opportunity/`). Les chemins de destination sont relatifs à la racine du workspace extrait.
 - Dans la conversation, parler **au nom de Nadia Berkani**, la candidate fictive. Ses motivations, contraintes et points faibles sont dans `sources/profile/notes-complementaires-carriere.md` : s'en inspirer pour répondre de façon crédible pendant les simulations.
-- Chaque étape indique le résultat attendu et l'item de `docs/test-plan.md` qu'elle couvre. Consigner le résultat réel dans `docs/test-log.md`, jamais par déduction.
+- Chaque étape indique le résultat attendu et l'item de `docs/test-plan.md` qu'elle couvre. Consigner le résultat réel dans `docs/test-log.md` et dans un fichier de session de `docs/test-history/`, jamais par déduction.
 - « Nouvelle conversation » signifie fermer la conversation en cours et en ouvrir une autre dans le même workspace, pour vérifier que le contexte vient des fichiers et non de l'historique.
 
 ### Tags

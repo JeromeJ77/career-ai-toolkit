@@ -32,6 +32,12 @@
   `career-ai-test-kit-v<version>.zip`, with the fictional sources and a demo
   script of about 30 minutes extracted from the `[demo]` steps. The workspace
   ZIP still contains no fictional data.
+- Test sessions are now one dated file each under `docs/test-history/`, linked
+  from the « Sessions » index of `docs/test-log.md`, which keeps only the
+  coverage summary; the three existing sessions were migrated unchanged.
+- Added `test-kit/guide-testeur.md`, shipped in the test kit ZIP: how to run the
+  scenario, record results per step (including voice notes with a scribe
+  assistant and a ready-to-paste prompt) and prepare the test log and report.
 - `AGENTS.md` and `CONTRIBUTING.md` now require every new development to keep
   the test kit, the master scenario and the fictional example able to test and
   demonstrate it, in the same change.
