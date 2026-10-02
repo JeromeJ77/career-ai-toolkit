@@ -1,0 +1,113 @@
+CHANGELOG.md
+  s_4bca1fb3cbe0cb::t_e13fc025fca7b6 41-45
+examples/README.md
+  s_4bca1fb3cbe0cb::t_dabd6267e474a6 11-12
+examples/fictitious-developer/data/README.md
+  s_53292486ea8a75::t_38986706bc88f6 1-14
+examples/fictitious-developer/data/config/README.md
+  s_53292486ea8a75::t_c26d5c78899a17 1-3
+examples/fictitious-developer/data/current-status.md
+  s_4bca1fb3cbe0cb::t_24831c2d3b39d1 1-19
+examples/fictitious-developer/data/feedback/README.md
+  s_53292486ea8a75::t_eb76f805e296d5 1-3
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/analysis.md
+  s_4bca1fb3cbe0cb::t_50d7481f27293d 1-90
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/interview.md
+  s_4bca1fb3cbe0cb::t_94552117c7ebfa 1-34
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/preparation.md
+  s_4bca1fb3cbe0cb::t_6bf7efe7a9a4d0 1-120
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/simulations/01/transcript.md
+  s_4bca1fb3cbe0cb::t_d7be3e8bcac547 1-38
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/simulations/02/transcript.md
+  s_4bca1fb3cbe0cb::t_933e774c226d0d 1-20
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/opportunity.md
+  s_4bca1fb3cbe0cb::t_228044658cc5cc 1-86
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/current-status.md
+  s_4bca1fb3cbe0cb::t_33a2fcfe329c48 1-45
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/interviews/01-recruiter/actual/notes.md
+  s_4bca1fb3cbe0cb::t_4f89f44b6ebb0a 1-30
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/interviews/01-recruiter/interview.md
+  s_4bca1fb3cbe0cb::t_dc8ae6169ef790 1-32
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/interviews/02-hiring-manager/interview.md
+  s_4bca1fb3cbe0cb::t_89841abe5e1984 1-35
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/opportunity.md
+  s_4bca1fb3cbe0cb::t_9dfcde05a5b8cf 1-90
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/sources/002-northwind-ledger-notes-appel-recruteuse.txt
+  s_4bca1fb3cbe0cb::t_ad26ab7ba3c77d 1-26
+examples/fictitious-developer/data/profile/professional-profile.md
+  s_4bca1fb3cbe0cb::t_46af0a0c9e7d77 1-110
+examples/fictitious-developer/data/profile/sources/README.md
+  s_53292486ea8a75::t_674ec2d6a9352d 1-28
+examples/fictitious-developer/data/archives/README.md
+  s_4bca1fb3cbe0cb::t_552dfeaeb3f559 1-3
+examples/fictitious-developer/data/config/workspace.yaml
+  s_4bca1fb3cbe0cb::t_763941c2a55901 1-17
+examples/fictitious-developer/data/cv/README.md
+  s_4bca1fb3cbe0cb::t_b78230ede37a86 1-3
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/current-status.md
+  s_4bca1fb3cbe0cb::t_2d746e42896840 1-48
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/01-screening/interview.md
+  s_4bca1fb3cbe0cb::t_82889852c45ab9 1-31
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/actual/notes.md
+  s_4bca1fb3cbe0cb::t_5bfb3a3e42148b 1-10
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/actual/review.md
+  s_4bca1fb3cbe0cb::t_9e018ca4aad681 1-57
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/simulations/01/debrief.md
+  s_4bca1fb3cbe0cb::t_e63dfff8b30323 1-53
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/02-technical/simulations/03/debrief.md
+  s_4bca1fb3cbe0cb::t_908e58de1cf157 1-52
+examples/fictitious-developer/data/opportunities/001-lumen-pay-senior-backend-developer/interviews/03-head-of-engineering/interview.md
+  s_4bca1fb3cbe0cb::t_bfbb27c685dfde 1-33
+examples/fictitious-developer/data/opportunities/README.md
+  s_4bca1fb3cbe0cb::t_d870ced4531bec 1-33
+examples/fictitious-developer/data/profile/README.md
+  s_4bca1fb3cbe0cb::t_2bc9de9b65b908 1-3
+examples/fictitious-developer/data/profile/sources/certifications/README.md
+  s_4bca1fb3cbe0cb::t_dd341be8f8ddaa 1-3
+examples/fictitious-developer/data/profile/sources/certifications/certification-cloud-platform-associate.md
+  s_4bca1fb3cbe0cb::t_473982dd457955 1-42
+examples/fictitious-developer/data/profile/sources/coaching-notes/README.md
+  s_4bca1fb3cbe0cb::t_223bc7dcd445b7 1-3
+examples/fictitious-developer/data/profile/sources/coaching-notes/notes-complementaires-carriere.md
+  s_4bca1fb3cbe0cb::t_441f35e5a9b150 1-65
+examples/fictitious-developer/data/profile/sources/evaluations/README.md
+  s_4bca1fb3cbe0cb::t_252e14fc57bff5 1-3
+examples/fictitious-developer/data/profile/sources/external-references.md
+  s_4bca1fb3cbe0cb::t_e31f80f07c0645 1-35
+examples/fictitious-developer/data/profile/sources/historical-resumes/README.md
+  s_4bca1fb3cbe0cb::t_6be608b9fa99e1 1-3
+examples/fictitious-developer/data/profile/sources/historical-resumes/cv-nadia-berkani.md
+  s_4bca1fb3cbe0cb::t_9e3b245959320a 1-79
+examples/fictitious-developer/data/profile/sources/historical-resumes/linkedin-nadia-berkani.md
+  s_4bca1fb3cbe0cb::t_5a36a986f4a0cc 1-92
+examples/fictitious-developer/data/profile/sources/portfolios/README.md
+  s_4bca1fb3cbe0cb::t_037729e0cab496 1-3
+examples/fictitious-developer/data/profile/sources/recommendations/README.md
+  s_4bca1fb3cbe0cb::t_ee173456749fcd 1-3
+examples/fictitious-developer/data/profile/sources/skills-assessments/README.md
+  s_4bca1fb3cbe0cb::t_8824e08f097f84 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bb959e4be01bdf17bfeca33f59b2d72509d5ec44",
+  "prompts": {},
+  "sessions": {
+    "s_4bca1fb3cbe0cb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce8092c1-ed8a-4496-b9b0-92a73a82b8e5",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_53292486ea8a75": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1532c5cc-1e17-4eb3-8c31-1adcb69f40cd",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
