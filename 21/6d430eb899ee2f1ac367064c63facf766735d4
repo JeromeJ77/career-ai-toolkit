@@ -1,0 +1,39 @@
+AGENTS.md
+  s_4bca1fb3cbe0cb::t_2e51cf0e37a79f 37-41
+CHANGELOG.md
+  s_4bca1fb3cbe0cb::t_9bf7cb0386748c 35-40
+build.bat
+  s_4bca1fb3cbe0cb::t_246a74d577b705 19,77
+docs/test-history/2026-09-30-deploiement-initialisation-mise-a-jour-et-sources.md
+  s_4bca1fb3cbe0cb::t_a69ebbce274186 1-23
+docs/test-history/2026-09-30-rejeu-apres-consolidation-des-regles.md
+  s_4bca1fb3cbe0cb::t_3de3fb782345c4 1-19
+docs/test-history/2026-10-01-kit-de-test-generation-et-build.md
+  s_4bca1fb3cbe0cb::t_6cd3749aedccd0 1-25
+docs/test-history/2026-10-02-deroule-complet-scenario-maitre.md
+  s_4bca1fb3cbe0cb::t_1437d092a3724b 1-180
+docs/test-log.md
+  s_4bca1fb3cbe0cb::t_b5eaed803ac236 12-13,22,24-26,29-31,42-46,51,55-56,58,60-64,73,75-78
+test-kit/README.md
+  s_4bca1fb3cbe0cb::t_fd0a59b2e86b30 14
+test-kit/guide-testeur.md
+  s_4bca1fb3cbe0cb::t_87c6f2fdd2066a 1-74
+test-kit/scenario.md
+  s_4bca1fb3cbe0cb::t_7b016a9782a251 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "216d430eb899ee2f1ac367064c63facf766735d4",
+  "prompts": {},
+  "sessions": {
+    "s_4bca1fb3cbe0cb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce8092c1-ed8a-4496-b9b0-92a73a82b8e5",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
