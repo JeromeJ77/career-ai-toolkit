@@ -177,6 +177,23 @@ third cleanup commit.
   cas de doute, de perte du fichier ou pour corroborer des faits.
 - Point jugé important pour la traçabilité.
 
+### Version du dossier professionnel dans le statut
+
+- Relevé à la démo à blanc (2026-10-03, étape C7) : après restauration du
+  dossier professionnel depuis la corbeille, rien ne permet de vérifier que la
+  copie restaurée est bien la dernière version.
+- Proposition : enregistrer la version du dossier professionnel dans
+  `current-status.md` et alerter si la version du fichier ne correspond pas.
+  Si la candidate valide la différence, le statut reprend la version du
+  fichier ; sinon, investiguer et résoudre.
+- Un checksum a été évoqué, jugé trop compliqué pour l'instant.
+
+### Prénoms des interviewers en simulation
+
+- Relevé à la démo à blanc (2026-10-03, étape D5) : donner des prénoms aux
+  interviewers plutôt que « interviewer 1 », « interviewer 2 », pour rendre la
+  simulation plus vivante.
+
 ### Explorations ultérieures
 
 - Évaluer si un RAG serait utile, notamment dans le cadre de feedbacks
