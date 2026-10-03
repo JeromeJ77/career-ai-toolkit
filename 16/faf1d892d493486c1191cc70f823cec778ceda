@@ -1,0 +1,35 @@
+CHANGELOG.md
+  s_29168dff7ab0a4::t_7cf25d9d2e291a 7-9
+build.bat
+  s_29168dff7ab0a4::t_04dc6dd6ae89f2 63-70
+docs/architecture.md
+  s_29168dff7ab0a4::t_2fe6add0ee0814 56
+docs/design/decision-log.md
+  s_29168dff7ab0a4::t_b657e2171941dd 159-160,171-179
+docs/glossary.md
+  s_29168dff7ab0a4::t_d8f94248c5de08 80
+docs/test-history/2026-10-04-marqueur-engine-version.md
+  s_29168dff7ab0a4::t_2205fadcd50cf2 1-16
+docs/test-log.md
+  s_29168dff7ab0a4::t_e012e5374cca7a 33,76
+docs/test-plan.md
+  s_29168dff7ab0a4::t_57c82985782240 15-18
+workspace/README.fr.md
+  s_29168dff7ab0a4::t_dd29b595121f00 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "16faf1d892d493486c1191cc70f823cec778ceda",
+  "prompts": {},
+  "sessions": {
+    "s_29168dff7ab0a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8b097ce1-001c-480b-a79f-1cdf435893c4",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
