@@ -1,0 +1,39 @@
+CHANGELOG.md
+  s_4bca1fb3cbe0cb::t_08cc63d24c1879 35-36,38,92-99
+docs/test-log.md
+  s_4bca1fb3cbe0cb::t_5230143a760b57 42,44,46,60,63
+docs/test-plan.md
+  s_4bca1fb3cbe0cb::t_339ad4f55ceb44 50-57,179-182,199-200
+standalone/interview-coach-standalone.md
+  s_4bca1fb3cbe0cb::t_59a6fb83a6b66e 38,86-87,110,122
+test-kit/scenario.md
+  s_4bca1fb3cbe0cb::t_507673a60358f0 192,198,201-203,205,307,309-313,342,348,350,354,356,358
+workspace/AGENTS.md
+  s_4bca1fb3cbe0cb::t_7ebeb9de6a637d 54-55
+workspace/data/opportunities/README.md
+  s_4bca1fb3cbe0cb::t_646dc05dad39a0 16
+workspace/skills/interview-coach/SKILL.md
+  s_4bca1fb3cbe0cb::t_3434f12f35fce2 29,71-74,77
+workspace/skills/interview-coach/assets/interview.template.md
+  s_4bca1fb3cbe0cb::t_83d0bce42f89e4 23-24
+workspace/skills/interview-coach/references/interview-simulation-guidelines.md
+  s_4bca1fb3cbe0cb::t_f8c9d7aea70085 31-34,49-51
+workspace/skills/interview-coach/references/opportunity-structure-guidelines.md
+  s_4bca1fb3cbe0cb::t_31a7643e14fe1e 55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "42386b2db8bbf655fb32408d9fda43ed87702c5d",
+  "prompts": {},
+  "sessions": {
+    "s_4bca1fb3cbe0cb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ce8092c1-ed8a-4496-b9b0-92a73a82b8e5",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
