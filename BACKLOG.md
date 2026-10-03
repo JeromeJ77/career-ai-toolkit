@@ -12,6 +12,213 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+Les quatre idées suivantes sont issues du debriefing de la démo enregistrée
+(2026-10-03), mené avec Copilot. Les éléments relatifs à la préparation de la
+démo et des slides sont traités à part et ne figurent pas ici. Elles sont
+présentées dans l'ordre de traitement envisagé : le nouveau modèle de décision
+d'abord, pour que les décisions suivantes y soient rédigées directement ;
+l'abandon du standalone avant le renommage, pour ne pas mettre à jour des
+références appelées à disparaître ; la revue des choix technologiques en
+dernier, car plus ouverte.
+
+### Faire évoluer le modèle du journal des décisions
+
+- Conserver un fichier unique `docs/design/decision-log.md` avec des entrées
+  `D-XXX` à la suite, pour garder un coût documentaire faible et éviter une
+  organisation en fichiers ADR séparés jugée prématurée.
+- Conserver les champs actuels (identifiant, statut, date, contexte, décision
+  et intention, conséquences) et ajouter :
+  - **Type**, parmi une liste initiale volontairement limitée : `ARCH`
+    (architecture et choix techniques structurants), `PRODUCT` (vision,
+    périmètre et comportement du produit), `UX` (expérience utilisateur et
+    interactions), `COACHING` (principes et comportements de coaching),
+    `PROCESS` (développement, validation, gouvernance). La liste ne s'enrichit
+    que lorsqu'un besoin récurrent et réel apparaît, pas par anticipation ;
+  - **Options considérées** : alternatives significatives étudiées, rejetées
+    comprises, avec la raison synthétique du rejet, proportionnée à
+    l'importance du choix ; peut rester courte ;
+  - **Conditions de réévaluation** : circonstances dans lesquelles la décision
+    devra être reconsidérée. Le champ peut rester vide, mais la question doit
+    toujours être examinée.
+- Une alternative rejetée n'a pas sa propre entrée par défaut. Une entrée
+  distincte se justifie lorsqu'une orientation importante a été étudiée en
+  détail, expérimentée, mise en œuvre pendant un temps ou a eu un impact
+  significatif sur le projet (cas du standalone).
+- Modèle cible proposé :
+
+  ```markdown
+  ## D-XXX — Titre de la décision
+
+  **Type:** ARCH | PRODUCT | UX | COACHING | PROCESS
+  **Statut:** Proposed | Accepted | Superseded | Rejected
+  **Date:** YYYY-MM-DD
+
+  ### Contexte
+  ### Options considérées
+  ### Décision et intention
+  ### Conséquences
+  ### Conditions de réévaluation
+  ```
+
+- À clarifier : le modèle proposé utilise des statuts anglais (`Proposed`,
+  `Accepted`, `Superseded`, `Rejected`) et une présentation en gras, alors que
+  le journal actuel utilise des statuts français avec emoji (✅ Adoptée,
+  🟡 Comportement actuel, intention à confirmer, 🔵 Envisagée, ⚪ Remplacée) en
+  liste. Faut-il ajouter « Rejetée » à la liste existante ? Faut-il compléter
+  les entrées D-001 à D-014 existantes avec les nouveaux champs ?
+- Décision à créer dans le journal des décisions (maintien d'un journal unique
+  avec un modèle enrichi mais simple).
+
+### Abandonner le mode standalone
+
+- Constat : le standalone correspond à une première orientation du projet,
+  explorée à partir d'un cas d'utilisation concret au sein de l'équipe. Depuis,
+  le travail s'est presque exclusivement concentré sur le workspace, y compris
+  le plan de test, ce qui reflète une clarification progressive de la vision
+  produit.
+- Limites identifiées : expérience plus limitée que le workspace local ;
+  dépendance accrue au fournisseur d'agent pour la mémoire professionnelle ;
+  persistance moins explicite et moins maîtrisable ; portabilité, transparence
+  et traçabilité réduites ; seconde expérience utilisateur et second modèle de
+  mémoire ; coûts de développement, de documentation et de maintenance accrus ;
+  risque de faire percevoir le produit comme un simple assistant
+  conversationnel ; confusion avec la cible centrée sur l'espace carrière
+  personnel, local et persistant. Ces limites touchent directement les
+  principes structurants du produit, pas seulement un écart fonctionnel mineur.
+- Proposition : abandonner le standalone comme cible produit et comme livrable
+  distribué. À court terme :
+  - inscrire la décision et ses justifications dans le journal des décisions,
+    dans une entrée dédiée (orientation mise en œuvre pendant un temps) ;
+  - ne plus produire le livrable standalone ;
+  - ne pas l'intégrer au plan de test ;
+  - retirer ou mettre à jour ses références actives dans la documentation, le
+    build et les tests ;
+  - récupérer avant suppression les éléments génériques éventuellement utiles,
+    sans maintenir de compatibilité spécifique.
+- Condition de réévaluation : uniquement si un besoin utilisateur fort et
+  validé apparaît pour une expérience sans installation, avec des limitations
+  explicitement acceptées en matière de persistance, de portabilité et de
+  propriété des données.
+- Points de contact relevés dans le dépôt : les sections « Pilot validation »
+  (« Validate the standalone coach with real users ») et « Standalone interview
+  coach in English » de ce backlog, `AGENTS.md` (instructions standalone,
+  version dans l'en-tête standalone, cohérence standalone/skills),
+  `build.bat`, et la décision D-009 qui cite le standalone.
+
+### Recentrer le produit sur My Career Workspace
+
+**Vision**
+
+- Le produit principal évolue d'un coach centré sur la préparation d'entretien
+  vers un espace carrière personnel, persistant et exploitable dans la durée.
+- Le dossier professionnel vivant en est le cœur. Il est à la fois une mémoire
+  professionnelle structurée, une source de vérité validée par l'utilisateur,
+  le point de départ du travail sur les opportunités et les entretiens, et le
+  résultat enrichi du travail réalisé au fil du temps.
+- Chaque opportunité, préparation, simulation, débriefing et retour
+  d'expérience doit pouvoir consolider ce dossier : le travail effectué n'est
+  pas consommé par un usage ponctuel mais constitue progressivement un capital
+  professionnel réutilisable.
+- L'IA reste essentielle au fonctionnement (analyse, synthèse, coaching,
+  exploitation des connaissances), mais ne constitue plus la proposition de
+  valeur différenciante à mettre au premier plan.
+- Principes structurants : propriété et contrôle des données par
+  l'utilisateur, confidentialité, persistance et continuité dans le temps,
+  portabilité, transparence et traçabilité, validation par l'utilisateur des
+  informations capitalisées.
+
+**Renommage du produit**
+
+- Le dépôt GitHub et le projet générique conservent le nom
+  `career-ai-toolkit` : il rassemble plusieurs composants, skills, modèles,
+  outils et livrables fondés sur l'IA.
+- Le produit principal est renommé **My Career Workspace**, nom qui renforce
+  les notions de propriété, de personnalisation et de confidentialité. Nom
+  technique : `my-career-workspace`, retenu aussi comme nom du répertoire local
+  personnel (aujourd'hui `career-ai-workspace`).
+- Le livrable distribué reste une archive ZIP, dont le nom doit rester cohérent
+  avec `my-career-workspace` et avec les conventions de versionnement et de
+  génération existantes (aujourd'hui `career-ai-workspace-v<version>.zip`).
+- L'analyse d'impact doit dépasser un simple remplacement textuel et vérifier
+  le sens de chaque occurrence. Les occurrences génériques de « workspace » qui
+  décrivent un concept technique et non le produit ne doivent pas être
+  remplacées mécaniquement.
+- Zones à examiner au minimum : noms et descriptions du produit, répertoire par
+  défaut, archives et livrables générés, scripts d'initialisation, de build et
+  de packaging, templates, skills et instructions destinées aux agents, chemins
+  codés en dur, tests, fixtures et résultats attendus, kit de test, README et
+  guides de démarrage, documentation d'architecture, glossaire, exemples,
+  diagrammes et captures, journal des décisions, contenus de première session
+  et messages d'accueil, références au mode standalone, règles de build, de
+  distribution et d'exclusion.
+
+**Kit de test**
+
+- Renommer le plan et le kit de test en `my-career-workspace-test-kit`, et
+  mettre à jour ses chemins, scénarios, jeux de données, résultats attendus et
+  documentation.
+- Le mode standalone n'étant plus une cible produit, il sort du périmètre de
+  test.
+- À clarifier : le kit s'appelle aujourd'hui `test-kit/` dans le dépôt et
+  `career-ai-test-kit-v<version>.zip` dans `dist/`. Le renommage vise-t-il le
+  ZIP seulement, le répertoire source aussi, et le « plan de test »
+  (`docs/test-plan.md`) est-il concerné ?
+
+**Terminologie et glossaire**
+
+- Le nom propre du produit reste **My Career Workspace** ; le terme fonctionnel
+  recommandé en français est **espace carrière**, plus naturel que « espace de
+  travail de carrière » et de même portée.
+- Le glossaire doit distinguer clairement :
+  - **Career AI Toolkit** : le projet générique et son dépôt ;
+  - **My Career Workspace** : le produit principal ;
+  - **espace carrière** : le terme fonctionnel français ;
+  - **dossier professionnel** : la mémoire professionnelle structurée et
+    vivante contenue dans l'espace carrière ;
+  - **workspace** : le concept technique générique, lorsque ce terme ne désigne
+    pas le produit ;
+  - **opportunité** : un poste ou un processus de recrutement suivi dans
+    l'espace carrière.
+
+**Message d'accueil de la première session**
+
+- Introduire en première session : « Bienvenue dans votre espace carrière. »
+- Le faire suivre d'un court paragraphe d'introduction, proposition :
+  « Cet espace vous permet de construire et d'enrichir votre dossier
+  professionnel, puis de l'exploiter au fil de vos opportunités et de vos
+  entretiens. »
+- La version définitive de l'introduction reste à confirmer lors de la mise à
+  jour des contenus de démarrage.
+- Lien : la proposition utilise le vouvoiement, cohérent avec l'idée
+  « Tutoiement ou vouvoiement constant et paramétrable ».
+
+**Décisions à créer**
+
+- Renommage du produit principal en **My Career Workspace** et du répertoire
+  en `my-career-workspace`.
+- Adoption d'**espace carrière** comme terme fonctionnel français.
+
+### Documenter les choix technologiques du projet
+
+- Revoir les choix technologiques structurants et vérifier qu'ils sont
+  correctement documentés dans le journal des décisions :
+  - identifier les décisions architecturales importantes déjà prises
+    implicitement et ajouter celles qui manquent ;
+  - documenter les options étudiées et rejetées ;
+  - expliciter les conséquences et conditions de réévaluation ;
+  - relier les choix techniques aux forces recherchées du produit :
+    transparence, portabilité, fonctionnement local, lisibilité humaine,
+    compatibilité avec les agents, traçabilité ;
+  - challenger le choix du stockage en Markdown/texte brut face à SQLite, à une
+    base documentaire ou à une approche hybride.
+- Décisions à créer ou vérifier en priorité :
+  - choix actuel de Markdown/texte brut comme mécanisme principal de
+    persistance, et conditions de réévaluation ;
+  - principes de fonctionnement local, de propriété des données, de validation
+    utilisateur et de traçabilité, s'ils ne sont pas déjà formalisés (D-001,
+    D-004, D-005, D-010 et D-011 en couvrent une partie).
+- Dépend du nouveau modèle du journal des décisions.
+
 ### Import web automatique des références publiques
 
 - Évaluer la possibilité de demander des références publiques (LinkedIn,
