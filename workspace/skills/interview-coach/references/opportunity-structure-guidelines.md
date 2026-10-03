@@ -52,7 +52,7 @@ data/opportunities/
     `-- interviews/                      # from the first known round
         `-- 01-screening/
             |-- interview.md
-            |-- preparation.md           # when preparation starts
+            |-- preparation.md           # sheet, generated at the end of preparation
             |-- simulations/             # from the first simulation
             |   `-- 01/
             |       |-- transcript.md    # when technically available

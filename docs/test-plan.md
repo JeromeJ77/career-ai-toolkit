@@ -47,7 +47,14 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Test French and English.
 - Test HR screening, technical, system design, leadership and executive scenarios.
 - Confirm the coach proposes strategic messages and allows adjustment.
-- Confirm simulation asks one question at a time.
+- Confirm simulation asks one question at a time and, with several
+  interviewers, that only one of them asks per turn.
+- Confirm a new stop request made right after a declined stop is confirmed
+  again before the simulation ends.
+- Confirm preparation stays coaching: the coach never plays an interviewer or
+  uses the italic role markers outside a simulation.
+- Confirm the coach says « dossier professionnel », never « profil
+  professionnel », when coaching in French.
 - Confirm coaching does not interrupt a realistic simulation.
 - Confirm the first debrief is succinct and evidence-based.
 - Confirm the coach offers the Court, Standard and Approfondi depths with
@@ -169,8 +176,10 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   reflection for one opportunity.
 - Confirm the opportunity receives a `current-status.md` and that it is updated
   after phase changes, important validations and new relevant artifacts.
-- Confirm the round's `interview.md` is updated when preparation starts, after
-  each simulation and debrief and when the actual interview is documented, and
+- Confirm the round's `interview.md` is updated when preparation starts (status
+  « en préparation », preparation « en cours » while `preparation.md` is not
+  generated yet), after each simulation and debrief and when the actual
+  interview is documented, and
   that the opportunity status points to it instead of listing the round's
   detail.
 - For the same opportunity, run at least two simulation/debrief/improvement
@@ -187,7 +196,8 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm an actual-interview review works from candidate notes without
   requiring a transcript.
 - Start a new conversation for a later coaching session and confirm work can be
-  resumed from the workspace without prior conversation history.
+  resumed from the workspace without prior conversation history, with dates
+  reported as recorded and worded consistently.
 - Stop a simulation early with « stop »; confirm the transcript covers only what
   was played (or `current-status.md` holds a checkpoint when none exists),
   `debrief.md` records the early stop, and a following simulation

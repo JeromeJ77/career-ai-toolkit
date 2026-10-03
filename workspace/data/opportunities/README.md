@@ -13,7 +13,7 @@ Les opportunités reçoivent un numéro stable d'au moins trois chiffres dans le
 `-- interviews/                      # à partir du premier entretien connu
     `-- 01-screening/
         |-- interview.md
-        |-- preparation.md           # lorsque la préparation commence
+        |-- preparation.md           # fiche, générée en fin de préparation
         |-- simulations/
         |   `-- 01/
         |       |-- transcript.md

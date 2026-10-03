@@ -32,10 +32,10 @@
   `career-ai-test-kit-v<version>.zip`, with the fictional sources and a demo
   script of 35 to 40 minutes extracted from the `[demo]` steps and reduced to
   what the presenter does and says (no expected results, test references or
-  steps waiting for an undelivered issue).
+  steps waiting for an undelivered issue). The workspace ZIP still contains no
+  fictional data.
 - The tester guide offers a Teams meeting transcription as a lighter
-  alternative to the voice scribe for experienced testers. The workspace
-  ZIP still contains no fictional data.
+  alternative to the voice scribe for experienced testers.
 - Test sessions are now one dated file each under `docs/test-history/`, linked
   from the « Sessions » index of `docs/test-log.md`, which keeps only the
   coverage summary; the three existing sessions were migrated unchanged.
@@ -89,6 +89,14 @@
 - The round's `interview.md` is kept up to date during preparation,
   simulations and debriefs; the opportunity status points to it for the
   round's detail.
+- Interview preparation is coaching, not a simulation: the coach never plays an
+  interviewer or uses role markers while preparing. The round's `interview.md`
+  shows preparation in progress as soon as it starts, distinct from the
+  preparation sheet generated at the end.
+- Simulations: with several interviewers, only one asks a question per turn;
+  every new stop request is confirmed, even right after resuming the role.
+- In French the coach says « dossier professionnel », never « profil
+  professionnel », and reports dates as recorded, with consistent wording.
 - Questions for the interviewers suggested by the coach are presented as its
   suggestions. The preparation sheet's first page no longer holds vigilance
   points or communication reminders (it may be seen by the interviewers); the

@@ -189,20 +189,20 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
   > Chez Payflow, on avait un monolithe de règlement qui bloquait tout le monde : un déploiement par semaine, et la moindre modification touchait trois équipes. On l'a découpé en six services sur dix-huit mois. Euh, en fait c'est moi qui ai proposé le plan et qui l'ai négocié avec le CTO, mais on a tous travaillé dessus. À la fin, le temps de déploiement avait baissé de 40 %.
 
-- **Attendu** : le coach s'appuie sur `analysis.md` et les messages stratégiques pour cibler l'entretien technique (discussion d'architecture avec deux membres de la squad) : il propose les thèmes probables (migration du monolithe, idempotence des paiements, observabilité, incident de prod), pose deux ou trois questions à Nadia pour l'aider à retrouver des preuves et des exemples concrets, et relève les points de vigilance connus (dire « je » plutôt que « on », secteur régulé non pratiqué). Sur la réponse collée, il relève l'hésitation entre « on » et « j'ai », l'absence de critère de découpage et d'alternative écartée, et un résultat sans valeur de départ, sans compléter à la place de la candidate. Il n'écrit pas encore la fiche de préparation ; `interview.md` du round indique que la préparation a commencé ; ce qui est validé est consigné dans l'analyse ou le statut, sans fait inventé.
+- **Attendu** : le coach reste coach : il ne joue pas les interviewers et n'annonce ni entrée ni sortie de rôle, réservées à la simulation. Il s'appuie sur `analysis.md` et les messages stratégiques pour cibler l'entretien technique (discussion d'architecture avec deux membres de la squad) : il propose les thèmes probables (migration du monolithe, idempotence des paiements, observabilité, incident de prod), pose deux ou trois questions à Nadia pour l'aider à retrouver des preuves et des exemples concrets, et relève les points de vigilance connus (dire « je » plutôt que « on », secteur régulé non pratiqué). Sur la réponse collée, il relève l'hésitation entre « on » et « j'ai », l'absence de critère de découpage et d'alternative écartée, et un résultat sans valeur de départ, sans compléter à la place de la candidate. Il n'écrit pas encore la fiche de préparation ; `interview.md` du round passe en « en préparation », préparation « en cours », fiche non générée ; ce qui est validé est consigné dans l'analyse ou le statut, sans fait inventé.
 - **Mots-clés** : montrer qu'il reformule et propose une preuve plus précise. Ne pas mener l'échange au bout en démo.
 - **Plan de test** : Standalone — « Confirm no facts are invented » ; Workspace — « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached » (pas de `preparation.md` à ce stade), « Confirm the opportunity receives a `current-status.md` and that it is updated after phase changes, important validations… ».
 
 ### D5 — Simulation courte avec arrêt anticipé [demo]
 
-- **Durée démo** : 8 min
+- **Durée démo** : 7 min
 - **Conversation** : suite de D4
 - **Prompt** : « Lançons une simulation de cet entretien technique. »
-- **Attendu** : le coach propose les profondeurs Court, Standard, Approfondi avec durée et nombre de questions indicatifs, et rappelle les mots-clés d'arrêt. Première simulation du round : il ne commente pas ce que les interlocuteurs ignoreront et ne présente pas la préparation de D4 comme une simulation. Il entre dans le rôle des deux ingénieurs, pose une question à la fois, relance naturellement, ne fait pas de coaching pendant le jeu.
-- **Action** : choisir « Court » ; répondre à deux ou trois questions des interviewers en se mettant à la place de Nadia, la candidate, en phrases complètes et sans chercher la perfection (le transcript peut servir d'exemple) ; glisser « on a dû stopper le déploiement » dans une réponse ; écrire « stop » seul, puis refuser l'arrêt (« Non, on continue. ») ; répondre à une question de plus, écrire de nouveau « stop » et confirmer l'arrêt.
-- **Mots-clés** : un « stop » dans une réponse n'arrête rien ; à « stop », le coach sort du rôle en italique et demande confirmation, l'arrêt étant définitif ; on peut revenir en arrière : après le refus, il reprend le rôle en italique ; au second « stop » confirmé, la simulation s'arrête vraiment.
+- **Attendu** : le coach propose les profondeurs Court, Standard, Approfondi avec durée et nombre de questions indicatifs, et rappelle les mots-clés d'arrêt. Première simulation du round : il ne commente pas ce que les interlocuteurs ignoreront et ne présente pas la préparation de D4 comme une simulation. Il entre dans le rôle des deux ingénieurs, pose une question à la fois (un seul interviewer par tour), relance naturellement, ne fait pas de coaching pendant le jeu.
+- **Action** : choisir « Court » ; répondre à deux ou trois questions des interviewers en se mettant à la place de Nadia, la candidate, en phrases complètes et sans chercher la perfection (le transcript peut servir d'exemple) ; glisser « on a dû stopper le déploiement » dans une réponse ; écrire « stop » seul, puis refuser l'arrêt (« Non, on continue. ») ; répondre à une question de plus, puis demander l'arrêt (« Non, finalement, je veux terminer l'entretien. ») et confirmer.
+- **Mots-clés** : un « stop » dans une réponse n'arrête rien ; à « stop », le coach sort du rôle en italique et demande confirmation, l'arrêt étant définitif ; on peut revenir en arrière : après le refus, il reprend le rôle en italique ; la seconde demande d'arrêt est confirmée à son tour, puis la simulation s'arrête vraiment.
 - **Attendu après le premier « stop »** : le coach signale en italique qu'il sort du rôle et demande de confirmer l'arrêt, l'arrêt étant définitif ; après « Non, on continue. », il signale en italique qu'il reprend le rôle et la simulation repart là où elle en était.
-- **Attendu après le second « stop »** : même demande de confirmation ; après confirmation, il dit qu'il s'arrête à la demande de la candidate, quitte le rôle, propose éventuellement de recueillir ses questions, et enchaîne sur le debrief ou le note comme prochaine action. `simulations/01/transcript.md` ne couvre que ce qui a été joué ; `interview.md` du round mentionne la simulation.
+- **Attendu après la seconde demande d'arrêt** : même demande de confirmation, bien qu'elle suive de près la reprise ; après confirmation, il dit qu'il s'arrête à la demande de la candidate, quitte le rôle, propose éventuellement de recueillir ses questions, et enchaîne sur le debrief ou le note comme prochaine action. `simulations/01/transcript.md` ne couvre que ce qui a été joué ; `interview.md` du round mentionne la simulation.
 - **Plan de test** : Standalone — « Confirm the coach offers the Court, Standard and Approfondi depths… », « Confirm each stop keyword ends a simulation, that a « stop » inside an answer does not… », « Write « stop » mid-simulation… » ; Workspace — « Stop a simulation early with « stop »… », « Confirm simulation asks one question at a time », « Confirm status updates do not interrupt the interview simulation itself ».
 
 ### D6 — Debrief [demo]
@@ -304,13 +304,13 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : « Au fait, pour Lumen Pay, tu peux me préparer l'entretien avec le Head of Engineering ? »
 - **Attendu** : le coach recommande d'ouvrir une nouvelle conversation pour l'autre opportunité, en expliquant pourquoi, sans refuser.
 
-### *E3 — Reprise depuis le workspace* [demo] [todo #11]
+### E3 — Reprise depuis le workspace [demo]
 
-- **Durée démo** : à estimer à la livraison de #11 (l'étape revient sur l'opportunité quittée en E2)
-- **Conversation** : nouvelle
-- **Prompt** : « Où en sommes-nous ? »
-- **Attendu** : le coach lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate.
-- **Mots-clés** : c'est le point clé de la démo, « le workspace porte le contexte, pas la conversation ».
+- **Durée démo** : 3 min
+- **Conversation** : nouvelle (après E1 en démo, ou après E2 quand #11 sera livrée)
+- **Prompt** : « Bonjour, j'aimerais reprendre. »
+- **Attendu** : le coach lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate, par exemple l'entretien le plus proche ; les dates citées sont celles des fichiers, formulées de la même façon tout au long du message.
+- **Mots-clés** : c'est le point clé de la démo, « le workspace porte le contexte, pas la conversation » : une nouvelle conversation, et le coach sait où en sont les deux opportunités et ce qu'il reste à faire.
 - **Plan de test** : Workspace — « Start a new conversation for a later coaching session and confirm work can be resumed from the workspace without prior conversation history ».
 
 ### *E4 — Fonctionnement avec Git* [demo] [todo #6]
@@ -339,20 +339,20 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 | --- | --- |
 | A1 Extraire et ouvrir | 2 min |
 | B1 Première session | 2 min |
-| C1 Sources et transcription | 5 min |
+| C1 Sources et transcription | 4 min |
 | C2 Validation du dossier | 2 min |
 | *C3 Entretien d'initialisation* | *`[todo #10]`* |
 | *C4 Rappel dossier non prêt* | *`[todo #9]`* |
 | D1 Créer l'opportunité | 4 min |
 | D2 Préparer l'opportunité | 4 min |
-| D3 Créer l'étape d'entretien | 2 min |
+| D3 Créer l'étape d'entretien | 3 min |
 | D4 Préparer l'entretien ensemble | 3 min |
-| D5 Simulation courte et arrêt | 8 min |
+| D5 Simulation courte et arrêt | 7 min |
 | D6 Debrief | 2 min |
 | E1 Deuxième opportunité | 5 min |
 | *E2 Changement de périmètre* | *`[todo #11]`* |
-| *E3 Reprise depuis le workspace* | *`[todo #11]`* |
+| E3 Reprise depuis le workspace | 3 min |
 | *E4 Git* | *`[todo #6]`* |
-| **Total disponible** | **39 min** |
+| **Total disponible** | **41 min** |
 
-La démo vise 35 à 40 minutes. Les durées ci-dessus sont révisées d'après la démo à blanc du 2026-10-03 : environ 45 minutes mesurées pour ces étapes, avec dictée des heures au scribe ; enchaînées sans prise de notes, elles devraient tenir en 35 à 40 minutes. Le premier déroulé complet (2026-10-02, environ 1 h 29) mêlait test, consignation et étapes hors démo et ne mesure pas une vraie démo. C2 et D3 restent dans la démo : C2 est rapide, et D3 montre un entretien passé sans préparation avant l'entretien technique. D5 gagne une minute pour montrer un arrêt refusé puis confirmé. Quand les issues `[todo]` seront livrées, il faudra arbitrer pour rester dans la cible.
+La démo vise 35 à 40 minutes. Les durées ci-dessus sont révisées d'après la démo à blanc du 2026-10-03 : environ 45 minutes mesurées pour ces étapes, avec dictée des heures au scribe ; enchaînées sans prise de notes, elles devraient tenir en 35 à 40 minutes. Le premier déroulé complet (2026-10-02, environ 1 h 29) mêlait test, consignation et étapes hors démo et ne mesure pas une vraie démo. C2 et D3 restent dans la démo : C2 est rapide, et D3 montre un entretien passé sans préparation avant l'entretien technique. D5 gagne une minute pour montrer un arrêt refusé puis confirmé. La démo enregistrée du 2026-10-03 a duré environ 38 minutes de A1 à E1, commentaires compris, puis 41 minutes avec la reprise : C1 et D5 sont ramenées d'une minute, D3 gagne une minute, et E3, qui ne dépend plus de #11, entre dans la démo pour montrer la reprise depuis le workspace. Quand les issues `[todo]` seront livrées, il faudra arbitrer pour rester dans la cible.

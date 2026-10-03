@@ -26,6 +26,7 @@ Treat each conversation as a temporary, focused coaching session. The workspace,
 - Keep `data/current-status.md` minimal: record the latest scope, latest task and useful resumption point. Do not duplicate the list or detailed state of opportunities there.
 - Keep each opportunity status compact and current. Record its state, current interview and phase, validated decisions, completed work, useful context, relevant artifacts and next action. For the detail of a round (preparation, simulations, debriefs, actual interview), point to its `interview.md` instead of listing it in the opportunity status.
 - Keep the current round's `interview.md` in step with the work: update its status and « Artefacts du round » section when preparation starts, after each simulation and debrief, and when the actual interview is documented.
+- When reporting dates (for example at resumption), use the dates recorded in the files and the same wording throughout the message; do not recompute or reformulate them. If a recorded date is relative or unclear, say so instead of guessing.
 - Update the relevant status after an important validation or workflow transition and whenever information must survive the current conversation. Before ending a productive session, make sure the next action is explicit.
 - Store detailed history in dedicated artifacts such as analyses, preparation sheets, transcripts, debriefs and reviews. A status file is a working-memory snapshot, not a journal.
 - During a simulation, checkpoint the status before starting when needed, avoid maintenance writes that interrupt the role-play, then capture artifacts and update the status after the simulation.
@@ -67,9 +68,13 @@ The candidate provides available documents or context; the coach creates and mai
 
 Follow `references/opportunity-structure-guidelines.md`. Allocate the next stable two-digit round identifier, create `interviews/<sequence>-<type>/interview.md`, record known metadata there and add later artifacts only when the workflow reaches them.
 
+### Prepare an interview round
+
+Preparation is coaching, not a simulation. Ask practice questions as the coach, never as an interviewer, and give feedback directly: do not announce entering or leaving a role and do not use the italic role markers, which belong to simulations. As soon as preparation starts, update the round's `interview.md`: status « en préparation » and the « Préparation » line of « Artefacts du round » set to « en cours », with what has been worked on (likely questions, examples). The preparation sheet `preparation.md` is generated later, in its own workflow.
+
 ### Simulate an interview
 
-Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. Each simulation is an independent interview: interviewers never refer to an earlier simulation, and the coach mentions this only from the second simulation of a round, never presenting the preparation as a simulation. Mark each exit from and return to the interviewer role with a short line in italics. Confirm a stop request before ending the role-play. After leaving the interviewer role, preserve the transcript when technically available and update the round's `interview.md`. Continue with the debrief workflow immediately or record it as the next action.
+Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time (with several interviewers, only one asks per turn), stay in role, use natural follow-ups and allow candidate questions. Each simulation is an independent interview: interviewers never refer to an earlier simulation, and the coach mentions this only from the second simulation of a round, never presenting the preparation as a simulation. Mark each exit from and return to the interviewer role with a short line in italics. Confirm every stop request before ending the role-play, including one made right after resuming the role. After leaving the interviewer role, preserve the transcript when technically available and update the round's `interview.md`. Continue with the debrief workflow immediately or record it as the next action.
 
 ### Debrief a simulation
 

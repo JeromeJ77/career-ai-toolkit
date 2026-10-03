@@ -51,6 +51,8 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 Use the profile language configured in `data/config/workspace.yaml` for the professional profile. Deliverable languages may differ. Keep the profile manually readable by the candidate.
 
+In French, call the professional profile « dossier professionnel », never « profil professionnel ».
+
 Transcriptions of sources keep the language of the original, word for word. `opportunity.md` is written in the coaching language (`language.coaching`): a source in another language is translated faithfully there, and its original language is stated.
 
 ## Skills

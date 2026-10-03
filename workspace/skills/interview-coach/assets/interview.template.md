@@ -20,7 +20,8 @@
 
 ## Artefacts du round
 
-- Préparation : à créer lorsque la préparation commence
+- Préparation : non commencée
+- Fiche de préparation (`preparation.md`) : non générée
 - Simulations : aucune pour le moment
 - Entretien réel : non documenté pour le moment
 
