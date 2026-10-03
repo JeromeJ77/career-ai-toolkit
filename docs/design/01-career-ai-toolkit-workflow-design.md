@@ -295,7 +295,7 @@ Pendant une simulation, le coach effectue le checkpoint utile avant le jeu de r�
 2. Allouer le prochain identifiant d'opportunité.
 3. Créer le répertoire, `opportunity.md` et `current-status.md`.
 4. Préserver les originaux autorisés lorsque possible.
-5. Convertir leur contenu utile en Markdown sans inventer ni traduire implicitement.
+5. Transcrire chaque original à l'identique, dans sa langue, puis reporter son contenu utile dans `opportunity.md`, dans la langue de coaching, sans inventer ; une source dans une autre langue y est traduite fidèlement et sa langue d'origine est indiquée (D-014).
 6. Mettre à jour les status global et local.
 
 ## 6.2 Créer un round

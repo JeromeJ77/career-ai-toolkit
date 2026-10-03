@@ -486,6 +486,41 @@ démontrer, et plus tard à automatiser.
 - Génération des PDF et DOCX dans le build : différée au backlog.
 - Déplacement de `build.bat` dans un sous-répertoire : au backlog.
 
+## D-014 — `opportunity.md` dans la langue de coaching, transcriptions dans la langue de la source
+
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-03
+- **Issue** : #12
+
+### Contexte
+
+Les règles du coach demandaient de conserver la langue de la source dans
+`opportunity.md`, sauf demande de traduction. Lors des déroulés du scénario
+(E1, offre Northwind Ledger en anglais), le coach a pourtant rédigé
+`opportunity.md` en français, ce que le testeur a jugé préférable. Le
+comportement observé contredisait donc la règle écrite, et restait aléatoire.
+Depuis #12, chaque offre est aussi transcrite en `.md` à côté de l'original.
+
+### Décision et intention
+
+- La transcription `.md` d'une source reste à l'identique, dans la langue de
+  l'original : c'est la preuve, consultable sans rouvrir le PDF.
+- `opportunity.md` est rédigé dans la langue de coaching
+  (`language.coaching` de `workspace.yaml`), quelle que soit la langue des
+  sources. Une source dans une autre langue y est traduite fidèlement ; les noms
+  propres, l'intitulé officiel du poste et les termes techniques établis restent
+  tels quels, et la section Sources indique la langue d'origine.
+- La candidate travaille ainsi dans sa langue sans perte de traçabilité : le
+  texte original reste disponible mot pour mot dans la transcription. Une autre
+  langue n'est utilisée que sur sa demande.
+
+### Conséquences
+
+- Règle écrite dans les guidelines de structure des opportunités, le skill
+  `interview-coach`, `workspace/AGENTS.md`, le modèle d'`opportunity.md` et la
+  référence de conception.
+- Testée par l'étape E1 du scénario maître et un item du plan de test.
+
 ## Évolution du journal
 
 - Ajouter une entrée lorsqu'un choix structurel ou comportemental nécessite de

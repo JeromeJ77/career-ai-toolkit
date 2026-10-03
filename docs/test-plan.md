@@ -60,6 +60,12 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm a second simulation is independent from the first (no « rebonjour »,
   no reference to the earlier session) and that the coach asks whether to
   replay the same case or play another one.
+- Confirm the first simulation of a round says nothing about what the
+  interviewers will ignore and never presents the preparation as a simulation.
+- Confirm each exit from and return to the interviewer role is marked by a
+  short line in italics, including when a stop is not confirmed and the
+  simulation resumes, whether the candidate declines the stop or simply
+  answers the interview question.
 - Confirm the coach recalls what a strategic message is the first time, and
   keeps a withdrawn message apart with its reason instead of deleting it.
 - Confirm questions the coach suggests for the interviewers are presented as
@@ -95,6 +101,12 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Set the profile language in `data/config/workspace.yaml`.
 - Add sample authorized sources and initialize the profile.
 - Confirm profile changes are proposed before application.
+- Ask to initialize the profile without providing sources and confirm the
+  coach states the three ways to provide them (copy into the matching
+  `data/profile/sources/` subdirectory, attach to the conversation, paste the
+  text). Attach the sources to the conversation and confirm the coach places an
+  unchanged copy of each one in the matching subdirectory, says where, and then
+  transcribes them.
 - Add a synthetic PDF CV to `data/profile/sources/historical-resumes/` and
   confirm the coach creates a faithful Markdown transcription with the same
   name in the same directory, with a header (original name, date, limitations),
@@ -133,6 +145,11 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   `sources/` remain unchanged, and that each PDF or DOCX original gets a
   Markdown transcription next to it while pasted text is saved as a Markdown
   file.
+- Provide a job posting in a language other than the coaching language and
+  confirm the transcription next to the original keeps the source language word
+  for word, while `opportunity.md` is written in the coaching language, states
+  the source language in its Sources section and keeps proper names and the
+  official job title as in the source.
 - Confirm derived analysis is separate from the canonical source
   representation and uncertain information is explicit.
 - Create a first and second interview round and confirm
@@ -198,8 +215,10 @@ Nominal flow:
   their destination under `data/`, the prompt, the keywords, the expected result
   and the related test-plan item.
 - Run `build.bat` and confirm it produces the demo and manual-test kit ZIP with
-  the fictional sources and a demo script holding only the `[demo]` steps.
-- Confirm the `[demo]` steps fit in about 30 minutes during a timed dry run
+  the fictional sources and a demo script holding only the `[demo]` steps,
+  reduced to duration, conversation, files, actions, prompts and talking
+  points, without expected results or test plan references.
+- Confirm the `[demo]` steps fit in 35 to 40 minutes during a timed dry run
   played from the demo script alone.
 - Confirm each step of `test-kit/scenario.md` with a prompt states whether it
   runs in a new conversation or continues the previous step's conversation.

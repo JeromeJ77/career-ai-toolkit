@@ -5,6 +5,7 @@ Ce répertoire contient les documents utilisés pour constituer et vérifier le 
 ## Principes
 
 - Conserver ici les documents originaux ou de référence ; le coach ne les modifie jamais.
+- Vous pouvez copier vous-même les documents dans le bon sous-répertoire, ou simplement les joindre à la conversation (ou coller leur texte) : le coach range alors une copie inchangée au bon endroit et vous indique où.
 - Le coach transcrit chaque document (PDF, DOCX, image, export) en un fichier `.md` de même nom dans le même répertoire, pour s'appuyer ensuite sur ce fichier plutôt que sur l'original. Vous n'avez pas à le faire vous-même. Pour un document très volumineux, le coach vous demande confirmation avant de le transcrire.
 - Résumer les informations utiles dans le dossier professionnel : le coach vous les propose et ne les applique qu'après votre validation.
 - Signaler les informations anciennes ou potentiellement obsolètes.

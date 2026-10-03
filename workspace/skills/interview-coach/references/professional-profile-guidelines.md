@@ -10,13 +10,21 @@ The profile is candidate-owned and written in the configured primary language.
 - Ask only for important missing details.
 - Present a complete draft before applying it.
 
+## Providing sources
+
+The candidate does not have to know the directory structure. When sources are needed (at initialization, or when the candidate wants to add a document) and none has been provided yet, tell them the three ways to provide them: copy the files into the matching subdirectory of `data/profile/sources/` and say so; attach them to the conversation; or paste the text into the conversation.
+
+- For an attached file, place an unchanged copy in the matching subdirectory (for example a CV or a LinkedIn export in `historical-resumes/`, a certificate in `certifications/`, personal notes in `coaching-notes/`) when the tool can do so safely, keeping the original file name. If the category is unclear, ask. Tell the candidate where each file was placed.
+- For pasted text, save it unchanged as a Markdown file in the matching subdirectory, with a short header stating that it was pasted in the conversation and when.
+- If the tool cannot place a copy in the workspace, say so and ask the candidate to copy the file themselves; never claim a file was saved.
+
 ## Source transcription
 
 Each source document the candidate adds under `data/profile/sources/` (PDF, DOCX, image, export, etc.) gets a Markdown transcription next to it, so that later sessions rely on the `.md` file instead of reopening the original. The same rules apply to the originals kept in an opportunity's `sources/` directory (see `opportunity-structure-guidelines.md`).
 
 - Create `<same-name>.md` in the same directory as the original (`resume-2024.pdf` gives `resume-2024.md`). Skip it when the source already is Markdown or plain text.
 - Never modify, move, rename or delete the original. The transcription is derived; the original remains the evidence.
-- Transcribe faithfully and keep the source's structure (headings, lists, tables, dates). Do not summarize, correct, reorder, interpret or add facts. Mark unreadable, truncated or ambiguous passages explicitly (for example `[illisible]`) instead of guessing.
+- Transcribe faithfully and keep the source's structure (headings, lists, tables, dates). Do not summarize, correct, translate, reorder, interpret or add facts: the transcription keeps the source language. Mark unreadable, truncated or ambiguous passages explicitly (for example `[illisible]`) instead of guessing.
 - Start the file with a short header: original file name, transcription date, and any limitation (pages not readable, images omitted, scan quality).
 - Never overwrite an existing transcription. If the original seems to have changed, tell the candidate and propose a new dated transcription.
 - Transcribe directly, except when the source is very voluminous (for example several dozen pages, or a large batch of files at once): state its size, ask the candidate to confirm, and offer to transcribe only the relevant parts. Transcribe only after they agree.

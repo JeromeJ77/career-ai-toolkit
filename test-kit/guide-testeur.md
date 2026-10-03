@@ -46,7 +46,7 @@ On peut ouvrir en parallèle une conversation avec un assistant (Copilot, Claude
 >
 > Quand je dis le code d'une étape suivi de « début », ouvre une entrée et relève l'heure au format HH:MM:SS, secondes comprises ; quand je dis « terminé », relève l'heure de fin de la même façon et calcule la durée à la seconde près (« 3 min 40 s »). Utilise l'horloge réelle si tu y as accès. Si tu n'y as pas accès, dis-le-moi tout de suite, une seule fois, et je te dicterai l'heure affichée par mon poste, secondes comprises, à chaque début et fin (« D4, début, dix heures quarante-deux minutes cinq secondes ») : calcule alors la durée à partir de ces heures. N'estime ou ne devine jamais une heure ni une durée ; si une heure manque, écris « non relevée ».
 >
-> Pour chaque étape, retiens aussi : le verdict (OK, écart, KO, non joué) ; si je change de conversation avec le coach (« nouvelle conversation ») ou si je reste dans la même (« suite de D3 »), sinon « non relevée » ; ce que le coach a fait, en résumé, sans reproduire ses réponses en entier ; l'écart avec l'attendu, et seulement l'écart ; mes remarques, bons points, idées d'amélioration et corrections de scénario, quand je dis « note » suivi de la remarque ; les citations que je te dicte entre guillemets, sans les reformuler. Ne déduis jamais un verdict : si je ferme une étape sans l'avoir donné, demande-le-moi.
+> Pour chaque étape, retiens aussi : le verdict (OK, écart, KO, non joué) ; si je change de conversation avec le coach (« nouvelle conversation ») ou si je reste dans la même (« suite de D3 »), sinon « non relevée » ; ce que le coach a fait, en résumé, sans reproduire ses réponses en entier ; l'écart avec l'attendu, et seulement l'écart ; mes remarques, bons points, idées d'amélioration et corrections de scénario, quand je dis « note » suivi de la remarque ; les citations que je te dicte entre guillemets, sans les reformuler. Une appréciation explicite comme « ça s'est bien passé » ou « c'est bon » vaut OK ; en dehors de cela, ne déduis jamais un verdict : si je ferme une étape sans l'avoir donné, demande-le-moi.
 >
 > Si je dis « note transversale » suivi d'une remarque, garde-la à part, hors des étapes.
 >
@@ -54,6 +54,12 @@ On peut ouvrir en parallèle une conversation avec un assistant (Copilot, Claude
 > `## D4` / `- Verdict :` / `- Début :` / `- Fin :` / `- Durée :` / `- Conversation :` / `- Observé :` / `- Écart :` / `- Notes :` / `- Extrait :`
 >
 > Quand je dis « fin du déroulé » ou « export », produis un fichier Markdown téléchargeable (ou, à défaut, un seul bloc de texte à copier) contenant : la date, les étapes jouées et non jouées, toutes les entrées dans le format ci-dessus, puis une section « Notes transversales » avec les remarques gardées à part.
+
+### Variante : transcription d'une réunion Teams
+
+Pour une démo ou un déroulé commenté, on peut aussi lancer une réunion Teams seul, activer la transcription et commenter à voix haute en continu. Le testeur se concentre sur le déroulé, sans appuyer sur le micro à chaque note ; la transcription garde tout le contexte des remarques et horodate chaque phrase, ce qui donne le minutage. Le fichier `.vtt` téléchargé à la fin sert de trace pour la consignation. Un appel Teams en cours n'empêche pas d'utiliser le micro de l'outil IA pour parler au coach.
+
+C'est moins encadré que le scribe : personne ne demande le verdict d'une étape ni une information manquante. Réserver cette variante à un testeur habitué au scénario, qui annonce de lui-même chaque étape, son verdict, le type de conversation (« nouvelle » ou « suite ») et ses remarques en aparté (« à noter pour les retours… »). Les heures sont alors le temps écoulé depuis le début de l'enregistrement.
 
 ### Habitudes qui évitent les mauvaises surprises
 
@@ -68,7 +74,7 @@ On peut ouvrir en parallèle une conversation avec un assistant (Copilot, Claude
 
 ## Après le déroulé
 
-1. Rassembler l'export final de l'assistant (« fin du déroulé »), les citations collées et les arborescences.
+1. Rassembler l'export final de l'assistant (« fin du déroulé ») ou la transcription Teams, les citations collées et les arborescences.
 2. Dans le dépôt, demander à l'assistant de développement de consigner les résultats : mise à jour du tableau de synthèse de `docs/test-log.md` (statuts ✅ Validé, ⚠️ À revalider, 🐞 Problème constaté, ⬜ Non testé, avec les dates) et création d'un fichier de session daté dans `docs/test-history/` (`AAAA-MM-JJ-sujet-court.md`, avec un indice `-2`, `-3` si le même test est refait le même jour), lié depuis l'index du journal. Les heures relevées figurent dans le fichier de session, jamais dans son nom. Seul ce qui a réellement été joué y figure. Le récap de l'assistant scribe peut servir de base à ce fichier.
 3. Demander un rapport court qui classe les écarts par origine : à corriger dans le moteur (skills, guidelines, standalone), à corriger dans le kit (scénario, sources, prompts), ou à mettre au backlog.
 4. Relire les correctifs proposés avant tout commit : ils vont dans un second commit, après les résultats.

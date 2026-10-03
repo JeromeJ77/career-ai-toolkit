@@ -34,20 +34,21 @@ Treat each conversation as a temporary, focused coaching session. The workspace,
 
 ### Initialize the professional profile
 
-Follow `references/professional-profile-guidelines.md`. If the profile is still the empty skeleton created from `../init-workspace/assets/professional-profile.template.md`, fill it in through this workflow. Use existing documents first, then ask only the questions needed to fill important gaps or resolve contradictions. Record the public links found in the sources in `data/profile/sources/external-references.md` as described in the guidelines. Present the proposed initial profile for review.
+Follow `references/professional-profile-guidelines.md`. If the profile is still the empty skeleton created from `../init-workspace/assets/professional-profile.template.md`, fill it in through this workflow. If no source has been provided yet, tell the candidate the three ways to provide one (see Providing sources in the guidelines) rather than asking them to place files in a given directory. Use existing documents first, then ask only the questions needed to fill important gaps or resolve contradictions. Record the public links found in the sources in `data/profile/sources/external-references.md` as described in the guidelines. Present the proposed initial profile for review.
 
 ### Register a new source
 
-When the candidate adds or points to a source document under `data/profile/sources/`, follow `references/professional-profile-guidelines.md`:
+When the candidate adds or points to a source document under `data/profile/sources/`, attaches one to the conversation or pastes its text, follow `references/professional-profile-guidelines.md`:
 
-1. Transcribe it to a Markdown file next to the original, which stays untouched.
-2. If it contains a public link for the candidate, update `data/profile/sources/external-references.md`.
-3. Propose the resulting profile updates (additions, enrichments, contradictions) following `references/profile-update-guidelines.md`; apply them only after validation.
-4. Tell the candidate what was transcribed, recorded and proposed.
+1. If it was attached or pasted, save an unchanged copy in the matching subdirectory of `data/profile/sources/` and say where.
+2. Transcribe it to a Markdown file next to the original, which stays untouched.
+3. If it contains a public link for the candidate, update `data/profile/sources/external-references.md`.
+4. Propose the resulting profile updates (additions, enrichments, contradictions) following `references/profile-update-guidelines.md`; apply them only after validation.
+5. Tell the candidate what was placed, transcribed, recorded and proposed.
 
 ### Create an opportunity
 
-The candidate provides available documents or context; the coach creates and maintains the workspace structure. Follow `references/opportunity-structure-guidelines.md`: allocate the next stable three-digit opportunity identifier, create the canonical `opportunity.md`, the status and the `sources/` directory, tell the candidate how to provide the documents, preserve authorized originals, transcribe each one to Markdown next to it, and convert their useful content into `opportunity.md`. Do not ask the candidate to create directories or files manually.
+The candidate provides available documents or context; the coach creates and maintains the workspace structure. Follow `references/opportunity-structure-guidelines.md`: allocate the next stable three-digit opportunity identifier, create the canonical `opportunity.md`, the status and the `sources/` directory, tell the candidate how to provide the documents, preserve authorized originals, transcribe each one to Markdown next to it, and convert their useful content into `opportunity.md`, in the coaching language even when a source is in another language (transcriptions keep the source language). Do not ask the candidate to create directories or files manually.
 
 ### Prepare an opportunity
 
@@ -68,7 +69,7 @@ Follow `references/opportunity-structure-guidelines.md`. Allocate the next stabl
 
 ### Simulate an interview
 
-Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. Each simulation is an independent interview: interviewers never refer to an earlier simulation. Confirm a stop request before ending the role-play. After leaving the interviewer role, preserve the transcript when technically available and update the round's `interview.md`. Continue with the debrief workflow immediately or record it as the next action.
+Follow `references/interview-simulation-guidelines.md`. Allocate the next simulation directory within the current round, ask one question at a time, stay in role, use natural follow-ups and allow candidate questions. Each simulation is an independent interview: interviewers never refer to an earlier simulation, and the coach mentions this only from the second simulation of a round, never presenting the preparation as a simulation. Mark each exit from and return to the interviewer role with a short line in italics. Confirm a stop request before ending the role-play. After leaving the interviewer role, preserve the transcript when technically available and update the round's `interview.md`. Continue with the debrief workflow immediately or record it as the next action.
 
 ### Debrief a simulation
 

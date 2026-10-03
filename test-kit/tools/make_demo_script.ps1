@@ -1,9 +1,14 @@
-# Extract the demo script from the master scenario: keep the introduction,
-# the phase headings that still have content, the steps tagged [demo] and the
-# final recap. Called by build.bat; needs nothing beyond Windows PowerShell.
+# Extract the light demo script from the master scenario. For each step tagged
+# [demo] and not [todo #N] (not delivered yet), keep only what the presenter needs: duration, conversation, files,
+# actions, prompts and talking points (Mots-cles, renamed "A montrer"). Drop
+# the expected results, test plan references, the scenario introduction and
+# the test instructions; keep only the table of the final recap, without its
+# [todo] rows. Called by
+# build.bat; needs nothing beyond Windows PowerShell.
 #
 # Keep this file ASCII-only: Windows PowerShell 5.1 reads a .ps1 without BOM
-# as ANSI. Non-ASCII text lives in demo-script-header.md (UTF-8).
+# as ANSI. Non-ASCII text lives in demo-script-header.md (UTF-8) or is built
+# from character codes.
 param(
     [Parameter(Mandatory = $true)][string]$Source,
     [Parameter(Mandatory = $true)][string]$Target,
@@ -20,29 +25,62 @@ foreach ($h in (Get-Content -Path $headerPath -Encoding UTF8)) {
 }
 $out.Add("")
 
-$keep = $true
+# "A montrer" with an A grave accent.
+$showLabel = "- **$([char]0x00C0) montrer** :"
+
+# Section kinds: "skip" (introduction, test instructions), "phase", "recap".
+$section = "skip"
+$keep = $false
 $inStep = $false
+$skipField = $false
 $pendingHeading = $null
 $demoSteps = 0
 
 foreach ($line in $lines) {
     if ($line -match '^# ') { continue }
-    if ($line -match '^### ') {
-        $inStep = $true
-        $keep = $line -match '\[demo\]'
-        if ($keep) { $demoSteps++ }
-    }
-    elseif ($line -match '^## ') {
-        # Emit the section heading only if the section still has content.
+    if ($line -match '^## ') {
         $inStep = $false
-        $pendingHeading = $line
         $keep = $false
+        $skipField = $false
+        if ($line -match '^## Phase ') { $section = "phase" }
+        elseif ($line -match '^## R.capitulatif') { $section = "recap" }
+        else { $section = "skip" }
+        $pendingHeading = if ($section -eq "skip") { $null } else { $line }
         continue
     }
-    if (-not $keep -and -not $inStep -and $null -ne $pendingHeading -and $line.Trim() -ne '') {
-        # Section text that is not a step (introduction, recap): keep the section.
-        $keep = $true
+    if ($section -eq "skip") { continue }
+
+    if ($line -match '^### ') {
+        $inStep = $true
+        $skipField = $false
+        $keep = ($section -eq "phase") -and ($line -match '\[demo\]') -and ($line -notmatch '\[todo')
+        if ($keep) {
+            $demoSteps++
+            $line = $line.Replace(" [demo]", "")
+        }
     }
+    elseif ($inStep -and $keep) {
+        if ($line -match '^- \*\*(Attendu|Plan de test)') {
+            # Drop the field and its indented continuation lines.
+            $skipField = $true
+            continue
+        }
+        if ($skipField) {
+            if ($line -match '^\s+\S') { continue }
+            $skipField = $false
+        }
+        if ($line -match '^- \*\*Mots-cl\S* :') {
+            $line = $line -replace '^- \*\*Mots-cl\S* :', $showLabel
+        }
+    }
+    elseif ($section -eq "recap") {
+        # Keep only the recap table, not the commentary around it.
+        $keep = ($line -match '^\|') -and ($line -notmatch '\[todo')
+    }
+    elseif (-not $inStep) {
+        $keep = $false
+    }
+
     if ($keep) {
         if ($null -ne $pendingHeading) {
             $out.Add($pendingHeading)

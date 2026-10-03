@@ -30,7 +30,11 @@
   master scenario listing every test and demo step with its prompts, keywords,
   files and expected result. The build now produces a second ZIP,
   `career-ai-test-kit-v<version>.zip`, with the fictional sources and a demo
-  script of about 30 minutes extracted from the `[demo]` steps. The workspace
+  script of 35 to 40 minutes extracted from the `[demo]` steps and reduced to
+  what the presenter does and says (no expected results, test references or
+  steps waiting for an undelivered issue).
+- The tester guide offers a Teams meeting transcription as a lighter
+  alternative to the voice scribe for experienced testers. The workspace
   ZIP still contains no fictional data.
 - Test sessions are now one dated file each under `docs/test-history/`, linked
   from the « Sessions » index of `docs/test-log.md`, which keeps only the
@@ -62,6 +66,14 @@
   loss and asks whether to rebuild, restore or check a synchronization.
 - At session start the coach reads the professional profile, so it knows
   whether it is filled, and corrects a status that contradicts the files.
+- Profile sources can be attached to the conversation or pasted, as for
+  opportunities: the coach states the three ways to provide them when none is
+  available, places an unchanged copy of each attached file in the matching
+  `data/profile/sources/` subdirectory, says where, then transcribes it.
+- `opportunity.md` is written in the coaching language (`language.coaching`)
+  whatever the source language, with faithful translation, proper names and the
+  official job title kept, and the source language stated; transcriptions keep
+  the original language word for word (decision D-014).
 - The coach creates `sources/` with each opportunity, states the three ways to
   provide a document (copy, attachment, pasted text) and transcribes PDF or DOCX
   originals to Markdown next to them, as for profile sources.
@@ -69,8 +81,11 @@
   them as proposed for this opportunity, and keeps withdrawn or invalidated
   messages with their reason in `analysis.md` instead of deleting them.
 - Simulations: a stop keyword now asks for confirmation, since stopping is
-  final; each simulation is independent from the previous ones; before a new
-  simulation the coach asks whether to replay the same case or another one.
+  final; each simulation is independent from the previous ones, which the coach
+  mentions only from the second simulation of a round, never presenting the
+  preparation as a simulation; every exit from and return to the interviewer
+  role is marked by a short line in italics; before a new simulation the coach
+  asks whether to replay the same case or another one.
 - The round's `interview.md` is kept up to date during preparation,
   simulations and debriefs; the opportunity status points to it for the
   round's detail.

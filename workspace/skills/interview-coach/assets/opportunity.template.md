@@ -12,7 +12,7 @@
 
 ## Sources
 
-- À renseigner avec les chemins des sources originales ou la provenance des informations fournies.
+- À renseigner avec les chemins des sources originales ou la provenance des informations fournies, et leur langue si elle diffère de celle de ce document.
 
 ## Description canonique de l'opportunité
 
