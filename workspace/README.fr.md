@@ -7,7 +7,7 @@ Cet espace privé permet de constituer un dossier professionnel, préparer des o
 
 ## Structure
 
-Le moteur (`skills/`, `AGENTS.md`, `CLAUDE.md`, les README) est générique et remplaçable. Toutes vos données sont sous `data/`, qui ne contient que des `README.md` dans le ZIP distribué. Au premier lancement, le coach crée les fichiers obligatoires manquants depuis les modèles de `skills/init-workspace/assets/`, sans jamais écraser un fichier existant.
+Le moteur (`skills/`, `AGENTS.md`, `CLAUDE.md`, les README, `ENGINE-VERSION` qui indique sa version) est générique et remplaçable. Toutes vos données sont sous `data/`, qui ne contient que des `README.md` dans le ZIP distribué. Au premier lancement, le coach crée les fichiers obligatoires manquants depuis les modèles de `skills/init-workspace/assets/`, sans jamais écraser un fichier existant.
 
 ## Démarrage
 

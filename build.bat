@@ -60,6 +60,14 @@ if errorlevel 1 (
   exit /b 1
 )
 
+rem Engine version marker: generated from VERSION, never kept in workspace\.
+>"build\career-ai-workspace\ENGINE-VERSION" echo(%VERSION%
+set /p ENGINE_VERSION=<"build\career-ai-workspace\ENGINE-VERSION"
+if not "%ENGINE_VERSION%"=="%VERSION%" (
+  echo ERROR: ENGINE-VERSION does not match VERSION.
+  exit /b 1
+)
+
 copy /Y "standalone\interview-coach-standalone.md" "dist\interview-coach-standalone-v%VERSION%.md" >nul
 copy /Y "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "dist\interview-coach-pilot-feedback-v%VERSION%.md" >nul
 

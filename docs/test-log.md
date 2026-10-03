@@ -30,6 +30,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | Reprise dans une nouvelle conversation à partir du workspace (`current-status.md`) | ✅ Validé | 2026-09-30 | 2026-10-03 | Couvert le 2026-10-02 sur un flux d'opportunité (D8, D9, D12, E1) : le coach retrouve l'opportunité et l'étape en cours. Écart : il ne relit pas le dossier professionnel au démarrage et répète un statut périmé (« profil vide », C1 et E1). Démarrage d'une nouvelle conversation supérieur à une minute (noté au backlog). Correction apportée dans #12 (lecture du dossier professionnel au démarrage, statut périmé corrigé). Le « profil vide » de E1 venait de C7 jouée plus tôt (dossier supprimé) ; rejoué le 2026-10-03 avec C7 en fin de passe : aucun statut périmé (C1, D1, E1). |
 | Incohérence entre données et statut (dossier professionnel supprimé, sources et statut conservés) | ✅ Validé | 2026-09-30 | 2026-10-03 | Régression du 2026-10-02 (C7, squelette recréé) corrigée dans #12 et rejouée le 2026-10-03 : le fichier n'est pas recréé, le coach propose de le restaurer ou de le reconstruire à partir des sources. Le passage de `allow_external_web_search` à `true` n'est pas signalé comme sensible : reporté au backlog. |
 | Retour arrière (rollback) d'une mise à jour | ⬜ Non testé | — | — | À tester avec l'issue #7, avant de le présenter comme une garantie (D-004). |
+| Marqueur `ENGINE-VERSION` à la racine du ZIP, égal à `VERSION` | ✅ Validé | 2026-10-04 | 2026-10-04 | Ajouté le 2026-10-04 pour distinguer une v0.3.0 (sans marqueur) d'une v0.4.0. Contenu `0.4.0-dev` conforme ; le build échoue si `workspace/ENGINE-VERSION` existe. |
 
 ### Zones du plan de test sans test consigné
 
@@ -72,6 +73,7 @@ Définis le 2026-10-01 et adaptés au périmètre révisé de l'issue. Premier d
 
 Le détail de chaque session est dans [`test-history/`](test-history/), un fichier par session, du plus récent au plus ancien :
 
+- [2026-10-04 — Marqueur de version du moteur `ENGINE-VERSION`](test-history/2026-10-04-marqueur-engine-version.md)
 - [2026-10-03 — Démo commentée enregistrée avec la transcription Teams (issue #12)](test-history/2026-10-03-demo-enregistree-teams.md)
 - [2026-10-03 — Démo à blanc chronométrée et rejeu ciblé après corrections (issue #12)](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md)
 - [2026-10-02 — Premier déroulé complet du scénario maître (issue #12)](test-history/2026-10-02-deroule-complet-scenario-maitre.md)

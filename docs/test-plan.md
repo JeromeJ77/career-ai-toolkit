@@ -12,6 +12,10 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   template matches `VERSION`.
 - Confirm the standalone and pilot-feedback filenames are versioned.
 - Confirm the ZIP contains one top-level `career-ai-workspace/` directory.
+- Confirm the ZIP contains `ENGINE-VERSION` at the workspace root, holding
+  exactly the content of `VERSION` (single line, no trailing space), and that
+  `workspace/` itself holds no `ENGINE-VERSION` (the build rejects it as an
+  unexpected root entry).
 - Confirm `examples/`, repository docs and real or synthetic demo data are not in the workspace ZIP.
 - Confirm a missing mandatory source file makes the build fail clearly.
 - Confirm the opportunity structure reference and its Markdown templates are

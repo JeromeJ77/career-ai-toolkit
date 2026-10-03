@@ -156,7 +156,8 @@ des `README.md` ou si le moteur contient un fichier de travail initialisé.
 ### Conséquences
 
 - Une mise à jour peut copier le ZIP entier par-dessus un workspace existant
-  sans écraser de donnée utilisateur (procédure détaillée : issue #7).
+  sans écraser de donnée utilisateur (procédure détaillée : issue #7, reportée
+  à la v0.5.0).
 - Le doublon entre `workspace/feedback/pilot-feedback.md` et
   `docs/pilot-feedback.template.md` disparaît.
 - Tous les chemins du workspace, des instructions et de la documentation
@@ -167,6 +168,15 @@ des `README.md` ou si le moteur contient un fichier de travail initialisé.
 - Définir le manifest, les versions de schéma et les migrations nécessaires.
 - Tester réellement la mise à jour et le rollback avant de la présenter comme
   une garantie utilisateur (issue #7).
+- La procédure de mise à jour, le marqueur de version du moteur et la détection
+  de mise à jour par le coach (issue #7) sont reportés à la v0.5.0, avec
+  l'intégration de Git local (issue #6) : les pilotes partent d'une
+  installation neuve en v0.4.0. Seul un marqueur côté moteur est livré dès la
+  v0.4.0 : `ENGINE-VERSION` à la racine du ZIP, généré par le build depuis
+  `VERSION`, pour identifier la version installée (une v0.3.0 n'en a pas). Il
+  n'est ni recopié dans les données ni lu par le coach ; sa forme pourra être
+  revue par l'issue #7. La détection devra traiter un workspace sans marqueur
+  dans ses données comme issu d'une version antérieure ou égale à la v0.4.0.
 
 ## D-005 — Séparer sources, représentation canonique et analyse
 

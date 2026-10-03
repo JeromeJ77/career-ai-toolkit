@@ -4,6 +4,9 @@
 
 ### Added
 
+- The workspace ZIP now contains an `ENGINE-VERSION` file at its root, generated
+  by the build from `VERSION`, so that the installed engine version can be
+  identified (a v0.3.0 workspace has none). The coach does not use it yet.
 - Added a French/English business glossary covering the current domain model
   and clearly separating provisional terms that still require grooming.
 - Added a design decision log to preserve the rationale and open questions
