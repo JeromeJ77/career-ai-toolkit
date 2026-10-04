@@ -21,6 +21,14 @@ n'indiquent pas laquelle l'emporte (`interview-coach/SKILL.md`, règle « Coach 
 the configured coaching language »). La clé n'est lue que pour rédiger
 `opportunity.md` (D-014).
 
+Constat complémentaire (2026-10-04) : après une première conversation en
+français, une seconde conversation commencée en anglais (« Let's resume ») a
+reçu une réponse en français. La règle doit donc être renforcée : la langue
+du premier message de la conversation fixe la langue de coaching de la session,
+y compris à la reprise, et ne change que sur demande explicite du candidat.
+Cette demande explicite fonctionne déjà : « Let's switch in English » a bien
+été prise en compte et la conversation a continué en anglais.
+
 - Supprimer la clé `language.coaching` de `workspace.yaml` et de son modèle.
 - Langue de coaching de la session : celle du début de la conversation, modifiable
   à la demande du candidat.
@@ -46,6 +54,46 @@ L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
 mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 #13 (modèle du journal des décisions), #14 (abandon du mode standalone) et #15
 (recentrage sur My Career Workspace).
+
+### Rendre le coaching et les simulations plus vivants
+
+Regroupe trois constats : progression du coach, ton conversationnel et prénoms
+des interviewers.
+
+- Progression pendant les traitements longs : relevé lors des tests de #14
+  (2026-10-04), le coach parle peu quand il travaille, par exemple quand on lui
+  demande de commencer à préparer une offre, et le candidat attend sans savoir
+  ce qui se passe.
+  - Le coach dit ce qu'il fait : « Je fais le point sur les informations à ma
+    disposition », « J'analyse ces informations au regard de votre dossier
+    professionnel », etc.
+  - Quand son plan comporte plusieurs étapes, il numérote la progression :
+    « 1/4 - Je fais le point… », puis « 2/4 - J'analyse… ».
+- Ton conversationnel : relevé lors des tests de #14 (2026-10-04), le coach
+  s'exprime de façon technique, par exemple « le message 5 n'est pas supprimé,
+  il est déplacé dans la section retirée ou invalidée de `analysis.md` avec
+  votre raison ».
+  - Par défaut, rester au niveau fonctionnel et tenir une vraie conversation
+    (« D'accord, c'est noté »), sans détailler les fichiers ni les règles
+    internes.
+  - Conserver un mode développeur/test, activable, qui garde ces détails pour
+    comprendre ce qui se passe et valider le comportement attendu.
+- Prénoms des interviewers en simulation : relevé à la démo à blanc
+  (2026-10-03, étape D5) puis aux tests de #14 (2026-10-04) : « Interviewer 1 »
+  évoque une autre personne alors qu'aucun interviewer ne porte de nom. Donner
+  un prénom à chaque interviewer, cohérent d'un tour à l'autre de la
+  simulation, plutôt que « interviewer 1 », « interviewer 2 ». Non implémenté à
+  ce jour.
+- À rapprocher de « Ton et emojis paramétrables ».
+
+### Cas de test mesurable pour l'analyse orientée action
+
+- Relevé lors des tests de #14 (2026-10-04) : la règle « synthèse orientée
+  action, pas audit exhaustif » ne peut pas être validée sans critère mesurable.
+- Définir un cas de test avec des données précises (offre et dossier fictifs du
+  kit) et un résultat attendu qui distingue une synthèse orientée action d'un
+  audit : par exemple longueur maximale, nombre de priorités, présence d'actions
+  concrètes et absence de recensement exhaustif.
 
 ### Documenter les choix technologiques du projet
 
@@ -214,12 +262,6 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
   Si la candidate valide la différence, le statut reprend la version du
   fichier ; sinon, investiguer et résoudre.
 - Un checksum a été évoqué, jugé trop compliqué pour l'instant.
-
-### Prénoms des interviewers en simulation
-
-- Relevé à la démo à blanc (2026-10-03, étape D5) : donner des prénoms aux
-  interviewers plutôt que « interviewer 1 », « interviewer 2 », pour rendre la
-  simulation plus vivante.
 
 ### Génération de la lettre de motivation dans le workspace
 
