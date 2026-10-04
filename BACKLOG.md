@@ -101,6 +101,28 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 #13 (modèle du journal des décisions), #14 (abandon du mode standalone) et #15
 (recentrage sur My Career Workspace).
 
+### Auditer le skill du coach avant le pilote
+
+Proposé pendant la deuxième passe de #15 et #18 (2026-10-05) : auditer les
+consignes du coach (`workspace/AGENTS.md`, `CLAUDE.md` et les skills, en
+particulier `interview-coach`) au regard de l'état de l'art et des bonnes
+pratiques de rédaction d'instructions et de skills pour agents.
+
+- Objectif : détecter les risques potentiels avant le début de la phase
+  pilote.
+- Piste : confier l'analyse à un modèle de réflexion supérieure, par exemple
+  Fable 5.1.
+- Si rien de critique n'est trouvé, tant mieux ; noter alors au backlog les
+  évolutions possibles, à prévoir plus tard.
+- Constats des tests de #15 et #18 qui pourraient l'alimenter : règles lues
+  seulement en début de session et oubliées ensuite (prénom), commentaires du
+  coach sur ses propres consignes ou étapes (« comme demandé par le CLAUDE.md »,
+  « Step 2: check existence only… »), ajouts non prescrits (avertissement après
+  une réponse proposée).
+- À rapprocher de « Tests automatiques du coach par sous-agent » et des
+  recommandations de raisonnement selon les tâches (section « Immediately
+  after the end-to-end test »).
+
 ### Rendre le coaching et les simulations plus vivants
 
 Regroupe quatre constats : progression du coach, ton conversationnel, prénoms
