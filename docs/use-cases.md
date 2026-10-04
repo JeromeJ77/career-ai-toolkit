@@ -131,8 +131,6 @@ conversation can continue without relying on previous conversation history.
 ```mermaid
 flowchart TD
     start([Start pilot])
-    choose{Choose usage mode}
-    standalone["Standalone coach<br/>copy Markdown into an AI assistant"]
     workspace["Workspace mode<br/>build and extract private ZIP"]
     configure["Configure workspace<br/>language, preferences, tool context"]
     sources["Add authorized sources<br/>historical CVs, certifications, notes"]
@@ -159,11 +157,8 @@ flowchart TD
     feedback["Fill sanitized pilot feedback"]
     finish([End])
 
-    start --> choose
-    choose --> standalone
-    choose --> workspace
+    start --> workspace
     workspace --> configure
-    standalone --> sources
     configure --> sources
     sources --> initProfile
     initProfile --> reviewProfile
@@ -186,10 +181,10 @@ flowchart TD
     classDef jointTask fill:#16a34a,stroke:#14532d,stroke-width:3px,color:#ffffff;
     classDef decision fill:#f5f5f5,stroke:#404040,stroke-width:2px,color:#171717;
 
-    class start,standalone,workspace,configure,sources,newOpp,realInterview,feedback,finish userTask;
+    class start,workspace,configure,sources,newOpp,realInterview,feedback,finish userTask;
     class addJob,refineProfile,generateCv,analyze,prepare coachTask;
     class initProfile,validatePositioning,interview,simulate,debrief,improvePrep,postReview,updateProfile jointTask;
-    class choose,reviewProfile,durable,retrySame,nextInterview,nextOpp decision;
+    class reviewProfile,durable,retrySame,nextInterview,nextOpp decision;
 ```
 
 The loop matters: interview preparation should improve the opportunity files

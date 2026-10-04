@@ -8,9 +8,11 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm `dist/` is created.
 - Confirm the version matches `VERSION`, that it is not an already released
   version, and that it carries the `-dev` suffix until the release is prepared.
-- Confirm the version shown in the standalone header and in the pilot feedback
-  template matches `VERSION`.
-- Confirm the standalone and pilot-feedback filenames are versioned.
+- Confirm the version shown in the pilot feedback template matches `VERSION`
+  and that the pilot-feedback filename is versioned.
+- Confirm `build.bat` produces no standalone deliverable and no longer checks a
+  standalone version (#14): `dist/` holds no
+  `interview-coach-standalone-v<version>.md`.
 - Confirm the ZIP contains one top-level `career-ai-workspace/` directory.
 - Confirm the ZIP contains `ENGINE-VERSION` at the workspace root, holding
   exactly the content of `VERSION` (single line, no trailing space), and that
@@ -44,50 +46,6 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   opportunity, interview, simulation and actual-interview structure.
 - Confirm `dist/` and `build/` are ignored.
 
-## Standalone coach
-
-- Start with CV + offer only.
-- Start with CV + professional profile + offer + existing letter.
-- Test French and English.
-- Test HR screening, technical, system design, leadership and executive scenarios.
-- Confirm the coach proposes strategic messages and allows adjustment.
-- Confirm simulation asks one question at a time and, with several
-  interviewers, that only one of them asks per turn.
-- Confirm a new stop request made right after a declined stop is confirmed
-  again before the simulation ends.
-- Confirm preparation stays coaching: the coach never plays an interviewer or
-  uses the italic role markers outside a simulation.
-- Confirm the coach says « dossier professionnel », never « profil
-  professionnel », when coaching in French.
-- Confirm coaching does not interrupt a realistic simulation.
-- Confirm the first debrief is succinct and evidence-based.
-- Confirm the coach offers the Court, Standard and Approfondi depths with
-  approximate duration and question count, and mentions the stop keywords.
-- Confirm each stop keyword triggers a confirmation recalling that the stop is
-  final, that the simulation resumes if the candidate does not confirm, that a
-  « stop » inside an answer triggers nothing, that an unclear phrasing such as
-  « je veux arrêter là » triggers the same confirmation, and that a pause
-  request is answered by saying pausing is not supported.
-- Confirm a second simulation is independent from the first (no « rebonjour »,
-  no reference to the earlier session) and that the coach asks whether to
-  replay the same case or play another one.
-- Confirm the first simulation of a round says nothing about what the
-  interviewers will ignore and never presents the preparation as a simulation.
-- Confirm each exit from and return to the interviewer role is marked by a
-  short line in italics, including when a stop is not confirmed and the
-  simulation resumes, whether the candidate declines the stop or simply
-  answers the interview question.
-- Confirm the coach recalls what a strategic message is the first time, and
-  keeps a withdrawn message apart with its reason instead of deleting it.
-- Confirm questions the coach suggests for the interviewers are presented as
-  its suggestions, distinct from the candidate's ideas.
-- Write « stop » mid-simulation and confirm; check the coach states it is stopping at the
-  candidate's request, leaves the role, optionally offers to collect the
-  candidate's questions, debriefs only what was played, does not assess unplayed
-  parts, then asks the depth again for a new simulation.
-- Confirm no facts are invented.
-- Confirm file persistence and PDF limitations are stated honestly.
-
 ## Workspace
 
 - Extract the ZIP outside the repository.
@@ -109,7 +67,8 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   uses the default for the session, tells the candidate the key, the value found
   and the default used, and leaves the correction to them.
 - Confirm `data/feedback/pilot-feedback.md` is created only on request.
-- Set the profile language in `data/config/workspace.yaml`.
+- Set the profile and coaching languages in `data/config/workspace.yaml`, and
+  run coaching sessions in French and in English.
 - Add sample authorized sources and initialize the profile.
 - Confirm profile changes are proposed before application.
 - Ask to initialize the profile without providing sources and confirm the
@@ -163,21 +122,36 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   official job title as in the source.
 - Confirm derived analysis is separate from the canonical source
   representation and uncertain information is explicit.
+- Confirm the coach proposes strategic messages and allows adjustment, recalls
+  what a strategic message is the first time, and keeps a withdrawn message
+  apart with its reason instead of deleting it.
 - Create a first and second interview round and confirm
   `interviews/01-type/interview.md` and `interviews/02-type/interview.md` retain
-  their sequence and metadata.
+  their sequence and metadata. Across opportunities, cover HR screening,
+  technical, system design, leadership and executive interview types.
 - Confirm preparation, simulation and `actual/` artifacts are created only when
   their workflow phase is reached; no empty placeholder tree is generated.
 - Confirm the coach reviews the candidate's questions for the interviewers
   before the sheet: reuses the ideas already in the dossier without asking for
   them again, gives an opinion on each, proposes rephrasings and one or two
-  questions specific to the opportunity, separates this round's questions from
+  questions specific to the opportunity presented as its own suggestions,
+  distinct from the candidate's ideas, separates this round's questions from
   later rounds', and consigns only what the candidate validated. Confirm that a
   sheet requested without this step makes the coach say so and ask whether to
   do it first, and that a refusal still produces the sheet with the question
   sections left empty and no invented question.
 - Complete preparation, sheet generation, simulation and post-interview
   reflection for one opportunity.
+- Confirm preparation stays coaching: the coach never plays an interviewer or
+  uses the italic role markers outside a simulation, never presents the
+  preparation as a simulation, and the first simulation of a round says nothing
+  about what the interviewers will ignore.
+- Confirm the coach offers the "Court", "Standard" and "Approfondi" depths with
+  approximate duration and question count, and mentions the stop keywords.
+- Confirm simulation asks one question at a time and, with several
+  interviewers, that only one of them asks per turn; that each exit from and
+  return to the interviewer role is marked by a short line in italics; and that
+  neither coaching nor status updates interrupt the simulation itself.
 - Confirm the opportunity receives a `current-status.md` and that it is updated
   after phase changes, important validations and new relevant artifacts.
 - Confirm the round's `interview.md` is updated when preparation starts (status
@@ -187,31 +161,47 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   that the opportunity status points to it instead of listing the round's
   detail.
 - For the same opportunity, run at least two simulation/debrief/improvement
-  loops; confirm `simulations/01/` and `simulations/02/` remain distinct, then
-  prepare a follow-up interview round.
+  loops; confirm `simulations/01/` and `simulations/02/` remain distinct, that
+  the coach asks whether to replay the same case or play another one, and that
+  the second simulation is independent from the first (no « rebonjour », no
+  reference to the earlier session); then prepare a follow-up interview round.
 - End one conversation after persisting a simulation transcript. In a new
   conversation, request its debrief and confirm the coach selects the correct
   opportunity, round and simulation using only workspace artifacts.
 - Repeat an independent debrief without a transcript using candidate notes;
   confirm `debrief.md` identifies its sources and limitations and does not
   invent exact wording or chronology.
-- Confirm each simulation debrief separates observations from interpretation,
-  limits priorities to one through three, and updates the opportunity status.
+- Confirm each simulation debrief is succinct and evidence-based, separates
+  observations from interpretation, limits priorities to one through three, and
+  updates the opportunity status.
 - Confirm an actual-interview review works from candidate notes without
   requiring a transcript.
 - Start a new conversation for a later coaching session and confirm work can be
   resumed from the workspace without prior conversation history, with dates
   reported as recorded and worded consistently.
-- Stop a simulation early with « stop »; confirm the transcript covers only what
-  was played (or `current-status.md` holds a checkpoint when none exists),
-  `debrief.md` records the early stop, and a following simulation
-  uses the next `simulations/NN/` directory without altering the first.
-- Confirm status updates do not interrupt the interview simulation itself.
+- Confirm each stop keyword triggers a confirmation recalling that the stop is
+  final, that the simulation resumes (with the italic return line) if the
+  candidate declines or simply answers the question, that a new stop request
+  right after a declined stop is confirmed again, that a « stop » inside an
+  answer triggers nothing, that an unclear phrasing such as « je veux arrêter
+  là » triggers the same confirmation, and that a pause request is answered by
+  saying pausing is not supported.
+- Stop a simulation early with « stop » and confirm; check the coach states it
+  is stopping at the candidate's request, leaves the role, optionally offers to
+  collect the candidate's questions, debriefs only what was played without
+  assessing unplayed parts, then asks the depth again for a new simulation.
+  Confirm the transcript covers only what was played (or `current-status.md`
+  holds a checkpoint when none exists), `debrief.md` records the early stop, and
+  a following simulation uses the next `simulations/NN/` directory without
+  altering the first.
 - Confirm first-page sheet density remains usable, that the first page holds no
   vigilance points or communication reminders, that the second page is the note
   area and that detail starts on the third page with the vigilance points and
   communication reminders.
 - Confirm durable learnings are separated from opportunity-specific content.
+- Throughout the sessions, confirm no facts are invented and that the coach
+  says « dossier professionnel », never « profil professionnel », when coaching
+  in French.
 
 ## Test kit, demo script and fictional example (#12)
 
@@ -276,6 +266,49 @@ Non-regression:
 - Replay « Build » and « Repository privacy » after the example is replaced and
   the kit ZIP is added.
 
+## Standalone abandonment (#14)
+
+Nominal flow:
+
+- Confirm `standalone/` and `docs/standalone-mode.md` no longer exist and that
+  every generic coaching rule of the former standalone instructions is present
+  in the workspace skills, or has been reported to the user.
+- Run `build.bat` on a clean copy and replay the « Build » section.
+- Search the repository (outside `CHANGELOG.md`, `docs/test-history/`, closed
+  issues and the abandonment decision itself) for « standalone » and « mode
+  autonome »: no remaining mention as an active component.
+- Confirm the decision log holds an entry for the abandonment in the format
+  defined by #13 (type `PRODUCT`, status « ✅ Adoptée », options considered,
+  consequences, reassessment condition) and that D-009 no longer cites the
+  standalone as an active reference.
+- Confirm `CHANGELOG.md` announces the abandonment and the glossary keeps the
+  « Mode standalone » entry, marked as abandoned with a link to the decision.
+
+Edge cases:
+
+- Confirm the pilot-feedback template no longer asks which mode was tested.
+- Confirm `test-kit/scenario.md` and `test-kit/guide-testeur.md` no longer
+  refer to standalone checks or to the standalone as a source to fix.
+- Confirm the « mode autonome » criteria are removed from issues #8 and #9 with
+  a comment pointing to #14, that #3 no longer carries `standalone-mode`, and
+  that the label itself still exists for closed issues such as #2.
+- Confirm « Validate the standalone coach with real users » is gone from
+  `BACKLOG.md` and that « Standalone interview coach in English » is reworded as
+  an English version of the workspace, without any standalone reference.
+
+Limit cases:
+
+- Confirm historical documents (earlier `CHANGELOG.md` entries, `docs/test-history/`)
+  are not rewritten.
+- Confirm `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md` and `.gitattributes` keep
+  no rule that depends on the standalone (version, consistency, commit scope,
+  source path), without losing any other rule.
+
+Non-regression:
+
+- Confirm the workspace ZIP file list is unchanged and replay « Repository
+  privacy ».
+
 ## Regression
 
-Repeat essential standalone and workspace scenarios after any change to the core coach instructions.
+Repeat essential workspace scenarios after any change to the core coach instructions.

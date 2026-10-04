@@ -12,6 +12,36 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+### Supprimer `language.coaching` : la langue de la session suit la conversation
+
+Écart constaté lors des tests de #14 (2026-10-04) : le coach répond dans la
+langue utilisée par le candidat et ne tient pas compte de `language.coaching`,
+même quand elle diffère de la langue de début de conversation. Les consignes
+n'indiquent pas laquelle l'emporte (`interview-coach/SKILL.md`, règle « Coach in
+the configured coaching language »). La clé n'est lue que pour rédiger
+`opportunity.md` (D-014).
+
+- Supprimer la clé `language.coaching` de `workspace.yaml` et de son modèle.
+- Langue de coaching de la session : celle du début de la conversation, modifiable
+  à la demande du candidat.
+- `opportunity.md` rédigé dans `language.profile` (au lieu de `language.coaching`),
+  avec traduction fidèle des sources et langue d'origine indiquée ; les
+  transcriptions gardent la langue de l'original. Mettre à jour D-014 (statut,
+  décision, conséquences) ou la remplacer par une nouvelle entrée ; son point
+  sur le candidat qui coache dans une autre langue que celle de son dossier est
+  déjà inscrit dans ses conditions de réévaluation.
+- Compatibilité : si l'entrée dépréciée `language.coaching` est présente dans un
+  `workspace.yaml` existant, le coach l'ignore et affiche un avertissement ; à la
+  demande du candidat, il la retire pour supprimer l'avertissement. La
+  synchronisation des clés ne supprime jamais rien d'elle-même.
+- Point à trancher (repris dans les conditions de réévaluation de D-014) : un
+  candidat qui travaille en anglais avec un `language.profile` en français lira
+  ses `opportunity.md` en français.
+- Fichiers concernés : modèle `workspace.yaml`, `workspace/AGENTS.md`, règle de
+  langue de `interview-coach/SKILL.md`, gestion des clés invalides ou dépréciées
+  de `init-workspace`, README de config, test-plan, scénario maître du kit de
+  test, `CHANGELOG.md`.
+
 L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
 mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 #13 (modèle du journal des décisions), #14 (abandon du mode standalone) et #15
@@ -191,6 +221,16 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
   interviewers plutôt que « interviewer 1 », « interviewer 2 », pour rendre la
   simulation plus vivante.
 
+### Génération de la lettre de motivation dans le workspace
+
+- Relevé lors de l'abandon du mode standalone (#14, 2026-10-04) : le standalone
+  proposait, seulement si c'était pertinent et en fin de préparation, de générer
+  ou réviser une lettre de motivation concise, sans détourner la séance vers ce
+  livrable. Le workspace n'a pas de workflow équivalent : le modèle
+  `cover-letter.template.md` existe mais n'est référencé nulle part, et
+  l'emplacement de la lettre dans l'arborescence n'est pas défini.
+- Voir aussi la section « Cover letters » ci-dessous.
+
 ### Explorations ultérieures
 
 - Évaluer si un RAG serait utile, notamment dans le cadre de feedbacks
@@ -203,7 +243,6 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 
 ## Pilot validation
 
-- Validate the standalone coach with real users.
 - Validate the workspace with at least one complete real opportunity.
 - Test professional-profile initialization from CVs, certifications, skills assessments and human-coaching notes.
 - Test whether users maintain the professional profile over time.
@@ -221,17 +260,11 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 - Decide how provider-agnostic reasoning recommendations should be represented
   in skills based on observed pilot needs.
 
-## Standalone interview coach in English
+## English version of the workspace
 
-- Create and maintain an English standalone version after the French
-  pilot behavior has stabilized.
-- Define how French and English standalone instructions remain aligned.
-- Potential target tree structure:
-````
-standalone/
-├── interview-coach-standalone.fr.md
-└── interview-coach-standalone.en.md
-````
+- Provide an English version of the workspace (READMEs, workspace-facing
+  documentation and templates) after the French pilot behavior has stabilized.
+- Define how French and English versions remain aligned.
 
 ## Option supplémentaire : CITATION.cff
 

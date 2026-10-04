@@ -8,10 +8,7 @@
 
 Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites.
 
-Le projet propose deux modes complémentaires :
-
-1. **Coach d'entretien standalone** : un fichier Markdown autonome à installer dans un assistant ou un projet IA web. L'utilisateur joint ensuite son CV, son dossier professionnel, l'offre et les autres documents utiles.
-2. **Career AI Workspace local** : un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
+Le projet prend la forme d'un **Career AI Workspace local** : un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
 
 ## Confidentialité
 
@@ -27,7 +24,6 @@ build.bat
 
 Le build crée localement dans `dist/` :
 
-- `interview-coach-standalone-v<version>.md` ;
 - `interview-coach-pilot-feedback-v<version>.md` ;
 - `career-ai-workspace-v<version>.zip`.
 

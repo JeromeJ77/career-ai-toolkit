@@ -139,7 +139,8 @@ Board columns: Backlog, Ready, In progress, In review, Done.
   `accessibility`.
 - Aspect: `non-functional` for performance, privacy, reliability and other
   non-functional concerns.
-- Scope: `standalone-mode`, `workspace-mode`, `skill`.
+- Scope: `workspace-mode`, `skill`. The `standalone-mode` label is kept only
+  for issues created before the standalone mode was abandoned (#14).
 - Source: `pilot-feedback` for feedback from pilot testers.
 - Closing reasons: `duplicate`, `invalid`, `wontfix`.
 

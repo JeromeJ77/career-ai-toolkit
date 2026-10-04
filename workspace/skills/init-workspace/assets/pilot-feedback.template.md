@@ -2,7 +2,6 @@
 
 **Version testée :** 0.4.0-dev
 **Date :**  
-**Mode testé :** standalone / workspace  
 **Outil IA utilisé :**  
 **Langue du coaching :**
 

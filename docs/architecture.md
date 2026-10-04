@@ -2,7 +2,6 @@
 
 Career AI Toolkit separates generic, publishable assets from private user data.
 
-- `standalone/`: portable assistant instructions.
 - `workspace/`: generic workspace template distributed as a ZIP.
 - `test-kit/`: fictional sources (Markdown references and their generated PDF,
   DOCX and TXT), the master scenario and the tools that produce them. Packaged
@@ -22,11 +21,9 @@ flowchart LR
     repo["Toolkit repository<br/>public or shareable"]
     dist["dist/<br/>local release artifacts"]
     workspaceZip["career-ai-workspace ZIP"]
-    standalone["standalone coach Markdown"]
     userWorkspace["User workspace<br/>private, outside this repository"]
     aiTool["File-aware AI tool<br/>VS Code, Claude Code, etc."]
 
-    repo --> standalone
     repo --> workspaceZip
     repo --> dist
     workspaceZip --> userWorkspace
@@ -35,7 +32,7 @@ flowchart LR
     classDef privateNode fill:#fff1f2,stroke:#be123c,color:#3f0a16;
     classDef publicNode fill:#eef2ff,stroke:#4f46e5,color:#1e1b4b;
     class userWorkspace privateNode;
-    class repo,dist,workspaceZip,standalone,aiTool publicNode;
+    class repo,dist,workspaceZip,aiTool publicNode;
 ```
 
 The toolkit repository contains only reusable instructions, templates,

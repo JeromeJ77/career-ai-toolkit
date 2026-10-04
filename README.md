@@ -10,10 +10,9 @@
 
 The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
 
-## Two ways to use it
+## How to use it
 
-1. **Standalone Interview Coach**: copy `standalone/interview-coach-standalone.md` into an AI assistant or project and attach your own career documents.
-2. **Local Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool.
+**Local Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool.
 
 ## Privacy model
 

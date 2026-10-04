@@ -471,8 +471,8 @@ petites évolutions.
 
 ### Contexte
 
-Le standalone parlait de format « court, standard ou approfondi » alors que le
-backlog évoquait « short, medium, deep », sans durée, nombre de questions ni
+Les instructions du mode standalone, abandonné depuis (D-016), parlaient de
+format « court, standard ou approfondi » alors que le backlog évoquait « short, medium, deep », sans durée, nombre de questions ni
 moyen documenté d'interrompre une simulation.
 
 ### Options considérées
@@ -787,6 +787,14 @@ Depuis #12, chaque offre est aussi transcrite en `.md` à côté de l'original.
 Revoir la règle si les retours pilotes montrent que la traduction fait perdre
 des nuances de l'offre, ou si des candidats travaillent dans plusieurs langues.
 
+Revoir aussi la règle si un candidat qui coache dans une autre langue que celle
+de son dossier professionnel (par exemple en anglais avec un `language.profile`
+en français) doit lire ses `opportunity.md` dans la langue du dossier. Écart
+constaté lors des tests de #14 : `language.coaching` n'est pas suivie par le
+coach, qui répond dans la langue de la conversation ; la clé est à supprimer et
+`opportunity.md` à rédiger dans `language.profile` (voir le backlog). Cette
+décision sera alors mise à jour ou remplacée.
+
 ## D-015 — Un journal unique au modèle enrichi plutôt que des ADR séparés
 
 - **Type** : PROCESS
@@ -834,6 +842,77 @@ par l'auteur.
 
 Passer à des fichiers ADR séparés si le journal devient trop volumineux pour
 être lu ou revu en un seul fichier, ou si un outillage de génération le justifie.
+
+## D-016 — Abandonner le mode standalone
+
+- **Type** : PRODUCT
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-04
+- **Issue** : #14
+
+### Contexte
+
+Le mode standalone, une instruction autonome copiée dans un assistant IA à
+laquelle l'utilisateur joint ses documents à chaque conversation, correspond à
+une première orientation du projet. Depuis, le travail s'est presque
+exclusivement concentré sur le workspace, plan de test compris, ce qui reflète
+une clarification progressive de la vision produit.
+
+Le debriefing de la démo enregistrée du 2026-10-03 a relevé des limites qui
+touchent les principes structurants du produit :
+
+- une expérience plus limitée que le workspace local ;
+- une dépendance accrue au fournisseur d'agent pour la mémoire professionnelle ;
+- une persistance moins explicite et moins maîtrisable ;
+- une portabilité, une transparence et une traçabilité réduites ;
+- une seconde expérience utilisateur et un second modèle de mémoire à
+  maintenir ;
+- des coûts de développement, de documentation et de maintenance accrus ;
+- le risque de faire percevoir le produit comme un simple assistant
+  conversationnel, en contradiction avec la cible : un espace carrière
+  personnel, local et persistant.
+
+### Options considérées
+
+- **Maintenir le standalone comme second mode** : rejetée, car elle conserve
+  une seconde expérience et un second modèle de mémoire à maintenir, en
+  contradiction avec la cible d'un espace carrière local et persistant.
+- **Le maintenir en mode dégradé, sans le tester** : rejetée, car elle
+  distribue un livrable dont le comportement n'est pas vérifié, garde une partie
+  du coût de cohérence avec les skills et entretient la perception d'un simple
+  assistant conversationnel.
+- **L'abandonner** : retenue.
+
+### Décision et intention
+
+Abandonner le standalone comme cible produit et comme livrable distribué. Le
+workspace local est le seul mode du produit : il garde le dossier
+professionnel, les opportunités et leur historique dans des fichiers que
+l'utilisateur possède et contrôle, indépendamment du fournisseur d'agent.
+
+Avant la suppression, les règles de coaching génériques que seul le standalone
+portait sont reprises dans les skills du workspace, sans compatibilité
+spécifique avec l'ancien mode.
+
+### Conséquences
+
+- `standalone/` et `docs/standalone-mode.md` sont supprimés ; `build.bat` ne
+  produit plus `interview-coach-standalone-v<version>.md`.
+- Règles de contribution, documentation, plan de test, kit de test et modèle de
+  retour pilote ne présentent plus le standalone comme composant actif. Les
+  contrôles de coaching génériques du plan de test sont rattachés au
+  workspace.
+- Le glossaire conserve l'entrée « Mode standalone », marquée abandonnée. Le
+  label GitHub `standalone-mode` est conservé pour les issues antérieures.
+- Les documents historiques (anciennes entrées de `CHANGELOG.md`, historiques
+  de test, issues fermées) ne sont pas réécrits.
+- Toute expérience sans installation reste hors du produit.
+
+### Conditions de réévaluation
+
+Uniquement si un besoin utilisateur fort et validé apparaît pour une expérience
+sans installation, avec des limitations explicitement acceptées en matière de
+persistance, de portabilité et de propriété des données.
 
 ## Évolution du journal
 

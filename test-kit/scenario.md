@@ -76,7 +76,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
 - **Action** : vérifier dans `data/config/workspace.yaml` que `language.profile` et `language.coaching` valent `"fr-FR"` et que `language.deliverables` contient `"fr-FR"` (les modifier sinon).
 - **Attendu** : les valeurs sont celles du modèle ; aucune modification n'est nécessaire sur un workspace neuf.
-- **Plan de test** : Workspace — « Set the profile language in `data/config/workspace.yaml` ».
+- **Plan de test** : Workspace — « Set the profile and coaching languages in `data/config/workspace.yaml`… ».
 
 ## Phase C — Sources et dossier professionnel
 
@@ -169,7 +169,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt 2** : « Retire le dernier message stratégique, il ne me ressemble pas. Je valide les autres. »
 - **Attendu 2** : la section des messages proposés est conservée ; le message retiré passe dans une section « retirés ou invalidés par la candidate », avec la raison donnée ; les autres sont marqués validés. Si la correction est incohérente avec le profil ou l'offre, le coach le dit.
 - **Mots-clés** : sans qu'on le lui détaille, le coach analyse l'adéquation (`analysis.md` : faits, hypothèses, écarts) et propose des messages stratégiques à valider ; puis montrer qu'il accepte la correction sans effacer l'historique.
-- **Plan de test** : Workspace — « Confirm derived analysis is separate from the canonical source representation and uncertain information is explicit » ; Standalone — « Confirm the coach proposes strategic messages and allows adjustment ».
+- **Plan de test** : Workspace — « Confirm derived analysis is separate from the canonical source representation and uncertain information is explicit », « Confirm the coach proposes strategic messages and allows adjustment… ».
 
 ### D3 — Créer l'étape d'entretien technique [demo]
 
@@ -191,7 +191,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
 - **Attendu** : le coach reste coach : il ne joue pas les interviewers et n'annonce ni entrée ni sortie de rôle, réservées à la simulation. Il s'appuie sur `analysis.md` et les messages stratégiques pour cibler l'entretien technique (discussion d'architecture avec deux membres de la squad) : il propose les thèmes probables (migration du monolithe, idempotence des paiements, observabilité, incident de prod), pose deux ou trois questions à Nadia pour l'aider à retrouver des preuves et des exemples concrets, et relève les points de vigilance connus (dire « je » plutôt que « on », secteur régulé non pratiqué). Sur la réponse collée, il relève l'hésitation entre « on » et « j'ai », l'absence de critère de découpage et d'alternative écartée, et un résultat sans valeur de départ, sans compléter à la place de la candidate. Il n'écrit pas encore la fiche de préparation ; `interview.md` du round passe en « en préparation », préparation « en cours », fiche non générée ; ce qui est validé est consigné dans l'analyse ou le statut, sans fait inventé.
 - **Mots-clés** : montrer qu'il reformule et propose une preuve plus précise. Ne pas mener l'échange au bout en démo.
-- **Plan de test** : Standalone — « Confirm no facts are invented » ; Workspace — « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached » (pas de `preparation.md` à ce stade), « Confirm the opportunity receives a `current-status.md` and that it is updated after phase changes, important validations… ».
+- **Plan de test** : Workspace — « Throughout the sessions, confirm no facts are invented… », « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached » (pas de `preparation.md` à ce stade), « Confirm the opportunity receives a `current-status.md` and that it is updated after phase changes, important validations… ».
 
 ### D5 — Simulation courte avec arrêt anticipé [demo]
 
@@ -203,7 +203,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Mots-clés** : un « stop » dans une réponse n'arrête rien ; à « stop », le coach sort du rôle en italique et demande confirmation, l'arrêt étant définitif ; on peut revenir en arrière : après le refus, il reprend le rôle en italique ; la seconde demande d'arrêt est confirmée à son tour, puis la simulation s'arrête vraiment.
 - **Attendu après le premier « stop »** : le coach signale en italique qu'il sort du rôle et demande de confirmer l'arrêt, l'arrêt étant définitif ; après « Non, on continue. », il signale en italique qu'il reprend le rôle et la simulation repart là où elle en était.
 - **Attendu après la seconde demande d'arrêt** : même demande de confirmation, bien qu'elle suive de près la reprise ; après confirmation, il dit qu'il s'arrête à la demande de la candidate, quitte le rôle, propose éventuellement de recueillir ses questions, et enchaîne sur le debrief ou le note comme prochaine action. `simulations/01/transcript.md` ne couvre que ce qui a été joué ; `interview.md` du round mentionne la simulation.
-- **Plan de test** : Standalone — « Confirm the coach offers the Court, Standard and Approfondi depths… », « Confirm each stop keyword ends a simulation, that a « stop » inside an answer does not… », « Write « stop » mid-simulation… » ; Workspace — « Stop a simulation early with « stop »… », « Confirm simulation asks one question at a time », « Confirm status updates do not interrupt the interview simulation itself ».
+- **Plan de test** : Workspace — « Confirm the coach offers the Court, Standard and Approfondi depths… », « Confirm simulation asks one question at a time… » (y compris l'absence d'interruption par le coaching ou les statuts), « Confirm each stop keyword triggers a confirmation… », « Stop a simulation early with « stop » and confirm… ».
 
 ### D6 — Debrief [demo]
 
@@ -212,7 +212,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** (si le coach n'a pas enchaîné) : « Fais-moi le debrief. »
 - **Attendu** : `simulations/01/debrief.md` séparant observations et interprétations, les points forts précis d'abord, puis une à trois priorités à travailler, mention de l'arrêt anticipé et des limites des preuves ; pas d'évaluation des parties non jouées ; `current-status.md` de l'opportunité et `interview.md` du round mis à jour ; proposition d'une nouvelle simulation avec la question de la profondeur.
 - **Mots-clés** : montrer que le coach présente d'abord les bons points, puis les points à travailler ; la distinction observations / interprétations ; le ton « bienveillant mais exigeant ».
-- **Plan de test** : Workspace — « Confirm each simulation debrief separates observations from interpretation, limits priorities to one through three, and updates the opportunity status » ; Standalone — « Confirm the first debrief is succinct and evidence-based ».
+- **Plan de test** : Workspace — « Confirm each simulation debrief is succinct and evidence-based, separates observations from interpretation, limits priorities to one through three, and updates the opportunity status ».
 
 ### D7 — Deuxième simulation
 
@@ -256,7 +256,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : « Avant la fiche, je voudrais qu'on regarde les questions que je vais leur poser. »
 - **Attendu** : le coach retrouve les trois idées de questions déjà présentes dans le dossier professionnel (issues des notes complémentaires : astreinte, part de dette technique, décisions d'architecture inter-équipes) et ne demande pas de les ressaisir ; il donne son avis sur chacune (pertinence pour un entretien technique avec deux membres de la squad, formulation, ce qu'elle révèle de la candidate), propose d'en reformuler certaines (par exemple ne pas ouvrir sur la rémunération de l'astreinte à ce stade) et d'en ajouter une ou deux spécifiques à Lumen Pay (moteur de décision de crédit en temps réel, contraintes ACPR sur la livraison, montée à 2 millions d'opérations par jour), en les présentant comme ses suggestions, distinctes des idées de la candidate. Il distingue les questions pour ce round de celles à garder pour le Head of Engineering. Les questions retenues sont validées par la candidate avant d'être consignées.
 - **Variante à tester** (jouer D11 avant D10, dans la même conversation) : si la candidate demande directement la fiche sans être passée par cette étape, le coach doit relever qu'aucune question à poser n'a été travaillée pour ce round et demander si elle veut le faire d'abord ; répondre « non, génère quand même » et vérifier que la fiche est produite avec les sections de questions laissées vides, sans question inventée.
-- **Plan de test** : Workspace — « Confirm the coach reviews the candidate's questions for the interviewers… » ; Standalone — « Confirm no facts are invented ».
+- **Plan de test** : Workspace — « Confirm the coach reviews the candidate's questions for the interviewers… », « Throughout the sessions, confirm no facts are invented… ».
 
 ### D11 — Fiche de préparation pour l'entretien réel
 

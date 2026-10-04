@@ -8,7 +8,7 @@ if "%VERSION%"=="" (
   exit /b 1
 )
 
-for %%F in ("standalone\interview-coach-standalone.md" "workspace\README.fr.md" "workspace\AGENTS.md" "workspace\data\README.md" "workspace\skills\init-workspace\SKILL.md" "workspace\skills\init-workspace\assets\workspace.template.yaml" "workspace\skills\init-workspace\assets\current-status.template.md" "workspace\skills\init-workspace\assets\professional-profile.template.md" "workspace\skills\init-workspace\assets\external-references.template.md" "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\references\simulation-debrief-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md" "workspace\skills\interview-coach\assets\simulation-debrief.template.md") do (
+for %%F in ("workspace\README.fr.md" "workspace\AGENTS.md" "workspace\data\README.md" "workspace\skills\init-workspace\SKILL.md" "workspace\skills\init-workspace\assets\workspace.template.yaml" "workspace\skills\init-workspace\assets\current-status.template.md" "workspace\skills\init-workspace\assets\professional-profile.template.md" "workspace\skills\init-workspace\assets\external-references.template.md" "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\references\simulation-debrief-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md" "workspace\skills\interview-coach\assets\simulation-debrief.template.md") do (
   if not exist %%F (
     echo ERROR: Required file missing: %%~F
     exit /b 1
@@ -68,7 +68,6 @@ if not "%ENGINE_VERSION%"=="%VERSION%" (
   exit /b 1
 )
 
-copy /Y "standalone\interview-coach-standalone.md" "dist\interview-coach-standalone-v%VERSION%.md" >nul
 copy /Y "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "dist\interview-coach-pilot-feedback-v%VERSION%.md" >nul
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path 'build\career-ai-workspace' -DestinationPath 'dist\career-ai-workspace-v%VERSION%.zip' -Force"

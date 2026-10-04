@@ -55,8 +55,7 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - `VERSION` holds the release in progress, with the `-dev` suffix (for example
   `0.4.0-dev`) from the first development work of a release. It must never stay
   on an already released version. Remove the suffix only when preparing the
-  release. Keep the version in the standalone header and in the pilot feedback
-  template equal to `VERSION`.
+  release. Keep the version in the pilot feedback template equal to `VERSION`.
 
 ## Project knowledge maintenance
 
@@ -99,22 +98,20 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 
 ## Instructions as AI source code
 
-The standalone instructions, `workspace/AGENTS.md`, `workspace/CLAUDE.md`, the
-skills under `workspace/skills/` (`SKILL.md`, references and templates) define
-how the coach behaves. Treat them as the toolkit's "AI source code", not as
-plain documentation.
+`workspace/AGENTS.md`, `workspace/CLAUDE.md` and the skills under
+`workspace/skills/` (`SKILL.md`, references and templates) define how the coach
+behaves. Treat them as the toolkit's "AI source code", not as plain
+documentation.
 
 - A change to the coach's behavior is a functional change: use `feat`, `fix`
-  or `refactor` in the commit type, with a scope such as `coach`, `standalone`
-  or `skill`. Reserve `docs` for documentation that does not alter how the
-  coach behaves (README, glossary, decision log, test plan, backlog).
-- Keep the standalone instructions and the workspace skills consistent for
-  every shared behavior, and update `docs/test-plan.md` and `CHANGELOG.md` in
-  the same change.
+  or `refactor` in the commit type, with a scope such as `coach` or `skill`.
+  Reserve `docs` for documentation that does not alter how the coach behaves
+  (README, glossary, decision log, test plan, backlog).
+- Keep `workspace/AGENTS.md` and the skills consistent with each other, and
+  update `docs/test-plan.md` and `CHANGELOG.md` in the same change.
 
 ## Sources and derived artifacts
 
-- Source standalone instructions: `standalone/interview-coach-standalone.md`
 - Source workspace template: `workspace/`
 - Build outputs: `dist/` (never commit)
 - User feedback template: `workspace/skills/init-workspace/assets/pilot-feedback.template.md`

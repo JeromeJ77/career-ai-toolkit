@@ -2,17 +2,16 @@
 
 ## Goal
 
-Determine whether the standalone coach and local workspace are useful, understandable and reusable before adding technical complexity.
+Determine whether the local workspace is useful, understandable and reusable before adding technical complexity.
 
 ## Recommended participants
 
 - Technical individual contributors, architects, leads, managers or directors preparing a real interview.
 - French-first participants, with some English-interview scenarios where relevant.
-- A mix of web-assistant and local-workspace users.
 
 ## Suggested journey
 
-1. Choose standalone or workspace mode.
+1. Build and extract the workspace ZIP, then open it in a file-aware AI tool.
 2. Provide only documents the participant is authorized to use.
 3. Initialize or provide a professional profile.
 4. Optionally generate or refresh a CV from the professional profile if the
@@ -77,7 +76,6 @@ flowchart TD
   rounds for the same opportunity.
 - Usability of a per-round preparation sheet and note area in the real interview.
 - Value and effort of maintaining the professional profile.
-- Differences between standalone and workspace modes.
 - Whether a future CV-generation skill is useful as an independent profile
   output, and what it should automate.
 

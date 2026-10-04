@@ -61,8 +61,23 @@
 - Removed the fictional Principal Architect example. `examples/` will hold the
   `data/` tree of the fictional developer workspace, copied on request from a
   run of the master scenario.
+- Abandoned the standalone mode (#14): `standalone/` and
+  `docs/standalone-mode.md` are removed, and the build no longer produces
+  `interview-coach-standalone-v<version>.md`. The local workspace is the only
+  distributed product. Generic coaching rules that only the standalone
+  instructions held are now in the workspace skills. See decision D-016.
 
 ### Changed
+
+- The interview coach skill now carries the generic coaching rules inherited
+  from the abandoned standalone instructions (#14): action-oriented analysis
+  dimensions, strategic messages as working hypotheses with the final decision
+  left to the candidate, the content and STAR-like structure of interview
+  preparation, reconstruction of the real interview, transferable skills and
+  honest limits for uncovered requirements, no claim about internal hiring
+  criteria, no unnecessary data requests, and natural English coaching when
+  the candidate chooses English. The pilot feedback template no longer asks
+  which mode was tested.
 
 - Fixed a regression found in the first full scenario run: when a mandatory
   file is missing but other user data shows it already held content (for

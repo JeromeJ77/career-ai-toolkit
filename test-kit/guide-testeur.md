@@ -76,5 +76,5 @@ C'est moins encadré que le scribe : personne ne demande le verdict d'une étape
 
 1. Rassembler l'export final de l'assistant (« fin du déroulé ») ou la transcription Teams, les citations collées et les arborescences.
 2. Dans le dépôt, demander à l'assistant de développement de consigner les résultats : mise à jour du tableau de synthèse de `docs/test-log.md` (statuts ✅ Validé, ⚠️ À revalider, 🐞 Problème constaté, ⬜ Non testé, avec les dates) et création d'un fichier de session daté dans `docs/test-history/` (`AAAA-MM-JJ-sujet-court.md`, avec un indice `-2`, `-3` si le même test est refait le même jour), lié depuis l'index du journal. Les heures relevées figurent dans le fichier de session, jamais dans son nom. Seul ce qui a réellement été joué y figure. Le récap de l'assistant scribe peut servir de base à ce fichier.
-3. Demander un rapport court qui classe les écarts par origine : à corriger dans le moteur (skills, guidelines, standalone), à corriger dans le kit (scénario, sources, prompts), ou à mettre au backlog.
+3. Demander un rapport court qui classe les écarts par origine : à corriger dans le moteur (skills, guidelines), à corriger dans le kit (scénario, sources, prompts), ou à mettre au backlog.
 4. Relire les correctifs proposés avant tout commit : ils vont dans un second commit, après les résultats.
