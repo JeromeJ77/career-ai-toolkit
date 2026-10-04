@@ -8,7 +8,7 @@ if "%VERSION%"=="" (
   exit /b 1
 )
 
-for %%F in ("workspace\README.fr.md" "workspace\AGENTS.md" "workspace\data\README.md" "workspace\skills\init-workspace\SKILL.md" "workspace\skills\init-workspace\assets\workspace.template.yaml" "workspace\skills\init-workspace\assets\current-status.template.md" "workspace\skills\init-workspace\assets\professional-profile.template.md" "workspace\skills\init-workspace\assets\external-references.template.md" "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\references\simulation-debrief-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md" "workspace\skills\interview-coach\assets\simulation-debrief.template.md") do (
+for %%F in ("workspace\README.fr.md" "workspace\USER-GUIDE.md" "workspace\USER-GUIDE.fr.md" "workspace\AGENTS.md" "workspace\data\README.md" "workspace\skills\init-workspace\SKILL.md" "workspace\skills\init-workspace\assets\workspace.template.yaml" "workspace\skills\init-workspace\assets\current-status.template.md" "workspace\skills\init-workspace\assets\professional-profile.template.md" "workspace\skills\init-workspace\assets\external-references.template.md" "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\references\simulation-debrief-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md" "workspace\skills\interview-coach\assets\simulation-debrief.template.md") do (
   if not exist %%F (
     echo ERROR: Required file missing: %%~F
     exit /b 1
@@ -34,7 +34,7 @@ for /r "workspace\data" %%F in (*) do (
 rem Engine/data separation: the workspace root holds only the engine and data\.
 for /f "delims=" %%E in ('dir /b "workspace"') do (
   set "ALLOWED="
-  for %%A in (AGENTS.md CLAUDE.md README.md README.fr.md skills data) do if /i "%%E"=="%%A" set "ALLOWED=1"
+  for %%A in (AGENTS.md CLAUDE.md README.md README.fr.md USER-GUIDE.md USER-GUIDE.fr.md skills data) do if /i "%%E"=="%%A" set "ALLOWED=1"
   if not defined ALLOWED (
     echo ERROR: Unexpected entry at the workspace root ^(user data belongs under data\^): %%E
     goto :fail

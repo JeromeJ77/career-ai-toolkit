@@ -81,7 +81,7 @@ L'[architecture détaillée](docs/architecture.md#workspace-tree) distingue les 
 
 ## Documentation
 
-- [Guide utilisateur de My Career Workspace](docs/my-career-workspace-user-guide.md)
+- [Guide utilisateur de My Career Workspace](workspace/USER-GUIDE.fr.md)
 - [Glossaire métier français / anglais](docs/glossary.md)
 - [Référence de conception du workflow](docs/design/01-career-ai-toolkit-workflow-design.md)
 - [Journal des décisions de conception](docs/design/decision-log.md)

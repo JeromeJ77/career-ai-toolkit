@@ -374,8 +374,15 @@ Nominal flow:
   espace carrière, dossier professionnel, workspace (technical concept) and
   opportunité, and that the former « Mode workspace » entry is replaced by the
   single My Career Workspace entry.
-- Confirm `docs/workspace-mode.md` is renamed `docs/my-career-workspace-user-guide.md`
-  and that no link still points to the old name.
+- Confirm `docs/workspace-mode.md` no longer exists and that the user guide is
+  delivered at the root of the workspace ZIP in two versions, `USER-GUIDE.md`
+  (English) and `USER-GUIDE.fr.md` (French), linked to each other and from the
+  matching workspace README. Their links stay valid once the ZIP is extracted
+  outside the repository (none points to `docs/` or the repository), and no link
+  still points to the old names.
+- Confirm the build fails with a clear error when `workspace/USER-GUIDE.md` or
+  `workspace/USER-GUIDE.fr.md` is missing, and that the ZIP then holds both
+  guides at its root.
 - Confirm `CONTRIBUTING.md` names the `my-career-workspace` GitHub label instead
   of `workspace-mode`.
 - Confirm `README.md`, `README.fr.md`, the workspace READMEs, `workspace/AGENTS.md`

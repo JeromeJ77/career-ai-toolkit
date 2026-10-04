@@ -14,6 +14,7 @@ Session consignée dans le [journal des tests](../test-log.md).
 - ✅ Cas négatif : sans marqueur dans la source, le build échoue avec « The pilot feedback template does not contain the {{VERSION}} placeholder. ».
 - ✅ Le script de démo généré montre B1 (deux prompts, durée 3 min), le total de 42 min et l'en-tête « My Career Workspace ».
 - ✅ Recherche de « Career AI Workspace », `career-ai-workspace`, `career-ai-test-kit` et `workspace-mode` : il ne reste que les historiques (`docs/test-history/`, remarques de ce journal), l'entrée D-017, les consignes du plan de test et la phrase sur les workspaces existants.
+- ✅ Build rejoué après l'ajout des guides utilisateur (R1) : le ZIP du workspace contient 44 fichiers (les 42 précédents, plus `USER-GUIDE.md` et `USER-GUIDE.fr.md` à la racine). Sans `USER-GUIDE.fr.md`, le build échoue avec « Required file missing ». Aucun lien des guides ne pointe vers `docs/` ou le dépôt.
 
 ## Non testé
 

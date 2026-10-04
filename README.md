@@ -27,7 +27,7 @@ The toolkit is a coach, not an answer generator: it helps candidates reflect, pr
 
 ## How to use it
 
-**My Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool. See the [user guide](docs/my-career-workspace-user-guide.md).
+**My Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool. See the [user guide](workspace/USER-GUIDE.md).
 
 The local directory name is free: a workspace extracted under `career-ai-workspace/` keeps working and does not need to be renamed. At the next session the `user` section is added to its `workspace.yaml` and the first-name question is asked, without the welcome message.
 

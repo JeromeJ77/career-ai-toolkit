@@ -961,7 +961,8 @@ techniques liés au concept de workspace sont conservés : répertoire source
   `test-kit/` est conservé) et retour pilote
   `my-career-workspace-pilot-feedback-v<version>.md`.
 - Le guide utilisateur `docs/workspace-mode.md` devient
-  `docs/my-career-workspace-user-guide.md` ; l'entrée « Mode workspace » du
+  `workspace/USER-GUIDE.md` (anglais) et `workspace/USER-GUIDE.fr.md`
+  (français), livrés à la racine du ZIP ; l'entrée « Mode workspace » du
   glossaire est remplacée par « My Career Workspace ».
 - Le label GitHub `workspace-mode` est renommé `my-career-workspace`.
 - Les workspaces existants ne sont pas renommés : le nom du répertoire local

@@ -19,7 +19,7 @@ The engine (`skills/`, `AGENTS.md`, `CLAUDE.md`, READMEs) is replaceable. User d
 
 ## Session start order
 
-Run these steps at the start of a session, before another skill reads user data. Do not read any data file before step 1 is done.
+Run these steps at the start of a session, before another skill reads user data. Read no data file before the end of step 2. On a first session, read only `data/config/workspace.yaml` if it exists (to get the welcome language), and nothing else before the answer at step 3.
 
 1. Read the instructions (`AGENTS.md`, `CLAUDE.md`, this file).
 2. Check whether this is a first session (next section). Only check that files exist; do not read them.
@@ -60,7 +60,7 @@ On a first session:
 
    | | French | English |
    |---|---|---|
-   | Report | « J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. » | « I've set up your workspace: configuration, professional profile (empty for now), external references and current status. » |
+   | Report | « J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. » | « I've set up your career workspace: configuration, professional profile (empty for now), external references and current status. » |
    | First step | « Pour commencer, nous pouvons construire votre dossier professionnel à partir de vos documents (CV, profil LinkedIn, certifications…). » | « To get started, we can build your professional profile from your documents (CV, LinkedIn profile, certifications…). » |
 
 5. Then handle the candidate's initial request, if any.
@@ -87,7 +87,7 @@ Answers to the question (exact wording; write the value after the answer):
 | No | « Entendu, je ne vous appellerai pas par votre prénom. Vous pourrez changer d'avis à tout moment. » | « Understood, I won't use your first name. You can change your mind at any time. » | `no` |
 | Unrelated answer (question ignored) | Do not insist; handle the request. | Same. | `ask_again` (then `no` if ignored a second time) |
 
-Greetings, in the coaching language, without repeating the first name at every message:
+Greetings, in the coaching language, without repeating the first name at every message. Each greeting is given once per conversation, by this skill; other skills must not repeat it:
 
 - Start of a new conversation: « Bonjour <prénom>. » or « Bonjour. » (« Hello <first_name>. » or « Hello. »).
 - When the candidate ends the session (for example « merci, au revoir »): « À bientôt, <prénom>. » or « À bientôt. » (« See you soon, <first_name>. » or « See you soon. »).
@@ -99,7 +99,7 @@ The candidate may change or withdraw their choice at any time by asking, or by e
 Run this check once the session start order allows it, before another skill reads user data.
 
 1. For each mandatory file, check whether it exists under `data/`.
-2. Before creating a missing file, check whether other user data shows it already held content: `data/current-status.md` says it was initialized or filled, or other files depend on it (for example transcribed sources or opportunities for a missing professional profile). In that case it is a possible loss, not a first use: do not recreate it. Tell the candidate which file is missing and why it looks lost, and ask whether to rebuild it from the sources, restore a copy or check a synchronization tool. Act only on their answer.
+2. Before creating a missing file, check whether other user data shows it already held content: `data/current-status.md` says it was initialized or filled, or other files depend on it (for example transcribed sources or opportunities for a missing professional profile, or a professional profile or an opportunity for a missing `data/current-status.md`). In that case it is a possible loss, not a first use: do not recreate it. Tell the candidate which file is missing and why it looks lost, and ask whether to rebuild it from the sources, restore a copy or check a synchronization tool. Act only on their answer.
 3. Create only the other missing files by copying their template. Create missing parent directories. Never overwrite, rewrite or reformat an existing file, even if it looks empty or outdated (the only exceptions are appending missing keys to `workspace.yaml`, step 5, and updating the `user.*` keys from the candidate's answer or request, see "First name and greetings").
 4. Do not fill in the professional profile silently. A profile created from its template is an empty skeleton; populate it only through the interview-coach "Initialize the professional profile" workflow, with the candidate's validation.
 5. Compare `data/config/workspace.yaml` with `assets/workspace.template.yaml`. If keys from the template are missing, append each one with its template default value at its place in the structure. Do not change, reorder or remove any existing key, value or comment.

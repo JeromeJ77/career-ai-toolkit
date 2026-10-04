@@ -5,6 +5,8 @@ créé par Jérôme Jurbert et distribué sous licence MIT.
 
 Votre **espace carrière** est un espace privé, local et durable : vous y construisez un dossier professionnel vivant, dont vous gardez la propriété et que vous validez, puis vous l'exploitez au fil de vos opportunités et de vos entretiens. Chaque opportunité, préparation, simulation et débriefing peut l'enrichir : votre travail devient un capital professionnel réutilisable. Le coach IA vous aide à l'analyser, à le synthétiser et à vous préparer ; il ne remplace pas votre validation.
 
+Pour aller plus loin, consultez le [guide utilisateur](USER-GUIDE.fr.md) (version anglaise : [USER-GUIDE.md](USER-GUIDE.md)).
+
 ## Structure
 
 Le moteur (`skills/`, `AGENTS.md`, `CLAUDE.md`, les README, `ENGINE-VERSION` qui indique sa version) est générique et remplaçable. Toutes vos données sont sous `data/`, qui ne contient que des `README.md` dans le ZIP distribué. Au premier lancement, le coach crée les fichiers obligatoires manquants depuis les modèles de `skills/init-workspace/assets/`, sans jamais écraser un fichier existant.

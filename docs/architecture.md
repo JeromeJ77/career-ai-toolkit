@@ -184,5 +184,5 @@ business meaning independently from directory names.
 - [Design decision log](design/decision-log.md)
 - [Use cases](use-cases.md)
 - [Document lifecycle](document-lifecycle.md)
-- [My Career Workspace user guide](my-career-workspace-user-guide.md)
+- [My Career Workspace user guide](../workspace/USER-GUIDE.md)
 - [Professional profile](professional-profile.md)

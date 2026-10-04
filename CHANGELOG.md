@@ -87,8 +87,9 @@
   `my-career-workspace/`, `my-career-workspace-pilot-feedback-v<version>.md`);
   the repository stays `career-ai-toolkit`. In French the coach says « espace
   carrière » instead of « workspace ». Existing workspaces are not renamed and
-  keep working. The user guide is now
-  `docs/my-career-workspace-user-guide.md`, the glossary and the READMEs present
+  keep working. The user guide
+  (formerly `docs/workspace-mode.md`) now ships in the workspace ZIP, in English
+  (`USER-GUIDE.md`) and French (`USER-GUIDE.fr.md`); the glossary and the READMEs present
   the product and its vision.
 - The version of the pilot feedback template is now inserted by the build
   (`{{VERSION}}` placeholder), and the README, contributing guide and design
