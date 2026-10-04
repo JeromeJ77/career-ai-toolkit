@@ -18,6 +18,9 @@ Thumbs.db
 *.tmp
 *.log
 
+# Implementation plans handed over between conversations
+plans/
+
 # Never place personal pilot workspaces in this repository
 .local-workspaces/
 pilot-workspace/

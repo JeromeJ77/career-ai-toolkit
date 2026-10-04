@@ -29,6 +29,14 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   sources and add or adjust the scenario steps in the same change, tagging the
   steps kept for the demo with `[demo]`. If a feature cannot be demonstrated
   with the kit, report the gap explicitly to the user instead of ignoring it.
+- Once the scenarios are reviewed, write the implementation plan in
+  `plans/issue-<N>.md` (ignored by Git) so that a new conversation can carry
+  out the implementation from it alone. Give the user an assessment of the
+  implementation complexity (low, medium or high, with the main reasons) and
+  recommend the model to use for the implementation. A change to the coach's
+  behavior (`workspace/AGENTS.md`, skills) is never assessed as low complexity.
+  The final verification and the analysis of manual tests may return to the
+  analysis conversation.
 - During development, revisit these scenarios to catch forgotten cases and add
   the ones discovered.
 - Record in `docs/test-log.md` only tests actually performed. Never mark a
