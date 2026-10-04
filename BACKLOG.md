@@ -71,106 +71,11 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
   request sur le projet GitHub, et définir comment vérifier automatiquement
   l'anonymisation avant d'accepter ces contributions.
 
-### Feedback produit construit au fil de l'eau par le coach
+### Proposer un feedback produit lors d'une mise à jour du moteur
 
-- Constat : aujourd'hui `data/feedback/pilot-feedback.md` est créé à la
-  demande depuis un questionnaire et rempli en une fois ; la personne doit
-  noter elle-même ses remarques pendant l'utilisation. Faciliter ces retours
-  est jugé essentiel pour les premières utilisations, d'où une cible
-  envisagée en v0.4.0 (à confirmer au grooming).
-- Portée : un **feedback produit**, pas seulement pilote, pour ne pas
-  retravailler le mécanisme à la sortie de la phase pilote (envisagée jusqu'à
-  fin 2026). Message à faire passer : contribuer par des retours constructifs
-  à l'amélioration continue de l'outil par son concepteur.
-- **Activation** : option de feedback produit stockée dans `workspace.yaml`.
-  Au premier démarrage, le coach demande à la personne si elle souhaite
-  participer activement à la co-construction du produit, et active le mode si
-  elle accepte. Valeur par défaut à décider : désactivé par défaut, ou activé
-  pendant la phase pilote puis désactivé ensuite, puisqu'on cherche vraiment
-  des retours.
-- **Journal de notes brutes** (`data/feedback/`, nom à définir, par exemple
-  `feedback-log.md`), écrit au fil de l'eau avec le moins de traitement
-  possible pour limiter le coût (lien avec l'issue #16). Deux types
-  d'entrées :
-  - **silencieuses** : le coach consigne discrètement une difficulté d'usage
-    manifeste (allers-retours répétés, problème de copie ou de fichier,
-    instruction mal comprise), sans interrompre ni commenter auprès de la
-    personne ;
-  - **explicites** : la personne dicte une note par un mot-clé ou une
-    expression, utilisable à tout moment, quelle que soit l'étape, y compris
-    pendant une simulation, sans attendre sa fin ni la casser. Le coach
-    l'acquitte par une mention très simple en italique, sur le modèle des
-    marqueurs de sortie et de retour en simulation (par exemple « *Note de
-    retour produit prise en compte.* »), puis reprend où il en était.
-  - Chaque entrée porte la date, le type, le contexte (étape, opportunité,
-    fichier concerné) et un état volontairement simple : **non traitée** ou
-    **traitée**. Une entrée devient traitée lorsqu'elle a été examinée lors
-    d'une génération de feedback, qu'elle y ait été reprise ou écartée, et
-    seulement une fois le fichier de feedback effectivement écrit ; le journal
-    ne trace pas la suite donnée. Les notes brutes peuvent contenir des
-    données personnelles ; le nettoyage se fait à la génération du feedback,
-    pas à l'écriture.
-- **Génération d'un feedback formel** à la demande, par une commande ou une
-  expression :
-  - fichier indépendant dans `data/feedback/`, nommé avec l'identifiant
-    utilisateur anonyme et la date, par exemple
-    `feedback-<identifiant>-AAAA-MM-JJ.md`, avec un suffixe `-2`, `-3`… si
-    plusieurs feedbacks sont générés le même jour (convention à confirmer) ;
-  - reprend uniquement les entrées non traitées du journal ; il ne les marque
-    comme traitées qu'après l'écriture effective du fichier de feedback, jamais
-    au moment de leur lecture ou de leur analyse : une génération interrompue
-    ou échouée laisse le journal inchangé. Le feedback suivant ne contient que
-    les nouvelles entrées ; le journal lui-même n'est jamais réécrit
-    autrement ;
-  - revue spécifique des entrées silencieuses avec la personne avant de les
-    reprendre : elle confirme ou écarte chacune (problème corrigé, non avéré
-    ou sans intérêt) ; les entrées écartées sont aussi marquées traitées, à
-    la même étape ;
-  - le fichier généré appartient ensuite à la personne : elle peut le
-    retravailler seule ou avec le coach, supprimer ou garder des entrées ;
-  - anonymise le contenu (périmètre à définir : noms, entreprises,
-    interviewers, intitulés de poste, chemins locaux…), liste ce qui a été
-    remplacé et ne présente jamais le résultat comme garanti anonyme ;
-  - pose au moment de la génération quelques questions rapides pour enrichir
-    le retour sans perturber le workflow au quotidien, en commençant par le
-    positif comme le coach le fait dans ses propres débriefs : ce qui
-    fonctionne bien, puis les points importants à corriger rapidement, puis
-    les idées d'évolution à long terme ;
-  - métadonnées : au minimum la version du moteur (`ENGINE-VERSION`) et
-    l'identifiant utilisateur anonyme (voir ci-dessous), repris dans le
-    fichier et dans son nom ; autres métadonnées à définir.
-  - Le fichier reste local : aucune télémétrie ni envoi automatique. La
-    personne le relit, le nettoie si elle le souhaite et l'envoie elle-même.
-- **Identifiant utilisateur anonyme** : numéro unique déterminé à
-  l'installation et stocké dans `workspace.yaml`. Les retours restent
-  anonymes, mais plusieurs feedbacks d'une même personne peuvent être
-  corrélés : cohérence, suivi d'un manque signalé puis corrigé, enrichissement
-  d'un nouveau feedback par rapport à un ancien. Côté concepteur, les
-  feedbacks reçus peuvent ainsi être classés par identifiant.
-- **Conservation des feedbacks reçus** : à décider, par exemple les verser au
-  dépôt Git une fois l'anonymisation vérifiée, ou les garder hors du projet.
-- **Suivi des envois** : à évaluer, par exemple les dates d'envoi dans
-  `current-status.md` (« feedback envoyé le … »), sachant que l'envoi est fait
-  par la personne hors du coach.
-- **Modèles** dans `skills/init-workspace/assets/` : un modèle du journal et un
-  modèle du feedback formel avec ses sections ; l'actuel
-  `pilot-feedback.template.md` (questionnaire par étape) est à reprendre ou à
-  intégrer (lien avec l'issue #7, modèle source unique, et l'issue #14, choix
-  du mode testé à retirer).
-- Piste liée à la mise à jour du moteur (issue #7) : lors d'une mise à jour,
-  proposer d'envoyer d'abord un feedback sur la version précédente s'il
-  existe des notes non remontées. À creuser.
-- Cas relevé au premier déroulé complet (2026-10-02, étape D7) : quand la
-  candidate arrête une simulation et donne la raison de l'arrêt, la consigner
-  discrètement dans le journal plutôt que de la commenter.
-- **Porteur de la fonction** : skill dédié à la gestion des feedbacks, ou
-  compétence du skill `interview-coach` ; à trancher au grooming.
-- À raffiner : forme exacte du mot-clé, distincte des mots-clés d'arrêt de
-  simulation ; critères de détection des entrées silencieuses ; valeur par
-  défaut de l'activation ; périmètre de l'anonymisation ; convention de nommage
-  des feedbacks ; métadonnées ; suivi des envois ; conservation des feedbacks
-  reçus ; skill dédié ou non ; signalement dans le scénario maître du kit de
-  test (étape F1).
+- Lors d'une mise à jour du moteur (issue #7), si le journal de feedback
+  produit (issue #17) contient des entrées non traitées, proposer de générer
+  d'abord un feedback sur la version précédente. À creuser.
 
 ### Reprendre l'historique d'opportunités déjà vécues
 
