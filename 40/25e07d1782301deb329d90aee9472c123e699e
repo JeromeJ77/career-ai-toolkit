@@ -1,0 +1,49 @@
+CHANGELOG.md
+  s_e1448c72fc7b80::t_83ef66fbb61e8e 11-12
+README.fr.md
+  s_e1448c72fc7b80::t_ad05233f185272 9
+README.md
+  s_e1448c72fc7b80::t_7eaebbadffedfc 26
+docs/design/decision-log.md
+  s_e1448c72fc7b80::t_05c07fa3dcb922 1096-1102
+docs/glossary.md
+  s_e1448c72fc7b80::t_ef9e6d60b8605d 46
+docs/test-log.md
+  s_e1448c72fc7b80::t_f8b8341e185d12 100,102,104,120-121,123,125-126,128,132
+docs/test-plan.md
+  s_e1448c72fc7b80::t_33be68b0bb96b2 337-338,344-349,369-371,444-446,449-454,460-461,471-473,476-478,484-485
+test-kit/scenario.md
+  s_e1448c72fc7b80::t_c99f0ca593ace5 40,50,111,237,247,259-260,275
+workspace/AGENTS.md
+  s_e1448c72fc7b80::t_cb66291d099838 7,18,20-21
+workspace/CLAUDE.md
+  s_e1448c72fc7b80::t_4964045d02ebbd 5
+workspace/USER-GUIDE.fr.md
+  s_e1448c72fc7b80::t_95f1a5aa5c7886 13,15,97-105
+workspace/USER-GUIDE.md
+  s_e1448c72fc7b80::t_259f19c9a8afce 13,15,86-87,90-97
+workspace/skills/init-workspace/SKILL.md
+  s_e1448c72fc7b80::t_2c6580db9bb5e5 24,36,91,107
+workspace/skills/interview-coach/SKILL.md
+  s_e1448c72fc7b80::t_4caa6b28d16e3e 9,116
+workspace/skills/interview-coach/references/interview-simulation-guidelines.md
+  s_e1448c72fc7b80::t_9fe948d651b2a2 102-112,115-116,119-120,127-131
+workspace/skills/interview-coach/references/simulation-debrief-guidelines.md
+  s_e1448c72fc7b80::t_ac3121433d30ef 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4025e07d1782301deb329d90aee9472c123e699e",
+  "prompts": {},
+  "sessions": {
+    "s_e1448c72fc7b80": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3612f95-e001-45d0-8069-c6ba02ee64d3",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
