@@ -57,8 +57,8 @@ mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 
 ### Rendre le coaching et les simulations plus vivants
 
-Regroupe trois constats : progression du coach, ton conversationnel et prénoms
-des interviewers.
+Regroupe quatre constats : progression du coach, ton conversationnel, prénoms
+des interviewers et prénom de l'utilisateur dans la conversation.
 
 - Progression pendant les traitements longs : relevé lors des tests de #14
   (2026-10-04), le coach parle peu quand il travaille, par exemple quand on lui
@@ -84,7 +84,14 @@ des interviewers.
   un prénom à chaque interviewer, cohérent d'un tour à l'autre de la
   simulation, plutôt que « interviewer 1 », « interviewer 2 ». Non implémenté à
   ce jour.
-- À rapprocher de « Ton et emojis paramétrables ».
+- Prénom de l'utilisateur dans la conversation : proposé pendant le cadrage de
+  #15 (2026-10-04). La question posée après le message d'accueil, la
+  configuration du prénom et son usage en début et en fin de session sont
+  traités dans #15. Reste à faire : employer le prénom de temps en temps
+  pendant la conversation, de manière naturelle, sans le répéter à chaque
+  message. Plus délicat à régler (fréquence, moments opportuns).
+- À rapprocher de « Ton et emojis paramétrables » et de « Tutoiement ou
+  vouvoiement constant et paramétrable ».
 
 ### Cas de test mesurable pour l'analyse orientée action
 

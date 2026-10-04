@@ -87,6 +87,30 @@ Définis le 2026-10-04 et relus avec l'utilisateur avant le développement. Vér
 | Workspace | Contrôles génériques repris du standalone, joués avec le coach : messages stratégiques, préparation sans jeu de rôle, suggestions de questions pour les interviewers, profondeurs et durées, un seul interviewer par tour, mot-clé d'arrêt (reprise, arrêt définitif reconfirmé), débrief succinct limité à ce qui a été joué, vocabulaire « dossier professionnel » | ✅ Validé | 2026-10-04 | 2026-10-04 | Joués par le développeur. Écarts consignés : interviewers sans prénom (backlog), ton trop technique et manque d'indication de progression (backlog). Voir la [session du 2026-10-04](test-history/2026-10-04-controles-generiques-coach.md). |
 | Workspace | Contrôles génériques repris du standalone, non rejoués : langue de la session (FR/EN), analyse orientée action, types d'entretien, reconstruction de l'entretien réel, règles transversales, deuxième simulation indépendante | ⬜ Non testé | — | — | 🐞 Langue : une conversation commencée en anglais après une première en français reçoit une réponse en français (la demande explicite « Let's switch in English » est en revanche suivie) ; renvoyé au backlog (suppression de `language.coaching`, langue du début de conversation). Analyse : pas de cas de test mesurable, mis de côté. Autres : à rejouer lors d'une passe ultérieure. Voir la [session du 2026-10-04](test-history/2026-10-04-controles-generiques-coach.md). |
 
+### Scénarios à satisfaire pour l'issue #15 (recentrage sur My Career Workspace)
+
+Définis le 2026-10-04, à relire avec l'utilisateur avant le développement.
+
+| Section du plan | Scénario | Statut | Premier test | Dernier test | Remarques |
+| --- | --- | --- | --- | --- | --- |
+| Build | `build.bat` sur copie propre : `my-career-workspace-v<version>.zip` avec racine `my-career-workspace/`, kit `my-career-workspace-test-kit-v<version>.zip`, plus aucun artefact `career-ai-*`, retour pilote `my-career-workspace-pilot-feedback-v<version>.md` | ⬜ Non testé | — | — | |
+| Build | Marqueur `{{VERSION}}` du modèle de retour pilote remplacé par le build (ZIP et `dist/`), aucun marqueur restant, échec si absent de la source | ⬜ Non testé | — | — | |
+| Recentrage My Career Workspace | Numéros de version retirés des README, de `CONTRIBUTING.md` et de la documentation quand ils ne sont pas nécessaires | ⬜ Non testé | — | — | |
+| Workspace | Première session en français : « Bienvenue dans votre **espace carrière** ! », paragraphe d'introduction et question du prénom, puis attente de la réponse avant toute autre tâche d'initialisation ; ensuite fichiers créés, choix écrit dans `workspace.yaml`, compte rendu en une phrase fonctionnelle et proposition de construire le dossier professionnel | ⬜ Non testé | — | — | Étape B1 du scénario maître, `[demo]`. |
+| Workspace | Première session en anglais : message d'accueil anglais validé dans l'issue | ⬜ Non testé | — | — | |
+| Workspace | Message d'accueil affiché avant l'examen du reste du workspace (seul le contrôle de première session le précède) | ⬜ Non testé | — | — | |
+| Workspace | Réponses à la question du prénom : « oui » avec prénom (`yes`, salutation au début de la conversation suivante et en fin de session), « non » (`no`, plus redemandé), « oui » sans prénom (prénom demandé), question ignorée (`ask_again`, redemandée une fois, puis `no`) ; prénom pas répété à chaque message | ⬜ Non testé | — | — | |
+| Workspace | Configuration sans clés `user` (version antérieure) : clés ajoutées avec leur valeur par défaut (`unset`), question posée en début de session, sans message d'accueil | ⬜ Non testé | — | — | |
+| Workspace | Première session détectée par l'absence de `data/current-status.md`, sauf si le dossier professionnel ou une opportunité existe (perte possible) ; message d'accueil absent en deuxième session, après recréation d'un autre fichier obligatoire et en cas de perte possible signalée | ⬜ Non testé | — | — | Étapes B2, B3 et C7 du scénario maître. |
+| Workspace | En français, le coach parle d'« espace carrière » pour désigner le produit | ⬜ Non testé | — | — | À observer sur l'ensemble d'un déroulé. |
+| Recentrage My Career Workspace | Deux entrées du journal des décisions au format #13 (renommage, terme « espace carrière ») | ⬜ Non testé | — | — | |
+| Recentrage My Career Workspace | Glossaire : Career AI Toolkit, My Career Workspace, espace carrière, dossier professionnel, workspace (concept technique), opportunité ; « Mode workspace » remplacé par la seule entrée My Career Workspace ; `docs/workspace-mode.md` renommé `docs/my-career-workspace-user-guide.md`, sans lien cassé ; `CONTRIBUTING.md` cite le label `my-career-workspace` | ⬜ Non testé | — | — | Label GitHub renommé par le développeur. |
+| Recentrage My Career Workspace | Vision reflétée dans les README, `workspace/AGENTS.md` et `docs/architecture.md`, sans mettre l'IA au premier plan | ⬜ Non testé | — | — | |
+| Recentrage My Career Workspace | Workspaces existants (`career-ai-workspace/`) : documentation du nom de répertoire libre, aucun renommage requis | ⬜ Non testé | — | — | |
+| Recentrage My Career Workspace | Recherche de « Career AI Workspace », `career-ai-workspace`, `career-ai-test-kit` : plus aucune mention comme nom actuel ; noms techniques `workspace/`, `init-workspace`, `workspace.yaml` inchangés | ⬜ Non testé | — | — | |
+| Recentrage My Career Workspace | Historiques non réécrits ; scénario maître (A1, B1, B2) et en-tête du script de démo à jour | ⬜ Non testé | — | — | |
+| Recentrage My Career Workspace | Non-régression : section « Build » rejouée (liste du ZIP inchangée hors racine), initialisation B1 à B3, « Repository privacy » | ⬜ Non testé | — | — | |
+
 ## Sessions
 
 Le détail de chaque session est dans [`test-history/`](test-history/), un fichier par session, du plus récent au plus ancien :

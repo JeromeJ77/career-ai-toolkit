@@ -309,6 +309,109 @@ Non-regression:
 - Confirm the workspace ZIP file list is unchanged and replay « Repository
   privacy ».
 
+## Refocus on My Career Workspace (#15)
+
+Nominal flow:
+
+- Run `build.bat` on a clean copy and confirm it produces
+  `dist/my-career-workspace-v<version>.zip` with one top-level
+  `my-career-workspace/` directory, and the test kit as
+  `dist/my-career-workspace-test-kit-v<version>.zip`; no
+  `career-ai-workspace*` or `career-ai-test-kit*` artifact is produced. The
+  pilot feedback is `dist/my-career-workspace-pilot-feedback-v<version>.md`.
+- Confirm the pilot feedback template source holds the `{{VERSION}}`
+  placeholder, that the build replaces it with the content of `VERSION` in the
+  ZIP copy and in `dist/` (accents and line endings preserved), that no
+  placeholder remains, and that the build fails clearly when the placeholder
+  is missing from the source.
+- Confirm version numbers are gone from the READMEs, `CONTRIBUTING.md` and the
+  docs wherever they are not needed (release-specific wording), so that a
+  release only changes `VERSION` and `CHANGELOG.md`.
+- On the first session of a freshly extracted workspace, coaching in French,
+  confirm the coach opens with « Bienvenue dans votre **espace carrière** ! »,
+  the validated introduction paragraph and the question « Souhaitez-vous que je
+  vous appelle par votre prénom ? Si oui, lequel ? », then waits for the answer
+  before any other initialization task.
+- Coaching in English, confirm the first session opens the same way with the
+  validated English message (« Welcome to your **career workspace**! »).
+- Confirm the welcome is shown before the coach examines the rest of the
+  workspace: only the first-session check (presence of
+  `data/current-status.md`, then presence of the professional profile and of
+  opportunity directories, without reading them) precedes it.
+- After the answer, confirm the coach acknowledges it with the validated
+  wording, creates the mandatory files, writes the choice into the new
+  `data/config/workspace.yaml`, reports the creation in a single functional
+  sentence (configuration, empty professional profile, external references,
+  current status) and proposes to build the professional profile from the
+  user's documents.
+- Answer « oui » with a first name: `user.address_by_first_name` is `yes` and
+  `user.first_name` holds the name; the next conversation starts with
+  « Bonjour <prénom>. » and closing a session (« merci, au revoir ») gets
+  « À bientôt, <prénom>. ». Answer « non »: the value is `no`, the next
+  conversation starts with « Bonjour. » and the question is never asked again.
+- Answer « oui » without a first name and confirm the coach asks which one.
+- Ignore the question (answer with another request) and confirm the coach
+  does not insist, records `ask_again`, asks once more at the next
+  conversation, and records `no` if the question is ignored a second time.
+- Confirm the first name is not repeated in every message.
+- Starting from a workspace whose configuration has no `user` keys (for
+  example extracted from an earlier version), confirm the keys are added with
+  their template defaults (`unset`, empty first name) and that the coach asks
+  the question once at session start, without the first-session welcome.
+- Throughout a French session, confirm the coach calls the product « espace
+  carrière » (never « workspace », « Career AI Workspace » or « espace de
+  travail ») when talking to the user.
+- Confirm the decision log holds two entries in the format defined by #13: the
+  product and directory rename (type `PRODUCT`) and the adoption of « espace
+  carrière » as the French functional term.
+- Confirm the glossary distinguishes Career AI Toolkit, My Career Workspace,
+  espace carrière, dossier professionnel, workspace (technical concept) and
+  opportunité, and that the former « Mode workspace » entry is replaced by the
+  single My Career Workspace entry.
+- Confirm `docs/workspace-mode.md` is renamed `docs/my-career-workspace-user-guide.md`
+  and that no link still points to the old name.
+- Confirm `CONTRIBUTING.md` names the `my-career-workspace` GitHub label instead
+  of `workspace-mode`.
+- Confirm `README.md`, `README.fr.md`, the workspace READMEs, `workspace/AGENTS.md`
+  and `docs/architecture.md` present My Career Workspace and its vision
+  (living professional profile, user ownership, privacy, persistence,
+  portability, traceability, user validation) without putting AI first in the
+  value proposition.
+
+Edge cases:
+
+- Confirm the first session is detected by the absence of
+  `data/current-status.md`, without any marker file, unless the professional
+  profile or an opportunity directory exists (possible loss: no welcome).
+- Confirm the welcome message does not appear in a second session, nor when
+  another mandatory file is deleted and recreated, nor when a possible loss is
+  reported (professional profile deleted with sources kept).
+- Confirm the documentation states that an existing workspace extracted as
+  `career-ai-workspace/` keeps working and does not need to be renamed, the
+  local directory name being free.
+- Search the repository (outside `CHANGELOG.md`, `docs/test-history/` and the
+  rename decision) for « Career AI Workspace », `career-ai-workspace` and
+  `career-ai-test-kit`: no remaining mention as the current product name.
+- Confirm technical names kept as the workspace concept (`workspace/`,
+  `init-workspace`, `workspace.yaml`) are unchanged, as decided in the issue.
+
+Limit cases:
+
+- Confirm historical documents (earlier `CHANGELOG.md` entries,
+  `docs/test-history/`, earlier decision-log entries) are not rewritten.
+- Confirm `test-kit/scenario.md` (A1 extraction example, B1 and B2 expected
+  results) and `test-kit/tools/demo-script-header.md` use the new names, and
+  that the generated demo script shows the welcome message in B1.
+
+Non-regression:
+
+- Replay « Build » (ZIP tree, `ENGINE-VERSION`, negative cases): only the root
+  directory and archive names change, the ZIP file list is otherwise
+  unchanged.
+- Replay the first-session initialization (B1 to B3): the four mandatory files
+  are still created, reported and never overwritten.
+- Replay « Repository privacy ».
+
 ## Regression
 
 Repeat essential workspace scenarios after any change to the core coach instructions.
