@@ -12,6 +12,26 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+### Synthèse temporaire : issues candidates complémentaires du milestone v0.4.0
+
+Table de travail issue du grooming du 2026-10-04, à supprimer lors du nettoyage
+du backlog. Elle complète le milestone v0.4.0, qui contient déjà les issues
+n° 8 (confidentialité, premier lancement et navigation web) et n° 9 (statut et
+version du dossier professionnel). Différé : « Documenter les choix
+technologiques du projet », qui dépend de I1 et reste dans ce backlog. Les
+priorités et tailles sont indicatives ; l'auteur les positionne sur le board.
+
+| Ordre | Titre provisoire | Objectif | Éléments couverts | Priorité | Taille | Dépendances |
+| --- | --- | --- | --- | --- | --- | --- |
+| I1 | Enrichir le modèle du journal des décisions | Conserver un journal unique et ajouter les champs Type, Options considérées et Conditions de réévaluation ; conserver les statuts français et trancher l'ajout de « Rejetée » ; migrer D-001 à D-014 au nouveau format (Type, Conditions de réévaluation proposées par l'agent et validées par l'auteur, Options considérées reprises du contexte existant sans reconstruction a posteriori) et revoir les statuts « 🔵 Envisagée » ; consigner la décision et mettre à jour les règles de `AGENTS.md` et `CONTRIBUTING.md` | Faire évoluer le modèle du journal des décisions | P1 | M | Aucune |
+| I2 | Abandonner le mode standalone | Décision dédiée au nouveau format ; supprimer `standalone/`, le livrable du build et ses références actives (documentation, `AGENTS.md`, plan de test, kit de test, D-009) en récupérant les éléments génériques utiles ; retirer les critères « mode autonome » des issues n° 8 et n° 9 ; traiter les sections « Pilot validation » et « Standalone interview coach in English » | Abandonner le mode standalone | P1 | M | I1 |
+| I3 | Recentrer le produit sur My Career Workspace | Décisions de renommage et d'adoption du terme « espace carrière » ; renommer le produit, le répertoire par défaut, le ZIP et le kit de test après analyse du sens de chaque occurrence ; distinguer dans le glossaire Career AI Toolkit, My Career Workspace, espace carrière, dossier professionnel, workspace et opportunité ; refléter la vision dans les README et la documentation d'architecture ; message d'accueil de première session | Recentrer le produit sur My Career Workspace (vision, renommage, kit de test, terminologie, message d'accueil) | P1 | L | I1, I2 |
+| I4 | Caractériser la lenteur des opérations déterministes | Outillage Windows d'analyse des traces (Python optionnel, fallback agentique journalisé), scénarios reproductibles sur le kit fictif, synthèse des postes de latence, hypothèses confirmées ou infirmées, quick wins séparés des évolutions de fond | Lenteur des opérations déterministes ; `docs/non-functional/performance-investigation.md` | P1 | L | Aucune ; noms de chemins à aligner si I3 est livrée avant |
+
+Ordre de mise en œuvre proposé : I1, I2, I3, n° 8, n° 9 ; I4 en parallèle, à
+tout moment. L'issue n° 8 reprend le message d'accueil livré par I3 dans le
+premier lancement.
+
 Les quatre idées suivantes sont issues du debriefing de la démo enregistrée
 (2026-10-03), mené avec Copilot. Les éléments relatifs à la préparation de la
 démo et des slides sont traités à part et ne figurent pas ici. Elles sont
