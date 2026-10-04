@@ -1,0 +1,23 @@
+BACKLOG.md
+  s_6517c2dcff45ec::t_58fd242d6c6815 15-18,39
+CONTRIBUTING.md
+  s_6517c2dcff45ec::t_c6ae1b7f70826c 135-138
+docs/non-functional/performance-investigation.md
+  s_6517c2dcff45ec::t_bbab9b1fd3c1ab 5,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "303b2beaed1db09be3298b0592c94e6ef7fa7507",
+  "prompts": {},
+  "sessions": {
+    "s_6517c2dcff45ec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9d62ad36-6434-446e-b0d3-a7c59f10649e",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
