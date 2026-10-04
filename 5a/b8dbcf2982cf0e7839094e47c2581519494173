@@ -1,0 +1,23 @@
+BACKLOG.md
+  s_6cdda587804856::t_82fd281742a32f 24-31,58-97
+docs/test-history/2026-10-04-controles-generiques-coach.md
+  s_6cdda587804856::t_825822d9de6e70 1-30
+docs/test-log.md
+  s_6cdda587804856::t_f60a45996a16d7 45,47,87-88,94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5ab8dbcf2982cf0e7839094e47c2581519494173",
+  "prompts": {},
+  "sessions": {
+    "s_6cdda587804856": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c84eb99-fd33-4d52-9ac7-d9a843ce0688",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
