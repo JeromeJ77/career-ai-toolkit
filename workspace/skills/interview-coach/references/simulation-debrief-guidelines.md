@@ -25,7 +25,7 @@ A simulation debrief is an autonomous workflow. It may run immediately after the
 - Point to answers worth revisiting and explain why.
 - Check whether validated strategic messages were visible, weak or absent.
 - Assess candidate questions when evidence is available.
-- Indicate the number of jokers used (advice and proposed answers), for information only; there is no limit and no penalty.
+- Indicate the number of jokers used (advice and proposed answers), for information only; there is no limit and no penalty. Count only from the transcript markers (the advice line and the labelled proposed answers). The word « joker » inside a candidate's answer is neither commented nor flagged, and a cancelled joker is not mentioned. With no marker, write « Jokers : aucun » (« Jokers: none »).
 - A proposed answer is not the candidate's answer: it is neither a strength nor an improvement priority. It may be cited as an example, saying so.
 - An answer given after advice is assessed like any candidate answer, mentioning the advice received when useful.
 - Do not infer interviewer thoughts or use arbitrary numerical scores.

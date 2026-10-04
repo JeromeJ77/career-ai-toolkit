@@ -334,12 +334,19 @@ Nominal flow:
   docs wherever they are not needed (release-specific wording), so that a
   release only changes `VERSION` and `CHANGELOG.md`.
 - On the first session of a freshly extracted workspace, coaching in French,
-  confirm the coach opens with « Bienvenue dans votre **espace carrière** ! »,
+  confirm the coach opens, after the fixed line *Lancement de la session…*,
+  with « Bienvenue dans votre **espace carrière** ! »,
   the validated introduction paragraph and the question « Souhaitez-vous que je
   vous appelle par votre prénom ? Si oui, lequel ? », then waits for the answer
   before any other initialization task.
 - Coaching in English, confirm the first session opens the same way with the
   validated English message (« Welcome to your **career workspace**! »).
+- Confirm every session (first or later, French or English) opens with the
+  fixed line in italics *Lancement de la session…* (*Starting the session…*),
+  directly followed by the welcome or the greeting: no other preamble, no
+  mention of the instruction files, the procedure or its steps (« comme demandé
+  par le CLAUDE.md », « Step 2: … »), and, when nothing changed, no sentence on
+  the state of the initialization or configuration.
 - Confirm the welcome is shown before the coach examines the rest of the
   workspace: only the first-session check (presence of
   `data/current-status.md`, then presence of the professional profile and of
@@ -359,7 +366,9 @@ Nominal flow:
 - Ignore the question (answer with another request) and confirm the coach
   does not insist, records `ask_again`, asks once more at the next
   conversation, and records `no` if the question is ignored a second time.
-- Confirm the first name is not repeated in every message.
+- Confirm the first name is used only in the greeting, the acknowledgement of
+  the choice and the farewell, over a whole work session (no « Nadia, … » in
+  other messages).
 - Starting from a workspace whose configuration has no `user` keys (for
   example extracted from an earlier version), confirm the keys are added with
   their template defaults (`unset`, empty first name) and that the coach asks
@@ -432,20 +441,24 @@ Nominal flow:
 - During a simulation, write « joker, donne-moi un indice » and confirm the
   coach steps out of the interviewer role with a short line in italics, gives
   advice on the current question without writing the answer, steps back into
-  the role with a line in italics and waits for the candidate's answer to the
-  same question.
+  the role with a line in italics and waits for the candidate's answer. After
+  the return, the interviewer does not repeat or rephrase the question (at
+  most « Je vous écoute. »). Exactly one exit line and one return line.
 - During a simulation, write « joker, propose une réponse à ma place » and
   confirm the coach steps out of the role in italics, gives a proposed answer
-  clearly marked as such, based only on the professional profile and the
-  opportunity, signals in italics what it had to assume for lack of
-  information, steps back into the role in italics, and that the interviewer
-  then reacts as to a candidate answer (follow-up or next question).
+  clearly labelled (**Réponse proposée (joker) :**), based only on the
+  professional profile and the opportunity, with no warning or comment after
+  it, signals in italics only what it had to assume (the line is absent when
+  nothing was assumed), steps back into the role in italics, and that the
+  interviewer then reacts as to a candidate answer (follow-up or next
+  question).
 - Confirm `transcript.md` marks the proposed answer as such, distinct from the
   candidate's answers, and records each advice joker as a short factual line
   without its coaching content (the transcript stays free of coaching).
 - Confirm the debrief does not assess a proposed answer as the candidate's,
   assesses the answer given after advice, and states the number of jokers used
-  as an indication.
+  as an indication, counted only from the transcript markers (« Jokers :
+  aucun » when there are none).
 - Confirm a formulation with the same meaning (« j'ai besoin d'un joker,
   … ») triggers the joker the same way, and that the English trigger
   (« joker » or « I need a joker ») works in an English simulation.
@@ -455,18 +468,21 @@ Edge cases:
 - Write « joker » alone, or with an unclear request: confirm the coach steps
   out of the role in italics, asks whether the candidate wants advice or a
   proposed answer, then acts on the answer and steps back into the role in
-  italics.
+  italics. Exactly one exit line and one return line; no other role
+  announcement (no « Je reprendrai le rôle… ») and no repeated exit line after
+  the candidate's answer.
 - Write « joker », then, at the clarification question, « non, en fait c'est
   bon, pas besoin » (or a similar wording): confirm the coach steps back into
-  the role in italics and waits for the answer to the same question, that the
-  cancelled joker is neither counted in the debrief nor recorded in
-  `transcript.md`.
+  the role in italics and waits for the answer without repeating the question,
+  and that the cancelled joker is ignored everywhere: not counted, not
+  mentioned in the debrief, not recorded in `transcript.md`.
 - Outside a simulation (preparation, debrief), write « joker, donne-moi un
   indice »: confirm the coach says on a line in italics that the joker is only
   used during an interview simulation, then answers the request on the next
   line as an ordinary coaching request.
 - Confirm « joker » inside an answer (not at the start of the first sentence)
-  triggers nothing.
+  triggers nothing, and that the debrief neither comments nor flags it (no
+  anomaly, no contradiction).
 
 Limit cases:
 

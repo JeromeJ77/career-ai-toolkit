@@ -21,6 +21,7 @@ The engine (`skills/`, `AGENTS.md`, `CLAUDE.md`, READMEs) is replaceable. User d
 
 Run these steps at the start of a session, before another skill reads user data. Read no data file before the end of step 2. On a first session, read only `data/config/workspace.yaml` if it exists (to get the welcome language), and nothing else before the answer at step 3.
 
+0. Open the response with the fixed line in italics, in the coaching language (the language of the candidate's first message on a first session): *Lancement de la session…* (English: *Starting the session…*). Then go directly to the welcome message or the greeting. No other preamble: never mention to the candidate the instruction files (`CLAUDE.md`, `AGENTS.md`, skills), the procedure, its steps, what is being checked or whether this is a first session.
 1. Read the instructions (`AGENTS.md`, `CLAUDE.md`, this file).
 2. Check whether this is a first session (next section). Only check that files exist; do not read them.
 3. First session: welcome the candidate, ask the first-name question and wait for the answer (see "First session"). Do nothing else until they answer.
@@ -32,7 +33,7 @@ The session is a first session when `data/current-status.md` does not exist, unl
 
 On a first session:
 
-1. Show the welcome message immediately, in the coaching language: `language.coaching` if `data/config/workspace.yaml` already exists (for example created by hand), otherwise the language of the candidate's first message, French by default. Address the candidate formally (« vous »).
+1. Show the welcome message immediately after the fixed line (step 0), with no sentence in between, in the coaching language: `language.coaching` if `data/config/workspace.yaml` already exists (for example created by hand), otherwise the language of the candidate's first message, French by default. Address the candidate formally (« vous »).
 
    French:
 
@@ -87,7 +88,7 @@ Answers to the question (exact wording; write the value after the answer):
 | No | « Entendu, je ne vous appellerai pas par votre prénom. Vous pourrez changer d'avis à tout moment. » | « Understood, I won't use your first name. You can change your mind at any time. » | `no` |
 | Unrelated answer (question ignored) | Do not insist; handle the request. | Same. | `ask_again` (then `no` if ignored a second time) |
 
-Greetings, in the coaching language, without repeating the first name at every message. Each greeting is given once per conversation, by this skill; other skills must not repeat it:
+Use the first name only in the greeting, the acknowledgement of the choice and the farewell, never in other messages. Greetings, in the coaching language. Each greeting is given once per conversation, by this skill; other skills must not repeat it. In a later session, the greeting follows the fixed line (step 0) directly:
 
 - Start of a new conversation: « Bonjour <prénom>. » or « Bonjour. » (« Hello <first_name>. » or « Hello. »).
 - When the candidate ends the session (for example « merci, au revoir »): « À bientôt, <prénom>. » or « À bientôt. » (« See you soon, <first_name>. » or « See you soon. »).
@@ -103,7 +104,7 @@ Run this check once the session start order allows it, before another skill read
 3. Create only the other missing files by copying their template. Create missing parent directories. Never overwrite, rewrite or reformat an existing file, even if it looks empty or outdated (the only exceptions are appending missing keys to `workspace.yaml`, step 5, and updating the `user.*` keys from the candidate's answer or request, see "First name and greetings").
 4. Do not fill in the professional profile silently. A profile created from its template is an empty skeleton; populate it only through the interview-coach "Initialize the professional profile" workflow, with the candidate's validation.
 5. Compare `data/config/workspace.yaml` with `assets/workspace.template.yaml`. If keys from the template are missing, append each one with its template default value at its place in the structure. Do not change, reorder or remove any existing key, value or comment.
-6. Tell the candidate which files were created and which configuration keys were added (with their default values), in one short sentence each. Say nothing when nothing was created, added or found missing. On a first session, give instead the single functional sentence of "First session" step 4.
+6. Tell the candidate which files were created and which configuration keys were added (with their default values), in one short sentence each. Say nothing when nothing was created, added or found missing: no sentence on the state of the initialization or of the configuration (such as « votre espace carrière est prêt » or « la configuration est complète »). On a first session, give instead the single functional sentence of "First session" step 4.
 
 A missing file is created individually and a missing key is added individually, so a partial or interrupted initialization is repaired on the next session.
 

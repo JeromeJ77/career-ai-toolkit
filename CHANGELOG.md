@@ -8,8 +8,8 @@
   or a proposed answer (« joker, donne-moi un indice », « joker, propose une
   réponse à ma place ») without ending the simulation. The coach steps out of
   and back into the interviewer role with lines in italics; a proposed answer
-  is flagged as an example, based only on the professional profile and the
-  opportunity, with the assumptions stated. The transcript records jokers
+  is clearly labelled, based only on the professional profile and the
+  opportunity, with a line stating any assumption. The transcript records jokers
   factually and the debrief reports their number without assessing a proposed
   answer as the candidate's. This is the only exception to the « coach, not an
   answer generator » principle. See decision D-020.

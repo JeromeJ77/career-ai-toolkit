@@ -10,9 +10,9 @@ The local directory name is free: a workspace extracted under `career-ai-workspa
 
 The first session is detected by the absence of `data/current-status.md` (unless a professional profile or an opportunity directory already exists: that is a possible loss, handled without a welcome message). Before anything else, the coach welcomes you to your career workspace and asks whether to call you by your first name, then waits for your answer. It then creates the mandatory files, acknowledges your answer, reports in one sentence what it prepared and proposes to build your professional profile from your documents. If your first message already contains a request, the coach handles it right after your answer.
 
-The choice is stored in the `user` section of `data/config/workspace.yaml` (`address_by_first_name`: `unset`, `ask_again`, `yes` or `no`; `first_name`). You can change it at any time by asking the coach or by editing the file. With `yes`, the coach greets you by your first name at the start of a conversation and says goodbye when you end the session.
+The choice is stored in the `user` section of `data/config/workspace.yaml` (`address_by_first_name`: `unset`, `ask_again`, `yes` or `no`; `first_name`). You can change it at any time by asking the coach or by editing the file. With `yes`, the coach greets you by your first name at the start of a conversation and says goodbye when you end the session; it does not use your first name elsewhere. Every session starts with a short line in italics, *Starting the session…*, followed directly by the welcome message or the greeting.
 
-The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers. The only exception is the joker, available during an interview simulation (see « Work sessions »): a proposed answer is only given on your explicit request and is always flagged as an example to analyze, never to memorize.
+The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers. The only exception is the joker, available during an interview simulation (see "Work sessions"): a proposed answer is only given on your explicit request and is clearly labelled as a proposed answer.
 
 ## Coach-managed opportunities
 
@@ -83,18 +83,18 @@ after the debrief uses the next `simulations/NN/` directory and asks for the
 depth again.
 
 If you get stuck on a question during a simulation, ask for a joker without
-ending it: start your message with « joker » (for example « joker, give me a
-hint » or « joker, answer for me »). The coach steps out of the interviewer
+ending it: start your message with "joker" (for example "joker, give me a
+hint" or "joker, answer for me"). The coach steps out of the interviewer
 role with a line in italics, then either gives advice on the question without
 writing the answer, or proposes an answer, clearly labelled, based only on your
-professional profile and the opportunity, with a line in italics stating what
-it had to assume for lack of information. It then resumes the interviewer role.
-If your request is unclear, the coach asks whether you want advice or a
-proposed answer. The number of jokers is not limited; the debrief reports it
-for information. A proposed answer is an example to analyze, not your answer:
-it is not assessed as such, whereas your answer after advice is. The word
-« joker » in the middle of an answer triggers nothing, and outside a simulation
-the coach simply reminds you that the joker is for simulations.
+professional profile and the opportunity. When something had to be assumed for
+lack of information, a line in italics says what. The coach then resumes the
+interviewer role. If your request is unclear, the coach asks whether you want
+advice or a proposed answer. The number of jokers is not limited; the debrief
+reports it for information. A proposed answer is not assessed as your answer,
+whereas your answer after advice is. The word "joker" in the middle of an
+answer triggers nothing. Outside a simulation, the coach reminds you that the
+joker is for simulations, then answers your request.
 
 A simulation debrief may happen immediately or in a later conversation. In
 both cases it reads the selected simulation's persistent artifacts, records its

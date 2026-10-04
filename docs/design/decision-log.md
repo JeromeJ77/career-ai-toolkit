@@ -1093,9 +1093,13 @@ un indice » ou « joker, propose une réponse à ma place »). Le coach sort du
 par une ligne en italique, donne un conseil sans rédiger la réponse, ou propose
 une réponse signalée comme telle, fondée uniquement sur le dossier professionnel
 et l'opportunité, avec les suppositions faites faute d'information, puis reprend
-le rôle. La réponse proposée est un exemple à analyser, jamais à mémoriser : c'est
-la seule exception, explicite et sur demande, au principe « coach, pas générateur
-de réponses ». Le nombre de jokers n'est pas limité.
+le rôle. L'étiquette « Réponse proposée (joker) » suffit : le coach n'ajoute ni
+avertissement ni commentaire, et la ligne des suppositions ne contient que ce qui
+a été supposé. C'est la seule exception, explicite et sur demande, au principe
+« coach, pas générateur de réponses ». Le nombre de jokers n'est pas limité.
+Précisé après les tests manuels : une seule ligne de sortie et une seule ligne de
+retour par joker, aucune question reposée après le retour au rôle, un joker annulé
+ignoré partout.
 
 ### Conséquences
 
