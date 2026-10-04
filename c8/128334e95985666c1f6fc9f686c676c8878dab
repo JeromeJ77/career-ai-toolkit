@@ -1,0 +1,63 @@
+AGENTS.md
+  s_6cdda587804856::t_7a2bc248d66cec 58,101-104,107-111
+CLAUDE.md
+  s_6cdda587804856::t_642c9a6b3956dd 5
+CONTRIBUTING.md
+  s_6cdda587804856::t_03fbdfa1d1e227 142-143
+README.fr.md
+  s_6cdda587804856::t_216bd4c14408da 11
+README.md
+  s_6cdda587804856::t_ccbd1f89df8a48 13,15
+build.bat
+  s_6cdda587804856::t_0d379ea6845c7c 11
+docs/architecture.md
+  s_6cdda587804856::t_7474534a538df1 35
+docs/glossary.md
+  s_6cdda587804856::t_94366b68ae340a 21
+docs/pilot-testing.md
+  s_6cdda587804856::t_a8fcbbb391f9d8 5,14
+docs/test-log.md
+  s_6cdda587804856::t_e27f6682d70cd0 21,42-43,45,48,72-88,93
+docs/use-cases.md
+  s_6cdda587804856::t_858f4859c7c67e 160,184,187
+test-kit/guide-testeur.md
+  s_6cdda587804856::t_a87f55b3759ffd 79
+test-kit/scenario.md
+  s_6cdda587804856::t_58b275a9eafb31 79,172,194,206,215,259
+workspace/skills/interview-coach/SKILL.md
+  s_6cdda587804856::t_c96d14cf3eb68a 58,62,75-76,106,117-120
+CHANGELOG.md
+  s_6cdda587804856::t_6c75741855158f 64-68,72-81
+docs/test-history/2026-10-04-abandon-mode-standalone.md
+  s_6cdda587804856::t_02bc25fe255e69 1-26
+docs/test-plan.md
+  s_29168dff7ab0a4::t_47db85844a8fa6 11-15,70-71,125-127,130-131,137-138,145-154,164-167,174-176,182-196,202-204,269-311,314
+BACKLOG.md
+  s_6cdda587804856::t_febdbabcd88783 15-44,224-233,263,265-267
+docs/design/decision-log.md
+  s_6cdda587804856::t_4dc0144035fa88 474-475,790-797,846-916
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c8128334e95985666c1f6fc9f686c676c8878dab",
+  "prompts": {},
+  "sessions": {
+    "s_29168dff7ab0a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8b097ce1-001c-480b-a79f-1cdf435893c4",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_6cdda587804856": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5c84eb99-fd33-4d52-9ac7-d9a843ce0688",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
