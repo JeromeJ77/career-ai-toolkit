@@ -13,6 +13,8 @@ Session consignée dans le [journal des tests](../test-log.md).
 - ✅ **B2 — Deuxième session en français** (nouvelle conversation, « Bonjour ») : « Bonjour Nadia. » en première ligne, sans accueil ni question sur le prénom, « espace carrière » employé, reprise proposée depuis `data/current-status.md`. Écart mineur : phrase « Votre espace carrière est prêt, et la configuration est complète. » alors que rien n'a été créé (correction R7 prévue).
 - Une première opportunité a été ajoutée ; la suite du scénario n'est pas jouée, en attendant le joker (#18).
 
+- ✅ **Après mise à niveau du workspace** (ZIP de #18 copié par-dessus le workspace de test) : pas de message d'accueil à la session suivante. Écart : le coach commence par « Bonjour ! Je commence par l'initialisation du workspace, comme demandé par le CLAUDE.md du projet. », déjà présent à la session précédente. Correction R8 de #15 prévue (ligne fixe *Lancement de la session…*, sans citer les consignes). Données conservées : « Bonjour Nadia. », puis reprise conforme à l'état d'avant la mise à niveau (opportunité 001 Lumen Pay, analyse faite et quatre messages stratégiques validés, dossier professionnel v0.2, deux pistes proposées : exemples STAR pour 001, sujets à documenter du dossier). La phrase « Votre espace carrière est en place. » est toujours présente (R7, non encore corrigée).
+
 ## Observations
 
 - Au dépôt des sources, avec un prénom configuré différent du nom des sources, le coach a relevé que tous les documents étaient au nom d'une autre personne, n'a rien copié ni transcrit, et a demandé s'il s'agissait d'un jeu de test, de documents d'un tiers (autorisation à confirmer) ou de mauvais fichiers. Comportement non prescrit : idée de règle ajoutée au backlog.

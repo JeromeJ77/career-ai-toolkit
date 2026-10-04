@@ -146,6 +146,11 @@ des interviewers et prénom de l'utilisateur dans la conversation.
     internes.
   - Conserver un mode développeur/test, activable, qui garde ces détails pour
     comprendre ce qui se passe et valider le comportement attendu.
+  - Le début de session est traité dans #15 (corrections R6 à R8, tests
+    manuels du 2026-10-04) : ligne fixe *Lancement de la session…*, puis
+    directement l'accueil ou la salutation, sans citer les fichiers
+    d'instructions ni la procédure. Reste à faire : le reste de la
+    conversation et le mode développeur/test.
 - Prénoms des interviewers en simulation : relevé à la démo à blanc
   (2026-10-03, étape D5) puis aux tests de #14 (2026-10-04) : « Interviewer 1 »
   évoque une autre personne alors qu'aucun interviewer ne porte de nom. Donner
@@ -157,7 +162,11 @@ des interviewers et prénom de l'utilisateur dans la conversation.
   configuration du prénom et son usage en début et en fin de session sont
   traités dans #15. Reste à faire : employer le prénom de temps en temps
   pendant la conversation, de manière naturelle, sans le répéter à chaque
-  message. Plus délicat à régler (fréquence, moments opportuns).
+  message. Plus délicat à régler (fréquence, moments opportuns). Constat des
+  tests manuels de #18 (2026-10-04) : sans règle dans `interview-coach`, le
+  prénom revenait dans quatre messages rapprochés. Pour v0.4.0, #15 (R9)
+  limite le prénom à la salutation, à l'accusé de réception du choix et à la
+  prise de congé ; l'usage occasionnel est à réintroduire ici, avec mesure.
 - À rapprocher de « Ton et emojis paramétrables » et de « Tutoiement ou
   vouvoiement constant et paramétrable ».
 
@@ -376,6 +385,10 @@ des interviewers et prénom de l'utilisateur dans la conversation.
   updates or widening the beta.
 - Decide how provider-agnostic reasoning recommendations should be represented
   in skills based on observed pilot needs.
+  - Hypothèse du développeur (tests manuels de #18, 2026-10-04, Sonnet 5.5),
+    à vérifier à l'usage : les simulations et le joker demandent un modèle de
+    réflexion supérieure (type Opus 5.5). Rejouer D5 avec ce modèle pour
+    comparer la qualité des conseils, des réponses proposées et du débrief.
 
 ## English version of the workspace
 
