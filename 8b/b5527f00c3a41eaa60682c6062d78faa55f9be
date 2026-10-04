@@ -1,0 +1,21 @@
+.gitignore
+  s_27da8f97d29a0c::t_964549217697a5 21-23
+AGENTS.md
+  s_27da8f97d29a0c::t_c9117fa12151b2 32-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8bb5527f00c3a41eaa60682c6062d78faa55f9be",
+  "prompts": {},
+  "sessions": {
+    "s_27da8f97d29a0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1a69bcc-5a1a-4023-80c6-d400c93e31fe",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
