@@ -1,0 +1,25 @@
+docs/test-history/2026-10-04-tests-manuels-joker.md
+  s_27da8f97d29a0c::t_720fb3787cb294 1-42
+docs/test-log.md
+  s_27da8f97d29a0c::t_69a9759e47013a 102,120-130,132,138
+BACKLOG.md
+  s_27da8f97d29a0c::t_28d6eab96c3f5d 149-153,165-169,388-391
+docs/test-history/2026-10-04-tests-manuels-premiere-session.md
+  s_27da8f97d29a0c::t_29c89c7813425e 16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e05ce6e33bb930154f78925e5bba264d62aefa31",
+  "prompts": {},
+  "sessions": {
+    "s_27da8f97d29a0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1a69bcc-5a1a-4023-80c6-d400c93e31fe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
