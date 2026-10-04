@@ -1,0 +1,47 @@
+docs/test-history/2026-10-04-recentrage-my-career-workspace.md
+  s_9673df49cc431d::t_91bf25718d76a3 17
+CHANGELOG.md
+  s_9673df49cc431d::t_75d661a44080d7 90-92
+README.fr.md
+  s_9673df49cc431d::t_744b1566572409 84
+README.md
+  s_9673df49cc431d::t_940b3c28fd2300 30
+build.bat
+  s_9673df49cc431d::t_1768481bf420c1 11,37
+docs/architecture.md
+  s_9673df49cc431d::t_c8bb19a5a43da7 187
+docs/design/decision-log.md
+  s_9673df49cc431d::t_1090eea368103a 964-965
+docs/test-log.md
+  s_9673df49cc431d::t_9bda660a5f1777 107
+docs/test-plan.md
+  s_9673df49cc431d::t_0440bf2c45c0ec 377-385
+workspace/README.fr.md
+  s_9673df49cc431d::t_e57682382e413c 8-9
+workspace/README.md
+  s_9673df49cc431d::t_affb1331823f8d 6
+workspace/USER-GUIDE.fr.md
+  s_9673df49cc431d::t_4560d020c4bd31 1-96
+workspace/USER-GUIDE.md
+  s_9673df49cc431d::t_8b620462e8d9e4 3-5,77-79
+workspace/skills/init-workspace/SKILL.md
+  s_9673df49cc431d::t_72d9c2459e678d 22,63,90,102
+workspace/skills/interview-coach/SKILL.md
+  s_9673df49cc431d::t_5406d7b750c9d4 13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ca3d6497a09aa4bbb6a46e63569bcb402860ebe5",
+  "prompts": {},
+  "sessions": {
+    "s_9673df49cc431d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff860e75-e91a-4bba-b648-b8e9445c0547",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
