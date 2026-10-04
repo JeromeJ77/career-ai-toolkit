@@ -1061,6 +1061,55 @@ Une question ignorée est reposée une seule fois.
 
 Aucune identifiée.
 
+## D-020 — Joker pendant une simulation : conseil ou réponse proposée
+
+- **Type** : PRODUCT
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-04
+- **Issue** : #18
+
+### Contexte
+
+Le produit repose sur le principe « coach, pas générateur de réponses » : aider
+le candidat à réfléchir, s'entraîner et s'approprier son histoire
+professionnelle plutôt que mémoriser des réponses toutes faites. Pendant une
+simulation, un candidat bloqué n'a pourtant que l'arrêt (définitif) pour
+obtenir de l'aide, et la démo comme les tests de non-régression gagneraient à
+pouvoir avancer sans taper chaque réponse.
+
+### Options considérées
+
+- **Pause et reprise (#3)** : permet un échange, mais pas une aide ponctuelle
+  sans quitter la simulation.
+- **Joker limité au conseil** : conforme au principe, mais ne sert ni la démo ni
+  les tests.
+- **Joker avec conseil et réponse proposée** : retenue, la réponse proposée
+  étant un exemple signalé.
+
+### Décision et intention
+
+Pendant une simulation, le candidat peut demander un joker (« joker, donne-moi
+un indice » ou « joker, propose une réponse à ma place »). Le coach sort du rôle
+par une ligne en italique, donne un conseil sans rédiger la réponse, ou propose
+une réponse signalée comme telle, fondée uniquement sur le dossier professionnel
+et l'opportunité, avec les suppositions faites faute d'information, puis reprend
+le rôle. La réponse proposée est un exemple à analyser, jamais à mémoriser : c'est
+la seule exception, explicite et sur demande, au principe « coach, pas générateur
+de réponses ». Le nombre de jokers n'est pas limité.
+
+### Conséquences
+
+- La transcription note un joker de conseil par une ligne factuelle, sans son
+  contenu, et reproduit la réponse proposée, étiquetée ; le débrief indique le
+  nombre de jokers, n'évalue pas une réponse proposée comme une réponse du
+  candidat et évalue la réponse donnée après un conseil.
+- #3 garde son intérêt pour les échanges avec le coach en cours de simulation.
+
+### Conditions de réévaluation
+
+Retours pilotes montrant un usage du joker pour mémoriser des réponses, ou
+livraison de #3.
+
 ## Évolution du journal
 
 - Ajouter une entrée au modèle ci-dessus lorsqu'un choix structurel ou

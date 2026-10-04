@@ -12,7 +12,7 @@ La première session est détectée par l'absence de `data/current-status.md` (s
 
 Le choix est enregistré dans la section `user` de `data/config/workspace.yaml` (`address_by_first_name` : `unset`, `ask_again`, `yes` ou `no` ; `first_name`). Vous pouvez le modifier à tout moment, en le demandant au coach ou en éditant le fichier. Avec `yes`, le coach vous salue par votre prénom au début d'une conversation et prend congé quand vous terminez la session.
 
-Le toolkit est un coach, pas un générateur de réponses : il aide à réfléchir, à s'entraîner, à progresser et à s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites.
+Le toolkit est un coach, pas un générateur de réponses : il aide à réfléchir, à s'entraîner, à progresser et à s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites. La seule exception est le joker, disponible pendant une simulation d'entretien (voir « Sessions de travail ») : une réponse proposée n'est donnée que sur votre demande explicite et est toujours signalée comme un exemple à analyser, jamais à mémoriser.
 
 ## Opportunités gérées par le coach
 
@@ -88,6 +88,22 @@ débriefe ce qui a été joué, immédiatement ou plus tard, en consignant l'arr
 anticipé et ses limites dans `debrief.md`. Une nouvelle simulation après le
 débriefing utilise le répertoire `simulations/NN/` suivant et redemande la
 profondeur.
+
+Si vous bloquez sur une question pendant une simulation, demandez un joker sans
+l'arrêter : commencez votre message par « joker » (par exemple « joker,
+donne-moi un indice » ou « joker, propose une réponse à ma place »). Le coach
+sort du rôle des interviewers par une ligne en italique, puis donne un conseil
+sur la question sans rédiger la réponse, ou propose une réponse, clairement
+signalée, fondée uniquement sur votre dossier professionnel et l'opportunité,
+avec une ligne en italique indiquant ce qu'il a dû supposer faute
+d'information. Il reprend ensuite le rôle des interviewers. Si votre demande
+n'est pas claire, le coach vous demande si vous souhaitez un conseil ou une
+réponse proposée. Le nombre de jokers n'est pas limité ; le débriefing l'indique
+à titre informatif. Une réponse proposée est un exemple à analyser, pas votre
+réponse : elle n'est pas évaluée comme telle, alors que votre réponse après un
+conseil l'est. Le mot « joker » au milieu d'une réponse ne déclenche rien, et
+hors simulation le coach vous rappelle simplement que le joker est réservé aux
+simulations.
 
 Un débriefing de simulation peut avoir lieu immédiatement ou dans une
 conversation ultérieure. Dans les deux cas, il lit les artefacts persistants de

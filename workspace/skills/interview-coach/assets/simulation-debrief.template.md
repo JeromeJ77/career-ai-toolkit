@@ -6,6 +6,7 @@
 - Entretien : à renseigner
 - Simulation : à renseigner
 - Modalité : à renseigner
+- Jokers : à renseigner (nombre de conseils, nombre de réponses proposées)
 
 ## Sources utilisées et limites
 

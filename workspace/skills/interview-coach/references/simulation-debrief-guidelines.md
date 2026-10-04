@@ -13,7 +13,9 @@ A simulation debrief is an autonomous workflow. It may run immediately after the
    chose to submit. Record in the debrief that the simulation was stopped
    early; do not assess what was not played and do not interpret the reason for
    stopping unless the candidate gives it.
-6. Read an existing `debrief.md` only when the candidate asks to continue or refine that debrief; preserve useful validated content instead of replacing it blindly.
+6. Read the jokers from the transcript: advice jokers are marked by a factual
+   line, proposed answers are labelled in place of the candidate's turn.
+7. Read an existing `debrief.md` only when the candidate asks to continue or refine that debrief; preserve useful validated content instead of replacing it blindly.
 
 ## Analyze
 
@@ -23,6 +25,9 @@ A simulation debrief is an autonomous workflow. It may run immediately after the
 - Point to answers worth revisiting and explain why.
 - Check whether validated strategic messages were visible, weak or absent.
 - Assess candidate questions when evidence is available.
+- Indicate the number of jokers used (advice and proposed answers), for information only; there is no limit and no penalty.
+- A proposed answer is not the candidate's answer: it is neither a strength nor an improvement priority. It may be cited as an example, saying so.
+- An answer given after advice is assessed like any candidate answer, mentioning the advice received when useful.
 - Do not infer interviewer thoughts or use arbitrary numerical scores.
 - Preserve the candidate's natural voice; propose answer rewrites only after giving the candidate room to reflect.
 

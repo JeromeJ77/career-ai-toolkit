@@ -23,7 +23,7 @@ AI (analysis, synthesis, coaching) is a means, not the value proposition. The st
 
 ## Coaching principle
 
-The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers.
+The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers. The only exception is the joker, on explicit request during an interview simulation: a proposed answer is always flagged as an example to analyze, never to memorize.
 
 ## How to use it
 

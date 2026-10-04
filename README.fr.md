@@ -6,7 +6,7 @@
 
 ## Objectif
 
-Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites.
+Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites. La seule exception est le joker, sur demande explicite pendant une simulation d'entretien : une réponse proposée est toujours signalée comme un exemple à analyser, jamais à mémoriser.
 
 Le projet prend la forme de **My Career Workspace**, un espace carrière local : un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
 

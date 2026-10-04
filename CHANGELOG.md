@@ -4,6 +4,15 @@
 
 ### Added
 
+- Joker during an interview simulation (#18): the candidate can ask for advice
+  or a proposed answer (« joker, donne-moi un indice », « joker, propose une
+  réponse à ma place ») without ending the simulation. The coach steps out of
+  and back into the interviewer role with lines in italics; a proposed answer
+  is flagged as an example, based only on the professional profile and the
+  opportunity, with the assumptions stated. The transcript records jokers
+  factually and the debrief reports their number without assessing a proposed
+  answer as the candidate's. This is the only exception to the « coach, not an
+  answer generator » principle. See decision D-020.
 - First-session welcome (#15): on the first session of a workspace (no
   `data/current-status.md`, no sign of lost content) the coach welcomes the
   candidate to their career workspace, asks whether to use their first name and

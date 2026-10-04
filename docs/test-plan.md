@@ -425,6 +425,73 @@ Non-regression:
   are still created, reported and never overwritten.
 - Replay « Repository privacy ».
 
+## Interview simulation joker (#18)
+
+Nominal flow:
+
+- During a simulation, write « joker, donne-moi un indice » and confirm the
+  coach steps out of the interviewer role with a short line in italics, gives
+  advice on the current question without writing the answer, steps back into
+  the role with a line in italics and waits for the candidate's answer to the
+  same question.
+- During a simulation, write « joker, propose une réponse à ma place » and
+  confirm the coach steps out of the role in italics, gives a proposed answer
+  clearly marked as such, based only on the professional profile and the
+  opportunity, signals in italics what it had to assume for lack of
+  information, steps back into the role in italics, and that the interviewer
+  then reacts as to a candidate answer (follow-up or next question).
+- Confirm `transcript.md` marks the proposed answer as such, distinct from the
+  candidate's answers, and records each advice joker as a short factual line
+  without its coaching content (the transcript stays free of coaching).
+- Confirm the debrief does not assess a proposed answer as the candidate's,
+  assesses the answer given after advice, and states the number of jokers used
+  as an indication.
+- Confirm a formulation with the same meaning (« j'ai besoin d'un joker,
+  … ») triggers the joker the same way, and that the English trigger
+  (« joker » or « I need a joker ») works in an English simulation.
+
+Edge cases:
+
+- Write « joker » alone, or with an unclear request: confirm the coach steps
+  out of the role in italics, asks whether the candidate wants advice or a
+  proposed answer, then acts on the answer and steps back into the role in
+  italics.
+- Write « joker », then, at the clarification question, « non, en fait c'est
+  bon, pas besoin » (or a similar wording): confirm the coach steps back into
+  the role in italics and waits for the answer to the same question, that the
+  cancelled joker is neither counted in the debrief nor recorded in
+  `transcript.md`.
+- Outside a simulation (preparation, debrief), write « joker, donne-moi un
+  indice »: confirm the coach says on a line in italics that the joker is only
+  used during an interview simulation, then answers the request on the next
+  line as an ordinary coaching request.
+- Confirm « joker » inside an answer (not at the start of the first sentence)
+  triggers nothing.
+
+Limit cases:
+
+- Use several jokers in the same simulation, including two in a row: no limit,
+  the count in the debrief matches the transcript.
+- With no relevant information in the profile or the opportunity for the
+  question, confirm the proposed answer invents no fact and states what is
+  assumed or missing.
+- Confirm the decision on the « coach, not an answer generator » principle is
+  recorded in `docs/design/decision-log.md` (format #13), and that the glossary
+  holds a « Joker » entry (FR/EN).
+- Confirm the user guides (`workspace/USER-GUIDE.md`,
+  `workspace/USER-GUIDE.fr.md`) describe the joker, and that the simulation
+  start reminder mentions it together with the stop keywords.
+
+Non-regression:
+
+- Replay the early stop (D5, D7): a stop request is still confirmed, a joker
+  never ends the simulation, and a stop request right after a joker is
+  confirmed as usual.
+- Replay a debrief in a new conversation from the transcript (D8) with jokers
+  used during the simulation.
+- Confirm the demo script includes the joker steps and its total duration is
+  updated.
+
 ## Regression
 
 Repeat essential workspace scenarios after any change to the core coach instructions.
