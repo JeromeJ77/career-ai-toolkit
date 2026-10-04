@@ -1,0 +1,31 @@
+docs/test-log.md
+  s_9673df49cc431d::t_2c64b3198264f0 90-113
+docs/test-plan.md
+  s_9673df49cc431d::t_a83f513748bff2 312-414
+BACKLOG.md
+  s_27da8f97d29a0c::t_38d9651e3d05c0 60-61,87-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ab0b2123a67a8c55d7277136c1cc587fba752d9f",
+  "prompts": {},
+  "sessions": {
+    "s_27da8f97d29a0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1a69bcc-5a1a-4023-80c6-d400c93e31fe",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_9673df49cc431d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff860e75-e91a-4bba-b648-b8e9445c0547",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
