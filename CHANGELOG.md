@@ -10,7 +10,9 @@
 - Added a French/English business glossary covering the current domain model
   and clearly separating provisional terms that still require grooming.
 - Added a design decision log to preserve the rationale and open questions
-  behind structural and behavioral choices.
+  behind structural and behavioral choices. Its entry template now includes a
+  Type, the options considered and the reassessment conditions, with a new
+  « ❌ Rejetée » status; entries D-001 to D-014 are migrated to it (#13).
 - Added the `init-workspace` skill: on first use the coach creates each missing
   mandatory file (`workspace.yaml`, `professional-profile.md`,
   `external-references.md`, `current-status.md`) under `data/` from templates in

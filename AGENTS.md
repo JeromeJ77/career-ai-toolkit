@@ -65,8 +65,11 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   clarifies a project term. Keep undecided terms explicitly provisional rather
   than presenting them as canonical.
 - Record structural or behavioral decisions whose rationale should survive the
-  implementation in `docs/design/decision-log.md`. Include their status,
-  intention, consequences and open questions when relevant; do not add trivial
+  implementation in `docs/design/decision-log.md`, using the entry template
+  documented at the top of that file: type, status, date, context, options
+  considered, decision and intention, consequences and reassessment
+  conditions (write "Aucune identifiée" when there are none). Never
+  reconstruct alternatives that were not actually studied; do not add trivial
   implementation details.
 - Follow the complete idea intake and grooming workflow in `CONTRIBUTING.md`.
   Capture every new idea in `BACKLOG.md` before grooming or issue creation,

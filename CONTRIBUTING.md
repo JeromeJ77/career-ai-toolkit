@@ -106,7 +106,10 @@ After the selected issues have been created:
 3. Keep deferred, rejected-for-now or unresolved ideas in `BACKLOG.md`, refining
    their wording only when needed to preserve their standalone meaning.
 4. Update `docs/glossary.md`, `docs/design/decision-log.md` and canonical
-   documentation when grooming established terminology or decisions.
+   documentation when grooming established terminology or decisions. New
+   decision log entries follow the template documented at the top of
+   `docs/design/decision-log.md` (type, options considered, reassessment
+   conditions).
 5. Create or request a third, separate commit for the cleanup. A suitable
    message is `docs(backlog): move <release> work to issues`.
 
