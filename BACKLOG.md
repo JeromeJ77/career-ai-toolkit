@@ -355,17 +355,32 @@ dernier, car plus ouverte.
 - Rendre le ton et l'usage des emojis paramétrables dans
   `data/config/workspace.yaml`, sobre et sans emoji par défaut.
 
-### Démarrage lent d'une nouvelle conversation
+### Lenteur des opérations déterministes : test de performance et instrumentation
 
-- Relevé au premier déroulé complet (2026-10-02, étape D12) : le démarrage d'une
-  nouvelle conversation dépasse une minute (lecture d'`AGENTS.md`, du skill
-  d'initialisation, du statut).
-- Risque : que la candidate réutilise une conversation existante plutôt que
-  d'en ouvrir une nouvelle par séance de travail. Deux impacts négatifs :
-  1. un contexte très long, donc des réponses moins pertinentes ;
-  2. un conflit avec l'objectif de fermer régulièrement les conversations et de
-     faire un commit Git, pour une meilleure traçabilité.
-- Point à surveiller.
+- Constat (2026-10-04) : le workspace sous Claude Code Desktop est perçu comme
+  très lent au démarrage d'une conversation, à l'ajout de sources, à la
+  création d'opportunités et de rounds, et à la transcription des PDF et DOCX ;
+  l'utilisateur ne voit pas ce que fait l'agent. Jugé critique pour l'adoption,
+  pilote compris. Reprend « Démarrage lent d'une nouvelle conversation »
+  (relevé du 2026-10-02, étape D12, et risque de réutilisation d'une même
+  conversation).
+- Première analyse des traces JSONL de la démo à blanc du 2026-10-03 : les
+  tours conversationnels prennent 2 à 15 s, les tours qui manipulent des
+  fichiers 30 à 97 s ; le démarrage enchaîne 6 à 10 lectures séquentielles
+  (30 à 40 s) ; la création d'opportunité fait 14 à 15 appels d'outils ;
+  l'extraction DOCX et parfois PDF est improvisée ; des appels triviaux longs
+  suggèrent des attentes de permission. L'hypothèse d'un agent qui fouille
+  l'arborescence et écrit des scripts n'est pas confirmée.
+- Proposition : une première livraison limitée à l'instrumentation et à la
+  caractérisation (type investigation / enabler, priorité High) : outillage
+  d'analyse des traces, scénarios reproductibles sur le kit de test fictif,
+  synthèse des postes de latence, hypothèses confirmées ou infirmées, et
+  séparation quick wins / évolutions de fond. Scripts Windows a minima, Python
+  optionnel et détecté, fallback agentique journalisé, collecte locale sans
+  contenu documentaire, réutilisable pendant le pilote à la demande.
+- Détail (constat, mesures, hypothèses, questions, périmètre, principes
+  d'outillage, confidentialité, livrables, critères d'acceptation, pistes,
+  recommandation) : `docs/non-functional/performance-investigation.md`.
 
 ### Traçabilité des informations du profil données en conversation
 
