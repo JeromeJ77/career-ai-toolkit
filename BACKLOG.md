@@ -50,6 +50,35 @@ Cette demande explicite fonctionne déjà : « Let's switch in English » a bien
   de `init-workspace`, README de config, test-plan, scénario maître du kit de
   test, `CHANGELOG.md`.
 
+### Joker pendant une simulation d'entretien
+
+Proposé après l'implémentation de #15 (2026-10-04), pour accélérer les tests
+manuels et les démos ; souhaité avant les tests manuels de #15.
+
+Pendant une simulation, un mode « joker » fait sortir temporairement le coach
+de son rôle d'interviewer, pour l'une de deux aides :
+
+- Conseil : le coach donne au candidat un conseil pour répondre à la question
+  posée. Utile surtout pour un utilisateur réel.
+- Réponse proposée : le coach propose une réponse plausible, comme si le
+  candidat l'avait donnée lui-même. Elle est signalée clairement comme telle,
+  dans la conversation comme dans la transcription. Utile surtout pendant une
+  démo, voire un test.
+
+Précisions de l'auteur :
+
+- Déclenchement : « j'ai besoin d'un joker » ou simplement « joker », suivi de
+  la demande, par exemple « réponds à ma place » ou « donne-moi un indice ».
+- Débrief : une réponse proposée par le joker n'est pas évaluée comme si le
+  candidat l'avait donnée ; une réponse donnée par le candidat après un conseil
+  du joker est évaluée. Le nombre de jokers utilisés est indiqué dans le
+  débrief, à titre indicatif.
+- Démo et tests : la démo serait beaucoup plus fluide et montrerait que ce mode
+  existe ; les tests, surtout de non-régression, iraient plus vite.
+
+Ce mode pourrait rendre inutile la pause de simulation (#3) : à discuter en
+grooming.
+
 L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
 mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
 #13 (modèle du journal des décisions), #14 (abandon du mode standalone) et #15
