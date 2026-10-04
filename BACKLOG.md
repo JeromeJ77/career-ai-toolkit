@@ -12,6 +12,16 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+### Synthèse temporaire : issue candidate complémentaire du milestone v0.4.0
+
+Table de travail issue du grooming du 2026-10-04, à supprimer lors du nettoyage
+du backlog. Les priorités et tailles sont indicatives ; l'auteur les positionne
+sur le board.
+
+| Ordre | Titre provisoire | Objectif | Éléments couverts | Priorité | Taille | Dépendances |
+| --- | --- | --- | --- | --- | --- | --- |
+| J1 | Demander un joker pendant une simulation d'entretien | « joker » au début de la première phrase, ou une formulation de même sens (« j'ai besoin d'un joker »), suivi de la demande : conseil sur la question posée (« donne-moi un indice ») ou réponse proposée à la place du candidat (« propose une réponse à ma place ») ; sortie et retour de rôle toujours marqués en italique, avec si besoin une demande de précision du coach entre les deux ; réponse proposée signalée dans la conversation et la transcription, fondée sur le dossier et l'opportunité, avec les suppositions signalées ; débrief : réponse proposée non évaluée, réponse après conseil évaluée, nombre de jokers indiqué ; décision consignée sur l'articulation avec le principe « coach, pas générateur de réponses » ; étapes de démo du scénario maître utilisant le joker | Joker pendant une simulation d'entretien | P1 | M | n° 15 (implémentée après sa relecture, avant ses tests manuels) ; recoupe n° 3 sans la remplacer |
+
 ### Supprimer `language.coaching` : la langue de la session suit la conversation
 
 Écart constaté lors des tests de #14 (2026-10-04) : le coach répond dans la
