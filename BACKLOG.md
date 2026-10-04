@@ -29,6 +29,22 @@ y compris à la reprise, et ne change que sur demande explicite du candidat.
 Cette demande explicite fonctionne déjà : « Let's switch in English » a bien
 été prise en compte et la conversation a continué en anglais.
 
+Constat complémentaire (tests manuels de #15, 2026-10-04) : une première
+session commencée en anglais (accueil, question du prénom et compte rendu en
+anglais) est passée au français sans demande du candidat, après la
+transcription des sources et l'extraction des informations pour le dossier
+professionnel : « Merci, Nadia. J'ai corrigé votre prénom dans la
+configuration. », puis tout le reste en français. La configuration créée par
+défaut (`language.coaching` et `language.profile` en `fr-FR`) semble l'avoir
+emporté sur la langue de la conversation. Il faut des règles de langue claires
+pour le dossier comme pour les conversations. Le candidat a continué en
+anglais (« Validate the profile as proposed, keep salary out of it ») : le
+coach est resté en français. Traiter des données en français tout en
+conversant en anglais semble le perturber.
+
+L'auteur souhaite traiter dans une même issue cette idée et « Langue du
+dossier professionnel à la première session ».
+
 - Supprimer la clé `language.coaching` de `workspace.yaml` et de son modèle.
 - Langue de coaching de la session : celle du début de la conversation, modifiable
   à la demande du candidat.
@@ -49,6 +65,36 @@ Cette demande explicite fonctionne déjà : « Let's switch in English » a bien
   langue de `interview-coach/SKILL.md`, gestion des clés invalides ou dépréciées
   de `init-workspace`, README de config, test-plan, scénario maître du kit de
   test, `CHANGELOG.md`.
+
+### Langue du dossier professionnel à la première session
+
+Relevé pendant les tests manuels de #15 (2026-10-04), lors d'une première
+session en anglais : `workspace.yaml` est créé avec les valeurs par défaut du
+modèle (`language.profile: "fr-FR"`), sans que le coach ne demande ni ne
+signale la langue du dossier professionnel. Un candidat qui travaille en
+anglais obtient donc un dossier rédigé en français sans l'avoir choisi.
+
+- À la première session, le coach signale la langue du dossier professionnel,
+  ou la demande, avant de construire le dossier.
+- À rapprocher de « Supprimer `language.coaching` » (même sujet de langue en
+  première session et à la reprise) et de l'issue n° 10 (entretien
+  d'initialisation du dossier professionnel).
+
+### Signaler un écart entre l'identité du candidat et celle des sources
+
+Relevé pendant les tests manuels de #15 (2026-10-04) : le testeur a donné un
+prénom différent de celui des sources fictives. Au dépôt des sources, le coach
+a relevé que tous les documents étaient au nom d'une autre personne, n'a rien
+copié ni transcrit, et a demandé de choisir : documents du candidat sous un
+autre nom (jeu de test ou données pseudonymisées), documents d'un tiers
+(confirmer l'autorisation de les conserver dans l'espace carrière), ou mauvais
+fichiers. Ce comportement est émergent, non prescrit par les consignes : il
+n'est donc pas garanti.
+
+- Ajouter une règle : avant de traiter des sources, signaler tout écart entre
+  l'identité du candidat (prénom configuré, dossier professionnel) et celle des
+  sources, ne rien copier ni transcrire, et demander comment procéder.
+- Après la réponse, corriger le prénom à utiliser si le candidat le demande.
 
 L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
 mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
