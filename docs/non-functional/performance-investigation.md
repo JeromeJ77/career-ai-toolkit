@@ -2,14 +2,14 @@
 
 Document de travail (français), ouvert le 2026-10-04. Il rassemble le constat,
 la première analyse de traces, les hypothèses et le cadrage de l'investigation
-à mener. L'entrée correspondante du backlog y renvoie ; les décisions qui en
+à mener. Le travail est suivi dans l'issue #16 ; les décisions qui en
 sortiront iront dans `docs/design/decision-log.md`.
 
 - **Type** : investigation / enabler
 - **Priorité proposée** : High. Le problème est critique pour la trajectoire
   d'adoption, mais le travail à planifier reste une investigation ; « Critical »
   désigne un blocage complet et fausserait la sémantique des priorités.
-- **Statut** : à groomer
+- **Statut** : engagée dans le milestone v0.4.0 (issue #16)
 
 ## 1. Constat
 

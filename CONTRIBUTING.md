@@ -132,7 +132,10 @@ Board columns: Backlog, Ready, In progress, In review, Done.
 
 ### Labels
 
-- Type: `bug`, `enhancement`, `documentation`, `question`, `accessibility`.
+- Type: `bug`, `enhancement`, `documentation`, `question`, `investigation`,
+  `accessibility`.
+- Aspect: `non-functional` for performance, privacy, reliability and other
+  non-functional concerns.
 - Scope: `standalone-mode`, `workspace-mode`, `skill`.
 - Source: `pilot-feedback` for feedback from pilot testers.
 - Closing reasons: `duplicate`, `invalid`, `wontfix`.
