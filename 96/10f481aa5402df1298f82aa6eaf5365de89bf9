@@ -1,0 +1,21 @@
+BACKLOG.md
+  s_6517c2dcff45ec::t_d6a55cd107ac1c 358-383
+docs/non-functional/performance-investigation.md
+  s_6517c2dcff45ec::t_0f266b0d801712 1-288
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9610f481aa5402df1298f82aa6eaf5365de89bf9",
+  "prompts": {},
+  "sessions": {
+    "s_6517c2dcff45ec": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9d62ad36-6434-446e-b0d3-a7c59f10649e",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
