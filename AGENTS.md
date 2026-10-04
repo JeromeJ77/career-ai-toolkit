@@ -35,8 +35,15 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   implementation complexity (low, medium or high, with the main reasons) and
   recommend the model to use for the implementation. A change to the coach's
   behavior (`workspace/AGENTS.md`, skills) is never assessed as low complexity.
-  The final verification and the analysis of manual tests may return to the
-  analysis conversation.
+- At the end of the implementation, the implementation conversation appends a
+  report to the plan: what was done, what the agent verified, what remains
+  untested, deviations from the plan and points to review. The user then
+  commits the implementation as a checkpoint and returns to the analysis
+  conversation for the review of the changes. The analysis conversation records
+  the required corrections in the plan; the implementation conversation carries
+  them out in a second pass, committed separately. Manual tests start only once
+  the review is satisfactory, so that corrections do not invalidate them; the
+  user then debriefs them in the analysis conversation.
 - During development, revisit these scenarios to catch forgotten cases and add
   the ones discovered.
 - Record in `docs/test-log.md` only tests actually performed. Never mark a
