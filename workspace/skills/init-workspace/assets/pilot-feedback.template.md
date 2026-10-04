@@ -1,6 +1,6 @@
-# Retour pilote Career AI Toolkit
+# Retour pilote My Career Workspace
 
-**Version testée :** 0.4.0-dev
+**Version testée :** {{VERSION}}
 **Date :**  
 **Outil IA utilisé :**  
 **Langue du coaching :**
@@ -25,7 +25,7 @@
 - Les messages stratégiques proposés étaient-ils utiles et ajustables ?
 - Le coach vous a-t-il aidé à trouver vos propres exemples ?
 
-## Organisation et reprise du workspace
+## Organisation et reprise de l'espace carrière
 
 - Le coach a-t-il créé l'opportunité et les rounds sans manipulation manuelle inutile ?
 - L'arborescence et les noms de fichiers étaient-ils compréhensibles ?

@@ -70,7 +70,8 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - `VERSION` holds the release in progress, with the `-dev` suffix (for example
   `0.4.0-dev`) from the first development work of a release. It must never stay
   on an already released version. Remove the suffix only when preparing the
-  release. Keep the version in the pilot feedback template equal to `VERSION`.
+  release. The pilot feedback template carries the `{{VERSION}}` placeholder,
+  replaced by the build; never write a version number in it.
 
 ## Project knowledge maintenance
 

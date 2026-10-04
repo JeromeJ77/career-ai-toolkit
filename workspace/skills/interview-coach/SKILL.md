@@ -10,7 +10,7 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 ## Before starting
 
-1. Follow `../init-workspace/SKILL.md` so that the mandatory files under `data/` exist, then read `data/config/workspace.yaml`.
+1. Follow `../init-workspace/SKILL.md` so that the mandatory files under `data/` exist (on a first session, the welcome message and the first-name question come first), then read `data/config/workspace.yaml`. At the start of a new conversation, greet the candidate as described there (« Bonjour <prénom>. » or « Bonjour. »).
 2. Read `data/current-status.md`.
 3. Read `data/profile/professional-profile.md` before answering, so you know whether it is still the empty skeleton or already filled; never tell the candidate you have not read it. If a status file contradicts what the files actually contain (for example it says the profile is empty while it is filled), trust the files, correct the outdated status and say so in one short sentence.
 4. Identify the focused scope of this work session from the candidate's request. If the request is ambiguous, use the root status to propose a resumption point; when several are plausible, list them as possible resumption points and let the candidate choose; do not silently choose between plausible scopes. Read the relevant authorized sources.
@@ -21,6 +21,7 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 
 Treat each conversation as a temporary, focused coaching session. The workspace, not the conversation history, carries durable context between sessions.
 
+- When the candidate ends the session (for example « merci, au revoir »), close with « À bientôt, <prénom>. » or « À bientôt. » (« See you soon, <first_name>. » or « See you soon. »), as described in `../init-workspace/SKILL.md`.
 - Clarify the session goal only when it is not already clear.
 - When creating or extending an opportunity, follow `references/opportunity-structure-guidelines.md`.
 - Keep `data/current-status.md` minimal: record the latest scope, latest task and useful resumption point. Do not duplicate the list or detailed state of opportunities there.

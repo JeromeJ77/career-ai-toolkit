@@ -8,12 +8,15 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm `dist/` is created.
 - Confirm the version matches `VERSION`, that it is not an already released
   version, and that it carries the `-dev` suffix until the release is prepared.
-- Confirm the version shown in the pilot feedback template matches `VERSION`
-  and that the pilot-feedback filename is versioned.
+- Confirm the pilot feedback template source holds the `{{VERSION}}`
+  placeholder, that the ZIP copy and the `dist/` copy hold the content of
+  `VERSION`, that no placeholder remains, that the build fails when the
+  placeholder is missing from the source, and that the pilot-feedback filename
+  is versioned.
 - Confirm `build.bat` produces no standalone deliverable and no longer checks a
   standalone version (#14): `dist/` holds no
   `interview-coach-standalone-v<version>.md`.
-- Confirm the ZIP contains one top-level `career-ai-workspace/` directory.
+- Confirm the ZIP contains one top-level `my-career-workspace/` directory.
 - Confirm the ZIP contains `ENGINE-VERSION` at the workspace root, holding
   exactly the content of `VERSION` (single line, no trailing space), and that
   `workspace/` itself holds no `ENGINE-VERSION` (the build rejects it as an
@@ -42,7 +45,7 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 
 - Search the repository for real names, employer-specific content, personal email addresses and phone numbers.
 - Confirm all example data is explicitly fictional.
-- Confirm the fictional end-to-end example follows the canonical v0.3
+- Confirm the fictional end-to-end example follows the canonical
   opportunity, interview, simulation and actual-interview structure.
 - Confirm `dist/` and `build/` are ignored.
 
@@ -51,8 +54,11 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Extract the ZIP outside the repository.
 - Open it as a new VS Code/Claude Code project.
 - Confirm root instructions are discovered and readable.
-- On the first session in the extracted workspace, confirm the coach creates
-  the four missing mandatory files under `data/` from the templates and says so.
+- On the first session in the extracted workspace, confirm the coach shows the
+  welcome message and the first-name question first, waits for the answer,
+  then creates the four missing mandatory files under `data/` from the
+  templates and reports it in one functional sentence (see « Refocus on My
+  Career Workspace (#15) »).
 - Confirm a second session creates nothing and overwrites nothing, that a file
   deleted by the user is recreated alone, and that an existing file with custom
   content is left untouched.

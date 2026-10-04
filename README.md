@@ -2,9 +2,24 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Experimental v0.3 toolkit for AI-assisted career management, job applications and interview preparation.
+> Generic toolkit behind **My Career Workspace**: a personal, persistent and local career workspace, built around a living professional profile that you own.
 
 **French-first pilot:** the most complete getting-started guide is [README.fr.md](README.fr.md).
+
+## My Career Workspace
+
+My Career Workspace (in French, « espace carrière ») is a private workspace of files that you open in VS Code, Claude Code or another file-aware AI tool. Its core is a living professional profile: structured professional memory, validated by you, the starting point of your work on opportunities and interviews, and enriched by that work over time. Each opportunity, preparation, simulation and debriefing can consolidate it, so the work is not consumed by a one-off use: it becomes a reusable professional asset.
+
+AI (analysis, synthesis, coaching) is a means, not the value proposition. The structuring principles are:
+
+- you own and control your data;
+- confidentiality;
+- persistence and continuity between conversations;
+- portability (plain files);
+- transparency and traceability;
+- your validation of any information that is capitalized.
+
+`career-ai-toolkit` remains the name of this repository: the generic project that gathers the components, skills, templates, tools and deliverables of the product.
 
 ## Coaching principle
 
@@ -12,7 +27,9 @@ The toolkit is a coach, not an answer generator: it helps candidates reflect, pr
 
 ## How to use it
 
-**Local Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool.
+**My Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool. See the [user guide](docs/my-career-workspace-user-guide.md).
+
+The local directory name is free: a workspace extracted under `career-ai-workspace/` keeps working and does not need to be renamed. At the next session the `user` section is added to its `workspace.yaml` and the first-name question is asked, without the welcome message.
 
 ## Privacy model
 
@@ -26,11 +43,11 @@ On Windows, run:
 build.bat
 ```
 
-The command creates versioned release artifacts under the untracked `dist/` directory.
+The command creates versioned release artifacts under the untracked `dist/` directory: the My Career Workspace ZIP, the demo and manual-test kit ZIP and the pilot feedback form.
 
 ## Project status
 
-Version 0.3 is a pilot. The current priority is validating the redesigned coaching workflow with real users before adding a CV generator, installers, automatic updates, or a full document-rendering pipeline.
+The toolkit is in a pilot phase. The current priority is validating the redesigned coaching workflow with real users before adding a CV generator, installers, automatic updates, or a full document-rendering pipeline.
 
 ## Documentation
 

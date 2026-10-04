@@ -914,6 +914,152 @@ Uniquement si un besoin utilisateur fort et validé apparaît pour une expérien
 sans installation, avec des limitations explicitement acceptées en matière de
 persistance, de portabilité et de propriété des données.
 
+## D-017 — Renommer le produit My Career Workspace
+
+- **Type** : PRODUCT
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-04
+- **Issue** : #15
+
+### Contexte
+
+Le produit évolue d'un coach centré sur la préparation d'entretien vers un
+espace carrière personnel, persistant et exploitable dans la durée, dont le
+dossier professionnel vivant est le cœur. L'IA reste essentielle (analyse,
+synthèse, coaching) mais n'est plus la proposition de valeur mise au premier
+plan. Le nom « Career AI Workspace » ne reflète plus cette orientation. Les
+notes du debriefing de la démo du 2026-10-03 demandent de recentrer le produit.
+
+### Options considérées
+
+- **Renommer aussi le dépôt** : rejetée, car `career-ai-toolkit` reste adapté
+  au projet global qui rassemble plusieurs composants, skills, modèles, outils
+  et livrables fondés sur l'IA.
+- **Conserver « Career AI Workspace »** : rejetée, car le nom met l'IA au
+  premier plan, alors qu'elle n'est plus la proposition de valeur ; « My »
+  renforce la propriété, la personnalisation et la confidentialité.
+- **Renommer le produit et le répertoire local `my-career-workspace`** :
+  retenue.
+
+Le renommage du répertoire source `test-kit/` et du plan de test a été envisagé
+(les notes parlent de renommer « le plan et le kit de test ») puis limité au ZIP
+du kit.
+
+### Décision et intention
+
+Le produit s'appelle **My Career Workspace**, nom technique
+`my-career-workspace`, également nom retenu pour le répertoire local personnel :
+l'utilisateur travaille dans son propre espace carrière. Le dépôt et le projet
+générique restent **Career AI Toolkit** / `career-ai-toolkit`. Les noms
+techniques liés au concept de workspace sont conservés : répertoire source
+`workspace/`, skill `init-workspace`, `workspace.yaml`, clé `workspace_version`.
+
+### Conséquences
+
+- Archives et répertoire racine renommés : `my-career-workspace-v<version>.zip`,
+  `my-career-workspace-test-kit-v<version>.zip` (le répertoire source
+  `test-kit/` est conservé) et retour pilote
+  `my-career-workspace-pilot-feedback-v<version>.md`.
+- Le guide utilisateur `docs/workspace-mode.md` devient
+  `docs/my-career-workspace-user-guide.md` ; l'entrée « Mode workspace » du
+  glossaire est remplacée par « My Career Workspace ».
+- Le label GitHub `workspace-mode` est renommé `my-career-workspace`.
+- Les workspaces existants ne sont pas renommés : le nom du répertoire local
+  est libre et un espace extrait sous `career-ai-workspace/` continue de
+  fonctionner.
+- Les documents historiques ne sont pas réécrits.
+
+### Conditions de réévaluation
+
+Aucune identifiée.
+
+## D-018 — « Espace carrière » comme terme fonctionnel français
+
+- **Type** : UX
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-04
+- **Issue** : #15
+
+### Contexte
+
+Le produit étant renommé (D-017), il faut un terme français naturel que le
+coach emploie avec l'utilisateur. « Workspace » est un terme technique anglais
+qui ne parle pas à un utilisateur francophone.
+
+### Options considérées
+
+- **« Espace de travail de carrière »** : rejetée, moins naturel.
+- **« Espace carrière »** : retenue, plus naturel et conservant la portée
+  fonctionnelle du produit.
+
+### Décision et intention
+
+En français, le coach et la documentation destinée à l'utilisateur parlent de
+« espace carrière » ; en anglais, de « career workspace » (« My Career
+Workspace » comme nom de produit dans la documentation). « Workspace » reste le
+terme du concept technique (répertoire de fichiers avec moteur et `data/`)
+quand il ne désigne pas le produit.
+
+### Conséquences
+
+- `workspace/AGENTS.md` interdit « workspace » et « espace de travail » dans la
+  bouche du coach en français.
+- Le glossaire distingue My Career Workspace, espace carrière et workspace.
+
+### Conditions de réévaluation
+
+Aucune identifiée.
+
+## D-019 — Accueil de première session et prénom de l'utilisateur
+
+- **Type** : UX
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-04
+- **Issue** : #15
+
+### Contexte
+
+La première session de l'utilisateur dans son espace carrière commençait par un
+compte rendu technique de création de fichiers, sans accueil ni
+personnalisation. Le recentrage du produit demande un accueil, et le coach gagne
+à pouvoir s'adresser à l'utilisateur par son prénom, si celui-ci le souhaite. Le
+début de session doit rester rapide (voir #16).
+
+### Options considérées
+
+- **Fichier marqueur pour détecter la première session** : rejetée, déjà écartée
+  par `init-workspace`.
+- **Absence des quatre fichiers obligatoires comme signal** : proposition
+  initiale, jugée moins simple.
+- **Question posée après l'initialisation** : rejetée, car noyée sous le compte
+  rendu ; le message défile sans laisser le temps de lire.
+- **Question reposée à chaque session tant qu'elle n'est pas tranchée** :
+  rejetée au profit d'une seule relance.
+- **Prénom traité plus tard avec #10** : rejetée, car cohérent avec l'accueil.
+
+### Décision et intention
+
+La première session est détectée par l'absence de `data/current-status.md`,
+sauf si le dossier professionnel ou un répertoire d'opportunité existe (perte
+possible, sans accueil). Le contrôle ne lit aucun fichier de données et précède
+toute autre lecture. Le coach affiche l'accueil avec la question du prénom et
+attend la réponse, comme lors d'une vraie rencontre, avant toute autre tâche
+d'initialisation. Le choix est stocké dans `user.address_by_first_name`
+(`unset`, `ask_again`, `yes`, `no`) et `user.first_name` de `workspace.yaml`.
+Une question ignorée est reposée une seule fois.
+
+### Conséquences
+
+- Le coach met désormais à jour les deux clés `user.*` de `workspace.yaml`, en
+  plus de l'ajout des clés manquantes ; c'est une exception documentée.
+- Salutations en début et fin de conversation, avec le prénom si accepté.
+- Les workspaces d'une version antérieure reçoivent la section `user` et la
+  question, sans message d'accueil.
+
+### Conditions de réévaluation
+
+Aucune identifiée.
+
 ## Évolution du journal
 
 - Ajouter une entrée au modèle ci-dessus lorsqu'un choix structurel ou

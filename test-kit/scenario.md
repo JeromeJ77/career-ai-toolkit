@@ -25,27 +25,29 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 ### A1 — Extraire et ouvrir le workspace [demo] [manual]
 
 - **Durée démo** : 2 min
-- **Fichiers** : `career-ai-workspace-v<version>.zip` → un répertoire hors du dépôt, par exemple `C:\Temp\career-ai-workspace-demo-26-10-03\`.
-- **Action** : extraire le ZIP hors du dépôt, puis renommer le répertoire extrait avec un suffixe `-demo` ou `-test` suivi de la date du jour au format `AA-MM-JJ` (par exemple `career-ai-workspace-demo-26-10-03`), jamais le nom de base : il ne doit pas être confondu avec un workspace personnel ou de bêta-test ouvert ailleurs, et la date confirme dans l'outil IA qu'on travaille bien dans le workspace du jour. Garder les workspaces des passes précédentes dans `C:\Temp\` plutôt que les supprimer : on peut ainsi comparer les résultats de plusieurs tests ou démos. Ouvrir ce répertoire comme projet dans VS Code avec Claude Code (ou l'outil IA équivalent). Montrer l'arborescence : moteur à la racine, `data/` ne contenant que des `README.md`.
-- **Attendu** : le ZIP contient un seul répertoire racine `career-ai-workspace/` ; `data/` ne contient aucun fichier de travail.
+- **Fichiers** : `my-career-workspace-v<version>.zip` → un répertoire hors du dépôt, par exemple `C:\Temp\my-career-workspace-demo-26-10-03\`.
+- **Action** : extraire le ZIP hors du dépôt, puis renommer le répertoire extrait avec un suffixe `-demo` ou `-test` suivi de la date du jour au format `AA-MM-JJ` (par exemple `my-career-workspace-demo-26-10-03`), jamais le nom de base : il ne doit pas être confondu avec un workspace personnel ou de bêta-test ouvert ailleurs, et la date confirme dans l'outil IA qu'on travaille bien dans le workspace du jour. Garder les workspaces des passes précédentes dans `C:\Temp\` plutôt que les supprimer : on peut ainsi comparer les résultats de plusieurs tests ou démos. Ouvrir ce répertoire comme projet dans VS Code avec Claude Code (ou l'outil IA équivalent). Montrer l'arborescence : moteur à la racine, `data/` ne contenant que des `README.md`.
+- **Attendu** : le ZIP contient un seul répertoire racine `my-career-workspace/` ; `data/` ne contient aucun fichier de travail.
 - **Plan de test** : Workspace — « Extract the ZIP outside the repository », « Open it as a new VS Code/Claude Code project » ; Build — « Confirm the ZIP tree matches `docs/architecture.md#workspace-tree` ».
 
 ## Phase B — Initialisation du workspace
 
 ### B1 — Première session [demo]
 
-- **Durée démo** : 2 min
+- **Durée démo** : 3 min
 - **Conversation** : nouvelle (la première du workspace)
-- **Prompt** : « Bonjour, on peut commencer la première session. »
-- **Attendu** : le coach crée les quatre fichiers obligatoires (`data/config/workspace.yaml`, `data/current-status.md`, `data/profile/professional-profile.md`, `data/profile/sources/external-references.md`) depuis les modèles, le dit en une phrase par fichier, et ne remplit pas le dossier professionnel. `data/feedback/pilot-feedback.md` n'est pas créé.
-- **Mots-clés** : faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
-- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach creates the four missing mandatory files… », « Confirm the created profile is an empty skeleton… », « Confirm `data/feedback/pilot-feedback.md` is created only on request ».
+- **Prompt 1** : « Bonjour, on peut commencer la première session. »
+- **Attendu 1** : le coach affiche immédiatement l'accueil exact (« Bienvenue dans votre **espace carrière** ! », phrase de présentation, question sur le prénom) et attend la réponse, sans créer de fichier ni lire de données avant. Il parle d'« espace carrière », jamais de « workspace ».
+- **Prompt 2** : « Oui, Nadia. »
+- **Attendu 2** : le coach accuse réception (« Entendu, Nadia. Vous pourrez changer cela à tout moment, en me le demandant ou dans votre configuration. »), crée les quatre fichiers obligatoires (`data/config/workspace.yaml`, `data/current-status.md`, `data/profile/professional-profile.md`, `data/profile/sources/external-references.md`) depuis les modèles, le dit en une seule phrase fonctionnelle (« J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. »), propose de construire le dossier professionnel à partir des documents de la candidate, et ne remplit pas le dossier professionnel. `data/config/workspace.yaml` contient `user.address_by_first_name: yes` et `first_name: "Nadia"`. `data/feedback/pilot-feedback.md` n'est pas créé.
+- **Mots-clés** : montrer l'accueil et la question du prénom, puis le fait que le coach attend la réponse avant de préparer l'espace ; faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
+- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm `data/feedback/pilot-feedback.md` is created only on request » ; Refocus on My Career Workspace (#15).
 
 ### B2 — Deuxième session sans changement
 
 - **Conversation** : nouvelle
-- **Prompt** : « Bonjour, on reprend. »
-- **Attendu** : rien n'est créé ni réécrit, le coach ne signale aucune création.
+- **Prompt** : « On reprend. »
+- **Attendu** : le coach salue par « Bonjour Nadia. », sans message d'accueil ni question sur le prénom ; rien n'est créé ni réécrit, il ne signale aucune création.
 - **Plan de test** : Workspace — « Confirm a second session creates nothing and overwrites nothing… ».
 
 ### B3 — Fichier supprimé, fichier personnalisé [manual]
@@ -77,6 +79,37 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Action** : vérifier dans `data/config/workspace.yaml` que `language.profile` et `language.coaching` valent `"fr-FR"` et que `language.deliverables` contient `"fr-FR"` (les modifier sinon).
 - **Attendu** : les valeurs sont celles du modèle ; aucune modification n'est nécessaire sur un workspace neuf.
 - **Plan de test** : Workspace — « Set the profile and coaching languages in `data/config/workspace.yaml`… ».
+
+### B7 — Prénom : réponses et version antérieure [manual]
+
+- **Action** : dans `data/config/workspace.yaml`, supprimer la section `user`.
+- **Conversation** : nouvelle
+- **Prompt** : « Bonjour, on reprend. »
+- **Attendu** : les clés `user.address_by_first_name: unset` et `user.first_name: ""` sont ajoutées et signalées ; le coach pose la question du prénom **sans** message d'accueil.
+- **Prompt (suite)** : ignorer la question, par exemple « Rappelle-moi où en est mon dossier. »
+- **Attendu** : le coach ne insiste pas et traite la demande ; la valeur est `ask_again`.
+- **Conversation** : nouvelle, prompt « Bonjour. » : la question est reposée une dernière fois ; l'ignorer à nouveau → la valeur devient `no`.
+- **Action** : remettre `unset`. Nouvelle conversation, prompt « Bonjour. », répondre « Oui » sans prénom : le coach demande « Quel prénom dois-je utiliser ? » et n'écrit rien tant qu'il n'est pas donné.
+- **Action** : remettre `unset`. Nouvelle conversation, prompt « Bonjour. », répondre « Non » : valeur `no`, accusé de réception conforme ; à la conversation suivante, « Bonjour. » sans prénom et sans question.
+- **Action** : remettre `yes` et `"Nadia"`. Nouvelle conversation, puis écrire « Merci, au revoir. » : le coach répond « À bientôt, Nadia. » Le prénom n'est pas répété à chaque message.
+- **Attendu** : à la fin, `yes` et `"Nadia"` sont rétablis pour la suite du scénario.
+- **Plan de test** : Refocus on My Career Workspace (#15) — réponses sur le prénom, `ask_again`, workspace d'une version antérieure, salutations.
+
+### B8 — Garde-fou de première session [manual]
+
+- **Action** : dans un workspace déjà utilisé (dossier professionnel rempli), supprimer `data/current-status.md`.
+- **Conversation** : nouvelle
+- **Prompt** : « Bonjour. »
+- **Attendu** : pas de message d'accueil ; le coach signale une perte possible de `current-status.md` et demande comment procéder, sans recréer le fichier avant la réponse.
+- **Plan de test** : Refocus on My Career Workspace (#15) — première session détectée par l'absence de `current-status.md`, sauf perte possible.
+
+### B9 — Première session en anglais [manual]
+
+- **Fichiers** : extraire une seconde fois le ZIP, dans un autre répertoire (par exemple `my-career-workspace-test-en-26-10-03`).
+- **Conversation** : nouvelle (la première de ce second workspace)
+- **Prompt** : « Hello, let's start. »
+- **Attendu** : le coach affiche l'accueil anglais exact (« Welcome to your **career workspace**! »…) et la question du prénom, attend la réponse, puis accuse réception en anglais (« Got it, … »), rend compte en une phrase en anglais et propose de construire le dossier. Il dit « career workspace », jamais « workspace » seul pour désigner le produit.
+- **Plan de test** : Refocus on My Career Workspace (#15) — première session en anglais.
 
 ## Phase C — Sources et dossier professionnel
 
@@ -309,8 +342,8 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Durée démo** : 3 min
 - **Conversation** : nouvelle (après E1 en démo, ou après E2 quand #11 sera livrée)
 - **Prompt** : « Bonjour, j'aimerais reprendre. »
-- **Attendu** : le coach lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate, par exemple l'entretien le plus proche ; les dates citées sont celles des fichiers, formulées de la même façon tout au long du message.
-- **Mots-clés** : c'est le point clé de la démo, « le workspace porte le contexte, pas la conversation » : une nouvelle conversation, et le coach sait où en sont les deux opportunités et ce qu'il reste à faire.
+- **Attendu** : le coach salue par « Bonjour Nadia. », lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate, par exemple l'entretien le plus proche ; les dates citées sont celles des fichiers, formulées de la même façon tout au long du message.
+- **Mots-clés** : c'est le point clé de la démo, « l'espace carrière porte le contexte, pas la conversation » : une nouvelle conversation, et le coach sait où en sont les deux opportunités et ce qu'il reste à faire.
 - **Plan de test** : Workspace — « Start a new conversation for a later coaching session and confirm work can be resumed from the workspace without prior conversation history ».
 
 ### *E4 — Fonctionnement avec Git* [demo] [todo #6]
@@ -338,7 +371,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 | Étape | Durée indicative |
 | --- | --- |
 | A1 Extraire et ouvrir | 2 min |
-| B1 Première session | 2 min |
+| B1 Première session | 3 min |
 | C1 Sources et transcription | 4 min |
 | C2 Validation du dossier | 2 min |
 | *C3 Entretien d'initialisation* | *`[todo #10]`* |
@@ -353,6 +386,6 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 | *E2 Changement de périmètre* | *`[todo #11]`* |
 | E3 Reprise depuis le workspace | 3 min |
 | *E4 Git* | *`[todo #6]`* |
-| **Total disponible** | **41 min** |
+| **Total disponible** | **42 min** |
 
 La démo vise 35 à 40 minutes. Les durées ci-dessus sont révisées d'après la démo à blanc du 2026-10-03 : environ 45 minutes mesurées pour ces étapes, avec dictée des heures au scribe ; enchaînées sans prise de notes, elles devraient tenir en 35 à 40 minutes. Le premier déroulé complet (2026-10-02, environ 1 h 29) mêlait test, consignation et étapes hors démo et ne mesure pas une vraie démo. C2 et D3 restent dans la démo : C2 est rapide, et D3 montre un entretien passé sans préparation avant l'entretien technique. D5 gagne une minute pour montrer un arrêt refusé puis confirmé. La démo enregistrée du 2026-10-03 a duré environ 38 minutes de A1 à E1, commentaires compris, puis 41 minutes avec la reprise : C1 et D5 sont ramenées d'une minute, D3 gagne une minute, et E3, qui ne dépend plus de #11, entre dans la démo pour montrer la reprise depuis le workspace. Quand les issues `[todo]` seront livrées, il faudra arbitrer pour rester dans la cible.

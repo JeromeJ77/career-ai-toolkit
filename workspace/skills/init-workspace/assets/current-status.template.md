@@ -1,4 +1,4 @@
-# État courant du workspace
+# État courant de l'espace carrière
 
 Dernière mise à jour : non initialisé
 
@@ -13,4 +13,4 @@ Dernière mise à jour : non initialisé
 
 ## Point de reprise
 
-- Configurer le workspace et définir le premier objectif de travail.
+- Configurer l'espace carrière et définir le premier objectif de travail.

@@ -1,7 +1,7 @@
 # Use Cases
 
 Career AI Toolkit is organized around a candidate who wants to keep ownership
-of career information while using AI for structured preparation. Version 0.3
+of career information while using AI for structured preparation. The pilot
 focuses on the interview coach and local workspace pilot; CV generation is a
 planned skill and is represented here as part of the intended workflow.
 
@@ -114,7 +114,7 @@ conversation can continue without relying on previous conversation history.
 
 ## Use Case Notes
 
-| Use case | Current v0.3 support | Main output |
+| Use case | Current support | Main output |
 | --- | --- | --- |
 | Create private workspace | Supported through the built ZIP | Extracted local workspace with `data/current-status.md` created on first use |
 | Initialize professional profile | Supported through coach instructions and templates | `data/profile/professional-profile.md` |
@@ -131,7 +131,7 @@ conversation can continue without relying on previous conversation history.
 ```mermaid
 flowchart TD
     start([Start pilot])
-    workspace["Workspace mode<br/>build and extract private ZIP"]
+    workspace["My Career Workspace<br/>build and extract private ZIP"]
     configure["Configure workspace<br/>language, preferences, tool context"]
     sources["Add authorized sources<br/>historical CVs, certifications, notes"]
     initProfile["Ask assistant to initialize professional profile"]

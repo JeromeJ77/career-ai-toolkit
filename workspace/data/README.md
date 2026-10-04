@@ -9,6 +9,6 @@ Le ZIP distribué ne contient ici que des `README.md`. Au premier lancement, le 
 - `profile/sources/external-references.md` ;
 - `current-status.md`.
 
-`feedback/pilot-feedback.md` est facultatif et n'est créé qu'à votre demande. Le coach n'écrase jamais un fichier existant.
+`feedback/pilot-feedback.md` est facultatif et n'est créé qu'à votre demande. Le coach n'écrase jamais un fichier existant. Dans `config/workspace.yaml`, il n'ajoute que les clés manquantes et met à jour les deux clés de la section `user` (prénom) à partir de votre réponse ou de votre demande.
 
 Ne publiez jamais ce répertoire sans avoir retiré les données personnelles.

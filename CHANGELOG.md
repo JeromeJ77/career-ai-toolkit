@@ -4,6 +4,17 @@
 
 ### Added
 
+- First-session welcome (#15): on the first session of a workspace (no
+  `data/current-status.md`, no sign of lost content) the coach welcomes the
+  candidate to their career workspace, asks whether to use their first name and
+  waits for the answer before creating the mandatory files, then reports in one
+  sentence and proposes to build the professional profile. The choice is stored
+  in a new `user` section of `workspace.yaml` (`address_by_first_name`,
+  `first_name`); the coach greets the candidate at the start of a conversation
+  and says goodbye at the end, with their first name if accepted. An ignored
+  question is asked once more. A workspace from an earlier version gets the
+  `user` section and the question, without the welcome message. See decision
+  D-019.
 - The workspace ZIP now contains an `ENGINE-VERSION` file at its root, generated
   by the build from `VERSION`, so that the installed engine version can be
   identified (a v0.3.0 workspace has none). The coach does not use it yet.
@@ -34,7 +45,7 @@
   references), two fictional opportunities (one job posting in English) and a
   master scenario listing every test and demo step with its prompts, keywords,
   files and expected result. The build now produces a second ZIP,
-  `career-ai-test-kit-v<version>.zip`, with the fictional sources and a demo
+  `my-career-workspace-test-kit-v<version>.zip`, with the fictional sources and a demo
   script of 35 to 40 minutes extracted from the `[demo]` steps and reduced to
   what the presenter does and says (no expected results, test references or
   steps waiting for an undelivered issue). The workspace ZIP still contains no
@@ -69,6 +80,21 @@
 
 ### Changed
 
+- The product is now **My Career Workspace** (#15, decisions D-017 and D-018):
+  a personal, persistent career workspace built around a living professional
+  profile. The release archives and the root directory are renamed
+  (`my-career-workspace-v<version>.zip`, `my-career-workspace-test-kit-v<version>.zip`,
+  `my-career-workspace/`, `my-career-workspace-pilot-feedback-v<version>.md`);
+  the repository stays `career-ai-toolkit`. In French the coach says « espace
+  carrière » instead of « workspace ». Existing workspaces are not renamed and
+  keep working. The user guide is now
+  `docs/my-career-workspace-user-guide.md`, the glossary and the READMEs present
+  the product and its vision.
+- The version of the pilot feedback template is now inserted by the build
+  (`{{VERSION}}` placeholder), and the README, contributing guide and design
+  documents no longer cite a version number.
+- The coach now writes `user.address_by_first_name` and `user.first_name` in
+  `workspace.yaml`, in addition to appending missing keys.
 - The interview coach skill now carries the generic coaching rules inherited
   from the abandoned standalone instructions (#14): action-oriented analysis
   dimensions, strategic messages as working hypotheses with the final decision

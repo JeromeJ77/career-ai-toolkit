@@ -1,4 +1,14 @@
-# Workspace mode
+# My Career Workspace user guide
+
+My Career Workspace is your personal, persistent career workspace (in French, « espace carrière »): a living professional profile that you own and validate, which grows with every opportunity, preparation, simulation and debriefing. Extract the built My Career Workspace ZIP outside the toolkit repository and open its root in a file-aware AI tool. Read `README.fr.md`, add authorized sources and initialize the professional profile; the profile language is configured in `data/config/workspace.yaml`, created by the coach in the first session. For a new application, give the available job documents or context to the coach; the coach creates the opportunity structure. Keep the workspace private.
+
+The local directory name is free: a workspace extracted under `career-ai-workspace/` keeps working and does not need to be renamed. At the next session the `user` section is added to its `workspace.yaml` and the first-name question is asked, without the welcome message.
+
+## First session
+
+The first session is detected by the absence of `data/current-status.md` (unless a professional profile or an opportunity directory already exists: that is a possible loss, handled without a welcome message). Before anything else, the coach welcomes you to your career workspace and asks whether to call you by your first name, then waits for your answer. It then creates the mandatory files, acknowledges your answer, reports in one sentence what it prepared and proposes to build your professional profile from your documents. If your first message already contains a request, the coach handles it right after your answer.
+
+The choice is stored in the `user` section of `data/config/workspace.yaml` (`address_by_first_name`: `unset`, `ask_again`, `yes` or `no`; `first_name`). You can change it at any time by asking the coach or by editing the file. With `yes`, the coach greets you by your first name at the start of a conversation and says goodbye when you end the session.
 
 Extract the built workspace ZIP outside the toolkit repository and open its root in a file-aware AI tool. Read `README.fr.md`, configure the profile language, add authorized sources and initialize the professional profile. For a new application, give the available job documents or context to the coach; the coach creates the opportunity structure. Keep the workspace private.
 

@@ -1,6 +1,6 @@
 # Contributing
 
-Version 0.3 is a pilot. Keep contributions small, testable, and aligned with validated user needs.
+The toolkit is in a pilot phase. Keep contributions small, testable, and aligned with validated user needs.
 
 1. Read `AGENTS.md`, `BACKLOG.md`, and `docs/test-plan.md`.
 2. Never use real candidate data in examples or tests.
@@ -139,7 +139,7 @@ Board columns: Backlog, Ready, In progress, In review, Done.
   `accessibility`.
 - Aspect: `non-functional` for performance, privacy, reliability and other
   non-functional concerns.
-- Scope: `workspace-mode`, `skill`. The `standalone-mode` label is kept only
+- Scope: `my-career-workspace`, `skill`. The `standalone-mode` label is kept only
   for issues created before the standalone mode was abandoned (#14).
 - Source: `pilot-feedback` for feedback from pilot testers.
 - Closing reasons: `duplicate`, `invalid`, `wontfix`.

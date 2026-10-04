@@ -7,6 +7,10 @@ language:
     - "fr-FR"
     - "en-GB"
 
+user:
+  address_by_first_name: unset   # unset | ask_again | yes | no
+  first_name: ""
+
 privacy:
   require_confirmation_before_profile_update: true
   allow_external_web_search: false

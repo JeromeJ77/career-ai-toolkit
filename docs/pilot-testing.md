@@ -1,4 +1,4 @@
-# v0.3 pilot protocol
+# Pilot protocol
 
 ## Goal
 
@@ -15,7 +15,7 @@ Determine whether the local workspace is useful, understandable and reusable bef
 2. Provide only documents the participant is authorized to use.
 3. Initialize or provide a professional profile.
 4. Optionally generate or refresh a CV from the professional profile if the
-   participant needs one, noting that v0.3 has no dedicated CV-generation
+   participant needs one, noting that the toolkit has no dedicated CV-generation
    skill yet.
 5. Give the coach the available sources for a real opportunity and let it
    create the numbered directory and canonical Markdown independently from the

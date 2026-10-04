@@ -1,9 +1,9 @@
-# Career AI Workspace
+# My Career Workspace
 
-Ce modèle de workspace fait partie de Career AI Toolkit,
+My Career Workspace fait partie de Career AI Toolkit,
 créé par Jérôme Jurbert et distribué sous licence MIT.
 
-Cet espace privé permet de constituer un dossier professionnel, préparer des opportunités et capitaliser les apprentissages d'entretien.
+Votre **espace carrière** est un espace privé, local et durable : vous y construisez un dossier professionnel vivant, dont vous gardez la propriété et que vous validez, puis vous l'exploitez au fil de vos opportunités et de vos entretiens. Chaque opportunité, préparation, simulation et débriefing peut l'enrichir : votre travail devient un capital professionnel réutilisable. Le coach IA vous aide à l'analyser, à le synthétiser et à vous préparer ; il ne remplace pas votre validation.
 
 ## Structure
 
@@ -11,16 +11,16 @@ Le moteur (`skills/`, `AGENTS.md`, `CLAUDE.md`, les README, `ENGINE-VERSION` qui
 
 ## Démarrage
 
-1. Choisissez dans `data/config/workspace.yaml` la langue du profil et du coaching.
-2. Lisez `data/profile/sources/README.md`.
-3. Déposez uniquement les documents que vous êtes autorisé à conserver.
-4. Ouvrez ce répertoire racine dans VS Code, Claude Code ou un autre agent local.
+1. Ouvrez ce répertoire racine dans VS Code, Claude Code ou un autre agent local.
+2. Écrivez un premier message. Lors de la première session, le coach vous accueille, vous demande si vous souhaitez être appelé par votre prénom, puis prépare votre espace carrière (`data/config/workspace.yaml` et les autres fichiers obligatoires).
+3. Choisissez dans `data/config/workspace.yaml` la langue du profil et du coaching.
+4. Lisez `data/profile/sources/README.md`, puis déposez uniquement les documents que vous êtes autorisé à conserver.
 5. Demandez : « Constitue une première version de mon dossier professionnel à partir des sources disponibles. Propose-la avant toute modification. »
 6. Relisez et validez `data/profile/professional-profile.md`.
 7. Pour une candidature, fournissez au coach l'offre et le contexte disponibles, puis demandez-lui d'ajouter l'opportunité. Il crée son répertoire numéroté, sa représentation Markdown et son `current-status.md`.
 8. Laissez le coach ajouter les entretiens, simulations et retours au fur et à mesure du processus. Les sources originales autorisées restent inchangées.
-9. Utilisez chaque conversation comme une session de coaching ciblée et relativement courte. Le workspace et ses fichiers `current-status.md` portent la continuité entre les conversations.
-10. Au début d'une nouvelle session, indiquez son objectif. Pour reprendre, vous pouvez simplement demander : « Où en étions-nous ? » ; le coach relit alors l'état persistant du workspace.
+9. Utilisez chaque conversation comme une session de coaching ciblée et relativement courte. Votre espace carrière et ses fichiers `current-status.md` portent la continuité entre les conversations.
+10. Au début d'une nouvelle session, indiquez son objectif. Pour reprendre, vous pouvez simplement demander : « Où en étions-nous ? » ; le coach relit alors l'état persistant de votre espace carrière.
 11. Après l'entretien, faites un retour d'expérience et validez les enrichissements durables du profil.
 
 ## Confidentialité
