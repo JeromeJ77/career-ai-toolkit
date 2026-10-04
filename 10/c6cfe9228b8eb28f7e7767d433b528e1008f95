@@ -1,0 +1,93 @@
+CHANGELOG.md
+  s_9673df49cc431d::t_b1a26998e5de6e 7-17,48,83-97
+CONTRIBUTING.md
+  s_9673df49cc431d::t_afe52f79ee3769 3,142
+README.fr.md
+  s_9673df49cc431d::t_741ce25565c046 5,11-17,21,33-35,37,47,51,56,58,61,78-79,84
+README.md
+  s_9673df49cc431d::t_389dce665d26dd 5,9-23,30-32,46,50
+build.bat
+  s_9673df49cc431d::t_6a354532daee17 54,57,64-65,71-92,94,102-106,111,113,119
+docs/architecture.md
+  s_9673df49cc431d::t_3359becad2f9ce 3-5,25,52,187
+docs/design/01-career-ai-toolkit-workflow-design.md
+  s_9673df49cc431d::t_e5c59045dcd9b9 5
+docs/design/decision-log.md
+  s_9673df49cc431d::t_48c8000a3fb8d7 917-1062
+docs/document-lifecycle.md
+  s_9673df49cc431d::t_5b119207e70411 91
+docs/glossary.md
+  s_9673df49cc431d::t_c6b1d2a121957a 14-16,18,32,37,64
+docs/my-career-workspace-user-guide.md
+  s_9673df49cc431d::t_5714dd320b2c21 1-11
+docs/pilot-testing.md
+  s_9673df49cc431d::t_83dd7446d7d369 1,18
+docs/test-history/2026-10-04-recentrage-my-career-workspace.md
+  s_9673df49cc431d::t_daaae9cf1a9b5e 1-25
+docs/test-log.md
+  s_9673df49cc431d::t_37040f3d4015ca 21-22,24,30,33,60,96-97,110,118
+docs/test-plan.md
+  s_9673df49cc431d::t_37318118527a07 11-15,19,48,57-61
+docs/use-cases.md
+  s_9673df49cc431d::t_da77b048db2fb1 4,117,134
+test-kit/README.md
+  s_9673df49cc431d::t_7af7f4909a6ebc 5
+test-kit/guide-testeur.md
+  s_9673df49cc431d::t_29abe580502e63 7
+test-kit/scenario.md
+  s_9673df49cc431d::t_334df582d74f0f 28-30,37,39-44,49-50,83-113,345-346,374,389
+test-kit/tools/demo-script-header.md
+  s_9673df49cc431d::t_d2011f5bf0bb1e 1,7
+workspace/README.fr.md
+  s_9673df49cc431d::t_9325d7817b4818 1,3,6,14-17,22-23
+workspace/README.md
+  s_9673df49cc431d::t_51a92755b560c5 1,3,6
+workspace/data/README.md
+  s_9673df49cc431d::t_2d9590dd39c619 12
+workspace/data/config/README.md
+  s_9673df49cc431d::t_60f23e2490cd2f 3
+workspace/data/cv/README.md
+  s_9673df49cc431d::t_9006adaa3722bd 3
+workspace/skills/init-workspace/assets/current-status.template.md
+  s_9673df49cc431d::t_810b1525c582db 1,16
+workspace/skills/init-workspace/assets/pilot-feedback.template.md
+  s_9673df49cc431d::t_f3fd5ce9213ea0 1,3,28
+AGENTS.md
+  s_27da8f97d29a0c::t_1ee2a999472a02 73-74
+workspace/AGENTS.md
+  s_9673df49cc431d::t_3711bb28f97470 1,5,15-22,62
+workspace/CLAUDE.md
+  s_9673df49cc431d::t_ad9d7d2442a456 5
+workspace/skills/README.md
+  s_9673df49cc431d::t_6353d601420f62 3
+workspace/skills/init-workspace/SKILL.md
+  s_9673df49cc431d::t_dbff756b290c39 3,20-96,99,103,106,112,114
+workspace/skills/init-workspace/assets/workspace.template.yaml
+  s_9673df49cc431d::t_2cabdeedb4a521 10-13
+workspace/skills/interview-coach/SKILL.md
+  s_9673df49cc431d::t_3558a8c0d6c22f 13,24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "10c6cfe9228b8eb28f7e7767d433b528e1008f95",
+  "prompts": {},
+  "sessions": {
+    "s_27da8f97d29a0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1a69bcc-5a1a-4023-80c6-d400c93e31fe",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_9673df49cc431d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ff860e75-e91a-4bba-b648-b8e9445c0547",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
