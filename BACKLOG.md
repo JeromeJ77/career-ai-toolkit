@@ -12,16 +12,6 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
-### Synthèse temporaire : issue candidate complémentaire du milestone v0.4.0
-
-Table de travail issue du grooming du 2026-10-04, à supprimer lors du nettoyage
-du backlog. Les priorités et tailles sont indicatives ; l'auteur les positionne
-sur le board.
-
-| Ordre | Titre provisoire | Objectif | Éléments couverts | Priorité | Taille | Dépendances |
-| --- | --- | --- | --- | --- | --- | --- |
-| J1 | Demander un joker pendant une simulation d'entretien | « joker » au début de la première phrase, ou une formulation de même sens (« j'ai besoin d'un joker »), suivi de la demande : conseil sur la question posée (« donne-moi un indice ») ou réponse proposée à la place du candidat (« propose une réponse à ma place ») ; sortie et retour de rôle toujours marqués en italique, avec si besoin une demande de précision du coach entre les deux ; réponse proposée signalée dans la conversation et la transcription, fondée sur le dossier et l'opportunité, avec les suppositions signalées ; débrief : réponse proposée non évaluée, réponse après conseil évaluée, nombre de jokers indiqué ; décision consignée sur l'articulation avec le principe « coach, pas générateur de réponses » ; étapes de démo du scénario maître utilisant le joker | Joker pendant une simulation d'entretien | P1 | M | n° 15 (implémentée après sa relecture, avant ses tests manuels) ; recoupe n° 3 sans la remplacer |
-
 ### Supprimer `language.coaching` : la langue de la session suit la conversation
 
 Écart constaté lors des tests de #14 (2026-10-04) : le coach répond dans la
@@ -59,35 +49,6 @@ Cette demande explicite fonctionne déjà : « Let's switch in English » a bien
   langue de `interview-coach/SKILL.md`, gestion des clés invalides ou dépréciées
   de `init-workspace`, README de config, test-plan, scénario maître du kit de
   test, `CHANGELOG.md`.
-
-### Joker pendant une simulation d'entretien
-
-Proposé après l'implémentation de #15 (2026-10-04), pour accélérer les tests
-manuels et les démos ; souhaité avant les tests manuels de #15.
-
-Pendant une simulation, un mode « joker » fait sortir temporairement le coach
-de son rôle d'interviewer, pour l'une de deux aides :
-
-- Conseil : le coach donne au candidat un conseil pour répondre à la question
-  posée. Utile surtout pour un utilisateur réel.
-- Réponse proposée : le coach propose une réponse plausible, comme si le
-  candidat l'avait donnée lui-même. Elle est signalée clairement comme telle,
-  dans la conversation comme dans la transcription. Utile surtout pendant une
-  démo, voire un test.
-
-Précisions de l'auteur :
-
-- Déclenchement : « j'ai besoin d'un joker » ou simplement « joker », suivi de
-  la demande, par exemple « réponds à ma place » ou « donne-moi un indice ».
-- Débrief : une réponse proposée par le joker n'est pas évaluée comme si le
-  candidat l'avait donnée ; une réponse donnée par le candidat après un conseil
-  du joker est évaluée. Le nombre de jokers utilisés est indiqué dans le
-  débrief, à titre indicatif.
-- Démo et tests : la démo serait beaucoup plus fluide et montrerait que ce mode
-  existe ; les tests, surtout de non-régression, iraient plus vite.
-
-Ce mode pourrait rendre inutile la pause de simulation (#3) : à discuter en
-grooming.
 
 L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
 mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
