@@ -1,0 +1,25 @@
+docs/lessons-learned.md
+  s_27da8f97d29a0c::t_52205380e31bf9 1-364
+docs/test-history/2026-10-04-tests-manuels-premiere-session.md
+  s_27da8f97d29a0c::t_7947e5c3828885 6
+AGENTS.md
+  s_27da8f97d29a0c::t_8633abd50f254b 114-121,136-137
+docs/design/decision-log.md
+  s_27da8f97d29a0c::t_1582b63554c773 1117-1173
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0fa2378446cff8c01506d40c962f44775fb85cd5",
+  "prompts": {},
+  "sessions": {
+    "s_27da8f97d29a0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1a69bcc-5a1a-4023-80c6-d400c93e31fe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
