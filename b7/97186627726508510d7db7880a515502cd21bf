@@ -1,0 +1,37 @@
+test-kit/tools/test-coverage/.claude-plugin/plugin.json
+  s_1a1dc1c141e700::t_60e4ed47a1ab25 1-6
+test-kit/tools/test-coverage/hooks/hooks.json
+  s_1a1dc1c141e700::t_bc0563eca69aa2 1
+test-kit/tools/test-coverage/hooks/register.tsx
+  s_1a1dc1c141e700::t_f2d743df25cee1 1-148
+test-kit/tools/test-coverage/tests/coverage.test.ts
+  s_1a1dc1c141e700::t_5bbfd68029534f 1-63
+test-kit/tools/test-coverage/tsconfig.json
+  s_1a1dc1c141e700::t_d7ff5924cda5d3 1-3
+test-kit/tools/test-coverage/types/index.d.ts
+  s_1a1dc1c141e700::t_20ee873a3400b6 1-12
+CHANGELOG.md
+  s_1a1dc1c141e700::t_768f0c27c6b0df 194-202
+test-kit/README.md
+  s_1a1dc1c141e700::t_e1e7e48fb5b96b 15
+test-kit/tools/README.md
+  s_1a1dc1c141e700::t_688630df00b671 8,42-94
+test-kit/tools/test-coverage/hooks/coverage.ts
+  s_1a1dc1c141e700::t_30d729604eb896 1-157
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b797186627726508510d7db7880a515502cd21bf",
+  "prompts": {},
+  "sessions": {
+    "s_1a1dc1c141e700": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26eeffe3-c260-437d-a792-51ac6a4fd968",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
