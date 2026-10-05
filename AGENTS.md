@@ -111,6 +111,14 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   synchronized in the same change when a term, decision or scope change is
   established. When it is still being discussed, preserve the uncertainty or
   propose the documentation update instead of silently deciding it.
+- Record in `docs/lessons-learned.md`, as they occur, the difficulties met
+  during the project, notably getting the coach to say or do precisely what is
+  intended. Use the numbered `L-XXX` entry template documented at the top of
+  that file, with links to issues, decisions and other entries, and keep its
+  « Enseignements » summary up to date. Add entries when debriefing manual
+  tests or reviewing an implementation, including analysis mistakes, and
+  update their status when the verifying test is replayed. The file is written
+  in French.
 
 ## Instructions as AI source code
 
@@ -125,6 +133,8 @@ documentation.
   (README, glossary, decision log, test plan, backlog).
 - Keep `workspace/AGENTS.md` and the skills consistent with each other, and
   update `docs/test-plan.md` and `CHANGELOG.md` in the same change.
+- Before writing or changing coach instructions, read the « Enseignements »
+  section of `docs/lessons-learned.md` and apply it.
 
 ## Sources and derived artifacts
 

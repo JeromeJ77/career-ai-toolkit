@@ -1114,6 +1114,63 @@ ignoré partout.
 Retours pilotes montrant un usage du joker pour mémoriser des réponses, ou
 livraison de #3.
 
+## D-021 — Un journal numéroté des difficultés de pilotage du coach
+
+- **Type** : PROCESS
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-05
+- **Issue** : aucune (constat fait pendant les tests de #15 et #18)
+
+### Contexte
+
+Les tests manuels de #15 et #18 ont montré que faire dire ou faire précisément
+ce qu'on veut au coach coûte beaucoup de temps : un détail trivial dans un
+programme classique (une ligne fixe, une question à ne pas reposer) demande une
+règle, un test, puis une ou deux passes de correction. Ces difficultés et leurs
+parades n'étaient tracées que dispersées dans les plans (ignorés par Git), les
+sessions de test et le backlog, sans synthèse réutilisable pour écrire les
+prochaines consignes.
+
+### Options considérées
+
+- **Mémoire de l'agent d'analyse** : rejetée, car propre à un outil et à une
+  conversation ; les autres agents, dont celui de développement, ne la lisent
+  pas.
+- **Journal en texte libre** (constats et enseignements, sans structure) :
+  première version, jugée insuffisante pour référencer une difficulté depuis
+  une issue, une décision ou un test, et pour suivre la vérification d'une
+  parade.
+- **Journal numéroté au modèle structuré** : retenue.
+
+### Décision et intention
+
+Tenir `docs/lessons-learned.md`, en français, avec des entrées `L-XXX`
+numérotées à la suite et jamais renumérotées : type (STEERING, ANALYSIS,
+PROCESS), statut, date d'ajout, issues, décisions et entrées liées, modèle IA en
+cause, coût en passes de correction, puis constat, cause probable, parade et
+vérification. Les statuts suivent le cycle du journal des tests : 🔴 Ouverte,
+🟡 Parade à vérifier, ✅ Parade vérifiée, ⚪ Obsolète. Une section
+« Enseignements » en tête synthétise les règles d'écriture tirées des entrées.
+
+L'intention est double : mesurer le coût réel du pilotage d'un agent par des
+consignes, et ne pas refaire les mêmes erreurs en écrivant les consignes du
+coach.
+
+### Conséquences
+
+- `AGENTS.md` exige d'ajouter une entrée au débrief des tests ou à la relecture
+  d'une implémentation, erreurs d'analyse comprises, de mettre à jour son statut
+  quand le test de vérification est rejoué, et de relire les « Enseignements »
+  avant de modifier les consignes du coach.
+- Les écarts de #15 et #18 forment les entrées L-001 à L-009.
+- Le modèle IA utilisé doit être noté dans chaque session de test.
+
+### Conditions de réévaluation
+
+Fusionner avec un autre document ou alléger le modèle si le journal n'est pas
+tenu ou pas relu ; le revoir aussi si un changement de modèle IA rend la
+plupart des entrées obsolètes.
+
 ## Évolution du journal
 
 - Ajouter une entrée au modèle ci-dessus lorsqu'un choix structurel ou

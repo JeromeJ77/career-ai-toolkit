@@ -3,7 +3,7 @@
 Session consignée dans le [journal des tests](../test-log.md).
 
 - **Testeur** : développeur du toolkit.
-- **Version** : `0.4.0-dev`, ZIP construit après les corrections R1 à R5 de #15 (commit et outil IA à préciser).
+- **Version** : `0.4.0-dev`, ZIP construit après les corrections R1 à R5 de #15 (commit à préciser) ; modèle Sonnet 5.5.
 - **Données** : sources fictives du kit de test (Nadia Berkani).
 
 ## Résultats
