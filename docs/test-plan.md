@@ -510,6 +510,74 @@ Non-regression:
 - Confirm the demo script includes the joker steps and its total duration is
   updated.
 
+## Privacy reminder and web browsing (#8)
+
+Nominal flow:
+
+- On the first session, after the candidate's answer to the first-name
+  question, confirm the coach gives a brief privacy reminder once (check the
+  AI tool's privacy settings, training on conversations, history and
+  attachment retention, extra care with personal accounts), without blocking
+  the work and without tool-specific procedure or guarantee.
+- Confirm the reminder is not repeated in a second session, nor in a new
+  conversation.
+- With `privacy.allow_external_web_search: false` and no request, confirm the
+  coach never browses on its own initiative.
+- One-off exception, job offer link: give a fictional offer link instead of
+  pasting the offer. Confirm the coach asks for or confirms the explicit
+  agreement for this link only, then (if browsing is available) opens it,
+  presents the extracted information for validation before writing it in
+  `opportunity.md`, and traces the provenance (link, consultation date).
+- One-off exception proposed by the coach: when a need appears (for example a
+  company page useful to the session), confirm the coach proposes it, waits
+  for the explicit agreement, and that the agreement does not turn browsing
+  on permanently (the next need is proposed again).
+- With the parameter set to `true`, confirm the coach may browse without
+  asking each time, and still presents retrieved information for validation
+  and traces its provenance.
+
+Edge cases:
+
+- The candidate refuses a proposed exception: confirm the coach does not
+  browse and offers to paste the content or provide the file.
+- Parameter missing from `workspace.yaml` (earlier version): confirm the coach
+  adds it with `false` (existing missing-key rule), does not browse, and does
+  not overwrite the file.
+- Parameter unreadable (invalid value): confirm the coach uses `false` for the
+  session, does not rewrite the file and reports it.
+- Browsing unavailable in the tool (or fictional link that cannot be opened):
+  confirm the coach says so, never claims to have consulted the resource and
+  proposes pasting the content or providing the file.
+- Retrieved information is never integrated into the professional profile or
+  an opportunity before the candidate validates it.
+
+Limit cases:
+
+- The candidate asks for browsing in the middle of a simulation: confirm the
+  rule is the same and the simulation is not broken.
+- The candidate switches the parameter to `true` by hand: confirm the coach
+  applies it from the next session (the sensitive-change alert remains in the
+  backlog).
+
+Documentation:
+
+- Confirm `docs/privacy.md` and the workspace READMEs (FR and EN) and user
+  guides explain, in generic terms, how to protect the privacy of exchanges
+  with the AI tool, with no tool-specific procedure and no guarantee, and
+  explain the default browsing rule, its intention and how to set the
+  parameter to `true` in the user's `data/config/workspace.yaml`.
+- Confirm D-003 is reworded (one-off exception proposed or requested, always
+  explicitly validated; open points settled or restated), and that the
+  glossary and `CHANGELOG.md` are updated.
+- Confirm the coach instructions (`workspace/AGENTS.md`, `CLAUDE.md`, skills)
+  are consistent with each other on this rule.
+
+Non-regression:
+
+- Replay B1 to B5 (first session, second session, missing key, invalid value)
+  and the Source transcription step with an attached offer: the reminder must
+  not disturb the welcome sequence nor the existing flows.
+
 ## Regression
 
 Repeat essential workspace scenarios after any change to the core coach instructions.

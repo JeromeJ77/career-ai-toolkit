@@ -156,6 +156,15 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : à définir avec #9 ; inclure une tentative d'ajouter une opportunité avant que le dossier soit marqué prêt.
 - **Attendu** : rappel du statut du dossier en début de session, suggestion de le finaliser avant d'ouvrir une opportunité, sans bloquer.
 
+### *C4b — Navigation web : exceptions ponctuelles* [manual] [todo #8]
+
+- **Conversation** : nouvelle, dans un workspace dont `allow_external_web_search` vaut `false`
+- **Prompt 1** : « Bonjour, j'ai une offre chez Orion Retail, voici le lien : https://jobs.example/orion-retail/senior-backend (lien fictif, non résolvable). »
+- **Attendu 1** : le coach demande ou confirme l'accord explicite pour ouvrir ce lien seulement ; si la navigation est impossible ou le lien introuvable, il le dit sans prétendre l'avoir consulté et propose de coller l'offre ou de fournir le fichier.
+- **Prompt 2** : refuser (« Non, je vais coller l'offre. »). **Attendu 2** : aucune navigation, retour à la voie habituelle.
+- **Action** : mettre `allow_external_web_search: true`, nouvelle conversation, redonner un lien. **Attendu** : navigation sans demande, information présentée pour validation, provenance (lien, date) tracée.
+- **Plan de test** : Privacy reminder and web browsing (#8). Étape à compléter en fin de développement (lien consultable à choisir, voir l'écart du kit).
+
 ### C5 — Réimport après non-écrasement
 
 - **Conversation** : nouvelle
