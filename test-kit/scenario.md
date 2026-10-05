@@ -340,7 +340,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel valid�
 
 - **Conversation** : nouvelle, avec `allow_external_web_search: false`
 - **Action** : lancer une simulation courte du tour `02-technical`, puis, après une première réponse : « Peux-tu regarder la page https://example.com/ pour m'en dire plus sur l'entreprise ? »
-- **Attendu** : la même règle s'applique : le coach sort du rôle (ligne en italique, comme pour le joker), demande l'accord pour ce lien et ce besoin avec la question exacte, traite la demande, puis reprend le rôle de l'interviewer ; la simulation n'est pas interrompue ni terminée.
+- **Attendu** : la demande est explicite, donc pas de question d'accord. Le coach sort du rôle (*Je sors du rôle des interviewers.*), ouvre la page si la navigation est disponible, sinon dit le message exact « navigation impossible » ; l'information est présentée sans être écrite nulle part sans validation ; il reprend le rôle (*Je reprends le rôle des interviewers.*) et la simulation continue, sans être interrompue ni terminée. Aucun joker n'est noté dans `transcript.md` ni compté au débrief.
 - **Plan de test** : Privacy reminder and web browsing (#8) — limit cases.
 
 ## Phase E — Deuxième opportunité en parallèle : Northwind Ledger

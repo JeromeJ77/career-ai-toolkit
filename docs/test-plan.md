@@ -555,7 +555,8 @@ Edge cases:
 Limit cases:
 
 - The candidate asks for browsing in the middle of a simulation: confirm the
-  rule is the same and the simulation is not broken.
+  rule is the same and the simulation is not broken (not recorded or counted
+  as a joker).
 - The candidate switches the parameter to `true` by hand: confirm the coach
   applies it from the next session (the sensitive-change alert remains in the
   backlog).
