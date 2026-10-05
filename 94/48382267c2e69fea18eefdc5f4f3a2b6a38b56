@@ -1,0 +1,75 @@
+docs/design/decision-log.md
+  s_0dccd6de0c750c::t_7faaa998c5074e 156-157,165-166,180-186,190-202,208-209
+docs/glossary.md
+  s_0dccd6de0c750c::t_52cfb10acaed54 69-71
+docs/privacy.md
+  s_0dccd6de0c750c::t_d81c2641d10b26 6-26
+docs/test-plan.md
+  s_0dccd6de0c750c::t_f27bf262824bd7 60-62,562-574
+test-kit/scenario.md
+  s_0dccd6de0c750c::t_01753dc29b0d1d 42-44,50,74,182-195,339-345,412
+workspace/README.md
+  s_0dccd6de0c750c::t_a6c2eff0ecf8ba 11-18
+workspace/skills/interview-coach/references/opportunity-structure-guidelines.md
+  s_0dccd6de0c750c::t_cc6db64cdb9e7a 20-21
+workspace/skills/interview-coach/references/profile-update-guidelines.md
+  s_0dccd6de0c750c::t_406ba1c68d2037 14-15
+CHANGELOG.md
+  s_1a1dc1c141e700::t_7e1f1f3a44ea34 7-22
+README.md
+  s_0dccd6de0c750c::t_4b5814bed419c6 36
+docs/lessons-learned.md
+  s_6e0f1278154c11::t_d1e4c8d6c23563 38-40,442-478
+docs/test-log.md
+  s_6e0f1278154c11::t_d16df579077987 22,24-25,42,97-98
+workspace/AGENTS.md
+  s_0dccd6de0c750c::t_9017f8ed891d2c 59-75
+workspace/CLAUDE.md
+  s_0dccd6de0c750c::t_b2457be2a75b9a 5
+workspace/README.fr.md
+  s_0dccd6de0c750c::t_d67b5cb3ccdfae 32-35
+workspace/USER-GUIDE.fr.md
+  s_0dccd6de0c750c::t_57cea0dbf15f9c 11,17-29
+workspace/USER-GUIDE.md
+  s_0dccd6de0c750c::t_edb7cc97f71278 11,17-29
+workspace/skills/init-workspace/SKILL.md
+  s_0dccd6de0c750c::t_b3ec75c9df2a54 60,65,68-69
+workspace/skills/init-workspace/assets/workspace.template.yaml
+  s_0dccd6de0c750c::t_126c522ab15b5c 16
+workspace/skills/interview-coach/SKILL.md
+  s_0dccd6de0c750c::t_4d93e8d143807d 53
+workspace/skills/interview-coach/assets/opportunity.template.md
+  s_0dccd6de0c750c::t_28938c02ea57b5 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9448382267c2e69fea18eefdc5f4f3a2b6a38b56",
+  "prompts": {},
+  "sessions": {
+    "s_0dccd6de0c750c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5dea7ac3-c36f-4c84-8244-c53591950e8f",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_1a1dc1c141e700": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26eeffe3-c260-437d-a792-51ac6a4fd968",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_6e0f1278154c11": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "214fa014-c93e-4338-ba55-f0f9541cca98",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
