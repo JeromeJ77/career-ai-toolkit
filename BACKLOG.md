@@ -79,6 +79,15 @@ anglais obtient donc un dossier rédigé en français sans l'avoir choisi.
 - À rapprocher de « Supprimer `language.coaching` » (même sujet de langue en
   première session et à la reprise) et de l'issue n° 10 (entretien
   d'initialisation du dossier professionnel).
+- Constat des tests manuels de #15 et #18 (2026-10-05, B9) : sans règle, le
+  coach a signalé de lui-même, à la fin du compte rendu de la première session,
+  que la configuration fixait le français alors que la conversation était en
+  anglais, et a proposé de passer à l'anglais. Sur demande, il a modifié
+  `language.profile` et `language.coaching`, ce que les consignes n'autorisent
+  pas (seules les clés `user.*` peuvent être modifiées, `workspace/AGENTS.md` et
+  `init-workspace`). Le comportement est souhaitable : c'est la règle qui est
+  trop stricte. Autoriser la modification des clés de langue sur demande
+  explicite du candidat (L-010).
 
 ### Signaler un écart entre l'identité du candidat et celle des sources
 
@@ -95,6 +104,11 @@ n'est donc pas garanti.
   l'identité du candidat (prénom configuré, dossier professionnel) et celle des
   sources, ne rien copier ni transcrire, et demander comment procéder.
 - Après la réponse, corriger le prénom à utiliser si le candidat le demande.
+- Constat confirmé aux tests manuels du 2026-10-05 (B1, B2) : écart relevé
+  (prénom configuré, notes à la première personne au féminin), rien écrit dans
+  `data/`, trois cas proposés, prénom changé seulement sur demande explicite.
+  Toujours émergent ; vu L-010, une règle n'est utile que si le comportement
+  disparaît.
 
 ### Auditer le skill du coach avant le pilote
 
@@ -117,6 +131,55 @@ pratiques de rédaction d'instructions et de skills pour agents.
 - À rapprocher de « Tests automatiques du coach par sous-agent » et des
   recommandations de raisonnement selon les tâches (section « Immediately
   after the end-to-end test »).
+- Inclure dans l'audit le niveau de contrainte des consignes (L-010) :
+  repérer les formulations imposées mot pour mot ou les interdictions qui ne
+  protègent rien d'important et qui ferment la porte à des comportements
+  adaptés.
+
+### Défauts mineurs restants après #15 et #18
+
+Relevés aux tests manuels du 2026-10-05
+([session](docs/test-history/2026-10-05-tests-manuels-corrections-15-18.md)).
+Aucun ne gêne le candidat : à ne corriger que si le pilote montre qu'ils
+gênent, sans ajouter de contrainte pour le seul plaisir de la conformité
+(L-010).
+
+- Reprise sans changement (B2) : « Votre espace carrière est en place, mais
+  votre dossier professionnel est encore vide… », variante de la phrase d'état
+  exclue (L-002). Le résumé de l'état du travail qui suit est utile ; seule la
+  phrase sur l'espace est de trop. Piste : dire ce qui est attendu après la
+  salutation (résumé du travail tiré de `current-status.md`) plutôt
+  qu'allonger la liste des phrases à éviter.
+- « joker » seul puis demande de réponse proposée : la ligne de sortie du rôle
+  est répétée avant la réponse proposée, alors que le coach est déjà hors rôle
+  (L-007).
+- Debrief écrit : la candidate est désignée à la troisième personne dans la
+  synthèse et les points solides, puis vouvoyée dans les priorités ; la
+  séparation entre observations et interprétations reste implicite.
+- Faute de français isolée dans une réplique d'interviewer (« une bonne
+  réflexe »).
+
+### Tenue des `current-status.md`
+
+Relevé aux tests manuels du 2026-10-05 (B3, B7) : après la préparation, la
+simulation 01 et son debrief, `data/current-status.md` donnait encore comme
+point de reprise « l'analyse de l'opportunité Lumen Pay et la préparation du
+premier échange ». En début de session, le coach a proposé ces tâches déjà
+faites ; il n'a corrigé l'état qu'après la remarque du testeur.
+
+- Reporter dans `data/current-status.md` le dernier scope et la dernière tâche
+  à chaque étape importante d'une opportunité (`interview-coach/SKILL.md` le
+  demande déjà).
+- En début de session, comparer le point de reprise avec le `current-status.md`
+  de l'opportunité concernée et corriger un état contredit par les fichiers
+  (`workspace/AGENTS.md` le demande déjà).
+- Le `current-status.md` de l'opportunité gardait aussi des restes périmés :
+  premier contact « prévu » alors que le round 01 est passé, « Travail
+  terminé » sans la préparation ni la simulation, deux « Prochaine action » qui
+  se recoupent ; `opportunity.md` disait encore que la candidate n'avait pas
+  indiqué où en était sa candidature.
+- Le testeur juge l'écart peu grave : une demande au coach suffit à le
+  corriger.
 
 ### Renommer le dépôt en `mycareer-toolkit`
 
@@ -186,12 +249,17 @@ des interviewers et prénom de l'utilisateur dans la conversation.
     directement l'accueil ou la salutation, sans citer les fichiers
     d'instructions ni la procédure. Reste à faire : le reste de la
     conversation et le mode développeur/test.
+  - Constat du 2026-10-05 (B1) : « c'est l'une des deux clés que je suis
+    autorisé à modifier » expose au candidat un détail des consignes.
 - Prénoms des interviewers en simulation : relevé à la démo à blanc
   (2026-10-03, étape D5) puis aux tests de #14 (2026-10-04) : « Interviewer 1 »
   évoque une autre personne alors qu'aucun interviewer ne porte de nom. Donner
   un prénom à chaque interviewer, cohérent d'un tour à l'autre de la
   simulation, plutôt que « interviewer 1 », « interviewer 2 ». Non implémenté à
-  ce jour.
+  ce jour. Constat du 2026-10-05 (D5) : sans règle, les interviewers ont eu des
+  prénoms et des rôles (Antoine et Inès, squad Scoring & Décision), cohérents
+  d'un tour à l'autre, nette amélioration relevée par le testeur. Vu L-010,
+  une règle n'est utile que si le comportement disparaît.
 - Prénom de l'utilisateur dans la conversation : proposé pendant le cadrage de
   #15 (2026-10-04). La question posée après le message d'accueil, la
   configuration du prénom et son usage en début et en fin de session sont
@@ -202,6 +270,10 @@ des interviewers et prénom de l'utilisateur dans la conversation.
   prénom revenait dans quatre messages rapprochés. Pour v0.4.0, #15 (R9)
   limite le prénom à la salutation, à l'accusé de réception du choix et à la
   prise de congé ; l'usage occasionnel est à réintroduire ici, avec mesure.
+  Constat du 2026-10-05 (B7) : une seule occurrence hors salutation, « Vous
+  avez raison, Nadia. », jugée bonne par le testeur ; aucune sur la longue
+  session D1 à D5. Assouplir la règle dans ce sens : le but est d'éviter le
+  prénom à chaque message, pas de l'interdire (L-010).
 - À rapprocher de « Ton et emojis paramétrables » et de « Tutoiement ou
   vouvoiement constant et paramétrable ».
 
@@ -302,6 +374,37 @@ des interviewers et prénom de l'utilisateur dans la conversation.
   entretien de complétion du dossier professionnel et le montrer en démo.
 - Différé : il anticipe des issues non encore développées (issue #10 pour
   l'entretien d'initialisation, issue #12 pour les données fictives et la démo).
+
+### Workspaces de test manuel accessibles à l'agent
+
+Constat des tests manuels du 2026-10-05 : l'agent d'analyse ne voit le
+workspace de test et les conversations avec le coach qu'à travers les
+copier-coller du testeur. Les sessions jouées dans Claude Desktop ne laissent
+dans `~/.claude/projects/` que des marqueurs `*.desktop-released.json`, sans
+la conversation. Des contrôles restent donc invérifiables, par exemple
+l'absence de lecture des fichiers de données avant le message d'accueil (#15).
+
+- Script `scripts/new-test-workspace` : build, décompression du ZIP dans un
+  dossier daté (`<date>-<scénario>`), copie des sources du kit de test, et en
+  option chargement d'un état de départ fictif (Nadia Berkani), par exemple
+  « dossier validé, opportunité analysée » pour jouer les scénarios D sans
+  rejouer B1 à D4. Plusieurs workspaces en parallèle si besoin (français,
+  anglais, version antérieure sans section `user`).
+- Répertoire voisin du dépôt, pas un `manual-tests/` ignoré par Git dans le
+  dépôt : Claude Code y chargerait le `CLAUDE.md` du dépôt parent (consignes du
+  toolkit, renvoi vers `AGENTS.md`), et les commandes Git du coach agiraient
+  sur le dépôt du toolkit (section « Repository privacy » faussée). L'agent y
+  accède comme répertoire supplémentaire (`/add-dir` ou
+  `additionalDirectories`).
+- Tests exploratoires dans Claude Code (CLI ou VS Code) ouvert sur le
+  workspace de test : la conversation est enregistrée en `.jsonl`, outils
+  compris, et l'agent la relit directement ; `/export` en fin de session en
+  garde une copie dans le workspace. Une passe de recette reste à faire dans
+  Claude Desktop si c'est le client des candidats du pilote.
+- Les traces contiennent le vrai prénom du testeur : les lire sans le reporter
+  dans le dépôt (`<prénom>` dans les sessions de test).
+- Les états de départ fictifs serviront aussi aux « Tests automatiques du coach
+  par sous-agent ».
 
 ### Tests automatiques du coach par sous-agent
 

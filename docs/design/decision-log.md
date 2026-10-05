@@ -1182,6 +1182,82 @@ Fusionner avec un autre document ou alléger le modèle si le journal n'est pas
 tenu ou pas relu ; le revoir aussi si un changement de modèle IA rend la
 plupart des entrées obsolètes.
 
+## D-022 — Ne contraindre le coach que là où c'est nécessaire
+
+- **Type** : PROCESS
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-05
+- **Issue** : aucune (constat fait pendant les tests de #15 et #18)
+
+### Contexte
+
+Les corrections de #15 et #18 ont multiplié les formulations imposées mot pour
+mot et les interdictions (prénom limité à trois messages, seules les clés
+`user.*` modifiables, phrases d'état à éviter, nombre de lignes de rôle). Les
+tests manuels du 2026-10-05 ont montré deux choses :
+
+- des comportements non prévus, souvent exclus par la lettre des règles, se sont
+  révélés meilleurs que la règle : alerte sur la langue configurée, passage à
+  l'anglais sur demande, écart d'identité entre le prénom et les sources,
+  tolérance aux fautes de frappe (« oker », « top ») avec une question plutôt
+  qu'une supposition, prénoms des interviewers, prénom employé une fois de
+  façon naturelle ;
+- malgré des règles fermées, le modèle paraphrase ou ajoute du texte autour
+  des phrases prescrites (L-002, L-007) : programmer un comportement précis
+  reste difficile et coûteux.
+
+La même recommandation avait été donnée au testeur en formation : trop
+contraindre un modèle peut être contre-productif pour obtenir les meilleures
+réponses.
+
+### Options considérées
+
+- **Contraindre chaque écart observé** (formulation exacte, interdiction
+  explicite) : rejetée, car le coût en passes de correction est élevé, le
+  résultat n'est pas garanti, et chaque contrainte peut fermer la porte à un
+  comportement authentique et adapté, d'autant plus avec l'évolution des
+  modèles.
+- **Laisser le coach libre, sans règle de forme** : rejetée, car certains
+  comportements doivent être garantis.
+- **Contraindre seulement ce qui doit être garanti, décrire l'intention pour le
+  reste** : retenue.
+
+### Décision et intention
+
+Une contrainte ferme (formulation exacte, interdiction) n'est écrite que pour
+ce qui doit être garanti : protection et intégrité des données du candidat,
+absence d'invention, respect des validations, rôle de coach (pas de réponse
+toute faite hors joker), mécanismes que le candidat doit pouvoir reconnaître
+(mots-clés d'arrêt, joker, lignes de rôle). Pour le reste, la consigne décrit
+l'intention et le résultat attendu, et laisse le coach adapter la forme.
+
+Un écart de forme qui ne gêne pas le candidat n'appelle pas de nouvelle
+contrainte : il est noté au backlog et corrigé seulement si le pilote montre
+qu'il gêne. Un comportement non prévu mais jugé bon est conservé ; si une règle
+l'exclut, c'est la règle qu'on assouplit.
+
+L'intention est de laisser le coach profiter des progrès des modèles, de
+garder des échanges naturels et de concentrer l'effort de pilotage sur ce qui
+compte.
+
+### Conséquences
+
+- L-010 du [journal des difficultés](../lessons-learned.md) et ses
+  « Enseignements » portent la règle pour l'écriture des consignes.
+- Les défauts mineurs restants de #15 et #18 sont reportés au backlog
+  (« Défauts mineurs restants après #15 et #18 ») au lieu d'une nouvelle passe
+  de correction.
+- Règles à assouplir, notées au backlog : emploi ponctuel du prénom,
+  modification des clés de langue sur demande explicite.
+- L'audit du skill du coach avant le pilote examine aussi le niveau de
+  contrainte des consignes.
+
+### Conditions de réévaluation
+
+Revoir si le pilote montre qu'un comportement laissé libre gêne les candidats,
+ou si un changement de modèle IA rend le coach moins fiable sur ce qui n'est
+décrit que par son intention.
+
 ## Évolution du journal
 
 - Ajouter une entrée au modèle ci-dessus lorsqu'un choix structurel ou

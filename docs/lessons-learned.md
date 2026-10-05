@@ -21,9 +21,15 @@ le contredit.
   lecteur humain est appliquée à la lettre ; une consigne d'action peut être
   annoncée au candidat. Relire chaque phrase comme ce que le coach en fera
   (L-001, L-004).
-- **Formulations fermées et positives.** Dire ce qui est permis, mot pour mot
-  quand c'est possible, plutôt qu'une interdiction vague ou partielle (« sans la
-  reposer en entier ») (L-003, L-005, L-007).
+- **Ne contraindre que ce qui doit être garanti** (D-022). Pour le reste,
+  décrire l'intention et le résultat attendu ; un écart de forme qui ne gêne
+  pas le candidat va au backlog, et une règle qui exclut un bon comportement
+  non prévu est assouplie (L-010).
+- **Formulations fermées et positives, là où une contrainte est nécessaire.**
+  Dire ce qui est permis, mot pour mot quand c'est possible, plutôt qu'une
+  interdiction vague ou partielle (« sans la reposer en entier ») (L-003,
+  L-005, L-007). Même fermée, une formulation peut être paraphrasée (L-002,
+  L-007).
 - **Exemples à éviter.** Quand « ne rien dire » ne suffit pas, citer les phrases
   à éviter (L-002).
 - **Règles transversales dans `workspace/AGENTS.md`.** Une règle de
@@ -87,8 +93,8 @@ journal des tests, le backlog, une décision ou une autre entrée.
 ## L-001 — Le coach commente sa propre procédure
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : ✅ Parade vérifiée
+- **Ajoutée le** : 2026-10-05 ; vérifiée le 2026-10-05
 - **Issues** : #15
 - **Décisions** : D-019
 - **Liens** : L-004
@@ -121,13 +127,16 @@ Fichiers : `workspace/AGENTS.md`, `workspace/CLAUDE.md`,
 
 ### Vérification
 
-B1, B2 et B9 du scénario maître, à rejouer.
+B1, B2, B3, B7 et B9 rejoués le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : ligne de lancement,
+puis directement l'accueil ou la salutation, sans citer les consignes ni la
+procédure. En cours de session, une mention isolée des consignes (« l'une des
+deux clés que je suis autorisé à modifier », B1), notée au backlog.
 
 ## L-002 — Phrase d'état quand rien n'a changé
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : 🔴 Ouverte
+- **Ajoutée le** : 2026-10-05 ; parade insuffisante le 2026-10-05
 - **Issues** : #15
 - **Modèle** : Sonnet 5.5
 - **Coût** : une passe de correction (R7)
@@ -151,13 +160,17 @@ quand rien n'a changé, avec les phrases à éviter citées en exemple
 
 ### Vérification
 
-B2 du scénario maître, à rejouer.
+B2 rejoué le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : « Votre espace carrière est en place,
+mais votre dossier professionnel est encore vide… », variante de la phrase
+exclue ; B3 sans phrase d'état. Écart mineur, reporté au backlog sans nouvelle
+parade (D-022, L-010) ; piste notée : dire ce qui est attendu après la
+salutation plutôt qu'allonger la liste des phrases à éviter.
 
 ## L-003 — Prénom répété hors salutation
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : ✅ Parade vérifiée
+- **Ajoutée le** : 2026-10-05 ; vérifiée le 2026-10-05
 - **Issues** : #15
 - **Décisions** : D-019
 - **Modèle** : Sonnet 5.5
@@ -182,14 +195,16 @@ choix et l'au revoir, règle reprise dans `workspace/AGENTS.md` et
 
 ### Vérification
 
-Ligne « Réponses à la question du prénom » de `docs/test-log.md`, sur une
-session complète.
+Session complète D1 à D6 du 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : aucun prénom hors
+salutation ; au revoir « À bientôt, Nadia. » (B7). Une occurrence naturelle en
+B7 (« Vous avez raison, Nadia. »), jugée bonne par le testeur : la règle est à
+assouplir (backlog, L-010).
 
 ## L-004 — Un principe appliqué comme une consigne
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : ✅ Parade vérifiée
+- **Ajoutée le** : 2026-10-05 ; vérifiée le 2026-10-05
 - **Issues** : #18
 - **Décisions** : D-020
 - **Liens** : L-001
@@ -216,13 +231,15 @@ supposé (R1).
 
 ### Vérification
 
-D5 à D7 du scénario maître, à rejouer.
+D5 rejoué le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : réponse proposée étiquetée, sans
+avertissement ni commentaire ; ligne des suppositions limitée à ce qui a été
+supposé.
 
 ## L-005 — Question reposée après un joker
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : ✅ Parade vérifiée
+- **Ajoutée le** : 2026-10-05 ; vérifiée le 2026-10-05
 - **Issues** : #18
 - **Décisions** : D-020
 - **Modèle** : Sonnet 5.5
@@ -245,13 +262,14 @@ R4 de #18 : la question n'est ni répétée ni reformulée, même résumée ; au
 
 ### Vérification
 
-D5 du scénario maître, à rejouer.
+D5 rejoué le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : après chaque retour dans le rôle,
+« Je vous écoute. » seul, sans reposer la question.
 
 ## L-006 — Le débrief sur-interprète un mot
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : ✅ Parade vérifiée
+- **Ajoutée le** : 2026-10-05 ; vérifiée le 2026-10-05
 - **Issues** : #18
 - **Décisions** : D-020
 - **Modèle** : Sonnet 5.5
@@ -277,13 +295,16 @@ dans une réponse ni commenté ni signalé, joker annulé jamais mentionné,
 
 ### Vérification
 
-D6 et D8 du scénario maître, à rejouer.
+D6 rejoué le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : « Jokers : 2 (1 conseil, 1 réponse
+proposée) », d'après les seuls marqueurs ; jokers annulés non mentionnés ;
+« joker » et « stoppé » glissés dans les réponses traités comme du contenu, sans
+anomalie signalée. D8 (debrief dans une nouvelle conversation) non rejoué.
 
 ## L-007 — Annonces de rôle en double
 
 - **Type** : STEERING
-- **Statut** : 🟡 Parade à vérifier
-- **Ajoutée le** : 2026-10-05
+- **Statut** : 🔴 Ouverte
+- **Ajoutée le** : 2026-10-05 ; parade insuffisante le 2026-10-05
 - **Issues** : #18
 - **Décisions** : D-020
 - **Modèle** : Sonnet 5.5
@@ -307,7 +328,12 @@ autre annonce de rôle.
 
 ### Vérification
 
-D7 du scénario maître, à rejouer.
+D5 rejoué le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : plus d'annonce « Je reprendrai le
+rôle… », mais la ligne de sortie est encore répétée entre la question de
+clarification et la réponse proposée. Écart mineur, reporté au backlog sans
+nouvelle parade (D-022, L-010). Cause probable : la réponse du candidat à la
+clarification arrive dans un nouveau tour, et le coach réapplique « joker →
+ligne de sortie ».
 
 ## L-008 — Invention attribuée à tort au coach
 
@@ -361,4 +387,52 @@ La langue de coaching configurée l'emporte sur celle de la conversation.
 
 ### Vérification
 
-Aucune pour l'instant.
+B9 rejoué le 2026-10-05 ([session du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md)) : sans règle, le coach signale de
+lui-même que la configuration fixe le français alors que la conversation est en
+anglais et propose de basculer ; sur demande, il passe le dossier et le coaching
+en anglais, en dehors de la règle des clés modifiables (backlog).
+
+## L-010 — Trop contraindre le modèle ferme des portes
+
+- **Type** : STEERING
+- **Statut** : 🟡 Parade à vérifier
+- **Ajoutée le** : 2026-10-05
+- **Issues** : #15, #18
+- **Décisions** : D-022
+- **Liens** : L-002, L-003, L-007, L-009
+- **Modèle** : Sonnet 5.5
+
+### Constat
+
+Aux [tests du 2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md),
+plusieurs comportements non prévus se sont révélés meilleurs que la règle,
+parfois en la contredisant : alerte sur la langue configurée et passage à
+l'anglais sur demande (B9, hors des seules clés `user.*` modifiables), écart
+d'identité entre le prénom et les sources (B1), question plutôt que supposition
+sur « oker » et « top » (D5), prénoms et rôles des interviewers (D5), « Vous
+avez raison, Nadia. » (B7, hors des trois messages permis). À l'inverse, des
+règles fermées ont été paraphrasées ou contournées (L-002, L-007). Le testeur
+avait reçu la même recommandation en formation : ne pas trop contraindre un
+modèle.
+
+### Cause probable
+
+Chaque correction ferme une règle pour supprimer un écart observé ; la
+contrainte exclut aussi des comportements utiles qu'on n'avait pas imaginés, et
+elle reste fragile face à la paraphrase. Plus les modèles progressent, plus le
+coût d'une contrainte inutile augmente.
+
+### Parade
+
+D-022 : contraindre seulement ce qui doit être garanti (données du candidat,
+absence d'invention, validations, rôle de coach, mécanismes que le candidat
+doit reconnaître) ; décrire l'intention et le résultat attendu pour le reste ;
+reporter au backlog les écarts de forme qui ne gênent pas ; assouplir une règle
+qui exclut un bon comportement. Règles à assouplir et défauts mineurs notés au
+backlog.
+
+### Vérification
+
+Au prochain changement des consignes du coach : vérifier que les nouvelles
+contraintes portent sur ce qui doit être garanti, puis, au pilote, que les
+comportements laissés libres ne gênent pas les candidats.
