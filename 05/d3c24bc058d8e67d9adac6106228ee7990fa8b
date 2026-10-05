@@ -1,0 +1,27 @@
+docs/lessons-learned.md
+  s_f4246b894f07f1::t_7d72a6bc7249bb 446,479-484
+docs/test-log.md
+  s_f4246b894f07f1::t_e0ef7a28aef8cc 22,24-25,42,97-98,138-151,157
+test-kit/scenario.md
+  s_f4246b894f07f1::t_7a0777646bd284 191-192,194-195
+BACKLOG.md
+  s_f4246b894f07f1::t_61cc9c78716b36 254-257
+docs/test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md
+  s_f4246b894f07f1::t_cc560833020d97 1-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "05d3c24bc058d8e67d9adac6106228ee7990fa8b",
+  "prompts": {},
+  "sessions": {
+    "s_f4246b894f07f1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1987b5ea-c08a-42c5-afba-979319afdc40",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
