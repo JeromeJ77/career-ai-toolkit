@@ -1,4 +1,4 @@
-# My Career Workspace instructions
+# MyCareer Workspace instructions
 
 ## Purpose
 

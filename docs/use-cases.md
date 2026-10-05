@@ -131,7 +131,7 @@ conversation can continue without relying on previous conversation history.
 ```mermaid
 flowchart TD
     start([Start pilot])
-    workspace["My Career Workspace<br/>build and extract private ZIP"]
+    workspace["MyCareer Workspace<br/>build and extract private ZIP"]
     configure["Configure workspace<br/>language, preferences, tool context"]
     sources["Add authorized sources<br/>historical CVs, certifications, notes"]
     initProfile["Ask assistant to initialize professional profile"]

@@ -96,11 +96,6 @@ n'est donc pas garanti.
   sources, ne rien copier ni transcrire, et demander comment procéder.
 - Après la réponse, corriger le prénom à utiliser si le candidat le demande.
 
-L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
-mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
-#13 (modèle du journal des décisions), #14 (abandon du mode standalone) et #15
-(recentrage sur My Career Workspace).
-
 ### Auditer le skill du coach avant le pilote
 
 Proposé pendant la deuxième passe de #15 et #18 (2026-10-05) : auditer les
@@ -122,6 +117,46 @@ pratiques de rédaction d'instructions et de skills pour agents.
 - À rapprocher de « Tests automatiques du coach par sous-agent » et des
   recommandations de raisonnement selon les tâches (section « Immediately
   after the end-to-end test »).
+
+### Renommer le dépôt en `mycareer-toolkit`
+
+Réflexion du 2026-10-05, née du travail sur le logo (image partagée en
+conversation, non versionnée : « MyCareer » en grand sur une ligne,
+« Workspace » en dessous). Sur le logo, l'œil lit « MyCareer / Workspace » :
+« MyCareer » fonctionne comme une marque. Le nom du produit en a été tranché
+le jour même dans #15 : **MyCareer Workspace**, nom technique
+`mycareer-workspace` (D-017 précisée). Reste le dépôt, sans urgence.
+
+- **Orientation émergente** : marque **MyCareer**, produit MyCareer Workspace,
+  dépôt `mycareer-toolkit` (à étudier).
+- **Pourquoi renommer le dépôt** : il ne contient plus seulement un workspace,
+  mais aussi les skills, le coach, les modèles, les mécanismes de génération,
+  les connaissances, les décisions et les outils de capitalisation. « Workspace »
+  décrit bien l'expérience utilisateur, moins bien le contenu du dépôt.
+- **Pourquoi « toolkit »** : le mot couvre l'ensemble (MyCareer Workspace,
+  skills, coach, modèles, base de connaissances, utilitaires) sans privilégier
+  un composant. Il ne s'agit pas d'aligner le dépôt sur le nom du produit.
+- **Pourquoi retirer « AI »** : l'IA est une technologie de mise en œuvre, pas
+  l'objectif ; l'utilisateur cherche une aide à sa carrière, une mémoire
+  professionnelle et un espace de travail personnel.
+- **État** : aucune décision prise ; piste jugée plus cohérente avec
+  l'évolution du produit.
+
+Points à examiner au grooming :
+
+- D-017 a étudié et rejeté le renommage du dépôt (« `career-ai-toolkit` reste
+  adapté au projet global… fondés sur l'IA ») ; l'argument « l'IA n'est pas
+  l'objectif » était alors appliqué au seul produit. Le reprendre signifie
+  réévaluer D-017.
+- Disponibilité du nom « MyCareer » (marques, homonymes, par exemple le mode
+  carrière de NBA 2K), à vérifier avant une diffusion publique.
+- Impacts d'un renommage du dépôt GitHub : URL et liens (redirigés par GitHub),
+  badges, projet, répertoire local, entrée « Career AI Toolkit » du glossaire.
+
+L'idée suivante est issue du debriefing de la démo enregistrée (2026-10-03),
+mené avec Copilot. Les autres idées de ce debriefing sont devenues les issues
+#13 (modèle du journal des décisions), #14 (abandon du mode standalone) et #15
+(recentrage sur MyCareer Workspace).
 
 ### Rendre le coaching et les simulations plus vivants
 

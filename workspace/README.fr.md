@@ -1,6 +1,6 @@
-# My Career Workspace
+# MyCareer Workspace
 
-My Career Workspace fait partie de Career AI Toolkit,
+MyCareer Workspace fait partie de Career AI Toolkit,
 créé par Jérôme Jurbert et distribué sous licence MIT.
 
 Votre **espace carrière** est un espace privé, local et durable : vous y construisez un dossier professionnel vivant, dont vous gardez la propriété et que vous validez, puis vous l'exploitez au fil de vos opportunités et de vos entretiens. Chaque opportunité, préparation, simulation et débriefing peut l'enrichir : votre travail devient un capital professionnel réutilisable. Le coach IA vous aide à l'analyser, à le synthétiser et à vous préparer ; il ne remplace pas votre validation.

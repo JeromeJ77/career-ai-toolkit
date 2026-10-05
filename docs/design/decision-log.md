@@ -808,7 +808,7 @@ Le débriefing de la démo enregistrée du 2026-10-03 a montré deux manques du
 journal : les alternatives étudiées et rejetées n'étaient pas tracées, et les
 circonstances qui justifieraient de revoir une décision n'étaient pas
 explicitées. Plusieurs décisions de la v0.4.0, dont l'abandon du mode
-standalone et le recentrage sur My Career Workspace, en ont besoin.
+standalone et le recentrage sur MyCareer Workspace, en ont besoin.
 
 ### Options considérées
 
@@ -833,8 +833,8 @@ par l'auteur.
 ### Conséquences
 
 - `AGENTS.md` et `CONTRIBUTING.md` exigent le modèle pour toute nouvelle entrée.
-- Les décisions de l'abandon du mode standalone (#14) et du recentrage sur My
-  Career Workspace (#15) sont rédigées au nouveau format.
+- Les décisions de l'abandon du mode standalone (#14) et du recentrage sur MyCareer
+  Workspace (#15) sont rédigées au nouveau format.
 - Une alternative rejetée n'a pas sa propre entrée, sauf cas documenté dans le
   modèle.
 
@@ -914,11 +914,11 @@ Uniquement si un besoin utilisateur fort et validé apparaît pour une expérien
 sans installation, avec des limitations explicitement acceptées en matière de
 persistance, de portabilité et de propriété des données.
 
-## D-017 — Renommer le produit My Career Workspace
+## D-017 — Renommer le produit MyCareer Workspace
 
 - **Type** : PRODUCT
 - **Statut** : ✅ Adoptée
-- **Date** : 2026-10-04
+- **Date** : 2026-10-04, précisée le 2026-10-05 (nom en un mot)
 - **Issue** : #15
 
 ### Contexte
@@ -938,8 +938,14 @@ notes du debriefing de la démo du 2026-10-03 demandent de recentrer le produit.
 - **Conserver « Career AI Workspace »** : rejetée, car le nom met l'IA au
   premier plan, alors qu'elle n'est plus la proposition de valeur ; « My »
   renforce la propriété, la personnalisation et la confidentialité.
-- **Renommer le produit et le répertoire local `my-career-workspace`** :
-  retenue.
+- **« My Career Workspace », nom technique `my-career-workspace`** : retenue
+  le 2026-10-04 et mise en œuvre dans #15, puis écartée le 2026-10-05 avant la
+  clôture de l'issue. Le travail sur le logo a montré que l'œil lit
+  « MyCareer / Workspace » : « MyCareer » fonctionne comme un nom propre, une
+  marque, plutôt que comme une expression descriptive.
+- **Renommer le produit « MyCareer Workspace » et le répertoire local
+  `mycareer-workspace`** : retenue, le nom technique suivant la marque en un
+  mot.
 
 Le renommage du répertoire source `test-kit/` et du plan de test a été envisagé
 (les notes parlent de renommer « le plan et le kit de test ») puis limité au ZIP
@@ -947,8 +953,8 @@ du kit.
 
 ### Décision et intention
 
-Le produit s'appelle **My Career Workspace**, nom technique
-`my-career-workspace`, également nom retenu pour le répertoire local personnel :
+Le produit s'appelle **MyCareer Workspace**, nom technique
+`mycareer-workspace`, également nom retenu pour le répertoire local personnel :
 l'utilisateur travaille dans son propre espace carrière. Le dépôt et le projet
 générique restent **Career AI Toolkit** / `career-ai-toolkit`. Les noms
 techniques liés au concept de workspace sont conservés : répertoire source
@@ -956,15 +962,18 @@ techniques liés au concept de workspace sont conservés : répertoire source
 
 ### Conséquences
 
-- Archives et répertoire racine renommés : `my-career-workspace-v<version>.zip`,
-  `my-career-workspace-test-kit-v<version>.zip` (le répertoire source
+- Archives et répertoire racine renommés : `mycareer-workspace-v<version>.zip`,
+  `mycareer-workspace-test-kit-v<version>.zip` (le répertoire source
   `test-kit/` est conservé) et retour pilote
-  `my-career-workspace-pilot-feedback-v<version>.md`.
+  `mycareer-workspace-pilot-feedback-v<version>.md`.
 - Le guide utilisateur `docs/workspace-mode.md` devient
   `workspace/USER-GUIDE.md` (anglais) et `workspace/USER-GUIDE.fr.md`
   (français), livrés à la racine du ZIP ; l'entrée « Mode workspace » du
-  glossaire est remplacée par « My Career Workspace ».
-- Le label GitHub `workspace-mode` est renommé `my-career-workspace`.
+  glossaire est remplacée par « MyCareer Workspace ».
+- Le label GitHub `workspace-mode` est renommé `my-career-workspace`, puis
+  `mycareer-workspace`.
+- Le passage à « MyCareer » ne change aucun comportement du coach : il emploie
+  « espace carrière » et « career workspace » (D-018), jamais le nom du produit.
 - Les workspaces existants ne sont pas renommés : le nom du répertoire local
   est libre et un espace extrait sous `career-ai-workspace/` continue de
   fonctionner.
@@ -972,7 +981,9 @@ techniques liés au concept de workspace sont conservés : répertoire source
 
 ### Conditions de réévaluation
 
-Aucune identifiée.
+Indisponibilité du nom « MyCareer » (marque déposée, homonyme gênant), à
+vérifier avant une diffusion publique. Le renommage du dépôt en
+`mycareer-toolkit` reste une idée du backlog.
 
 ## D-018 — « Espace carrière » comme terme fonctionnel français
 
@@ -996,7 +1007,7 @@ qui ne parle pas à un utilisateur francophone.
 ### Décision et intention
 
 En français, le coach et la documentation destinée à l'utilisateur parlent de
-« espace carrière » ; en anglais, de « career workspace » (« My Career
+« espace carrière » ; en anglais, de « career workspace » (« MyCareer
 Workspace » comme nom de produit dans la documentation). « Workspace » reste le
 terme du concept technique (répertoire de fichiers avec moteur et `data/`)
 quand il ne désigne pas le produit.
@@ -1005,7 +1016,7 @@ quand il ne désigne pas le produit.
 
 - `workspace/AGENTS.md` interdit « workspace » et « espace de travail » dans la
   bouche du coach en français.
-- Le glossaire distingue My Career Workspace, espace carrière et workspace.
+- Le glossaire distingue MyCareer Workspace, espace carrière et workspace.
 
 ### Conditions de réévaluation
 

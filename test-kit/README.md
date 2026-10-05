@@ -2,7 +2,7 @@
 
 Ce répertoire contient le matériel nécessaire pour tester le toolkit et le montrer en démo **sans aucune donnée personnelle**. Tout y est fictif : la candidate, ses employeurs, ses écoles, les organismes de certification, les entreprises qui recrutent et les personnes citées. Toute ressemblance avec des personnes ou des sociétés réelles serait fortuite.
 
-Le kit n'est jamais inclus dans le ZIP de My Career Workspace distribué. Le build en produit un ZIP séparé, destiné aux testeurs et aux présentateurs.
+Le kit n'est jamais inclus dans le ZIP de MyCareer Workspace distribué. Le build en produit un ZIP séparé, destiné aux testeurs et aux présentateurs.
 
 ## Contenu
 

@@ -51,18 +51,18 @@ for /r "workspace\skills" %%F in (workspace.yaml current-status.md professional-
 
 if exist build rmdir /s /q build
 if exist dist rmdir /s /q dist
-mkdir build\my-career-workspace
+mkdir build\mycareer-workspace
 mkdir dist
 
-xcopy "workspace\*" "build\my-career-workspace\" /E /I /Q /Y >nul
+xcopy "workspace\*" "build\mycareer-workspace\" /E /I /Q /Y >nul
 if errorlevel 1 (
   echo ERROR: Could not copy workspace files.
   exit /b 1
 )
 
 rem Engine version marker: generated from VERSION, never kept in workspace\.
->"build\my-career-workspace\ENGINE-VERSION" echo(%VERSION%
-set /p ENGINE_VERSION=<"build\my-career-workspace\ENGINE-VERSION"
+>"build\mycareer-workspace\ENGINE-VERSION" echo(%VERSION%
+set /p ENGINE_VERSION=<"build\mycareer-workspace\ENGINE-VERSION"
 if not "%ENGINE_VERSION%"=="%VERSION%" (
   echo ERROR: ENGINE-VERSION does not match VERSION.
   exit /b 1
@@ -75,8 +75,8 @@ if errorlevel 1 (
   echo ERROR: The pilot feedback template does not contain the {{VERSION}} placeholder.
   exit /b 1
 )
-set "PILOT_TEMPLATE=build\my-career-workspace\skills\init-workspace\assets\pilot-feedback.template.md"
-set "PILOT_DIST=dist\my-career-workspace-pilot-feedback-v%VERSION%.md"
+set "PILOT_TEMPLATE=build\mycareer-workspace\skills\init-workspace\assets\pilot-feedback.template.md"
+set "PILOT_DIST=dist\mycareer-workspace-pilot-feedback-v%VERSION%.md"
 copy /Y "%PILOT_TEMPLATE%" "%PILOT_DIST%" >nul
 for %%P in ("%PILOT_TEMPLATE%" "%PILOT_DIST%") do (
   powershell -NoProfile -ExecutionPolicy Bypass -Command "$u = New-Object System.Text.UTF8Encoding($false); $t = [System.IO.File]::ReadAllText('%%~P', $u); [System.IO.File]::WriteAllText('%%~P', $t.Replace('{{VERSION}}', '%VERSION%'), $u)"
@@ -91,7 +91,7 @@ for %%P in ("%PILOT_TEMPLATE%" "%PILOT_DIST%") do (
   )
 )
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path 'build\my-career-workspace' -DestinationPath 'dist\my-career-workspace-v%VERSION%.zip' -Force"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path 'build\mycareer-workspace' -DestinationPath 'dist\mycareer-workspace-v%VERSION%.zip' -Force"
 if errorlevel 1 (
   echo ERROR: Could not create workspace ZIP.
   exit /b 1
@@ -99,24 +99,24 @@ if errorlevel 1 (
 
 rem Demo and manual-test kit: fictional sources plus the demo script extracted
 rem from the master scenario. Never part of the workspace ZIP.
-mkdir build\my-career-workspace-test-kit
-copy /Y "test-kit\README.md" "build\my-career-workspace-test-kit\README.md" >nul
-copy /Y "test-kit\scenario.md" "build\my-career-workspace-test-kit\scenario.md" >nul
-copy /Y "test-kit\guide-testeur.md" "build\my-career-workspace-test-kit\guide-testeur.md" >nul
-xcopy "test-kit\sources\*" "build\my-career-workspace-test-kit\sources\" /E /I /Q /Y >nul
+mkdir build\mycareer-workspace-test-kit
+copy /Y "test-kit\README.md" "build\mycareer-workspace-test-kit\README.md" >nul
+copy /Y "test-kit\scenario.md" "build\mycareer-workspace-test-kit\scenario.md" >nul
+copy /Y "test-kit\guide-testeur.md" "build\mycareer-workspace-test-kit\guide-testeur.md" >nul
+xcopy "test-kit\sources\*" "build\mycareer-workspace-test-kit\sources\" /E /I /Q /Y >nul
 if errorlevel 1 (
   echo ERROR: Could not copy test kit sources.
   exit /b 1
 )
-del /q "build\my-career-workspace-test-kit\sources\*.md" "build\my-career-workspace-test-kit\sources\profile\*.md" "build\my-career-workspace-test-kit\sources\opportunities\*.md" 2>nul
+del /q "build\mycareer-workspace-test-kit\sources\*.md" "build\mycareer-workspace-test-kit\sources\profile\*.md" "build\mycareer-workspace-test-kit\sources\opportunities\*.md" 2>nul
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "test-kit\tools\make_demo_script.ps1" -Source "test-kit\scenario.md" -Target "build\my-career-workspace-test-kit\demo-script.md" -Version "%VERSION%"
+powershell -NoProfile -ExecutionPolicy Bypass -File "test-kit\tools\make_demo_script.ps1" -Source "test-kit\scenario.md" -Target "build\mycareer-workspace-test-kit\demo-script.md" -Version "%VERSION%"
 if errorlevel 1 (
   echo ERROR: Could not generate the demo script.
   exit /b 1
 )
 
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path 'build\my-career-workspace-test-kit' -DestinationPath 'dist\my-career-workspace-test-kit-v%VERSION%.zip' -Force"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path 'build\mycareer-workspace-test-kit' -DestinationPath 'dist\mycareer-workspace-test-kit-v%VERSION%.zip' -Force"
 if errorlevel 1 (
   echo ERROR: Could not create test kit ZIP.
   exit /b 1

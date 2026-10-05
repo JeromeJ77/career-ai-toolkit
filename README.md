@@ -2,13 +2,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Generic toolkit behind **My Career Workspace**: a personal, persistent and local career workspace, built around a living professional profile that you own.
+> Generic toolkit behind **MyCareer Workspace**: a personal, persistent and local career workspace, built around a living professional profile that you own.
 
 **French-first pilot:** the most complete getting-started guide is [README.fr.md](README.fr.md).
 
-## My Career Workspace
+## MyCareer Workspace
 
-My Career Workspace (in French, « espace carrière ») is a private workspace of files that you open in VS Code, Claude Code or another file-aware AI tool. Its core is a living professional profile: structured professional memory, validated by you, the starting point of your work on opportunities and interviews, and enriched by that work over time. Each opportunity, preparation, simulation and debriefing can consolidate it, so the work is not consumed by a one-off use: it becomes a reusable professional asset.
+MyCareer Workspace (in French, « espace carrière ») is a private workspace of files that you open in VS Code, Claude Code or another file-aware AI tool. Its core is a living professional profile: structured professional memory, validated by you, the starting point of your work on opportunities and interviews, and enriched by that work over time. Each opportunity, preparation, simulation and debriefing can consolidate it, so the work is not consumed by a one-off use: it becomes a reusable professional asset.
 
 AI (analysis, synthesis, coaching) is a means, not the value proposition. The structuring principles are:
 
@@ -27,7 +27,7 @@ The toolkit is a coach, not an answer generator: it helps candidates reflect, pr
 
 ## How to use it
 
-**My Career Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool. See the [user guide](workspace/USER-GUIDE.md).
+**MyCareer Workspace**: build and extract the private workspace ZIP, then open it in VS Code, Claude Code, or another file-aware AI tool. See the [user guide](workspace/USER-GUIDE.md).
 
 The local directory name is free: a workspace extracted under `career-ai-workspace/` keeps working and does not need to be renamed. At the next session the `user` section is added to its `workspace.yaml` and the first-name question is asked, without the welcome message.
 
@@ -43,7 +43,7 @@ On Windows, run:
 build.bat
 ```
 
-The command creates versioned release artifacts under the untracked `dist/` directory: the My Career Workspace ZIP, the demo and manual-test kit ZIP and the pilot feedback form.
+The command creates versioned release artifacts under the untracked `dist/` directory: the MyCareer Workspace ZIP, the demo and manual-test kit ZIP and the pilot feedback form.
 
 ## Project status
 

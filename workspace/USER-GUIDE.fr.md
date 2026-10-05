@@ -1,8 +1,8 @@
-# Guide utilisateur de My Career Workspace
+# Guide utilisateur de MyCareer Workspace
 
 [English version](USER-GUIDE.md)
 
-My Career Workspace est votre **espace carrière** personnel et durable : un dossier professionnel vivant, dont vous gardez la propriété et que vous validez, et qui s'enrichit à chaque opportunité, préparation, simulation et débriefing. Ouvrez la racine de ce répertoire dans un outil d'IA capable de lire les fichiers, ajoutez des sources autorisées et initialisez le dossier professionnel ; la langue du profil se configure dans `data/config/workspace.yaml`, créé par le coach lors de la première session. Pour une nouvelle candidature, fournissez au coach les documents ou le contexte disponibles sur l'offre ; le coach crée la structure de l'opportunité. Gardez votre espace carrière privé.
+MyCareer Workspace est votre **espace carrière** personnel et durable : un dossier professionnel vivant, dont vous gardez la propriété et que vous validez, et qui s'enrichit à chaque opportunité, préparation, simulation et débriefing. Ouvrez la racine de ce répertoire dans un outil d'IA capable de lire les fichiers, ajoutez des sources autorisées et initialisez le dossier professionnel ; la langue du profil se configure dans `data/config/workspace.yaml`, créé par le coach lors de la première session. Pour une nouvelle candidature, fournissez au coach les documents ou le contexte disponibles sur l'offre ; le coach crée la structure de l'opportunité. Gardez votre espace carrière privé.
 
 Le nom du répertoire local est libre : un workspace extrait sous `career-ai-workspace/` continue de fonctionner et n'a pas besoin d'être renommé. À la session suivante, la section `user` est ajoutée à son `workspace.yaml` et la question du prénom est posée, sans message d'accueil.
 

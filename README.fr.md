@@ -2,13 +2,13 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Toolkit générique à l'origine de **My Career Workspace** : un espace carrière personnel, persistant et local, construit autour d'un dossier professionnel vivant dont vous gardez la propriété.
+> Toolkit générique à l'origine de **MyCareer Workspace** : un espace carrière personnel, persistant et local, construit autour d'un dossier professionnel vivant dont vous gardez la propriété.
 
 ## Objectif
 
 Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites. La seule exception est le joker, sur demande explicite pendant une simulation d'entretien : une réponse proposée est clairement étiquetée comme telle.
 
-Le projet prend la forme de **My Career Workspace**, un espace carrière local : un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
+Le projet prend la forme de **MyCareer Workspace**, un espace carrière local : un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
 
 Son cœur est un dossier professionnel vivant : une mémoire professionnelle structurée, validée par vous, qui sert de point de départ au travail sur vos opportunités et vos entretiens et que ce travail enrichit au fil du temps. Chaque opportunité, préparation, simulation et débriefing peut le consolider : le travail n'est pas consommé par un usage ponctuel, il constitue un capital professionnel réutilisable.
 
@@ -30,9 +30,9 @@ build.bat
 
 Le build crée localement dans `dist/` :
 
-- `my-career-workspace-pilot-feedback-v<version>.md` ;
-- `my-career-workspace-v<version>.zip` ;
-- `my-career-workspace-test-kit-v<version>.zip` (kit de démo et de test).
+- `mycareer-workspace-pilot-feedback-v<version>.md` ;
+- `mycareer-workspace-v<version>.zip` ;
+- `mycareer-workspace-test-kit-v<version>.zip` (kit de démo et de test).
 
 `<version>` est le contenu du fichier `VERSION` (avec le suffixe `-dev` pendant le développement).
 
@@ -58,7 +58,7 @@ La phase pilote privilégie le coach d'entretien, le dossier professionnel et la
 ## Organisation de l'espace carrière
 
 ```text
-my-career-workspace/
+mycareer-workspace/
 |-- skills/                          # moteur : workflows et modèles réutilisables
 `-- data/                            # données utilisateur (que des README dans le ZIP)
     |-- current-status.md            # dernier scope et point de reprise
@@ -81,7 +81,7 @@ L'[architecture détaillée](docs/architecture.md#workspace-tree) distingue les 
 
 ## Documentation
 
-- [Guide utilisateur de My Career Workspace](workspace/USER-GUIDE.fr.md)
+- [Guide utilisateur de MyCareer Workspace](workspace/USER-GUIDE.fr.md)
 - [Glossaire métier français / anglais](docs/glossary.md)
 - [Référence de conception du workflow](docs/design/01-career-ai-toolkit-workflow-design.md)
 - [Journal des décisions de conception](docs/design/decision-log.md)

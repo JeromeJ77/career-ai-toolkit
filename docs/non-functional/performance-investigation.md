@@ -13,7 +13,7 @@ sortiront iront dans `docs/design/decision-log.md`.
 
 ## 1. Constat
 
-L'utilisation de My Career Workspace sous Claude Code Desktop présente des
+L'utilisation de MyCareer Workspace sous Claude Code Desktop présente des
 temps d'attente importants, notamment lors :
 
 - du démarrage ou de la reprise d'une session ;

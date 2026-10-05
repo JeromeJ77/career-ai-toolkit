@@ -16,7 +16,7 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm `build.bat` produces no standalone deliverable and no longer checks a
   standalone version (#14): `dist/` holds no
   `interview-coach-standalone-v<version>.md`.
-- Confirm the ZIP contains one top-level `my-career-workspace/` directory.
+- Confirm the ZIP contains one top-level `mycareer-workspace/` directory.
 - Confirm the ZIP contains `ENGINE-VERSION` at the workspace root, holding
   exactly the content of `VERSION` (single line, no trailing space), and that
   `workspace/` itself holds no `ENGINE-VERSION` (the build rejects it as an
@@ -57,8 +57,8 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - On the first session in the extracted workspace, confirm the coach shows the
   welcome message and the first-name question first, waits for the answer,
   then creates the four missing mandatory files under `data/` from the
-  templates and reports it in one functional sentence (see « Refocus on My
-  Career Workspace (#15) »).
+  templates and reports it in one functional sentence (see « Refocus on MyCareer
+  Workspace (#15) »).
 - Confirm a second session creates nothing and overwrites nothing, that a file
   deleted by the user is recreated alone, and that an existing file with custom
   content is left untouched.
@@ -315,16 +315,17 @@ Non-regression:
 - Confirm the workspace ZIP file list is unchanged and replay « Repository
   privacy ».
 
-## Refocus on My Career Workspace (#15)
+## Refocus on MyCareer Workspace (#15)
 
 Nominal flow:
 
 - Run `build.bat` on a clean copy and confirm it produces
-  `dist/my-career-workspace-v<version>.zip` with one top-level
-  `my-career-workspace/` directory, and the test kit as
-  `dist/my-career-workspace-test-kit-v<version>.zip`; no
-  `career-ai-workspace*` or `career-ai-test-kit*` artifact is produced. The
-  pilot feedback is `dist/my-career-workspace-pilot-feedback-v<version>.md`.
+  `dist/mycareer-workspace-v<version>.zip` with one top-level
+  `mycareer-workspace/` directory, and the test kit as
+  `dist/mycareer-workspace-test-kit-v<version>.zip`; no
+  `career-ai-workspace*`, `career-ai-test-kit*` or `my-career-workspace*`
+  artifact is produced. The
+  pilot feedback is `dist/mycareer-workspace-pilot-feedback-v<version>.md`.
 - Confirm the pilot feedback template source holds the `{{VERSION}}`
   placeholder, that the build replaces it with the content of `VERSION` in the
   ZIP copy and in `dist/` (accents and line endings preserved), that no
@@ -379,10 +380,10 @@ Nominal flow:
 - Confirm the decision log holds two entries in the format defined by #13: the
   product and directory rename (type `PRODUCT`) and the adoption of « espace
   carrière » as the French functional term.
-- Confirm the glossary distinguishes Career AI Toolkit, My Career Workspace,
+- Confirm the glossary distinguishes Career AI Toolkit, MyCareer Workspace,
   espace carrière, dossier professionnel, workspace (technical concept) and
   opportunité, and that the former « Mode workspace » entry is replaced by the
-  single My Career Workspace entry.
+  single MyCareer Workspace entry.
 - Confirm `docs/workspace-mode.md` no longer exists and that the user guide is
   delivered at the root of the workspace ZIP in two versions, `USER-GUIDE.md`
   (English) and `USER-GUIDE.fr.md` (French), linked to each other and from the
@@ -392,10 +393,10 @@ Nominal flow:
 - Confirm the build fails with a clear error when `workspace/USER-GUIDE.md` or
   `workspace/USER-GUIDE.fr.md` is missing, and that the ZIP then holds both
   guides at its root.
-- Confirm `CONTRIBUTING.md` names the `my-career-workspace` GitHub label instead
+- Confirm `CONTRIBUTING.md` names the `mycareer-workspace` GitHub label instead
   of `workspace-mode`.
 - Confirm `README.md`, `README.fr.md`, the workspace READMEs, `workspace/AGENTS.md`
-  and `docs/architecture.md` present My Career Workspace and its vision
+  and `docs/architecture.md` present MyCareer Workspace and its vision
   (living professional profile, user ownership, privacy, persistence,
   portability, traceability, user validation) without putting AI first in the
   value proposition.
@@ -412,8 +413,9 @@ Edge cases:
   `career-ai-workspace/` keeps working and does not need to be renamed, the
   local directory name being free.
 - Search the repository (outside `CHANGELOG.md`, `docs/test-history/` and the
-  rename decision) for « Career AI Workspace », `career-ai-workspace` and
-  `career-ai-test-kit`: no remaining mention as the current product name.
+  rename decision) for « Career AI Workspace », `career-ai-workspace`,
+  `career-ai-test-kit`, « My Career Workspace » (with a space) and
+  `my-career-workspace`: no remaining mention as the current product name.
 - Confirm technical names kept as the workspace concept (`workspace/`,
   `init-workspace`, `workspace.yaml`) are unchanged, as decided in the issue.
 

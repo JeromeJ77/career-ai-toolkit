@@ -25,9 +25,9 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 ### A1 — Extraire et ouvrir le workspace [demo] [manual]
 
 - **Durée démo** : 2 min
-- **Fichiers** : `my-career-workspace-v<version>.zip` → un répertoire hors du dépôt, par exemple `C:\Temp\my-career-workspace-demo-26-10-03\`.
-- **Action** : extraire le ZIP hors du dépôt, puis renommer le répertoire extrait avec un suffixe `-demo` ou `-test` suivi de la date du jour au format `AA-MM-JJ` (par exemple `my-career-workspace-demo-26-10-03`), jamais le nom de base : il ne doit pas être confondu avec un workspace personnel ou de bêta-test ouvert ailleurs, et la date confirme dans l'outil IA qu'on travaille bien dans le workspace du jour. Garder les workspaces des passes précédentes dans `C:\Temp\` plutôt que les supprimer : on peut ainsi comparer les résultats de plusieurs tests ou démos. Ouvrir ce répertoire comme projet dans VS Code avec Claude Code (ou l'outil IA équivalent). Montrer l'arborescence : moteur à la racine, `data/` ne contenant que des `README.md`.
-- **Attendu** : le ZIP contient un seul répertoire racine `my-career-workspace/` ; `data/` ne contient aucun fichier de travail.
+- **Fichiers** : `mycareer-workspace-v<version>.zip` → un répertoire hors du dépôt, par exemple `C:\Temp\mycareer-workspace-demo-26-10-03\`.
+- **Action** : extraire le ZIP hors du dépôt, puis renommer le répertoire extrait avec un suffixe `-demo` ou `-test` suivi de la date du jour au format `AA-MM-JJ` (par exemple `mycareer-workspace-demo-26-10-03`), jamais le nom de base : il ne doit pas être confondu avec un workspace personnel ou de bêta-test ouvert ailleurs, et la date confirme dans l'outil IA qu'on travaille bien dans le workspace du jour. Garder les workspaces des passes précédentes dans `C:\Temp\` plutôt que les supprimer : on peut ainsi comparer les résultats de plusieurs tests ou démos. Ouvrir ce répertoire comme projet dans VS Code avec Claude Code (ou l'outil IA équivalent). Montrer l'arborescence : moteur à la racine, `data/` ne contenant que des `README.md`.
+- **Attendu** : le ZIP contient un seul répertoire racine `mycareer-workspace/` ; `data/` ne contient aucun fichier de travail.
 - **Plan de test** : Workspace — « Extract the ZIP outside the repository », « Open it as a new VS Code/Claude Code project » ; Build — « Confirm the ZIP tree matches `docs/architecture.md#workspace-tree` ».
 
 ## Phase B — Initialisation du workspace
@@ -41,7 +41,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt 2** : « Oui, Nadia. »
 - **Attendu 2** : le coach accuse réception (« Entendu, Nadia. Vous pourrez changer cela à tout moment, en me le demandant ou dans votre configuration. »), crée les quatre fichiers obligatoires (`data/config/workspace.yaml`, `data/current-status.md`, `data/profile/professional-profile.md`, `data/profile/sources/external-references.md`) depuis les modèles, le dit en une seule phrase fonctionnelle (« J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. »), propose de construire le dossier professionnel à partir des documents de la candidate, et ne remplit pas le dossier professionnel. `data/config/workspace.yaml` contient `user.address_by_first_name: yes` et `first_name: "Nadia"`. `data/feedback/pilot-feedback.md` n'est pas créé.
 - **Mots-clés** : montrer l'accueil et la question du prénom, puis le fait que le coach attend la réponse avant de préparer l'espace ; faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
-- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm `data/feedback/pilot-feedback.md` is created only on request » ; Refocus on My Career Workspace (#15).
+- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm `data/feedback/pilot-feedback.md` is created only on request » ; Refocus on MyCareer Workspace (#15).
 
 ### B2 — Deuxième session sans changement
 
@@ -93,7 +93,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Action** : remettre `unset`. Nouvelle conversation, prompt « Bonjour. », répondre « Non » : valeur `no`, accusé de réception conforme ; à la conversation suivante, « Bonjour. » sans prénom et sans question.
 - **Action** : remettre `yes` et `"Nadia"`. Nouvelle conversation, puis écrire « Merci, au revoir. » : le coach répond « À bientôt, Nadia. » Le prénom n'est pas répété à chaque message.
 - **Attendu** : à la fin, `yes` et `"Nadia"` sont rétablis pour la suite du scénario.
-- **Plan de test** : Refocus on My Career Workspace (#15) — réponses sur le prénom, `ask_again`, workspace d'une version antérieure, salutations.
+- **Plan de test** : Refocus on MyCareer Workspace (#15) — réponses sur le prénom, `ask_again`, workspace d'une version antérieure, salutations.
 
 ### B8 — Garde-fou de première session [manual]
 
@@ -101,15 +101,15 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour. »
 - **Attendu** : pas de message d'accueil ; le coach signale une perte possible de `current-status.md` et demande comment procéder, sans recréer le fichier avant la réponse.
-- **Plan de test** : Refocus on My Career Workspace (#15) — première session détectée par l'absence de `current-status.md`, sauf perte possible.
+- **Plan de test** : Refocus on MyCareer Workspace (#15) — première session détectée par l'absence de `current-status.md`, sauf perte possible.
 
 ### B9 — Première session en anglais [manual]
 
-- **Fichiers** : extraire une seconde fois le ZIP, dans un autre répertoire (par exemple `my-career-workspace-test-en-26-10-03`).
+- **Fichiers** : extraire une seconde fois le ZIP, dans un autre répertoire (par exemple `mycareer-workspace-test-en-26-10-03`).
 - **Conversation** : nouvelle (la première de ce second workspace)
 - **Prompt** : « Hello, let's start. »
 - **Attendu** : la réponse commence par la seule ligne fixe en italique *Starting the session…*, sans autre préambule ni mention des consignes ou d'une procédure, puis le coach affiche l'accueil anglais exact (« Welcome to your **career workspace**! »…) et la question du prénom, attend la réponse, puis accuse réception en anglais (« Got it, … »), rend compte en une phrase en anglais et propose de construire le dossier. Il dit « career workspace », jamais « workspace » seul pour désigner le produit.
-- **Plan de test** : Refocus on My Career Workspace (#15) — première session en anglais.
+- **Plan de test** : Refocus on MyCareer Workspace (#15) — première session en anglais.
 
 ## Phase C — Sources et dossier professionnel
 
