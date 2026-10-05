@@ -8,11 +8,24 @@ Le nom du répertoire local est libre : un workspace extrait sous `career-ai-wor
 
 ## Première session
 
-La première session est détectée par l'absence de `data/current-status.md` (sauf si un dossier professionnel ou un répertoire d'opportunité existe déjà : il s'agit alors d'une perte possible, traitée sans message d'accueil). Avant toute autre chose, le coach vous souhaite la bienvenue dans votre espace carrière et vous demande si vous souhaitez être appelé par votre prénom, puis attend votre réponse. Il crée ensuite les fichiers obligatoires, accuse réception de votre réponse, indique en une phrase ce qu'il a préparé et propose de construire votre dossier professionnel à partir de vos documents. Si votre premier message contient déjà une demande, le coach la traite juste après votre réponse.
+La première session est détectée par l'absence de `data/current-status.md` (sauf si un dossier professionnel ou un répertoire d'opportunité existe déjà : il s'agit alors d'une perte possible, traitée sans message d'accueil). Avant toute autre chose, le coach vous souhaite la bienvenue dans votre espace carrière et vous demande si vous souhaitez être appelé par votre prénom, puis attend votre réponse. Il crée ensuite les fichiers obligatoires, accuse réception de votre réponse, indique en une phrase ce qu'il a préparé, puis vous adresse un court rappel de confidentialité (une seule fois, sans attendre de réponse) et propose de construire votre dossier professionnel à partir de vos documents. Si votre premier message contient déjà une demande, le coach la traite juste après votre réponse.
 
 Le choix est enregistré dans la section `user` de `data/config/workspace.yaml` (`address_by_first_name` : `unset`, `ask_again`, `yes` ou `no` ; `first_name`). Vous pouvez le modifier à tout moment, en le demandant au coach ou en éditant le fichier. Avec `yes`, le coach vous salue par votre prénom au début d'une conversation et prend congé quand vous terminez la session ; il n'emploie pas votre prénom ailleurs. Chaque session commence par une courte ligne en italique, *Lancement de la session…*, suivie directement du message d'accueil ou de la salutation.
 
 Le toolkit est un coach, pas un générateur de réponses : il aide à réfléchir, à s'entraîner, à progresser et à s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites. La seule exception est le joker, disponible pendant une simulation d'entretien (voir « Sessions de travail ») : une réponse proposée n'est donnée que sur votre demande explicite et est clairement étiquetée comme réponse proposée.
+
+## Confidentialité des échanges et navigation web
+
+Vos échanges avec l'outil IA contiennent des informations personnelles : fichiers joints, réponses, réponses du coach. Protéger les fichiers de l'espace carrière ne suffit pas. Vérifiez dans les paramètres de votre outil que vos conversations ne servent pas à entraîner des modèles lorsque c'est possible, contrôlez comment l'historique et les fichiers joints sont conservés, et soyez particulièrement attentif avec un compte personnel. Ces paramètres varient selon l'outil et évoluent : à vous de les vérifier. Le toolkit ne peut pas le faire à votre place et n'offre aucune garantie à ce sujet. Le coach vous le rappelle brièvement lors de la première session.
+
+Par défaut, le coach ne consulte pas le web. L'intention est de préserver un travail en huis clos, de limiter les informations manipulées et de garder la trace des sources réellement utilisées.
+
+- **Exception ponctuelle** : le coach peut vous proposer d'ouvrir un lien (la page d'une entreprise, par exemple), ou vous pouvez le demander (par exemple lire une offre à partir de son lien, au lieu de la copier-coller). Il n'ouvre le lien qu'après votre accord explicite pour ce besoin précis : fournir un lien ne vaut pas accord, et votre accord ne vaut pas activation permanente.
+- **Option permanente** : passez `privacy.allow_external_web_search` à `true` dans votre `data/config/workspace.yaml` (fichier qui vous appartient et qui est conservé lors des mises à jour du moteur). Le coach pourra alors naviguer sans vous le demander à chaque fois ; le contenu des pages ouvertes fait alors partie de vos échanges avec l'outil IA. Le changement est pris en compte à la session suivante.
+- **Dans tous les cas**, ce que le coach récupère vous est présenté pour validation avant d'entrer dans votre dossier professionnel ou une opportunité, et sa provenance (lien et date de consultation) est notée. Une page d'offre consultée est conservée sous forme de transcription datée dans `sources/` de l'opportunité.
+- Si la navigation est impossible, le coach le dit et vous propose de coller le contenu ou de fournir le fichier.
+
+Cette règle est un comportement du coach, défini dans ses instructions ; ce n'est ni un verrouillage technique de l'outil ni une garantie.
 
 ## Opportunités gérées par le coach
 

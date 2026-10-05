@@ -57,8 +57,9 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - On the first session in the extracted workspace, confirm the coach shows the
   welcome message and the first-name question first, waits for the answer,
   then creates the four missing mandatory files under `data/` from the
-  templates and reports it in one functional sentence (see « Refocus on MyCareer
-  Workspace (#15) »).
+  templates, reports it in one functional sentence and gives the one-time
+  privacy reminder before proposing the first step (see « Refocus on MyCareer
+  Workspace (#15) » and « Privacy reminder and web browsing (#8) »).
 - Confirm a second session creates nothing and overwrites nothing, that a file
   deleted by the user is recreated alone, and that an existing file with custom
   content is left untouched.
@@ -558,6 +559,19 @@ Limit cases:
 - The candidate switches the parameter to `true` by hand: confirm the coach
   applies it from the next session (the sensitive-change alert remains in the
   backlog).
+- The candidate supplies a link together with an explicit request to open it
+  (« peux-tu lire cette offre en ligne ? »): confirm the coach does not ask
+  again before browsing.
+- The page of a job posting read from a link: confirm it is kept as a dated
+  Markdown transcription under the opportunity's `sources/` (link and
+  consultation date in its header), cited with the link in the Sources
+  section of `opportunity.md`.
+- An external reference consulted for the professional profile: confirm the
+  update proposal states the link and consultation date, and that
+  `data/profile/sources/external-references.md` records them.
+- The exact messages (privacy reminder, agreement request, browsing
+  impossible) are identical in `workspace/AGENTS.md`, `init-workspace/SKILL.md`
+  and the master scenario.
 
 Documentation:
 

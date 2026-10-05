@@ -50,7 +50,7 @@ When the candidate adds or points to a source document under `data/profile/sourc
 
 ### Create an opportunity
 
-The candidate provides available documents or context; the coach creates and maintains the workspace structure. Follow `references/opportunity-structure-guidelines.md`: allocate the next stable three-digit opportunity identifier, create the canonical `opportunity.md`, the status and the `sources/` directory, tell the candidate how to provide the documents, preserve authorized originals, transcribe each one to Markdown next to it, and convert their useful content into `opportunity.md`, in the coaching language even when a source is in another language (transcriptions keep the source language). Do not ask the candidate to create directories or files manually.
+The candidate provides available documents or context; the coach creates and maintains the workspace structure. Follow `references/opportunity-structure-guidelines.md`: allocate the next stable three-digit opportunity identifier, create the canonical `opportunity.md`, the status and the `sources/` directory, tell the candidate how to provide the documents, preserve authorized originals, transcribe each one to Markdown next to it, and convert their useful content into `opportunity.md`, in the coaching language even when a source is in another language (transcriptions keep the source language). Do not ask the candidate to create directories or files manually. When the candidate gives a link instead of the document, the "Web browsing" section of `AGENTS.md` applies.
 
 ### Prepare an opportunity
 

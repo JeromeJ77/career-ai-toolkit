@@ -29,6 +29,10 @@ Le moteur (`skills/`, `AGENTS.md`, `CLAUDE.md`, les README, `ENGINE-VERSION` qui
 
 Le répertoire `data/` contient des données personnelles. Stockez-le sur un appareil personnel ou un espace privé et durable que vous contrôlez. N'y ajoutez aucun secret commercial, document employeur non autorisé, code source, donnée client ou donnée personnelle inutile d'un tiers.
 
+Vos échanges avec l'outil IA contiennent aussi des informations personnelles. Vérifiez dans les paramètres de votre outil que vos conversations ne servent pas à entraîner des modèles lorsque c'est possible, et comment l'historique et les fichiers joints sont conservés, en particulier avec un compte personnel. Ces paramètres varient selon l'outil et évoluent : le toolkit ne peut pas les vérifier à votre place et n'offre aucune garantie à ce sujet.
+
+Par défaut, le coach ne consulte pas le web sans votre accord explicite (`privacy.allow_external_web_search: false`). Voir la section « Navigation web » du [guide utilisateur](USER-GUIDE.fr.md).
+
 ## Retour pilote
 
 Le fichier `data/feedback/pilot-feedback.md` est facultatif et n'est créé qu'à votre demande, depuis un modèle. Il sert à décrire l'expérience produit, sans inclure votre CV, vos réponses ou les informations de l'entreprise ciblée.

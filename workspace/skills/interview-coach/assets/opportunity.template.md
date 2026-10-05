@@ -13,6 +13,7 @@
 ## Sources
 
 - À renseigner avec les chemins des sources originales ou la provenance des informations fournies, et leur langue si elle diffère de celle de ce document.
+- Page consultée en ligne (le cas échéant) : lien, date de consultation et chemin de la transcription sous `sources/`.
 
 ## Description canonique de l'opportunité
 

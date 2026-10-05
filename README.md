@@ -33,7 +33,7 @@ The local directory name is free: a workspace extracted under `career-ai-workspa
 
 ## Privacy model
 
-This repository contains only generic instructions, templates, and a fully fictional example. Never add real resumes, certifications, job descriptions, interview notes, or other personal data to this repository. Keep personal data in a separate private workspace, preferably on a personal device or a storage location you control.
+This repository contains only generic instructions, templates, and a fully fictional example. Never add real resumes, certifications, job descriptions, interview notes, or other personal data to this repository. Keep personal data in a separate private workspace, preferably on a personal device or a storage location you control. See [docs/privacy.md](docs/privacy.md) for the privacy of exchanges with the AI tool and the web browsing rule.
 
 ## Build
 

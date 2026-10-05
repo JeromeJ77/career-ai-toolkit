@@ -8,11 +8,24 @@ The local directory name is free: a workspace extracted under `career-ai-workspa
 
 ## First session
 
-The first session is detected by the absence of `data/current-status.md` (unless a professional profile or an opportunity directory already exists: that is a possible loss, handled without a welcome message). Before anything else, the coach welcomes you to your career workspace and asks whether to call you by your first name, then waits for your answer. It then creates the mandatory files, acknowledges your answer, reports in one sentence what it prepared and proposes to build your professional profile from your documents. If your first message already contains a request, the coach handles it right after your answer.
+The first session is detected by the absence of `data/current-status.md` (unless a professional profile or an opportunity directory already exists: that is a possible loss, handled without a welcome message). Before anything else, the coach welcomes you to your career workspace and asks whether to call you by your first name, then waits for your answer. It then creates the mandatory files, acknowledges your answer, reports in one sentence what it prepared, then gives you a short privacy reminder (once, without waiting for an answer) and proposes to build your professional profile from your documents. If your first message already contains a request, the coach handles it right after your answer.
 
 The choice is stored in the `user` section of `data/config/workspace.yaml` (`address_by_first_name`: `unset`, `ask_again`, `yes` or `no`; `first_name`). You can change it at any time by asking the coach or by editing the file. With `yes`, the coach greets you by your first name at the start of a conversation and says goodbye when you end the session; it does not use your first name elsewhere. Every session starts with a short line in italics, *Starting the session…*, followed directly by the welcome message or the greeting.
 
 The toolkit is a coach, not an answer generator: it helps candidates reflect, practice, improve and make their professional story their own, rather than memorize ready-made answers. The only exception is the joker, available during an interview simulation (see "Work sessions"): a proposed answer is only given on your explicit request and is clearly labelled as a proposed answer.
+
+## Privacy of exchanges and web browsing
+
+Your exchanges with the AI tool contain personal information: attached files, your answers and the coach's replies. Protecting the career workspace files is not enough. Check in your tool's settings that your conversations are not used to train models when this is possible, check how history and attached files are kept, and take extra care with a personal account. These settings vary between tools and change over time: it is up to you to check them. The toolkit cannot do it for you and gives no guarantee about them. The coach gives you a short reminder in the first session.
+
+By default, the coach does not browse the web. The intention is to keep the work in a closed setting, limit the information handled and keep the sources actually used traceable.
+
+- **One-off exception**: the coach may propose to open a link (a company page, for example), or you may ask for it (for example to read a job posting from its link instead of pasting it). It opens the link only after your explicit agreement for that specific need: providing a link is not an agreement, and your agreement is not a permanent activation.
+- **Permanent option**: set `privacy.allow_external_web_search` to `true` in your `data/config/workspace.yaml` (a file that belongs to you and is kept when the engine is updated). The coach may then browse without asking each time; the content of the pages it opens becomes part of your exchanges with the AI tool. The change applies from the next session.
+- **In all cases**, what the coach retrieves is presented to you for validation before it enters your professional profile or an opportunity, and its provenance (link and consultation date) is recorded. A consulted job posting page is kept as a dated transcription under the opportunity's `sources/`.
+- If browsing is not possible, the coach says so and invites you to paste the content or provide the file.
+
+This rule is a behavior of the coach, defined in its instructions; it is neither a technical lock of the tool nor a guarantee.
 
 ## Coach-managed opportunities
 

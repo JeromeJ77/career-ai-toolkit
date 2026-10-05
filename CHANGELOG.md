@@ -4,6 +4,22 @@
 
 ### Added
 
+- Privacy reminder and web browsing rule (#8): on the first session, after the
+  first-name acknowledgement and the report, the coach gives a short, one-time
+  privacy reminder (check the AI tool's training, history and attachment
+  settings, especially with a personal account; the toolkit cannot check them
+  and gives no guarantee). The coach never browses the web without the
+  candidate's explicit agreement: with
+  `privacy.allow_external_web_search: false` (default, also when the value is
+  missing or unreadable) it may only propose, or accept a request for, a
+  one-off exception, agreed explicitly for a specific need; providing a link is
+  not an agreement. Retrieved information is validated before it enters the
+  professional profile or an opportunity, with its provenance (link and
+  consultation date); a job posting read from a link is kept as a dated
+  transcription under the opportunity's `sources/`. If browsing is impossible
+  the coach says so and asks for the content or the file. The documentation
+  (`docs/privacy.md`, README and user guides) explains how to protect exchanges
+  with the AI tool and how to set the parameter to `true`. See decision D-003.
 - Joker during an interview simulation (#18): the candidate can ask for advice
   or a proposed answer (« joker, donne-moi un indice », « joker, propose une
   réponse à ma place ») without ending the simulation. The coach steps out of

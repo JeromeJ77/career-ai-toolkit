@@ -13,7 +13,7 @@ user:
 
 privacy:
   require_confirmation_before_profile_update: true
-  allow_external_web_search: false
+  allow_external_web_search: false   # false: no web browsing without your agreement; true: browsing allowed
 
 documents:
   markdown: true

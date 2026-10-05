@@ -153,7 +153,8 @@ structure.
 
 - **Type** : PRODUCT
 - **Statut** : ✅ Adoptée
-- **Date** : 2026-09-29, confirmée le 2026-09-30
+- **Date** : 2026-09-29, confirmée le 2026-09-30, précisée le 2026-10-05 (#8)
+- **Issue** : #8
 - **Migrée au modèle le** : 2026-10-04 (#13)
 
 ### Contexte
@@ -161,6 +162,8 @@ structure.
 `data/config/workspace.yaml` définit actuellement
 `privacy.allow_external_web_search: false`. Des références externes peuvent
 néanmoins être utiles pour initialiser ou enrichir le dossier professionnel.
+Jusqu'à #8, ni le rappel de confidentialité ni la règle de navigation n'étaient
+documentés pour l'utilisateur ni repris dans les instructions du coach.
 
 ### Options considérées
 
@@ -174,30 +177,36 @@ traçabilité des sources effectivement utilisées.
 
 L'utilisateur peut activer la navigation de façon permanente en passant le
 paramètre à `true`. Lorsqu'elle est désactivée, le coach peut faire une
-exception ponctuelle uniquement si l'utilisateur la demande explicitement, par
-exemple pour compléter une référence utile au dossier professionnel, ou pour
-extraire directement les informations d'une offre d'emploi à partir de son lien
-afin de gérer une opportunité. Cela évite à l'utilisateur de copier-coller
-l'offre : il fournit le lien et le coach récupère les informations pertinentes.
+exception ponctuelle, proposée par lui ou demandée par l'utilisateur, toujours
+après l'accord explicite de l'utilisateur pour ce besoin précis ; cet accord ne
+vaut pas activation permanente. Exemples non limitatifs : compléter une
+référence utile au dossier professionnel, extraire directement les informations
+d'une offre d'emploi à partir de son lien afin de gérer une opportunité (ce qui
+évite à l'utilisateur de la copier-coller), consulter une page d'entreprise ou
+tout autre lien utile à la séance. Fournir un lien n'est pas un accord.
 
 ### Conséquences
 
-- Les références publiques ne sont consultées que sur demande explicite ou après
-  activation du paramètre.
+- Les références publiques ne sont consultées qu'après accord explicite pour un
+  besoin précis, ou après activation du paramètre.
+- La règle est comportementale (instructions du coach, `workspace/AGENTS.md`),
+  non imposée par l'outil ; la documentation le dit honnêtement et ne promet
+  aucune garantie.
+- Une valeur absente ou illisible du paramètre est traitée comme `false`.
+- Toute information récupérée est présentée pour validation avant d'être
+  intégrée au dossier professionnel ou à une opportunité, et sa provenance
+  (lien, date de consultation) est tracée.
+- Une offre extraite d'un lien est conservée sous forme de transcription datée
+  dans `sources/` de l'opportunité, comme la transcription d'un PDF (copie
+  figée : la page peut changer ou disparaître).
+- L'import web automatique du dossier professionnel reste hors de la v0.4.0.
 
 ### Conditions de réévaluation
 
 Revoir le défaut si les retours pilotes montrent que la désactivation freine
 l'usage plus qu'elle ne protège, ou si une navigation avec traçabilité des
-sources devient fiable.
-
-### Questions ouvertes
-
-- Vérifier si cette préférence est seulement une instruction comportementale ou
-  si les outils pilotes permettent aussi de la faire respecter techniquement.
-- Définir comment importer LinkedIn, GitHub ou d'autres références publiques
-  sans laisser croire qu'une ressource inaccessible a été consultée.
-- L'import web automatique du dossier professionnel reste hors de la v0.4.0.
+sources devient fiable. Revoir aussi la règle si l'outil permet de bloquer la
+navigation techniquement.
 
 ## D-004 — Séparer le moteur des données sous `data/`
 

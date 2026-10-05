@@ -35,6 +35,9 @@ le contredit.
 - **Règles transversales dans `workspace/AGENTS.md`.** Une règle de
   comportement valable toute la session ne reste pas dans le skill où elle est
   née (L-003).
+- **Renvoyer à la règle générique, pas à un cas particulier.** Un renvoi
+  « comme pour… » importe les textes exacts et les effets de la règle citée
+  (L-011).
 - **Source unique explicite.** Pour un décompte ou un constat du débrief,
   désigner la seule source à utiliser (L-006).
 - **Vérifier l'origine d'un fait** dans le transcript avant de conclure à une
@@ -436,3 +439,40 @@ backlog.
 Au prochain changement des consignes du coach : vérifier que les nouvelles
 contraintes portent sur ce qui doit être garanti, puis, au pilote, que les
 comportements laissés libres ne gênent pas les candidats.
+
+## L-011 — Un renvoi « comme pour… » importe les textes exacts de l'autre règle
+
+- **Type** : ANALYSIS
+- **Statut** : 🟡 Parade à vérifier
+- **Ajoutée le** : 2026-10-05
+- **Issues** : #8, #18
+- **Liens** : L-003, L-006
+- **Modèle** : Opus 5.5 (analyse), Sonnet 5.5 (implémentation)
+
+### Constat
+
+À la revue de l'implémentation de #8, la règle de navigation web pendant une
+simulation demandait de sortir du rôle « as for the joker ». La consigne venait
+du plan d'analyse (« sortie de rôle comme pour le joker »). Or la sortie du
+joker a un texte exact qui nomme le joker, et le débrief compte les jokers à
+partir des seuls marqueurs du transcript. Aucun test n'a encore été joué.
+
+### Cause probable
+
+Le renvoi visait un mécanisme (sortir du rôle en italique, puis y revenir),
+mais le coach applique la règle citée telle qu'elle est écrite, avec ses
+messages exacts et ses effets (marqueur, décompte). Dans l'analyse, le joker
+était l'exemple le plus récent de sortie de rôle, ce qui a masqué la règle
+générique de changement de rôle, plus ancienne.
+
+### Parade
+
+R1 de #8 : renvoyer à la règle générique de changement de rôle de
+`interview-simulation-guidelines.md`, avec ses lignes génériques, et dire
+explicitement que la demande de navigation n'est pas un joker (ni marqueur, ni
+décompte).
+
+### Vérification
+
+D13 du scénario maître : lignes génériques de sortie et de retour, aucun joker
+dans `transcript.md` ni au débrief.

@@ -39,15 +39,15 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt 1** : « Bonjour, on peut commencer la première session. »
 - **Attendu 1** : la réponse commence par la seule ligne fixe en italique *Lancement de la session…*, sans autre préambule (aucune mention du CLAUDE.md, des consignes, d'une procédure ou d'étapes, ni du fait qu'il s'agit d'une première session), puis le coach affiche immédiatement l'accueil exact (« Bienvenue dans votre **espace carrière** ! », phrase de présentation, question sur le prénom) et attend la réponse, sans créer de fichier ni lire de données avant. Il parle d'« espace carrière », jamais de « workspace ».
 - **Prompt 2** : « Oui, Nadia. »
-- **Attendu 2** : le coach accuse réception (« Entendu, Nadia. Vous pourrez changer cela à tout moment, en me le demandant ou dans votre configuration. »), crée les quatre fichiers obligatoires (`data/config/workspace.yaml`, `data/current-status.md`, `data/profile/professional-profile.md`, `data/profile/sources/external-references.md`) depuis les modèles, le dit en une seule phrase fonctionnelle (« J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. »), propose de construire le dossier professionnel à partir des documents de la candidate, et ne remplit pas le dossier professionnel. `data/config/workspace.yaml` contient `user.address_by_first_name: yes` et `first_name: "Nadia"`. `data/feedback/pilot-feedback.md` n'est pas créé.
-- **Mots-clés** : montrer l'accueil et la question du prénom, puis le fait que le coach attend la réponse avant de préparer l'espace ; faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
-- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm `data/feedback/pilot-feedback.md` is created only on request » ; Refocus on MyCareer Workspace (#15).
+- **Attendu 2** : le coach accuse réception (« Entendu, Nadia. Vous pourrez changer cela à tout moment, en me le demandant ou dans votre configuration. »), crée les quatre fichiers obligatoires (`data/config/workspace.yaml`, `data/current-status.md`, `data/profile/professional-profile.md`, `data/profile/sources/external-references.md`) depuis les modèles, le dit en une seule phrase fonctionnelle (« J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. »), donne ensuite, une seule fois, le rappel de confidentialité exact (« Un mot sur la confidentialité : vos échanges avec l'outil IA contiennent des informations personnelles. Vérifiez dans les paramètres de votre outil que vos conversations ne servent pas à entraîner des modèles lorsque c'est possible, et comment l'historique et les fichiers joints sont conservés, en particulier avec un compte personnel. Je ne peux pas le vérifier à votre place. Par ailleurs, je ne consulte pas le web sans votre accord explicite. »), sans attendre de réponse ni donner de procédure propre à un outil, puis propose de construire le dossier professionnel à partir des documents de la candidate, et ne remplit pas le dossier professionnel. `data/config/workspace.yaml` contient `user.address_by_first_name: yes` et `first_name: "Nadia"`. `data/feedback/pilot-feedback.md` n'est pas créé.
+- **Mots-clés** : montrer l'accueil et la question du prénom, puis le fait que le coach attend la réponse avant de préparer l'espace ; faire remarquer le rappel de confidentialité (une quinzaine de secondes) ; faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
+- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm `data/feedback/pilot-feedback.md` is created only on request » ; Refocus on MyCareer Workspace (#15) ; Privacy reminder and web browsing (#8).
 
 ### B2 — Deuxième session sans changement
 
 - **Conversation** : nouvelle
 - **Prompt** : « On reprend. »
-- **Attendu** : la réponse commence par la ligne fixe en italique *Lancement de la session…*, puis le coach salue par « Bonjour Nadia. », sans message d'accueil ni question sur le prénom ; rien n'est créé ni réécrit, il ne signale aucune création et ne dit rien de l'état de l'initialisation ou de la configuration (pas de « Votre espace carrière est prêt… »), ni ne cite le CLAUDE.md, une procédure ou une étape (ni « Step 2… »). Le prénom n'est ensuite employé que dans la salutation, l'accusé de réception du choix et l'au revoir.
+- **Attendu** : la réponse commence par la ligne fixe en italique *Lancement de la session…*, puis le coach salue par « Bonjour Nadia. », sans message d'accueil ni question sur le prénom ; rien n'est créé ni réécrit, il ne signale aucune création et ne dit rien de l'état de l'initialisation ou de la configuration (pas de « Votre espace carrière est prêt… »), ni ne cite le CLAUDE.md, une procédure ou une étape (ni « Step 2… »). Aucun rappel de confidentialité. Le prénom n'est ensuite employé que dans la salutation, l'accusé de réception du choix et l'au revoir.
 - **Plan de test** : Workspace — « Confirm a second session creates nothing and overwrites nothing… ».
 
 ### B3 — Fichier supprimé, fichier personnalisé [manual]
@@ -71,7 +71,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Action** : mettre `allow_external_web_search: peut-être`.
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour. »
-- **Attendu** : le fichier n'est pas réécrit ; le coach indique la clé, la valeur trouvée et la valeur par défaut utilisée pour la session, et laisse la correction à la candidate. Remettre `false` ensuite.
+- **Attendu** : le fichier n'est pas réécrit ; le coach indique la clé, la valeur trouvée et la valeur par défaut utilisée pour la session, et laisse la correction à la candidate. Aucune navigation n'a lieu (la valeur par défaut `false` s'applique). Remettre `false` ensuite.
 - **Plan de test** : Workspace — « Give a key an invalid value… ».
 
 ### B6 — Langue du dossier [manual]
@@ -156,15 +156,6 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : à définir avec #9 ; inclure une tentative d'ajouter une opportunité avant que le dossier soit marqué prêt.
 - **Attendu** : rappel du statut du dossier en début de session, suggestion de le finaliser avant d'ouvrir une opportunité, sans bloquer.
 
-### *C4b — Navigation web : exceptions ponctuelles* [manual] [todo #8]
-
-- **Conversation** : nouvelle, dans un workspace dont `allow_external_web_search` vaut `false`
-- **Prompt 1** : « Bonjour, j'ai une offre chez Orion Retail, voici le lien : https://jobs.example/orion-retail/senior-backend (lien fictif, non résolvable). »
-- **Attendu 1** : le coach demande ou confirme l'accord explicite pour ouvrir ce lien seulement ; si la navigation est impossible ou le lien introuvable, il le dit sans prétendre l'avoir consulté et propose de coller l'offre ou de fournir le fichier.
-- **Prompt 2** : refuser (« Non, je vais coller l'offre. »). **Attendu 2** : aucune navigation, retour à la voie habituelle.
-- **Action** : mettre `allow_external_web_search: true`, nouvelle conversation, redonner un lien. **Attendu** : navigation sans demande, information présentée pour validation, provenance (lien, date) tracée.
-- **Plan de test** : Privacy reminder and web browsing (#8). Étape à compléter en fin de développement (lien consultable à choisir, voir l'écart du kit).
-
 ### C5 — Réimport après non-écrasement
 
 - **Conversation** : nouvelle
@@ -187,6 +178,20 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : « Bonjour, on continue. »
 - **Attendu** : le coach signale l'incohérence, évoque une perte de fichier possible, **ne recrée pas le squelette** et ne réécrit pas le dossier avant décision ; il propose de reconstruire depuis les sources, de restaurer une copie ou de vérifier une synchronisation. Demander alors : « Réimporte tout et reconstruis le dossier. » Les sources sont retranscrites et le dossier reconstruit via le workflow validé.
 - **Plan de test** : Workspace — « Delete `data/profile/professional-profile.md` but keep the sources… ».
+
+### C8 — Navigation web : exceptions ponctuelles [manual]
+
+Le workspace doit être dans l'état de la phase C (dossier professionnel validé), avec `allow_external_web_search: false`.
+
+- **Conversation** : nouvelle
+- **Prompt 1** : « Bonjour, j'ai une offre chez Orion Retail, voici le lien : https://jobs.example/orion-retail/senior-backend »
+- **Attendu 1** : le coach ne navigue pas de lui-même ; il demande l'accord pour ce lien seulement, avec la question exacte (« Je peux ouvrir https://jobs.example/orion-retail/senior-backend pour lire l'offre. Êtes-vous d'accord, pour cette fois ? »).
+- **Prompt 2** : « Oui, d'accord. » **Attendu 2** : le lien fictif n'est pas résolvable : le coach le dit avec le message exact (« Je n'ai pas pu ouvrir https://jobs.example/orion-retail/senior-backend. Vous pouvez coller son contenu ici ou me fournir le fichier correspondant. »), n'affirme jamais avoir consulté l'offre et n'invente rien.
+- **Prompt 3** : « Non, je vais coller l'offre. » (après avoir rejoué le prompt 1 dans une nouvelle conversation) **Attendu 3** : aucune navigation ; le coach retombe sur la voie habituelle (coller l'offre ou fournir le fichier).
+- **Prompt 4** (nouvelle conversation) : « Peux-tu lire cette offre en ligne ? https://example.com/ » **Attendu 4** : la demande est explicite, le coach n'a pas besoin de reposer la question ; si la navigation est disponible, l'information est présentée pour validation avant d'être écrite dans `opportunity.md`, la page est conservée en transcription datée sous `sources/` (lien et date de consultation) et citée dans la section Sources. La page est neutre : aucune offre réelle n'en est extraite, le coach dit ce qu'il y a trouvé.
+- **Prompt 5** (nouvelle conversation) : « Voici le site de l'entreprise : https://example.com/ » **Attendu 5** : fournir un lien n'est pas un accord, le coach demande l'accord pour ce lien et ce besoin ; après « Oui », il ouvre la page (si possible). Plus tard dans la conversation, un second besoin de navigation est de nouveau proposé : l'accord n'était pas permanent.
+- **Action** : mettre `allow_external_web_search: true`, nouvelle conversation. **Prompt 6** : « Voici le site de l'entreprise : https://example.com/ » **Attendu 6** : navigation sans demande d'accord, information présentée pour validation, provenance (lien, date) tracée, rien écrit dans le dossier ou l'opportunité sans validation. Remettre `false` ensuite.
+- **Plan de test** : Privacy reminder and web browsing (#8).
 
 ## Phase D — Première opportunité : Lumen Pay
 
@@ -331,6 +336,13 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Attendu** : `interviews/02-technical/actual/notes.md` et `actual/review.md`, ce dernier séparant faits observables, ressenti, interprétations et améliorations ; proposition d'un nouveau round si le processus continue.
 - **Plan de test** : Workspace — « Confirm an actual-interview review works from candidate notes without requiring a transcript », « Confirm durable learnings are separated from opportunity-specific content ».
 
+### D13 — Demande de navigation pendant une simulation [manual]
+
+- **Conversation** : nouvelle, avec `allow_external_web_search: false`
+- **Action** : lancer une simulation courte du tour `02-technical`, puis, après une première réponse : « Peux-tu regarder la page https://example.com/ pour m'en dire plus sur l'entreprise ? »
+- **Attendu** : la même règle s'applique : le coach sort du rôle (ligne en italique, comme pour le joker), demande l'accord pour ce lien et ce besoin avec la question exacte, traite la demande, puis reprend le rôle de l'interviewer ; la simulation n'est pas interrompue ni terminée.
+- **Plan de test** : Privacy reminder and web browsing (#8) — limit cases.
+
 ## Phase E — Deuxième opportunité en parallèle : Northwind Ledger
 
 ### E1 — Créer la deuxième opportunité dans une nouvelle conversation [demo]
@@ -397,7 +409,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 | Étape | Durée indicative |
 | --- | --- |
 | A1 Extraire et ouvrir | 2 min |
-| B1 Première session | 3 min |
+| B1 Première session (rappel de confidentialité inclus) | 3 min |
 | C1 Sources et transcription | 4 min |
 | C2 Validation du dossier | 2 min |
 | *C3 Entretien d'initialisation* | *`[todo #10]`* |
