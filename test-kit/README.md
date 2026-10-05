@@ -12,7 +12,7 @@ Le kit n'est jamais inclus dans le ZIP de MyCareer Workspace distribué. Le buil
 | `sources/opportunities/` | Sources fictives des opportunités : deux offres d'emploi et des notes d'appel. |
 | `scenario.md` | Scénario maître : la liste ordonnée des étapes à jouer, avec les fichiers à injecter, les prompts, les mots-clés, les résultats attendus et les items du plan de test correspondants. |
 | `guide-testeur.md` | Guide du testeur : comment dérouler le scénario, noter les résultats (y compris à la voix avec un assistant scribe, prompt fourni) et préparer le journal de test et le rapport. |
-| `tools/` | Script de génération des PDF et DOCX à partir des sources Markdown. Outil de développement, jamais appelé par le build. |
+| `tools/` | Outils du kit : génération des PDF et DOCX à partir des sources Markdown, extraction du script de démo, et mod Claude Code `/test-coverage` qui affiche la couverture des tests. Voir [`tools/README.md`](tools/README.md). |
 
 Les sources Markdown sont la référence. Les PDF, DOCX et TXT sont les fichiers que l'on dépose réellement dans le workspace pendant un test ou une démo ; les PDF et DOCX sont générés depuis le Markdown puis commités, pour que le build n'ait aucune dépendance.
 

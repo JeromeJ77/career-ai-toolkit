@@ -191,6 +191,15 @@
   reviewed raw ideas and the confirmed candidate-issue plan before creating
   GitHub issues and cleaning the backlog.
 
+### Tooling
+
+- Test coverage mod for Claude Code (#19), in `test-kit/tools/test-coverage/`:
+  `/test-coverage` reads `docs/test-log.md` and shows a bar of the statuses
+  (Validé, À revalider, Problème constaté, Non testé) with counts and
+  percentages; `-v` adds a table per log section. In the terminal, a coloured
+  bar above the prompt follows changes to the log. Development tool, not
+  shipped in any ZIP; loading is described in `test-kit/tools/README.md`.
+
 ## [0.3.0] - 2026-09-27
 
 ### Changed

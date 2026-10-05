@@ -1,0 +1,6 @@
+{
+  "name": "test-coverage",
+  "version": "0.1.0",
+  "description": "Barre de couverture des tests lue dans docs/test-log.md (validé, à revalider, problème, non testé)",
+  "types": "./types/index.d.ts"
+}
