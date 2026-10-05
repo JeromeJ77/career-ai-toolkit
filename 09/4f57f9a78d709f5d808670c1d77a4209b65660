@@ -1,0 +1,27 @@
+docs/lessons-learned.md
+  s_27da8f97d29a0c::t_bc62263b137327 24-32,96-97,130-133,138-139,163-167,172-173,198-201,206-207,234-236,241-242,265-266,271-272,298-301,306-307,331-336,390-438
+docs/test-history/2026-10-05-tests-manuels-corrections-15-18.md
+  s_27da8f97d29a0c::t_020f0d21c5f4cc 1-57
+BACKLOG.md
+  s_27da8f97d29a0c::t_2b31fe87875ea7 82-90,107-111,134-182,252-253,259-262,273-276,378-408
+docs/design/decision-log.md
+  s_27da8f97d29a0c::t_776628953be68e 1185-1260
+docs/test-log.md
+  s_27da8f97d29a0c::t_2e48051f0e693e 96,99-105,110,112,120-123,125-126,128,132,138
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "094f57f9a78d709f5d808670c1d77a4209b65660",
+  "prompts": {},
+  "sessions": {
+    "s_27da8f97d29a0c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1a69bcc-5a1a-4023-80c6-d400c93e31fe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
