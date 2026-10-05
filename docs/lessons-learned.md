@@ -443,7 +443,7 @@ comportements laissés libres ne gênent pas les candidats.
 ## L-011 — Un renvoi « comme pour… » importe les textes exacts de l'autre règle
 
 - **Type** : ANALYSIS
-- **Statut** : 🟡 Parade à vérifier
+- **Statut** : ✅ Parade vérifiée
 - **Ajoutée le** : 2026-10-05
 - **Issues** : #8, #18
 - **Liens** : L-003, L-006
@@ -476,3 +476,9 @@ décompte).
 
 D13 du scénario maître : lignes génériques de sortie et de retour, aucun joker
 dans `transcript.md` ni au débrief.
+
+Joué le 2026-10-05 (une seule exécution) : lignes génériques *Je sors du rôle
+des interviewers.* et *Je reprends le rôle des interviewers.* en italique,
+aucun marqueur de joker dans `transcript.md`, aucun joker compté au débrief
+en dehors des jokers d'indice réellement joués. Voir la
+[session du 2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md).

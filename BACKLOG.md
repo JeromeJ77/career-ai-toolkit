@@ -251,6 +251,10 @@ des interviewers et prénom de l'utilisateur dans la conversation.
     conversation et le mode développeur/test.
   - Constat du 2026-10-05 (B1) : « c'est l'une des deux clés que je suis
     autorisé à modifier » expose au candidat un détail des consignes.
+  - Constat du 2026-10-05 (tests de #8, C8) : quand le premier message est
+    une vraie demande, le coach écrit parfois « Je commence par lire les
+    consignes du workspace, puis je m'occupe de l'offre. » avant la ligne
+    fixe *Lancement de la session…*, de façon intermittente.
 - Prénoms des interviewers en simulation : relevé à la démo à blanc
   (2026-10-03, étape D5) puis aux tests de #14 (2026-10-04) : « Interviewer 1 »
   évoque une autre personne alors qu'aucun interviewer ne porte de nom. Donner
