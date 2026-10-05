@@ -1,0 +1,23 @@
+docs/test-plan.md
+  s_6e0f1278154c11::t_25b3510c258c55 513-580
+test-kit/scenario.md
+  s_6e0f1278154c11::t_351ac8c6f11bbe 159-167
+docs/test-log.md
+  s_6e0f1278154c11::t_0bc25d4fd9a56e 21,132-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f067b5fca8d704532166b0b7a87cbc100ee9cb3b",
+  "prompts": {},
+  "sessions": {
+    "s_6e0f1278154c11": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "214fa014-c93e-4338-ba55-f0f9541cca98",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
