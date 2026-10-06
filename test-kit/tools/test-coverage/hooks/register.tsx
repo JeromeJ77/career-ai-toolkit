@@ -15,8 +15,8 @@ const coverage = atom({ plugin: 'test-coverage', key: 'coverage' } as const, nul
 
 const COLOR: Readonly<Record<Kind, string>> = {
   validated: 'green',
-  revalidate: 'yellow',
-  problem: 'red',
+  revalidate: '#e08a00',
+  problem: '#d83d65',
   untested: 'gray',
 }
 
