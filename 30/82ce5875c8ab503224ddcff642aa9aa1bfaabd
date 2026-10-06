@@ -1,0 +1,19 @@
+test-kit/tools/test-coverage/hooks/register.tsx
+  s_1a1dc1c141e700::t_72ab176c78b08e 17-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3082ce5875c8ab503224ddcff642aa9aa1bfaabd",
+  "prompts": {},
+  "sessions": {
+    "s_1a1dc1c141e700": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "26eeffe3-c260-437d-a792-51ac6a4fd968",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
