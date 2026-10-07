@@ -25,8 +25,13 @@ le contredit.
   décrire l'intention et le résultat attendu ; un écart de forme qui ne gêne
   pas le candidat va au backlog, et une règle qui exclut un bon comportement
   non prévu est assouplie (L-010).
+- **Figer seulement les repères.** Une formulation exacte est réservée à ce que
+  le candidat reconnaît d'une session à l'autre (ligne de lancement, ligne de
+  statut, lignes de rôle) ; une phrase de conversation se décrit par son
+  contenu obligatoire. Toute formulation figée doit exister dans chaque langue
+  de coaching. Dès l'analyse, le plan justifie chaque message figé (L-012).
 - **Formulations fermées et positives, là où une contrainte est nécessaire.**
-  Dire ce qui est permis, mot pour mot quand c'est possible, plutôt qu'une
+  Dire ce qui est permis, mot pour mot pour un repère, plutôt qu'une
   interdiction vague ou partielle (« sans la reposer en entier ») (L-003,
   L-005, L-007). Même fermée, une formulation peut être paraphrasée (L-002,
   L-007).
@@ -482,3 +487,49 @@ des interviewers.* et *Je reprends le rôle des interviewers.* en italique,
 aucun marqueur de joker dans `transcript.md`, aucun joker compté au débrief
 en dehors des jokers d'indice réellement joués. Voir la
 [session du 2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md).
+
+## L-012 — Une décision de méthode non appliquée à l'analyse suivante
+
+- **Type** : PROCESS
+- **Statut** : 🟡 Parade à vérifier
+- **Ajoutée le** : 2026-10-08
+- **Issues** : #9
+- **Décisions** : D-010, D-022
+- **Liens** : L-002, L-007, L-010
+- **Modèle** : Opus 5.5 (analyse)
+
+### Constat
+
+À la revue de #9 (commit 3bc6b1f), le développeur a relevé que la section
+« Professional profile status » de `workspace/AGENTS.md` impose une dizaine de
+messages mot pour mot, chacun en français et en anglais : refus et ses deux
+suites, proposition de passage à « prêt », mise en garde après création,
+insistance, rappel, nouvelle passe d'analyse. Ces messages venaient du plan
+d'analyse (section « Messages exacts »), rédigé le 2026-10-07, deux jours après
+l'adoption de D-022. La plupart sont des phrases de conversation, que D-022
+demande de décrire par leur contenu. Aucun test n'a encore été joué.
+
+### Cause probable
+
+D-022 et l'enseignement « Ne contraindre que ce qui doit être garanti » sont
+écrits pour la rédaction des consignes du coach, pas pour l'analyse d'un
+ticket : rien dans le rôle de la conversation d'analyse ne demandait de
+justifier chaque formulation exacte. L'enseignement voisin « Formulations
+fermées et positives » a pris le dessus, et chaque message figé appelait sa
+version anglaise, ce qui a multiplié le texte sans qu'on mesure le coût.
+
+### Parade
+
+- R10 de #9 : seuls la ligne de statut et le rappel de dérogation restent
+  figés (repères reconnus d'une session à l'autre) ; les autres messages sont
+  décrits par leur contenu obligatoire, avec les invariants gardés fermes.
+- D-022 précisée le 2026-10-08 : critère des repères, coût bilingue, point de
+  contrôle à l'analyse.
+- Point de contrôle ajouté au rôle de la conversation d'analyse dans le
+  `AGENTS.md` racine et aux « Enseignements » ci-dessus.
+
+### Vérification
+
+Au prochain ticket qui ajoute des messages au candidat : le plan indique, pour
+chaque message, s'il est figé ou décrit par son contenu, avec la raison au
+regard de D-022.

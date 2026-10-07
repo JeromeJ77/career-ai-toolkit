@@ -1253,8 +1253,9 @@ plupart des entrées obsolètes.
 
 - **Type** : PROCESS
 - **Statut** : ✅ Adoptée
-- **Date** : 2026-10-05
-- **Issue** : aucune (constat fait pendant les tests de #15 et #18)
+- **Date** : 2026-10-05, précisée le 2026-10-08 (#9)
+- **Issue** : aucune (constat fait pendant les tests de #15 et #18) ; précision
+  issue de la revue de #9
 
 ### Contexte
 
@@ -1277,6 +1278,12 @@ La même recommandation avait été donnée au testeur en formation : trop
 contraindre un modèle peut être contre-productif pour obtenir les meilleures
 réponses.
 
+Le 2026-10-08, la revue de #9 a montré que la règle n'avait pas été appliquée
+à l'analyse du ticket : le plan imposait une dizaine de messages mot pour mot,
+chacun en français et en anglais, pour des phrases de conversation (refus,
+proposition de passage à « prêt », mise en garde, insistance, nouvelle passe
+d'analyse) (L-012).
+
 ### Options considérées
 
 - **Contraindre chaque écart observé** (formulation exacte, interdiction
@@ -1298,6 +1305,20 @@ toute faite hors joker), mécanismes que le candidat doit pouvoir reconnaître
 (mots-clés d'arrêt, joker, lignes de rôle). Pour le reste, la consigne décrit
 l'intention et le résultat attendu, et laisse le coach adapter la forme.
 
+Précisions du 2026-10-08 (#9) :
+
+- **Critère des repères** : une formulation exacte est justifiée pour un repère
+  que le candidat reconnaît d'une session à l'autre (ligne de lancement, ligne
+  de statut du dossier, lignes de rôle, rappel d'une ligne). Une phrase de
+  conversation, même importante, se décrit par son contenu obligatoire, avec
+  au plus un exemple présenté comme tel.
+- **Coût bilingue** : toute formulation exacte est fournie dans chaque langue
+  de coaching supportée, sinon le coach la traduit et elle n'est plus exacte.
+  C'est une raison de plus d'en limiter le nombre.
+- **Point de contrôle** : l'analyse d'un ticket qui ajoute un message au
+  candidat indique dans le plan, pour chaque message, s'il est figé ou décrit
+  par son contenu, avec la raison au regard de cette décision.
+
 Un écart de forme qui ne gêne pas le candidat n'appelle pas de nouvelle
 contrainte : il est noté au backlog et corrigé seulement si le pilote montre
 qu'il gêne. Un comportement non prévu mais jugé bon est conservé ; si une règle
@@ -1318,6 +1339,12 @@ compte.
   modification des clés de langue sur demande explicite.
 - L'audit du skill du coach avant le pilote examine aussi le niveau de
   contrainte des consignes.
+- Précision du 2026-10-08 : le point de contrôle est écrit dans le rôle de la
+  conversation d'analyse du `AGENTS.md` racine (paragraphe sur le plan
+  d'implémentation) et dans les « Enseignements » du journal des difficultés
+  (L-012). Les messages de #9 sont ramenés à leur contenu, sauf la ligne de
+  statut et le rappel de dérogation (R10 de #9, D-010). Les messages exacts de
+  la navigation web (#8) restent à examiner dans un ticket à part.
 
 ### Conditions de réévaluation
 

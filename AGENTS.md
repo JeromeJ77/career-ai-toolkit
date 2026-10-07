@@ -35,6 +35,10 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   implementation complexity (low, medium or high, with the main reasons) and
   recommend the model to use for the implementation. A change to the coach's
   behavior (`workspace/AGENTS.md`, skills) is never assessed as low complexity.
+  For every new message to the candidate, the plan states whether it is fixed
+  wording or described by its required content, with the reason under D-022:
+  fixed wording only for a marker the candidate recognizes from one session to
+  the next, given in every supported coaching language.
 - At the end of the implementation, the implementation conversation appends a
   report to the plan: what was done, what the agent verified, what remains
   untested, deviations from the plan and points to review. The user then
