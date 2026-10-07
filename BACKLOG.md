@@ -128,7 +128,8 @@ pratiques de rédaction d'instructions et de skills pour agents.
   coach sur ses propres consignes ou étapes (« comme demandé par le CLAUDE.md »,
   « Step 2: check existence only… »), ajouts non prescrits (avertissement après
   une réponse proposée).
-- À rapprocher de « Tests automatiques du coach par sous-agent » et des
+- À rapprocher de « Tests fonctionnels automatisés du coach (Claude Code
+  headless) » et des
   recommandations de raisonnement selon les tâches (section « Immediately
   after the end-to-end test »).
 - Inclure dans l'audit le niveau de contrainte des consignes (L-010) :
@@ -407,23 +408,70 @@ l'absence de lecture des fichiers de données avant le message d'accueil (#15).
   Claude Desktop si c'est le client des candidats du pilote.
 - Les traces contiennent le vrai prénom du testeur : les lire sans le reporter
   dans le dépôt (`<prénom>` dans les sessions de test).
-- Les états de départ fictifs serviront aussi aux « Tests automatiques du coach
-  par sous-agent ».
+- Le script et les états de départ fictifs sont aussi les briques des « Tests
+  fonctionnels automatisés du coach (Claude Code headless) ».
 
-### Tests automatiques du coach par sous-agent
+### Tests fonctionnels automatisés du coach (Claude Code headless)
 
-- Après le build (avec lui ou indépendamment), dérouler automatiquement un
-  ensemble de tests : décompresser le ZIP du workspace dans un répertoire
-  temporaire ignoré par Git localement, y copier les sources de référence du
-  kit de test (`test-kit/`), puis lancer un sous-agent dont ce répertoire est le
-  contexte.
-- Le sous-agent déclenche des conversations avec le coach pour reprendre toutes
-  les étapes et conversations possibles, dont l'initialisation du dossier
-  professionnel, en suivant le scénario maître du kit de test.
-- Le déroulé n'est pas déterministe : il reste a priori hors du build.
+Étude du 2026-10-07 : dérouler les scénarios à la main coûte trop de temps.
+Fusionne l'ancienne idée « Tests automatiques du coach par sous-agent » avec
+les constats de l'étude.
+
+- **Pas un sous-agent, un Claude Code headless.** Un sous-agent lancé depuis
+  une conversation du dépôt hérite du contexte du toolkit et ne charge jamais
+  le `CLAUDE.md` du workspace extrait : il jouerait un coach simulé, pas le
+  moteur livré. Le coach est donc un processus Claude Code en mode headless
+  (`claude -p … --output-format json`), lancé par l'orchestrateur depuis le
+  workspace de test, avec le modèle du pilote épinglé (`--model`), les
+  écritures autorisées (`--permission-mode acceptEdits`) et WebSearch /
+  WebFetch désactivés sauf pour l'étape C8. Flags à confirmer sur la version
+  installée du CLI.
+- **Correspondance avec le scénario maître.** Le champ **Conversation** se
+  traduit directement : « nouvelle » = nouvel appel, « suite de Dn » = reprise
+  de la session (`--resume`). La sortie JSON donne la réponse et les appels
+  d'outils, ce qui rend vérifiables les contrôles aujourd'hui invérifiables
+  (lecture de fichiers avant l'accueil, #15).
+- **Workspace hors du dépôt, pas un worktree.** Un worktree est un checkout
+  du dépôt : il garde le `CLAUDE.md` du toolkit et un lien `.git`, mêmes
+  problèmes qu'un répertoire ignoré dans le dépôt. Réutiliser le script de
+  préparation et les **états de départ** de « Workspaces de test manuel
+  accessibles à l'agent » (dossier daté hors du dépôt, sources du kit, état
+  `data/` chargé) : ce sont les briques communes aux tests manuels et
+  automatiques, et les états de départ permettent de jouer les phases D et E
+  isolément, en parallèle, avec moins de variabilité.
+- **Quatre rôles.** Orchestrateur (agent principal ou script), testeur, coach,
+  juge. La plupart des étapes ont des prompts fixes : un script suffit comme
+  testeur. Le juge est nécessairement un LLM, les attendus mêlant phrases
+  exactes et jugements de forme. Les simulations (D5, D7, E5) demandent un
+  testeur LLM léger qui improvise au nom de Nadia Berkani à partir de
+  `notes-complementaires-carriere.md`. Un agent dev piloté automatiquement est
+  un sujet distinct, déjà couvert par le cycle plan / implémentation / revue
+  d'`AGENTS.md` : hors de ce chantier.
+- **Attendus vérifiables par machine.** Le champ **Attendu** est rédigé pour
+  un humain. Ajouter par étape un bloc structuré (fichiers attendus ou absents,
+  clés YAML, phrases présentes ou interdites, critère sémantique pour le juge),
+  extrait de `scenario.md` comme l'est déjà le script de démo, pour garder le
+  scénario comme source unique (D-013).
+- **Statut des résultats.** Le journal interdit de déduire un résultat ; un
+  PASS du juge est une déduction de LLM. Produire un rapport par exécution,
+  relu par le développeur avant de passer une zone en « Validé », ou prévoir un
+  statut distinct « Validé (auto) ». Un échec signale un point à regarder, pas
+  forcément une régression (déroulé non déterministe).
+- **Hors du build**, dans un script à part (par exemple `test-kit/tools/`) :
+  build, workspace temporaire, lecture des étapes, appels `claude -p`, capture
+  des sorties et de `data/`. Le build reste un simple empaquetage.
+- **Limite** : cela teste Claude Code, pas Claude Desktop. La passe de recette
+  Desktop reste manuelle.
+- **Étapes proposées** : (1) script d'orchestration PowerShell, juge humain
+  sur le rapport ; (2) bloc de vérifications dans le scénario et juge LLM sur
+  les phases B et C ; (3) états de départ commités dans le kit pour D et E ;
+  (4) testeur LLM pour les simulations ; (5) si le script devient lourd,
+  harnais Agent SDK (hooks, contrôle fin des sessions).
 - À la demande seulement, un script copie la partie `data/` du workspace
-  temporaire obtenu dans `examples/`, ce qui donne un exemple illustratif que
-  l'on peut commiter sans le changer à chaque exécution.
+  obtenu dans `examples/`, ce qui donne un exemple illustratif que l'on peut
+  commiter sans le changer à chaque exécution.
+- Points ouverts : coût et durée d'une passe complète, choix du modèle
+  testeur et du modèle juge.
 - Dépend du kit de test et du scénario maître de l'issue #12.
 
 ### Génération des sources fictives dans le build
