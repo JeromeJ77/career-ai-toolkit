@@ -47,8 +47,8 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
 - **Conversation** : nouvelle
 - **Prompt** : « On reprend. »
-- **Attendu** : la réponse commence par la ligne fixe en italique *Lancement de la session…*, puis le coach salue par « Bonjour Nadia. », sans message d'accueil ni question sur le prénom ; rien n'est créé ni réécrit, il ne signale aucune création et ne dit rien de l'état de l'initialisation ou de la configuration (pas de « Votre espace carrière est prêt… »), ni ne cite le CLAUDE.md, une procédure ou une étape (ni « Step 2… »). Aucun rappel de confidentialité. Le prénom n'est ensuite employé que dans la salutation, l'accusé de réception du choix et l'au revoir.
-- **Plan de test** : Workspace — « Confirm a second session creates nothing and overwrites nothing… ».
+- **Attendu** : la réponse commence par la ligne fixe en italique *Lancement de la session…*, puis le coach salue par « Bonjour Nadia. », suivi de la ligne de statut du dossier « Dossier professionnel : ⚪ vide (version 0.1). », sans message d'accueil ni question sur le prénom ; rien n'est créé ni réécrit, il ne signale aucune création et ne dit rien de l'état de l'initialisation ou de la configuration (pas de « Votre espace carrière est prêt… »), ni ne cite le CLAUDE.md, une procédure ou une étape (ni « Step 2… »). Aucun rappel de confidentialité. Le prénom n'est ensuite employé que dans la salutation, l'accusé de réception du choix et l'au revoir.
+- **Plan de test** : Workspace — « Confirm a second session creates nothing and overwrites nothing… » ; Professional profile status and version (#9) — ligne de statut.
 
 ### B3 — Fichier supprimé, fichier personnalisé [manual]
 
@@ -140,9 +140,9 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Durée démo** : 2 min
 - **Conversation** : suite de C1
 - **Prompt** : « D'accord pour l'ensemble, sauf : ne mets pas mon salaire actuel dans le dossier. Applique. »
-- **Attendu** : `professional-profile.md` est rempli selon la proposition amendée, la version et la date sont mises à jour, le salaire n'y figure pas, les durées et chiffres sont ceux des sources (sept ans d'expérience), `data/current-status.md` note où on en est.
+- **Attendu** : `professional-profile.md` est rempli selon la proposition amendée ; son en-tête passe au statut `draft` (en construction) et à la version 0.2, avec la date du jour et une entrée d'historique ; le salaire n'y figure pas, les durées et chiffres sont ceux des sources (sept ans d'expérience), `data/current-status.md` note où on en est.
 - **Mots-clés** : ouvrir `professional-profile.md` : ce n'est plus un squelette vide, on y retrouve les informations validées par la candidate, sans le salaire actuel.
-- **Plan de test** : Workspace — « Confirm profile changes are proposed before application ».
+- **Plan de test** : Workspace — « Confirm profile changes are proposed before application » ; Professional profile status and version (#9) — première modification validée.
 
 ### *C3 — Entretien d'initialisation du dossier* [demo] [todo #10]
 
@@ -150,11 +150,18 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : à définir avec #10.
 - **Attendu** : le coach conduit un premier entretien pour compléter les sections du dossier que les sources ne couvrent pas (motivations, préférences, messages récurrents), puis propose les ajouts.
 
-### *C4 — Rappel tant que le dossier n'est pas prêt, opportunité trop tôt* [demo] [todo #9]
+### C4 — Dossier en construction : opportunité trop tôt, puis passage à « prêt » [demo]
 
-- **Durée démo** : à estimer à la livraison de #9
-- **Prompt** : à définir avec #9 ; inclure une tentative d'ajouter une opportunité avant que le dossier soit marqué prêt.
-- **Attendu** : rappel du statut du dossier en début de session, suggestion de le finaliser avant d'ouvrir une opportunité, sans bloquer.
+- **Durée démo** : 3 min
+- **Conversation** : nouvelle (après C2)
+- **Prompt 1** : « Bonjour. J'aimerais préparer une candidature pour un poste de développeuse backend senior. »
+- **Attendu 1** : après « Bonjour Nadia. », la ligne « Dossier professionnel : 🟠 en construction (version 0.2). ». Le coach refuse gentiment en partant du statut, avec la formulation exacte : « Votre dossier professionnel n'est pas encore marqué prêt. Analyser une opportunité avant donnerait un résultat moins fiable. » Il ne présente pas ce refus comme une sanction. Il donne ensuite son avis sur le dossier : nourri par quatre sources, il le juge suffisant et propose directement le passage avec la formulation exacte « Il me semble pourtant suffisant pour travailler sur des opportunités. Avez-vous d'autres informations à ajouter avant de le passer à « prêt » (version 1.0) ? », en citant au besoin les lacunes qui restent sans en faire une condition (par exemple le system design au tableau, l'impact personnel dans la migration). Il ne propose pas en même temps de compléter le dossier d'abord. (L'autre suite, dossier jugé insuffisant, est jouée en C9.)
+- **Prompt 2** : « Oui, avant : c'est moi qui ai conçu le découpage en six services et écrit le plan de migration validé par le CTO. »
+- **Attendu 2** : le coach propose l'ajout et n'applique rien avant validation ; le statut reste `draft`.
+- **Prompt 3** : « D'accord, applique, et on peut passer le dossier en prêt. »
+- **Attendu 3** : l'ajout est appliqué ; l'en-tête passe à `ready` (prêt), version 1.0, date du jour, entrée d'historique sur le passage à « prêt » ; `data/current-status.md` est mis à jour.
+- **Mots-clés** : le coach ne bloque pas par principe, il explique pourquoi l'analyse serait moins bonne ; « prêt » est un seuil opérationnel décidé ensemble, pas un état final ; montrer l'en-tête du dossier (statut, version 1.0).
+- **Plan de test** : Professional profile status and version (#9) — refus bienveillant, proposition de `ready` avec ajout puis validation.
 
 ### C5 — Réimport après non-écrasement
 
@@ -181,7 +188,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
 ### C8 — Navigation web : exceptions ponctuelles [manual]
 
-Le workspace doit être dans l'état de la phase C (dossier professionnel validé), avec `allow_external_web_search: false`.
+Le workspace doit être dans l'état de la phase C (dossier professionnel `ready`, après C4), avec `allow_external_web_search: false`.
 
 - **Conversation** : nouvelle
 - **Prompt 1** : « Bonjour, j'ai une offre chez Orion Retail, voici le lien : https://jobs.example/orion-retail/senior-backend »
@@ -194,6 +201,38 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel valid�
 - **Limites du kit** : aucun lien d'offre fictif n'est résolvable, la transcription datée d'une page d'offre (lien et date de consultation) ne peut donc pas être jouée ici. L'outil de test peut demander sa propre autorisation de navigation, distincte de la question d'accord du coach : seule cette dernière est évaluée. Pour une consultation réelle, un site public peut être utilisé, sans rien enregistrer de personnel.
 - **Extension D13** : jouer la demande de navigation pendant une simulation (voir D13), puis arrêter la simulation et lire le débrief pour vérifier qu'aucun joker n'est compté.
 - **Plan de test** : Privacy reminder and web browsing (#8).
+
+### C9 — Dossier non prêt : mise en garde, dérogation et nouvelle passe d'analyse [manual]
+
+- **Action** : dans un nouveau workspace extrait (suffixe `-c9`), jouer B1, puis C1 et C2 en ne joignant **que le CV** (`sources/profile/cv-nadia-berkani.pdf`) : le dossier est en `draft` 0.2 et ses sections motivations et préférences restent vides.
+- **Conversation** : nouvelle
+- **Fichiers** : joindre `sources/opportunities/002-northwind-ledger-senior-software-engineer.pdf`.
+- **Prompt 1** : « J'ai une opportunité chez Northwind Ledger, voici l'offre. »
+- **Attendu 1** : l'opportunité est créée, l'offre rangée et transcrite, `opportunity.md` complété, sans refus ni analyse d'adéquation. Comme suite, le coach ne propose pas l'analyse mais le retour au dossier, avec la mise en garde exacte « Votre dossier professionnel n'est pas encore marqué prêt : je vous propose de le compléter avant d'analyser cette opportunité, l'analyse serait sinon moins fiable. »
+- **Prompt 2** : « Analyse-la quand même. » **Attendu 2** : la mise en garde a déjà été donnée, la demande vaut insistance : pas de nouveau refus. Le coach continue avec la formulation exacte (« D'accord, je continue. Votre dossier est encore en construction : l'analyse sera moins fiable qu'avec un dossier prêt. »), ne prétend jamais que l'analyse est aussi fiable, consigne la dérogation dans le `current-status.md` de l'opportunité (statut et version du dossier, date) et note dans `analysis.md` la passe d'analyse avec la version et le statut du dossier utilisés (0.2, en construction).
+- **Prompt 3** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 3** : salutation, ligne de statut 🟠, puis le rappel exact (« Rappel : cette opportunité est travaillée avec un dossier encore en construction ; l'analyse est moins fiable. »), sans bloquer.
+- **Prompt 4** (même conversation) : joindre `sources/opportunities/001-lumen-pay-offre-developpeuse-backend-senior.pdf` avec « J'ai aussi une offre chez Lumen Pay, analyse-la. » **Attendu 4** : l'opportunité est créée, puis la demande directe d'analyse reçoit le refus bienveillant de C4 suivi de la suite « dossier insuffisant » (« Je vous propose de le compléter d'abord : il manque surtout <lacunes>. Si vous préférez continuer quand même, dites-le-moi. », avec par exemple les motivations et les préférences) ; la dérogation de Northwind Ledger ne s'étend pas à Lumen Pay. Si le coach juge malgré tout le dossier suffisant, noter le comportement observé.
+- **Prompt 5** : « Passe mon dossier en prêt. » **Attendu 5** : la demande vaut validation, le coach ne la « propose » pas. Jugeant des lacunes importantes, il exprime sa réserve en les citant et demande confirmation ; après « Oui, je confirme. », l'en-tête passe à `ready`, 1.0, avec une entrée d'historique. (Sans lacune importante, il aurait appliqué directement.)
+- **Prompt 6** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 6** : ligne de statut 🟢, plus de rappel de dérogation ; le coach propose de refaire l'analyse avec la formulation exacte (« Cette opportunité a été analysée quand votre dossier était encore en construction. Maintenant qu'il est prêt, voulez-vous que je refasse une passe d'analyse ? »). Répondre « Pas maintenant. » : la marque de dérogation est conservée.
+- **Prompt 7** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 7** : la nouvelle passe est de nouveau proposée. Répondre « Non, ce n'est pas la peine. » : le refus définitif est consigné dans le statut de l'opportunité.
+- **Prompt 8** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 8** : la nouvelle passe n'est plus proposée. Demander alors : « Refais quand même une analyse avec mon dossier actuel. » : une nouvelle analyse reste possible à tout moment ; `analysis.md` garde la trace de la première passe et ajoute la nouvelle avec la version et le statut du dossier (1.0, prêt), selon les règles existantes (messages proposés conservés, messages retirés déplacés, rien supprimé silencieusement).
+- **Plan de test** : Professional profile status and version (#9) — travail sur une opportunité avec un dossier non `ready`.
+
+### C10 — Statut du dossier absent ou invalide [manual]
+
+- **Action** : dans une copie du workspace principal après C4, remplacer dans l'en-tête de `data/profile/professional-profile.md` la ligne du statut par « **Statut :** brouillon initial ».
+- **Conversation** : nouvelle
+- **Prompt** : « Bonjour, on continue. »
+- **Attendu** : le coach signale le statut inconnu, ne l'interprète pas, propose `draft` (dossier rempli ; jamais `ready` d'office) et ne modifie l'en-tête qu'après accord explicite, avec une entrée d'historique (statut corrigé, raison, validation). Rejouer en supprimant la ligne du statut : même comportement.
+- **Plan de test** : Professional profile status and version (#9) — statut absent ou invalide.
+
+### C11 — Retour de « prêt » à « en construction » [manual]
+
+- **Conversation** : nouvelle, dans la copie de C10 remise à `ready`
+- **Prompt 1** : « J'envisage de me réorienter vers un poste de staff engineer : je veux retravailler mon dossier en profondeur. »
+- **Attendu 1** : le coach peut proposer de repasser le dossier en construction ; il n'applique rien sans validation. Après « Oui », l'en-tête passe à `draft` avec la version suivante (par exemple 1.0 → 1.1), entrée d'historique.
+- **Prompt 2** : après une modification validée, « On peut repasser le dossier en prêt. » **Attendu 2** : `ready`, version 2.0.
+- **Plan de test** : Professional profile status and version (#9) — retour de `ready` à `draft`.
 
 ## Phase D — Première opportunité : Lumen Pay
 
@@ -214,7 +253,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel valid�
 - **Durée démo** : 4 min
 - **Conversation** : suite de D1
 - **Prompt 1** : « J'aimerais commencer à préparer cette opportunité. »
-- **Attendu 1** : `analysis.md` créé, séparant faits, hypothèses, écarts et contradictions ; trois à cinq messages stratégiques proposés pour cette offre, avec un rappel de ce qu'est un message stratégique ; invitation à ajuster. Les écarts attendus : secteur régulé (ACPR) non pratiqué, scoring et données peu couverts, tendance à dire « on » plutôt que « je ».
+- **Attendu 1** : `analysis.md` créé, séparant faits, hypothèses, écarts et contradictions, avec la passe d'analyse tracée (date, version et statut du dossier utilisés : 1.0, prêt) ; trois à cinq messages stratégiques proposés pour cette offre, avec un rappel de ce qu'est un message stratégique ; invitation à ajuster. Les écarts attendus : secteur régulé (ACPR) non pratiqué, scoring et données peu couverts, tendance à dire « on » plutôt que « je ».
 - **Prompt 2** : « Retire le dernier message stratégique, il ne me ressemble pas. Je valide les autres. »
 - **Attendu 2** : la section des messages proposés est conservée ; le message retiré passe dans une section « retirés ou invalidés par la candidate », avec la raison donnée ; les autres sont marqués validés. Si la correction est incohérente avec le profil ou l'offre, le coach le dit.
 - **Mots-clés** : sans qu'on le lui détaille, le coach analyse l'adéquation (`analysis.md` : faits, hypothèses, écarts) et propose des messages stratégiques à valider ; puis montrer qu'il accepte la correction sans effacer l'historique.
@@ -373,7 +412,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel valid�
 - **Durée démo** : 3 min
 - **Conversation** : nouvelle (après E1 en démo, ou après E2 quand #11 sera livrée)
 - **Prompt** : « Bonjour, j'aimerais reprendre. »
-- **Attendu** : le coach salue par « Bonjour Nadia. », lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate, par exemple l'entretien le plus proche ; les dates citées sont celles des fichiers, formulées de la même façon tout au long du message.
+- **Attendu** : le coach salue par « Bonjour Nadia. », suivi de « Dossier professionnel : 🟢 prêt (version 1.0). » (ou la version atteinte), lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate, par exemple l'entretien le plus proche ; les dates citées sont celles des fichiers, formulées de la même façon tout au long du message.
 - **Mots-clés** : c'est le point clé de la démo, « l'espace carrière porte le contexte, pas la conversation » : une nouvelle conversation, et le coach sait où en sont les deux opportunités et ce qu'il reste à faire.
 - **Plan de test** : Workspace — « Start a new conversation for a later coaching session and confirm work can be resumed from the workspace without prior conversation history ».
 
@@ -415,7 +454,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel valid�
 | C1 Sources et transcription | 4 min |
 | C2 Validation du dossier | 2 min |
 | *C3 Entretien d'initialisation* | *`[todo #10]`* |
-| *C4 Rappel dossier non prêt* | *`[todo #9]`* |
+| C4 Opportunité trop tôt, dossier prêt | 3 min |
 | D1 Créer l'opportunité | 4 min |
 | D2 Préparer l'opportunité | 4 min |
 | D3 Créer l'étape d'entretien | 3 min |
@@ -426,6 +465,6 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel valid�
 | *E2 Changement de périmètre* | *`[todo #11]`* |
 | E3 Reprise depuis le workspace | 3 min |
 | *E4 Git* | *`[todo #6]`* |
-| **Total disponible** | **42 min** |
+| **Total disponible** | **45 min** |
 
 La démo vise 35 à 40 minutes. Les durées ci-dessus sont révisées d'après la démo à blanc du 2026-10-03 : environ 45 minutes mesurées pour ces étapes, avec dictée des heures au scribe ; enchaînées sans prise de notes, elles devraient tenir en 35 à 40 minutes. Le premier déroulé complet (2026-10-02, environ 1 h 29) mêlait test, consignation et étapes hors démo et ne mesure pas une vraie démo. C2 et D3 restent dans la démo : C2 est rapide, et D3 montre un entretien passé sans préparation avant l'entretien technique. D5 gagne une minute pour montrer un arrêt refusé puis confirmé. La démo enregistrée du 2026-10-03 a duré environ 38 minutes de A1 à E1, commentaires compris, puis 41 minutes avec la reprise : C1 et D5 sont ramenées d'une minute, D3 gagne une minute, et E3, qui ne dépend plus de #11, entre dans la démo pour montrer la reprise depuis le workspace. Depuis #18, D5 et D6 montrent le joker : les jokers évitent de taper une partie des réponses, la durée de D5 reste à 7 minutes jusqu'à la prochaine démo chronométrée. Quand les issues `[todo]` seront livrées, il faudra arbitrer pour rester dans la cible.

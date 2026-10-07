@@ -593,6 +593,133 @@ Non-regression:
   and the Source transcription step with an attached offer: the reminder must
   not disturb the welcome sequence nor the existing flows.
 
+## Professional profile status and version (#9)
+
+Status values (in the profile header, single source of truth): `empty`
+(⚪ « vide »), `draft` (🟠 « en construction »), `ready` (🟢 « prêt »). Version:
+`0.1` in the template; +0.1 at most once per session that applies at least one
+validated change; `1.0` when the status becomes `ready`; a later return to
+`ready` gives the next major version (`2.0`).
+
+Nominal flow:
+
+- On the first session, confirm the profile created from the template has the
+  status `empty` and the version `0.1`, and that no status line is shown (the
+  creation report already says the profile is empty).
+- On every later session, confirm the coach shows one status line right after
+  the greeting, with the emoji, the label and the version (for example
+  « Dossier professionnel : 🟠 en construction (version 0.2). »), including
+  when the profile is `ready`, and nothing else about the status when there is
+  no opportunity concern.
+- Apply the first validated profile change (C2): confirm the status becomes
+  `draft` and the version `0.2`, with the date and a history entry, presented
+  before application.
+- Apply several validated changes in the same session: confirm the version is
+  incremented only once for the session.
+- With a `draft` profile, bring a new offer and ask directly for its
+  analysis: confirm the coach refuses gently with the exact wording, based on
+  the status (not yet marked `ready`), and does not present the refusal as a
+  sanction. It then gives its assessment, with one of two follow-ups: profile
+  judged sufficient, it proposes `ready` directly (exact wording), without
+  also proposing to complete the profile first; profile judged insufficient,
+  it names the main gaps, proposes to complete the profile and says the
+  candidate may continue anyway (exact wording).
+- Confirm the candidate can add information before accepting the `ready`
+  proposal (status stays `draft`), then validates; the status becomes `ready`
+  and the version `1.0`, recorded in the header and the history, never
+  silently. The coach also proposes `ready` after a validated update when it
+  judges the profile sufficient.
+- The candidate asks for `ready` themselves: confirm the request counts as
+  the validation and is applied directly, unless the coach judges important
+  gaps remain (see edge cases).
+- With a `ready` profile, confirm opportunity work runs with no warning.
+- Confirm every status or version change (including the correction of an
+  invalid status and a return to `draft`) adds one entry to the profile's
+  « Historique synthétique »: date, old and new status and version, a one-line
+  reason and the candidate's validation. A declined `ready` proposal changes
+  nothing and adds no entry; exceptions and declined re-analysis passes are
+  recorded in the opportunity's `current-status.md`, not in the profile.
+
+Opportunity work while the profile is not `ready`:
+
+- Confirm creating an opportunity, recording its sources and documenting an
+  interview already held before the toolkit was used remain possible without
+  refusal, as long as nothing is analyzed against the profile. After creating
+  an opportunity, the next step proposed is to return to the profile, with the
+  exact warning, not the analysis.
+- Confirm the warning is given once: an explicit analysis request after the
+  post-creation warning counts as insisting (no second refusal).
+- Confirm the refusal covers analysis, strategic messages, interview
+  preparation, simulation and the preparation sheet.
+- The candidate insists: confirm the coach continues, states the profile
+  status, warns with the exact wording that the quality is degraded, never
+  claims the analysis is as reliable as with a `ready` profile, and records the
+  exception in the opportunity's `current-status.md`.
+- Confirm the exception applies to that opportunity only: a second opportunity
+  triggers the refusal again.
+- Resume the excepted opportunity in a new conversation: confirm the coach
+  gives the short exact reminder, without blocking.
+- Confirm each analysis pass is recorded in `analysis.md` with its date and
+  the profile version and status used, whatever the status (general case,
+  for example D2 with a `ready` profile).
+- Once the profile is `ready`, return to an opportunity analyzed under the
+  exception: confirm the coach proposes to redo an analysis pass with the
+  richer profile. « Pas maintenant »: the exception mark is kept and the
+  proposal comes back at the next resumption. Definitive refusal (« Non, ce
+  n'est pas la peine »): recorded in the opportunity status, never proposed
+  again. On acceptance, `analysis.md` keeps the earlier pass and follows the
+  existing rules (proposed messages kept, withdrawn ones moved, nothing
+  deleted silently).
+- Confirm a new analysis pass can be requested at any time, including after a
+  definitive refusal or when the earlier pass already used a `ready`
+  profile.
+
+Edge cases:
+
+- Status missing, unknown value (for example « brouillon initial » from an
+  earlier version) or unreadable version: confirm the coach reports it, does
+  not interpret it arbitrarily, proposes a value deduced from the content
+  (`empty` for the skeleton, `draft` for a filled profile, never `ready`), and
+  applies it only after explicit agreement, before any work that depends on
+  the status.
+- The coach proposes `ready` and the candidate refuses without giving a
+  reason: confirm the status stays `draft` and the coach does not insist in
+  the same session.
+- The candidate asks for `ready` while the coach judges important gaps remain:
+  confirm the coach states its reservation and the gaps, then applies the
+  candidate's decision.
+
+Limit cases:
+
+- Return from `ready` to `draft`, requested by the candidate or proposed by the
+  coach (career change, major rework): confirm it is applied only after
+  validation, the version keeps growing (for example `1.3` to `1.4`), and the
+  next `ready` gives `2.0`.
+- With a `ready` profile, routine validated updates increment `1.x` without
+  changing the status.
+- English profile language: confirm the status line, the refusal, the warning
+  and the reminder use the English wordings.
+- The exact messages (status line, refusal, warning, reminder, `ready`
+  proposal, re-analysis proposal) are identical in the coach instructions and
+  the master scenario.
+
+Documentation:
+
+- Confirm the status values, their meaning, the version rule and the return
+  to `draft` are documented in `docs/professional-profile.md`,
+  `docs/glossary.md` (entries no longer provisional), the user guides and the
+  coach instructions, consistently.
+- Confirm D-010 is adopted with the settled values, rule and consequences, and
+  `CHANGELOG.md` is updated.
+- Confirm the fictional example's profile header uses the new status and
+  version.
+
+Non-regression:
+
+- Replay B1 and B2 (first session, second session with the status line), C1
+  and C2 (validation before application), D1 and E1 (opportunity creation),
+  E3 (resumption from the workspace).
+
 ## Regression
 
 Repeat essential workspace scenarios after any change to the core coach instructions.

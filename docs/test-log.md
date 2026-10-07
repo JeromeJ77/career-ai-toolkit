@@ -26,7 +26,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | Transcription Markdown des sources ajoutées | ✅ Validé | 2026-09-30 | 2026-10-03 | Rejoué le 2026-10-02 avec les PDF, DOCX et TXT du kit (C1, C5) : transcriptions fidèles ; réserve sur un tableau de PDF extrait dans le désordre, signalée par le coach. Transcription étendue aux offres dans #12 : l'offre est transcrite en `.md` le 2026-10-03 (D1). Sources du profil jointes à la conversation : rangées par le coach dans le bon sous-répertoire et transcrites (démo enregistrée du 2026-10-03, C1). |
 | Source très volumineuse : confirmation avant transcription | ✅ Validé | 2026-10-03 | 2026-10-03 | C6 avec le livret de formation du kit (49 pages) : le coach constate le volume, propose de ne garder que le contenu pertinent, puis une mise à jour du dossier. Seuil « très volumineux » toujours non chiffré (voir D-011). |
 | Mise à jour de `external-references.md` depuis une source | ✅ Validé | 2026-09-30 | 2026-09-30 | Corrigé par la règle ajoutée : le lien LinkedIn est renseigné directement, sans demander, et signalé. |
-| Mise à jour du dossier professionnel uniquement après validation | ✅ Validé | 2026-09-30 | 2026-10-02 | Le coach demande à chaque fois la validation avant d'appliquer ; confirmé le 2026-10-02 (C1, C2, D12). |
+| Mise à jour du dossier professionnel uniquement après validation | ⚠️ À revalider | 2026-09-30 | 2026-10-02 | Le coach demande à chaque fois la validation avant d'appliquer ; confirmé le 2026-10-02 (C1, C2, D12). Non-régression : impacté par #9 (statut, version et historique mis à jour avec chaque modification validée). |
 | Reprise dans une nouvelle conversation à partir du workspace (`current-status.md`) | ⚠️ À revalider | 2026-09-30 | 2026-10-03 | Couvert le 2026-10-02 sur un flux d'opportunité (D8, D9, D12, E1) : le coach retrouve l'opportunité et l'étape en cours. Écart : il ne relit pas le dossier professionnel au démarrage et répète un statut périmé (« profil vide », C1 et E1). Démarrage d'une nouvelle conversation supérieur à une minute (noté au backlog). Correction apportée dans #12 (lecture du dossier professionnel au démarrage, statut périmé corrigé). Le « profil vide » de E1 venait de C7 jouée plus tôt (dossier supprimé) ; rejoué le 2026-10-03 avec C7 en fin de passe : aucun statut périmé (C1, D1, E1). Non-régression : impacté par #15 (salutation en début de conversation). |
 | Incohérence entre données et statut (dossier professionnel supprimé, sources et statut conservés) | ✅ Validé | 2026-09-30 | 2026-10-03 | Régression du 2026-10-02 (C7, squelette recréé) corrigée dans #12 et rejouée le 2026-10-03 : le fichier n'est pas recréé, le coach propose de le restaurer ou de le reconstruire à partir des sources. Le passage de `allow_external_web_search` à `true` n'est pas signalé comme sensible : reporté au backlog. |
 | Retour arrière (rollback) d'une mise à jour | ⬜ Non testé | — | — | À tester avec l'issue #7, avant de le présenter comme une garantie (D-004). |
@@ -149,6 +149,31 @@ Définis le 2026-10-05 et relus avec l'utilisateur avant le développement.
 | Privacy reminder and web browsing | Documentation : `docs/privacy.md`, READMEs, D-003 reformulée, glossaire | ✅ Validé | 2026-10-05 | 2026-10-05 | Relus et validés par le développeur le 2026-10-05, avant les tests manuels. |
 | Privacy reminder and web browsing | Documentation : guides FR/EN, `CHANGELOG.md`, cohérence des instructions du coach | ✅ Validé | 2026-10-05 | 2026-10-05 | Relus et validés par le développeur le 2026-10-05, avant les tests manuels (ligne scindée de la précédente après une première validation partielle). Cohérence des messages exacts vérifiée aussi par l'agent à l'implémentation (`git grep`). |
 | Privacy reminder and web browsing | Non-régression : B1 à B5 et dépôt d'une offre en pièce jointe rejoués | ✅ Validé | 2026-10-05 | 2026-10-05 | B1 à B5, D1, E1 et B9 conformes. Voir la [session du 2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md). |
+
+### Scénarios à satisfaire pour l'issue #9 (statut et version du dossier professionnel)
+
+Définis le 2026-10-07, à relire avec l'utilisateur avant le développement.
+
+| Section du plan | Scénario | Statut | Premier test | Dernier test | Remarques |
+| --- | --- | --- | --- | --- | --- |
+| Workspace | Initialisation : dossier créé en `empty`, version `0.1` ; aucune ligne de statut en première session | ⬜ Non testé | — | — | |
+| Workspace | Ligne de statut après la salutation de chaque session suivante (émoji, libellé, version), y compris en `ready` | ⬜ Non testé | — | — | |
+| Workspace | Première modification validée : `draft`, version `0.2`, date et historique ; une seule incrémentation par session | ⬜ Non testé | — | — | |
+| Workspace | Dossier `draft`, nouvelle offre avec demande directe d'analyse : refus bienveillant fondé sur le statut (formulation exacte), sans sanction ; suite « suffisant » (proposition de `ready`) ou « insuffisant » (lacunes, compléter ou continuer) | ⬜ Non testé | — | — | |
+| Workspace | Proposition de `ready` : ajout d'informations par le candidat (reste `draft`), puis validation : `ready`, `1.0`, en-tête et historique ; `ready` demandé par le candidat : appliqué directement, sauf lacunes importantes | ⬜ Non testé | — | — | |
+| Workspace | Dossier `ready` : travail sur une opportunité sans mise en garde | ⬜ Non testé | — | — | |
+| Workspace | Traçabilité : chaque changement de statut ou de version (correction d'un statut invalide et retour à `draft` compris) ajouté à l'historique du dossier avec date, avant et après, raison et validation ; proposition refusée non tracée ; dérogations dans le statut de l'opportunité | ⬜ Non testé | — | — | |
+| Workspace | Dossier non `ready` : création d'opportunité, sources et entretien déjà passé possibles sans refus ; après création, retour au dossier proposé avec la mise en garde ; demande d'analyse ensuite traitée comme une insistance ; refus limité à l'analyse, aux messages, à la préparation, à la simulation et à la fiche | ⬜ Non testé | — | — | |
+| Workspace | Insistance : poursuite avec mise en garde exacte, dérogation consignée dans le `current-status.md` de l'opportunité ; deuxième opportunité refusée à nouveau | ⬜ Non testé | — | — | |
+| Workspace | Reprise d'une opportunité en dérogation dans une nouvelle conversation : rappel bref exact, sans blocage | ⬜ Non testé | — | — | |
+| Workspace | Dossier passé `ready` : nouvelle passe proposée pour une opportunité analysée en dérogation ; « pas maintenant » : reproposée à la reprise suivante ; refus définitif consigné et non reproposé |
+| Workspace | Passes d'analyse tracées dans `analysis.md` (date, version et statut du dossier), quel que soit le statut (cas général, D2) ; nouvelle analyse possible à tout moment, première passe conservée | ⬜ Non testé | — | — | | ⬜ Non testé | — | — | |
+| Workspace | Statut absent, inconnu ou version illisible : signalement, valeur déduite proposée (jamais `ready`), appliquée seulement après accord | ⬜ Non testé | — | — | |
+| Workspace | Proposition de `ready` refusée sans raison : reste `draft`, pas d'insistance ; `ready` demandé malgré des lacunes : réserve exprimée, décision du candidat appliquée | ⬜ Non testé | — | — | |
+| Workspace | Retour de `ready` à `draft` après validation : version qui continue (`1.3` → `1.4`), prochain `ready` en `2.0` ; mises à jour courantes en `1.x` | ⬜ Non testé | — | — | |
+| Workspace | Dossier en anglais : formulations anglaises ; formulations exactes identiques dans les consignes et le scénario maître | ⬜ Non testé | — | — | |
+| Documentation | `docs/professional-profile.md`, glossaire (entrées définitives), guides utilisateur, D-010 adoptée, `CHANGELOG.md`, en-tête de l'exemple fictif | ⬜ Non testé | — | — | |
+| Workspace | Non-régression : B1, B2, C1, C2, D1, E1, E3 rejoués | ⬜ Non testé | — | — | |
 
 ## Sessions
 
