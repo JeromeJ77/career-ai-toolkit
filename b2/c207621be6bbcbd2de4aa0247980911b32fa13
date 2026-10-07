@@ -1,0 +1,23 @@
+AGENTS.md
+  s_1465f842010aaf::t_edc000c284512d 38-41
+docs/design/decision-log.md
+  s_1465f842010aaf::t_34859fc9abd483 1256-1258,1281-1286,1308-1321,1342-1347
+docs/lessons-learned.md
+  s_1465f842010aaf::t_26fbc4e794b5b4 28-32,34,490-535
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b2c207621be6bbcbd2de4aa0247980911b32fa13",
+  "prompts": {},
+  "sessions": {
+    "s_1465f842010aaf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85993910-9938-4471-aa31-99da92cb9a00",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
