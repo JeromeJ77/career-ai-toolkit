@@ -1,0 +1,19 @@
+BACKLOG.md
+  s_f751617a58e9ac::t_9c66093c4be130 131-132,411-469,471-474
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6a5df2d3aa32b348bb4a363db9b47c1ed077fe38",
+  "prompts": {},
+  "sessions": {
+    "s_f751617a58e9ac": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "77b20233-cf2c-4beb-b80e-04980e2cbbbb",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
