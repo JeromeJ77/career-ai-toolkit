@@ -1,0 +1,23 @@
+docs/test-log.md
+  s_1465f842010aaf::t_5eb01f5099b302 29,153-177
+docs/test-plan.md
+  s_1465f842010aaf::t_c9dbcd36c001e4 596-722
+test-kit/scenario.md
+  s_1465f842010aaf::t_927febca4a6cb3 50-51,143,145,153,155-164,191,205-236,256,415,457,468
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f348a6e78e3f0a31684d3c8512c508c6a752588c",
+  "prompts": {},
+  "sessions": {
+    "s_1465f842010aaf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85993910-9938-4471-aa31-99da92cb9a00",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
