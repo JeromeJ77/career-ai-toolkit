@@ -3,11 +3,11 @@
 **Version :** 0.1  
 **Langue principale :** à renseigner  
 **Dernière mise à jour :** à renseigner  
-**Statut :** brouillon initial
+**Statut :** empty (vide)
 
 ## Historique synthétique
 
-- À initialiser
+- Aucune entrée pour le moment.
 
 ## 1. Synthèse du profil
 

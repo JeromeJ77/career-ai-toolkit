@@ -18,7 +18,7 @@ Le moteur (`skills/`, `AGENTS.md`, `CLAUDE.md`, les README, `ENGINE-VERSION` qui
 3. Choisissez dans `data/config/workspace.yaml` la langue du profil et du coaching.
 4. Lisez `data/profile/sources/README.md`, puis déposez uniquement les documents que vous êtes autorisé à conserver.
 5. Demandez : « Constitue une première version de mon dossier professionnel à partir des sources disponibles. Propose-la avant toute modification. »
-6. Relisez et validez `data/profile/professional-profile.md`.
+6. Relisez et validez `data/profile/professional-profile.md`. Quand il est suffisant, passez-le à « prêt » avec le coach avant d'analyser des opportunités (voir « Statut de votre dossier » dans le [guide utilisateur](USER-GUIDE.fr.md)).
 7. Pour une candidature, fournissez au coach l'offre et le contexte disponibles, puis demandez-lui d'ajouter l'opportunité. Il crée son répertoire numéroté, sa représentation Markdown et son `current-status.md`.
 8. Laissez le coach ajouter les entretiens, simulations et retours au fur et à mesure du processus. Les sources originales autorisées restent inchangées.
 9. Utilisez chaque conversation comme une session de coaching ciblée et relativement courte. Votre espace carrière et ses fichiers `current-status.md` portent la continuité entre les conversations.

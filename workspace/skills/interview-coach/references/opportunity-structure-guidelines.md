@@ -17,6 +17,8 @@ The coach creates the opportunity directory; the candidate supplies the availabl
 9. Convert the useful source content into `opportunity.md`, written in the coaching language configured in `data/config/workspace.yaml` (`language.coaching`), whatever the language of the sources. When a source is in another language, translate its content faithfully, keep proper names, the official job title and established technical terms as they appear in the source, and state the source language in the Sources section (for example "job posting in English, translated"). The verbatim transcription next to the original remains the evidence. Use another language only if the candidate asks for it. Record source paths or provenance and distinguish missing or uncertain information from source facts.
 10. Update the opportunity status and the root status with the new scope and next action.
 
+Creating an opportunity stays available whatever the profile status. When the profile is not `ready`, the next step proposed is to return to the profile, with the warning of the "Professional profile status" section of `AGENTS.md`.
+
 If the candidate supplies a link to the job posting instead of the document, follow the "Web browsing" section of `AGENTS.md` (agreement for that link, no browsing otherwise). Once the page is opened, save its content as a Markdown transcription under `sources/`, with a header stating the link and the consultation date: it is a frozen copy, since the page may change or disappear. Present the extracted information for validation before writing it in `opportunity.md`, and cite the transcription and the link in its Sources section.
 
 `opportunity.md` is the canonical textual representation used by the coach. It contains source information, not fit analysis, positioning or invented interpretation. When analysis starts, create `analysis.md` from `../assets/opportunity-analysis.template.md` and keep derived reasoning there.
@@ -24,6 +26,16 @@ If the candidate supplies a link to the job posting instead of the document, fol
 If organization or role information is insufficient for a stable slug, ask only for the missing identifier before creating the directory. Numeric prefixes make otherwise identical organization-role slugs unambiguous.
 
 When a new source is added later, preserve and transcribe it like the earlier originals and update `opportunity.md` from the combined evidence. Flag contradictions or superseded information explicitly instead of silently choosing one version.
+
+## Exception for a profile that is not ready
+
+Record the exceptions of the "Professional profile status" section of `AGENTS.md` in the « Décisions validées » section of the opportunity's `current-status.md`, and nowhere else:
+
+- the exception: « Dérogation : travail avec le dossier professionnel version <version> (<statut>), décidé le <date>. », where `<statut>` is the status label;
+- after a definitive refusal of a new analysis pass: « Nouvelle passe d'analyse refusée le <date> ; ne plus la proposer. »;
+- after a new analysis pass: « Dérogation close le <date> : nouvelle passe d'analyse avec le dossier prêt <version>. »
+
+An exception is open until it is marked closed. Keep the earlier lines when adding a new one.
 
 ## Create an interview round
 

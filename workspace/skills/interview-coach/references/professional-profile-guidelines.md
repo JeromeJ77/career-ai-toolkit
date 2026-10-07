@@ -8,7 +8,7 @@ The profile is candidate-owned and written in the configured primary language.
 - Note dates, overlaps, contradictions and potentially obsolete information.
 - Extract stable facts, intentions, preferences, career stories and evidence.
 - Ask only for important missing details.
-- Present a complete draft before applying it.
+- Present a complete draft before applying it. The first validated profile moves the header from `empty` 0.1 to `draft` 0.2 (see the "Professional profile status" section of `AGENTS.md`).
 
 ## Providing sources
 
@@ -44,4 +44,4 @@ Each source document the candidate adds under `data/profile/sources/` (PDF, DOCX
 
 ## Content quality
 
-Distinguish facts, candidate preferences, validated formulations and items to verify. Keep the profile richer than a CV but readable. Add a short history entry for significant approved updates.
+Distinguish facts, candidate preferences, validated formulations and items to verify. Keep the profile richer than a CV but readable. Add a short history entry for significant approved updates and for every status or version change, as described in `profile-update-guidelines.md`.

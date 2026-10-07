@@ -27,6 +27,19 @@ By default, the coach does not browse the web. The intention is to keep the work
 
 This rule is a behavior of the coach, defined in its instructions; it is neither a technical lock of the tool nor a guarantee.
 
+## Your profile status
+
+The header of `data/profile/professional-profile.md` shows the status and the version of your professional profile. The status has three values, written as a code followed by a label: `empty` when created, `draft (in progress)` from the first validated change, `ready` when you and the coach judge the profile sufficient to work on opportunities. « Ready » is a working threshold, not a final state: the profile keeps growing.
+
+In every session, after the greeting, the coach states this status in one line, for example « Professional profile: 🟠 in progress (version 0.2). ».
+
+- **Version**: `0.1` when created, then +0.1 per session that applies at least one validated change, whatever the number of changes; `1.0` when the profile becomes ready. If the profile goes back to in progress (career change, major rework), the version continues (`1.3` → `1.4`) and the next move to ready gives `2.0`.
+- **Moving to ready**: the coach proposes it when it judges the profile sufficient; you can add information first, then validate. You can also ask for it yourself: the coach may then state a reservation, but your decision applies. Nothing is changed without your agreement, and every status or version change is recorded in the profile's « Historique synthétique ».
+- **Before ready**: you can create an opportunity, provide its sources and document an interview already held. For analyzing an opportunity, preparing an interview, a simulation, a debriefing or a preparation sheet, the coach prefers a ready profile, because the result would be less reliable: it tells you so and proposes to complete the profile, or to mark it ready if it judges it sufficient.
+- **Continuing anyway**: if you insist, the coach continues, reminding you that the result will be less reliable, and records this exception in the opportunity's `current-status.md`. It applies to that opportunity only; the coach reminds you of it when you resume the opportunity. Once your profile is ready, it proposes a new analysis pass; you can postpone it or decline it for good.
+- Each analysis pass of an opportunity is recorded in its `analysis.md`, with the profile version and status used. You can ask for a new pass at any time.
+- If the status or the version is missing or unreadable, the coach reports it and proposes a correction, applied only with your agreement.
+
 ## Coach-managed opportunities
 
 New opportunity directories use a stable identifier with at least three digits

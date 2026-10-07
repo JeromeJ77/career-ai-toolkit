@@ -242,7 +242,7 @@ Nominal flow:
 
 Edge cases:
 
-- Confirm steps depending on undelivered issues (#6, #9, #10, #11) are tagged
+- Confirm steps depending on undelivered issues (#6, #10, #11) are tagged
   `[todo #N]` and flagged as such in the generated demo script.
 - Confirm the coach transcribes the fictional PDF, DOCX and TXT sources as
   described in the transcription scenarios above.
@@ -649,6 +649,9 @@ Opportunity work while the profile is not `ready`:
   exact warning, not the analysis.
 - Confirm the warning is given once: an explicit analysis request after the
   post-creation warning counts as insisting (no second refusal).
+- Create an opportunity and ask for its analysis in the same message: confirm
+  the coach gives the refusal and its follow-up, not the post-creation warning
+  (C9 prompt 4).
 - Confirm the refusal covers analysis, strategic messages, interview
   preparation, simulation and the preparation sheet.
 - The candidate insists: confirm the coach continues, states the profile

@@ -1,13 +1,14 @@
 # Dossier professionnel
 
-**Version :** 0.2  
+**Version :** 1.0  
 **Langue principale :** fr-FR  
 **Dernière mise à jour :** 2026-10-02  
-**Statut :** initialisé et validé par la candidate
+**Statut :** ready (prêt)
 
 ## Historique synthétique
 
-- 2026-10-02 : initialisation du profil à partir du CV, de l'export LinkedIn, du certificat Cloud Platform Associate et des notes complémentaires de carrière. Validé par la candidate. Le salaire actuel est volontairement exclu du dossier.
+- 2026-10-02 : empty 0.1 → draft 0.2. Initialisation du profil à partir du CV, de l'export LinkedIn, du certificat Cloud Platform Associate et des notes complémentaires de carrière. Validé par la candidate. Le salaire actuel est volontairement exclu du dossier.
+- 2026-10-02 : draft 0.2 → ready 1.0. Dossier jugé suffisant pour travailler sur des opportunités. Validé par la candidate.
 
 ## 1. Synthèse du profil
 

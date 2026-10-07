@@ -529,8 +529,8 @@ manqués.
 ## D-010 — Statut et version du dossier professionnel décidés avec le candidat
 
 - **Type** : PRODUCT
-- **Statut** : 🔵 Envisagée
-- **Date** : 2026-09-30
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-09-30, précisée et adoptée le 2026-10-07 (#9)
 - **Issue** : #9
 - **Migrée au modèle le** : 2026-10-04 (#13)
 
@@ -540,41 +540,99 @@ Traiter une opportunité avec un dossier professionnel trop pauvre dégrade les
 analyses et le coaching, et peut faire percevoir l'outil comme
 contreproductif avant même d'avoir travaillé avec des données de qualité.
 
+Jusqu'à la v0.3.0, l'en-tête du modèle du dossier contenait « Version : 0.1 »
+et « Statut : brouillon initial » en texte libre, sans vocabulaire défini, sans
+règle d'évolution et sans effet sur le comportement du coach : rien n'empêchait
+de traiter une opportunité avec un dossier vide.
+
 ### Options considérées
 
-Non documentées à l'époque.
+Options étudiées le 2026-10-07 :
+
+- **Valeurs du statut** : en français, ou codes techniques anglais. Retenu :
+  codes anglais stables suivis d'un libellé dans la langue du dossier, pour
+  concilier métadonnées techniques simples en anglais et usage français
+  d'abord. La valeur `initial` a été écartée au profit de `empty`.
+- **Incrément de la version `0.x`** : à chaque modification, à chaque session
+  qui modifie le dossier, ou seulement à un jalon validé. Retenu : par session,
+  pour éviter une version qui s'emballe et rester cohérent avec un commit en
+  fin de session à terme (#6).
+- **Moment du refus** : dès la création de l'opportunité, ou à l'analyse.
+  Retenu : à l'analyse ; créer une opportunité et enregistrer ses sources
+  restent possibles.
+- **Portée de la dérogation** : globale ou par opportunité. Retenu : par
+  opportunité, pour qu'une insistance ponctuelle ne désactive pas la règle.
+- **Rappel** : à chaque session, ou seulement sur une opportunité en
+  dérogation. Retenu : une ligne de statut à chaque session, et un rappel
+  propre à l'opportunité quand elle est reprise en dérogation.
+- **Emplacement du statut** : dans le dossier, dans `current-status.md`, ou
+  les deux. Retenu : dans l'en-tête du dossier seulement, source unique.
+- **Retour à `draft`** : interdit ou permis. Retenu : permis, avec le majeur
+  suivant au prochain passage à `ready`.
 
 ### Décision et intention
 
-Orientation, non encore un engagement : le dossier porte un statut (`empty` ou
-`initial`, `draft`, `ready`, valeurs à confirmer) et une version : `0.1`, `0.2`,
-`0.3`… au fil des sessions de construction, puis `1.0` au passage à `ready`. Ce
-passage est une décision prise d'un commun accord : le coach estime que les
-informations sont suffisantes et le propose, sauf si le candidat a d'autres
-informations à ajouter, et le candidat valide. `ready` marque un seuil
-opérationnel, non un état final.
+Le dossier porte dans son en-tête un statut et une version, seule source de
+ces informations. Le statut est écrit sous forme d'un code suivi d'un
+libellé : `empty (vide)`, `draft (en construction)`, `ready (prêt)` (en
+anglais : `empty`, `draft (in progress)`, `ready`). Le code fait foi ; le coach
+parle au candidat avec le libellé.
 
-Tant que le dossier n'est pas `ready`, le coach refuse gentiment de traiter une
-opportunité. Si le candidat insiste, il continue en gardant le statut explicite
-et en prévenant que la qualité sera dégradée, avec un rappel au début de chaque
-nouvelle session.
+- Le modèle crée le dossier en `empty`, version `0.1`. La première
+  modification validée et appliquée le passe en `draft`, `0.2`.
+- La version augmente de 0.1 au plus une fois par session qui applique au
+  moins une modification validée (`0.9` → `0.10`). Le passage à `ready` donne
+  le majeur suivant `.0` (`1.0` la première fois) ; un dossier `ready` suit la
+  même règle en `1.x`.
+- Le passage à `ready` est une décision commune, sans critère mesuré : le
+  coach le propose quand il juge le dossier suffisant, le candidat peut
+  d'abord ajouter des informations, puis valide. Une demande du candidat vaut
+  validation ; le coach peut exprimer une réserve en citant les lacunes, la
+  décision du candidat s'applique. `ready` marque un seuil opérationnel, non
+  un état final.
+- Le retour à `draft` n'est jamais automatique : à la demande du candidat, ou
+  proposé par le coach (réorientation, refonte importante) et validé. La
+  version continue ; le prochain `ready` donne le majeur suivant (`2.0`).
+- Chaque changement de statut ou de version ajoute une entrée à l'historique
+  du dossier.
+- À chaque session sauf la première, le coach donne une ligne de statut
+  (émoji, libellé, version) juste après la salutation.
+- Tant que le dossier n'est pas `ready`, le coach refuse gentiment l'analyse
+  d'une opportunité, la préparation d'un entretien, la simulation, le
+  débriefing, la fiche de préparation et tout document dérivé qui confronte
+  le dossier à une offre ; il donne son avis, en proposant soit le passage à
+  `ready`, soit de compléter le dossier. La mise en garde n'est donnée qu'une
+  fois : si le candidat insiste, le coach continue en prévenant que le
+  résultat sera moins fiable et consigne une dérogation propre à
+  l'opportunité, rappelée à sa reprise. Une fois le dossier `ready`, il
+  propose une nouvelle passe d'analyse.
+- Chaque passe d'analyse est tracée dans `analysis.md` avec la version et le
+  statut du dossier utilisés.
+- Un statut absent, invalide ou incohérent est signalé, jamais interprété ; le
+  coach propose une valeur déduite du contenu (jamais `ready`) et ne l'applique
+  qu'avec l'accord du candidat.
 
 ### Conséquences
 
-Non documentées à l'époque.
+- En-tête du modèle `professional-profile.template.md` en `empty`, `0.1`.
+- Nouvelle section transversale « Professional profile status » dans
+  `workspace/AGENTS.md`, avec des messages exacts bilingues (ligne de statut,
+  refus et ses deux suites, mise en garde après création, insistance, rappel,
+  proposition de `ready`, nouvelle passe d'analyse) ; les skills y renvoient.
+- Dérogations et refus de nouvelle passe consignés dans le `current-status.md`
+  de l'opportunité ; section « Passes d'analyse » dans le modèle
+  `opportunity-analysis.template.md`.
+- Exemple fictif mis à jour (dossier `ready` 1.0, passe d'analyse tracée).
+- Un dossier créé par une version antérieure (statut en texte libre, par
+  exemple « brouillon initial ») passe par le signalement du statut invalide.
+- Le score de complétion en pourcentage reste au backlog (v0.5.0).
 
 ### Conditions de réévaluation
 
 Revoir le refus de traiter une opportunité si les pilotes le perçoivent comme
 bloquant, ou si le seuil `ready` s'avère trop difficile ou trop facile à
-atteindre.
-
-### Questions ouvertes
-
-- Valeurs exactes du statut.
-- Règle d'incrément des versions `0.x` : à chaque session qui modifie le dossier
-  ou seulement à un jalon validé.
-- Le score de complétion en pourcentage est différé à la v0.5.0.
+atteindre. Revoir la ligne de statut si, à chaque session, elle est perçue
+comme du bruit.
 
 ## D-011 — Transcrire chaque source du dossier en Markdown
 

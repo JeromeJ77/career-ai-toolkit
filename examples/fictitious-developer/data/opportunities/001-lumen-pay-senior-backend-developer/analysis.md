@@ -1,6 +1,10 @@
 # Analyse de l'opportunité
 
-Dernière mise à jour : 2026-10-02 · Sources : `opportunity.md` (offre LP-2026-ENG-014), `data/profile/professional-profile.md` v0.2. Rien n'est validé par la candidate à ce stade.
+Dernière mise à jour : 2026-10-02 · Sources : `opportunity.md` (offre LP-2026-ENG-014), `data/profile/professional-profile.md` v1.0. Rien n'est validé par la candidate à ce stade.
+
+## Passes d'analyse
+
+- 2026-10-02 : dossier professionnel version 1.0 (prêt)
 
 ## Synthèse
 

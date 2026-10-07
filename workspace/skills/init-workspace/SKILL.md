@@ -25,7 +25,7 @@ Run these steps at the start of a session, before another skill reads user data.
 1. Read the instructions (`AGENTS.md`, `CLAUDE.md`, this file).
 2. Check whether this is a first session (next section). Only check that files exist; do not read them.
 3. First session: welcome the candidate, ask the first-name question and wait for the answer (see "First session"). Do nothing else until they answer.
-4. Not a first session: read `data/config/workspace.yaml` (for `user.*` and the languages; if it is missing, treat `user.address_by_first_name` as `unset`) and `data/current-status.md`, greet the candidate (see "First name and greetings"), then continue with "First use" below.
+4. Not a first session: read `data/config/workspace.yaml` (for `user.*` and the languages; if it is missing, treat `user.address_by_first_name` as `unset`), `data/current-status.md` and the « Statut » and « Version » lines of the header of `data/profile/professional-profile.md`, greet the candidate (see "First name and greetings"), give the status line, then continue with "First use" below.
 
 ## First session
 
@@ -96,6 +96,8 @@ Use the first name only in the greeting, the acknowledgement of the choice and t
 - Start of a new conversation: « Bonjour <prénom>. » or « Bonjour. » (« Hello <first_name>. » or « Hello. »).
 - When the candidate ends the session (for example « merci, au revoir »): « À bientôt, <prénom>. » or « À bientôt. » (« See you soon, <first_name>. » or « See you soon. »).
 
+In a later session, the line right after the greeting is the profile status line (exact wordings in the "Professional profile status" section of `AGENTS.md`). When the status or the version is missing or invalid, the report described in that section replaces the status line. When the professional profile is missing, the possible-loss report of "First use" step 2 replaces it. The first session has no status line: its creation report already says the profile is empty.
+
 The candidate may change or withdraw their choice at any time by asking, or by editing the file. Update `user.address_by_first_name` and `user.first_name` accordingly.
 
 ## First use
@@ -105,7 +107,7 @@ Run this check once the session start order allows it, before another skill read
 1. For each mandatory file, check whether it exists under `data/`.
 2. Before creating a missing file, check whether other user data shows it already held content: `data/current-status.md` says it was initialized or filled, or other files depend on it (for example transcribed sources or opportunities for a missing professional profile, or a professional profile or an opportunity for a missing `data/current-status.md`). In that case it is a possible loss, not a first use: do not recreate it. Tell the candidate which file is missing and why it looks lost, and ask whether to rebuild it from the sources, restore a copy or check a synchronization tool. Act only on their answer.
 3. Create only the other missing files by copying their template. Create missing parent directories. Never overwrite, rewrite or reformat an existing file, even if it looks empty or outdated (the only exceptions are appending missing keys to `workspace.yaml`, step 5, and updating the `user.*` keys from the candidate's answer or request, see "First name and greetings").
-4. Do not fill in the professional profile silently. A profile created from its template is an empty skeleton; populate it only through the interview-coach "Initialize the professional profile" workflow, with the candidate's validation.
+4. Do not fill in the professional profile silently. A profile created from its template is an empty skeleton, with the status `empty` and the version `0.1`; populate it only through the interview-coach "Initialize the professional profile" workflow, with the candidate's validation.
 5. Compare `data/config/workspace.yaml` with `assets/workspace.template.yaml`. If keys from the template are missing, append each one with its template default value at its place in the structure. Do not change, reorder or remove any existing key, value or comment.
 6. Tell the candidate which files were created and which configuration keys were added (with their default values), in one short sentence each. Say nothing when nothing was created, added or found missing: no sentence on the state of the initialization or of the configuration (such as « votre espace carrière est prêt » or « la configuration est complète »). On a first session, give instead the single functional sentence of "First session" step 4.
 

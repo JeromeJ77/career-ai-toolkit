@@ -4,6 +4,24 @@
 
 ### Added
 
+- Professional profile status and version (#9): the profile header carries a
+  status, `empty (vide)`, `draft (en construction)` or `ready (prêt)`, and a
+  version: `0.1` in the template, +0.1 at most once per session that applies a
+  validated change, `1.0` when the profile becomes `ready`. Moving to `ready`
+  is a joint decision, proposed by the coach or requested by the candidate,
+  never silent; a return to `draft` is possible after validation, and the next
+  `ready` gives `2.0`. Every status or version change is recorded in the
+  profile history. In every session except the first, the coach states the
+  status in one line after the greeting. While the profile is not `ready`, the
+  coach gently declines opportunity analysis, interview preparation,
+  simulation, debriefing and the preparation sheet, then proposes either to
+  mark the profile `ready` or to complete it; creating an opportunity and
+  recording its sources stay available. If the candidate insists, the coach
+  continues with a warning and records an exception for that opportunity only,
+  recalled when it is resumed; once the profile is `ready`, it proposes a new
+  analysis pass. Each analysis pass is recorded in `analysis.md` with the
+  profile version and status used. A missing or invalid status is reported and
+  corrected only with the candidate's agreement. See decision D-010.
 - Privacy reminder and web browsing rule (#8): on the first session, after the
   first-name acknowledgement and the report, the coach gives a short, one-time
   privacy reminder (check the AI tool's training, history and attachment
