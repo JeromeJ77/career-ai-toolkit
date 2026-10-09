@@ -1,0 +1,61 @@
+CHANGELOG.md
+  s_0dc83f2ff305b0::t_46a3d491000943 16-21,23-24
+docs/architecture.md
+  s_1465f842010aaf::t_f48a05b8095db5 157
+docs/design/01-career-ai-toolkit-workflow-design.md
+  s_0dc83f2ff305b0::t_1054adbdbb354d 60,64-65,92-94,109,117,283,293-317,330,375
+docs/design/decision-log.md
+  s_0dc83f2ff305b0::t_ddbedcac088c98 575-577,606-611,622-624
+docs/document-lifecycle.md
+  s_1465f842010aaf::t_5b7508cb564875 20,59-63,71,91-92
+docs/glossary.md
+  s_0dc83f2ff305b0::t_68e2a63542c133 75
+docs/professional-profile.md
+  s_0dc83f2ff305b0::t_e03878472e7f05 9,17-37,45
+docs/test-log.md
+  s_0dc83f2ff305b0::t_625cebd475795e 162,167-171,174
+docs/test-plan.md
+  s_0dc83f2ff305b0::t_b0c6b557004507 620-629,643,651-657,663-668,670-672,677-682,687-689,694-695,715-720
+examples/fictitious-developer/data/current-status.md
+  s_0dc83f2ff305b0::t_0dbb3ef89b2dcd 12
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/current-status.md
+  s_0dc83f2ff305b0::t_6ae22f05105b5a 33
+examples/fictitious-developer/data/profile/README.md
+  s_0dc83f2ff305b0::t_e15f1dbd3b9c8a 3
+test-kit/scenario.md
+  s_0dc83f2ff305b0::t_aeebc3a9c3d96e 158,211-212,214,216,218
+workspace/USER-GUIDE.fr.md
+  s_0dc83f2ff305b0::t_acb371e3fa7ce4 34,38
+workspace/USER-GUIDE.md
+  s_0dc83f2ff305b0::t_19dbc3c5e65ec1 34,38-39
+workspace/skills/interview-coach/SKILL.md
+  s_0dc83f2ff305b0::t_5e1844f2ebb405 15
+workspace/skills/interview-coach/references/opportunity-structure-guidelines.md
+  s_0dc83f2ff305b0::t_20c8214b210e61 30,32,34,36,38
+workspace/AGENTS.md
+  s_0dc83f2ff305b0::t_b8faa24a45f409 44,61,66,85-92,96,98,100,106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6bbd75b93cc548c6ee0df8b716a8dd66fcff5014",
+  "prompts": {},
+  "sessions": {
+    "s_0dc83f2ff305b0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a6c53510-a0c8-4f4c-8728-3c33ef7a840b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_1465f842010aaf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85993910-9938-4471-aa31-99da92cb9a00",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
