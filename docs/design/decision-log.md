@@ -572,8 +572,9 @@ Options étudiées le 2026-10-07 :
 
 ### Décision et intention
 
-Le dossier porte dans son en-tête un statut et une version, seule source de
-ces informations. Le statut est écrit sous forme d'un code suivi d'un
+Le dossier porte dans son en-tête un statut et une version, seule source du
+statut et de la version courants ; une version citée ailleurs (passe
+d'analyse, dérogation, note d'état) est une trace datée, jamais une source. Le statut est écrit sous forme d'un code suivi d'un
 libellé : `empty (vide)`, `draft (en construction)`, `ready (prêt)` (en
 anglais : `empty`, `draft (in progress)`, `ready`). Le code fait foi ; le coach
 parle au candidat avec le libellé.
@@ -602,10 +603,12 @@ parle au candidat avec le libellé.
   débriefing, la fiche de préparation et tout document dérivé qui confronte
   le dossier à une offre ; il donne son avis, en proposant soit le passage à
   `ready`, soit de compléter le dossier. La mise en garde n'est donnée qu'une
-  fois : si le candidat insiste, le coach continue en prévenant que le
-  résultat sera moins fiable et consigne une dérogation propre à
-  l'opportunité, rappelée à sa reprise. Une fois le dossier `ready`, il
-  propose une nouvelle passe d'analyse.
+  fois par opportunité dans la même conversation : si le candidat insiste, le
+  coach continue en prévenant que le résultat sera moins fiable et consigne
+  une dérogation (« waiver » en anglais) propre à l'opportunité, rappelée à sa
+  reprise. Une fois le dossier `ready`, il propose une nouvelle passe
+  d'analyse ; toute passe faite avec un dossier `ready`, proposée ou
+  demandée, clôt la dérogation.
 - Chaque passe d'analyse est tracée dans `analysis.md` avec la version et le
   statut du dossier utilisés.
 - Un statut absent, invalide ou incohérent est signalé, jamais interprété ; le
@@ -616,9 +619,9 @@ parle au candidat avec le libellé.
 
 - En-tête du modèle `professional-profile.template.md` en `empty`, `0.1`.
 - Nouvelle section transversale « Professional profile status » dans
-  `workspace/AGENTS.md`, avec des messages exacts bilingues (ligne de statut,
-  refus et ses deux suites, mise en garde après création, insistance, rappel,
-  proposition de `ready`, nouvelle passe d'analyse) ; les skills y renvoient.
+  `workspace/AGENTS.md` ; les skills y renvoient. Les messages au candidat
+  sont décrits par leur contenu obligatoire selon D-022, sauf la ligne de
+  statut et le rappel de dérogation, figés en français et en anglais.
 - Dérogations et refus de nouvelle passe consignés dans le `current-status.md`
   de l'opportunité ; section « Passes d'analyse » dans le modèle
   `opportunity-analysis.template.md`.

@@ -17,7 +17,7 @@ flowchart TD
     sources --> profile
     opportunityOriginals --> opportunitySource
     workspaceStatus -.-> opportunityStatus
-    profile --> opportunity
+    profile -->|ready, or waiver| opportunity
     opportunitySource --> opportunity
     opportunityStatus <--> opportunity
     profile --> derived
@@ -56,7 +56,11 @@ sequenceDiagram
     Assistant->>Workspace: Read sources
     Assistant->>Profile: Draft structured profile
     Candidate->>Profile: Review and correct facts
-    opt Any time after profile validation
+    Assistant->>Profile: Apply the validated profile (empty 0.1 to draft 0.2)
+    Assistant->>Candidate: Propose to mark the profile ready when sufficient
+    Candidate->>Assistant: Validate, possibly after adding information
+    Assistant->>Profile: Set ready 1.0 with a history entry
+    opt Any time once the profile is ready
         Candidate->>Assistant: Ask for CV generation or refresh
         Assistant->>Profile: Reuse validated profile facts
         Assistant->>Workspace: Write derived CV Markdown
@@ -64,7 +68,7 @@ sequenceDiagram
     Candidate->>Assistant: Provide job description and context
     Assistant->>Opportunity: Create numbered directory, canonical Markdown and status
     Candidate->>Assistant: Prepare opportunity
-    Assistant->>Opportunity: Write role analysis and proposed positioning
+    Assistant->>Opportunity: Write role analysis, positioning and analysis pass (profile version)
     Candidate->>Assistant: Review strategic messages and positioning
     Assistant->>Opportunity: Update validated opportunity preparation
     loop For each interview round
@@ -84,8 +88,8 @@ sequenceDiagram
         Candidate->>Assistant: Debrief the real interview
         Assistant->>Opportunity: Capture learnings and next-round actions
     end
-    Assistant->>Profile: Propose durable updates
-    Candidate->>Profile: Accept, edit or reject updates
+    Assistant->>Profile: Propose durable updates and their version effect
+    Candidate->>Profile: Accept, edit or reject updates (+0.1 per session)
 ```
 
 The toolkit does not include a dedicated CV-generation skill yet. CV files are

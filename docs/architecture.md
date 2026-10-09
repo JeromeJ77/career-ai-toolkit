@@ -154,7 +154,7 @@ flowchart TD
     sources ==> profile
     profile ==> cv
     opportunityOriginals ==> opportunitySource
-    profile ==> opportunityWork
+    profile ==>|ready, or waiver| opportunityWork
     opportunitySource ==> opportunityWork
     workspaceStatus -.-> opportunityStatus
     opportunityStatus <--> opportunityWork

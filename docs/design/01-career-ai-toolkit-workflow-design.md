@@ -57,12 +57,12 @@ Le coach ne crée pas à l'avance une arborescence vide et ne demande pas au can
 | Entité | Représentation canonique | Responsabilité |
 |---|---|---|
 | Workspace | répertoire racine | Contient le profil, les opportunités, les skills et l'état de reprise global |
-| ProfessionalProfile | `data/profile/professional-profile.md` | Faits et apprentissages durables validés par le candidat |
+| ProfessionalProfile | `data/profile/professional-profile.md` | Faits et apprentissages durables validés par le candidat, avec statut, version et historique |
 | WorkspaceStatus | `data/current-status.md` | Dernier scope, dernière tâche et point de reprise global |
 | Opportunity | `data/opportunities/NNN-organization-role/` | Domaine autonome d'une candidature |
 | OpportunitySource | `opportunity.md` | Représentation textuelle canonique de l'offre et du contexte fourni |
-| OpportunityAnalysis | `analysis.md` | Adéquation, écarts, hypothèses, positionnement et messages stratégiques |
-| OpportunityStatus | `current-status.md` dans l'opportunité | Mémoire de travail compacte de l'opportunité |
+| OpportunityAnalysis | `analysis.md` | Adéquation, écarts, hypothèses, positionnement, messages stratégiques et passes d'analyse |
+| OpportunityStatus | `current-status.md` dans l'opportunité | Mémoire de travail compacte de l'opportunité, dont ses dérogations au statut du dossier |
 | Interview | `interviews/NN-type/interview.md` | Identité, type, état et informations connues d'un round |
 | Preparation | `preparation.md` | Préparation consolidée propre à un round |
 | Simulation | `simulations/NN/` | Événement simulé distinct et répétable |
@@ -89,6 +89,9 @@ classDiagram
 
     class ProfessionalProfile {
         string validatedProfile
+        string status
+        string version
+        string history
     }
 
     class Opportunity {
@@ -103,6 +106,7 @@ classDiagram
 
     class OpportunityAnalysis {
         string positioning
+        string analysisPasses
     }
 
     class OpportunityStatus {
@@ -110,6 +114,7 @@ classDiagram
         string currentPhase
         string relevantArtifacts
         string nextAction
+        string profileWaivers
     }
 
     class Interview {
@@ -275,7 +280,7 @@ Chaque opportunité possède un `current-status.md` compact indiquant :
 
 - état de l'opportunité ;
 - entretien et phase courants ;
-- décisions validées ;
+- décisions validées, dont les dérogations au statut du dossier professionnel (§5.4) ;
 - travail terminé ;
 - focus et contexte utiles ;
 - artefacts pertinents ;
@@ -284,6 +289,31 @@ Chaque opportunité possède un `current-status.md` compact indiquant :
 Le status est un snapshot orienté action, pas un journal. Il est mis à jour après les transitions importantes et dès qu'une information doit survivre à la conversation.
 
 Pendant une simulation, le coach effectue le checkpoint utile avant le jeu de rôle, n'interrompt pas la simulation pour maintenir les fichiers, puis capture les artefacts et met à jour le status après la simulation.
+
+## 5.4 Statut du dossier professionnel et dérogations
+
+Le statut et la version du dossier professionnel vivent dans son seul en-tête ; leur cycle de vie est décrit dans [professional-profile.md](../professional-profile.md#status-and-version) (D-010).
+
+Tant que le dossier n'est pas `ready`, l'analyse d'une opportunité et le travail qui confronte le dossier à une offre sont refusés une première fois. Si le candidat insiste, le coach consigne une dérogation propre à l'opportunité dans les « Décisions validées » de son `current-status.md`. La mise en garde n'est pas consignée : elle ne vaut que pour la conversation en cours.
+
+```mermaid
+stateDiagram-v2
+    state "No waiver" as none
+    state "Warned<br/>(this conversation)" as warned
+    state "Waiver open" as open
+    state "Re-analysis declined" as declined
+    state "Waiver closed" as closed
+    [*] --> none
+    none --> warned: refusal or post-creation<br/>warning, profile not ready
+    warned --> none: new conversation
+    warned --> open: candidate insists
+    open --> open: resumed, profile not ready<br/>(reminder) OR resumed, profile ready,<br/>re-analysis « later »
+    open --> declined: re-analysis<br/>declined for good
+    open --> closed: analysis pass<br/>with a ready profile
+    declined --> closed: analysis pass requested<br/>with a ready profile
+```
+
+Une fois le dossier `ready`, la nouvelle passe d'analyse est proposée à chaque reprise d'une opportunité en dérogation ouverte, jusqu'à acceptation ou refus définitif. Toute passe d'analyse faite avec un dossier `ready`, proposée ou demandée, clôt la dérogation. Chaque passe est notée dans `analysis.md` avec la version et le statut du dossier utilisés.
 
 ---
 
@@ -297,6 +327,7 @@ Pendant une simulation, le coach effectue le checkpoint utile avant le jeu de r�
 4. Préserver les originaux autorisés lorsque possible.
 5. Transcrire chaque original à l'identique, dans sa langue, puis reporter son contenu utile dans `opportunity.md`, dans la langue de coaching, sans inventer ; une source dans une autre langue y est traduite fidèlement et sa langue d'origine est indiquée (D-014).
 6. Mettre à jour les status global et local.
+7. Si le dossier n'est pas `ready`, proposer de revenir au dossier plutôt qu'à l'analyse (§5.4).
 
 ## 6.2 Créer un round
 
@@ -341,7 +372,7 @@ Le coach conserve les notes et transcriptions légitimes disponibles sous `actua
 
 ## 6.7 Capitaliser
 
-Le coach propose uniquement les apprentissages durables, validés, distincts et réutilisables. Le candidat accepte, modifie ou rejette chaque évolution du profil professionnel.
+Le coach propose uniquement les apprentissages durables, validés, distincts et réutilisables. Le candidat accepte, modifie ou rejette chaque évolution du profil professionnel, présentée avec son effet sur la version du dossier.
 
 ---
 

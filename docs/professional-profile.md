@@ -6,13 +6,34 @@ The profile should use the candidate's primary working or native language so it 
 
 ## Status and version
 
-The profile header carries a status and a version, decided with the candidate (see [D-010](design/decision-log.md#d-010--statut-et-version-du-dossier-professionnel-décidés-avec-le-candidat)). The header is their only source; no status file copies them. The coach instructions are in the "Professional profile status" section of `workspace/AGENTS.md`.
+The profile header carries a status and a version, decided with the candidate (see [D-010](design/decision-log.md#d-010--statut-et-version-du-dossier-professionnel-décidés-avec-le-candidat)). The header is the only source of the current status and version; a version cited elsewhere (analysis pass, waiver, status note) is a dated record, never a source, and is not updated when the profile changes. The coach instructions are in the "Professional profile status" section of `workspace/AGENTS.md`.
 
 | Code | French label | English label | Meaning |
 | --- | --- | --- | --- |
 | `empty` | vide | empty | Skeleton created from the template, version `0.1`. |
 | `draft` | en construction | in progress | Set by the first validated change (`0.2`); the profile is being built. |
 | `ready` | prêt | ready | Operational threshold decided jointly: sufficient to work on opportunities. Not a final state. |
+
+```mermaid
+stateDiagram-v2
+    state "invalid or missing" as invalid
+    [*] --> empty: created from<br/>the template (0.1)
+    [*] --> invalid: legacy or<br/>edited header
+    empty --> draft: first validated<br/>change (0.2)
+    draft --> draft: session with a<br/>validated change (+0.1)
+    draft --> ready: joint decision<br/>(next major, 1.0 then 2.0…)
+    ready --> ready: session with a<br/>validated change (+0.1)
+    ready --> draft: validated<br/>return (+0.1)
+    invalid --> empty: agreed correction,<br/>skeleton
+    invalid --> draft: agreed correction,<br/>filled profile
+    note left of invalid
+        Treated as not ready.
+        Never corrected to ready.
+        The correction does not increment the version.
+    end note
+```
+
+A declined `ready` proposal changes nothing. Every transition, including a version-only change, adds one entry to the profile history.
 
 - The file holds the stable English code followed by the label in the profile language (`draft (en construction)`); the code decides. The coach speaks to the candidate with the label, never the code.
 - Version: +0.1 at most once per session (conversation) that applies at least one validated change, whatever the number of changes (`0.9` → `0.10`). Moving to `ready` gives the next major version `.0` (`1.0` the first time). A `ready` profile keeps the same rule (`1.1`, `1.2`…).
@@ -21,6 +42,6 @@ The profile header carries a status and a version, decided with the candidate (s
 - Every status or version change is presented before application and adds one entry to « Historique synthétique »: date, old and new status and version, one-line reason, candidate validation. A declined `ready` proposal changes nothing.
 - Status line: at the start of every session except the first, right after the greeting, the coach states the status with an emoji, the label and the version, for example « Dossier professionnel : 🟠 en construction (version 0.2). ».
 - While the profile is not `ready`, the coach gently declines opportunity analysis, interview preparation, simulation, debriefing, the preparation sheet and any derived document that compares the profile with an opportunity. Creating an opportunity, recording its sources, creating an interview round and documenting an interview already held stay available. After creating an opportunity, the coach proposes to return to the profile first.
-- If the candidate insists, the coach continues, says the result is less reliable and records the exception in the opportunity's `current-status.md`. The exception covers that opportunity only; the coach recalls it when the opportunity is resumed, and proposes a new analysis pass once the profile is `ready`.
+- The refusal or the warning is given once per opportunity in the same conversation; in a later conversation, an opportunity without an open waiver gets it again. If the candidate insists, the coach continues, says the result is less reliable and records a profile waiver (« dérogation » in French) in the opportunity's `current-status.md`. The waiver covers that opportunity only; the coach recalls it when the opportunity is resumed, and proposes a new analysis pass once the profile is `ready`. Any analysis pass run with a `ready` profile closes the waiver.
 - Each analysis pass is recorded in the opportunity's `analysis.md` with the profile version and status used.
 - A missing or invalid status or version is reported, never interpreted; the coach proposes a value deduced from the content (never `ready`) and applies it only after explicit agreement.

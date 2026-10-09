@@ -2,8 +2,6 @@
 
 ## Passes d'analyse
 
-- AAAA-MM-JJ : dossier professionnel version X.Y (statut)
-
 ## Synthèse
 
 ## Adéquation naturelle avec le profil

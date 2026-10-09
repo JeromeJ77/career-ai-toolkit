@@ -27,15 +27,15 @@ If organization or role information is insufficient for a stable slug, ask only 
 
 When a new source is added later, preserve and transcribe it like the earlier originals and update `opportunity.md` from the combined evidence. Flag contradictions or superseded information explicitly instead of silently choosing one version.
 
-## Exception for a profile that is not ready
+## Waiver for a profile that is not ready
 
-Record the exceptions of the "Professional profile status" section of `AGENTS.md` in the « Décisions validées » section of the opportunity's `current-status.md`, and nowhere else:
+Record the profile waivers of the "Professional profile status" section of `AGENTS.md` in the « Décisions validées » section of the opportunity's `current-status.md`, and nowhere else:
 
-- the exception: « Dérogation : travail avec le dossier professionnel version <version> (<statut>), décidé le <date>. », where `<statut>` is the status label;
+- the waiver: « Dérogation : travail avec le dossier professionnel version <version> (<statut>), décidé le <date>. », where `<statut>` is the status label;
 - after a definitive refusal of a new analysis pass: « Nouvelle passe d'analyse refusée le <date> ; ne plus la proposer. »;
-- after a new analysis pass: « Dérogation close le <date> : nouvelle passe d'analyse avec le dossier prêt <version>. »
+- after any analysis pass run with a `ready` profile, proposed or requested, including after a definitive refusal: « Dérogation close le <date> : nouvelle passe d'analyse avec le dossier prêt <version>. »
 
-An exception is open until it is marked closed. Keep the earlier lines when adding a new one.
+A waiver is open until it is marked closed. Keep the earlier lines when adding a new one.
 
 ## Create an interview round
 

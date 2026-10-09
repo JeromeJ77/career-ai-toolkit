@@ -9,7 +9,7 @@ Dernière mise à jour : 2026-10-02
 
 ## Dernière tâche
 
-- Dossier professionnel consolidé (v0.2) construit à partir des quatre sources de `profile/sources/` et validé par la candidate.
+- Dossier professionnel consolidé (version 0.2 au 2026-10-02) construit à partir des quatre sources de `profile/sources/` et validé par la candidate.
 - Opportunité 001 créée (Lumen Pay, développeuse backend senior) ; offre conservée sous `sources/` et intégrée dans `opportunity.md` ; analyse, préparation du round 02-technical (trois simulations, fiche de préparation) et retour après l'entretien technique réel (2026-10-02) enregistrés.
 - Opportunité 002 créée (Northwind Ledger, Senior Software Engineer, Core Ledger) ; offre conservée sous `sources/` et intégrée dans `opportunity.md` ; notes de l'appel recruteuse (2026-09-30) intégrées : round 01-recruiter documenté, round 02-hiring-manager créé.
 

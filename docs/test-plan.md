@@ -617,13 +617,16 @@ Nominal flow:
 - Apply several validated changes in the same session: confirm the version is
   incremented only once for the session.
 - With a `draft` profile, bring a new offer and ask directly for its
-  analysis: confirm the coach refuses gently with the exact wording, based on
-  the status (not yet marked `ready`), and does not present the refusal as a
-  sanction. It then gives its assessment, with one of two follow-ups: profile
-  judged sufficient, it proposes `ready` directly (exact wording), without
-  also proposing to complete the profile first; profile judged insufficient,
-  it names the main gaps, proposes to complete the profile and says the
-  candidate may continue anyway (exact wording).
+  analysis: confirm the coach refuses gently, based on the status, and does
+  not present the refusal as a sanction: it says the profile is not yet marked
+  ready and that the requested work would be less reliable, naming that work
+  (analysis, preparation, simulation…). It then gives its assessment, with
+  exactly one of two follow-ups: profile judged sufficient, it proposes
+  `ready` directly (the profile seems sufficient, the version it will take,
+  whether the candidate has information to add first), without also proposing
+  to complete the profile first; profile judged insufficient, it names the
+  main gaps, proposes to complete the profile and says the candidate may
+  continue anyway.
 - Confirm the candidate can add information before accepting the `ready`
   proposal (status stays `draft`), then validates; the status becomes `ready`
   and the version `1.0`, recorded in the header and the history, never
@@ -637,7 +640,7 @@ Nominal flow:
   invalid status and a return to `draft`) adds one entry to the profile's
   « Historique synthétique »: date, old and new status and version, a one-line
   reason and the candidate's validation. A declined `ready` proposal changes
-  nothing and adds no entry; exceptions and declined re-analysis passes are
+  nothing and adds no entry; waivers and declined re-analysis passes are
   recorded in the opportunity's `current-status.md`, not in the profile.
 
 Opportunity work while the profile is not `ready`:
@@ -645,42 +648,51 @@ Opportunity work while the profile is not `ready`:
 - Confirm creating an opportunity, recording its sources and documenting an
   interview already held before the toolkit was used remain possible without
   refusal, as long as nothing is analyzed against the profile. After creating
-  an opportunity, the next step proposed is to return to the profile, with the
-  exact warning, not the analysis.
-- Confirm the warning is given once: an explicit analysis request after the
-  post-creation warning counts as insisting (no second refusal).
+  an opportunity, the next step proposed is to return to the profile, not the
+  analysis, with the reason (the analysis would otherwise be less reliable).
+- Confirm the warning is given once per opportunity in the same
+  conversation: an explicit analysis request on the same opportunity after the
+  post-creation warning, in the same conversation, counts as insisting (no
+  second refusal). In a later conversation, an opportunity without an open
+  waiver gets the refusal or the warning again.
 - Create an opportunity and ask for its analysis in the same message: confirm
   the coach gives the refusal and its follow-up, not the post-creation warning
   (C9 prompt 4).
 - Confirm the refusal covers analysis, strategic messages, interview
   preparation, simulation and the preparation sheet.
-- The candidate insists: confirm the coach continues, states the profile
-  status, warns with the exact wording that the quality is degraded, never
-  claims the analysis is as reliable as with a `ready` profile, and records the
-  exception in the opportunity's `current-status.md`.
-- Confirm the exception applies to that opportunity only: a second opportunity
+- The candidate insists: confirm the coach agrees to continue, states the
+  profile status, says the result will be less reliable than with a ready
+  profile, never claims the analysis is as reliable as with a `ready` profile,
+  and records the waiver (« dérogation ») in the opportunity's
+  `current-status.md`.
+- Confirm the waiver applies to that opportunity only: a second opportunity
   triggers the refusal again.
-- Resume the excepted opportunity in a new conversation: confirm the coach
-  gives the short exact reminder, without blocking.
+- Resume the opportunity under waiver in a new conversation: confirm the
+  coach gives the short exact reminder at the start of the answer that resumes
+  it (after the status line when there is one), without blocking.
 - Confirm each analysis pass is recorded in `analysis.md` with its date and
   the profile version and status used, whatever the status (general case,
   for example D2 with a `ready` profile).
 - Once the profile is `ready`, return to an opportunity analyzed under the
-  exception: confirm the coach proposes to redo an analysis pass with the
-  richer profile. « Pas maintenant »: the exception mark is kept and the
-  proposal comes back at the next resumption. Definitive refusal (« Non, ce
-  n'est pas la peine »): recorded in the opportunity status, never proposed
-  again. On acceptance, `analysis.md` keeps the earlier pass and follows the
+  waiver: confirm the coach recalls that it was analyzed with a profile still
+  in progress and asks whether to run a new analysis pass, so that the
+  candidate can answer yes, later or no. « Pas maintenant »: the waiver is
+  kept open and the proposal comes back at the next resumption. Definitive
+  refusal (« Non, ce n'est pas la peine »): recorded in the opportunity
+  status, never proposed again. On acceptance, `analysis.md` keeps the earlier pass and follows the
   existing rules (proposed messages kept, withdrawn ones moved, nothing
   deleted silently).
 - Confirm a new analysis pass can be requested at any time, including after a
   definitive refusal or when the earlier pass already used a `ready`
-  profile.
+  profile. Any pass run with a `ready` profile, proposed or requested, closes
+  the waiver in the opportunity's `current-status.md`, even after a definitive
+  refusal.
 
 Edge cases:
 
 - Status missing, unknown value (for example « brouillon initial » from an
-  earlier version) or unreadable version: confirm the coach reports it, does
+  earlier version), unreadable version or inconsistent header (`empty` with a
+  filled profile, `ready` with a `0.x` version): confirm the coach reports it, does
   not interpret it arbitrarily, proposes a value deduced from the content
   (`empty` for the skeleton, `draft` for a filled profile, never `ready`), and
   applies it only after explicit agreement, before any work that depends on
@@ -700,11 +712,12 @@ Limit cases:
   next `ready` gives `2.0`.
 - With a `ready` profile, routine validated updates increment `1.x` without
   changing the status.
-- English profile language: confirm the status line, the refusal, the warning
-  and the reminder use the English wordings.
-- The exact messages (status line, refusal, warning, reminder, `ready`
-  proposal, re-analysis proposal) are identical in the coach instructions and
-  the master scenario.
+- English coaching language: confirm the status line and the reminder use
+  the exact English wordings, and the other messages are written in English
+  with their required content.
+- The exact messages (status line and waiver reminder) are identical in the
+  coach instructions and the master scenario; the other messages are described
+  by their required content (D-022).
 
 Documentation:
 

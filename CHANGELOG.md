@@ -13,13 +13,15 @@
   `ready` gives `2.0`. Every status or version change is recorded in the
   profile history. In every session except the first, the coach states the
   status in one line after the greeting. While the profile is not `ready`, the
-  coach gently declines opportunity analysis, interview preparation,
-  simulation, debriefing and the preparation sheet, then proposes either to
-  mark the profile `ready` or to complete it; creating an opportunity and
-  recording its sources stay available. If the candidate insists, the coach
-  continues with a warning and records an exception for that opportunity only,
+  coach gently declines opportunity analysis (including strategic messages),
+  interview preparation, simulation, debriefing, the preparation sheet and a
+  targeted CV or cover letter, then proposes either to mark the profile
+  `ready` or to complete it; creating an opportunity and recording its sources
+  stay available. If the candidate insists, the coach continues with a warning
+  and records a profile waiver (« dérogation ») for that opportunity only,
   recalled when it is resumed; once the profile is `ready`, it proposes a new
-  analysis pass. Each analysis pass is recorded in `analysis.md` with the
+  analysis pass, and any analysis pass run with a `ready` profile closes the
+  waiver. Each analysis pass is recorded in `analysis.md` with the
   profile version and status used. A missing or invalid status is reported and
   corrected only with the candidate's agreement. See decision D-010.
 - Privacy reminder and web browsing rule (#8): on the first session, after the
