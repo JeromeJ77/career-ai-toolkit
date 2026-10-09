@@ -63,7 +63,7 @@ mycareer-workspace/
 `-- data/                            # données utilisateur (que des README dans le ZIP)
     |-- current-status.md            # dernier scope et point de reprise
     |-- config/                      # préférences du workspace
-    |-- profile/                     # profil professionnel et sources
+    |-- profile/                     # dossier professionnel et sources
     |-- cv/                          # CV dérivés
     |-- opportunities/               # opportunités créées par le coach
     |   `-- 001-organization-role/

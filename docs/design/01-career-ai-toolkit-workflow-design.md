@@ -29,7 +29,7 @@ Toute étape importante doit pouvoir être reconstruite à partir des fichiers d
 
 ## 1.2 Contrôle du candidat
 
-`data/profile/professional-profile.md` est la source de vérité consolidée du profil professionnel.
+`data/profile/professional-profile.md` est la source de vérité consolidée du dossier professionnel.
 
 - Le candidat valide les faits durables et réutilisables.
 - Le coach ne modifie jamais silencieusement le profil.
@@ -353,7 +353,7 @@ Le debrief est un workflow autonome. Il doit fonctionner dans une nouvelle conve
 
 Le coach lit :
 
-- le profil professionnel ;
+- le dossier professionnel ;
 - `opportunity.md`, `analysis.md` lorsqu'il existe et le status ;
 - le `interview.md` et la préparation du round ;
 - la transcription de la simulation ou, à défaut, des notes fournies par le candidat.
@@ -372,7 +372,7 @@ Le coach conserve les notes et transcriptions légitimes disponibles sous `actua
 
 ## 6.7 Capitaliser
 
-Le coach propose uniquement les apprentissages durables, validés, distincts et réutilisables. Le candidat accepte, modifie ou rejette chaque évolution du profil professionnel, présentée avec son effet sur la version du dossier.
+Le coach propose uniquement les apprentissages durables, validés, distincts et réutilisables. Le candidat accepte, modifie ou rejette chaque évolution du dossier professionnel, présentée avec son effet sur sa version.
 
 ---
 
@@ -386,7 +386,7 @@ Le coach propose uniquement les apprentissages durables, validés, distincts et 
 - Faire réfléchir le candidat avant de proposer une réponse modèle.
 - Utiliser un feedback qualitatif et fondé sur des éléments observables.
 - Limiter le premier debrief à une synthèse et une à trois priorités.
-- Ne jamais modifier silencieusement une source originale ou le profil professionnel.
+- Ne jamais modifier silencieusement une source originale ou le dossier professionnel.
 - Ne jamais exposer les données privées sans instruction explicite.
 
 ---
@@ -397,7 +397,7 @@ Le workflow nominal doit être testé dans un workspace privé situé hors du re
 
 Le test couvre au minimum :
 
-1. initialisation ou validation du profil professionnel ;
+1. initialisation ou validation du dossier professionnel ;
 2. création de plusieurs opportunités actives ;
 3. création de rounds ordonnés ;
 4. préparation d'un round ;

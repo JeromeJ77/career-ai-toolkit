@@ -30,7 +30,7 @@ Dernière mise à jour : 2026-10-02
 - System design : étape la plus éliminatoire (Miro, 60 min, 2 ingénieurs ; ledger avec écritures concurrentes et rapprochement quotidien). Doc de préparation promis par Sanne ; stress de la candidate : tableau en anglais, jamais fait.
 - Remote total depuis Lyon, contrat via EOR en France.
 - Questions de la candidate pour Marek : astreinte en remote total ; raison de l'ouverture du poste.
-- Le profil professionnel consolidé (version 0.2 au 2026-10-02, validé) est en place et relu le 2026-10-02 ; il sert de base à l'analyse.
+- Le dossier professionnel consolidé (version 0.2 au 2026-10-02, validé) est en place et relu le 2026-10-02 ; il sert de base à l'analyse.
 - Écarts profil / opportunité à arbitrer par la candidate : rémunération (profil 65-70 k€ ; annoncé à Sanne 70-75 k€), rôle visé (tech lead / staff vs Senior Engineer), préavis 3 mois (négociable 2) face à un processus de ~4 semaines.
 
 ## Artefacts pertinents
