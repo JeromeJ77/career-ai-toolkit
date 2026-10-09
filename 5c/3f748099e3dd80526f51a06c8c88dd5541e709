@@ -1,0 +1,23 @@
+README.fr.md
+  s_1465f842010aaf::t_349f2956be38f4 66
+docs/design/01-career-ai-toolkit-workflow-design.md
+  s_1465f842010aaf::t_b735a785675239 32,356,375,389,400
+examples/fictitious-developer/data/opportunities/002-northwind-ledger-senior-software-engineer/current-status.md
+  s_1465f842010aaf::t_dce1f290c595c6 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5c3f748099e3dd80526f51a06c8c88dd5541e709",
+  "prompts": {},
+  "sessions": {
+    "s_1465f842010aaf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85993910-9938-4471-aa31-99da92cb9a00",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
