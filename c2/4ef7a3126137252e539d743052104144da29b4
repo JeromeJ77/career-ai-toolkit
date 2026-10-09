@@ -1,0 +1,21 @@
+docs/test-history/2026-10-09-tests-manuels-9-statut-dossier.md
+  s_b4a30dc9e3a784::t_2f7a9e3a098790 1-96
+docs/test-log.md
+  s_b4a30dc9e3a784::t_be04e41c9b8cba 22,29-30,42-43,60,159-174,176,182
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c24ef7a3126137252e539d743052104144da29b4",
+  "prompts": {},
+  "sessions": {
+    "s_b4a30dc9e3a784": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4e60fcc4-d388-4da8-932a-02e04b1f60a4",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
