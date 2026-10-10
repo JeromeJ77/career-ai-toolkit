@@ -13,15 +13,15 @@ Légende : ✅ conforme · ⚠️ conforme avec réserve ou partiel · 🐞 éca
 
 ### Parcours principal (workspace neuf)
 
-- A1 : extraction du ZIP faite par le testeur ; aucun résultat consigné, pas de contrôle à noter.
+- ✅ A1 : extraction du ZIP faite par le testeur, conforme (confirmé au débrief du 2026-10-10).
 - ✅ B1 : accueil, prénom, accusé de réception, compte rendu, rappel de confidentialité exact ; aucune ligne de statut en première session.
-- B2 : ligne ⚪ « vide » (version 0.1) attendue, texte non relevé : **non consigné, à rejouer**.
-- ✅ C1, C2 : dossier `draft` 0.2, historique, salaire absent du dossier (constaté sur les fichiers ; la forme du premier échange de C1 n'est pas relevée).
+- ✅ B2 (texte transmis au débrief du 2026-10-10) : *Lancement de la session…*, « Bonjour Nadia. », puis « Dossier professionnel : ⚪ vide (version 0.1). » ; le coach propose de construire le dossier à partir des documents ou de suivre un autre objectif.
+- ✅ C1, C2 : dossier `draft` 0.2, historique, salaire absent du dossier (constaté sur les fichiers). C1 prompt 1 (texte transmis au débrief du 2026-10-10) : le coach annonce qu'aucun document n'a été fourni, donne les trois façons de le faire (copier dans le bon sous-dossier de `data/profile/sources/` avec des exemples, joindre, coller le texte), annonce la transcription et la proposition à valider avant toute écriture, puis demande quels documents sont disponibles, sans questionnaire préalable.
 - 🐞 C4 prompt 1 (« préparer une candidature ») : pas de refus. Le coach répond « Avec plaisir. Je peux créer l'opportunité dès maintenant… », nomme « l'analyse de l'adéquation avec l'offre, le CV ciblé et la lettre de motivation » et non la préparation de la candidature, suit la branche « insuffisant » (finaliser les points ouverts) sans dire que la candidate peut continuer quand même. La ligne 🟠 0.2 était bien présente à l'ouverture. Cause probable, confirmée par le contenu du fichier : le point de reprise écrit en C2 (« compléter la section 13 puis envisager le passage à prêt ») préjuge du statut.
 - ✅ C4 prompt 2 : modification proposée, validation demandée avant écriture, `draft` 0.2 → 0.3 après « Je valide… ».
 - ✅ C4 prompt 3 (variante : « passe mon dossier en prêt » malgré les lacunes) : réserve (quatre lacunes), choix proposé, puis `ready` 1.0 avec entrée d'historique ; `current-status.md` conforme.
 - ⚠️ D1 : non joué à part entière. L'opportunité 001 avait déjà été créée en C4 (source copiée, transcrite, `opportunity.md` rédigé) ; le testeur a choisi de garder cet état.
-- ✅ D2 (variante « Oui, lance l'analyse ») : `analysis.md` trace « 2026-10-09 : dossier professionnel version 1.0 (prêt) », faits, hypothèses et écarts séparés, cinq messages stratégiques, aucune mise en garde. Messages : quatre validés, le cinquième déplacé dans « Retirés » sans raison précisée. Observation : le secteur régulé est classé en adéquation, pas en écart.
+- ✅ D2 (variante « Oui, lance l'analyse ») : `analysis.md` trace « 2026-10-09 : dossier professionnel version 1.0 (prêt) », faits, hypothèses et écarts séparés, cinq messages stratégiques, aucune mise en garde. Messages présentés comme hypothèses de travail ; le cinquième (apprentissage du scoring) signalé sans preuve dans le dossier. Sur « Je valide les messages sauf le dernier » (précisé au débrief du 2026-10-10) : quatre validés, le cinquième déplacé dans « Retirés ou invalidés », consigné « sans raison précisée » puisque la candidate n'en a pas donné, et récupérable. Observation : le secteur régulé est classé en adéquation, pas en écart.
 - ✅ E3 : « Bonjour Nadia. » puis « Dossier professionnel : 🟢 prêt (version 1.0). », reprise de Lumen Pay depuis les fichiers, point de reprise proposé sans choisir.
 
 ### C9 (workspace `-c9`, CV seul)
@@ -82,7 +82,7 @@ Préparation : B1, C1 et C2 en CV seul, deux prompts fusionnés (variante) ; dos
 ## Non testé
 
 - Anglais : ligne de statut et rappel de dérogation, autres messages (ligne #9 dédiée).
-- B2 (ligne ⚪ 0.1), D1 à part entière, E1, C3, C5 à C8.
+- D1 à part entière, E1, C3, C5 à C8.
 - C9 prompts 4 et 7 (deuxième opportunité, refus définitif) ; « n'est plus proposée » du prompt 8.
 - C10 deuxième variante (statut absent), version illisible, `empty` avec dossier rempli, `ready` en `0.x`.
 - `ready` proposé par le coach, informations ajoutées avant validation, proposition refusée sans raison ; mises à jour courantes en `1.x` ; sources, entretien déjà passé et fiche de préparation sur un dossier non `ready`.
@@ -94,3 +94,15 @@ Préparation : B1, C1 et C2 en CV seul, deux prompts fusionnés (variante) ; dos
 - Correctifs proposés, non appliqués : (1) moteur, relire le statut dans l'en-tête avant de juger de la suffisance, sans se fier au point de reprise, et nommer le travail demandé dans le refus ; (2) moteur, n'écrire la pause d'une opportunité qu'après réponse explicite, et mettre à jour sa « Prochaine action » ; (3) kit, reformuler le prompt 1 de C4, décrire la remise à `ready` de C11, corriger les préconditions de C9 et D1.
 - Lessons learned à rédiger au débrief (point de reprise qui préjuge d'un statut ; question posée dans un message traitée comme acceptée).
 - Backlog : préambule en anglais (déjà noté), sans modification sans accord.
+
+## Débrief (2026-10-10)
+
+Débrief fait dans la conversation d'analyse ; les corrections sont inscrites au plan de #9 pour une passe de développement.
+
+- C4 prompt 1 : reclassé en défaut du kit. « Préparer une candidature » ne fait pas partie des travaux soumis au statut ; le coach a suivi la voie « après création d'une opportunité » (retour au dossier proposé, travaux soumis au statut nommés), ce qui est conforme. Juger le dossier insuffisant en s'appuyant sur le point de reprise écrit en C2 reste cohérent : la suffisance n'a pas de critère mesuré (D-010) et la règle de l'en-tête porte sur le statut et la version. Aucun correctif moteur ; le prompt est reformulé pour demander un travail soumis au statut. Le refus bienveillant reste à jouer.
+- Pause de Lumen Pay écrite sans réponse et « Prochaine action » périmée : défaut moteur, corrigé dans #9 (une question restée sans réponse ne vaut pas accord ; la prochaine action suit le changement de statut de l'opportunité).
+- C10, `ready` proposé en alternative : règle conservée, aucun correctif. Les garanties ont tenu (pas d'interprétation, rien écrit avant l'accord, dossier traité comme non prêt, `draft` proposé). À revoir si l'écart se reproduit dans la passe complète.
+- « Validé par le candidat » dans l'historique d'un dossier au féminin : recopié de l'exemple des consignes ; exemple rendu neutre dans #9.
+- Kit : prompt de C4, précondition de C9 (dossier plus mince plutôt que sections vides), remise à `ready` décrite en C11, D1 quand l'opportunité existe déjà. C9 prompt 8 dépend du prompt 7 : contrainte d'ordre, pas un défaut.
+- Leçons apprises : aucune. Le point de reprise n'était pas en cause, et la pause écrite sans réponse est un défaut moteur tracé ici et corrigé.
+- Autres observations de forme : pas de correctif (D-022).
