@@ -160,6 +160,24 @@ gênent, sans ajouter de contrainte pour le seul plaisir de la conformité
 - Faute de français isolée dans une réplique d'interviewer (« une bonne
   réflexe »).
 
+### Défauts mineurs restants après #9
+
+Relevés aux tests manuels du 2026-10-09 et à la relecture de la troisième passe
+de #9 (2026-10-10)
+([session](docs/test-history/2026-10-09-tests-manuels-9-statut-dossier.md)).
+Observations de forme (D-022) : à ne corriger que si le pilote montre qu'elles
+gênent.
+
+- Numéros de section cités à la candidate (« section 13 », 8, 15) : le coach
+  désigne les parties du dossier par leur numéro, que la candidate ne connaît
+  pas. Piste : nommer la section (« Postes visés ») plutôt que son numéro.
+- Titres de section genrés dans le modèle d'analyse
+  (`opportunity-analysis.template.md` : « Validés par le candidat »,
+  « Retirés ou invalidés par le candidat ») et dans la consigne correspondante
+  de `interview-coach/SKILL.md` : le coach peut les recopier tels quels pour
+  une candidate. L'exemple d'historique du dossier a été rendu neutre dans #9
+  (« Validé. ») ; piste analogue : « Validés », « Retirés ou invalidés ».
+
 ### Tenue des `current-status.md`
 
 Relevé aux tests manuels du 2026-10-05 (B3, B7) : après la préparation, la
