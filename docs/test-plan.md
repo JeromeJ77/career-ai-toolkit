@@ -687,6 +687,12 @@ Opportunity work while the profile is not `ready`:
   profile. Any pass run with a `ready` profile, proposed or requested, closes
   the waiver in the opportunity's `current-status.md`, even after a definitive
   refusal.
+- Leave a question of the coach unanswered (for example a proposed pause of
+  an opportunity during a profile rework, C11): confirm nothing it proposed is
+  recorded as decided, and the coach asks it again when it matters. When the
+  state of an opportunity changes (pause, resumption, waiver, profile status),
+  confirm its « Prochaine action » is updated at the same time and stays
+  consistent with that state.
 
 Edge cases:
 

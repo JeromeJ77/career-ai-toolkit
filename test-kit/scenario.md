@@ -150,17 +150,17 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : à définir avec #10.
 - **Attendu** : le coach conduit un premier entretien pour compléter les sections du dossier que les sources ne couvrent pas (motivations, préférences, messages récurrents), puis propose les ajouts.
 
-### C4 — Dossier en construction : opportunité trop tôt, puis passage à « prêt » [demo]
+### C4 — Dossier en construction : préparation trop tôt, puis passage à « prêt » [demo]
 
 - **Durée démo** : 3 min
 - **Conversation** : nouvelle (après C2)
-- **Prompt 1** : « Bonjour. J'aimerais préparer une candidature pour un poste de développeuse backend senior. »
-- **Attendu 1** : après « Bonjour Nadia. », la ligne « Dossier professionnel : 🟠 en construction (version 0.2). ». Le coach refuse gentiment en partant du statut : il dit que le dossier n'est pas encore marqué prêt et que le travail demandé (ici la préparation de la candidature) serait moins fiable. Il ne présente pas ce refus comme une sanction. Il donne ensuite son avis sur le dossier : nourri par quatre sources, il le juge suffisant et propose directement le passage à « prêt » : le dossier lui semble suffisant pour travailler sur des opportunités, il donne la version qu'il prendra (1.0) et demande s'il reste des informations à ajouter avant, en citant au besoin les lacunes qui restent sans en faire une condition (par exemple le system design au tableau, l'impact personnel dans la migration). Il ne propose pas en même temps de compléter le dossier d'abord. (L'autre suite, dossier jugé insuffisant, est jouée en C9.)
+- **Prompt 1** : « Bonjour. J'aimerais préparer mes entretiens pour un poste de développeuse backend senior. »
+- **Attendu 1** : après « Bonjour Nadia. », la ligne « Dossier professionnel : 🟠 en construction (version 0.2). ». Le coach refuse gentiment en partant du statut : il dit que le dossier n'est pas encore marqué prêt et que le travail demandé (ici la préparation des entretiens) serait moins fiable. Il ne présente pas ce refus comme une sanction et ne crée pas d'opportunité. Il donne ensuite son avis sur le dossier, avec l'une des deux suites selon son jugement (pas de critère mesuré, D-010) : « suffisant », il propose directement le passage à « prêt » (le dossier lui semble suffisant pour travailler sur des opportunités, version 1.0, reste-t-il des informations à ajouter avant ?), en citant au besoin les lacunes qui restent sans en faire une condition (par exemple le system design au tableau, l'impact personnel dans la migration), sans proposer en même temps de compléter le dossier d'abord ; « insuffisant », il nomme les principales lacunes, propose de compléter d'abord le dossier et dit que la candidate peut continuer quand même.
 - **Prompt 2** : « Oui, avant : c'est moi qui ai conçu le découpage en six services et écrit le plan de migration validé par le CTO. »
-- **Attendu 2** : le coach propose l'ajout et n'applique rien avant validation ; le statut reste `draft`.
-- **Prompt 3** : « D'accord, applique, et on peut passer le dossier en prêt. »
+- **Attendu 2** : quelle que soit la suite donnée, le coach propose l'ajout et n'applique rien avant validation ; le statut reste `draft`.
+- **Prompt 3** : « D'accord, applique, et on peut passer le dossier en prêt. » Si le coach exprime une réserve en citant des lacunes, répondre « Oui, je confirme. »
 - **Attendu 3** : l'ajout est appliqué ; l'en-tête passe à `ready` (prêt), version 1.0, date du jour, entrée d'historique sur le passage à « prêt » ; `data/current-status.md` est mis à jour.
-- **Mots-clés** : le coach ne bloque pas par principe, il explique pourquoi l'analyse serait moins bonne ; « prêt » est un seuil opérationnel décidé ensemble, pas un état final ; montrer l'en-tête du dossier (statut, version 1.0).
+- **Mots-clés** : le coach ne bloque pas par principe, il explique pourquoi la préparation serait moins bonne ; la suite (proposition de « prêt » ou lacunes à compléter) dépend de son jugement sur le dossier ; « prêt » est un seuil opérationnel décidé ensemble, pas un état final ; montrer l'en-tête du dossier (statut, version 1.0).
 - **Plan de test** : Professional profile status and version (#9) — refus bienveillant, proposition de `ready` avec ajout puis validation.
 
 ### C5 — Réimport après non-écrasement
@@ -204,7 +204,8 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 
 ### C9 — Dossier non prêt : mise en garde, dérogation et nouvelle passe d'analyse [manual]
 
-- **Action** : dans un nouveau workspace extrait (suffixe `-c9`), jouer B1, puis C1 et C2 en ne joignant **que le CV** (`sources/profile/cv-nadia-berkani.pdf`) : le dossier est en `draft` 0.2 et ses sections motivations et préférences restent vides.
+- **Action** : dans un nouveau workspace extrait (suffixe `-c9`), jouer B1, puis C1 et C2 en ne joignant **que le CV** (`sources/profile/cv-nadia-berkani.pdf`) : le dossier est en `draft` 0.2, nettement plus mince que celui du workspace principal (une seule source).
+- **Ordre** : jouer les invites dans l'ordre ; l'attendu 8 dépend de l'invite 7.
 - **Conversation** : nouvelle
 - **Fichiers** : joindre `sources/opportunities/002-northwind-ledger-senior-software-engineer.pdf`.
 - **Prompt 1** : « J'ai une opportunité chez Northwind Ledger, voici l'offre. »
@@ -228,7 +229,8 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 
 ### C11 — Retour de « prêt » à « en construction » [manual]
 
-- **Conversation** : nouvelle, dans la copie de C10 remise à `ready`
+- **Préparation** : dans la copie de C10, remettre l'en-tête de `data/profile/professional-profile.md` à `ready (prêt)` avec la version lue, et ajouter à « Historique synthétique » une ligne manuelle, par exemple « - <date> : draft 1.0 → ready 1.0 (remise en état pour le test C11). »
+- **Conversation** : nouvelle ; les deux invites peuvent se jouer dans la même conversation.
 - **Prompt 1** : « J'envisage de me réorienter vers un poste de staff engineer : je veux retravailler mon dossier en profondeur. »
 - **Attendu 1** : le coach peut proposer de repasser le dossier en construction ; il n'applique rien sans validation. Après « Oui », l'en-tête passe à `draft` avec la version suivante (par exemple 1.0 → 1.1), entrée d'historique.
 - **Prompt 2** : après une modification validée, « On peut repasser le dossier en prêt. » **Attendu 2** : `ready`, version 2.0.
@@ -245,6 +247,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Fichiers** : joindre à la conversation `sources/opportunities/001-lumen-pay-offre-developpeuse-backend-senior.pdf`.
 - **Prompt 2** : « La voici. »
 - **Attendu 2** : une copie inchangée de l'offre est rangée dans `data/opportunities/001-lumen-pay-<rôle>/sources/` ; sa transcription `.md` est créée à côté, avec son en-tête ; `opportunity.md` est complété avec les faits et leur provenance (poste, squad, processus en quatre étapes, fourchette 62–72 k€), sans analyse d'adéquation ; le statut de l'opportunité est mis à jour.
+- **Si l'opportunité existe déjà** : si l'opportunité Lumen Pay existe déjà (créée plus tôt), joindre l'offre à l'opportunité existante et vérifier qu'aucune seconde opportunité n'est créée.
 - **Mots-clés** : insister sur « la structure est gérée par le coach » ; montrer la transcription `.md` de l'offre dans `sources/` (copie figée, consultable plus tard sans rouvrir le PDF, comme pour le profil), puis `opportunity.md` : les faits seulement, l'analyse vient à l'étape suivante (`analysis.md`).
 - **Plan de test** : Workspace — « Give the coach source material for two opportunities without creating their directories manually » (première moitié), « Confirm each opportunity has a canonical `opportunity.md` and `current-status.md`, and that retained original files under `sources/` remain unchanged ».
 
@@ -454,7 +457,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 | C1 Sources et transcription | 4 min |
 | C2 Validation du dossier | 2 min |
 | *C3 Entretien d'initialisation* | *`[todo #10]`* |
-| C4 Opportunité trop tôt, dossier prêt | 3 min |
+| C4 Préparation trop tôt, dossier prêt | 3 min |
 | D1 Créer l'opportunité | 4 min |
 | D2 Préparer l'opportunité | 4 min |
 | D3 Créer l'étape d'entretien | 3 min |

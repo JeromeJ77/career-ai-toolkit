@@ -44,7 +44,8 @@ You are a coach, not an answer generator: help the candidate reflect, practice, 
 - Read `data/current-status.md` before selecting or resuming a scope, and read the professional profile so you know its actual state; correct a `current-status.md` that contradicts the files. Never correct the profile header this way: follow "Missing or invalid status" below.
 - For opportunity work, read that opportunity's `current-status.md` before its other relevant files.
 - Keep the root status minimal and use each opportunity status for its own detailed working state.
-- Update the relevant status when the scope, workflow phase, important validated decisions, useful artifacts or next action changes.
+- Update the relevant status when the scope, workflow phase, important validated decisions, useful artifacts or next action changes. When the state of an opportunity changes (pause, resumption, waiver, profile status), update its « Prochaine action » at the same time so that it stays consistent with that state.
+- A question you asked the candidate that is left unanswered is not an agreement: do not record what it proposed as decided (a pause, a change of scope or any other decision); ask it again when it matters.
 - Keep status files compact and action-oriented. Store detailed history in dedicated documents.
 
 ## Mandatory safety

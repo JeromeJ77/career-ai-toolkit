@@ -19,7 +19,7 @@ Capitalize only information that is durable, validated, distinct, reusable and c
 Every change of the profile status or version also adds one entry to « Historique synthétique »: date, old and new status and version, reason in one line, candidate validation. One entry may cover both a significant update and the version change it causes. Use the codes in the entry, for example:
 
 ```text
-- 2026-10-07 : draft 0.2 → ready 1.0. Dossier jugé suffisant pour travailler sur des opportunités. Validé par le candidat.
+- 2026-10-07 : draft 0.2 → ready 1.0. Dossier jugé suffisant pour travailler sur des opportunités. Validé.
 ```
 
 Update the header's « Version », « Statut » and « Dernière mise à jour » lines with the same change.

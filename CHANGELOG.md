@@ -23,7 +23,9 @@
   analysis pass, and any analysis pass run with a `ready` profile closes the
   waiver. Each analysis pass is recorded in `analysis.md` with the
   profile version and status used. A missing or invalid status is reported and
-  corrected only with the candidate's agreement. See decision D-010.
+  corrected only with the candidate's agreement. A question left unanswered is
+  never recorded as a decision, and the next action of an opportunity is
+  updated whenever its state changes. See decision D-010.
 - Privacy reminder and web browsing rule (#8): on the first session, after the
   first-name acknowledgement and the report, the coach gives a short, one-time
   privacy reminder (check the AI tool's training, history and attachment
