@@ -1,0 +1,21 @@
+docs/test-log.md
+  s_0bd5dd1a8b900b::t_a1aed2b9d8971c 185-193,196-200,202-203,214
+docs/test-history/2026-10-11-feedback-produit-test-minimal.md
+  s_0bd5dd1a8b900b::t_2b1cbf7fccf7d0 1-109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "943928336650a2e776c66eba70e249c6575929f6",
+  "prompts": {},
+  "sessions": {
+    "s_0bd5dd1a8b900b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "47e61ac6-c35d-4e39-9f67-16ae00073eef",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
