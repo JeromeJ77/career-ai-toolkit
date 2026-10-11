@@ -1,0 +1,23 @@
+docs/test-history/2026-10-11-passe-rapide-v0.4.0.md
+  s_88d13db9f3f3d1::t_736912a96d4b45 1-85
+docs/test-log.md
+  s_88d13db9f3f3d1::t_07902975a805db 21-22,26,29-30,42-45,60,99,118-121,130,160,162-164,170,177,185-189,191-193,197,202-203,207,214
+test-kit/scenario.md
+  s_88d13db9f3f3d1::t_990049727040cd 383
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2fb108db0d994fdea2d0ae679ad69478fd710413",
+  "prompts": {},
+  "sessions": {
+    "s_88d13db9f3f3d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9187c0d5-4c32-4247-b96a-d226ef395fa2",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
