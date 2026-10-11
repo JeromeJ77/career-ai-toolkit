@@ -19,5 +19,3 @@
 ## Notes du journal
 
 ## Usage des jokers
-
-(facultatif : à inclure seulement si vous avez accepté la statistique)
