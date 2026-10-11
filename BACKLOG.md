@@ -178,6 +178,33 @@ gênent.
   une candidate. L'exemple d'historique du dossier a été rendu neutre dans #9
   (« Validé. ») ; piste analogue : « Validés », « Retirés ou invalidés ».
 
+### Lecture des PDF lente et fragile
+
+Relevé aux tests manuels du 2026-10-11 (D1,
+[session](docs/test-history/2026-10-11-tests-manuels-9-corrections.md)) ;
+l'auteur souhaite le traiter dans les prochaines optimisations.
+
+- Constat : l'outil de lecture renvoie « PDF lu » sans contenu, puis échoue
+  faute de `pdftoppm` (poppler) ; ni `pdftotext` ni `pypdf` ne sont
+  disponibles. Le coach décode alors les flux à la main (ASCII85 puis Flate),
+  extrait le texte par expressions régulières et nettoie à la main les
+  opérateurs PDF résiduels et les phrases coupées. C'est lent, et la narration
+  technique est visible par la candidate.
+- Perte de caractères : les « € » de l'offre Lumen Pay (« 62 à 72 k€ »,
+  « 2 000 € ») ont disparu à l'extraction et ont été rétablis d'après le
+  contexte, sans marque ni limite dans l'en-tête de la transcription, alors que
+  `professional-profile-guidelines.md` demande de marquer ce qui est illisible
+  au lieu de deviner. Cause probable : échappements octaux convertis en
+  Latin-1 au lieu de cp1252 (`\200` donne U+0080 et non « € »).
+- Pistes : un outil d'extraction fiable disponible dans l'environnement du
+  workspace ; un contrôle des symboles et accents perdus après une extraction
+  automatique ; tout caractère rétabli d'après le contexte marqué dans la
+  transcription et cité comme limite dans son en-tête ; préférer les sources
+  en `.docx` ou en texte quand c'est possible.
+- À rapprocher de « Auditer le skill du coach avant le pilote » (commentaires
+  du coach sur ses propres étapes, comme « Step 2: check existence only… ») et
+  de « Génération des sources fictives dans le build ».
+
 ### Tenue des `current-status.md`
 
 Relevé aux tests manuels du 2026-10-05 (B3, B7) : après la préparation, la
