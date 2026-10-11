@@ -799,7 +799,7 @@ Nominal flow:
   creates an independent file `data/feedback/feedback-<user_id>-YYYY-MM-DD.md`,
   takes only « non traitée » entries, reviews the silent entries one by one
   with the candidate (confirm or discard: problem fixed, not confirmed, not of
-  interest), asks a few quick questions in this order (what works well,
+  interest), except joker entries, which are not reviewed one by one, asks a few quick questions in this order (what works well,
   important points to fix quickly, long-term ideas), anonymizes the content,
   lists what it replaced in the conversation (never in the file, which would
   undo the anonymization), never presents the result as guaranteed anonymous and
@@ -807,10 +807,12 @@ Nominal flow:
   `user_id`, the engine version (`ENGINE-VERSION`), the date, the AI tool and
   model, the coaching language, and two totals counted at generation time: the
   number of opportunity directories and the number of interview directories.
-  Confirm the joker usage statistic, computed from the « non traitée » joker
-  entries only, is offered and included only if the candidate accepts.
-- After the file is written, confirm the reviewed entries (taken or discarded)
-  are marked « traitée » in the journal, and nothing else in the journal is
+  Confirm the joker usage statistic, computed from all the « non traitée »
+  joker entries and from those only, is offered and included only if the
+  candidate accepts.
+- After the file is written, confirm the entries taken into account
+  (explicit entries, reviewed silent entries, taken or discarded, and joker
+  entries whether the statistic was accepted or not) are marked « traitée » in the journal, and nothing else in the journal is
   rewritten. Nothing is sent automatically, and the coach records no sending
   date (neither in `current-status.md` nor elsewhere).
 - Ask the coach to rework the generated feedback: confirm it edits that file
