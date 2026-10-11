@@ -1,0 +1,31 @@
+.claude/skills/prompteur/SKILL.md
+  s_88d13db9f3f3d1::t_90c1b11a88bfd3 1-82
+AGENTS.md
+  s_88d13db9f3f3d1::t_5facf940dc063f 30-31,51-55
+BACKLOG.md
+  s_88d13db9f3f3d1::t_e95806ca287005 647-657,659-662
+CHANGELOG.md
+  s_88d13db9f3f3d1::t_766d78ffad41c7 12-17
+test-kit/scenario.md
+  s_88d13db9f3f3d1::t_e33d0aa3f7a6dc 22,26,36,47,129,151,166,255,268,279,288,304,307,321,381,386,462,485
+test-kit/tools/README.md
+  s_88d13db9f3f3d1::t_e7cd777289b0c6 9
+test-kit/tools/make_demo_script.ps1
+  s_88d13db9f3f3d1::t_db2a092ee656a6 4-5,60,64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "19658a85af1fa875d573771a31003a357d86bc85",
+  "prompts": {},
+  "sessions": {
+    "s_88d13db9f3f3d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9187c0d5-4c32-4247-b96a-d226ef395fa2",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
