@@ -12,6 +12,34 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+### Activer ou désactiver le feedback produit à la sortie du pilote
+
+Décidé pendant l'analyse de #17 (2026-10-11) : pendant le pilote, le feedback
+produit est toujours actif, sans option. À la sortie du pilote, il faut une
+règle propre :
+- activé par défaut pour les personnes qui ont participé au pilote ;
+- désactivé par défaut pour les nouveaux utilisateurs, invités à l'activer à
+  la première session ;
+- une clé `product_feedback.enabled` dans `workspace.yaml` ;
+- une ligne d'état au démarrage de session, qui rappelle comment changer
+  l'option ;
+- l'activation et la désactivation sur demande, à tout moment, y compris
+  pendant une simulation ;
+- une entrée d'état dans le journal à chaque changement, utilisée comme
+  contexte à la génération ;
+- les cas de test associés (refus, option désactivée, valeur invalide).
+
+Réévaluer la décision de #17 dans `docs/design/decision-log.md` à ce moment-là.
+
+### Enrichir le feedback produit avec d'autres statistiques
+
+Pendant l'analyse de #17 (2026-10-11), le feedback généré ne retient que deux
+compteurs : le nombre total de répertoires d'opportunités et le nombre total de
+répertoires d'entretiens. D'autres statistiques génériques pourraient montrer
+l'usage réel de l'outil au fil des feedbacks, par exemple le nombre
+d'entretiens réellement préparés ou de simulations menées. À définir selon les
+retours du pilote, sans exposer de donnée du candidat.
+
 ### Supprimer `language.coaching` : la langue de la session suit la conversation
 
 Écart constaté lors des tests de #14 (2026-10-04) : le coach répond dans la
