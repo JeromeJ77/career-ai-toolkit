@@ -19,10 +19,11 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 | `[demo]` | Étape retenue pour la démo de 35 à 40 minutes. La durée indicative est notée dans l'étape. |
 | `[todo #N]` | Étape qui dépend de l'issue #N, non livrée. À jouer et à compléter quand l'issue sera livrée. Son titre est en italique pour être repéré facilement. Le script de démo ne la reprend pas : la démo ne montre que ce qui est livré. |
 | `[manual]` | Étape hors conversation : manipulation de fichiers ou de l'outil. |
+| `[socle]` | Étape du parcours essentiel d'un pilote francophone sur une installation neuve, rejoué en passe rapide avant une release (environ 1 h 20 avec le prompteur, `/prompteur socle`). Le champ **Socle** d'une étape limite au besoin ce qui est joué. Le script de démo retire ce tag et ce champ. |
 
 ## Phase A — Préparation
 
-### A1 — Extraire et ouvrir le workspace [demo] [manual]
+### A1 — Extraire et ouvrir le workspace [demo] [socle] [manual]
 
 - **Durée démo** : 2 min
 - **Fichiers** : `mycareer-workspace-v<version>.zip` → un répertoire hors du dépôt, par exemple `C:\Temp\mycareer-workspace-demo-26-10-03\`.
@@ -32,7 +33,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
 ## Phase B — Initialisation du workspace
 
-### B1 — Première session [demo]
+### B1 — Première session [demo] [socle]
 
 - **Durée démo** : 3 min
 - **Conversation** : nouvelle (la première du workspace)
@@ -43,7 +44,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Mots-clés** : montrer l'accueil et la question du prénom, puis le fait que le coach attend la réponse avant de préparer l'espace ; faire remarquer le rappel de confidentialité (une quinzaine de secondes) et le message sur le feedback produit (local, rien n'est envoyé) ; faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
 - **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm the product feedback journal and the formal feedbacks are created as described… » ; Refocus on MyCareer Workspace (#15) ; Privacy reminder and web browsing (#8) ; Product feedback (#17) — première session.
 
-### B2 — Deuxième session sans changement
+### B2 — Deuxième session sans changement [socle]
 
 - **Conversation** : nouvelle
 - **Prompt** : « On reprend. »
@@ -125,7 +126,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 
 ## Phase C — Sources et dossier professionnel
 
-### C1 — Déposer les sources et les faire transcrire [demo]
+### C1 — Déposer les sources et les faire transcrire [demo] [socle]
 
 - **Durée démo** : 5 min
 - **Conversation** : suite de la dernière conversation (B1 en démo)
@@ -147,7 +148,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Mots-clés** : montrer où le coach a rangé les originaux, puis une transcription et son en-tête ; insister sur « proposer, pas appliquer ».
 - **Plan de test** : Workspace — « Ask to initialize the profile without providing sources… », « Add a synthetic PDF CV… », « Add a synthetic LinkedIn PDF export… », « Confirm the coach then proposes profile updates from the new source and applies none before validation », « Add sample authorized sources and initialize the profile ».
 
-### C2 — Valider le dossier professionnel initial [demo]
+### C2 — Valider le dossier professionnel initial [demo] [socle]
 
 - **Durée démo** : 2 min
 - **Conversation** : suite de C1
@@ -162,7 +163,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : à définir avec #10.
 - **Attendu** : le coach conduit un premier entretien pour compléter les sections du dossier que les sources ne couvrent pas (motivations, préférences, messages récurrents), puis propose les ajouts.
 
-### C4 — Dossier en construction : préparation trop tôt, puis passage à « prêt » [demo]
+### C4 — Dossier en construction : préparation trop tôt, puis passage à « prêt » [demo] [socle]
 
 - **Durée démo** : 3 min
 - **Conversation** : nouvelle (après C2)
@@ -251,7 +252,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 
 ## Phase D — Première opportunité : Lumen Pay
 
-### D1 — Créer l'opportunité [demo]
+### D1 — Créer l'opportunité [demo] [socle]
 
 - **Durée démo** : 4 min
 - **Conversation** : nouvelle
@@ -264,7 +265,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Mots-clés** : insister sur « la structure est gérée par le coach » ; montrer la transcription `.md` de l'offre dans `sources/` (copie figée, consultable plus tard sans rouvrir le PDF, comme pour le profil), puis `opportunity.md` : les faits seulement, l'analyse vient à l'étape suivante (`analysis.md`).
 - **Plan de test** : Workspace — « Give the coach source material for two opportunities without creating their directories manually » (première moitié), « Confirm each opportunity has a canonical `opportunity.md` and `current-status.md`, and that retained original files under `sources/` remain unchanged ».
 
-### D2 — Préparer l'opportunité [demo]
+### D2 — Préparer l'opportunité [demo] [socle]
 
 - **Durée démo** : 4 min
 - **Conversation** : suite de D1
@@ -275,7 +276,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Mots-clés** : sans qu'on le lui détaille, le coach analyse l'adéquation (`analysis.md` : faits, hypothèses, écarts) et propose des messages stratégiques à valider ; puis montrer qu'il accepte la correction sans effacer l'historique.
 - **Plan de test** : Workspace — « Confirm derived analysis is separate from the canonical source representation and uncertain information is explicit », « Confirm the coach proposes strategic messages and allows adjustment… ».
 
-### D3 — Créer l'étape d'entretien technique [demo]
+### D3 — Créer l'étape d'entretien technique [demo] [socle]
 
 - **Durée démo** : 2 min
 - **Conversation** : suite de D2
@@ -284,7 +285,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Mots-clés** : montrer les deux répertoires d'entretien créés par le coach, `01-…` pour l'échange RH et `02-…` pour l'entretien technique ; l'`interview.md` de l'échange RH ne contient presque rien, mais l'entretien passé est tracé, sans détail inventé.
 - **Plan de test** : Workspace — « Create a first and second interview round… » (premier round), « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached ».
 
-### D4 — Préparer l'entretien ensemble [demo]
+### D4 — Préparer l'entretien ensemble [demo] [socle]
 
 - **Durée démo** : 3 min
 - **Conversation** : suite de D3
@@ -300,9 +301,10 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
   - écrire « suggestion d'amélioration : quand j'ai joint l'offre de Lumen Pay depuis C:\Users\nadia.berkani\Documents\Candidatures, je n'ai pas su si le coach l'avait bien rangée, Karim m'avait pourtant prévenue que le PDF était lourd. » : la ligne exacte en italique *Note de retour produit prise en compte.*, puis le coach reprend la préparation exactement où elle en était ; une entrée « explicite » est ajoutée au journal avec le texte brut tel quel (nom, entreprise et chemin compris : rien n'est nettoyé à l'écriture) ;
   - écrire « J'ai une suggestion pour améliorer l'outil : ce serait bien de voir la liste des fichiers créés à la fin de chaque étape. » : même mention, nouvelle entrée « explicite » ;
   - écrire « J'ai une suggestion pour améliorer ma réponse sur la migration : je pourrais commencer par le résultat. » : rien n'est enregistré, aucune mention ; le coach traite le message comme une réponse de préparation.
+- **Socle** : la réponse à coller, puis la première variante feedback produit seulement (la note avec nom, entreprise et chemin, nécessaire au contrôle de l'anonymisation en F1).
 - **Plan de test** : Workspace — « Throughout the sessions, confirm no facts are invented… », « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached » (pas de `preparation.md` à ce stade), « Confirm the opportunity receives a `current-status.md` and that it is updated after phase changes, important validations… » ; Product feedback (#17) — entrée explicite hors simulation, phrase naturelle, phrase ambiguë, notes brutes avec noms.
 
-### D5 — Simulation courte avec arrêt anticipé [demo]
+### D5 — Simulation courte avec arrêt anticipé [demo] [socle]
 
 - **Durée démo** : 7 min
 - **Conversation** : suite de D4
@@ -316,7 +318,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Attendu dans le journal du feedback produit** (à vérifier après l'étape, hors démo) : quatre nouvelles entrées « non traitées » : deux silencieuses pour les jokers (type de joker et contexte minimal seulement, sans la question ni la réponse), une explicite pour la note, une silencieuse pour la raison de l'arrêt ; aucune pour le « stop » refusé.
 - **Plan de test** : Workspace — section « Interview simulation joker (#18) » ; « Confirm the coach offers the Court, Standard and Approfondi depths… », « Confirm simulation asks one question at a time… » (y compris l'absence d'interruption par le coaching ou les statuts), « Confirm each stop keyword triggers a confirmation… », « Stop a simulation early with « stop » and confirm… » ; Product feedback (#17) — entrée explicite pendant une simulation, jokers, entrée silencieuse (raison d'arrêt), mot-clé de note distinct des mots-clés d'arrêt.
 
-### D6 — Debrief [demo]
+### D6 — Debrief [demo] [socle]
 
 - **Durée démo** : 2 min
 - **Conversation** : suite de D5
@@ -376,11 +378,12 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Variante à tester** (jouer D11 avant D10, dans la même conversation) : si la candidate demande directement la fiche sans être passée par cette étape, le coach doit relever qu'aucune question à poser n'a été travaillée pour ce round et demander si elle veut le faire d'abord ; répondre « non, génère quand même » et vérifier que la fiche est produite avec les sections de questions laissées vides, sans question inventée.
 - **Plan de test** : Workspace — « Confirm the coach reviews the candidate's questions for the interviewers… », « Throughout the sessions, confirm no facts are invented… ».
 
-### D11 — Fiche de préparation pour l'entretien réel
+### D11 — Fiche de préparation pour l'entretien réel [socle]
 
 - **Conversation** : suite de D10
 - **Prompt** : « Je me sens prête. Génère ma fiche de préparation pour l'entretien technique. »
 - **Attendu** : `interviews/02-technical/preparation.md` consolidant le positionnement, les messages stratégiques, les questions probables, les questions à poser validées en D10 (prioritaires en première page, complémentaires ensuite) et les améliorations issues des debriefs (simulations 01 et 02, debrief sans transcript) ; première page autonome, lisible par les interlocuteurs, sans points de vigilance personnels ; deuxième page réservée aux notes ; détail à partir de la troisième page, qui commence par les points de vigilance et rappels de communication ; aucun fait nouveau.
+- **Socle** : joué sans D7 à D10. Le coach signale qu'aucune question à poser n'a été travaillée et propose de les revoir ; répondre « Non, génère quand même. » : fiche générée avec les sections de questions visiblement vides, aucune question inventée, améliorations issues du seul debrief de la simulation 01.
 - **Plan de test** : Workspace — « Complete preparation, sheet generation… », « Confirm first-page sheet density and note area remain usable ».
 
 ### D12 — Retour après l'entretien réel
@@ -456,7 +459,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 
 ## Phase F — Clôture
 
-### F1 — Générer le feedback produit
+### F1 — Générer le feedback produit [socle]
 
 - **Préparation** : copier le journal du feedback produit hors du workspace, pour le comparer ensuite ; relever le nombre de répertoires sous `data/opportunities/` et de répertoires `interviews/*/` qu'ils contiennent.
 - **Conversation** : nouvelle
@@ -479,6 +482,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Conversation** : nouvelle
 - **Prompt 5** : « Génère mon feedback produit. »
 - **Attendu 6** : le coach dit que le journal ne contient rien de nouveau et pose quand même les trois questions ; répondre « Rien à ajouter. » à chacune : aucun fichier n'est écrit, et le coach le dit.
+- **Socle** : préparation, puis prompt 2 avec son action et les attendus 2 et 3 seulement. Sans D7, la statistique porte sur les deux jokers de D5.
 - **Plan de test** : Product feedback (#17) — génération sur demande, entrées marquées traitées après l'écriture, feedback retravaillé, second feedback, génération interrompue, génération sans entrée non traitée, notes brutes avec noms.
 
 ### F2 — Produire l'exemple du dépôt [manual]

@@ -6,6 +6,7 @@
 | `make_demo_script.ps1` | Extrait le script de démo (`demo-script.md`) du scénario maître en ne gardant que les étapes `[demo]`. Windows PowerShell seul, aucune dépendance. | Oui |
 | `demo-script-header.md` | En-tête UTF-8 du script de démo, avec le marqueur `{version}`. Séparé du `.ps1` parce que Windows PowerShell 5.1 lit un `.ps1` sans BOM en ANSI : le script reste en ASCII pur. | Oui (lu par le script) |
 | `test-coverage/` | Mod Claude Code qui affiche la couverture des tests de `docs/test-log.md` sous forme de barre (commande `/test-coverage`). Outil de développement, jamais livré. | Non |
+| `.claude/skills/prompteur/` (racine du dépôt) | Skill Claude Code `/prompteur` qui guide une passe de test manuelle élément par élément (`/prompteur socle` pour les étapes `[socle]`), vérifie les fichiers du workspace de test et les traces du coach, et rédige la session de test. Outil de développement, jamais livré. | Non |
 
 Les PDF et DOCX générés sont commités à côté de leur source Markdown ; le build se contente de les zipper.
 

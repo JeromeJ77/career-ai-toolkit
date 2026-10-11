@@ -27,7 +27,8 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   master scenario `scenario.md`) and the fictional example under `examples/`
   make the new behavior testable and demonstrable. Complete the fictional
   sources and add or adjust the scenario steps in the same change, tagging the
-  steps kept for the demo with `[demo]`. If a feature cannot be demonstrated
+  steps kept for the demo with `[demo]` and those of a pilot's essential path,
+  replayed in the quick pass before a release, with `[socle]`. If a feature cannot be demonstrated
   with the kit, report the gap explicitly to the user instead of ignoring it.
 - Once the scenarios are reviewed, write the implementation plan in
   `plans/issue-<N>.md` (ignored by Git) so that a new conversation can carry
@@ -47,7 +48,11 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   the required corrections in the plan; the implementation conversation carries
   them out in a second pass, committed separately. Manual tests start only once
   the review is satisfactory, so that corrections do not invalidate them; the
-  user then debriefs them in the analysis conversation.
+  user then debriefs them in the analysis conversation. A manual pass can be
+  guided by the project skill `/prompteur` (`.claude/skills/prompteur/`), run
+  in a test conversation opened in the repository: it gives the steps one by
+  one, checks the test workspace files and the coach's traces, and drafts the
+  test session and the log update.
 - During development, revisit these scenarios to catch forgotten cases and add
   the ones discovered.
 - Record in `docs/test-log.md` only tests actually performed. Never mark a

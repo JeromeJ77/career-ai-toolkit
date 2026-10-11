@@ -644,8 +644,22 @@ les constats de l'étude.
 - À la demande seulement, un script copie la partie `data/` du workspace
   obtenu dans `examples/`, ce qui donne un exemple illustratif que l'on peut
   commiter sans le changer à chaque exécution.
+- **Étape 0, faite le 2026-10-11 : le prompteur.** Le skill `/prompteur`
+  (`.claude/skills/prompteur/`) a guidé la passe rapide avant la v0.4.0
+  (environ 1 h 20 pour le socle). Il tient déjà l'orchestration, la lecture du
+  scénario, les vérifications de fichiers et la lecture des traces `.jsonl` du
+  coach ; le testeur humain saisit les prompts et juge le chat. Idée du
+  2026-10-11 : faire jouer aussi le testeur au prompteur, en lançant le coach
+  lui-même en headless (`claude -p` depuis le workspace de test, puis
+  `--resume`) : le retour de l'appel signale que le coach a rendu la main, et
+  le prompteur enchaîne le prompt suivant, sans fenêtre VS Code. Prototype
+  possible sur les étapes à prompts fixes (B, C, D1 à D3), le testeur humain
+  gardant le jugement sur le rapport ; c'est l'étape (1) ci-dessus.
 - Points ouverts : coût et durée d'une passe complète, choix du modèle
-  testeur et du modèle juge.
+  testeur et du modèle juge. Estimation du 2026-10-11 : 2 à 3 semaines pour
+  les étapes (1) à (4), prototype sur la phase B en 2 à 3 jours ; caler le
+  juge sur les verdicts des passes manuelles. Les demandes d'autorisation et
+  le rendu de l'extension VS Code restent à vérifier à la main.
 - Dépend du kit de test et du scénario maître de l'issue #12.
 
 ### Génération des sources fictives dans le build

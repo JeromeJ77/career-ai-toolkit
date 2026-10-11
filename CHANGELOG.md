@@ -9,6 +9,12 @@
   one (Auto or Edit automatically mode in Claude Code), and suggest versioning
   the career workspace with Git to keep track of changes.
 
+- Development tooling: project skill `/prompteur` (`.claude/skills/prompteur/`)
+  that guides a manual test pass item by item, checks the test workspace files
+  and the coach's traces, and drafts the test session. The master scenario tags
+  a pilot's essential path with `[socle]` (`/prompteur socle`); the demo script
+  drops this tag.
+
 - Product feedback (#17): during the pilot, the coach keeps a local log of
   difficulties of use and of notes dictated by the candidate
   (`data/feedback/feedback-log.md`), always active, with an anonymous
