@@ -25,7 +25,9 @@
   profile version and status used. A missing or invalid status is reported and
   corrected only with the candidate's agreement. A question left unanswered is
   never recorded as a decision, and the next action of an opportunity is
-  updated whenever its state changes. See decision D-010.
+  updated whenever its state changes; when the profile status changes, the
+  focus and next action of every active opportunity are updated with it. See
+  decision D-010.
 - Privacy reminder and web browsing rule (#8): on the first session, after the
   first-name acknowledgement and the report, the coach gives a short, one-time
   privacy reminder (check the AI tool's training, history and attachment

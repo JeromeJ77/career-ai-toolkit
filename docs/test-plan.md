@@ -692,7 +692,10 @@ Opportunity work while the profile is not `ready`:
   recorded as decided, and the coach asks it again when it matters. When the
   state of an opportunity changes (pause, resumption, waiver, profile status),
   confirm its « Prochaine action » is updated at the same time and stays
-  consistent with that state.
+  consistent with that state. When the profile status changes (move to
+  `ready`, return to `draft`, corrected status), confirm every active
+  opportunity has its « Focus courant » and « Prochaine action » updated at
+  the same time, while dated version mentions stay unchanged (C11).
 
 Edge cases:
 

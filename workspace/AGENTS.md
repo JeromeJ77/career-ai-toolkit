@@ -69,6 +69,7 @@ The « Statut » and « Version » lines of the header of `data/profile/professi
   - When the candidate asks for `ready`, the request is the validation: apply it. If you judge that important gaps remain, first state your reservation, name the gaps and ask for confirmation; the candidate's decision applies.
 - Return to `draft`: on the candidate's request, or proposed by you (career change, major rework) and applied after validation. The version continues (`1.3` → `1.4`, which is the session's increment); the next `ready` gives the next major version (`2.0`).
 - Every status or version change is presented with the proposal before application and adds one entry to the profile's « Historique synthétique » (format in `skills/interview-coach/references/profile-update-guidelines.md`).
+- When the profile status changes (move to `ready`, return to `draft`, correction of a missing or invalid status), read the `current-status.md` of every active opportunity and, at the same time, update its « Focus courant » and « Prochaine action » when they depend on the status (analysis, preparation, simulation…), so that they stay consistent with the new status. Leave the dated version mentions (analysis passes, waivers) unchanged: they are records, not sources.
 
 ### Status line
 

@@ -221,7 +221,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 
 ### C10 — Statut du dossier absent ou invalide [manual]
 
-- **Action** : dans une copie du workspace principal après C4, remplacer dans l'en-tête de `data/profile/professional-profile.md` la ligne du statut par « **Statut :** brouillon initial ».
+- **Action** : dans une copie du workspace principal après D1 (opportunité 001 créée, non analysée), remplacer dans l'en-tête de `data/profile/professional-profile.md` la ligne du statut par « **Statut :** brouillon initial ».
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour, on continue. »
 - **Attendu** : le coach signale le statut inconnu, ne l'interprète pas, propose `draft` (dossier rempli ; jamais `ready` d'office) et ne modifie l'en-tête qu'après accord explicite, avec une entrée d'historique (statut corrigé, raison, validation). Rejouer en supprimant la ligne du statut : même comportement.
@@ -231,9 +231,10 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 
 - **Préparation** : dans la copie de C10, remettre l'en-tête de `data/profile/professional-profile.md` à `ready (prêt)` avec la version lue, et ajouter à « Historique synthétique » une ligne manuelle, par exemple « - <date> : draft 1.0 → ready 1.0 (remise en état pour le test C11). »
 - **Conversation** : nouvelle ; les deux invites peuvent se jouer dans la même conversation.
+- **Avant l'invite 1** : relever « Focus courant » et « Prochaine action » dans le `current-status.md` de l'opportunité 001.
 - **Prompt 1** : « J'envisage de me réorienter vers un poste de staff engineer : je veux retravailler mon dossier en profondeur. »
-- **Attendu 1** : le coach peut proposer de repasser le dossier en construction ; il n'applique rien sans validation. Après « Oui », l'en-tête passe à `draft` avec la version suivante (par exemple 1.0 → 1.1), entrée d'historique.
-- **Prompt 2** : après une modification validée, « On peut repasser le dossier en prêt. » **Attendu 2** : `ready`, version 2.0.
+- **Attendu 1** : le coach peut proposer de repasser le dossier en construction ; il n'applique rien sans validation. Après « Oui », l'en-tête passe à `draft` avec la version suivante (par exemple 1.0 → 1.1), entrée d'historique. Dans le même temps, « Focus courant » et « Prochaine action » de 001 sont mis à jour et ne proposent plus l'analyse comme si le dossier était prêt ; les mentions datées de version (passes, dérogation) restent inchangées.
+- **Prompt 2** : après une modification validée, « On peut repasser le dossier en prêt. » **Attendu 2** : `ready`, version 2.0 ; « Focus courant » et « Prochaine action » de 001 sont de nouveau cohérents avec un dossier prêt (analyse possible).
 - **Plan de test** : Professional profile status and version (#9) — retour de `ready` à `draft`.
 
 ## Phase D — Première opportunité : Lumen Pay
