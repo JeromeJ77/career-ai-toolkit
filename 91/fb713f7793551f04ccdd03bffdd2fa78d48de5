@@ -1,0 +1,23 @@
+CHANGELOG.md
+  s_88d13db9f3f3d1::t_a4638cfb9e6c24 7-11
+workspace/USER-GUIDE.fr.md
+  s_88d13db9f3f3d1::t_ea7c8408335a26 30-39
+workspace/USER-GUIDE.md
+  s_88d13db9f3f3d1::t_836f646cf28b80 30-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "91fb713f7793551f04ccdd03bffdd2fa78d48de5",
+  "prompts": {},
+  "sessions": {
+    "s_88d13db9f3f3d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9187c0d5-4c32-4247-b96a-d226ef395fa2",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
