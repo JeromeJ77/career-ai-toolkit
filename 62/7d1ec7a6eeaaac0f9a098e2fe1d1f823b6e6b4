@@ -1,0 +1,21 @@
+docs/test-log.md
+  s_b4a30dc9e3a784::t_c1473eea2cbddc 162-163,175,177,183
+docs/test-history/2026-10-11-tests-manuels-9-corrections.md
+  s_b4a30dc9e3a784::t_7eafc0cfe78a15 1-83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "627d1ec7a6eeaaac0f9a098e2fe1d1f823b6e6b4",
+  "prompts": {},
+  "sessions": {
+    "s_b4a30dc9e3a784": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4e60fcc4-d388-4da8-932a-02e04b1f60a4",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
