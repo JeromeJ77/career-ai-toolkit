@@ -1,0 +1,19 @@
+BACKLOG.md
+  s_0f535d19312de5::t_e7f0857b04b4c3 15-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "19e5ef4b60aae22bd53bd088aa3375c801f2e83f",
+  "prompts": {},
+  "sessions": {
+    "s_0f535d19312de5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1c032218-ca60-47a1-9cac-4336e5924a96",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
