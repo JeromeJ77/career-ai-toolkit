@@ -4,6 +4,11 @@
 
 ### Added
 
+- The user guides (FR/EN) explain how to set the AI tool's permissions so the
+  coach can read, create and modify workspace files without asking for each
+  one (Auto or Edit automatically mode in Claude Code), and suggest versioning
+  the career workspace with Git to keep track of changes.
+
 - Product feedback (#17): during the pilot, the coach keeps a local log of
   difficulties of use and of notes dictated by the candidate
   (`data/feedback/feedback-log.md`), always active, with an anonymous

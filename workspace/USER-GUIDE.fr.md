@@ -27,6 +27,16 @@ Par défaut, le coach ne consulte pas le web. L'intention est de préserver un t
 
 Cette règle est un comportement du coach, défini dans ses instructions ; ce n'est ni un verrouillage technique de l'outil ni une garantie.
 
+## Autorisations de l'outil IA
+
+Le coach travaille dans les fichiers de votre espace carrière : il les lit, en crée et les modifie quand c'est nécessaire (transcriptions de vos sources, dossier professionnel après votre validation, opportunités, simulations, journal du feedback produit). Réglez votre outil pour qu'il puisse le faire sans vous demander une autorisation à chaque fichier ; sinon, l'usage devient vite pénible.
+
+- **Claude Code dans VS Code** : choisissez le mode **Auto** dans l'indicateur de mode, sous la zone de saisie ; il est conservé pour les conversations suivantes. Si Auto n'est pas proposé (modèle ou compte non compatible), choisissez **Edit automatically** : la création et la modification des fichiers ne demandent plus d'autorisation, mais certaines commandes, comme l'ajout d'une note au journal du feedback produit, peuvent encore en demander une.
+- **Claude Code en ligne de commande** : Maj+Tab change de mode.
+- **Autre outil IA** : cherchez le réglage équivalent.
+
+Ces autorisations ne changent pas la règle du coach : il ne modifie votre dossier professionnel qu'après votre validation. Pour garder la trace des modifications et pouvoir revenir en arrière, versionnez votre espace carrière avec Git, par exemple en enregistrant un commit à la fin de chaque session ; le toolkit prendra davantage Git en charge dans une prochaine version.
+
 ## Statut de votre dossier
 
 L'en-tête de `data/profile/professional-profile.md` indique le statut et la version de votre dossier professionnel. Le statut a trois valeurs, écrites sous forme d'un code suivi d'un libellé : `empty (vide)` à la création, `draft (en construction)` dès la première modification validée, `ready (prêt)` quand vous et le coach jugez le dossier suffisant pour travailler sur des opportunités. « Prêt » est un seuil de travail, pas un état final : le dossier continue de s'enrichir.

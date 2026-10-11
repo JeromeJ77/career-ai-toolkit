@@ -27,6 +27,16 @@ By default, the coach does not browse the web. The intention is to keep the work
 
 This rule is a behavior of the coach, defined in its instructions; it is neither a technical lock of the tool nor a guarantee.
 
+## AI tool permissions
+
+The coach works in the files of your career workspace: it reads them, creates them and modifies them when needed (transcriptions of your sources, the professional profile after your validation, opportunities, simulations, the product feedback journal). Set your tool so it can do this without asking for permission for every file; otherwise using it quickly becomes tedious.
+
+- **Claude Code in VS Code**: choose the **Auto** mode in the mode indicator, below the prompt box; it is kept for the following conversations. If Auto is not offered (model or account not supported), choose **Edit automatically**: creating and modifying files no longer asks for permission, but some commands, such as adding a note to the product feedback journal, may still ask.
+- **Claude Code on the command line**: Shift+Tab switches modes.
+- **Another AI tool**: look for the equivalent setting.
+
+These permissions do not change the coach's rule: it modifies your professional profile only after your validation. To keep track of changes and be able to go back, version your career workspace with Git, for example with a commit at the end of each session; the toolkit will support Git further in a later version.
+
 ## Your profile status
 
 The header of `data/profile/professional-profile.md` shows the status and the version of your professional profile. The status has three values, written as a code followed by a label: `empty` when created, `draft (in progress)` from the first validated change, `ready` when you and the coach judge the profile sufficient to work on opportunities. « Ready » is a working threshold, not a final state: the profile keeps growing.
