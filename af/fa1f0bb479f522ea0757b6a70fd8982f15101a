@@ -1,0 +1,25 @@
+docs/test-log.md
+  s_88d13db9f3f3d1::t_0646c2521a9432 192
+docs/test-plan.md
+  s_88d13db9f3f3d1::t_bb78b762830998 802,810-815
+test-kit/scenario.md
+  s_88d13db9f3f3d1::t_0ca6ba24ffef41 468-469,474
+workspace/skills/product-feedback/SKILL.md
+  s_88d13db9f3f3d1::t_548b582e66f0c4 26,28,33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "affa1f0bb479f522ea0757b6a70fd8982f15101a",
+  "prompts": {},
+  "sessions": {
+    "s_88d13db9f3f3d1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9187c0d5-4c32-4247-b96a-d226ef395fa2",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
