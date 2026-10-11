@@ -8,11 +8,9 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm `dist/` is created.
 - Confirm the version matches `VERSION`, that it is not an already released
   version, and that it carries the `-dev` suffix until the release is prepared.
-- Confirm the pilot feedback template source holds the `{{VERSION}}`
-  placeholder, that the ZIP copy and the `dist/` copy hold the content of
-  `VERSION`, that no placeholder remains, that the build fails when the
-  placeholder is missing from the source, and that the pilot-feedback filename
-  is versioned.
+- Confirm the build produces no separate pilot feedback form and no longer
+  checks a `{{VERSION}}` placeholder (#17): the product feedback takes its
+  version from `ENGINE-VERSION` at generation time.
 - Confirm `build.bat` produces no standalone deliverable and no longer checks a
   standalone version (#14): `dist/` holds no
   `interview-coach-standalone-v<version>.md`.
@@ -28,11 +26,12 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
 - Confirm repeated builds replace previous local artifacts.
 - Confirm the ZIP tree matches `docs/architecture.md#workspace-tree`: the engine
   is at the root and `data/` contains only `README.md` files.
-- Confirm the five templates exist under `skills/init-workspace/assets/` and
+- Confirm the four templates exist under `skills/init-workspace/assets/`, the
+  two product feedback templates under the dedicated skill's assets (#17), and
   that the ZIP contains no `data/config/workspace.yaml`,
   `data/current-status.md`, `data/profile/professional-profile.md`,
-  `data/profile/sources/external-references.md` or
-  `data/feedback/pilot-feedback.md`.
+  `data/profile/sources/external-references.md`, product feedback journal or
+  generated feedback.
 - Confirm the build fails when a non-`README.md` file is added under
   `workspace/data/`, and when an initialized working file is added to the engine.
 - Confirm the build still performs no installation, network access or inclusion
@@ -73,7 +72,8 @@ This plan lists what to test. [`test-log.md`](test-log.md) records what has actu
   `allow_external_web_search`) and confirm the coach does not rewrite the file,
   uses the default for the session, tells the candidate the key, the value found
   and the default used, and leaves the correction to them.
-- Confirm `data/feedback/pilot-feedback.md` is created only on request.
+- Confirm the product feedback journal and the formal feedbacks are created as
+  described in « Product feedback (#17) »; no `pilot-feedback.md` is created.
 - Set the profile and coaching languages in `data/config/workspace.yaml`, and
   run coaching sessions in French and in English.
 - Add sample authorized sources and initialize the profile.
@@ -293,7 +293,8 @@ Nominal flow:
 
 Edge cases:
 
-- Confirm the pilot-feedback template no longer asks which mode was tested.
+- Confirm the pilot-feedback template no longer asks which mode was tested
+  (after #17: the product feedback templates do not ask for it either).
 - Confirm `test-kit/scenario.md` and `test-kit/guide-testeur.md` no longer
   refer to standalone checks or to the standalone as a source to fix.
 - Confirm the « mode autonome » criteria are removed from issues #8 and #9 with
@@ -326,12 +327,13 @@ Nominal flow:
   `dist/mycareer-workspace-test-kit-v<version>.zip`; no
   `career-ai-workspace*`, `career-ai-test-kit*` or `my-career-workspace*`
   artifact is produced. The
-  pilot feedback is `dist/mycareer-workspace-pilot-feedback-v<version>.md`.
+  pilot feedback is `dist/mycareer-workspace-pilot-feedback-v<version>.md`
+  (removed by #17).
 - Confirm the pilot feedback template source holds the `{{VERSION}}`
   placeholder, that the build replaces it with the content of `VERSION` in the
   ZIP copy and in `dist/` (accents and line endings preserved), that no
   placeholder remains, and that the build fails clearly when the placeholder
-  is missing from the source.
+  is missing from the source (superseded by #17: no placeholder any more).
 - Confirm version numbers are gone from the READMEs, `CONTRIBUTING.md` and the
   docs wherever they are not needed (release-specific wording), so that a
   release only changes `VERSION` and `CHANGELOG.md`.
@@ -744,6 +746,144 @@ Non-regression:
 - Replay B1 and B2 (first session, second session with the status line), C1
   and C2 (validation before application), D1 and E1 (opportunity creation),
   E3 (resumption from the workspace).
+
+## Product feedback (#17)
+
+The product feedback is local and has no telemetry. Decided on 2026-10-11:
+during the pilot phase, the product feedback is always active, with no option
+to enable or disable it (the rule for the end of the pilot is in the backlog).
+The configuration holds `product_feedback.user_id`, an anonymous identifier.
+A dedicated skill owns the journal and the generation workflow, and holds both
+templates (journal and formal feedback) in its assets; `init-workspace` hands
+over to it during initialization to create the journal and the identifier.
+Explicit notes start with « suggestion d'amélioration : » (« suggested
+improvement: »), or a natural sentence aimed at the tool such as « J'ai une
+suggestion pour améliorer l'outil… »; a sentence about the candidate's own
+work is never a note. Notes are never written in `transcript.md`. The manual
+pilot form is removed (single source template). Sending is not tracked by the
+coach.
+
+Nominal flow:
+
+- First session: after the privacy reminder, confirm the coach says briefly,
+  without a question, that during the pilot it keeps local notes on usage
+  difficulties to improve the product, how to dictate a note and how to
+  generate a feedback, and that nothing is sent automatically. Confirm
+  `data/config/workspace.yaml` holds a `product_feedback.user_id` unrelated to
+  the candidate's identity, and that the journal exists under
+  `data/feedback/`, created from the dedicated skill's template.
+- Later sessions: confirm nothing about the product feedback is said at
+  session start.
+- Silent entry: provoke a manifest difficulty (repeated back and forth, a copy
+  or file problem, a misunderstood instruction, a reason given when stopping a
+  simulation) and confirm the coach appends an entry to the journal without
+  interrupting and without commenting to the candidate. Confirm the entry holds
+  the date, the type (silencieuse), the context (step, opportunity, file), the
+  raw text and the state « non traitée ».
+- Explicit entry outside a simulation (« suggestion d'amélioration : … »):
+  confirm the entry is appended with the type « explicite », the coach shows a
+  very short line in italics (for example « *Note de retour produit prise en
+  compte.* ») and resumes exactly where it was.
+- Explicit entry during a simulation: confirm the same acknowledgement, then
+  the coach resumes the interviewer role exactly where it was, without
+  repeating the question and without ending or interrupting the simulation;
+  the note is not in `transcript.md`.
+- Natural phrase aimed at the tool (« J'ai une suggestion pour améliorer
+  l'outil… »): confirm it is recorded as an explicit entry the same way.
+- Joker entries (comment on #17): confirm each joker used in a simulation
+  gives one silent entry holding only the joker type (advice or proposed
+  answer) and the minimal context (date, opportunity, simulation), without the
+  question or the answer; a cancelled joker gives none; the simulation is
+  neither interrupted nor commented.
+- Generation on request (« génère mon feedback produit »): confirm the coach
+  creates an independent file `data/feedback/feedback-<user_id>-YYYY-MM-DD.md`,
+  takes only « non traitée » entries, reviews the silent entries one by one
+  with the candidate (confirm or discard: problem fixed, not confirmed, not of
+  interest), asks a few quick questions in this order (what works well,
+  important points to fix quickly, long-term ideas), anonymizes the content,
+  lists what it replaced in the conversation (never in the file, which would
+  undo the anonymization), never presents the result as guaranteed anonymous and
+  asks the candidate to review before any sharing. Confirm the file holds the
+  `user_id`, the engine version (`ENGINE-VERSION`), the date, the AI tool and
+  model, the coaching language, and two totals counted at generation time: the
+  number of opportunity directories and the number of interview directories.
+  Confirm the joker usage statistic, computed from the « non traitée » joker
+  entries only, is offered and included only if the candidate accepts.
+- After the file is written, confirm the reviewed entries (taken or discarded)
+  are marked « traitée » in the journal, and nothing else in the journal is
+  rewritten. Nothing is sent automatically, and the coach records no sending
+  date (neither in `current-status.md` nor elsewhere).
+- Ask the coach to rework the generated feedback: confirm it edits that file
+  only, and does not change the journal.
+- Second generation: confirm it takes only the entries added since the first,
+  and that a second file on the same day is suffixed `-2`, never overwriting
+  an earlier one.
+
+Edge cases:
+
+- Ambiguous natural phrase about the candidate's own work (« J'ai une
+  suggestion pour améliorer ma réponse », in a simulation and in preparation):
+  confirm nothing is recorded and the message is handled as ordinary content.
+- Confirm the note keyword is distinct from the stop keywords: a note in a
+  simulation never triggers the stop confirmation, and « stop » never creates
+  a note.
+- Interrupted or failed generation (the candidate abandons before the file is
+  written): confirm the journal is unchanged, every entry still « non
+  traitée ».
+- Generation with no « non traitée » entry: confirm the coach says the journal
+  holds nothing new and still asks the three questions. If the candidate gives
+  at least one answer, confirm the feedback is generated with those answers
+  only; if the candidate has nothing to add, confirm no file is written and
+  the coach says so.
+- Workspace created before #17 (no `product_feedback` section, no journal):
+  confirm the section is added with a generated `user_id` and the journal
+  created, each reported in one short sentence by the existing rule; an
+  existing `user_id` is never changed.
+- Journal deleted between two sessions: confirm the coach recreates it from the
+  template and does not treat it as a possible loss of user data (behavior
+  decided in the implementation plan).
+
+Limit cases:
+
+- Raw notes containing names, a company or a local path: confirm nothing is
+  cleaned at write time, and that the generated feedback replaces them
+  according to the documented scope (at least names of persons, companies,
+  interviewers, identifying job titles, local paths) with the list of
+  replacements shown to the candidate.
+- Writing an entry is an append at the end of the file: confirm from the tool
+  traces that the journal is not read to write an entry.
+- Long journal (many entries): confirm the generation reads it, takes only the
+  « non traitée » entries and stays usable.
+- English coaching language: confirm the acknowledgement and the keywords use
+  the exact English wordings, and the other messages are in English with their
+  required content.
+- The acknowledgement is identical in the coach instructions and the master
+  scenario; the other messages are described by their required content
+  (D-022).
+
+Documentation:
+
+- Confirm the decision (local product feedback always active during the pilot,
+  no telemetry, anonymous identifier, anonymization at generation) is recorded
+  in `docs/design/decision-log.md` (format #13), with the end of the pilot as
+  reassessment condition, that the glossary, `docs/privacy.md`,
+  `docs/pilot-testing.md`, `docs/architecture.md`, the workspace READMEs, the
+  user guides and `CHANGELOG.md` are updated, and that « feedback pilote »
+  became « feedback produit » where relevant.
+- Confirm both templates are under the dedicated skill's assets,
+  `init-workspace` hands over to that skill during initialization,
+  `pilot-feedback.template.md` is gone, `build.bat` and the root `AGENTS.md` no
+  longer mention the `{{VERSION}}` placeholder, and the note-taking rule in
+  `workspace/AGENTS.md` stays short.
+
+Non-regression:
+
+- Replay B1, B2, B3 and B4 (first session, second session, file recreation,
+  key added) and B9 (English first session).
+- Replay D5 and D7 (stop keywords and confirmation) and D5, D6 and E5 (joker):
+  a joker still behaves as before and the silent entries are not announced.
+- Replay the build section (no pilot form, ZIP content) and « Repository
+  privacy ».
 
 ## Regression
 

@@ -18,6 +18,7 @@ Ce guide aide à dérouler `scenario.md` et à garder une trace exploitable des 
 - **Conserver le texte réel du coach** (copier-coller) quand il décide entre un défaut du moteur et un défaut du scénario ; une reformulation de mémoire suffit rarement.
 - **Garder une trace des fichiers produits** : un `ls -R` (ou une capture de l'arborescence) de `data/` après les étapes qui créent des fichiers (par exemple D1, D4, D10, E1). C'est plus fiable qu'une description orale.
 - Ne jouer que ce qui est demandé : une étape non jouée est notée « non jouée », jamais déduite.
+- **Remarques de test et feedback produit sont deux choses distinctes.** Pendant le pilote, le coach tient un journal local du feedback produit sous `data/feedback/`. Ne lui dictez une note (« suggestion d'amélioration : … ») que là où le scénario le demande : vos remarques de test vont dans le fichier de notes ou au scribe, sinon le contenu du journal attendu en F1 n'est plus prévisible. Après une étape qui doit ajouter des entrées (D4, D5, D7, E5), ouvrez le journal pour le vérifier.
 
 ### Modèle d'entrée
 
