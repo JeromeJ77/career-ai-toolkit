@@ -4,6 +4,16 @@
 
 ### Added
 
+- Product feedback (#17): during the pilot, the coach keeps a local log of
+  difficulties of use and of notes dictated by the candidate
+  (`data/feedback/feedback-log.md`), always active, with an anonymous
+  identifier (`product_feedback.user_id`). Notes start with « suggestion
+  d'amélioration : » (« suggested improvement: ») and are acknowledged by a
+  fixed line; they never interrupt an interview simulation. On request, the
+  coach generates an anonymized feedback file after reviewing the silent
+  entries and asking three questions. Nothing is sent. New skill
+  `product-feedback`; see decision D-023.
+
 - Professional profile status and version (#9): the profile header carries a
   status, `empty (vide)`, `draft (en construction)` or `ready (prêt)`, and a
   version: `0.1` in the template, +0.1 at most once per session that applies a
@@ -118,6 +128,8 @@
 
 ### Removed
 
+- Pilot feedback form (`pilot-feedback.template.md`), its `dist/` artifact and
+  the `{{VERSION}}` placeholder, replaced by the product feedback (#17).
 - Removed the fictional Principal Architect example. `examples/` will hold the
   `data/` tree of the fictional developer workspace, copied on request from a
   run of the master scenario.

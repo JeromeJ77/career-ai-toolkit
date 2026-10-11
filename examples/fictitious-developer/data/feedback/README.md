@@ -1,3 +1,5 @@
-# Retour pilote
+# Feedback produit
 
-`pilot-feedback.md` est facultatif ; le coach le crée à votre demande depuis `skills/init-workspace/assets/pilot-feedback.template.md`. Il porte sur l'expérience produit. Supprimez toute donnée personnelle, information d'entreprise ou contenu d'entretien avant de le partager.
+`feedback-log.md` est le journal local que le coach tient pendant le pilote : difficultés d'usage et notes que vous dictez, avec votre texte tel quel. Il est créé à l'initialisation et rien n'est envoyé.
+
+À votre demande, le coach génère `feedback-<identifiant>-AAAA-MM-JJ.md`, un fichier indépendant qui vous appartient. Il est anonymisé à la génération, sans garantie : relisez-le et retirez toute donnée personnelle, information d'entreprise ou contenu d'entretien avant de le partager.

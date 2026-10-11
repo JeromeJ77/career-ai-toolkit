@@ -77,6 +77,15 @@ décisions validées, le travail réalisé, le contexte utile, les artefacts
 pertinents et la prochaine action. L'historique détaillé relève de documents
 d'opportunité dédiés.
 
+## Feedback produit
+
+Pendant le pilote, le coach tient un journal local de vos difficultés d'usage (`data/feedback/feedback-log.md`). Rien n'est envoyé.
+
+- **Dicter une note** : commencez votre message par « suggestion d'amélioration : », ou dites naturellement que vous avez une suggestion pour améliorer l'outil. Le coach répond par la ligne *Note de retour produit prise en compte.* et reprend où il en était. Une phrase sur votre propre travail (« améliorer ma réponse ») n'est pas une note.
+- **Pendant une simulation**, une note n'arrête pas la simulation : le coach accuse réception, puis l'interviewer attend votre réponse.
+- **Générer votre feedback** : demandez « génère mon feedback produit ». Le coach vous fait confirmer ou écarter les difficultés qu'il a consignées, puis vous pose trois questions (ce qui fonctionne bien, ce qu'il faut corriger rapidement, les idées à long terme) et écrit `data/feedback/feedback-<identifiant>-AAAA-MM-JJ.md`.
+- **Relire avant d'envoyer** : le journal contient vos mots tels quels ; le feedback est anonymisé à la génération, sans garantie. Le coach vous liste ce qu'il a remplacé : relisez le fichier avant tout partage.
+
 ## Sessions de travail
 
 Utilisez chaque conversation avec l'assistant pour un objectif de coaching

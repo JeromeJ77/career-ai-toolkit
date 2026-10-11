@@ -74,6 +74,15 @@ the opportunity state, current interview and phase, validated decisions,
 completed work, useful context, relevant artifacts and next action. Detailed
 history belongs in dedicated opportunity documents.
 
+## Product feedback
+
+During the pilot, the coach keeps a local log of the difficulties you meet (`data/feedback/feedback-log.md`). Nothing is sent.
+
+- **Dictate a note**: start your message with "suggested improvement:", or say naturally that you have a suggestion to improve the tool. The coach replies with the line *Product feedback note recorded.* and carries on where it was. A sentence about your own work ("improve my answer") is not a note.
+- **During a simulation**, a note does not stop the simulation: the coach acknowledges it, then the interviewer waits for your answer.
+- **Generate your feedback**: ask "generate my product feedback". The coach has you confirm or discard the difficulties it recorded, then asks three questions (what works well, what to fix quickly, long-term ideas) and writes `data/feedback/feedback-<identifier>-YYYY-MM-DD.md`.
+- **Read before sending**: the log keeps your words as written; the feedback is anonymized at generation, with no guarantee. The coach lists what it replaced: read the file before sharing it.
+
 ## Work sessions
 
 Use each assistant conversation for a focused coaching objective, such as

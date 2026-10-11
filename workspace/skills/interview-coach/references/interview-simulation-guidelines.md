@@ -41,6 +41,7 @@
   and « end the simulation ». They count only as a standalone message or when
   the message names the simulation or interview; a « stop » inside an answer
   does not trigger anything.
+- A product feedback note is not a stop request (see « Product feedback » in `AGENTS.md`). The reason given when stopping is recorded as described there, without comment.
 - When a stop keyword is used, step out of the role and ask a short
   confirmation, recalling that stopping ends the simulation for good ("Do you
   want to stop the simulation? It cannot be resumed afterwards."). If the
@@ -63,7 +64,8 @@
   confirm the stop without insisting.
 - Exit the interviewer role clearly.
 - After the role-play, write `transcript.md` when a reliable transcript is
-  technically available. Keep it factual and do not mix coaching into it. Record
+  technically available. Keep it factual and do not mix coaching into it, and
+  never include product feedback notes. Record
   jokers as described in the « Joker » section. For
   an early stop, the transcript covers only what was played; note the stop
   factually without interpreting it. When no transcript is available, record a
@@ -130,7 +132,7 @@ only on explicit request.
   role; the interviewer reacts as to a candidate's answer (follow-up or next
   question).
 - **No limit.** The number of jokers is not limited; it is only reported in the
-  debrief for information.
+  debrief for information. Every joker used gives a silent product feedback entry (see `AGENTS.md`).
 - **Stop.** A joker never ends the simulation. A stop request right after a
   joker follows the usual confirmation rule.
 - **Outside a simulation.** The joker does nothing special during preparation,

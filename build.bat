@@ -8,7 +8,7 @@ if "%VERSION%"=="" (
   exit /b 1
 )
 
-for %%F in ("workspace\README.fr.md" "workspace\USER-GUIDE.md" "workspace\USER-GUIDE.fr.md" "workspace\AGENTS.md" "workspace\data\README.md" "workspace\skills\init-workspace\SKILL.md" "workspace\skills\init-workspace\assets\workspace.template.yaml" "workspace\skills\init-workspace\assets\current-status.template.md" "workspace\skills\init-workspace\assets\professional-profile.template.md" "workspace\skills\init-workspace\assets\external-references.template.md" "workspace\skills\init-workspace\assets\pilot-feedback.template.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\references\simulation-debrief-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md" "workspace\skills\interview-coach\assets\simulation-debrief.template.md") do (
+for %%F in ("workspace\README.fr.md" "workspace\USER-GUIDE.md" "workspace\USER-GUIDE.fr.md" "workspace\AGENTS.md" "workspace\data\README.md" "workspace\skills\init-workspace\SKILL.md" "workspace\skills\init-workspace\assets\workspace.template.yaml" "workspace\skills\init-workspace\assets\current-status.template.md" "workspace\skills\init-workspace\assets\professional-profile.template.md" "workspace\skills\init-workspace\assets\external-references.template.md" "workspace\skills\product-feedback\SKILL.md" "workspace\skills\product-feedback\assets\feedback-log.template.md" "workspace\skills\product-feedback\assets\product-feedback.template.md" "workspace\skills\interview-coach\SKILL.md" "workspace\skills\interview-coach\references\opportunity-structure-guidelines.md" "workspace\skills\interview-coach\references\simulation-debrief-guidelines.md" "workspace\skills\interview-coach\assets\opportunity.template.md" "workspace\skills\interview-coach\assets\opportunity-analysis.template.md" "workspace\skills\interview-coach\assets\opportunity-current-status.template.md" "workspace\skills\interview-coach\assets\interview.template.md" "workspace\skills\interview-coach\assets\simulation-debrief.template.md") do (
   if not exist %%F (
     echo ERROR: Required file missing: %%~F
     exit /b 1
@@ -42,7 +42,7 @@ for /f "delims=" %%E in ('dir /b "workspace"') do (
 )
 
 rem Engine/data separation: no initialized working file inside the engine.
-for /r "workspace\skills" %%F in (workspace.yaml current-status.md professional-profile.md external-references.md pilot-feedback.md) do (
+for /r "workspace\skills" %%F in (workspace.yaml current-status.md professional-profile.md external-references.md feedback-log.md) do (
   if exist "%%F" (
     echo ERROR: Initialized working file found in the engine: %%F
     goto :fail
@@ -66,29 +66,6 @@ set /p ENGINE_VERSION=<"build\mycareer-workspace\ENGINE-VERSION"
 if not "%ENGINE_VERSION%"=="%VERSION%" (
   echo ERROR: ENGINE-VERSION does not match VERSION.
   exit /b 1
-)
-
-rem Pilot feedback template: the source carries the {{VERSION}} placeholder, the
-rem build fills it in the packaged copy and in the standalone dist copy only.
-findstr /c:"{{VERSION}}" "workspace\skills\init-workspace\assets\pilot-feedback.template.md" >nul
-if errorlevel 1 (
-  echo ERROR: The pilot feedback template does not contain the {{VERSION}} placeholder.
-  exit /b 1
-)
-set "PILOT_TEMPLATE=build\mycareer-workspace\skills\init-workspace\assets\pilot-feedback.template.md"
-set "PILOT_DIST=dist\mycareer-workspace-pilot-feedback-v%VERSION%.md"
-copy /Y "%PILOT_TEMPLATE%" "%PILOT_DIST%" >nul
-for %%P in ("%PILOT_TEMPLATE%" "%PILOT_DIST%") do (
-  powershell -NoProfile -ExecutionPolicy Bypass -Command "$u = New-Object System.Text.UTF8Encoding($false); $t = [System.IO.File]::ReadAllText('%%~P', $u); [System.IO.File]::WriteAllText('%%~P', $t.Replace('{{VERSION}}', '%VERSION%'), $u)"
-  if errorlevel 1 (
-    echo ERROR: Could not fill in the version in %%~P.
-    exit /b 1
-  )
-  findstr /c:"{{VERSION}}" "%%~P" >nul
-  if not errorlevel 1 (
-    echo ERROR: The {{VERSION}} placeholder remains in %%~P.
-    exit /b 1
-  )
 )
 
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path 'build\mycareer-workspace' -DestinationPath 'dist\mycareer-workspace-v%VERSION%.zip' -Force"

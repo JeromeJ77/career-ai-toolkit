@@ -43,7 +43,7 @@ On Windows, run:
 build.bat
 ```
 
-The command creates versioned release artifacts under the untracked `dist/` directory: the MyCareer Workspace ZIP, the demo and manual-test kit ZIP and the pilot feedback form.
+The command creates versioned release artifacts under the untracked `dist/` directory: the MyCareer Workspace ZIP, the demo and manual-test kit ZIP.
 
 ## Project status
 

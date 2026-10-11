@@ -14,6 +14,10 @@ Your exchanges with the AI tool contain personal information: the files you atta
 
 These settings vary from one tool to another and change over time: you must check them yourself. The toolkit cannot check them for you and gives no guarantee about them. The coach gives a short reminder during the first session.
 
+## Product feedback
+
+During the pilot, the coach keeps a local log of difficulties of use and of the notes you dictate (`data/feedback/feedback-log.md`). It holds your raw text, with names or companies if you wrote them: nothing is cleaned when writing. Nothing is sent. The feedback generated on request is anonymized at generation only (people, companies, identifying job titles, local paths, e-mail addresses, phone numbers, profile links), which is not guaranteed: the coach lists what it replaced and you read the file before any sharing. The file name carries an anonymous identifier, unrelated to your identity.
+
 ## Web browsing
 
 By default, the coach does not browse the web (`privacy.allow_external_web_search: false` in `data/config/workspace.yaml`). The intention is to keep the work in a closed setting, limit the information handled and keep the sources actually used traceable.

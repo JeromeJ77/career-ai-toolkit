@@ -45,7 +45,7 @@ flowchart TD
     postReview["Review real interview"]
     nextRound["Prepare next round if needed"]
     update["Review profile update proposal"]
-    feedback["Share sanitized pilot feedback"]
+    feedback["Share sanitized product feedback"]
     improve["Improve toolkit docs, templates and skills"]
     legendUser["Candidate alone"]
     legendCoach["Coach work"]
@@ -124,7 +124,7 @@ conversation can continue without relying on previous conversation history.
 | Simulate and debrief interviews | Supported by the interview coach, including debrief in a later conversation | One persistent transcript/debrief pair per simulation when a transcript is available; evidence-limited debrief otherwise |
 | Review a real interview | Supported by the interview coach | Post-interview learnings and next-round actions |
 | Update professional profile | Supported as a reviewed proposal | Candidate-approved profile changes |
-| Share pilot feedback | Supported through feedback template | Sanitized product feedback |
+| Share product feedback | Supported by the product-feedback skill (local log, generated on request) | Sanitized product feedback |
 
 ## Candidate / Beta-Tester Journey
 
@@ -154,7 +154,7 @@ flowchart TD
     updateProfile["Propose and review profile update"]
     nextInterview{Another interview for this opportunity?}
     nextOpp{Another opportunity?}
-    feedback["Fill sanitized pilot feedback"]
+    feedback["Generate sanitized product feedback"]
     finish([End])
 
     start --> workspace

@@ -29,7 +29,7 @@ Determine whether the local workspace is useful, understandable and reusable bef
    interview round.
 10. Complete a post-interview reflection and prepare the next round if needed.
 11. Review proposed profile updates.
-12. Fill the optional `pilot-feedback.md` form after removing sensitive detail.
+12. Dictate product feedback notes during the session, ask the coach to generate the product feedback, and read it before sharing it.
 
 ```mermaid
 flowchart TD

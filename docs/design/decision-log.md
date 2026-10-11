@@ -1355,6 +1355,65 @@ Revoir si le pilote montre qu'un comportement laissé libre gêne les candidats,
 ou si un changement de modèle IA rend le coach moins fiable sur ce qui n'est
 décrit que par son intention.
 
+## D-023 — Feedback produit local, toujours actif pendant le pilote
+
+- **Type** : PRODUCT
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-11
+- **Issue** : #17
+
+### Contexte
+
+Le retour pilote reposait sur un formulaire manuel rempli en une fois, après
+coup : les retours étaient perdus ou imprécis, et le modèle était devenu
+obsolète. Le cas de D7 du 2026-10-02 (raison donnée à l'arrêt d'une simulation)
+montre qu'une difficulté d'usage se dit sur le moment et pas à la fin.
+
+### Options considérées
+
+- Formulaire manuel (rejeté : retours perdus, modèle obsolète) ou journal tenu
+  au fil de l'eau (retenu).
+- Consentement au premier démarrage avec option, ligne d'état et bascule
+  (étudié en détail, puis reporté à la sortie du pilote : moins de cas à
+  couvrir, et les pilotes sont volontaires) ou toujours actif (retenu pour le
+  pilote).
+- Compétence d'`interview-coach` ou skill dédié (retenu : `product-feedback`).
+- Trace dans le transcript ou journal indépendant (retenu : journal
+  indépendant, le transcript reste factuel).
+- Suivi des envois dans `current-status.md` (rejeté : doublon) ou aucun
+  (retenu).
+- Nombre d'entretiens préparés (au backlog) ou nombre de répertoires (retenu).
+- Format de l'identifiant : 8 caractères `[a-z0-9]` retenu ; UUID complet,
+  préfixe + 6 hexadécimaux et deux mots + nombre écartés.
+- Télémétrie (rejetée : rien n'est envoyé automatiquement).
+
+### Décision et intention
+
+Pendant le pilote, le coach tient toujours un journal local
+(`data/feedback/feedback-log.md`), sans option, sans question au premier
+démarrage et sans ligne d'état. Il y consigne en silence les difficultés
+d'usage manifestes et chaque joker utilisé, et, de façon explicite, les notes
+dictées par le candidat (« suggestion d'amélioration : »), y compris en pleine
+simulation sans l'interrompre. Sur demande, un feedback indépendant est généré
+(revue des entrées silencieuses, trois questions, métadonnées, anonymisation à
+la génération, liste des remplacements dans la conversation seulement) ; les
+entrées reprises ou écartées passent à « traitée » après l'écriture du fichier.
+Un identifiant anonyme de 8 caractères (`product_feedback.user_id`) nomme les
+fichiers. Rien n'est envoyé et aucune date d'envoi n'est consignée.
+
+### Conséquences
+
+- Formulaire de retour pilote, marqueur `{{VERSION}}` et artefact `dist/`
+  supprimés.
+- Nouvelle clé `product_feedback.user_id` et nouveau skill `product-feedback`.
+- Données brutes (noms, entreprises) conservées localement dans le journal,
+  sans anonymisation à l'écriture.
+
+### Conditions de réévaluation
+
+Sortie du pilote (envisagée fin 2026 ; idée au backlog) ; entrées silencieuses
+perçues comme intrusives ou trop nombreuses ; coût d'écriture trop élevé (#16).
+
 ## Évolution du journal
 
 - Ajouter une entrée au modèle ci-dessus lorsqu'un choix structurel ou

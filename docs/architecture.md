@@ -62,9 +62,13 @@ mycareer-workspace/
 |   |   `-- assets/
 |   |       |-- current-status.template.md
 |   |       |-- external-references.template.md
-|   |       |-- pilot-feedback.template.md
 |   |       |-- professional-profile.template.md
 |   |       `-- workspace.template.yaml
+|   |-- product-feedback/
+|   |   |-- SKILL.md
+|   |   `-- assets/
+|   |       |-- feedback-log.template.md
+|   |       `-- product-feedback.template.md
 |   `-- interview-coach/
 |       |-- SKILL.md
 |       |-- assets/
@@ -127,7 +131,8 @@ mycareer-workspace/
     |   `-- README.md
     `-- feedback/
         |-- README.md
-        `-- pilot-feedback.md              # optional, created on request
+        |-- feedback-log.md                # product feedback log, created at initialization
+        `-- feedback-<user_id>-YYYY-MM-DD.md   # generated on request
 ```
 
 Only `current-status.md`, `opportunity.md` and, once analysis starts,
@@ -149,7 +154,7 @@ flowchart TD
     opportunityStatus["data/opportunities/{NNN-org-role}/current-status.md<br/><i>opportunity working state</i>"]
     interview["interviews/{NN-type}/<br/><i>metadata and progressive artifacts</i>"]
     updates["Reviewed profile update proposals"]
-    feedback["data/feedback/<br/><i>pilot observations, sanitized before sharing</i>"]
+    feedback["data/feedback/<br/><i>product feedback log and generated feedback, read before sharing</i>"]
 
     sources ==> profile
     profile ==> cv

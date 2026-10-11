@@ -74,8 +74,7 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - `VERSION` holds the release in progress, with the `-dev` suffix (for example
   `0.4.0-dev`) from the first development work of a release. It must never stay
   on an already released version. Remove the suffix only when preparing the
-  release. The pilot feedback template carries the `{{VERSION}}` placeholder,
-  replaced by the build; never write a version number in it.
+  release.
 
 ## Project knowledge maintenance
 
@@ -144,7 +143,7 @@ documentation.
 
 - Source workspace template: `workspace/`
 - Build outputs: `dist/` (never commit)
-- User feedback template: `workspace/skills/init-workspace/assets/pilot-feedback.template.md`
+- Product feedback templates: `workspace/skills/product-feedback/assets/feedback-log.template.md` and `workspace/skills/product-feedback/assets/product-feedback.template.md`
 
 ## Build behavior
 

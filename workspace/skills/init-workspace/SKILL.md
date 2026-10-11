@@ -1,6 +1,6 @@
 ---
 name: init-workspace
-description: Initialize the user data under data/ on first use. On the very first session, welcome the candidate to their career workspace and ask whether to use their first name before anything else. Create missing mandatory files (workspace.yaml, professional-profile.md, external-references.md, current-status.md) from the engine templates without overwriting anything. Use at the start of any session before another skill reads user data, and when the candidate asks to fill in the optional pilot feedback form.
+description: Initialize the user data under data/ on first use. On the very first session, welcome the candidate to their career workspace and ask whether to use their first name before anything else. Create missing mandatory files (workspace.yaml, professional-profile.md, external-references.md, current-status.md) from the engine templates without overwriting anything. Use at the start of any session before another skill reads user data, and hand over to the product-feedback skill for the anonymous identifier and the feedback log.
 ---
 # Initialize the workspace
 
@@ -15,7 +15,7 @@ The engine (`skills/`, `AGENTS.md`, `CLAUDE.md`, READMEs) is replaceable. User d
 | `data/profile/sources/external-references.md` | `assets/external-references.template.md` |
 | `data/current-status.md` | `assets/current-status.template.md` |
 
-`data/feedback/pilot-feedback.md` is optional. Create it from `assets/pilot-feedback.template.md` only when the candidate asks for it.
+The product feedback log (`data/feedback/feedback-log.md`) and `product_feedback.user_id` belong to `skills/product-feedback/SKILL.md`: after "First use", if the log is missing or `product_feedback.user_id` is empty, follow the « Initialization » section of that skill. In later sessions, only check that the log exists (without reading it) and use the key already read in `workspace.yaml`.
 
 ## Session start order
 
@@ -57,7 +57,7 @@ On a first session:
 
 2. Wait for the answer. Perform no other initialization task meanwhile, so that the candidate has time to read. If the first message already contains a real request, show the welcome and the question, say that you will handle the request right after, then wait.
 3. After the answer, run "First use" to create the missing files, then write the choice in the newly created `workspace.yaml` (see "First name and greetings").
-4. Acknowledge the answer with the exact wording of the table below, report the creation in one functional sentence, give the privacy reminder below as one paragraph without waiting for an answer, then propose the first step.
+4. Acknowledge the answer with the exact wording of the table below, report the creation in one functional sentence, give the privacy reminder below as one paragraph without waiting for an answer, then give the product feedback information message described in `skills/product-feedback/SKILL.md` (do not add the log to the report sentence), then propose the first step.
 
    | | French | English |
    |---|---|---|
@@ -105,7 +105,7 @@ The candidate may change or withdraw their choice at any time by asking, or by e
 Run this check once the session start order allows it, before another skill reads user data.
 
 1. For each mandatory file, check whether it exists under `data/`.
-2. Before creating a missing file, check whether other user data shows it already held content: `data/current-status.md` says it was initialized or filled, or other files depend on it (for example transcribed sources or opportunities for a missing professional profile, or a professional profile or an opportunity for a missing `data/current-status.md`). In that case it is a possible loss, not a first use: do not recreate it. Tell the candidate which file is missing and why it looks lost, and ask whether to rebuild it from the sources, restore a copy or check a synchronization tool. Act only on their answer.
+2. Before creating a missing file, check whether other user data shows it already held content: `data/current-status.md` says it was initialized or filled, or other files depend on it (for example transcribed sources or opportunities for a missing professional profile, or a professional profile or an opportunity for a missing `data/current-status.md`). In that case it is a possible loss, not a first use: do not recreate it. Tell the candidate which file is missing and why it looks lost, and ask whether to rebuild it from the sources, restore a copy or check a synchronization tool. Act only on their answer. The product feedback log is never a possible loss: see `skills/product-feedback/SKILL.md`.
 3. Create only the other missing files by copying their template. Create missing parent directories. Never overwrite, rewrite or reformat an existing file, even if it looks empty or outdated (the only exceptions are appending missing keys to `workspace.yaml`, step 5, and updating the `user.*` keys from the candidate's answer or request, see "First name and greetings").
 4. Do not fill in the professional profile silently. A profile created from its template is an empty skeleton, with the status `empty` and the version `0.1`; populate it only through the interview-coach "Initialize the professional profile" workflow, with the candidate's validation.
 5. Compare `data/config/workspace.yaml` with `assets/workspace.template.yaml`. If keys from the template are missing, append each one with its template default value at its place in the structure. Do not change, reorder or remove any existing key, value or comment.
@@ -117,7 +117,7 @@ A missing file is created individually and a missing key is added individually, 
 
 - Do not use a marker file to detect first use or a first session: the absence of `data/current-status.md` (first session) or of a mandatory file (first use) is the signal, unless other user data shows the file already held content (step 2).
 - A missing key is added with its default value and reported, as described in steps 5 and 6.
-- The only keys the coach updates in an existing `workspace.yaml`, besides appending missing keys, are `user.address_by_first_name` and `user.first_name`, from the candidate's answer or an explicit request to change them.
+- The only keys the coach updates in an existing `workspace.yaml`, besides appending missing keys, are `user.address_by_first_name` and `user.first_name`, from the candidate's answer or an explicit request to change them, and `product_feedback.user_id`, only when it is empty.
 - If an existing key has an invalid value (for example a non-boolean where a boolean is expected, or an unsupported language) or the file is malformed, never rewrite it. Use the template default value for the session, tell the candidate which key, which value was found and which default is used, and let them correct the file.
 - Never copy real candidate data into `assets/`; templates stay generic.
 - If a mandatory file exists but cannot be read, report it and stop; do not replace it.

@@ -33,6 +33,6 @@ Vos échanges avec l'outil IA contiennent aussi des informations personnelles. V
 
 Par défaut, le coach ne consulte pas le web sans votre accord explicite (`privacy.allow_external_web_search: false`). Voir la section « Navigation web » du [guide utilisateur](USER-GUIDE.fr.md).
 
-## Retour pilote
+## Feedback produit
 
-Le fichier `data/feedback/pilot-feedback.md` est facultatif et n'est créé qu'à votre demande, depuis un modèle. Il sert à décrire l'expérience produit, sans inclure votre CV, vos réponses ou les informations de l'entreprise ciblée.
+Pendant le pilote, le coach tient un journal local (`data/feedback/feedback-log.md`) des difficultés d'usage et des notes que vous lui dictez. Rien n'est envoyé. À votre demande, il en tire un feedback anonymisé, que vous relisez avant de le partager. Voir la section « Feedback produit » du [guide utilisateur](USER-GUIDE.fr.md).

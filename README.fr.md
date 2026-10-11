@@ -30,7 +30,6 @@ build.bat
 
 Le build crée localement dans `dist/` :
 
-- `mycareer-workspace-pilot-feedback-v<version>.md` ;
 - `mycareer-workspace-v<version>.zip` ;
 - `mycareer-workspace-test-kit-v<version>.zip` (kit de démo et de test).
 
@@ -49,7 +48,7 @@ Le build crée localement dans `dist/` :
 7. Demander au coach de constituer la première version de `data/profile/professional-profile.md`.
 8. Fournir au coach les sources d'une opportunité réelle et vérifier qu'il crée lui-même sa structure numérotée dans `data/opportunities/`.
 9. Changer de conversation entre deux sessions de coaching et vérifier que le coach reprend uniquement à partir de l'espace carrière et des fichiers `current-status.md`.
-10. Demander au coach de créer `data/feedback/pilot-feedback.md`, puis le compléter si vous acceptez de partager un retour anonymisé.
+10. Dicter au coach des notes de retour produit (« suggestion d'amélioration : … »), lui demander de générer votre feedback produit, puis le relire avant tout envoi : rien n'est envoyé automatiquement.
 
 ## Périmètre actuel du projet
 
@@ -72,7 +71,7 @@ mycareer-workspace/
     |       |-- current-status.md    # état courant de l'opportunité
     |       `-- interviews/          # rounds, simulations et entretien réel
     |-- archives/
-    `-- feedback/                    # retour pilote facultatif
+    `-- feedback/                    # journal du feedback produit
 ```
 
 Le nom du répertoire local est libre : un espace extrait sous `career-ai-workspace/` continue de fonctionner et n'a pas besoin d'être renommé. À la session suivante, la section `user` y est ajoutée et la question du prénom est posée, sans message d'accueil.
