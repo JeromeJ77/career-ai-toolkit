@@ -1,0 +1,21 @@
+CHANGELOG.md
+  s_fbaedfddde7131::t_44088936c9aca2 3-4
+VERSION
+  s_fbaedfddde7131::t_c28721c4e0cd3a 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "22d31e6341c217bbf2487c55c9b112613c977b28",
+  "prompts": {},
+  "sessions": {
+    "s_fbaedfddde7131": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b27ccd69-86c4-4c3c-85ce-7394255cb7f1",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
