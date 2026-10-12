@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.4.0] - 2026-10-12
 
 ### Added
 
@@ -241,8 +241,8 @@
   fails if `data/` holds anything but `README.md` files, if the workspace root
   holds unexpected entries, or if the engine holds initialized working files.
   Upgrading from v0.3 requires moving existing folders under `data/`.
-- `VERSION` is now `0.4.0-dev`; the `-dev` suffix stays until the release is
-  prepared. The standalone header and the pilot feedback template follow it.
+- `VERSION` is now `0.4.0` (it carried the `-dev` suffix during development).
+  The release is published as the pilot release `v0.4.0-pilot`, like v0.3.0.
 - Extended `docs/test-plan.md` for the new structure, first-use initialization,
   configuration keys, source transcription and profile inconsistencies, and
   linked it to the test log.
