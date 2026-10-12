@@ -1,0 +1,25 @@
+CHANGELOG.md
+  s_fbaedfddde7131::t_1ab8fc6a1e10e1 3,244-245
+VERSION
+  s_fbaedfddde7131::t_c82b21a4682a88 1
+docs/test-history/2026-10-12-preparation-release-v0.4.0.md
+  s_fbaedfddde7131::t_304f1a5511563e 1-26
+docs/test-log.md
+  s_fbaedfddde7131::t_06ef87378fa03a 33,41,58,212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d33415511528437f953068ba5ffce9a524ad8825",
+  "prompts": {},
+  "sessions": {
+    "s_fbaedfddde7131": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b27ccd69-86c4-4c3c-85ce-7394255cb7f1",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
