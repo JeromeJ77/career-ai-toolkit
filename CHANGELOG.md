@@ -4,6 +4,10 @@
 
 ### Added
 
+- MyCareer Workspace logo displayed in its dedicated section in both READMEs.
+  The French introduction follows the English structure, distinguishing the
+  generic toolkit from MyCareer Workspace.
+
 - The user guides (FR/EN) explain how to set the AI tool's permissions so the
   coach can read, create and modify workspace files without asking for each
   one (Auto or Edit automatically mode in Claude Code), and suggest versioning

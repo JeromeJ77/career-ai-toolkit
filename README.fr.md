@@ -4,17 +4,28 @@
 
 > Toolkit générique à l'origine de **MyCareer Workspace** : un espace carrière personnel, persistant et local, construit autour d'un dossier professionnel vivant dont vous gardez la propriété.
 
-## Objectif
+## MyCareer Workspace
 
-Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites. La seule exception est le joker, sur demande explicite pendant une simulation d'entretien : une réponse proposée est clairement étiquetée comme telle.
+<img src="docs/assets/brand/mycareer-workspace-logo-large.png" alt="Logo MyCareer Workspace" width="320">
 
-Le projet prend la forme de **MyCareer Workspace**, un espace carrière local : un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
+MyCareer Workspace, « espace carrière » en français, est un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
 
 Son cœur est un dossier professionnel vivant : une mémoire professionnelle structurée, validée par vous, qui sert de point de départ au travail sur vos opportunités et vos entretiens et que ce travail enrichit au fil du temps. Chaque opportunité, préparation, simulation et débriefing peut le consolider : le travail n'est pas consommé par un usage ponctuel, il constitue un capital professionnel réutilisable.
 
-L'IA (analyse, synthèse, coaching) est un moyen, pas la proposition de valeur. Les principes structurants sont la propriété et le contrôle de vos données, la confidentialité, la persistance et la continuité, la portabilité, la transparence et la traçabilité, et votre validation de toute information capitalisée.
+L'IA (analyse, synthèse, coaching) est un moyen, pas la proposition de valeur. Les principes structurants sont :
+
+- la propriété et le contrôle de vos données ;
+- la confidentialité ;
+- la persistance et la continuité entre les conversations ;
+- la portabilité (fichiers simples) ;
+- la transparence et la traçabilité ;
+- votre validation de toute information capitalisée.
 
 `career-ai-toolkit` reste le nom du dépôt : le projet générique qui rassemble les composants, skills, modèles, outils et livrables du produit.
+
+## Principe de coaching
+
+Le toolkit est un coach, pas un générateur de réponses : il aide le candidat à réfléchir, s'entraîner, progresser et s'approprier son histoire professionnelle, plutôt qu'à mémoriser des réponses toutes faites. La seule exception est le joker, sur demande explicite pendant une simulation d'entretien : une réponse proposée est clairement étiquetée comme telle.
 
 ## Confidentialité
 

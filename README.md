@@ -1,3 +1,4 @@
+
 # Career AI Toolkit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -7,6 +8,8 @@
 **French-first pilot:** the most complete getting-started guide is [README.fr.md](README.fr.md).
 
 ## MyCareer Workspace
+
+<img src="docs/assets/brand/mycareer-workspace-logo-large.png" alt="Logo MyCareer Workspace" width="320">
 
 MyCareer Workspace (in French, « espace carrière ») is a private workspace of files that you open in VS Code, Claude Code or another file-aware AI tool. Its core is a living professional profile: structured professional memory, validated by you, the starting point of your work on opportunities and interviews, and enriched by that work over time. Each opportunity, preparation, simulation and debriefing can consolidate it, so the work is not consumed by a one-off use: it becomes a reusable professional asset.
 
