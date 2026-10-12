@@ -1,0 +1,29 @@
+README.fr.md
+  s_1465f842010aaf::t_5bf4177eaa2dee 7
+README.md
+  s_0dccd6de0c750c::t_d0153b6bf1901d 10,12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "fdca08231b9cb994ac65b98b5ffa0e1fa084fd28",
+  "prompts": {},
+  "sessions": {
+    "s_0dccd6de0c750c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5dea7ac3-c36f-4c84-8244-c53591950e8f",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    },
+    "s_1465f842010aaf": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85993910-9938-4471-aa31-99da92cb9a00",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
