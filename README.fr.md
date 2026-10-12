@@ -4,9 +4,7 @@
 
 > Toolkit générique à l'origine de **MyCareer Workspace** : un espace carrière personnel, persistant et local, construit autour d'un dossier professionnel vivant dont vous gardez la propriété.
 
-## MyCareer Workspace
-
-<img src="docs/assets/brand/mycareer-workspace-logo-large.png" alt="Logo MyCareer Workspace" width="320">
+<img src="docs/assets/brand/mycareer-workspace-logo-large.png" alt="Logo MyCareer Workspace" width="280">
 
 MyCareer Workspace, « espace carrière » en français, est un espace privé de fichiers à ouvrir dans VS Code, Claude Code ou un autre agent capable de lire et modifier des fichiers.
 
