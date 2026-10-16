@@ -1,0 +1,23 @@
+docs/demos/mycareer-workspace-deck-brief.md
+  s_0f94a6d5e7eeff::t_db621dde3901fb 1-158
+docs/demos/mycareer-workspace-demo-and-slides.md
+  s_0f94a6d5e7eeff::t_a83f848b57e67b 1-416
+docs/demos/mycareer-workspace-demo-live-script.md
+  s_0f94a6d5e7eeff::t_78f919f01f2b7d 1-233
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "809a672665e5464151028dfcdcf1f013080cbf77",
+  "prompts": {},
+  "sessions": {
+    "s_0f94a6d5e7eeff": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2f2bf32-8c63-466d-b6de-86413e4fd413",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
