@@ -735,6 +735,19 @@ les constats de l'étude.
   l'emplacement de la lettre dans l'arborescence n'est pas défini.
 - Voir aussi la section « Cover letters » ci-dessous.
 
+### Export PDF de la fiche de préparation
+
+- Relevé pendant la préparation de la démo v0.4.0 (2026-10-15) : la fiche de
+  préparation (`interviews/<entretien>/preparation.md`) est conçue pour être
+  imprimée (première page autonome, remise possible aux interlocuteurs ; page 2
+  réservée aux notes ; détail à partir de la page 3), mais le workspace ne
+  produit que du Markdown. Le candidat n'a donc pas de PDF prêt à imprimer, alors
+  que la fiche sert d'aide-mémoire juste avant et pendant l'entretien.
+- À définir : comment générer le PDF sans dépendance lourde ni service externe
+  (les données restent locales), le respect des sauts de page prévus par le
+  modèle, l'emplacement du fichier généré dans `interviews/` et la façon de le
+  tenir à jour quand la fiche change.
+
 ### Explorations ultérieures
 
 - Évaluer si un RAG serait utile, notamment dans le cadre de feedbacks
