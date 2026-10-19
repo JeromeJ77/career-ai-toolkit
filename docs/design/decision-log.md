@@ -1414,6 +1414,67 @@ fichiers. Rien n'est envoyé et aucune date d'envoi n'est consignée.
 Sortie du pilote (envisagée fin 2026 ; idée au backlog) ; entrées silencieuses
 perçues comme intrusives ou trop nombreuses ; coût d'écriture trop élevé (#16).
 
+## D-024 — Tester les transitions d'état isolément et en parcours
+
+- **Type** : PROCESS
+- **Statut** : 🔵 Envisagée
+- **Date** : 2026-10-16
+
+### Contexte
+
+L'audit des traitements locaux conduit à envisager une façade métier et des
+stockages interchangeables, dont un stockage mémoire pour les tests et les
+démonstrations. L'auteur souhaite des checkpoints restaurables et un contrôle
+des données avant/après chaque scénario, dans l'esprit de DbUnit. Les
+principes ci-dessous sont confirmés ; leur outillage n'est pas implémenté et
+aucun périmètre de release n'est engagé, d'où le statut « Envisagée ».
+
+### Options considérées
+
+- Restaurer les données dans la conversation existante avec une
+  resynchronisation explicite : évoqué dans l'audit, écarté au profit d'une
+  nouvelle conversation pour éviter le contexte devenu incohérent.
+- Scénarios isolés ou parcours de plusieurs étapes : retenus comme
+  complémentaires, avec une préférence pour commencer par les cas isolés.
+- Pilotage par commandes ou panneau web minimaliste : les deux accès restent
+  possibles ; le panneau est proposé pour faciliter les démonstrations, sans
+  choix technique arrêté.
+
+### Décision et intention
+
+Chaque réinitialisation des données de test ou de démonstration demande une
+nouvelle conversation et un message de départ défini. Ensuite, plusieurs
+étapes peuvent s'enchaîner dans la même conversation, sans réinitialiser les
+données entre elles. À la fin de chaque étape, comparer l'état obtenu à
+l'attendu ; cet état doit satisfaire les préconditions de l'étape suivante.
+Le dispositif de préparation, restauration et vérification est indépendant
+des outils accessibles au coach.
+
+L'intention est de rendre les scénarios reproductibles, de localiser les
+écarts et de vérifier aussi la continuité réelle d'un parcours. Charger un
+checkpoint ne valide pas les étapes qu'il permet de sauter.
+
+### Conséquences
+
+- Définir des fixtures fictives, des résultats attendus et des préconditions
+  de session ; distinguer tests unitaires Python et scénarios d'agent isolés.
+- Prendre en compte D-010 : une version ne s'incrémente qu'une fois par
+  conversation ; les attendus d'étapes isolées peuvent différer d'un parcours.
+- Définir des comparaisons strictes pour les champs déterministes et des
+  critères explicites pour les textes libres ; aucune validation par simple
+  capture du résultat observé.
+- Conserver un parcours bout en bout et les tests des adaptateurs réels.
+- Le panneau web reste une idée capturée dans le backlog ; il ne garantit
+  pas le contrôle des conversations dans les applications IA.
+- Les scénarios détaillés et leurs statuts seront ajoutés au plan et au
+  journal de tests lors de la préparation des issues, selon la procédure ATDD.
+
+### Conditions de réévaluation
+
+Réexaminer si le contrat de session évolue, si les applications ciblées ne
+permettent pas l'isolation requise ou si l'entretien des fixtures fait
+diverger les tests du scénario maître et des règles métier.
+
 ## Évolution du journal
 
 - Ajouter une entrée au modèle ci-dessus lorsqu'un choix structurel ou

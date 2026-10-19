@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+### Added
+
+- Exploratory architecture audit of local processing versus coach instructions,
+  with comparisons of document extraction options, startup recommendations and
+  a proposed measurement protocol. Recommendations remain unapproved; no
+  runtime behavior changes.
+
 ## [0.4.0] - 2026-10-12
 
 ### Added

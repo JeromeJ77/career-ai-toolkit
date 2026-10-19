@@ -88,6 +88,12 @@ contrats déjà validés.
 
 | Terme français | Terme anglais | Définition provisoire |
 | --- | --- | --- |
+| Façade métier | Application facade | Contrat envisagé d'opérations sur le dossier, les sources et les opportunités, indépendant de leur stockage physique. MCP ou une CLI pourraient l'exposer au coach sans porter les règles métier. |
+| Prompteur web local | Local web test and demo guide | Interface envisagée pour guider une démo ou un rejeu manuel ciblé depuis les scénarios communs : état initial, prompts à copier, consignes de conversation, contrôles et observations. Distincte du coach et du skill `/prompteur` existant, dont le remplacement n'est pas décidé. |
+| Jeu de données de test | Test fixture | État fictif préparé et versionné pour les préconditions d'un scénario. Ses résultats attendus sont définis séparément ; son chargement ne valide pas les étapes de préparation qu'il remplace. |
+| Checkpoint de démonstration | Demo checkpoint | État fictif restaurable permettant de reprendre une démo à une étape choisie. Il ne contient pas implicitement l'état de la conversation de l'agent ; son chargement exige une nouvelle conversation et un message de départ (D-024). |
+| Scénario d'agent isolé | Isolated agent scenario | Test d'un comportement à partir d'un état et d'une conversation neufs. Il se distingue d'un test unitaire Python, exécuté sans agent. |
+| Parcours enchaîné | Multi-step scenario | Suite d'étapes dans une même conversation, après une seule initialisation. L'état obtenu est vérifié après chaque étape et doit satisfaire les préconditions de la suivante, sans rechargement intermédiaire (D-024). |
 | Entretien initial | Initial profile interview | Séance structurée menée après l'installation pour recueillir les informations nécessaires à une première version exploitable du dossier professionnel. |
 | Utilisateur / personne coachée | User / coachee | Termes envisagés pour remplacer ou compléter « candidat ». « Utilisateur » décrit la relation au produit de façon générique ; « personne coachée » décrit la relation avec le coach. Il reste à décider s'il faut retenir un seul terme ou les employer selon le contexte. |
 | Marqueur de version du moteur | Engine version marker | Version du moteur générique, livrée dans le fichier `ENGINE-VERSION` à la racine du workspace depuis la v0.4.0. À partir de la v0.5.0 (issue #7), elle sera aussi recopiée dans les données : un écart entre les deux signalera qu'une mise à jour a eu lieu. Le manifest complet et les migrations de modèles restent hors périmètre de la v0.4.0. |

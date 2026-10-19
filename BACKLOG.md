@@ -12,6 +12,168 @@ third cleanup commit.
 
 ## New ideas (grooming necessary)
 
+### Déporter les opérations répétitives du coach vers des outils locaux
+
+Demande du 2026-10-16, capture à relire par l'auteur avant tout grooming.
+L'auteur souhaite un audit approfondi des parties aujourd'hui réalisées par
+des instructions d'agent ou des skills qui gagneraient à être réalisées par
+un programme classique. Objectifs : réduire les tokens et le travail réinventé
+à chaque session, fiabiliser notamment les extractions PDF/DOCX et améliorer
+les performances pour favoriser l'adoption.
+
+- Priorité exprimée : démarrage des sessions (plus d'une minute observée) et
+  import des sources du dossier professionnel ou d'une nouvelle opportunité.
+  Pendant les démonstrations, l'attente oblige à meubler ; l'auteur craint la
+  frustration des utilisateurs réels maintenant que le socle fonctionnel existe.
+- Windows en premier, avec des solutions potentiellement portables et
+  utilisables par différents agents travaillant dans un répertoire local.
+  Installer Python est acceptable ; Node.js reste envisageable si son apport
+  justifie la dépendance supplémentaire.
+- Traitement des données personnelles exclusivement local par les nouveaux
+  outils, sans service payant. Seuls les échanges avec la solution IA choisie
+  peuvent sortir du PC ; ses conditions de confidentialité, notamment
+  l'utilisation pour l'entraînement et la conservation, doivent être vérifiées.
+- Comparer les solutions techniques actuelles, leurs avantages, inconvénients,
+  dépendances, licences et coûts de maintenance ; plusieurs solutions peuvent
+  être retenues selon la tâche. Aucune technologie n'est encore adoptée.
+- Pistes à examiner : noyau Python appelé en ligne de commande, éventuel
+  adaptateur MCP local, préparation compacte du contexte de démarrage,
+  extraction documentaire réutilisable avec contrôle de qualité et cache,
+  opérations de fichiers et transitions d'état déterministes, écritures
+  contrôlées, rendu documentaire, statistiques et contrôles de non-régression.
+  Conserver au modèle le jugement métier, la synthèse et le coaching.
+- Mesurer séparément le temps des outils, les échanges avec l'agent et le
+  délai jusqu'à une réponse utile ; compléter le corpus fictif pour les scans,
+  colonnes, tableaux, symboles monétaires, réimports et échecs d'extraction.
+
+Liens de contexte, sans fusion ni retrait des idées existantes : « Lecture des
+PDF lente et fragile », « Tenue des `current-status.md` », « Auditer le skill du
+coach avant le pilote », « Distribution and updates » et « Document rendering ».
+L'[audit exploratoire](docs/analysis/2026-10-16-local-runtime-audit.md) expose des
+options et un ordre technique conseillé ; il ne constitue ni un périmètre de
+release, ni un plan d'issue approuvé.
+
+### Définir le modèle de domaine de l'espace carrière
+
+Demande de l'auteur du 2026-10-19, liée au chantier de découplage de l'agent
+et des représentations mémoire et fichiers. Documenter les objets du domaine,
+leurs relations, leurs identifiants, leurs états et leurs règles de cycle de vie
+avant de fixer les contrats de la façade et des deux stockages.
+
+Confronter ensuite ce modèle à l'arborescence et aux fichiers actuels. Pour
+chaque information, préciser sa source de vérité, les références qui la
+désignent et les éventuelles copies historiques ou vues dérivées. Examiner en
+particulier la continuité entre `data/current-status.md`, le statut de chaque
+opportunité, `interview.md`, le dossier professionnel et les analyses. Le but
+est de préserver la séparation déjà recherchée entre état global, état local
+et historique, et de repérer les doublons, incohérences ou informations sans
+propriétaire clair.
+
+Si cette confrontation révèle des écarts, proposer et tester leur correction
+dans ce chantier en tenant compte des espaces carrière existants et des
+modifications manuelles. Le modèle et la cartographie des fichiers doivent
+décrire l'existant et signaler explicitement les décisions encore ouvertes ;
+ils ne présument ni d'un nouveau format de stockage ni de la migration à faire.
+Voir l'[audit et son complément](docs/analysis/2026-10-16-local-runtime-audit.md#complément--façade-métier-et-stockage-interchangeable).
+
+### Découpler l'agent de la représentation physique des données
+
+Proposition de l'auteur du 2026-10-16, à la suite de l'audit des traitements
+locaux ; capture à relire, sans choix d'implémentation arrêté.
+
+- Interposer une façade entre l'agent et les données, afin que l'agent ne
+  dépende plus de leur organisation physique actuelle en fichiers et
+  répertoires. MCP est envisagé pour exposer cette façade, sans être encore
+  choisi.
+- Permettre à l'agent et à la représentation physique des données d'évoluer
+  indépendamment, dans les limites d'un contrat commun explicite.
+- Tester la partie programme Python indépendamment de l'agent, par des tests
+  unitaires et d'intégration.
+- Pouvoir utiliser l'agent pour une démonstration avec tout le modèle de
+  données en mémoire, sans dépendre d'un espace carrière persistant sur disque.
+- Rechercher davantage de flexibilité et d'évolutivité, en complément des gains
+  de performance et de fiabilité de l'idée précédente.
+
+Points techniques proposés par l'audit, à discuter : opérations métier plutôt
+qu'accès générique aux fichiers ; cœur Python indépendant de MCP ; adaptateurs
+de stockage disque et mémoire soumis aux mêmes tests de contrat ; distinction
+entre démonstration du coaching et test réel d'extraction/persistance ; gestion
+explicite des identifiants, versions, validations et accès directs de l'agent.
+La définition du modèle de domaine et sa confrontation aux fichiers actuels
+constituent un préalable à ce contrat (idée ci-dessus).
+Voir le [complément de l'audit](docs/analysis/2026-10-16-local-runtime-audit.md#complément--façade-métier-et-stockage-interchangeable).
+
+### États de test préchargés et checkpoints de démonstration restaurables
+
+Proposition de l'auteur du 2026-10-16, en complément de la façade et du
+stockage mémoire ; capture à relire.
+
+- Créer des checkpoints restaurables à volonté pour reprendre une
+  démonstration à une étape choisie et éviter d'attendre les traitements des
+  étapes précédentes.
+- Préparer l'état des données utilisateur avant chaque scénario de test,
+  dans l'esprit de DbUnit, pour tester facilement un scénario sans devoir
+  rejouer tout le parcours qui le précède.
+- Réutiliser ces possibilités avec le modèle de données en mémoire envisagé
+  pour les démonstrations.
+
+Précisions confirmées par l'auteur le 2026-10-16 :
+
+- Chaque réinitialisation des données nécessite une nouvelle conversation et
+  un message de départ.
+- À partir d'un état initial, plusieurs étapes peuvent être enchaînées dans
+  la même conversation pour vérifier un parcours plus proche de l'usage réel.
+  Tests isolés et parcours enchaînés sont complémentaires ; commencer sans
+  doute par les premiers avant de construire les seconds.
+- Contrôler les données à la fin de chaque étape par rapport à l'état attendu,
+  comme avec DbUnit. Pour un enchaînement, l'état obtenu doit satisfaire l'état
+  requis par l'étape suivante, sans rechargement qui masquerait un écart.
+- Le mécanisme de préparation et de contrôle reste indépendant des outils
+  accessibles au coach.
+
+Ces principes sont conservés dans D-024 ; leur outillage reste envisagé.
+
+Points techniques proposés, à discuter : jeux fictifs nommés et versionnés,
+restauration isolée et reproductible, contrôle de cohérence, conservation des
+artefacts nécessaires et comparaison des changements attendus. Distinguer
+l'état métier restauré de l'historique de conversation et des caches de
+l'agent ; ne pas présenter une étape préchargée comme un traitement exécuté
+pendant la démo ou le test. La préparation/restauration relève de l'outillage
+de test et de démonstration, séparé des opérations courantes du coach.
+
+Voir le [complément de l'audit](docs/analysis/2026-10-16-local-runtime-audit.md#complément--états-de-test-et-checkpoints-de-démonstration).
+Liens de contexte : « Workspaces de test manuel accessibles à l'agent » et
+« Tests fonctionnels automatisés du coach (Claude Code headless) », sans
+fusion ni retrait de ces idées.
+
+### Panneau web local pour piloter les états d'une démonstration
+
+Idée de l'auteur du 2026-10-16, à relire avant grooming : une interface web
+minimaliste permettrait à la personne qui réalise la démonstration de contrôler
+l'état interne et de passer facilement d'un checkpoint à l'autre, sans saisir
+de commandes. Il s'agit de l'interface du démonstrateur, indépendante des
+outils du coach ; le choix du framework et la réalisation ne sont pas engagés.
+
+Pistes de contenu à discuter : sélectionner et charger un état fictif,
+consulter son contenu et les écarts attendus, afficher le message de départ à
+copier dans une nouvelle conversation, suivre les étapes d'un parcours. Le
+chargement de l'état ne doit pas laisser croire que la conversation de
+l'application IA a été réinitialisée automatiquement.
+
+Extension proposée par l'auteur le 2026-10-16 : ce panneau servirait finalement
+de **prompteur**, notamment pour copier les prompts et guider la démonstration.
+Il pourrait aussi servir à rejouer manuellement des tests ciblés de
+non-régression, à la demande.
+
+À rapprocher du skill de développement existant
+`.claude/skills/prompteur/SKILL.md` : sélection du socle ou d'étapes, guidage
+élément par élément, distinction nouvelle conversation/suite, observations du
+testeur, vérification des données et consignation de ce qui a réellement été
+joué. Pistes à discuter : une source de scénarios commune, boutons de copie,
+comparaison des états, résultats « conforme / écart / non joué / non vérifié »
+et export d'un brouillon de session de test. Le pilotage automatique du coach
+et le remplacement du skill existant ne sont pas décidés.
+
 ### Activer ou désactiver le feedback produit à la sortie du pilote
 
 Décidé pendant l'analyse de #17 (2026-10-11) : pendant le pilote, le feedback
