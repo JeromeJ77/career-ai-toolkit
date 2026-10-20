@@ -1,8 +1,8 @@
 # Extract the light demo script from the master scenario. For each step tagged
 # [demo] and not [todo #N] (not delivered yet), keep only what the presenter needs: duration, conversation, files,
 # actions, prompts and talking points (Mots-cles, renamed "A montrer"). Drop
-# the [socle] tag, the expected results, test plan references, the Socle
-# field, the scenario introduction and
+# the [socle] tag, the expected results, test plan and requirement references
+# (Plan de test, Exigences), the Socle field, the scenario introduction and
 # the test instructions; keep only the table of the final recap, without its
 # [todo] rows. Called by
 # build.bat; needs nothing beyond Windows PowerShell.
@@ -61,7 +61,7 @@ foreach ($line in $lines) {
         }
     }
     elseif ($inStep -and $keep) {
-        if ($line -match '^- \*\*(Attendu|Plan de test|Socle)') {
+        if ($line -match '^- \*\*(Attendu|Plan de test|Exigences|Socle)') {
             # Drop the field and its indented continuation lines.
             $skipField = $true
             continue

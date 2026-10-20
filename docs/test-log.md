@@ -14,6 +14,8 @@ Règles :
 
 Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ Non testé
 
+## Tableau de bord
+
 ## Synthèse de la couverture
 
 | Zone | Statut | Premier test | Dernier test | Remarques |

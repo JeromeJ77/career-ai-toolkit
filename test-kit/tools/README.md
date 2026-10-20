@@ -5,6 +5,7 @@
 | `generate_sources.py` | Génère les PDF et DOCX depuis les sources Markdown. Outil de développement, dépendances Python dans un venv local. | Non |
 | `make_demo_script.ps1` | Extrait le script de démo (`demo-script.md`) du scénario maître en ne gardant que les étapes `[demo]`. Windows PowerShell seul, aucune dépendance. | Oui |
 | `demo-script-header.md` | En-tête UTF-8 du script de démo, avec le marqueur `{version}`. Séparé du `.ps1` parce que Windows PowerShell 5.1 lit un `.ps1` sans BOM en ANSI : le script reste en ASCII pur. | Oui (lu par le script) |
+| `check_traceability.ps1` | Vérifie la traçabilité entre les exigences de `docs/requirements/`, les tests qui les citent (`test-kit/scenario.md`, `docs/checks.md`) et le tableau de bord de `docs/test-log.md`. Outil de développement, Windows PowerShell seul, jamais livré. | Non |
 | `test-coverage/` | Mod Claude Code qui affiche la couverture des tests de `docs/test-log.md` sous forme de barre (commande `/test-coverage`). Outil de développement, jamais livré. | Non |
 | `.claude/skills/prompteur/` (racine du dépôt) | Skill Claude Code `/prompteur` qui guide une passe de test manuelle élément par élément (`/prompteur socle` pour les étapes `[socle]`), vérifie les fichiers du workspace de test et les traces du coach, et rédige la session de test. Outil de développement, jamais livré. | Non |
 
@@ -13,6 +14,23 @@ Les PDF et DOCX générés sont commités à côté de leur source Markdown ; le
 ## `make_demo_script.ps1`
 
 Règles d'extraction : le titre de niveau 1 du scénario est remplacé par l'en-tête ; les sections `##` sont conservées si elles contiennent encore quelque chose ; une étape `###` est conservée si et seulement si son titre contient `[demo]`, avec tout son corps ; le texte de section hors étape (mode d'emploi, récapitulatif) est conservé. Le script échoue si aucune étape `[demo]` n'est trouvée.
+
+## `check_traceability.ps1`
+
+Depuis la racine du dépôt, avant un commit qui touche le référentiel d'exigences, le scénario maître, les contrôles ou le tableau de bord, et avant une release :
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -File test-kit\tools\check_traceability.ps1
+```
+
+Le paramètre facultatif `-Root <répertoire>` vérifie une autre copie du dépôt (par défaut, le dépôt qui contient le script).
+
+Le script lit les exigences de `docs/requirements/` (sauf `README.md`), les étapes de `test-kit/scenario.md` et les contrôles de `docs/checks.md` avec leur ligne « Exigences », et les lignes `| REQ-…` du tableau de bord ; les blocs de code sont ignorés. Une exigence est dite suivie quand elle est 🔵 Proposée ou ✅ Active.
+
+- **Erreurs** (code de sortie 1) : identifiant d'exigence, de contrôle ou d'étape en double ou mal formé ; statut d'exigence absent ou inconnu ; exigence citée (scénario, contrôles, tableau de bord, remplaçante) inexistante ; exigence suivie sans ligne au tableau de bord ; ligne du tableau de bord en double, pour une exigence inexistante ou non suivie, ou avec un statut de test inconnu ; test de la colonne Tests inexistant (code d'étape, sous-identifiant `C4.2` d'une étape existante, ou `CHK-…`) ; ligne « Exigences » hors d'une étape ou d'un contrôle.
+- **Avertissements** (code 0) : exigence suivie citée par aucun test ; exigence ⚪ Remplacée ou ❌ Abandonnée encore citée par un test.
+
+Chaque problème est donné sur une ligne (`ERROR` ou `WARNING`, fichier et ligne, identifiant, nature), puis un résumé : nombre d'exigences par statut, d'étapes, de contrôles et de lignes du tableau de bord, d'erreurs et d'avertissements. Le script est en ASCII pur, comme `make_demo_script.ps1`.
 
 ## `generate_sources.py`
 
