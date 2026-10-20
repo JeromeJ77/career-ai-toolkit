@@ -207,6 +207,26 @@ Définis le 2026-10-11, à relire avec l'utilisateur avant le développement. D�
 | Product feedback | Non-régression : B1 à B4 et B9, D5, D6, D7, E5 (arrêt et joker), build, « Repository privacy » | ⬜ Non testé | 2026-10-11 | 2026-10-11 | Passe rapide du 2026-10-11 : B1, B2, D5 et D6 rejoués ; B4, B9, D7, E5, build et « Repository privacy » non joués. Voir la [session du 2026-10-11 (passe rapide)](test-history/2026-10-11-passe-rapide-v0.4.0.md). |
 | Kit de test | Scénario maître (B1, B9, D5, F1) et guide testeur mis à jour ; données fictives suffisantes pour l'anonymisation ; exemple fictif et script de démo | ⬜ Non testé | — | — | Voir l'analyse du 2026-10-11 : durée de la démo et exemple à produire. |
 
+### Scénarios à satisfaire pour l'issue #20 (référentiel d'exigences, tests et tableau de bord)
+
+Définis le 2026-10-20 et relus avec l'utilisateur avant le développement. Exigences dans [`requirements/test-process.md`](requirements/test-process.md), contrôles dans [`checks.md`](checks.md) ; cette table sera convertie par la migration.
+
+| Section du plan | Scénario | Statut | Premier test | Dernier test | Remarques |
+| --- | --- | --- | --- | --- | --- |
+| Référentiel de tests | REQ-QA-01 — Exigences rangées par domaine selon un modèle commun (CHK-QA-05) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-02 — Identifiants stables et statuts d'exigence (CHK-QA-01, CHK-QA-02) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-03 — Lien de couverture à sens unique (CHK-QA-01, CHK-QA-07) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-04 — Identifiants de tests (CHK-QA-07, CHK-QA-09) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-05 — Tableau de bord par domaine (CHK-QA-01, CHK-QA-04) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-06 — Statut de test déduit des tests consignés (CHK-QA-06) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-07 — Historique conservé, sessions citant les tests (CHK-QA-08, CHK-QA-09) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-08 — Stratégie de test (CHK-QA-07) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-09 — Contrôles ponctuels de livraison hors du référentiel (CHK-QA-05) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-10 — Contrôle automatique de la traçabilité (CHK-QA-01, CHK-QA-02) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-11 — Script de démo sans renvoi aux exigences (CHK-QA-03) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-12 — Mod de couverture compté par exigence (CHK-QA-04) | ⬜ Non testé | — | — | |
+| Référentiel de tests | REQ-QA-13 — Prompteur aligné sur le référentiel (CHK-QA-09) | ⬜ Non testé | — | — | |
+
 ## Sessions
 
 - [2026-10-12 — Préparation de la release v0.4.0 : build et confidentialité du dépôt](test-history/2026-10-12-preparation-release-v0.4.0.md)
