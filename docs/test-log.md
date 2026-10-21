@@ -20,7 +20,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-UPD-01 | Mise à jour du moteur sans perte de `data/` | ✅ Validé | 2026-09-30 | — | — | [2026-09-30](test-history/2026-09-30-deploiement-initialisation-mise-a-jour-et-sources.md) |
+| REQ-UPD-01 | Mise à jour du moteur sans perte de `data/` | ⚠️ À revalider | 2026-09-30 | — | — | [2026-09-30](test-history/2026-09-30-deploiement-initialisation-mise-a-jour-et-sources.md) |
 | REQ-UPD-02 | Retour à la version précédente | ⬜ Non testé | — | — | — | — |
 
 ### Build (`REQ-BLD`)
@@ -52,11 +52,11 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
 | REQ-REPO-01 | Aucune coordonnée personnelle | ✅ Validé | 2026-10-12 | 161bc55 | CHK-REPO-01 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
-| REQ-REPO-02 | Aucun nom réel ni contenu d'employeur (recherche du développeur, consignée au journal) | ✅ Validé | 2026-10-04 | 0.4.0-dev | CHK-REPO-02 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |
+| REQ-REPO-02 | Aucun nom réel ni contenu d'employeur | ✅ Validé | 2026-10-04 | — | CHK-REPO-02 | journal antérieur |
 | REQ-REPO-03 | Données d'exemple explicitement fictives | ✅ Validé | 2026-10-12 | 161bc55 | CHK-REPO-01 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
 | REQ-REPO-04 | Artefacts de build ignorés | ✅ Validé | 2026-10-12 | 161bc55 | CHK-REPO-03 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
 | REQ-REPO-05 | Chemins racine obsolètes absents | ⬜ Non testé | — | — | — | — |
-| REQ-REPO-06 | Anciens noms du produit absents (rejeu du 2026-10-05 consigné au journal) | ✅ Validé | 2026-10-05 | — | CHK-REPO-04 | [2026-10-04](test-history/2026-10-04-recentrage-my-career-workspace.md) |
+| REQ-REPO-06 | Anciens noms du produit absents | ✅ Validé | 2026-10-05 | — | CHK-REPO-04 | journal antérieur |
 | REQ-REPO-07 | Mode standalone absent | ✅ Validé | 2026-10-04 | 0.4.0-dev | CHK-REPO-04 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |
 | REQ-REPO-08 | Ancien exemple fictif absent | ✅ Validé | 2026-10-01 | 0.4.0-dev | CHK-REPO-04 | [2026-10-01](test-history/2026-10-01-kit-de-test-generation-et-build.md) |
 | REQ-REPO-09 | Entrées publiées du `CHANGELOG.md` non réécrites | ✅ Validé | 2026-10-04 | 0.4.0-dev | CHK-REPO-05 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |

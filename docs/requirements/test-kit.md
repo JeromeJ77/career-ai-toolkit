@@ -70,8 +70,7 @@ format du scénario maître, démo, exemple fictif du dépôt (`examples/`).
 ### REQ-KIT-08 — Durée de la démo
 
 - **Exigence** : les étapes `[demo]`, jouées depuis le seul script de démo
-  lors d'une démo minutée, tiennent dans la durée cible indiquée au scénario
-  (35 à 40 minutes).
+  lors d'une démo minutée, tiennent dans la durée cible indiquée au scénario.
 - **Origine** : #12
 - **Statut** : ✅ Active
 - **Message** : aucun

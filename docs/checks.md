@@ -1,7 +1,8 @@
-# Contrôles du build, du dépôt et de la documentation
+# Contrôles du build, du dépôt, de la documentation et du kit de test
 
-Tests qui ne se jouent pas avec le coach. Les tests joués avec le coach sont les
-étapes de [`test-kit/scenario.md`](../test-kit/scenario.md). Chaque contrôle
+Tests qui ne sont pas des étapes du
+[scénario maître](../test-kit/scenario.md) : contrôles du build, du dépôt, de
+la documentation et du kit de test, dont la démo minutée. Chaque contrôle
 cite les exigences de [`docs/requirements/`](requirements/) qu'il couvre ;
 son résultat est consigné dans une session de
 [`docs/test-history/`](test-history/) et reporté au tableau de bord
