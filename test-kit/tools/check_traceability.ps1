@@ -52,6 +52,8 @@ $requirements = New-Object 'System.Collections.Generic.Dictionary[string,object]
 $tests = New-Object 'System.Collections.Generic.Dictionary[string,object]'
 $dashboard = New-Object 'System.Collections.Generic.Dictionary[string,object]'
 $citations = New-Object System.Collections.Generic.List[object]
+# Requirements cited by each test, from its Exigences line: the only source of the link (REQ-QA-03).
+$citedBy = New-Object 'System.Collections.Generic.Dictionary[string,object]'
 
 function Get-RelativePath([string]$Path) {
     return $Path.Substring($Root.Length).TrimStart('\', '/').Replace('\', '/')
@@ -163,6 +165,10 @@ function Add-Citations([string]$Text, [string]$File, [int]$Line, [string]$TestId
             continue
         }
         $citations.Add([pscustomobject]@{ Id = $id; File = $File; Line = $Line; TestId = $TestId })
+        if (-not $citedBy.ContainsKey($TestId)) {
+            $citedBy[$TestId] = New-Object 'System.Collections.Generic.HashSet[string]'
+        }
+        [void]$citedBy[$TestId].Add($id)
     }
 }
 
@@ -263,10 +269,17 @@ function Read-Dashboard([string]$Path) {
         foreach ($token in ($testsCell -split ',')) {
             $testId = $token.Trim()
             if ($testId -eq '' -or $testId -eq '-' -or $testId -eq [string][char]0x2014) { continue }
-            if ($tests.ContainsKey($testId)) { continue }
-            if (($testId -cmatch '^([A-Z][0-9]+)\.[0-9]+$') -and $tests.ContainsKey($Matches[1]) -and
-                ($tests[$Matches[1]].Kind -eq "step")) { continue }
-            Add-Error $rel $n $id ("test not found: '{0}'" -f $testId)
+            # A sub-step C4.2 stands for the step C4 and its Exigences line.
+            $baseId = $null
+            if ($tests.ContainsKey($testId)) { $baseId = $testId }
+            elseif (($testId -cmatch '^([A-Z][0-9]+)\.[0-9]+$') -and $tests.ContainsKey($Matches[1]) -and
+                ($tests[$Matches[1]].Kind -eq "step")) { $baseId = $Matches[1] }
+            if ($null -eq $baseId) {
+                Add-Error $rel $n $id ("test not found: '{0}'" -f $testId)
+            }
+            elseif (-not ($citedBy.ContainsKey($baseId) -and $citedBy[$baseId].Contains($id))) {
+                Add-Error $rel $n $id ("test '{0}' does not cite {1}" -f $testId, $id)
+            }
         }
     }
 }
