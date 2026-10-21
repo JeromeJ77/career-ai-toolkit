@@ -31,7 +31,7 @@ Quand et comment tester : [`docs/test-plan.md`](../test-plan.md).
 | Règles transversales du coach | `REQ-COACH` | [coaching.md](coaching.md) | Aucun fait inventé, vocabulaire, apprentissages durables, dates |
 | Mise à jour du workspace | `REQ-UPD` | [workspace-update.md](workspace-update.md) | Remplacement du moteur sans perte de `data/`, retour arrière |
 | Build | `REQ-BLD` | [build.md](build.md) | `build.bat`, ZIP du workspace et du kit, `ENGINE-VERSION`, script de démo |
-| Dépôt | `REQ-REPO` | [repository.md](repository.md) | Aucune donnée réelle, exemples fictifs, noms obsolètes absents, historiques non réécrits |
+| Dépôt | `REQ-REPO` | [repository.md](repository.md) | Aucune donnée réelle, exemples fictifs, noms obsolètes absents, historiques non réécrits, version |
 | Kit de test | `REQ-KIT` | [test-kit.md](test-kit.md) | Sources fictives, scénario maître, exemple fictif |
 | Référentiel de tests | `REQ-QA` | [test-process.md](test-process.md) | Exigences, tests, historique et tableau de bord |
 

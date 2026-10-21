@@ -16,6 +16,88 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 ## Tableau de bord
 
+### Mise à jour du workspace (`REQ-UPD`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-UPD-01 | Mise à jour du moteur sans perte de `data/` | ✅ Validé | 2026-09-30 | — | — | [2026-09-30](test-history/2026-09-30-deploiement-initialisation-mise-a-jour-et-sources.md) |
+| REQ-UPD-02 | Retour à la version précédente | ⬜ Non testé | — | — | — | — |
+
+### Build (`REQ-BLD`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-BLD-01 | Build limité à l'empaquetage | ⬜ Non testé | — | — | — | — |
+| REQ-BLD-02 | Deux artefacts dans `dist/` | ⚠️ À revalider | 2026-10-12 | 161bc55 | CHK-BLD-01 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-03 | Racine unique du ZIP du workspace | ✅ Validé | 2026-10-12 | 161bc55 | CHK-BLD-02 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-04 | `ENGINE-VERSION` égal à `VERSION` | ✅ Validé | 2026-10-12 | 161bc55 | CHK-BLD-02 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-05 | Racine de `workspace/` limitée au moteur et à `data/` | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | CHK-BLD-03 | [2026-10-04](test-history/2026-10-04-marqueur-engine-version.md) |
+| REQ-BLD-06 | `data/` du ZIP limité aux `README.md` | ✅ Validé | 2026-10-12 | 161bc55 | CHK-BLD-02 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-07 | Arborescence conforme à l'architecture | ⬜ Non testé | — | — | — | — |
+| REQ-BLD-08 | Échec sur un fichier source obligatoire manquant | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | CHK-BLD-03 | [2026-10-04](test-history/2026-10-04-recentrage-my-career-workspace.md) |
+| REQ-BLD-09 | Fichiers obligatoires présents dans le ZIP | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | CHK-BLD-02 | [2026-10-04](test-history/2026-10-04-recentrage-my-career-workspace.md) |
+| REQ-BLD-10 | Échec sur un fichier de données dans `workspace/data/` | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | CHK-BLD-03 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |
+| REQ-BLD-11 | Échec sur un fichier de travail dans le moteur | ⬜ Non testé | — | — | — | — |
+| REQ-BLD-12 | ZIP du workspace sans contenu de démonstration | ✅ Validé | 2026-10-12 | 161bc55 | CHK-BLD-02 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-13 | Artefacts précédents remplacés | ⬜ Non testé | — | — | — | — |
+| REQ-BLD-14 | Contenu du ZIP du kit de test | ✅ Validé | 2026-10-12 | 161bc55 | CHK-BLD-04 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-15 | Contenu du script de démo | ⚠️ À revalider | 2026-10-12 | 161bc55 | CHK-BLD-04 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-BLD-16 | Aucune génération ni dépendance au build | ✅ Validé | 2026-10-01 | 0.4.0-dev | CHK-BLD-05 | [2026-10-01](test-history/2026-10-01-kit-de-test-generation-et-build.md) |
+| REQ-BLD-17 | Échec sur un scénario maître manquant | ⚠️ À revalider | 2026-10-01 | 0.4.0-dev | CHK-BLD-03 | [2026-10-01](test-history/2026-10-01-kit-de-test-generation-et-build.md) |
+| REQ-BLD-18 | Échec sur une source du kit manquante | ⬜ Non testé | — | — | — | — |
+| REQ-BLD-19 | Liens du ZIP valides hors du dépôt | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | CHK-BLD-02 | [2026-10-04](test-history/2026-10-04-recentrage-my-career-workspace.md) |
+
+### Dépôt (`REQ-REPO`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-REPO-01 | Aucune coordonnée personnelle | ✅ Validé | 2026-10-12 | 161bc55 | CHK-REPO-01 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-REPO-02 | Aucun nom réel ni contenu d'employeur (recherche du développeur, consignée au journal) | ✅ Validé | 2026-10-04 | 0.4.0-dev | CHK-REPO-02 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |
+| REQ-REPO-03 | Données d'exemple explicitement fictives | ✅ Validé | 2026-10-12 | 161bc55 | CHK-REPO-01 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-REPO-04 | Artefacts de build ignorés | ✅ Validé | 2026-10-12 | 161bc55 | CHK-REPO-03 | [2026-10-12](test-history/2026-10-12-preparation-release-v0.4.0.md) |
+| REQ-REPO-05 | Chemins racine obsolètes absents | ⬜ Non testé | — | — | — | — |
+| REQ-REPO-06 | Anciens noms du produit absents (rejeu du 2026-10-05 consigné au journal) | ✅ Validé | 2026-10-05 | — | CHK-REPO-04 | [2026-10-04](test-history/2026-10-04-recentrage-my-career-workspace.md) |
+| REQ-REPO-07 | Mode standalone absent | ✅ Validé | 2026-10-04 | 0.4.0-dev | CHK-REPO-04 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |
+| REQ-REPO-08 | Ancien exemple fictif absent | ✅ Validé | 2026-10-01 | 0.4.0-dev | CHK-REPO-04 | [2026-10-01](test-history/2026-10-01-kit-de-test-generation-et-build.md) |
+| REQ-REPO-09 | Entrées publiées du `CHANGELOG.md` non réécrites | ✅ Validé | 2026-10-04 | 0.4.0-dev | CHK-REPO-05 | [2026-10-04](test-history/2026-10-04-abandon-mode-standalone.md) |
+| REQ-REPO-10 | Entrées du journal des décisions non réécrites | ⬜ Non testé | — | — | — | — |
+| REQ-REPO-11 | Pas de numéro de version superflu dans la documentation | ⬜ Non testé | — | — | — | — |
+| REQ-REPO-12 | Version de développement | ⬜ Non testé | — | — | — | — |
+
+### Kit de test (`REQ-KIT`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-KIT-01 | Profil fictif réaliste et cohérent | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-KIT-02 | Deux opportunités fictives | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-KIT-03 | Source très volumineuse | ✅ Validé | 2026-10-03 | 5ad0ce8 | — | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
+| REQ-KIT-04 | Génération des PDF et DOCX | ⚠️ À revalider | 2026-10-01 | 0.4.0-dev | CHK-KIT-02 | [2026-10-01](test-history/2026-10-01-kit-de-test-generation-et-build.md) |
+| REQ-KIT-05 | Champs d'une étape du scénario | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | CHK-KIT-03 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-KIT-06 | Conversation de chaque étape | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | CHK-KIT-03 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-KIT-07 | Étapes d'une issue non livrée | ⚠️ À revalider | 2026-10-03 | 5ad0ce8 | CHK-KIT-03 | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
+| REQ-KIT-08 | Durée de la démo | ⚠️ À revalider | 2026-10-03 | 0.4.0-dev | CHK-KIT-04 | [2026-10-03](test-history/2026-10-03-demo-enregistree-teams.md) |
+| REQ-KIT-09 | Scénario jouable avec le seul kit | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-KIT-10 | Exemple fictif issu d'un déroulé | ⬜ Non testé | — | — | — | — |
+| REQ-KIT-11 | Exemple fictif conforme à la structure canonique | ⬜ Non testé | — | — | — | — |
+
+### Référentiel de tests (`REQ-QA`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-QA-01 | Exigences rangées par domaine selon un modèle commun | ⬜ Non testé | — | — | — | — |
+| REQ-QA-02 | Identifiants stables et statuts d'exigence | ⬜ Non testé | — | — | — | — |
+| REQ-QA-03 | Lien de couverture à sens unique | ⬜ Non testé | — | — | — | — |
+| REQ-QA-04 | Identifiants de tests | ⬜ Non testé | — | — | — | — |
+| REQ-QA-05 | Tableau de bord par domaine | ⬜ Non testé | — | — | — | — |
+| REQ-QA-06 | Statut de test déduit des tests consignés | ⬜ Non testé | — | — | — | — |
+| REQ-QA-07 | Historique conservé, sessions citant les tests | ⬜ Non testé | — | — | — | — |
+| REQ-QA-08 | Stratégie de test | ⬜ Non testé | — | — | — | — |
+| REQ-QA-09 | Contrôles ponctuels de livraison hors du référentiel | ⬜ Non testé | — | — | — | — |
+| REQ-QA-10 | Contrôle automatique de la traçabilité | ⬜ Non testé | — | — | — | — |
+| REQ-QA-11 | Script de démo sans renvoi aux exigences | ⬜ Non testé | — | — | — | — |
+| REQ-QA-12 | Mod de couverture compté par exigence | ⬜ Non testé | — | — | — | — |
+| REQ-QA-13 | Prompteur aligné sur le référentiel | ⬜ Non testé | — | — | — | — |
+
 ## Synthèse de la couverture
 
 | Zone | Statut | Premier test | Dernier test | Remarques |
