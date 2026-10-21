@@ -22,8 +22,9 @@ son résultat est consigné dans une session de
 - **Procédure** : sur une copie temporaire du dépôt, hors du dépôt, introduire
   tour à tour un identifiant d'exigence en double, un statut d'exigence
   inconnu, une exigence citée inexistante, une exigence remplaçante
-  inexistante et une exigence active sans ligne au tableau de bord, puis
-  lancer le script.
+  inexistante, une exigence active sans ligne au tableau de bord et, dans la
+  colonne Tests d'une ligne du tableau de bord, un test existant qui ne cite
+  pas l'exigence de la ligne, puis lancer le script.
 - **Attendu** : chaque cas fait échouer le script avec un message qui nomme le
   fichier et l'identifiant en cause.
 - **Exigences** : REQ-QA-02, REQ-QA-10

@@ -108,11 +108,13 @@ vérifient, l'historique des exécutions et le tableau de bord de
 
 - **Exigence** : un script PowerShell sous `test-kit/tools/`, sans autre
   dépendance et jamais appelé par `build.bat`, vérifie la traçabilité. Il
-  échoue sur un identifiant d'exigence ou de contrôle en double, un statut
-  d'exigence hors des quatre valeurs, une exigence citée qui n'existe pas,
-  une exigence remplaçante qui n'existe pas, une exigence proposée ou active
-  absente du tableau de bord, ou une ligne du tableau de bord sans exigence
-  proposée ou active. Il signale en avertissement, sans échouer, toute
+  échoue sur un identifiant d'exigence, de contrôle ou d'étape en double ou
+  mal formé, un statut d'exigence hors des quatre valeurs, une exigence citée
+  qui n'existe pas, une exigence remplaçante qui n'existe pas, une exigence
+  proposée ou active absente du tableau de bord, une ligne du tableau de bord
+  en double, sans exigence proposée ou active, ou avec un statut de test
+  inconnu, et un test de la colonne Tests qui n'existe pas ou ne cite pas
+  l'exigence de sa ligne. Il signale en avertissement, sans échouer, toute
   exigence proposée ou active qu'aucun test ne cite.
 - **Origine** : #20
 - **Statut** : 🔵 Proposée
