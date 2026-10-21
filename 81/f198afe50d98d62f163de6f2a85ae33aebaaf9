@@ -1,0 +1,31 @@
+docs/checks.md
+  s_f800db121151ea::t_9a7fd59ad50aec 10-195
+docs/requirements/README.md
+  s_f800db121151ea::t_b4667c030ec79f 34
+docs/requirements/build.md
+  s_f800db121151ea::t_90773bdff296d9 1-182
+docs/requirements/repository.md
+  s_f800db121151ea::t_fc495cbe8d5f79 1-116
+docs/requirements/test-kit.md
+  s_f800db121151ea::t_c155e539b527d6 1-103
+docs/requirements/workspace-update.md
+  s_f800db121151ea::t_410381b629e0ba 1-21
+docs/test-log.md
+  s_f800db121151ea::t_d8134351395ebb 19-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "81f198afe50d98d62f163de6f2a85ae33aebaaf9",
+  "prompts": {},
+  "sessions": {
+    "s_f800db121151ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d4d2c309-3867-4fff-9087-3527396591ef",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
