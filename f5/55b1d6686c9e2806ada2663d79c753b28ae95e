@@ -1,0 +1,21 @@
+test-kit/tools/README.md
+  s_f800db121151ea::t_f6f0b2c6ccd4f8 30
+test-kit/tools/check_traceability.ps1
+  s_f800db121151ea::t_e8df1231183905 55-56,168-171,272-282
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f555b1d6686c9e2806ada2663d79c753b28ae95e",
+  "prompts": {},
+  "sessions": {
+    "s_f800db121151ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d4d2c309-3867-4fff-9087-3527396591ef",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
