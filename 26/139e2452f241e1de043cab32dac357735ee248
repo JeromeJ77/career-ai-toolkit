@@ -1,0 +1,21 @@
+docs/checks.md
+  s_9fe2c5efc2eb76::t_6bca93ecd55d62 25-27
+docs/requirements/test-process.md
+  s_9fe2c5efc2eb76::t_05b3b46b6d98a8 111-117
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "26139e2452f241e1de043cab32dac357735ee248",
+  "prompts": {},
+  "sessions": {
+    "s_9fe2c5efc2eb76": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c3815df0-e6fb-4172-a5d2-8cd7ffa27047",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
