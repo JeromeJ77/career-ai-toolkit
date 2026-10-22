@@ -250,10 +250,10 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | REQ-FB-04 | Journal créé à la première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-05 | Rien au démarrage des sessions suivantes | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-06 | Workspace antérieur au feedback produit | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-FB-07 | Identifiant et journal recréé signalés | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-07 | Identifiant et journal recréé signalés (signalés ensemble en une phrase : règle à assouplir, backlog) | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
 | REQ-FB-08 | Journal supprimé recréé sans alerte de perte | ⬜ Non testé | — | — | — | — |
 | REQ-FB-09 | Format d'une entrée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-10 | Ajout en fin de journal sans lecture | 🐞 Problème constaté | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-10 | Ajout en fin de journal sans lecture (test du dernier octet dans la commande, contenu non lu) | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-11 | Difficultés d'usage consignées | ⬜ Non testé | — | — | — | — |
 | REQ-FB-12 | Raison d'arrêt d'une simulation consignée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-13 | Une entrée par joker utilisé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
