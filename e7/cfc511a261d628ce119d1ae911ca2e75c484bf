@@ -1,0 +1,25 @@
+docs/checks.md
+  s_27605089618e77::t_00520cc9fa557a 197-207
+docs/requirements/session.md
+  s_27605089618e77::t_d58961980d24eb 265-266,309-318
+docs/requirements/test-kit.md
+  s_27605089618e77::t_121bd8fa2f73f0 103-111
+docs/test-log.md
+  s_27605089618e77::t_20ad604a07e8b4 46,55,181
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e7cfc511a261d628ce119d1ae911ca2e75c484bf",
+  "prompts": {},
+  "sessions": {
+    "s_27605089618e77": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "091877da-0b5d-487b-962d-252334acee2b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
