@@ -1,0 +1,19 @@
+docs/test-log.md
+  s_d32c872f880615::t_7cfec02d529acf 253,256
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4c3b15445b6058161a84aa6e047456b2788c4e78",
+  "prompts": {},
+  "sessions": {
+    "s_d32c872f880615": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "17b4600d-a17f-4adc-9a14-2279e29b52cc",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
