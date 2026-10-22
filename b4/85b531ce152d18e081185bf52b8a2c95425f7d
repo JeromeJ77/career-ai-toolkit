@@ -1,0 +1,31 @@
+docs/requirements/README.md
+  s_27605089618e77::t_c464522c798ef8 24
+docs/test-log.md
+  s_27605089618e77::t_695c34423e2855 105-216
+docs/requirements/debrief.md
+  s_27605089618e77::t_293f19bd216978 1-62
+docs/requirements/interviews.md
+  s_27605089618e77::t_5e22d45ec112af 1-103
+docs/requirements/joker.md
+  s_27605089618e77::t_de0457c1d3ec64 1-199
+docs/requirements/opportunities.md
+  s_27605089618e77::t_216741500d84a0 1-313
+docs/requirements/simulation.md
+  s_27605089618e77::t_35ef425f9c4c2a 1-170
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b485b531ce152d18e081185bf52b8a2c95425f7d",
+  "prompts": {},
+  "sessions": {
+    "s_27605089618e77": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "091877da-0b5d-487b-962d-252334acee2b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
