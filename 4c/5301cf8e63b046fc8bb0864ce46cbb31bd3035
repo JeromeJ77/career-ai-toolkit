@@ -1,0 +1,31 @@
+docs/requirements/README.md
+  s_27605089618e77::t_c1bc71bb657757 20-22,31
+docs/test-log.md
+  s_27605089618e77::t_e4330163e96286 19-116
+docs/requirements/coaching.md
+  s_27605089618e77::t_e54a083e830a5b 1-75
+docs/requirements/configuration.md
+  s_27605089618e77::t_1459a650f7060b 1-53
+docs/requirements/professional-profile.md
+  s_27605089618e77::t_af2411531cb4ac 1-170
+docs/requirements/session.md
+  s_27605089618e77::t_579d5da6158a3f 1-308
+docs/requirements/sources.md
+  s_27605089618e77::t_b50a6e6cab450f 1-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4c5301cf8e63b046fc8bb0864ce46cbb31bd3035",
+  "prompts": {},
+  "sessions": {
+    "s_27605089618e77": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "091877da-0b5d-487b-962d-252334acee2b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
