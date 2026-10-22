@@ -27,7 +27,7 @@ Quand et comment tester : [`docs/test-plan.md`](../test-plan.md).
 | Joker | `REQ-JOK` | [joker.md](joker.md) | Conseil et réponse proposée pendant une simulation |
 | Debrief | `REQ-DEB` | [debrief.md](debrief.md) | Debrief avec ou sans transcript, dans la même conversation ou une nouvelle |
 | Confidentialité et navigation web | `REQ-PRIV` | [privacy.md](privacy.md) | Rappel de confidentialité, navigation web et ses exceptions |
-| Feedback produit | `REQ-FB` | [product-feedback.md](product-feedback.md) | Journal local, notes, génération et anonymisation du feedback |
+| Feedback produit | `REQ-FB` | [product-feedback.md](product-feedback.md) | Message de première session, identifiant anonyme, journal local, notes, génération et anonymisation du feedback |
 | Règles transversales du coach | `REQ-COACH` | [coaching.md](coaching.md) | Aucun fait inventé, vocabulaire, langue de coaching, apprentissages durables, dates, question laissée sans réponse |
 | Mise à jour du workspace | `REQ-UPD` | [workspace-update.md](workspace-update.md) | Remplacement du moteur sans perte de `data/`, retour arrière |
 | Build | `REQ-BLD` | [build.md](build.md) | `build.bat`, ZIP du workspace et du kit, `ENGINE-VERSION`, script de démo |
