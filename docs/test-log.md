@@ -115,7 +115,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | REQ-OPP-07 | `opportunity.md` dans la langue de coaching | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-OPP-08 | `opportunity.md` limité aux faits sourcés | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-OPP-09 | Analyse séparée | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-10 | Synthèse orientée action | ⬜ Non testé | — | — | — | — |
+| REQ-OPP-10 | Synthèse orientée action (critère mesurable à définir) | ⬜ Non testé | — | — | — | — |
 | REQ-OPP-11 | Messages stratégiques proposés | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-OPP-12 | Message retiré conservé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-OPP-13 | Statut de l'opportunité tenu à jour | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
@@ -159,7 +159,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
 | REQ-SIM-01 | Profondeurs proposées | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-02 | Rappel des mots-clés d'arrêt | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-02 | Rappel des mots-clés d'arrêt (ordre du rappel à revérifier) | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SIM-03 | Une question à la fois | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SIM-04 | Un seul interviewer par tour | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SIM-05 | Lignes de rôle en italique | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
@@ -181,7 +181,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-JOK-01 | Rappel du joker au début de la simulation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-01 | Rappel du joker au début de la simulation (ordre du rappel à revérifier) | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-JOK-02 | Déclenchement | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-JOK-03 | Formulation équivalente | ⬜ Non testé | — | — | — | — |
 | REQ-JOK-04 | Joker de conseil | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
