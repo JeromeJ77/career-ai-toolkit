@@ -21,7 +21,7 @@ Quand et comment tester : [`docs/test-plan.md`](../test-plan.md).
 | Configuration | `REQ-CONF` | [configuration.md](configuration.md) | `workspace.yaml` : clé manquante, valeur invalide, langues par défaut |
 | Sources du dossier | `REQ-SRC` | [sources.md](sources.md) | Dépôt des sources, copies inchangées, transcription (règles communes aux sources des opportunités), source volumineuse, références externes |
 | Dossier professionnel | `REQ-PROF` | [professional-profile.md](professional-profile.md) | Validation avant écriture, statut, version, historique, perte du dossier |
-| Opportunités | `REQ-OPP` | [opportunities.md](opportunities.md) | Création, numérotation, sources, analyse, messages stratégiques, travail avec un dossier non prêt |
+| Opportunités | `REQ-OPP` | [opportunities.md](opportunities.md) | Création, numérotation, sources, analyse, messages stratégiques, statut de l'opportunité, travail avec un dossier non prêt (refus, dérogation, nouvelle passe) |
 | Entretiens | `REQ-ITW` | [interviews.md](interviews.md) | Tours d'entretien, préparation, questions à poser, fiche de préparation, entretien réel |
 | Simulation d'entretien | `REQ-SIM` | [simulation.md](simulation.md) | Profondeurs, tours de parole, lignes de rôle, arrêt, transcript, simulations indépendantes |
 | Joker | `REQ-JOK` | [joker.md](joker.md) | Conseil et réponse proposée pendant une simulation |
