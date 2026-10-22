@@ -17,9 +17,9 @@ Quand et comment tester : [`docs/test-plan.md`](../test-plan.md).
 
 | Domaine | Identifiant | Fichier | Périmètre |
 | --- | --- | --- | --- |
-| Démarrage de session | `REQ-SES` | [session.md](session.md) | Ligne de lancement, première session, accueil, prénom, salutations, ligne de statut du dossier, reprise depuis le workspace |
-| Configuration | `REQ-CONF` | [configuration.md](configuration.md) | `workspace.yaml` : création, clé manquante, valeur invalide, langues |
-| Sources du dossier | `REQ-SRC` | [sources.md](sources.md) | Dépôt des sources, copies inchangées, transcription, source volumineuse, références externes |
+| Démarrage de session | `REQ-SES` | [session.md](session.md) | Ligne de lancement, détection de la première session, accueil, prénom, salutations, fichiers obligatoires, ligne de statut du dossier, reprise depuis le workspace, `data/current-status.md` |
+| Configuration | `REQ-CONF` | [configuration.md](configuration.md) | `workspace.yaml` : clé manquante, valeur invalide, langues par défaut |
+| Sources du dossier | `REQ-SRC` | [sources.md](sources.md) | Dépôt des sources, copies inchangées, transcription (règles communes aux sources des opportunités), source volumineuse, références externes |
 | Dossier professionnel | `REQ-PROF` | [professional-profile.md](professional-profile.md) | Validation avant écriture, statut, version, historique, perte du dossier |
 | Opportunités | `REQ-OPP` | [opportunities.md](opportunities.md) | Création, numérotation, sources, analyse, messages stratégiques, travail avec un dossier non prêt |
 | Entretiens | `REQ-ITW` | [interviews.md](interviews.md) | Tours d'entretien, préparation, questions à poser, fiche de préparation, entretien réel |
@@ -28,7 +28,7 @@ Quand et comment tester : [`docs/test-plan.md`](../test-plan.md).
 | Debrief | `REQ-DEB` | [debrief.md](debrief.md) | Debrief avec ou sans transcript, dans la même conversation ou une nouvelle |
 | Confidentialité et navigation web | `REQ-PRIV` | [privacy.md](privacy.md) | Rappel de confidentialité, navigation web et ses exceptions |
 | Feedback produit | `REQ-FB` | [product-feedback.md](product-feedback.md) | Journal local, notes, génération et anonymisation du feedback |
-| Règles transversales du coach | `REQ-COACH` | [coaching.md](coaching.md) | Aucun fait inventé, vocabulaire, apprentissages durables, dates |
+| Règles transversales du coach | `REQ-COACH` | [coaching.md](coaching.md) | Aucun fait inventé, vocabulaire, langue de coaching, apprentissages durables, dates, question laissée sans réponse |
 | Mise à jour du workspace | `REQ-UPD` | [workspace-update.md](workspace-update.md) | Remplacement du moteur sans perte de `data/`, retour arrière |
 | Build | `REQ-BLD` | [build.md](build.md) | `build.bat`, ZIP du workspace et du kit, `ENGINE-VERSION`, script de démo |
 | Dépôt | `REQ-REPO` | [repository.md](repository.md) | Aucune donnée réelle, exemples fictifs, noms obsolètes absents, historiques non réécrits, version |

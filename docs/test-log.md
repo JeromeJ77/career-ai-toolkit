@@ -16,6 +16,104 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 ## Tableau de bord
 
+### Démarrage de session (`REQ-SES`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-SES-01 | Consignes du workspace appliquées dès l'ouverture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-02 | Ligne de lancement | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-03 | Aucun préambule | 🐞 Problème constaté | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-04 | Aucune phrase d'état quand rien n'a changé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-05 | Détection de la première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-06 | Perte possible de `data/current-status.md` | ⬜ Non testé | — | — | — | — |
+| REQ-SES-07 | Accueil de première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-08 | Accueil avant tout examen des données | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-09 | Attente de la réponse au prénom | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-10 | Pas d'accueil hors première session | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-11 | Fichiers obligatoires créés à la première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-12 | Compte rendu de création en une phrase | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-13 | Proposition de la première étape | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-14 | Session suivante sans création ni réécriture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-15 | Fichier obligatoire manquant recréé seul | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-16 | Fichier personnalisé laissé intact | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-17 | Prénom accepté | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-18 | « Oui » sans prénom | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-19 | Prénom refusé | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-20 | Question du prénom ignorée | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-21 | Question du prénom sans accueil | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-SES-22 | Salutation de début de conversation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-23 | Au revoir | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-24 | Prénom limité à la salutation | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-25 | Aucune ligne de statut en première session | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-SES-26 | Ligne de statut du dossier | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-27 | Ligne de statut en anglais | ⬜ Non testé | — | — | — | — |
+| REQ-SES-28 | Démarrage de session en anglais | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-29 | Dossier professionnel lu avant de répondre | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-30 | État courant périmé corrigé | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-31 | Reprise depuis l'espace carrière | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-32 | État courant minimal | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+
+### Configuration (`REQ-CONF`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-CONF-01 | Clé manquante ajoutée à sa place | ⚠️ À revalider | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-CONF-02 | Clé ajoutée signalée | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-CONF-03 | Aucun ajout quand rien ne manque | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-CONF-04 | Valeur invalide signalée sans réécriture | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-CONF-05 | Langues par défaut | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+
+### Sources du dossier (`REQ-SRC`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-SRC-01 | Trois façons de fournir les sources | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-02 | Pièce jointe rangée au bon endroit | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-03 | Transcription Markdown à côté de l'original | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-04 | Original inchangé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-05 | Pas de transcription d'une source déjà en texte | ⬜ Non testé | — | — | — | — |
+| REQ-SRC-06 | Passages illisibles marqués | 🐞 Problème constaté | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
+| REQ-SRC-07 | Transcription existante jamais écrasée | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-SRC-08 | Source très volumineuse | ✅ Validé | 2026-10-03 | 5ad0ce8 | — | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
+| REQ-SRC-09 | Références externes notées | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-10 | Aucune référence dupliquée | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-SRC-11 | Réimport complet | ⚠️ À revalider | 2026-09-30 | 0.4.0-dev | — | [2026-09-30](test-history/2026-09-30-rejeu-apres-consolidation-des-regles.md) |
+
+### Dossier professionnel (`REQ-PROF`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-PROF-01 | Squelette vide à la création | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-02 | Validation avant toute écriture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-03 | Dossier initial proposé à partir des sources | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-04 | Première modification validée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-05 | Une seule incrémentation de version par session | ⬜ Non testé | — | — | — | — |
+| REQ-PROF-06 | Passage à « prêt » proposé par le coach | ⬜ Non testé | — | — | — | — |
+| REQ-PROF-07 | Informations ajoutées avant « prêt » | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-08 | Passage à « prêt » validé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-09 | « Prêt » demandé par le candidat | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-10 | Proposition de « prêt » refusée | ⬜ Non testé | — | — | — | — |
+| REQ-PROF-11 | Historique de chaque changement de statut ou de version | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-12 | Statut inconnu | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-PROF-13 | Statut absent | ⬜ Non testé | — | — | — | — |
+| REQ-PROF-14 | Version illisible ou en-tête incohérent | ⬜ Non testé | — | — | — | — |
+| REQ-PROF-15 | Retour en construction | ✅ Validé | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
+| REQ-PROF-16 | Mises à jour courantes d'un dossier prêt | ⬜ Non testé | — | — | — | — |
+| REQ-PROF-17 | Dossier supprimé | ⚠️ À revalider | 2026-10-03 | 5ad0ce8 | — | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
+
+### Règles transversales du coach (`REQ-COACH`)
+
+| Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
+| --- | --- | --- | --- | --- | --- | --- |
+| REQ-COACH-01 | Aucun fait inventé | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-COACH-02 | « Dossier professionnel » | ✅ Validé | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-controles-generiques-coach.md) |
+| REQ-COACH-03 | « Espace carrière » | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-COACH-04 | « Career workspace » | ⬜ Non testé | — | — | — | — |
+| REQ-COACH-05 | Langue de coaching | ⬜ Non testé | — | — | — | — |
+| REQ-COACH-06 | Apprentissages durables séparés | ⬜ Non testé | — | — | — | — |
+| REQ-COACH-07 | Dates citées telles qu'enregistrées | ⚠️ À revalider | 2026-10-03 | 0.4.0-dev | — | [2026-10-03](test-history/2026-10-03-demo-enregistree-teams.md) |
+| REQ-COACH-08 | Question laissée sans réponse | ✅ Validé | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
+
 ### Mise à jour du workspace (`REQ-UPD`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
