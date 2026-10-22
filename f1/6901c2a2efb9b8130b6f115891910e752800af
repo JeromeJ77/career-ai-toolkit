@@ -1,0 +1,25 @@
+docs/requirements/README.md
+  s_d32c872f880615::t_54d58ced613153 30
+docs/requirements/privacy.md
+  s_d32c872f880615::t_350a92a5b0b831 1-194
+docs/requirements/product-feedback.md
+  s_d32c872f880615::t_4cea32e6da22aa 1-387
+docs/test-log.md
+  s_d32c872f880615::t_9abd7effe31a3e 217-290
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f16901c2a2efb9b8130b6f115891910e752800af",
+  "prompts": {},
+  "sessions": {
+    "s_d32c872f880615": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "17b4600d-a17f-4adc-9a14-2279e29b52cc",
+        "model": "unknown"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
