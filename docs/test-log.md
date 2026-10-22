@@ -43,7 +43,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | REQ-SES-21 | Question du prénom sans accueil | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
 | REQ-SES-22 | Salutation de début de conversation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SES-23 | Au revoir | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-SES-24 | Prénom limité à la salutation | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-24 | Prénom limité à la salutation (une occurrence naturelle jugée bonne : règle à assouplir, backlog) | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
 | REQ-SES-25 | Aucune ligne de statut en première session | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-SES-26 | Ligne de statut du dossier | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SES-27 | Ligne de statut en anglais | ⬜ Non testé | — | — | — | — |
@@ -52,6 +52,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | REQ-SES-30 | État courant périmé corrigé | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
 | REQ-SES-31 | Reprise depuis l'espace carrière | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SES-32 | État courant minimal | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-33 | Salutation et au revoir en anglais | ⬜ Non testé | — | — | — | — |
 
 ### Configuration (`REQ-CONF`)
 
@@ -177,6 +178,7 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 | REQ-KIT-09 | Scénario jouable avec le seul kit | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-KIT-10 | Exemple fictif issu d'un déroulé | ⬜ Non testé | — | — | — | — |
 | REQ-KIT-11 | Exemple fictif conforme à la structure canonique | ⬜ Non testé | — | — | — | — |
+| REQ-KIT-12 | Formulations fixes identiques dans les consignes et le scénario | ⬜ Non testé | — | — | — | — |
 
 ### Référentiel de tests (`REQ-QA`)
 

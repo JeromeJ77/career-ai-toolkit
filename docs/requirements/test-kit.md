@@ -100,3 +100,12 @@ format du scénario maître, démo, exemple fictif du dépôt (`examples/`).
 - **Origine** : avant #5, #12
 - **Statut** : ✅ Active
 - **Message** : aucun
+
+### REQ-KIT-12 — Formulations fixes identiques dans les consignes et le scénario
+
+- **Exigence** : chaque formulation fixe d'une exigence (champ Message) est
+  écrite à l'identique dans les consignes du coach et dans le scénario maître,
+  pour chaque langue de coaching supportée.
+- **Origine** : #8, #9, #17, D-022
+- **Statut** : ✅ Active
+- **Message** : aucun

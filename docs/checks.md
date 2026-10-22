@@ -194,6 +194,17 @@ son résultat est consigné dans une session de
   F2).
 - **Exigences** : REQ-KIT-10, REQ-KIT-11
 
+### CHK-KIT-06 — Formulations fixes identiques
+
+- **Procédure** : pour chaque exigence de `docs/requirements/` dont le champ
+  Message vaut « formulation fixe », retrouver la phrase dans les consignes du
+  coach (`workspace/`) et dans `test-kit/scenario.md`, dans chaque langue de
+  coaching supportée, puis comparer les deux textes.
+- **Attendu** : chaque phrase figure dans les consignes et, quand une étape
+  la vérifie, dans le scénario, à l'identique (mots, ponctuation, italique et
+  gras), en français et en anglais.
+- **Exigences** : REQ-KIT-12
+
 ## Référentiel de tests
 
 ### CHK-QA-01 — Traçabilité sans erreur

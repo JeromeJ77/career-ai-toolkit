@@ -262,8 +262,8 @@ rôle de `data/current-status.md`.
   premier message quand la configuration n'existe pas encore), les messages
   fixes du démarrage sont ceux de la version anglaise des consignes : ligne de
   lancement *Starting the session…*, accueil (« Welcome to your **career
-  workspace**! »…), accusé de réception, compte rendu de création, première
-  étape et salutations.
+  workspace**! »…), accusé de réception, compte rendu de création et première
+  étape.
 - **Origine** : #15, D-019
 - **Statut** : ✅ Active
 - **Message** : formulation fixe
@@ -306,3 +306,13 @@ rôle de `data/current-status.md`.
 - **Origine** : avant #5, D-001
 - **Statut** : ✅ Active
 - **Message** : aucun
+
+### REQ-SES-33 — Salutation et au revoir en anglais
+
+- **Exigence** : en anglais, la salutation de début de conversation et l'au
+  revoir sont les formulations anglaises exactes des consignes (« Hello
+  <first_name>. » ou « Hello. », « See you soon, <first_name>. » ou « See you
+  soon. »).
+- **Origine** : #15, D-019
+- **Statut** : ✅ Active
+- **Message** : formulation fixe
