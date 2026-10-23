@@ -282,7 +282,7 @@ d'adoption soit devenu structurel pour commencer à le mesurer.
 
 ## À clarifier
 
-- Durées cibles par étape, et intégration d'une zone « performance » dans
-  `docs/test-plan.md` avec sa règle de non-régression.
+- Durées cibles par étape, et exigences de performance dans
+  `docs/requirements/` avec leur règle de non-régression.
 - Place de ce répertoire `docs/non-functional/` dans la règle de langue D-012
   (document de travail en français).

@@ -11,18 +11,33 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
 - Treat `examples/` as synthetic data only.
 - Keep French-first pilot usability while maintaining simple English technical paths and metadata.
 - Never stage changes (`git add`, `git rm`, `git mv`, `git stash`, or any command that modifies the index) and never commit unless the user explicitly asks. Leave every modification in the working tree so that the user can review it and stage it themselves. When a file must be moved or removed, use plain file operations rather than Git commands.
+- At the end of a piece of work, after the summary, propose a ready-to-copy commit message; never commit it yourself unless the user explicitly asks. Keep it succinct: Conventional Commits in English, the summary line alone for a small fix, otherwise at most a few short bullets, then `Refs #N` (or `Closes #N`) and the `Co-Authored-By` trailer of the model used.
 - Update `CHANGELOG.md` for user-visible changes.
-- Run the checks in `docs/test-plan.md` before preparing a release, and record the tests actually performed and their outcome in `docs/test-log.md`.
+- Before preparing a release, run the release pass described in the test strategy (`docs/test-plan.md`); record the tests actually performed in `docs/test-history/` and their outcome in the test dashboard (`docs/test-log.md`).
 
 ## Test coverage and versioning
 
-- Before starting an issue, compare `docs/test-log.md` with `docs/test-plan.md`:
-  identify plan items that are not covered, not tested or to be revalidated, and
-  report the gaps to the user. Do not decide silently to ignore them.
-- Start every issue by updating `docs/test-plan.md` and `docs/test-log.md` with
-  the scenarios the change must satisfy (nominal flow, edge cases, limit cases,
-  non-regression), recorded as « Non testé » and reviewed with the user before
-  development, in the manner of acceptance-test-driven development.
+The test strategy is `docs/test-plan.md` (in French). It relies on four
+layers: requirements (`docs/requirements/`, one rule per requirement, model
+and rules in its `README.md`), tests (steps of the master scenario
+`test-kit/scenario.md` and checks of `docs/checks.md`, each citing the
+requirements it verifies in its « Exigences » line), history (one file per
+test session under `docs/test-history/`) and the test dashboard
+(`docs/test-log.md`, one row per tracked requirement).
+
+- Before starting an issue, read in the dashboard the requirements of the
+  affected domains that are « À revalider », « Problème constaté » or « Non
+  testé », and report them to the user. Do not decide silently to ignore them.
+- Start every issue with its requirements, in the manner of
+  acceptance-test-driven development: add the new rules as requirements with
+  the status 🔵 Proposée, or modify active requirements, with the issue
+  number `#N` in their Origin. Never delete, reuse or renumber a requirement:
+  a replaced or abandoned one keeps its entry, with ⚪ Remplacée par REQ-… or
+  ❌ Abandonnée. Proposed requirements become ✅ Active when the issue is
+  delivered. Then add or adjust the scenario steps or checks that cite them,
+  and add or update their dashboard rows (« Non testé », or « À revalider »
+  for a modified requirement). Review the requirements and tests with the
+  user before development.
 - At the same time, check that the test kit (`test-kit/`: fictional sources and
   master scenario `scenario.md`) and the fictional example under `examples/`
   make the new behavior testable and demonstrable. Complete the fictional
@@ -30,16 +45,20 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   steps kept for the demo with `[demo]` and those of a pilot's essential path,
   replayed in the quick pass before a release, with `[socle]`. If a feature cannot be demonstrated
   with the kit, report the gap explicitly to the user instead of ignoring it.
-- Once the scenarios are reviewed, write the implementation plan in
-  `plans/issue-<N>.md` (ignored by Git) so that a new conversation can carry
-  out the implementation from it alone. Give the user an assessment of the
-  implementation complexity (low, medium or high, with the main reasons) and
-  recommend the model to use for the implementation. A change to the coach's
-  behavior (`workspace/AGENTS.md`, skills) is never assessed as low complexity.
-  For every new message to the candidate, the plan states whether it is fixed
+- Once the requirements and tests are reviewed, write the implementation plan
+  in `plans/issue-<N>.md` (ignored by Git) so that a new conversation can
+  carry out the implementation from it alone. The plan names the impacted
+  requirements by identifier and lists the one-off delivery checks (decision
+  entry, documentation, `CHANGELOG.md`, GitHub issue) in a checklist: they are
+  not requirements. Give the user an assessment of the implementation
+  complexity (low, medium or high, with the main reasons) and recommend the
+  model to use for the implementation. A change to the coach's behavior
+  (`workspace/AGENTS.md`, skills) is never assessed as low complexity. For
+  every new message to the candidate, the plan states whether it is fixed
   wording or described by its required content, with the reason under D-022:
-  fixed wording only for a marker the candidate recognizes from one session to
-  the next, given in every supported coaching language.
+  fixed wording only for a marker the candidate recognizes from one session
+  to the next, given in every supported coaching language. The choice goes
+  into the Message field of the requirement.
 - At the end of the implementation, the implementation conversation appends a
   report to the plan: what was done, what the agent verified, what remains
   untested, deviations from the plan and points to review. The user then
@@ -52,30 +71,36 @@ This repository contains the generic Career AI Toolkit. It must remain free of r
   guided by the project skill `/prompteur` (`.claude/skills/prompteur/`), run
   in a test conversation opened in the repository: it gives the steps one by
   one, checks the test workspace files and the coach's traces, and drafts the
-  test session and the log update.
-- During development, revisit these scenarios to catch forgotten cases and add
-  the ones discovered.
-- Record in `docs/test-log.md` only tests actually performed. Never mark a
-  behavior as validated by inference; a later change to the coach's behavior
-  makes the affected tests « À revalider ». The log is written in French.
-  `docs/test-log.md` holds the coverage summary; each test session is a dated
-  file under `docs/test-history/` (`YYYY-MM-DD-short-subject.md`, with `-2`,
-  `-3` for a repeat of the same session on the same day) linked from the log's
-  « Sessions » index. The file itself states the date, and times only when
-  they were actually recorded.
-- When a change may have impacted a scenario already marked « Validé », set it
-  back to « À revalider » in `docs/test-log.md` with the remark
-  « Non-régression : impacté par #N » and a short reason. This targeted
-  non-regression check is replayed before the release, not necessarily before
-  each commit. Keep the first and last test dates of each zone up to date.
-- Before a commit, list the zones of `docs/test-log.md` that are not « Validé »
-  (« À revalider », « Non testé », « Problème constaté ») as an informational
-  reminder. It does not block the commit.
-- When asked to prepare a release, re-check the whole coverage in
-  `docs/test-log.md` against `docs/test-plan.md` first. Warn explicitly about
-  every zone that is not « Validé » and list them, then let the user decide
-  whether to replay them or to release anyway. Never mark them validated
-  yourself.
+  test session and the dashboard update.
+- During development, revisit the requirements and tests to catch forgotten
+  cases and add the ones discovered.
+- Record only tests actually performed. Each test session is a dated file
+  under `docs/test-history/` (`YYYY-MM-DD-short-subject.md`, with `-2`, `-3`
+  for a repeat of the same session on the same day), linked from the
+  dashboard's « Sessions » index, never rewritten afterwards. It states the
+  date, and times only when they were actually recorded, and cites the tests
+  played by their identifier: step code (`B2`), prompt sub-identifier (`C4.2`)
+  or check (`CHK-BLD-03`). Then update the dashboard rows of the requirements
+  those tests cite: « Validé » only when all the tests that cite the
+  requirement have passed on a version later than its last change,
+  « Problème constaté » when one of them failed. Never mark a behavior as
+  validated by inference. The dashboard and the sessions are written in
+  French.
+- When a change may have impacted a requirement already « Validé », set it
+  back to « À revalider » and add it to the dashboard's « À revalider »
+  section with « impacté par #N » and a short reason. This targeted
+  regression check replays the tests that cite the impacted requirements
+  before the release, not necessarily before each commit.
+- Before a commit, list the dashboard requirements that are not « Validé »
+  as an informational reminder (it does not block the commit), and run
+  `test-kit/tools/check_traceability.ps1` when the commit touches the
+  requirements, the scenario, the checks or the dashboard: no error may
+  remain.
+- When asked to prepare a release, run the release pass of the test strategy
+  and the traceability script, re-check the whole dashboard, warn explicitly
+  about every requirement that is not « Validé » and list them, then let the
+  user decide whether to replay them or to release anyway. Never mark them
+  validated yourself.
 - `VERSION` holds the release in progress, with the `-dev` suffix (for example
   `0.4.0-dev`) from the first development work of a release. It must never stay
   on an already released version. Remove the suffix only when preparing the
@@ -138,9 +163,10 @@ documentation.
 - A change to the coach's behavior is a functional change: use `feat`, `fix`
   or `refactor` in the commit type, with a scope such as `coach` or `skill`.
   Reserve `docs` for documentation that does not alter how the coach behaves
-  (README, glossary, decision log, test plan, backlog).
+  (README, glossary, decision log, requirements, test strategy, backlog).
 - Keep `workspace/AGENTS.md` and the skills consistent with each other, and
-  update `docs/test-plan.md` and `CHANGELOG.md` in the same change.
+  update the affected requirements, the master scenario and `CHANGELOG.md`
+  in the same change.
 - Before writing or changing coach instructions, read the « Enseignements »
   section of `docs/lessons-learned.md` and apply it.
 

@@ -65,7 +65,7 @@ Le coach sait capitaliser : le skill `interview-coach` propose des mises à jour
 Ce moment n'a jamais été joué. Il faut :
 
 - le répéter pour voir ce que le coach propose réellement et l'effet sur la version du dossier : elle ne monte au plus qu'une fois par session, et dans le live elle vient de passer à 1.0 en C4 ;
-- l'ajouter ensuite au scénario maître, avec ses attendus, comme étape `[demo]` et au plan de test, dans un changement à part.
+- l'ajouter ensuite au scénario maître, avec ses attendus, comme étape `[demo]` qui cite ses exigences, dans un changement à part.
 
 Si la répétition n'est pas concluante, repli : montrer C4 comme l'exemple d'enrichissement et présenter la boucle sur la slide comme le principe du produit, sans affirmer qu'on la voit en entier. Dans tous les cas, ne pas annoncer pendant le live un comportement qui n'est pas montré.
 
@@ -396,7 +396,7 @@ Il est préférable de parler d'« évolutions envisagées » plutôt que de pr�
 
 1. Répéter le script live et le chronométrer, par exemple avec la transcription Teams comme le 2026-10-03, en vérifiant en priorité les points marqués ⚠️ : C4 dans la même conversation, prompt regroupé de D1, simulation réduite aux jokers, fiche de préparation sans D7 à D10, capitalisation.
 2. Ajuster le script live d'après la répétition, et préparer les copies de workspace de repli.
-3. Ajouter ensuite la capitalisation, et éventuellement la fiche de préparation (D11, aujourd'hui `[socle]`), au scénario maître et au plan de test (changement à part). Évoquer l'export PDF de la fiche comme évolution envisagée, sans date.
+3. Ajouter ensuite la capitalisation, et éventuellement la fiche de préparation (D11, aujourd'hui `[socle]`), au scénario maître et aux exigences (changement à part). Évoquer l'export PDF de la fiche comme évolution envisagée, sans date.
 4. Finaliser les textes des slides de titre, de valeur, de workflow et de transition (voir le brief du deck).
 5. Concevoir visuellement la boucle de rétroaction vers le dossier professionnel.
 6. Choisir les limites présentées sur la slide finale.

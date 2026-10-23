@@ -725,6 +725,11 @@ Non urgent : à traiter après la livraison de l'issue #5.
 
 Non documentées à l'époque.
 
+Complément du 2026-10-23 (#20) : depuis D-025, les documents de test sont en
+français (exigences, contrôles, stratégie de test, tableau de bord) ;
+`AGENTS.md` et `CONTRIBUTING.md` restent en anglais et y renvoient. La règle
+générale pour le reste de `docs/` reste à fixer.
+
 ### Conditions de réévaluation
 
 Revoir la règle si le projet s'ouvre à des contributeurs non francophones.
@@ -1474,6 +1479,87 @@ checkpoint ne valide pas les étapes qu'il permet de sauter.
 Réexaminer si le contrat de session évolue, si les applications ciblées ne
 permettent pas l'isolation requise ou si l'entretien des fixtures fait
 diverger les tests du scénario maître et des règles métier.
+
+## D-025 — Séparer exigences, tests, historique et tableau de bord
+
+- **Type** : PROCESS
+- **Statut** : ✅ Adoptée
+- **Date** : 2026-10-20
+- **Issue** : #20
+
+### Contexte
+
+`docs/test-plan.md` servait à la fois de référentiel d'exigences et de liste de
+vérifications. Une règle produit et sa vérification y étaient mêlées
+(« Confirm the version is incremented only once for the session ») ; les
+règles étaient rangées par issue plutôt que par fonctionnalité, la première
+session apparaissant dans cinq sections, avec des mentions « superseded by
+#17 » qui s'accumulaient. Le scénario maître renvoyait au plan par un libellé
+libre, le journal employait d'autres noms de zones, et sa colonne
+« Remarques » racontait les rejeux successifs. La traçabilité entre règles,
+tests et résultats en était fragilisée.
+
+### Options considérées
+
+- Lien de couverture dans les deux sens (l'exigence liste aussi ses tests) :
+  rejeté, deux listes parallèles finissent par diverger.
+- Tag `[regression]` dans le scénario, sur le modèle de `[demo]` : rejeté,
+  doublon de `[socle]` pour la passe de release et de la non-régression
+  ciblée, qui se déduit des exigences impactées.
+- Migrer aussi les contrôles ponctuels de livraison des issues passées (entrée
+  de décision créée, `CHANGELOG.md` mis à jour…) : rejeté, ils deviendraient
+  des exigences ⬜ jamais rejouées ; ils vont dans la checklist du plan de
+  chaque issue.
+- Référentiel en anglais, comme l'ancien plan : rejeté, les attendus et les
+  formulations fixes du coach sont en français.
+- Écrire le script de traçabilité plus tard : rejeté, il sécurise la
+  migration manuelle de plusieurs centaines de règles.
+
+### Décision et intention
+
+Quatre couches reliées par des identifiants stables :
+
+- **Exigences** : une règle vérifiable par exigence, par domaine, sous
+  `docs/requirements/` (`REQ-<DOMAINE>-NN`), avec son origine, son statut
+  (🔵 Proposée, ✅ Active, ⚪ Remplacée, ❌ Abandonnée) et la nature de son
+  message (D-022). Un identifiant n'est jamais supprimé ni renuméroté.
+- **Tests** : étapes du scénario maître et contrôles de `docs/checks.md`,
+  chacun citant les exigences qu'il vérifie (lien à sens unique). Un test est
+  désigné par le code de son étape, au besoin avec le numéro de l'invite
+  (`C4.2`), ou par l'identifiant du contrôle.
+- **Historique** : les sessions de `docs/test-history/`, jamais réécrites,
+  qui citent les tests joués.
+- **Tableau de bord** : `docs/test-log.md`, une ligne par exigence suivie. Le
+  statut de test se déduit des tests consignés : ✅ seulement si tous les
+  tests qui citent l'exigence sont passés depuis son dernier changement.
+
+`docs/test-plan.md` devient une stratégie courte : quoi tester et quand.
+Les documents de test sont en français ; identifiants, chemins et tags restent
+en anglais. L'intention est qu'une règle ait un seul endroit, qu'un statut ne
+soit jamais affirmé sans test consigné, et qu'une issue commence par ses
+exigences (ATDD) et cible sa non-régression par leurs identifiants.
+
+### Conséquences
+
+- 283 exigences migrées de l'ancien plan et de l'ancien journal, sans
+  validation par simple migration : le statut de chacune vient des sessions.
+- `AGENTS.md` et `CONTRIBUTING.md` décrivent le nouveau cycle ; le scénario
+  maître porte des lignes « Exigences » ; le prompteur cite les tests joués et
+  met à jour le tableau de bord ; le script de démo retire les lignes
+  « Exigences » ; le mod `/test-coverage` compte une ligne par exigence.
+- `test-kit/tools/check_traceability.ps1` vérifie identifiants, références et
+  tableau de bord, hors du build.
+- L'ancien plan et l'ancien journal restent lisibles par Git, au commit
+  `846a271`.
+- Le référentiel compte environ deux fois plus d'exigences qu'estimé, effet
+  voulu d'une règle testable seule par exigence : son coût de maintenance est
+  à surveiller.
+
+### Conditions de réévaluation
+
+Revoir la décision si des tests automatisés du coach (idée du backlog)
+changent la nature des tests, ou si la maintenance du référentiel et du
+tableau de bord est jugée trop coûteuse au regard de ce qu'elle apporte.
 
 ## Évolution du journal
 

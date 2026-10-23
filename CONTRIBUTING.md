@@ -2,7 +2,8 @@
 
 The toolkit is in a pilot phase. Keep contributions small, testable, and aligned with validated user needs.
 
-1. Read `AGENTS.md`, `BACKLOG.md`, and `docs/test-plan.md`.
+1. Read `AGENTS.md`, `BACKLOG.md`, the test strategy (`docs/test-plan.md`) and
+   the requirements of the affected domains (`docs/requirements/`).
 2. Never use real candidate data in examples or tests.
 3. Use the fictional developer scenario of `test-kit/` for tests and demonstrations.
 4. Update documentation and `CHANGELOG.md` when behavior changes.
@@ -122,13 +123,15 @@ between the second and third repository checkpoints.
 
 1. **Ready**: keep only 3 to 5 items in *Ready*. Work on the top item by priority.
 2. **In progress**: work on a branch and open a pull request that references the
-   issue with `Fixes #<number>`. Start by recording the scenarios in
-   `docs/test-plan.md` and `docs/test-log.md` and by checking that the test kit
-   can test and demonstrate the change (see `AGENTS.md`).
-3. **In review**: check the change against `docs/test-plan.md`, confirm the
+   issue with `Fixes #<number>`. Start by adding or modifying the requirements
+   in `docs/requirements/`, the master scenario steps or checks that cite them,
+   and their rows in the test dashboard (`docs/test-log.md`), and by checking
+   that the test kit can test and demonstrate the change (see `AGENTS.md`).
+3. **In review**: check the change against its requirements, confirm the
    test kit and master scenario (`test-kit/`) cover the new behavior and that
-   the change can be demonstrated with them, update documentation and
-   `CHANGELOG.md`, then merge.
+   the change can be demonstrated with them, run
+   `test-kit/tools/check_traceability.ps1`, update the test dashboard,
+   documentation and `CHANGELOG.md`, then merge.
 4. **Done**: the issue closes with the pull request.
 
 Board columns: Backlog, Ready, In progress, In review, Done.
@@ -153,7 +156,7 @@ Board columns: Backlog, Ready, In progress, In review, Done.
 ### Size
 
 - **S**: a small documentation or wording change.
-- **M**: a change across several files with test-plan updates.
+- **M**: a change across several files with requirement and test updates.
 - **L**: new behavior, or a change that affects persisted workspace files.
 
 Issues and the board are public. Never paste real resumes, job descriptions,

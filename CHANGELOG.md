@@ -9,6 +9,20 @@
   a proposed measurement protocol. Recommendations remain unapproved; no
   runtime behavior changes.
 
+### Changed
+
+- Test documentation split into four layers (#20): a requirements repository
+  by domain (`docs/requirements/`, one stable `REQ-…` identifier per testable
+  rule), checks for the build, repository and test kit (`docs/checks.md`), the
+  test sessions of `docs/test-history/`, and a test dashboard
+  (`docs/test-log.md`) with one row per requirement, open defects, requirements
+  to revalidate and an index by issue. `docs/test-plan.md` becomes a short test
+  strategy. The master scenario steps cite the requirements they verify in an
+  « Exigences » line, which the demo script leaves out; the `/prompteur` skill
+  updates the dashboard; `test-kit/tools/check_traceability.ps1` checks
+  identifiers, references and the dashboard. The former test plan and test log
+  remain available in Git history (commit `846a271`).
+
 ## [0.4.0] - 2026-10-12
 
 ### Added
