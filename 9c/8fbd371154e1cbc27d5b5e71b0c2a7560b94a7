@@ -1,0 +1,35 @@
+CHANGELOG.md
+  s_9b6a26f3cb3e01::t_c07b819833da26 12-25
+CONTRIBUTING.md
+  s_9b6a26f3cb3e01::t_40e55c6d7508f8 5-6,126-130,132-134,159
+docs/demos/mycareer-workspace-demo-and-slides.md
+  s_9b6a26f3cb3e01::t_7e1d40a7def014 68,399
+docs/design/decision-log.md
+  s_9b6a26f3cb3e01::t_7776d7bd61f644 728-732,1483-1563
+docs/glossary.md
+  s_9b6a26f3cb3e01::t_c78a527137ef63 71,74-81
+docs/non-functional/performance-investigation.md
+  s_9b6a26f3cb3e01::t_43b20b87bfc669 285-286
+docs/test-log.md
+  s_9b6a26f3cb3e01::t_be0d4dcf684aa1 3,5,7,9-12,78,384-456,462
+AGENTS.md
+  s_9b6a26f3cb3e01::t_3f5ed44355fb39 14,16,20-40,48-57,59-61,74-103,166,168-169
+docs/test-plan.md
+  s_9b6a26f3cb3e01::t_ee0deaa55c0cae 1,3,5,7-12,14,16,18,20,22-25,27,29,31,33,35,37,39,41,43-46,48,50-55,57,59,61-64,66,68,70,72-74,76,78,80-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9c8fbd371154e1cbc27d5b5e71b0c2a7560b94a7",
+  "prompts": {},
+  "sessions": {
+    "s_9b6a26f3cb3e01": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "95326195-b0a5-4928-b538-b9d8715a0e26",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jérôme Jurbert <304383186+JeromeJ77@users.noreply.github.com>"
+    }
+  }
+}
