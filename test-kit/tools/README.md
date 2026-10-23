@@ -6,14 +6,22 @@
 | `make_demo_script.ps1` | Extrait le script de démo (`demo-script.md`) du scénario maître en ne gardant que les étapes `[demo]`. Windows PowerShell seul, aucune dépendance. | Oui |
 | `demo-script-header.md` | En-tête UTF-8 du script de démo, avec le marqueur `{version}`. Séparé du `.ps1` parce que Windows PowerShell 5.1 lit un `.ps1` sans BOM en ANSI : le script reste en ASCII pur. | Oui (lu par le script) |
 | `check_traceability.ps1` | Vérifie la traçabilité entre les exigences de `docs/requirements/`, les tests qui les citent (`test-kit/scenario.md`, `docs/checks.md`) et le tableau de bord de `docs/test-log.md`. Outil de développement, Windows PowerShell seul, jamais livré. | Non |
-| `test-coverage/` | Mod Claude Code qui affiche la couverture des tests de `docs/test-log.md` sous forme de barre (commande `/test-coverage`). Outil de développement, jamais livré. | Non |
-| `.claude/skills/prompteur/` (racine du dépôt) | Skill Claude Code `/prompteur` qui guide une passe de test manuelle élément par élément (`/prompteur socle` pour les étapes `[socle]`), vérifie les fichiers du workspace de test et les traces du coach, et rédige la session de test. Outil de développement, jamais livré. | Non |
+| `test-coverage/` | Mod Claude Code qui affiche sous forme de barre la couverture des exigences du tableau de bord de `docs/test-log.md`, une ligne par exigence (commande `/test-coverage`). Outil de développement, jamais livré. | Non |
+| `.claude/skills/prompteur/` (racine du dépôt) | Skill Claude Code `/prompteur` qui guide une passe de test manuelle élément par élément (`/prompteur socle` pour les étapes `[socle]`), vérifie les fichiers du workspace de test et les traces du coach, rédige la session de test et met à jour le tableau de bord. Outil de développement, jamais livré. | Non |
 
 Les PDF et DOCX générés sont commités à côté de leur source Markdown ; le build se contente de les zipper.
 
 ## `make_demo_script.ps1`
 
-Règles d'extraction : le titre de niveau 1 du scénario est remplacé par l'en-tête ; les sections `##` sont conservées si elles contiennent encore quelque chose ; une étape `###` est conservée si et seulement si son titre contient `[demo]`, avec tout son corps ; le texte de section hors étape (mode d'emploi, récapitulatif) est conservé. Le script échoue si aucune étape `[demo]` n'est trouvée.
+Règles d'extraction :
+
+- le titre de niveau 1 du scénario est remplacé par l'en-tête (`demo-script-header.md`, avec la version) ; l'introduction et le mode d'emploi sont retirés ;
+- une étape `###` d'une phase est conservée si son titre contient `[demo]` et pas `[todo` ; les tags `[demo]` et `[socle]` sont retirés de son titre ;
+- dans une étape conservée, les champs **Attendu** (numérotés ou non), **Exigences** et **Socle** sont retirés avec leurs lignes de suite indentées ; **Mots-clés** devient **À montrer** ; le reste est gardé tel quel ;
+- du récapitulatif, seul le tableau est gardé, sans ses lignes `[todo]` ;
+- une section `##` n'apparaît que si elle garde au moins une ligne.
+
+Le script échoue si aucune étape `[demo]` n'est trouvée.
 
 ## `check_traceability.ps1`
 
@@ -61,30 +69,32 @@ Le script ne traite qu'un sous-ensemble de Markdown : titres, paragraphes, liste
 
 ## `test-coverage/`
 
-Mod Claude Code (plugin de hooks) qui lit le statut de chaque ligne de tableau de `docs/test-log.md` et affiche la répartition en barre : vert « Validé », jaune « À revalider », rouge « Problème constaté », gris « Non testé ». La ligne de légende et les remarques ne sont pas comptées ; une catégorie non vide garde au moins une case.
+Mod Claude Code (plugin de hooks) qui lit le statut de test de chaque exigence du tableau de bord de `docs/test-log.md`, une ligne de tableau par exigence, et affiche la répartition en barre : vert « Validé », jaune « À revalider », rouge « Problème constaté », gris « Non testé ». Seules les lignes de tableau qui ont une cellule de statut sont comptées : la légende et les sections en liste (« Écarts ouverts », « À revalider », « Index par issue », « Sessions ») ne le sont pas. Une catégorie non vide garde au moins une case.
 
 ```
-Tests 🟩🟩🟩🟩🟩🟩🟩🟩🟨🟨🟨🟨🟨🟥⬜⬜⬜⬜⬜⬜   88 zones
-🟩 Validé 39 (44 %)   🟨 À revalider 20 (23 %)   🟥 Problème 1 (1 %)   ⬜ Non testé 28 (32 %)
+Tests 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩🟨🟨🟨🟨🟥⬜⬜⬜⬜⬜   – 283 au total
+🟩 Validé 157 (56 %)   🟨 À revalider 52 (18 %)   🟥 Problème 7 (2 %)   ⬜ Non testé 67 (24 %)
 ```
 
-Avec `-v`, un tableau par section suit la barre. Chaque ligne donne le nombre total de lignes, puis le nombre de lignes de chaque statut à côté de sa couleur, puis le titre de la section :
+Avec `-v`, un tableau par domaine suit la barre. Chaque ligne donne le nombre d'exigences du domaine, puis le nombre de chaque statut à côté de sa couleur, puis le titre de la table du domaine, sans l'identifiant entre parenthèses (extrait, une ligne par domaine) :
 
 ```
 Lignes · 🟩 Validé · 🟨 À revalider · 🟥 Problème · ⬜ Non testé · Section
 
-13    🟩 7    🟨 5    🟥 0    ⬜ 1    Synthèse de la couverture
- 6    🟩 0    🟨 4    🟥 0    ⬜ 2    Zones du plan de test sans test consigné
-11    🟩10    🟨 0    🟥 0    ⬜ 1    Scénarios #14
+ 33    🟩 24    🟨  4    🟥  2    ⬜  3    Démarrage de session
+  5    🟩  4    🟨  1    🟥  0    ⬜  0    Configuration
+ 11    🟩  8    🟨  1    🟥  1    ⬜  1    Sources du dossier
+…
+ 13    🟩  0    🟨  0    🟥  0    ⬜ 13    Référentiel de tests
 
-88    🟩39    🟨20    🟥 1    ⬜28    Total
+283    🟩157    🟨 52    🟥  7    ⬜ 67    Total
 ```
 
 Les nombres sont alignés à droite et séparés par des espaces de la largeur d'un chiffre (U+2007), et le titre vient en dernier. Les colonnes restent ainsi alignées dans la police proportionnelle de VS Code, qui fusionne en outre les espaces ordinaires consécutifs et supprime les lignes vides.
 
 ### Affichage
 
-- `/test-coverage` affiche la barre dans la conversation, quelle que soit l'interface. Avec `-v` (ou `--verbose`), elle ajoute un tableau par section du journal (synthèse, zones du plan, scénarios de chaque issue) avec le nombre de lignes par statut et le total.
+- `/test-coverage` affiche la barre dans la conversation, quelle que soit l'interface. Avec `-v` (ou `--verbose`), elle ajoute un tableau par domaine du tableau de bord avec le nombre d'exigences par statut et le total.
 - Dans le terminal (et l'application desktop), une barre colorée est aussi dessinée au-dessus du prompt et `/test-coverage` ouvre un panneau. L'extension VS Code n'affiche pas encore ces éléments.
 - Dans VS Code, `/test-coverage` n'apparaît pas dans le menu des commandes : tapez-la en entier, elle fonctionne.
 - Le fichier est relu toutes les 3 secondes s'il a changé, et à la fin de chaque tour. Dans un projet sans `docs/test-log.md`, rien n'est affiché.

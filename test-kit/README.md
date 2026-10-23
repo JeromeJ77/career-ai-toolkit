@@ -10,7 +10,7 @@ Le kit n'est jamais inclus dans le ZIP de MyCareer Workspace distribué. Le buil
 | --- | --- |
 | `sources/profile/` | Sources fictives du dossier professionnel de la candidate : CV, export de profil LinkedIn, certificat et notes complémentaires, plus un livret de formation d'une cinquantaine de pages pour tester une source très volumineuse (seule sa première page apporte des faits utiles). |
 | `sources/opportunities/` | Sources fictives des opportunités : deux offres d'emploi et des notes d'appel. |
-| `scenario.md` | Scénario maître : la liste ordonnée des étapes à jouer, avec les fichiers à injecter, les prompts, les mots-clés, les résultats attendus et les items du plan de test correspondants. |
+| `scenario.md` | Scénario maître : la liste ordonnée des étapes à jouer, avec les fichiers à injecter, les prompts, les mots-clés, les résultats attendus et les exigences du produit que chaque étape vérifie (ligne « Exigences », identifiants de `docs/requirements/` dans le dépôt). |
 | `guide-testeur.md` | Guide du testeur : comment dérouler le scénario, noter les résultats (y compris à la voix avec un assistant scribe, prompt fourni) et préparer le journal de test et le rapport. |
 | `tools/` | Outils du kit : génération des PDF et DOCX à partir des sources Markdown, extraction du script de démo, et mod Claude Code `/test-coverage` qui affiche la couverture des tests. Voir [`tools/README.md`](tools/README.md). |
 

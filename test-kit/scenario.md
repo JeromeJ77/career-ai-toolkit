@@ -1,15 +1,15 @@
 # Scénario maître
 
-Liste ordonnée des étapes à jouer avec le coach sur les données fictives du kit. Il sert à trois usages : dérouler le plan de test (`docs/test-plan.md`) sans donnée personnelle, faire la démo du toolkit, et plus tard servir de base à des tests automatiques.
+Liste ordonnée des étapes à jouer avec le coach sur les données fictives du kit. Il sert à trois usages : vérifier les exigences du produit (`docs/requirements/`) sans donnée personnelle, faire la démo du toolkit, et plus tard servir de base à des tests automatiques.
 
-Le build extrait de ce fichier le **script de démo** : il ne garde que les étapes taguées `[demo]`, réduites aux champs utiles au présentateur (durée, conversation, fichiers, actions, prompts, mots-clés présentés comme « À montrer »), et le tableau récapitulatif. Les attendus et les renvois au plan de test restent dans ce fichier. Les autres étapes ne servent qu'aux tests. Pour qu'une consigne figure dans le script de démo, la mettre dans **Action** ou **Mots-clés**, jamais seulement dans **Attendu**.
+Le build extrait de ce fichier le **script de démo** : il ne garde que les étapes taguées `[demo]`, réduites aux champs utiles au présentateur (durée, conversation, fichiers, actions, prompts, mots-clés présentés comme « À montrer »), et le tableau récapitulatif. Les attendus et les lignes **Exigences** restent dans ce fichier. Les autres étapes ne servent qu'aux tests. Pour qu'une consigne figure dans le script de démo, la mettre dans **Action** ou **Mots-clés**, jamais seulement dans **Attendu**.
 
 ## Mode d'emploi
 
 - Jouer le scénario dans un workspace **extrait du ZIP, hors du dépôt**, jamais dans `workspace/` ni dans un workspace personnel.
 - Les fichiers à déposer viennent du ZIP du kit (`sources/profile/`, `sources/opportunities/`). Les chemins de destination sont relatifs à la racine du workspace extrait.
 - Dans la conversation, parler **au nom de Nadia Berkani**, la candidate fictive. Ses motivations, contraintes et points faibles sont dans `sources/profile/notes-complementaires-carriere.md` : s'en inspirer pour répondre de façon crédible pendant les simulations.
-- Chaque étape indique le résultat attendu et l'item de `docs/test-plan.md` qu'elle couvre. Consigner le résultat réel dans `docs/test-log.md` et dans un fichier de session de `docs/test-history/`, jamais par déduction.
+- Chaque étape indique le résultat attendu et, par sa ligne **Exigences**, les exigences de `docs/requirements/` qu'elle vérifie. Les groupes d'exigences y sont séparés par « ; » ; un groupe suivi d'une parenthèse est vérifié par l'invite qu'elle nomme (`C4.2` pour le prompt 2 de C4), un groupe sans parenthèse par l'étape entière. Consigner le résultat réel dans un fichier de session de `docs/test-history/` qui cite les tests joués par ces identifiants, puis dans le tableau de bord de `docs/test-log.md`, jamais par déduction.
 - Le champ **Conversation** de chaque étape dit s'il faut ouvrir une nouvelle conversation ou rester dans celle de l'étape précédente (« suite de D3 »). « Nouvelle » signifie fermer la conversation en cours et en ouvrir une autre dans le même workspace, pour vérifier que le contexte vient des fichiers et non de l'historique. Les étapes `[manual]` sans prompt n'en ont pas.
 
 ### Tags
@@ -29,7 +29,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Fichiers** : `mycareer-workspace-v<version>.zip` → un répertoire hors du dépôt, par exemple `C:\Temp\mycareer-workspace-demo-26-10-03\`.
 - **Action** : extraire le ZIP hors du dépôt, puis renommer le répertoire extrait avec un suffixe `-demo` ou `-test` suivi de la date du jour au format `AA-MM-JJ` (par exemple `mycareer-workspace-demo-26-10-03`), jamais le nom de base : il ne doit pas être confondu avec un workspace personnel ou de bêta-test ouvert ailleurs, et la date confirme dans l'outil IA qu'on travaille bien dans le workspace du jour. Garder les workspaces des passes précédentes dans `C:\Temp\` plutôt que les supprimer : on peut ainsi comparer les résultats de plusieurs tests ou démos. Ouvrir ce répertoire comme projet dans VS Code avec Claude Code (ou l'outil IA équivalent). Montrer l'arborescence : moteur à la racine, `data/` ne contenant que des `README.md`.
 - **Attendu** : le ZIP contient un seul répertoire racine `mycareer-workspace/` ; `data/` ne contient aucun fichier de travail.
-- **Plan de test** : Workspace — « Extract the ZIP outside the repository », « Open it as a new VS Code/Claude Code project » ; Build — « Confirm the ZIP tree matches `docs/architecture.md#workspace-tree` ».
+- **Exigences** : REQ-BLD-03, REQ-BLD-06
 
 ## Phase B — Initialisation du workspace
 
@@ -42,14 +42,14 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt 2** : « Oui, Nadia. »
 - **Attendu 2** : le coach accuse réception (« Entendu, Nadia. Vous pourrez changer cela à tout moment, en me le demandant ou dans votre configuration. »), crée les quatre fichiers obligatoires (`data/config/workspace.yaml`, `data/current-status.md`, `data/profile/professional-profile.md`, `data/profile/sources/external-references.md`) depuis les modèles, le dit en une seule phrase fonctionnelle (« J'ai préparé votre espace : configuration, dossier professionnel (vide pour l'instant), références externes et état courant. »), donne ensuite, une seule fois, le rappel de confidentialité exact (« Un mot sur la confidentialité : vos échanges avec l'outil IA contiennent des informations personnelles. Vérifiez dans les paramètres de votre outil que vos conversations ne servent pas à entraîner des modèles lorsque c'est possible, et comment l'historique et les fichiers joints sont conservés, en particulier avec un compte personnel. Je ne peux pas le vérifier à votre place. Par ailleurs, je ne consulte pas le web sans votre accord explicite. »), sans attendre de réponse ni donner de procédure propre à un outil, puis un court message sur le feedback produit, sans question : pendant le pilote, le coach tient des notes locales sur les difficultés d'usage pour améliorer le produit ; on peut lui dicter une note en commençant par « suggestion d'amélioration : » et lui demander de générer un feedback ; rien n'est envoyé automatiquement. Il propose ensuite de construire le dossier professionnel à partir des documents de la candidate, et ne remplit pas le dossier professionnel. `data/config/workspace.yaml` contient `user.address_by_first_name: yes`, `first_name: "Nadia"` et un `product_feedback.user_id` rempli, sans lien avec le nom de la candidate ; le journal du feedback produit existe sous `data/feedback/`, sans entrée ; aucun `pilot-feedback.md` n'est créé.
 - **Mots-clés** : montrer l'accueil et la question du prénom, puis le fait que le coach attend la réponse avant de préparer l'espace ; faire remarquer le rappel de confidentialité (une quinzaine de secondes) et le message sur le feedback produit (local, rien n'est envoyé) ; faire remarquer que le dossier professionnel est un squelette vide et que rien n'y sera écrit sans validation.
-- **Plan de test** : Workspace — « On the first session in the extracted workspace, confirm the coach shows the welcome message… », « Confirm the created profile is an empty skeleton… », « Confirm the product feedback journal and the formal feedbacks are created as described… » ; Refocus on MyCareer Workspace (#15) ; Privacy reminder and web browsing (#8) ; Product feedback (#17) — première session.
+- **Exigences** : REQ-SES-01, REQ-SES-02, REQ-SES-03, REQ-SES-05, REQ-SES-07, REQ-SES-08, REQ-SES-09, REQ-COACH-03 (B1.1) ; REQ-SES-11, REQ-SES-12, REQ-SES-13, REQ-SES-17, REQ-PROF-01, REQ-PRIV-01, REQ-PRIV-02, REQ-FB-01, REQ-FB-02, REQ-FB-04 (B1.2)
 
 ### B2 — Deuxième session sans changement [socle]
 
 - **Conversation** : nouvelle
 - **Prompt** : « On reprend. »
 - **Attendu** : la réponse commence par la ligne fixe en italique *Lancement de la session…*, puis le coach salue par « Bonjour Nadia. », suivi de la ligne de statut du dossier « Dossier professionnel : ⚪ vide (version 0.1). », sans message d'accueil ni question sur le prénom ; rien n'est créé ni réécrit, il ne signale aucune création et ne dit rien de l'état de l'initialisation ou de la configuration (pas de « Votre espace carrière est prêt… »), ni ne cite le CLAUDE.md, une procédure ou une étape (ni « Step 2… »). Aucun rappel de confidentialité, rien sur le feedback produit. Le prénom n'est ensuite employé que dans la salutation, l'accusé de réception du choix et l'au revoir.
-- **Plan de test** : Workspace — « Confirm a second session creates nothing and overwrites nothing… » ; Professional profile status and version (#9) — ligne de statut ; Product feedback (#17) — sessions suivantes.
+- **Exigences** : REQ-SES-02, REQ-SES-03, REQ-SES-04, REQ-SES-10, REQ-SES-14, REQ-SES-22, REQ-SES-24, REQ-SES-26, REQ-CONF-03, REQ-PROF-01, REQ-PRIV-03, REQ-FB-05
 
 ### B3 — Fichier supprimé, fichier personnalisé [manual]
 
@@ -57,7 +57,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour. »
 - **Attendu** : seul le fichier supprimé est recréé ; le fichier personnalisé reste intact.
-- **Plan de test** : Workspace — « …a file deleted by the user is recreated alone, and an existing file with custom content is left untouched ».
+- **Exigences** : REQ-SES-15, REQ-SES-16
 
 ### B4 — Clé de configuration manquante [manual]
 
@@ -65,7 +65,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour. »
 - **Attendu** : la clé est ajoutée à sa place avec sa valeur par défaut, le coach dit quelle clé et quelle valeur ont été ajoutées, le reste du fichier est inchangé. Une session suivante n'ajoute rien.
-- **Plan de test** : Workspace — « Remove a key from `data/config/workspace.yaml`… ».
+- **Exigences** : REQ-CONF-01, REQ-CONF-02, REQ-CONF-03, REQ-PRIV-05
 
 ### B5 — Valeur de configuration invalide [manual]
 
@@ -73,13 +73,13 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour. »
 - **Attendu** : le fichier n'est pas réécrit ; le coach indique la clé, la valeur trouvée et la valeur par défaut utilisée pour la session, et laisse la correction à la candidate. Aucune navigation n'a lieu (la valeur par défaut `false` s'applique). Remettre `false` ensuite.
-- **Plan de test** : Workspace — « Give a key an invalid value… ».
+- **Exigences** : REQ-CONF-04, REQ-PRIV-05, REQ-PRIV-06
 
 ### B6 — Langue du dossier [manual]
 
 - **Action** : vérifier dans `data/config/workspace.yaml` que `language.profile` et `language.coaching` valent `"fr-FR"` et que `language.deliverables` contient `"fr-FR"` (les modifier sinon).
 - **Attendu** : les valeurs sont celles du modèle ; aucune modification n'est nécessaire sur un workspace neuf.
-- **Plan de test** : Workspace — « Set the profile and coaching languages in `data/config/workspace.yaml`… ».
+- **Exigences** : REQ-CONF-05
 
 ### B7 — Prénom : réponses et version antérieure [manual]
 
@@ -94,7 +94,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Action** : remettre `unset`. Nouvelle conversation, prompt « Bonjour. », répondre « Non » : valeur `no`, accusé de réception conforme ; à la conversation suivante, « Bonjour. » sans prénom et sans question.
 - **Action** : remettre `yes` et `"Nadia"`. Nouvelle conversation, puis écrire « Merci, au revoir. » : le coach répond « À bientôt, Nadia. » Le prénom n'est pas répété à chaque message.
 - **Attendu** : à la fin, `yes` et `"Nadia"` sont rétablis pour la suite du scénario.
-- **Plan de test** : Refocus on MyCareer Workspace (#15) — réponses sur le prénom, `ask_again`, workspace d'une version antérieure, salutations.
+- **Exigences** : REQ-SES-18, REQ-SES-19, REQ-SES-20, REQ-SES-21, REQ-SES-22, REQ-SES-23, REQ-CONF-01, REQ-CONF-02
 
 ### B8 — Garde-fou de première session [manual]
 
@@ -102,7 +102,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour. »
 - **Attendu** : pas de message d'accueil ; le coach signale une perte possible de `current-status.md` et demande comment procéder, sans recréer le fichier avant la réponse.
-- **Plan de test** : Refocus on MyCareer Workspace (#15) — première session détectée par l'absence de `current-status.md`, sauf perte possible.
+- **Exigences** : REQ-SES-06
 
 ### B9 — Première session en anglais [manual]
 
@@ -112,7 +112,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Attendu** : la réponse commence par la seule ligne fixe en italique *Starting the session…*, sans autre préambule ni mention des consignes ou d'une procédure, puis le coach affiche l'accueil anglais exact (« Welcome to your **career workspace**! »…) et la question du prénom, attend la réponse, puis accuse réception en anglais (« Got it, … »), rend compte en une phrase en anglais, donne le rappel de confidentialité et le message sur le feedback produit en anglais (le mot-clé cité est « suggested improvement: ») et propose de construire le dossier. Il dit « career workspace », jamais « workspace » seul pour désigner le produit.
 - **Prompt 2** : « suggested improvement: the welcome message could say how long the setup takes. »
 - **Attendu 2** : la ligne exacte en italique *Product feedback note recorded.*, puis le coach reprend où il en était ; une entrée « explicite » est ajoutée au journal, avec ce texte brut.
-- **Plan de test** : Refocus on MyCareer Workspace (#15) — première session en anglais ; Product feedback (#17) — session en anglais.
+- **Exigences** : REQ-SES-03, REQ-SES-28, REQ-PRIV-04, REQ-FB-23, REQ-COACH-04 ; REQ-FB-24 (B9.2)
 
 ### B10 — Feedback produit : workspace antérieur et journal supprimé [manual]
 
@@ -122,7 +122,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Attendu** : la section `product_feedback` est ajoutée avec un `user_id` généré, différent de l'ancien, et le journal est recréé depuis le modèle ; le coach le signale en une phrase courte pour chacun, sans parler de perte possible de données ni demander comment procéder ; le reste de la configuration est inchangé.
 - **Action** : supprimer seulement le journal, sans toucher à la configuration ; nouvelle conversation, prompt « Bonjour. »
 - **Attendu** : le journal est recréé et signalé en une phrase, sans alerte de perte ; `product_feedback.user_id` n'est pas modifié.
-- **Plan de test** : Product feedback (#17) — workspace antérieur à #17, journal supprimé.
+- **Exigences** : REQ-FB-03, REQ-FB-06, REQ-FB-07, REQ-FB-08
 
 ## Phase C — Sources et dossier professionnel
 
@@ -146,7 +146,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
   - il signale ce qui est encore flou ou contradictoire, par exemple le rôle réel sur la migration (piloté sans en avoir le titre) ou le niveau actuel en React ;
   - il a lu le dossier professionnel existant (squelette vide) avant de répondre et ne dit pas qu'il ignore son contenu.
 - **Mots-clés** : montrer où le coach a rangé les originaux, puis une transcription et son en-tête ; insister sur « proposer, pas appliquer ».
-- **Plan de test** : Workspace — « Ask to initialize the profile without providing sources… », « Add a synthetic PDF CV… », « Add a synthetic LinkedIn PDF export… », « Confirm the coach then proposes profile updates from the new source and applies none before validation », « Add sample authorized sources and initialize the profile ».
+- **Exigences** : REQ-SRC-01 (C1.1) ; REQ-SES-29, REQ-SRC-02, REQ-SRC-03, REQ-SRC-04, REQ-SRC-09, REQ-PROF-02, REQ-PROF-03 (C1.2)
 
 ### C2 — Valider le dossier professionnel initial [demo] [socle]
 
@@ -155,7 +155,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt** : « D'accord pour l'ensemble, sauf : ne mets pas mon salaire actuel dans le dossier. Applique. »
 - **Attendu** : `professional-profile.md` est rempli selon la proposition amendée ; son en-tête passe au statut `draft` (en construction) et à la version 0.2, avec la date du jour et une entrée d'historique ; le salaire n'y figure pas, les durées et chiffres sont ceux des sources (sept ans d'expérience), `data/current-status.md` note où on en est.
 - **Mots-clés** : ouvrir `professional-profile.md` : ce n'est plus un squelette vide, on y retrouve les informations validées par la candidate, sans le salaire actuel.
-- **Plan de test** : Workspace — « Confirm profile changes are proposed before application » ; Professional profile status and version (#9) — première modification validée.
+- **Exigences** : REQ-PROF-02, REQ-PROF-04, REQ-PROF-11
 
 ### *C3 — Entretien d'initialisation du dossier* [demo] [todo #10]
 
@@ -174,14 +174,14 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Prompt 3** : « D'accord, applique, et on peut passer le dossier en prêt. » Si le coach exprime une réserve en citant des lacunes, répondre « Oui, je confirme. »
 - **Attendu 3** : l'ajout est appliqué ; l'en-tête passe à `ready` (prêt), version 1.0, date du jour, entrée d'historique sur le passage à « prêt » ; `data/current-status.md` est mis à jour.
 - **Mots-clés** : le coach ne bloque pas par principe, il explique pourquoi la préparation serait moins bonne ; la suite (proposition de « prêt » ou lacunes à compléter) dépend de son jugement sur le dossier ; « prêt » est un seuil opérationnel décidé ensemble, pas un état final ; montrer l'en-tête du dossier (statut, version 1.0).
-- **Plan de test** : Professional profile status and version (#9) — refus bienveillant, proposition de `ready` avec ajout puis validation.
+- **Exigences** : REQ-SES-22, REQ-SES-26, REQ-PROF-06, REQ-OPP-14, REQ-OPP-15, REQ-OPP-16 (C4.1) ; REQ-PROF-02, REQ-PROF-07 (C4.2) ; REQ-PROF-08, REQ-PROF-09, REQ-PROF-11 (C4.3)
 
 ### C5 — Réimport après non-écrasement
 
 - **Conversation** : nouvelle
 - **Prompt** : « Peux-tu revérifier mes sources ? »
 - **Attendu** : aucune transcription existante n'est réécrite ; aucune entrée dupliquée dans `external-references.md`.
-- **Plan de test** : Workspace — « …does not overwrite an existing transcription », « …does not duplicate the entry on a second pass ».
+- **Exigences** : REQ-SRC-07, REQ-SRC-10
 
 ### C6 — Source très volumineuse
 
@@ -189,7 +189,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « J'ai ajouté une nouvelle source dans `data/profile/sources/`. » (ne pas annoncer la taille : c'est au coach de la constater)
 - **Attendu** : le coach trouve le nouveau fichier, en indique la taille et demande confirmation avant de transcrire, en proposant de ne transcrire que les parties utiles (ici l'attestation de la première page : formation de 70 h en 2023, projet final 16/20, appréciation du formateur). Il ne transcrit rien avant l'accord. Une fois la transcription faite, il propose d'ajouter la formation au dossier, sans l'écrire avant validation. Le seuil n'est pas chiffré (D-011) : noter le comportement observé.
-- **Plan de test** : Workspace — « Add a very long synthetic source… ».
+- **Exigences** : REQ-SRC-08, REQ-PROF-02
 
 ### C7 — Dossier professionnel supprimé, statut conservé [manual]
 
@@ -197,7 +197,7 @@ Le build extrait de ce fichier le **script de démo** : il ne garde que les éta
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour, on continue. »
 - **Attendu** : le coach signale l'incohérence, évoque une perte de fichier possible, **ne recrée pas le squelette** et ne réécrit pas le dossier avant décision ; il propose de reconstruire depuis les sources, de restaurer une copie ou de vérifier une synchronisation. Demander alors : « Réimporte tout et reconstruis le dossier. » Les sources sont retranscrites et le dossier reconstruit via le workflow validé.
-- **Plan de test** : Workspace — « Delete `data/profile/professional-profile.md` but keep the sources… ».
+- **Exigences** : REQ-SRC-11, REQ-PROF-17
 
 ### C8 — Navigation web : exceptions ponctuelles [manual]
 
@@ -213,7 +213,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Action** : mettre `allow_external_web_search: true`, nouvelle conversation. **Prompt 6** : « Voici le site de l'entreprise : https://example.com/ » **Attendu 6** : navigation sans demande d'accord, information présentée pour validation, provenance (lien, date) tracée, rien écrit dans le dossier ou l'opportunité sans validation. Remettre `false` ensuite.
 - **Limites du kit** : aucun lien d'offre fictif n'est résolvable, la transcription datée d'une page d'offre (lien et date de consultation) ne peut donc pas être jouée ici. L'outil de test peut demander sa propre autorisation de navigation, distincte de la question d'accord du coach : seule cette dernière est évaluée. Pour une consultation réelle, un site public peut être utilisé, sans rien enregistrer de personnel.
 - **Extension D13** : jouer la demande de navigation pendant une simulation (voir D13), puis arrêter la simulation et lire le débrief pour vérifier qu'aucun joker n'est compté.
-- **Plan de test** : Privacy reminder and web browsing (#8).
+- **Exigences** : REQ-PRIV-06, REQ-PRIV-07, REQ-PRIV-08 (C8.1) ; REQ-PRIV-13 (C8.2) ; REQ-PRIV-11 (C8.3) ; REQ-PRIV-09, REQ-PRIV-15, REQ-PRIV-16, REQ-PRIV-17 (C8.4) ; REQ-PRIV-07, REQ-PRIV-08, REQ-PRIV-10 (C8.5) ; REQ-PRIV-12, REQ-PRIV-15, REQ-PRIV-16 (C8.6)
 
 ### C9 — Dossier non prêt : mise en garde, dérogation et nouvelle passe d'analyse [manual]
 
@@ -230,7 +230,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt 6** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 6** : ligne de statut 🟢, plus de rappel de dérogation ; le coach rappelle que l'opportunité a été analysée avec un dossier encore en construction et demande si la candidate veut une nouvelle passe d'analyse, de façon qu'elle puisse répondre oui, plus tard ou non. Répondre « Pas maintenant. » : la marque de dérogation est conservée.
 - **Prompt 7** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 7** : la nouvelle passe est de nouveau proposée. Répondre « Non, ce n'est pas la peine. » : le refus définitif est consigné dans le statut de l'opportunité.
 - **Prompt 8** (nouvelle conversation) : « On reprend Northwind Ledger. » **Attendu 8** : la nouvelle passe n'est plus proposée. Demander alors : « Refais quand même une analyse avec mon dossier actuel. » : une nouvelle analyse reste possible à tout moment ; `analysis.md` garde la trace de la première passe et ajoute la nouvelle avec la version et le statut du dossier (1.0, prêt), selon les règles existantes (messages proposés conservés, messages retirés déplacés, rien supprimé silencieusement) ; la dérogation est marquée close dans le `current-status.md` de l'opportunité.
-- **Plan de test** : Professional profile status and version (#9) — travail sur une opportunité avec un dossier non `ready`.
+- **Exigences** : REQ-OPP-17, REQ-OPP-18 (C9.1) ; REQ-OPP-20, REQ-OPP-21, REQ-OPP-26 (C9.2) ; REQ-SES-26, REQ-OPP-23 (C9.3) ; REQ-OPP-14, REQ-OPP-19, REQ-OPP-22 (C9.4) ; REQ-PROF-08, REQ-PROF-09 (C9.5) ; REQ-SES-26, REQ-OPP-27 (C9.6) ; REQ-OPP-27, REQ-OPP-28 (C9.7) ; REQ-OPP-26, REQ-OPP-28, REQ-OPP-29, REQ-OPP-30 (C9.8)
 
 ### C10 — Statut du dossier absent ou invalide [manual]
 
@@ -238,7 +238,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Conversation** : nouvelle
 - **Prompt** : « Bonjour, on continue. »
 - **Attendu** : le coach signale le statut inconnu, ne l'interprète pas, propose `draft` (dossier rempli ; jamais `ready` d'office) et ne modifie l'en-tête qu'après accord explicite, avec une entrée d'historique (statut corrigé, raison, validation). Rejouer en supprimant la ligne du statut : même comportement.
-- **Plan de test** : Professional profile status and version (#9) — statut absent ou invalide.
+- **Exigences** : REQ-PROF-11, REQ-PROF-12, REQ-PROF-13
 
 ### C11 — Retour de « prêt » à « en construction » [manual]
 
@@ -248,7 +248,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt 1** : « J'envisage de me réorienter vers un poste de staff engineer : je veux retravailler mon dossier en profondeur. »
 - **Attendu 1** : le coach peut proposer de repasser le dossier en construction ; il n'applique rien sans validation. Après « Oui », l'en-tête passe à `draft` avec la version suivante (par exemple 1.0 → 1.1), entrée d'historique. Dans le même temps, « Focus courant » et « Prochaine action » de 001 sont mis à jour et ne proposent plus l'analyse comme si le dossier était prêt ; les mentions datées de version (passes, dérogation) restent inchangées.
 - **Prompt 2** : après une modification validée, « On peut repasser le dossier en prêt. » **Attendu 2** : `ready`, version 2.0 ; « Focus courant » et « Prochaine action » de 001 sont de nouveau cohérents avec un dossier prêt (analyse possible).
-- **Plan de test** : Professional profile status and version (#9) — retour de `ready` à `draft`.
+- **Exigences** : REQ-PROF-11, REQ-PROF-15, REQ-OPP-31 (C11.1) ; REQ-PROF-08, REQ-PROF-09, REQ-OPP-31 (C11.2)
 
 ## Phase D — Première opportunité : Lumen Pay
 
@@ -263,7 +263,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Attendu 2** : une copie inchangée de l'offre est rangée dans `data/opportunities/001-lumen-pay-<rôle>/sources/` ; sa transcription `.md` est créée à côté, avec son en-tête ; `opportunity.md` est complété avec les faits et leur provenance (poste, squad, processus en quatre étapes, fourchette 62–72 k€), sans analyse d'adéquation ; le statut de l'opportunité est mis à jour.
 - **Si l'opportunité existe déjà** : si l'opportunité Lumen Pay existe déjà (créée plus tôt), joindre l'offre à l'opportunité existante et vérifier qu'aucune seconde opportunité n'est créée.
 - **Mots-clés** : insister sur « la structure est gérée par le coach » ; montrer la transcription `.md` de l'offre dans `sources/` (copie figée, consultable plus tard sans rouvrir le PDF, comme pour le profil), puis `opportunity.md` : les faits seulement, l'analyse vient à l'étape suivante (`analysis.md`).
-- **Plan de test** : Workspace — « Give the coach source material for two opportunities without creating their directories manually » (première moitié), « Confirm each opportunity has a canonical `opportunity.md` and `current-status.md`, and that retained original files under `sources/` remain unchanged ».
+- **Exigences** : REQ-OPP-01, REQ-OPP-03, REQ-OPP-04 (D1.1) ; REQ-SRC-03, REQ-SRC-04, REQ-OPP-08 (D1.2)
 
 ### D2 — Préparer l'opportunité [demo] [socle]
 
@@ -274,7 +274,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt 2** : « Retire le dernier message stratégique, il ne me ressemble pas. Je valide les autres. »
 - **Attendu 2** : la section des messages proposés est conservée ; le message retiré passe dans une section « retirés ou invalidés par la candidate », avec la raison donnée ; les autres sont marqués validés. Si la correction est incohérente avec le profil ou l'offre, le coach le dit.
 - **Mots-clés** : sans qu'on le lui détaille, le coach analyse l'adéquation (`analysis.md` : faits, hypothèses, écarts) et propose des messages stratégiques à valider ; puis montrer qu'il accepte la correction sans effacer l'historique.
-- **Plan de test** : Workspace — « Confirm derived analysis is separate from the canonical source representation and uncertain information is explicit », « Confirm the coach proposes strategic messages and allows adjustment… ».
+- **Exigences** : REQ-OPP-09, REQ-OPP-11, REQ-OPP-26 (D2.1) ; REQ-OPP-12 (D2.2)
 
 ### D3 — Créer l'étape d'entretien technique [demo] [socle]
 
@@ -283,7 +283,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt** : « J'ai passé l'échange RH. La semaine prochaine, c'est l'entretien technique de 1 h 15 avec deux membres de la squad, discussion d'architecture sur un cas concret. J'aimerais préparer cet entretien. »
 - **Attendu** : deux rounds créés, `interviews/01-screening/interview.md` (échange RH réalisé, sans détail inventé) et `interviews/02-technical/interview.md` (ou libellés équivalents) avec les métadonnées connues ; pas de `preparation.md`, `simulations/` ni `actual/` créés à vide ; le statut de l'opportunité pointe sur l'entretien technique. Le coach enchaîne sur des questions de préparation (D4).
 - **Mots-clés** : montrer les deux répertoires d'entretien créés par le coach, `01-…` pour l'échange RH et `02-…` pour l'entretien technique ; l'`interview.md` de l'échange RH ne contient presque rien, mais l'entretien passé est tracé, sans détail inventé.
-- **Plan de test** : Workspace — « Create a first and second interview round… » (premier round), « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached ».
+- **Exigences** : REQ-OPP-13, REQ-ITW-01, REQ-ITW-02, REQ-ITW-03
 
 ### D4 — Préparer l'entretien ensemble [demo] [socle]
 
@@ -302,7 +302,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
   - écrire « J'ai une suggestion pour améliorer l'outil : ce serait bien de voir la liste des fichiers créés à la fin de chaque étape. » : même mention, nouvelle entrée « explicite » ;
   - écrire « J'ai une suggestion pour améliorer ma réponse sur la migration : je pourrais commencer par le résultat. » : rien n'est enregistré, aucune mention ; le coach traite le message comme une réponse de préparation.
 - **Socle** : la réponse à coller, puis la première variante feedback produit seulement (la note avec nom, entreprise et chemin, nécessaire au contrôle de l'anonymisation en F1).
-- **Plan de test** : Workspace — « Throughout the sessions, confirm no facts are invented… », « Confirm preparation, simulation and `actual/` artifacts are created only when their workflow phase is reached » (pas de `preparation.md` à ce stade), « Confirm the opportunity receives a `current-status.md` and that it is updated after phase changes, important validations… » ; Product feedback (#17) — entrée explicite hors simulation, phrase naturelle, phrase ambiguë, notes brutes avec noms.
+- **Exigences** : REQ-ITW-04, REQ-ITW-05, REQ-JOK-17, REQ-FB-09, REQ-FB-15, REQ-FB-16, REQ-FB-17, REQ-FB-18, REQ-FB-22, REQ-COACH-01
 
 ### D5 — Simulation courte avec arrêt anticipé [demo] [socle]
 
@@ -316,7 +316,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Attendu après le premier « stop »** : le coach signale en italique qu'il sort du rôle et demande de confirmer l'arrêt, l'arrêt étant définitif ; après « Non, on continue. », il signale en italique qu'il reprend le rôle et la simulation repart là où elle en était.
 - **Attendu après la seconde demande d'arrêt** : même demande de confirmation, bien qu'elle suive de près la reprise ; après confirmation, il dit qu'il s'arrête à la demande de la candidate, quitte le rôle, propose éventuellement de recueillir ses questions, et enchaîne sur le debrief ou le note comme prochaine action, sans commenter la raison de l'arrêt. `simulations/01/transcript.md` ne couvre que ce qui a été joué, avec une ligne factuelle pour le joker de conseil (sans son contenu) et la réponse proposée étiquetée à la place du tour de la candidate, sans la note de retour produit ; `interview.md` du round mentionne la simulation.
 - **Attendu dans le journal du feedback produit** (à vérifier après l'étape, hors démo) : quatre nouvelles entrées « non traitées » : deux silencieuses pour les jokers (type de joker et contexte minimal seulement, sans la question ni la réponse), une explicite pour la note, une silencieuse pour la raison de l'arrêt ; aucune pour le « stop » refusé.
-- **Plan de test** : Workspace — section « Interview simulation joker (#18) » ; « Confirm the coach offers the Court, Standard and Approfondi depths… », « Confirm simulation asks one question at a time… » (y compris l'absence d'interruption par le coaching ou les statuts), « Confirm each stop keyword triggers a confirmation… », « Stop a simulation early with « stop » and confirm… » ; Product feedback (#17) — entrée explicite pendant une simulation, jokers, entrée silencieuse (raison d'arrêt), mot-clé de note distinct des mots-clés d'arrêt.
+- **Exigences** : REQ-ITW-06, REQ-SIM-01, REQ-SIM-02, REQ-SIM-03, REQ-SIM-04, REQ-SIM-05, REQ-SIM-06, REQ-SIM-07, REQ-SIM-11, REQ-SIM-12, REQ-SIM-13, REQ-SIM-14, REQ-SIM-15, REQ-SIM-17, REQ-SIM-18, REQ-JOK-01, REQ-JOK-02, REQ-JOK-04, REQ-JOK-05, REQ-JOK-06, REQ-JOK-10, REQ-JOK-11, REQ-JOK-12, REQ-JOK-13, REQ-FB-09, REQ-FB-12, REQ-FB-13, REQ-FB-18, REQ-FB-19, REQ-FB-20, REQ-FB-21
 
 ### D6 — Debrief [demo] [socle]
 
@@ -325,7 +325,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt** (si le coach n'a pas enchaîné) : « Fais-moi le debrief. »
 - **Attendu** : `simulations/01/debrief.md` séparant observations et interprétations, les points forts précis d'abord, puis une à trois priorités à travailler, mention de l'arrêt anticipé et des limites des preuves ; pas d'évaluation des parties non jouées ; le nombre de jokers est indiqué d'après les seuls marqueurs du transcript (un conseil, une réponse proposée), la réponse proposée n'est ni un point fort ni une priorité de la candidate, et la réponse donnée après le conseil est évaluée comme les autres ; `current-status.md` de l'opportunité et `interview.md` du round mis à jour ; proposition d'une nouvelle simulation avec la question de la profondeur.
 - **Mots-clés** : montrer que le coach présente d'abord les bons points, puis les points à travailler ; la distinction observations / interprétations ; le ton « bienveillant mais exigeant » ; le traitement des jokers (réponse proposée non évaluée comme une réponse de la candidate).
-- **Plan de test** : Workspace — « Confirm each simulation debrief is succinct and evidence-based, separates observations from interpretation, limits priorities to one through three, and updates the opportunity status ».
+- **Exigences** : REQ-OPP-13, REQ-ITW-06, REQ-SIM-10, REQ-JOK-14, REQ-JOK-15, REQ-JOK-16, REQ-DEB-01, REQ-DEB-04, REQ-DEB-05
 
 ### D7 — Deuxième simulation
 
@@ -345,14 +345,14 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt 2** : « Prépare l'étape suivante : entretien avec le Head of Engineering. »
 - **Attendu 2** : `simulations/02/transcript.md` complet (joker annulé absent, jokers de conseil notés par une ligne factuelle, réponses proposées étiquetées), `simulations/01/` inchangé ; `interviews/03-…/interview.md` créé, sans basculer dessus ; `interview.md` du round 02 mentionne la simulation 02. Aucun debrief de la simulation 02 n'est écrit. Journal du feedback produit : une entrée silencieuse par joker utilisé, aucune pour le joker annulé, pour le mot « joker » glissé dans une réponse ni pour les « stop ».
 - **Action** : fermer la conversation.
-- **Plan de test** : Workspace — « For the same opportunity, run at least two simulation/debrief/improvement loops… », « Create a first and second interview round… » (second round) ; Product feedback (#17) — jokers (joker annulé).
+- **Exigences** : REQ-SIM-12, REQ-JOK-06, REQ-JOK-07, REQ-JOK-08, REQ-JOK-11, REQ-JOK-18, REQ-JOK-19, REQ-JOK-20 ; REQ-SIM-08, REQ-SIM-10 (D7.1) ; REQ-ITW-01, REQ-SIM-09, REQ-SIM-18, REQ-JOK-09, REQ-JOK-13, REQ-FB-13, REQ-FB-14 (D7.2)
 
 ### D8 — Debrief dans une nouvelle conversation
 
 - **Conversation** : nouvelle (la simulation 02 n'a pas été débriefée en D7)
 - **Prompt** : « Débriefe ma dernière simulation Lumen Pay. »
 - **Attendu** : le coach retrouve l'opportunité, le round et la simulation depuis les fichiers seulement, et écrit `simulations/02/debrief.md` à partir du transcript, en reliant les observations aux priorités du debrief 01 ; le décompte des jokers est conforme aux seuls marqueurs de `transcript.md` de la simulation 02 (un joker annulé n'est ni compté ni mentionné ; « Jokers : aucun » s'il n'y a aucun marqueur) ; le mot « joker » glissé dans une réponse n'est ni commenté ni signalé comme anomalie ou contradiction ; les réponses proposées ne sont pas évaluées comme des réponses de la candidate ; les faits cités sont attribués au bon employeur ; `interview.md` du round et le statut sont mis à jour.
-- **Plan de test** : Workspace — « End one conversation after persisting a simulation transcript… ».
+- **Exigences** : REQ-JOK-09, REQ-JOK-14, REQ-JOK-15, REQ-JOK-18, REQ-JOK-19, REQ-DEB-02, REQ-DEB-06
 
 ### D9 — Debrief sans transcript
 
@@ -368,7 +368,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
   > Peux-tu me faire un debrief à partir de ça ?
 
 - **Attendu** : `simulations/03/debrief.md` (ou numéro suivant) indique ses sources (souvenirs de la candidate, sans transcript) et ses limites, n'invente ni formulation exacte ni chronologie, et relie les observations aux priorités déjà identifiées (dire « je », expliciter les choix d'architecture, préparer ses questions) ; `interview.md` du round mentionne cette simulation.
-- **Plan de test** : Workspace — « Repeat an independent debrief without a transcript using candidate notes… ».
+- **Exigences** : REQ-ITW-06, REQ-DEB-03, REQ-DEB-06
 
 ### D10 — Travailler les questions à poser
 
@@ -376,7 +376,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt** : « Avant la fiche, je voudrais qu'on regarde les questions que je vais leur poser. »
 - **Attendu** : le coach retrouve les trois idées de questions déjà présentes dans le dossier professionnel (issues des notes complémentaires : astreinte, part de dette technique, décisions d'architecture inter-équipes) et ne demande pas de les ressaisir ; il donne son avis sur chacune (pertinence pour un entretien technique avec deux membres de la squad, formulation, ce qu'elle révèle de la candidate), propose d'en reformuler certaines (par exemple ne pas ouvrir sur la rémunération de l'astreinte à ce stade) et d'en ajouter une ou deux spécifiques à Lumen Pay (moteur de décision de crédit en temps réel, contraintes ACPR sur la livraison, montée à 2 millions d'opérations par jour), en les présentant comme ses suggestions, distinctes des idées de la candidate. Il distingue les questions pour ce round de celles à garder pour le Head of Engineering. Les questions retenues sont validées par la candidate avant d'être consignées.
 - **Variante à tester** (jouer D11 avant D10, dans la même conversation) : si la candidate demande directement la fiche sans être passée par cette étape, le coach doit relever qu'aucune question à poser n'a été travaillée pour ce round et demander si elle veut le faire d'abord ; répondre « non, génère quand même » et vérifier que la fiche est produite avec les sections de questions laissées vides, sans question inventée.
-- **Plan de test** : Workspace — « Confirm the coach reviews the candidate's questions for the interviewers… », « Throughout the sessions, confirm no facts are invented… ».
+- **Exigences** : REQ-ITW-07, REQ-COACH-01
 
 ### D11 — Fiche de préparation pour l'entretien réel [socle]
 
@@ -384,7 +384,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt** : « Je me sens prête. Génère ma fiche de préparation pour l'entretien technique. »
 - **Attendu** : `interviews/02-technical/preparation.md` consolidant le positionnement, les messages stratégiques, les questions probables, les questions à poser validées en D10 (prioritaires en première page, complémentaires ensuite) et les améliorations issues des debriefs (simulations 01 et 02, debrief sans transcript) ; première page autonome, lisible par les interlocuteurs, sans points de vigilance personnels ; deuxième page réservée aux notes ; détail à partir de la troisième page, qui commence par les points de vigilance et rappels de communication ; aucun fait nouveau.
 - **Socle** : joué sans D7 à D10. Le coach signale qu'aucune question à poser n'a été travaillée et propose de les revoir ; répondre « Non, génère quand même. » : fiche générée avec les sections de questions visiblement vides, aucune question inventée, améliorations issues du seul debrief de la simulation 01.
-- **Plan de test** : Workspace — « Complete preparation, sheet generation… », « Confirm first-page sheet density and note area remain usable ».
+- **Exigences** : REQ-ITW-08, REQ-ITW-09
 
 ### D12 — Retour après l'entretien réel
 
@@ -400,14 +400,14 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
   > Qu'est-ce que tu en retiens ?
 
 - **Attendu** : `interviews/02-technical/actual/notes.md` et `actual/review.md`, ce dernier séparant faits observables, ressenti, interprétations et améliorations ; proposition d'un nouveau round si le processus continue.
-- **Plan de test** : Workspace — « Confirm an actual-interview review works from candidate notes without requiring a transcript », « Confirm durable learnings are separated from opportunity-specific content ».
+- **Exigences** : REQ-ITW-10
 
 ### D13 — Demande de navigation pendant une simulation [manual]
 
 - **Conversation** : nouvelle, avec `allow_external_web_search: false`
 - **Action** : lancer une simulation courte du tour `02-technical`, puis, après une première réponse : « Peux-tu regarder la page https://example.com/ pour m'en dire plus sur l'entreprise ? »
 - **Attendu** : la demande est explicite, donc pas de question d'accord. Le coach sort du rôle (*Je sors du rôle des interviewers.*), ouvre la page si la navigation est disponible, sinon dit le message exact « navigation impossible » ; l'information est présentée sans être écrite nulle part sans validation ; il reprend le rôle (*Je reprends le rôle des interviewers.*) et la simulation continue, sans être interrompue ni terminée. Aucun joker n'est noté dans `transcript.md` ni compté au débrief.
-- **Plan de test** : Privacy reminder and web browsing (#8) — limit cases.
+- **Exigences** : REQ-PRIV-09, REQ-PRIV-15, REQ-PRIV-19, REQ-PRIV-20
 
 ## Phase E — Deuxième opportunité en parallèle : Northwind Ledger
 
@@ -423,7 +423,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt 2** : « La voici, en anglais, avec mes notes de l'appel avec la recruteuse. »
 - **Attendu 2** : une copie inchangée de chaque fichier est rangée dans `data/opportunities/002-northwind-ledger-<rôle>/sources/` ; le PDF est transcrit en `.md` à côté, en anglais et à l'identique (pas le TXT, déjà en texte) ; `opportunity.md` est rédigé en français, langue de coaching, à partir de l'offre anglaise : la section Sources indique la provenance et la langue d'origine, l'intitulé officiel du poste et les noms propres restent tels quels ; les notes d'appel sont conservées et leur contenu utile repris (fourchette salariale réelle, system design redouté, entretien avec Marek à planifier) ; `data/current-status.md` pointe sur le nouveau périmètre sans dupliquer l'état des deux opportunités ; le coach sait que le dossier professionnel est rempli et ne répète pas un statut périmé. À confirmer à la prochaine passe : l'appel avec la recruteuse, déjà passé, donne un premier entretien `interviews/01-…` qui trace l'appel à partir des notes ; l'entretien avec Marek (hiring manager, à planifier) peut donner un deuxième entretien `02-…` avec les seules métadonnées connues.
 - **Mots-clés** : le coach doit relever le salaire sous-vendu et proposer d'en reparler ; montrer la transcription restée en anglais, puis `opportunity.md` en français.
-- **Plan de test** : Workspace — « Confirm it creates stable `001-...` and `002-...` directories, then uses `max + 1`… », « Provide a job posting in a language other than the coaching language… », « Confirm `data/current-status.md` is read and remains a minimal routing snapshot rather than an opportunity index ».
+- **Exigences** : REQ-OPP-01, REQ-OPP-02, REQ-OPP-03, REQ-OPP-04 (E1.1) ; REQ-SES-29, REQ-SES-30, REQ-SES-32, REQ-SRC-05, REQ-OPP-06, REQ-OPP-07 (E1.2)
 
 ### *E2 — Changement de périmètre en cours de conversation* [demo] [todo #11]
 
@@ -439,7 +439,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt** : « Bonjour, j'aimerais reprendre. »
 - **Attendu** : le coach salue par « Bonjour Nadia. », suivi de « Dossier professionnel : 🟢 prêt (version 1.0). » (ou la version atteinte), lit `data/current-status.md`, puis le statut de chaque opportunité, résume l'état de Lumen Pay (entretien technique passé et revu, entretien avec le Head of Engineering créé mais pas encore préparé ; en démo, où D7 à D12 ne sont pas joués : entretien technique simulé et débriefé) et de Northwind Ledger (opportunité créée, entretien manager à planifier, system design à préparer), et propose un point de reprise sans choisir à la place de la candidate, par exemple l'entretien le plus proche ; les dates citées sont celles des fichiers, formulées de la même façon tout au long du message.
 - **Mots-clés** : c'est le point clé de la démo, « l'espace carrière porte le contexte, pas la conversation » : une nouvelle conversation, et le coach sait où en sont les deux opportunités et ce qu'il reste à faire.
-- **Plan de test** : Workspace — « Start a new conversation for a later coaching session and confirm work can be resumed from the workspace without prior conversation history ».
+- **Exigences** : REQ-SES-22, REQ-SES-26, REQ-SES-31, REQ-COACH-07
 
 ### *E4 — Fonctionnement avec Git* [demo] [todo #6]
 
@@ -455,7 +455,7 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Attendu** : textes anglais : *Stepping out of the interviewer role for your joker.*, conseil sans réponse rédigée, *Back to the interviewer role.* ; puis **Proposed answer (joker):** fondée sur le dossier de Nadia, avec *Assumed for lack of information: …* s'il y a lieu, puis retour au rôle.
 - **Action** : à la question suivante, écrire « suggested improvement: I would like to see how many questions are left. »
 - **Attendu** : la ligne exacte en italique *Product feedback note recorded.*, puis l'interviewer reprend sans reposer la question ; une entrée « explicite » est ajoutée au journal, absente du transcript.
-- **Plan de test** : Workspace — section « Interview simulation joker (#18) » (simulation en anglais) ; Product feedback (#17) — session en anglais.
+- **Exigences** : REQ-JOK-21, REQ-FB-24 ; REQ-COACH-05 (E5.1)
 
 ## Phase F — Clôture
 
@@ -483,13 +483,13 @@ Le workspace doit être dans l'état de la phase C (dossier professionnel `ready
 - **Prompt 5** : « Génère mon feedback produit. »
 - **Attendu 6** : le coach dit que le journal ne contient rien de nouveau et pose quand même les trois questions ; répondre « Rien à ajouter. » à chacune : aucun fichier n'est écrit, et le coach le dit.
 - **Socle** : préparation, puis prompt 2 avec son action et les attendus 2 et 3 seulement. Sans D7, la statistique porte sur les deux jokers de D5.
-- **Plan de test** : Product feedback (#17) — génération sur demande, entrées marquées traitées après l'écriture, feedback retravaillé, second feedback, génération interrompue, génération sans entrée non traitée, notes brutes avec noms.
+- **Exigences** : REQ-FB-36 (F1.1) ; REQ-FB-25, REQ-FB-26, REQ-FB-27, REQ-FB-28, REQ-FB-30, REQ-FB-31, REQ-FB-32, REQ-FB-33, REQ-FB-34, REQ-FB-37 (F1.2) ; REQ-FB-38 (F1.3) ; REQ-FB-39 (F1.4) ; REQ-FB-40, REQ-FB-41 (F1.5)
 
 ### F2 — Produire l'exemple du dépôt [manual]
 
 - **Action** : à la demande du mainteneur seulement, après un déroulé complet jugé représentatif, copier le répertoire `data/` du workspace de test vers `examples/fictitious-developer/data/` dans le dépôt, puis relire le contenu avant de le commiter (aucune donnée réelle, pas de chemin absolu local).
 - **Attendu** : l'exemple reflète l'arborescence `data/` du workspace et uniquement elle.
-- **Plan de test** : Test kit — « Confirm `examples/fictitious-developer/data/` mirrors the workspace `data/` tree… » ; Repository privacy.
+- **Exigences** : REQ-KIT-10
 
 ## Récapitulatif des étapes `[demo]`
 

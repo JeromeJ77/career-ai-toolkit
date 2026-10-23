@@ -20,186 +20,186 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-SES-01 | Consignes du workspace appliquées dès l'ouverture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-02 | Ligne de lancement | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-03 | Aucun préambule | 🐞 Problème constaté | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-04 | Aucune phrase d'état quand rien n'a changé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-05 | Détection de la première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-01 | Consignes du workspace appliquées dès l'ouverture | ✅ Validé | 2026-10-11 | affa1f0 | B1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-02 | Ligne de lancement | ✅ Validé | 2026-10-11 | affa1f0 | B1.1, B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-03 | Aucun préambule | 🐞 Problème constaté | 2026-10-11 | affa1f0 | B1.1, B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-04 | Aucune phrase d'état quand rien n'a changé | ✅ Validé | 2026-10-11 | affa1f0 | B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-05 | Détection de la première session | ✅ Validé | 2026-10-11 | affa1f0 | B1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SES-06 | Perte possible de `data/current-status.md` | ⬜ Non testé | — | — | — | — |
-| REQ-SES-07 | Accueil de première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-08 | Accueil avant tout examen des données | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-09 | Attente de la réponse au prénom | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-10 | Pas d'accueil hors première session | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-11 | Fichiers obligatoires créés à la première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-12 | Compte rendu de création en une phrase | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-13 | Proposition de la première étape | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-14 | Session suivante sans création ni réécriture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-15 | Fichier obligatoire manquant recréé seul | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-SES-16 | Fichier personnalisé laissé intact | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-SES-17 | Prénom accepté | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-18 | « Oui » sans prénom | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-SES-19 | Prénom refusé | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-SES-20 | Question du prénom ignorée | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-SES-21 | Question du prénom sans accueil | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-SES-22 | Salutation de début de conversation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-23 | Au revoir | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-SES-24 | Prénom limité à la salutation (une occurrence naturelle jugée bonne : règle à assouplir, backlog) | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-07 | Accueil de première session | ✅ Validé | 2026-10-11 | affa1f0 | B1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-08 | Accueil avant tout examen des données | ✅ Validé | 2026-10-11 | affa1f0 | B1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-09 | Attente de la réponse au prénom | ✅ Validé | 2026-10-11 | affa1f0 | B1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-10 | Pas d'accueil hors première session | ⚠️ À revalider | 2026-10-11 | affa1f0 | B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-11 | Fichiers obligatoires créés à la première session | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-12 | Compte rendu de création en une phrase | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-13 | Proposition de la première étape | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-14 | Session suivante sans création ni réécriture | ✅ Validé | 2026-10-11 | affa1f0 | B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-15 | Fichier obligatoire manquant recréé seul | ⚠️ À revalider | 2026-10-05 | 3dec49c | B3 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-16 | Fichier personnalisé laissé intact | ⚠️ À revalider | 2026-10-05 | 3dec49c | B3 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-17 | Prénom accepté | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-18 | « Oui » sans prénom | ✅ Validé | 2026-10-05 | 0.4.0-dev | B7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-19 | Prénom refusé | ✅ Validé | 2026-10-05 | 0.4.0-dev | B7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-20 | Question du prénom ignorée | ✅ Validé | 2026-10-05 | 0.4.0-dev | B7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-21 | Question du prénom sans accueil | ✅ Validé | 2026-10-11 | 0.4.0-dev | B7 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-SES-22 | Salutation de début de conversation | ✅ Validé | 2026-10-11 | affa1f0 | B2, C4.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-23 | Au revoir | ✅ Validé | 2026-10-05 | 0.4.0-dev | B7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SES-24 | Prénom limité à la salutation (une occurrence naturelle jugée bonne : règle à assouplir, backlog) | ✅ Validé | 2026-10-05 | 0.4.0-dev | B2 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
 | REQ-SES-25 | Aucune ligne de statut en première session | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
-| REQ-SES-26 | Ligne de statut du dossier | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-26 | Ligne de statut du dossier | ✅ Validé | 2026-10-11 | affa1f0 | B2, C4.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SES-27 | Ligne de statut en anglais | ⬜ Non testé | — | — | — | — |
-| REQ-SES-28 | Démarrage de session en anglais | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-SES-29 | Dossier professionnel lu avant de répondre | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SES-28 | Démarrage de session en anglais | ⚠️ À revalider | 2026-10-05 | 3dec49c | B9 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-29 | Dossier professionnel lu avant de répondre | ✅ Validé | 2026-10-11 | affa1f0 | C1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SES-30 | État courant périmé corrigé | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
 | REQ-SES-31 | Reprise depuis l'espace carrière | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SES-32 | État courant minimal | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-SES-32 | État courant minimal | ✅ Validé | 2026-10-05 | 3dec49c | E1.2 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
 | REQ-SES-33 | Salutation et au revoir en anglais | ⬜ Non testé | — | — | — | — |
 
 ### Configuration (`REQ-CONF`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-CONF-01 | Clé manquante ajoutée à sa place | ⚠️ À revalider | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-CONF-02 | Clé ajoutée signalée | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-CONF-03 | Aucun ajout quand rien ne manque | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-CONF-04 | Valeur invalide signalée sans réécriture | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-CONF-05 | Langues par défaut | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-CONF-01 | Clé manquante ajoutée à sa place | ⚠️ À revalider | 2026-10-11 | 0.4.0-dev | B7 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-CONF-02 | Clé ajoutée signalée | ✅ Validé | 2026-10-11 | 0.4.0-dev | B7 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-CONF-03 | Aucun ajout quand rien ne manque | ✅ Validé | 2026-10-11 | affa1f0 | B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-CONF-04 | Valeur invalide signalée sans réécriture | ✅ Validé | 2026-10-05 | 3dec49c | B5 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-CONF-05 | Langues par défaut | ✅ Validé | 2026-10-02 | 0.4.0-dev | B6 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
 
 ### Sources du dossier (`REQ-SRC`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-SRC-01 | Trois façons de fournir les sources | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SRC-02 | Pièce jointe rangée au bon endroit | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SRC-03 | Transcription Markdown à côté de l'original | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SRC-04 | Original inchangé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-01 | Trois façons de fournir les sources | ✅ Validé | 2026-10-11 | affa1f0 | C1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-02 | Pièce jointe rangée au bon endroit | ✅ Validé | 2026-10-11 | affa1f0 | C1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-03 | Transcription Markdown à côté de l'original | ✅ Validé | 2026-10-11 | affa1f0 | C1.2, D1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-04 | Original inchangé | ✅ Validé | 2026-10-11 | affa1f0 | C1.2, D1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-SRC-05 | Pas de transcription d'une source déjà en texte | ⬜ Non testé | — | — | — | — |
 | REQ-SRC-06 | Passages illisibles marqués | 🐞 Problème constaté | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
-| REQ-SRC-07 | Transcription existante jamais écrasée | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
-| REQ-SRC-08 | Source très volumineuse | ✅ Validé | 2026-10-03 | 5ad0ce8 | — | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
-| REQ-SRC-09 | Références externes notées | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SRC-10 | Aucune référence dupliquée | ✅ Validé | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-SRC-07 | Transcription existante jamais écrasée | ✅ Validé | 2026-10-02 | 0.4.0-dev | C5 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-SRC-08 | Source très volumineuse | ✅ Validé | 2026-10-03 | 5ad0ce8 | C6 | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
+| REQ-SRC-09 | Références externes notées | ✅ Validé | 2026-10-11 | affa1f0 | C1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SRC-10 | Aucune référence dupliquée | ✅ Validé | 2026-10-02 | 0.4.0-dev | C5 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
 | REQ-SRC-11 | Réimport complet | ⚠️ À revalider | 2026-09-30 | 0.4.0-dev | — | [2026-09-30](test-history/2026-09-30-rejeu-apres-consolidation-des-regles.md) |
 
 ### Dossier professionnel (`REQ-PROF`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-PROF-01 | Squelette vide à la création | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PROF-02 | Validation avant toute écriture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PROF-03 | Dossier initial proposé à partir des sources | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PROF-04 | Première modification validée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-01 | Squelette vide à la création | ✅ Validé | 2026-10-11 | affa1f0 | B1.2, B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-02 | Validation avant toute écriture | ✅ Validé | 2026-10-11 | affa1f0 | C1.2, C2, C4.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-03 | Dossier initial proposé à partir des sources | ⚠️ À revalider | 2026-10-11 | affa1f0 | C1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-04 | Première modification validée | ✅ Validé | 2026-10-11 | affa1f0 | C2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-PROF-05 | Une seule incrémentation de version par session | ⬜ Non testé | — | — | — | — |
 | REQ-PROF-06 | Passage à « prêt » proposé par le coach | ⬜ Non testé | — | — | — | — |
-| REQ-PROF-07 | Informations ajoutées avant « prêt » | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PROF-08 | Passage à « prêt » validé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PROF-09 | « Prêt » demandé par le candidat | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-07 | Informations ajoutées avant « prêt » | ✅ Validé | 2026-10-11 | affa1f0 | C4.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-08 | Passage à « prêt » validé | ✅ Validé | 2026-10-11 | affa1f0 | C4.3 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-09 | « Prêt » demandé par le candidat | ✅ Validé | 2026-10-11 | affa1f0 | C4.3 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-PROF-10 | Proposition de « prêt » refusée | ⬜ Non testé | — | — | — | — |
-| REQ-PROF-11 | Historique de chaque changement de statut ou de version | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PROF-12 | Statut inconnu | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-PROF-11 | Historique de chaque changement de statut ou de version | ⚠️ À revalider | 2026-10-11 | affa1f0 | C2, C4.3 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PROF-12 | Statut inconnu | ⚠️ À revalider | 2026-10-09 | 5c3f748 | C10 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-PROF-13 | Statut absent | ⬜ Non testé | — | — | — | — |
 | REQ-PROF-14 | Version illisible ou en-tête incohérent | ⬜ Non testé | — | — | — | — |
-| REQ-PROF-15 | Retour en construction | ✅ Validé | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
+| REQ-PROF-15 | Retour en construction | ✅ Validé | 2026-10-11 | 5159d42 | C11.1 | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
 | REQ-PROF-16 | Mises à jour courantes d'un dossier prêt | ⬜ Non testé | — | — | — | — |
-| REQ-PROF-17 | Dossier supprimé | ⚠️ À revalider | 2026-10-03 | 5ad0ce8 | — | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
+| REQ-PROF-17 | Dossier supprimé | ⚠️ À revalider | 2026-10-03 | 5ad0ce8 | C7 | [2026-10-03](test-history/2026-10-03-demo-a-blanc-et-rejeu-cible.md) |
 
 ### Opportunités (`REQ-OPP`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-OPP-01 | Opportunité créée par le coach | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-02 | Numérotation stable des opportunités | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
-| REQ-OPP-03 | Structure créée avec l'opportunité | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-04 | Trois façons de fournir l'offre | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-01 | Opportunité créée par le coach | ✅ Validé | 2026-10-11 | affa1f0 | D1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-02 | Numérotation stable des opportunités | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | E1.1 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-OPP-03 | Structure créée avec l'opportunité | ✅ Validé | 2026-10-11 | affa1f0 | D1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-04 | Trois façons de fournir l'offre | ✅ Validé | 2026-10-11 | affa1f0 | D1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-OPP-05 | Texte collé enregistré | ⬜ Non testé | — | — | — | — |
 | REQ-OPP-06 | Transcription dans la langue de la source | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-OPP-07 | `opportunity.md` dans la langue de coaching | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
-| REQ-OPP-08 | `opportunity.md` limité aux faits sourcés | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-09 | Analyse séparée | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-08 | `opportunity.md` limité aux faits sourcés | ✅ Validé | 2026-10-11 | affa1f0 | D1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-09 | Analyse séparée | ⚠️ À revalider | 2026-10-11 | affa1f0 | D2.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-OPP-10 | Synthèse orientée action (critère mesurable à définir) | ⬜ Non testé | — | — | — | — |
-| REQ-OPP-11 | Messages stratégiques proposés | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-12 | Message retiré conservé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-13 | Statut de l'opportunité tenu à jour | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-OPP-14 | Refus bienveillant avec un dossier non prêt | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-15 | Suite du refus | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-16 | Travaux soumis au statut | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-17 | Travaux toujours disponibles | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
-| REQ-OPP-18 | Retour au dossier proposé après création | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-11 | Messages stratégiques proposés | ✅ Validé | 2026-10-11 | affa1f0 | D2.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-12 | Message retiré conservé | ✅ Validé | 2026-10-11 | affa1f0 | D2.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-13 | Statut de l'opportunité tenu à jour | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | D6 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-OPP-14 | Refus bienveillant avec un dossier non prêt | ✅ Validé | 2026-10-11 | affa1f0 | C4.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-15 | Suite du refus | ✅ Validé | 2026-10-11 | affa1f0 | C4.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-16 | Travaux soumis au statut | ⚠️ À revalider | 2026-10-11 | affa1f0 | C4.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-17 | Travaux toujours disponibles | ⚠️ À revalider | 2026-10-09 | 5c3f748 | C9.1 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-18 | Retour au dossier proposé après création | ✅ Validé | 2026-10-09 | 5c3f748 | C9.1 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-OPP-19 | Création et analyse dans le même message | ⬜ Non testé | — | — | — | — |
-| REQ-OPP-20 | Mise en garde une fois par opportunité et par conversation | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
-| REQ-OPP-21 | Insistance et dérogation | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-20 | Mise en garde une fois par opportunité et par conversation | ⚠️ À revalider | 2026-10-09 | 5c3f748 | C9.2 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-21 | Insistance et dérogation | ✅ Validé | 2026-10-09 | 5c3f748 | C9.2 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-OPP-22 | Dérogation limitée à l'opportunité | ⬜ Non testé | — | — | — | — |
-| REQ-OPP-23 | Rappel de dérogation | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-23 | Rappel de dérogation | ✅ Validé | 2026-10-09 | 5c3f748 | C9.3 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-OPP-24 | Rappel de dérogation en anglais | ⬜ Non testé | — | — | — | — |
 | REQ-OPP-25 | Dossier prêt : travail sans mise en garde | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-26 | Passes d'analyse tracées | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-OPP-27 | Nouvelle passe proposée quand le dossier devient prêt | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-26 | Passes d'analyse tracées | ✅ Validé | 2026-10-11 | affa1f0 | D2.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-OPP-27 | Nouvelle passe proposée quand le dossier devient prêt | ✅ Validé | 2026-10-09 | 5c3f748 | C9.6 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
 | REQ-OPP-28 | Refus définitif d'une nouvelle passe | ⬜ Non testé | — | — | — | — |
-| REQ-OPP-29 | Nouvelle passe à tout moment | ✅ Validé | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
-| REQ-OPP-30 | Dérogation close par une passe avec un dossier prêt | ⚠️ À revalider | 2026-10-09 | 5c3f748 | — | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
-| REQ-OPP-31 | Opportunités actives alignées sur le statut du dossier | 🐞 Problème constaté | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
+| REQ-OPP-29 | Nouvelle passe à tout moment | ✅ Validé | 2026-10-09 | 5c3f748 | C9.8 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-30 | Dérogation close par une passe avec un dossier prêt | ⚠️ À revalider | 2026-10-09 | 5c3f748 | C9.8 | [2026-10-09](test-history/2026-10-09-tests-manuels-9-statut-dossier.md) |
+| REQ-OPP-31 | Opportunités actives alignées sur le statut du dossier | 🐞 Problème constaté | 2026-10-11 | 5159d42 | C11.1 | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
 | REQ-OPP-32 | Prochaine action alignée sur l'état de l'opportunité | ⬜ Non testé | — | — | — | — |
 
 ### Entretiens (`REQ-ITW`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-ITW-01 | Tours d'entretien numérotés | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-02 | Artefacts créés à l'étape atteinte | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-03 | Entretien passé tracé sans détail inventé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-04 | Préparation sans jeu de rôle | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-05 | Préparation commencée notée dans `interview.md` | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-06 | `interview.md` à jour après chaque étape | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-07 | Revue des questions à poser | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-controles-generiques-coach.md) |
-| REQ-ITW-08 | Fiche demandée sans questions travaillées | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-09 | Structure de la fiche de préparation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-ITW-10 | Retour après l'entretien réel | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-ITW-01 | Tours d'entretien numérotés | ✅ Validé | 2026-10-11 | affa1f0 | D3 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-02 | Artefacts créés à l'étape atteinte | ✅ Validé | 2026-10-11 | affa1f0 | D3 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-03 | Entretien passé tracé sans détail inventé | ✅ Validé | 2026-10-11 | affa1f0 | D3 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-04 | Préparation sans jeu de rôle | ✅ Validé | 2026-10-11 | affa1f0 | D4 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-05 | Préparation commencée notée dans `interview.md` | ✅ Validé | 2026-10-11 | affa1f0 | D4 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-06 | `interview.md` à jour après chaque étape | ⚠️ À revalider | 2026-10-11 | affa1f0 | D5, D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-07 | Revue des questions à poser | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | D10 | [2026-10-04](test-history/2026-10-04-controles-generiques-coach.md) |
+| REQ-ITW-08 | Fiche demandée sans questions travaillées | ✅ Validé | 2026-10-11 | affa1f0 | D11 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-09 | Structure de la fiche de préparation | ✅ Validé | 2026-10-11 | affa1f0 | D11 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-ITW-10 | Retour après l'entretien réel | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | D12 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
 
 ### Simulation d'entretien (`REQ-SIM`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-SIM-01 | Profondeurs proposées | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-02 | Rappel des mots-clés d'arrêt (ordre du rappel à revérifier) | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-03 | Une question à la fois | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-04 | Un seul interviewer par tour | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-05 | Lignes de rôle en italique | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-06 | Pas de coaching pendant le jeu | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-07 | Première simulation sans renvoi à la préparation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-08 | Simulations indépendantes | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
-| REQ-SIM-09 | Numérotation des simulations | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
-| REQ-SIM-10 | Nouvelle simulation : profondeur et cas redemandés | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-11 | Confirmation d'un mot-clé d'arrêt | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-12 | Reprise après un arrêt non confirmé | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-13 | Chaque demande d'arrêt confirmée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-14 | « stop » dans une réponse | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-15 | Demande d'arrêt sans mot-clé ou ambiguë | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-SIM-01 | Profondeurs proposées | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-02 | Rappel des mots-clés d'arrêt (ordre du rappel à revérifier) | ⚠️ À revalider | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-03 | Une question à la fois | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-04 | Un seul interviewer par tour | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-05 | Lignes de rôle en italique | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-06 | Pas de coaching pendant le jeu | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-07 | Première simulation sans renvoi à la préparation | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-08 | Simulations indépendantes | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | D7.1 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-SIM-09 | Numérotation des simulations | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | D7.2 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-SIM-10 | Nouvelle simulation : profondeur et cas redemandés | ⚠️ À revalider | 2026-10-11 | affa1f0 | D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-11 | Confirmation d'un mot-clé d'arrêt | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-12 | Reprise après un arrêt non confirmé | ⚠️ À revalider | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-13 | Chaque demande d'arrêt confirmée | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-14 | « stop » dans une réponse | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-15 | Demande d'arrêt sans mot-clé ou ambiguë | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | D5 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
 | REQ-SIM-16 | Pause non prise en charge | ⬜ Non testé | — | — | — | — |
-| REQ-SIM-17 | Arrêt confirmé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-SIM-18 | Transcript de la simulation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-17 | Arrêt confirmé | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-SIM-18 | Transcript de la simulation | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 
 ### Joker (`REQ-JOK`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-JOK-01 | Rappel du joker au début de la simulation (ordre du rappel à revérifier) | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-02 | Déclenchement | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-01 | Rappel du joker au début de la simulation (ordre du rappel à revérifier) | ⚠️ À revalider | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-02 | Déclenchement | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-JOK-03 | Formulation équivalente | ⬜ Non testé | — | — | — | — |
-| REQ-JOK-04 | Joker de conseil | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-05 | Question non reposée après le retour | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-06 | Une ligne de sortie et une ligne de retour | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-JOK-07 | Demande de précision | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-JOK-08 | Joker annulé : reprise du rôle | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-JOK-09 | Joker annulé ignoré | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-JOK-10 | Réponse proposée étiquetée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-11 | Réponse proposée sans fait inventé | 🐞 Problème constaté | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-12 | Réaction de l'interviewer à la réponse proposée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-13 | Jokers dans le transcript | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-14 | Décompte des jokers au débrief | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-15 | Réponse proposée non évaluée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-JOK-16 | Réponse après conseil évaluée | ✅ Validé | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
-| REQ-JOK-17 | Joker hors simulation | ✅ Validé | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
-| REQ-JOK-18 | « joker » dans une réponse | ✅ Validé | 2026-10-05 | 0.4.0-dev | — | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
-| REQ-JOK-19 | Jokers sans limite | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-JOK-04 | Joker de conseil | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-05 | Question non reposée après le retour | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-06 | Une ligne de sortie et une ligne de retour | 🐞 Problème constaté | 2026-10-05 | 0.4.0-dev | D5, D7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-JOK-07 | Demande de précision | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | D7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-JOK-08 | Joker annulé : reprise du rôle | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | D7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-JOK-09 | Joker annulé ignoré | ⚠️ À revalider | 2026-10-05 | 0.4.0-dev | D7.2 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-JOK-10 | Réponse proposée étiquetée | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-11 | Réponse proposée sans fait inventé | 🐞 Problème constaté | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-12 | Réaction de l'interviewer à la réponse proposée | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-13 | Jokers dans le transcript | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-14 | Décompte des jokers au débrief | ✅ Validé | 2026-10-11 | affa1f0 | D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-15 | Réponse proposée non évaluée | ✅ Validé | 2026-10-11 | affa1f0 | D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-JOK-16 | Réponse après conseil évaluée | ✅ Validé | 2026-10-04 | 0.4.0-dev | D6 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-JOK-17 | Joker hors simulation | ✅ Validé | 2026-10-04 | 0.4.0-dev | D4 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-JOK-18 | « joker » dans une réponse | ✅ Validé | 2026-10-05 | 0.4.0-dev | D7 | [2026-10-05](test-history/2026-10-05-tests-manuels-corrections-15-18.md) |
+| REQ-JOK-19 | Jokers sans limite | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | D7, D8 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
 | REQ-JOK-20 | Arrêt juste après un joker | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-JOK-21 | Joker en anglais | ⬜ Non testé | — | — | — | — |
 
@@ -207,83 +207,83 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-DEB-01 | Débrief succinct fondé sur les preuves | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-DEB-02 | Débrief dans une nouvelle conversation | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
-| REQ-DEB-03 | Débrief sans transcript | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | — | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
-| REQ-DEB-04 | Débrief après un arrêt anticipé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-DEB-05 | Suite du débrief | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-DEB-06 | Débrief relié aux priorités précédentes | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-DEB-01 | Débrief succinct fondé sur les preuves | ✅ Validé | 2026-10-11 | affa1f0 | D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-DEB-02 | Débrief dans une nouvelle conversation | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | D8 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
+| REQ-DEB-03 | Débrief sans transcript | ⚠️ À revalider | 2026-10-02 | 0.4.0-dev | D9 | [2026-10-02](test-history/2026-10-02-deroule-complet-scenario-maitre.md) |
+| REQ-DEB-04 | Débrief après un arrêt anticipé | ✅ Validé | 2026-10-11 | affa1f0 | D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-DEB-05 | Suite du débrief | ✅ Validé | 2026-10-11 | affa1f0 | D6 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-DEB-06 | Débrief relié aux priorités précédentes | ⚠️ À revalider | 2026-10-04 | 0.4.0-dev | D8 | [2026-10-04](test-history/2026-10-04-tests-manuels-joker.md) |
 
 ### Confidentialité et navigation web (`REQ-PRIV`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-PRIV-01 | Rappel de confidentialité en première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PRIV-02 | Rappel non bloquant | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PRIV-03 | Rappel absent des sessions suivantes | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-PRIV-04 | Rappel de confidentialité en anglais | ⚠️ À revalider | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-05 | Navigation désactivée si le paramètre manque ou est illisible | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-06 | Aucune navigation de la propre initiative du coach | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-07 | Accord explicite pour une exception ponctuelle | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-08 | Lien fourni sans accord | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-09 | Demande explicite d'ouverture | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-10 | Accord non permanent | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-11 | Exception refusée | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-12 | Navigation autorisée par le paramètre | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-13 | Lien impossible à ouvrir | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-01 | Rappel de confidentialité en première session | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PRIV-02 | Rappel non bloquant | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PRIV-03 | Rappel absent des sessions suivantes | ✅ Validé | 2026-10-11 | affa1f0 | B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-PRIV-04 | Rappel de confidentialité en anglais | ⚠️ À revalider | 2026-10-05 | 3dec49c | B9 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-05 | Navigation désactivée si le paramètre manque ou est illisible | ✅ Validé | 2026-10-05 | 3dec49c | B4, B5 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-06 | Aucune navigation de la propre initiative du coach | ✅ Validé | 2026-10-05 | 3dec49c | B5, C8.1 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-07 | Accord explicite pour une exception ponctuelle | ✅ Validé | 2026-10-05 | 3dec49c | C8.1, C8.5 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-08 | Lien fourni sans accord | ✅ Validé | 2026-10-05 | 3dec49c | C8.1, C8.5 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-09 | Demande explicite d'ouverture | ✅ Validé | 2026-10-05 | 3dec49c | D13 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-10 | Accord non permanent | ✅ Validé | 2026-10-05 | 3dec49c | C8.5 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-11 | Exception refusée | ✅ Validé | 2026-10-05 | 3dec49c | C8.3 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-12 | Navigation autorisée par le paramètre | ✅ Validé | 2026-10-05 | 3dec49c | C8.6 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-13 | Lien impossible à ouvrir | ✅ Validé | 2026-10-05 | 3dec49c | C8.2 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
 | REQ-PRIV-14 | Navigation indisponible dans l'outil | ⬜ Non testé | — | — | — | — |
-| REQ-PRIV-15 | Information récupérée validée avant intégration | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-15 | Information récupérée validée avant intégration | ✅ Validé | 2026-10-05 | 3dec49c | C8.4, C8.6 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
 | REQ-PRIV-16 | Provenance de l'information récupérée | ⬜ Non testé | — | — | — | — |
 | REQ-PRIV-17 | Offre lue en ligne conservée en transcription | ⬜ Non testé | — | — | — | — |
 | REQ-PRIV-18 | Référence externe consultée pour le dossier | ⬜ Non testé | — | — | — | — |
-| REQ-PRIV-19 | Navigation demandée pendant une simulation | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
-| REQ-PRIV-20 | Navigation en simulation distincte du joker | ✅ Validé | 2026-10-05 | 3dec49c | — | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-19 | Navigation demandée pendant une simulation | ✅ Validé | 2026-10-05 | 3dec49c | D13 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
+| REQ-PRIV-20 | Navigation en simulation distincte du joker | ✅ Validé | 2026-10-05 | 3dec49c | D13 | [2026-10-05](test-history/2026-10-05-tests-manuels-8-confidentialite-navigation-web.md) |
 | REQ-PRIV-21 | Messages de navigation en anglais | ⬜ Non testé | — | — | — | — |
 
 ### Feedback produit (`REQ-FB`)
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-FB-01 | Message d'information de première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-02 | Identifiant anonyme généré | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-01 | Message d'information de première session | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-02 | Identifiant anonyme généré | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-03 | Identifiant jamais modifié | ⬜ Non testé | — | — | — | — |
-| REQ-FB-04 | Journal créé à la première session | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-05 | Rien au démarrage des sessions suivantes | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-06 | Workspace antérieur au feedback produit | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-FB-07 | Identifiant et journal recréé signalés (signalés ensemble en une phrase : règle à assouplir, backlog) | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-04 | Journal créé à la première session | ✅ Validé | 2026-10-11 | affa1f0 | B1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-05 | Rien au démarrage des sessions suivantes | ✅ Validé | 2026-10-11 | affa1f0 | B2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-06 | Workspace antérieur au feedback produit | ✅ Validé | 2026-10-11 | 0.4.0-dev | B10 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-07 | Identifiant et journal recréé signalés (signalés ensemble en une phrase : règle à assouplir, backlog) | ✅ Validé | 2026-10-11 | 0.4.0-dev | B10 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
 | REQ-FB-08 | Journal supprimé recréé sans alerte de perte | ⬜ Non testé | — | — | — | — |
-| REQ-FB-09 | Format d'une entrée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-09 | Format d'une entrée | ✅ Validé | 2026-10-11 | affa1f0 | D4, D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-10 | Ajout en fin de journal sans lecture (test du dernier octet dans la commande, contenu non lu) | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-11 | Difficultés d'usage consignées | ⬜ Non testé | — | — | — | — |
-| REQ-FB-12 | Raison d'arrêt d'une simulation consignée | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-13 | Une entrée par joker utilisé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-12 | Raison d'arrêt d'une simulation consignée | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-13 | Une entrée par joker utilisé | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-14 | Aucune entrée pour un joker annulé | ⬜ Non testé | — | — | — | — |
-| REQ-FB-15 | Note dictée par mot-clé | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-16 | Phrase naturelle visant l'outil | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-FB-17 | Phrase sur son propre travail | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-FB-18 | Mention de prise en compte | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-19 | Note pendant une simulation | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-20 | Note absente du transcript | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-21 | Note distincte des mots-clés d'arrêt | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-22 | Rien nettoyé à l'écriture | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-15 | Note dictée par mot-clé | ✅ Validé | 2026-10-11 | affa1f0 | D4 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-16 | Phrase naturelle visant l'outil | ✅ Validé | 2026-10-11 | 0.4.0-dev | D4 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-17 | Phrase sur son propre travail | ✅ Validé | 2026-10-11 | 0.4.0-dev | D4 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-18 | Mention de prise en compte | ✅ Validé | 2026-10-11 | affa1f0 | D4, D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-19 | Note pendant une simulation | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-20 | Note absente du transcript | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-21 | Note distincte des mots-clés d'arrêt | ✅ Validé | 2026-10-11 | affa1f0 | D5 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-22 | Rien nettoyé à l'écriture | ✅ Validé | 2026-10-11 | affa1f0 | D4 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-23 | Message d'information en anglais | ⬜ Non testé | — | — | — | — |
 | REQ-FB-24 | Note en anglais | ⬜ Non testé | — | — | — | — |
-| REQ-FB-25 | Entrées non traitées seulement | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-26 | Revue des entrées silencieuses | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-27 | Trois questions dans l'ordre | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-28 | Statistique des jokers sur toutes les entrées de joker | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-25 | Entrées non traitées seulement | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-26 | Revue des entrées silencieuses | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-27 | Trois questions dans l'ordre | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-28 | Statistique des jokers sur toutes les entrées de joker | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-29 | Statistique incluse seulement si acceptée | ⬜ Non testé | — | — | — | — |
-| REQ-FB-30 | Métadonnées et comptages | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-31 | Fichier de feedback indépendant | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-32 | Anonymisation du contenu | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-33 | Remplacements listés, anonymisation non garantie | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
-| REQ-FB-34 | Entrées prises en compte passées à « traitée » | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-30 | Métadonnées et comptages | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-31 | Fichier de feedback indépendant | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-32 | Anonymisation du contenu | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-33 | Remplacements listés, anonymisation non garantie | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-34 | Entrées prises en compte passées à « traitée » | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-35 | Passage à « traitée » après l'écriture du fichier | ⬜ Non testé | — | — | — | — |
-| REQ-FB-36 | Génération interrompue | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
-| REQ-FB-37 | Rien envoyé, aucune date d'envoi | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-FB-36 | Génération interrompue | ✅ Validé | 2026-10-11 | 0.4.0-dev | F1.1 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-37 | Rien envoyé, aucune date d'envoi | ✅ Validé | 2026-10-11 | affa1f0 | F1.2 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-FB-38 | Feedback retravaillé | ⬜ Non testé | — | — | — | — |
 | REQ-FB-39 | Second feedback du même jour | ⬜ Non testé | — | — | — | — |
-| REQ-FB-40 | Génération sans nouvelle entrée | ✅ Validé | 2026-10-11 | 0.4.0-dev | — | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
+| REQ-FB-40 | Génération sans nouvelle entrée | ✅ Validé | 2026-10-11 | 0.4.0-dev | F1.5 | [2026-10-11](test-history/2026-10-11-feedback-produit-test-minimal.md) |
 | REQ-FB-41 | Sans nouvelle entrée ni réponse, aucun fichier | ⬜ Non testé | — | — | — | — |
 | REQ-FB-42 | Sans nouvelle entrée, feedback des seules réponses | ⬜ Non testé | — | — | — | — |
 | REQ-FB-43 | Journal long | ⬜ Non testé | — | — | — | — |
@@ -292,13 +292,13 @@ Statuts : ✅ Validé · ⚠️ À revalider · 🐞 Problème constaté · ⬜ 
 
 | Exigence | Résumé | Statut | Dernier test | Version | Tests | Session |
 | --- | --- | --- | --- | --- | --- | --- |
-| REQ-COACH-01 | Aucun fait inventé | ⚠️ À revalider | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-COACH-01 | Aucun fait inventé | ⚠️ À revalider | 2026-10-11 | affa1f0 | D4 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-COACH-02 | « Dossier professionnel » | ✅ Validé | 2026-10-04 | 0.4.0-dev | — | [2026-10-04](test-history/2026-10-04-controles-generiques-coach.md) |
-| REQ-COACH-03 | « Espace carrière » | ✅ Validé | 2026-10-11 | affa1f0 | — | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
+| REQ-COACH-03 | « Espace carrière » | ✅ Validé | 2026-10-11 | affa1f0 | B1.1 | [2026-10-11](test-history/2026-10-11-passe-rapide-v0.4.0.md) |
 | REQ-COACH-04 | « Career workspace » | ⬜ Non testé | — | — | — | — |
 | REQ-COACH-05 | Langue de coaching | ⬜ Non testé | — | — | — | — |
 | REQ-COACH-06 | Apprentissages durables séparés | ⬜ Non testé | — | — | — | — |
-| REQ-COACH-07 | Dates citées telles qu'enregistrées | ⚠️ À revalider | 2026-10-03 | 0.4.0-dev | — | [2026-10-03](test-history/2026-10-03-demo-enregistree-teams.md) |
+| REQ-COACH-07 | Dates citées telles qu'enregistrées | ⚠️ À revalider | 2026-10-03 | 0.4.0-dev | E3 | [2026-10-03](test-history/2026-10-03-demo-enregistree-teams.md) |
 | REQ-COACH-08 | Question laissée sans réponse | ✅ Validé | 2026-10-11 | 5159d42 | — | [2026-10-11](test-history/2026-10-11-tests-manuels-9-corrections.md) |
 
 ### Mise à jour du workspace (`REQ-UPD`)

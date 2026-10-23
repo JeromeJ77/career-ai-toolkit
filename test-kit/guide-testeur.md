@@ -11,7 +11,7 @@ Ce guide aide à dérouler `scenario.md` et à garder une trace exploitable des 
 
 ## Pendant le déroulé
 
-- **Une entrée par étape**, identifiée par son code dans le scénario (A1, B1, C1, D1…). Cela permet de relier chaque résultat au scénario et au plan de test.
+- **Une entrée par étape**, identifiée par son code dans le scénario (A1, B1, C1, D1…), ou par le numéro de l'invite quand une étape en a plusieurs (C4.2 pour le prompt 2 de C4). Cela permet de relier chaque résultat au scénario et, par la ligne « Exigences » de l'étape, aux exigences qu'elle vérifie.
 - **Distinguer deux origines d'écart** : le coach ne fait pas ce que le scénario attend (défaut du moteur), ou le scénario est mal formulé ou incomplet (défaut du kit).
 - **Noter la durée réelle** des étapes `[demo]` : elle sert à ajuster la durée totale de la démo.
 - **Ne rien corriger en cours de route.** Noter l'écart et continuer, sinon l'état réel est perdu.
@@ -76,6 +76,6 @@ C'est moins encadré que le scribe : personne ne demande le verdict d'une étape
 ## Après le déroulé
 
 1. Rassembler l'export final de l'assistant (« fin du déroulé ») ou la transcription Teams, les citations collées et les arborescences.
-2. Dans le dépôt, demander à l'assistant de développement de consigner les résultats : mise à jour du tableau de synthèse de `docs/test-log.md` (statuts ✅ Validé, ⚠️ À revalider, 🐞 Problème constaté, ⬜ Non testé, avec les dates) et création d'un fichier de session daté dans `docs/test-history/` (`AAAA-MM-JJ-sujet-court.md`, avec un indice `-2`, `-3` si le même test est refait le même jour), lié depuis l'index du journal. Les heures relevées figurent dans le fichier de session, jamais dans son nom. Seul ce qui a réellement été joué y figure. Le récap de l'assistant scribe peut servir de base à ce fichier.
+2. Dans le dépôt, demander à l'assistant de développement de consigner les résultats : création d'un fichier de session daté dans `docs/test-history/` (`AAAA-MM-JJ-sujet-court.md`, avec un indice `-2`, `-3` si le même test est refait le même jour), qui cite les tests joués par leur code (B2, C4.2…) et qui est lié depuis l'index du journal, puis mise à jour du tableau de bord de `docs/test-log.md` pour les exigences que ces tests vérifient (statuts ✅ Validé, ⚠️ À revalider, 🐞 Problème constaté, ⬜ Non testé, avec la date, la version et les tests joués). Les heures relevées figurent dans le fichier de session, jamais dans son nom. Seul ce qui a réellement été joué y figure. Le récap de l'assistant scribe peut servir de base à ce fichier.
 3. Demander un rapport court qui classe les écarts par origine : à corriger dans le moteur (skills, guidelines), à corriger dans le kit (scénario, sources, prompts), ou à mettre au backlog.
 4. Relire les correctifs proposés avant tout commit : ils vont dans un second commit, après les résultats.

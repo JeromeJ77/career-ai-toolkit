@@ -1,6 +1,6 @@
 ---
 name: prompteur
-description: Guide une passe de test manuelle du coach, élément par élément, comme un prompteur. Le testeur joue le coach dans une autre fenêtre et répond « ok » ou « ko » ; le prompteur vérifie lui-même les fichiers du workspace de test et les traces du coach, prend les notes et rédige le rapport. À utiliser pour une passe rapide avant release (`socle`), une sélection d'étapes du scénario maître ou un plan de test.
+description: Guide une passe de test manuelle du coach, élément par élément, comme un prompteur. Le testeur joue le coach dans une autre fenêtre et répond « ok » ou « ko » ; le prompteur vérifie lui-même les fichiers du workspace de test et les traces du coach, prend les notes, rédige la session de test en citant les tests joués et met à jour le tableau de bord des exigences. À utiliser pour une passe rapide avant release (`socle`), une sélection d'étapes du scénario maître ou un plan de passe sous `plans/`.
 argument-hint: "socle | <étapes, ex. B1 C1-C4 F1> | <plan dans plans/>"
 disable-model-invocation: true
 ---
@@ -77,6 +77,10 @@ Prompt :
 ## Fin de passe
 
 1. Noter l'heure de fin et la durée effective.
-2. Rédiger `docs/test-history/AAAA-MM-JJ-<sujet>.md` à partir des notes, sur le modèle des sessions existantes : testeur et rôle du prompteur, sélection jouée, commit, version (`ENGINE-VERSION`), outil, modèle et mode d'autorisation du coach, workspace et conversations (identifiants des `.jsonl`), heures, écarts voulus au scénario, résultats par élément, écarts avec citations et traces, ce qui n'a pas été joué ou vérifié, suites à donner.
-3. Mettre à jour dans `docs/test-log.md` les seules lignes couvertes, en suivant les règles de `AGENTS.md` : date du dernier test, remarque avec lien vers la session. Ne passer une ligne à ✅ que si **tous** ses points ont été joués et conformes ; sinon, compléter la remarque en disant ce qui a été rejoué et ce qui reste.
-4. Résumer au testeur : verdict d'ensemble, écarts par gravité, lignes du log modifiées. Il relit et commite.
+2. Rédiger `docs/test-history/AAAA-MM-JJ-<sujet>.md` à partir des notes, sur le modèle des sessions existantes : testeur et rôle du prompteur, sélection jouée, commit, version (`ENGINE-VERSION`), outil, modèle et mode d'autorisation du coach, workspace et conversations (identifiants des `.jsonl`), heures, écarts voulus au scénario, résultats par élément, écarts avec citations et traces, ce qui n'a pas été joué ou vérifié, suites à donner. Chaque résultat cite le test joué par son identifiant : code d'étape (`B2`), ou sous-identifiant pour une invite (`C4.2` pour le prompt 2 de C4).
+3. Mettre à jour le tableau de bord de `docs/test-log.md` pour les seules exigences citées par les tests joués (ligne **Exigences** de chaque étape, en tenant compte des sous-identifiants), selon REQ-QA-06 (`docs/requirements/test-process.md`) :
+   - Dernier test, Version, Tests (identifiants des tests joués qui citent l'exigence) et Session (lien vers la session) ;
+   - ✅ Validé seulement si **tous** les tests qui citent l'exigence sont passés depuis son dernier changement ; 🐞 Problème constaté si l'un d'eux a échoué ; sinon, garder ⚠️ ou ⬜ et ajouter au Résumé une remarque d'une ligne sur ce qui a été rejoué et ce qui reste ;
+   - tenir à jour les sections « Écarts ouverts » (chaque 🐞, avec renvoi au backlog ou à l'issue) et « À revalider ».
+4. Lancer `powershell -NoProfile -ExecutionPolicy Bypass -File test-kit\tools\check_traceability.ps1` : aucune erreur ne doit rester.
+5. Résumer au testeur : verdict d'ensemble, écarts par gravité, exigences du tableau de bord modifiées. Il relit et commite.
